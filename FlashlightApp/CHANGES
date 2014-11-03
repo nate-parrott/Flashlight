@@ -1,0 +1,21 @@
+0.10.0 - Copyright 2012, Norio Nomura
+ EasySIMBL is released under the GNU General Public License v2.
+ http://www.opensource.org/licenses/gpl-2.0.php
+
+0.9.9 - Integrated fix for postinstall script which could erroneously report failure.  Incorporate patch for the Agent to more gracefully handle malformed bundles.
+
+0.9.8 - Integrated fix for installer permissions. Fixed event handling on Leopard. Changed installer not to allow relocation. Fixed potential leak. Apps could reclaim almost 100-200 bytes. Don't spend it all in one place.
+
+0.9.7 - Added variable-level logging. Tweaked the installer to prune the Leopard OSAX event. Added application blacklisting to alleviate odd and annoying crash bug in the ScriptingBridge.
+
+0.9.6 - Fixed installer package now that I have a better understanding of how/when LaunchAgents get started. SIMBL Agent now only triggers an inject event when it is sure that there is a plugin present for the application that just loaded. This should cut down on the admittedly small overhead, but makes me feel it's much more efficient.
+
+0.9.5 - Simpler AppleEvent delivery. Better installer package - fixes some permission issues with bad installs. Properly force agent to restart after the installer runs. Added uninstall script.
+
+0.9.4 - Improved the bundle injection code which prevents an application from getting launched twice in some cases.
+
+0.9.3 - Added compatibility with garbage collected applications. Installer now removes the InputManager version of SIMBL.
+
+0.9.2 - Rebuilt the SIMBL as a combination OSAX and Agent. This addresses the issue InputManagers and 64-bit behavior on Snow Leopard (10.6). This release is backward compatible with Leopard (10.5) as well. This version also includes the packaging process, which is non-trivial.
+
+0.8.3 - Imported the original SIMBL tree. Aside from minor source tweaks (adding license headers) this is functionally identical to 0.8.2.

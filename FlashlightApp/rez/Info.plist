@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.github.norio-nomura.${PRODUCT_NAME:rfc1034identifier}.${WRAPPER_EXTENSION}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>osax</string>
+	<key>CFBundleShortVersionString</key>
+	<string>${PRODUCT_VERSION}</string>
+	<key>CFBundleSignature</key>
+	<string>ascr</string>
+	<key>CFBundleVersion</key>
+	<string>${PRODUCT_VERSION}</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>${EXECUTABLE_NAME} ${PRODUCT_VERSION}, ©2003-2009 Mike Solomon, 2012 Norio Nomura</string>
+	<key>NSPrincipalClass</key>
+	<string>SIMBL</string>
+	<key>OSAXHandlers</key>
+	<dict>
+		<key>Events</key>
+		<dict>
+			<key>ESIMload</key>
+			<dict>
+				<key>Context</key>
+				<string>User</string>
+				<key>Handler</key>
+				<string>InjectEventHandler</string>
+				<key>ThreadSafe</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

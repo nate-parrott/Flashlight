@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		276144DA105F523C00F906F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276144CD105F523C00F906F6 /* InfoPlist.strings */; };
+		276144F6105F531D00F906F6 /* SIMBLAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 276144D9105F523C00F906F6 /* SIMBLAgent.m */; };
+		2761463C105F985500F906F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276144CF105F523C00F906F6 /* MainMenu.xib */; };
+		276156DC1060C08C00FEF11C /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789609B3031900F50FE7 /* SIMBL.m */; };
+		27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
+		5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276144CD105F523C00F906F6 /* InfoPlist.strings */; };
+		6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* Flashlight.osax */; };
+		6CDFDC73159DBC65002E8E63 /* osax.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFDC72159DBC65002E8E63 /* osax.m */; };
+		6CDFDC75159DBC7C002E8E63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFDC74159DBC7C002E8E63 /* main.m */; };
+		6CF6D4CE159DD16000916EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4B3159DD14100916EA5 /* Cocoa.framework */; };
+		6CF6D4CF159DD16600916EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4B3159DD14100916EA5 /* Cocoa.framework */; };
+		6CF6D4D3159DD18600916EA5 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */; };
+		E0C2C2FE104F376500553034 /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
+		E0C2C2FF104F376600553034 /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789609B3031900F50FE7 /* SIMBL.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F86D4A61A07E48800D4A777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F5B17411A05757500809207;
+			remoteInfo = SpotlightSIMBL;
+		};
+		5F86D4AA1A07E4B600D4A777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F5B17401A05757400809207;
+			remoteInfo = SpotlightSIMBL;
+		};
+		6CDFDC70159DBC27002E8E63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = SIMBL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F86D4AD1A07E70800D4A777 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = SIMBLPlugins;
+			dstSubfolderSpec = 7;
+			files = (
+				5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDFDC6E159DBC07002E8E63 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		276144C1105F51CA00F906F6 /* SIMBL Agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SIMBL Agent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276144CE105F523C00F906F6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		276144D0105F523C00F906F6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		276144D8105F523C00F906F6 /* SIMBLAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBLAgent.h; sourceTree = "<group>"; };
+		276144D9105F523C00F906F6 /* SIMBLAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SIMBLAgent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpotlightSIMBL.xcodeproj; path = SpotlightSIMBL/SpotlightSIMBL.xcodeproj; sourceTree = "<group>"; };
+		6CDFDC6C159DBB8C002E8E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CDFDC72159DBC65002E8E63 /* osax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = osax.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		6CDFDC74159DBC7C002E8E63 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6CF6D4B3159DD14100916EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		8D5B49B6048680CD000E48DA /* Flashlight.osax */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Flashlight.osax; sourceTree = BUILT_PRODUCTS_DIR; };
+		E043030209B300D6000FD3C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0AF789309B3031900F50FE7 /* NSAlert_SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAlert_SIMBL.h; sourceTree = "<group>"; };
+		E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAlert_SIMBL.m; sourceTree = "<group>"; };
+		E0AF789509B3031900F50FE7 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		E0AF789609B3031900F50FE7 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E0AF789709B3031900F50FE7 /* SIMBL_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBL_Prefix.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		276144BF105F51CA00F906F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF6D4CE159DD16000916EA5 /* Cocoa.framework in Frameworks */,
+				6CF6D4D3159DD18600916EA5 /* ScriptingBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF6D4CF159DD16600916EA5 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* SIMBL */ = {
+			isa = PBXGroup;
+			children = (
+				5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */,
+				276144CC105F523C00F906F6 /* SIMBL Agent */,
+				E0AF789109B3031900F50FE7 /* src */,
+				E04302FE09B300D6000FD3C5 /* rez */,
+				6CF6D4B2159DD14100916EA5 /* Frameworks */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = SIMBL;
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				276144C1105F51CA00F906F6 /* SIMBL Agent.app */,
+				8D5B49B6048680CD000E48DA /* Flashlight.osax */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		276144CC105F523C00F906F6 /* SIMBL Agent */ = {
+			isa = PBXGroup;
+			children = (
+				6CDFDC74159DBC7C002E8E63 /* main.m */,
+				276144EB105F529100F906F6 /* Resources */,
+				276144D8105F523C00F906F6 /* SIMBLAgent.h */,
+				276144D9105F523C00F906F6 /* SIMBLAgent.m */,
+			);
+			path = "SIMBL Agent";
+			sourceTree = "<group>";
+		};
+		276144EB105F529100F906F6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				276144CD105F523C00F906F6 /* InfoPlist.strings */,
+				276144CF105F523C00F906F6 /* MainMenu.xib */,
+				6CDFDC6C159DBB8C002E8E63 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5F86D4A31A07E48800D4A777 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CF6D4B2159DD14100916EA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CF6D4B3159DD14100916EA5 /* Cocoa.framework */,
+				6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E04302FE09B300D6000FD3C5 /* rez */ = {
+			isa = PBXGroup;
+			children = (
+				E043030209B300D6000FD3C5 /* Info.plist */,
+			);
+			path = rez;
+			sourceTree = "<group>";
+		};
+		E0AF789109B3031900F50FE7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E0AF789309B3031900F50FE7 /* NSAlert_SIMBL.h */,
+				E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */,
+				6CDFDC72159DBC65002E8E63 /* osax.m */,
+				E0AF789509B3031900F50FE7 /* SIMBL.h */,
+				E0AF789609B3031900F50FE7 /* SIMBL.m */,
+				E0AF789709B3031900F50FE7 /* SIMBL_Prefix.pch */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		276144C0105F51CA00F906F6 /* FlashlightSIMBLAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 276144C7105F51CB00F906F6 /* Build configuration list for PBXNativeTarget "FlashlightSIMBLAgent" */;
+			buildPhases = (
+				276144BE105F51CA00F906F6 /* Sources */,
+				276144BF105F51CA00F906F6 /* Frameworks */,
+				276144BD105F51CA00F906F6 /* Resources */,
+				6CDFDC6E159DBC07002E8E63 /* CopyFiles */,
+				5F86D4AD1A07E70800D4A777 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F86D4AB1A07E4B600D4A777 /* PBXTargetDependency */,
+				6CDFDC71159DBC27002E8E63 /* PBXTargetDependency */,
+			);
+			name = FlashlightSIMBLAgent;
+			productName = "SIMBL Agent";
+			productReference = 276144C1105F51CA00F906F6 /* SIMBL Agent.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D5B49AC048680CD000E48DA /* SIMBL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0E8F441085F4D0400DCD56F /* Build configuration list for PBXNativeTarget "SIMBL" */;
+			buildPhases = (
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				8D5B49AF048680CD000E48DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SIMBL;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = SIMBL;
+			productReference = 8D5B49B6048680CD000E48DA /* Flashlight.osax */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = E0E8F445085F4D0400DCD56F /* Build configuration list for PBXProject "SIMBL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* SIMBL */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5F86D4A31A07E48800D4A777 /* Products */;
+					ProjectRef = 5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				276144C0105F51CA00F906F6 /* FlashlightSIMBLAgent */,
+				8D5B49AC048680CD000E48DA /* SIMBL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SpotlightSIMBL.bundle;
+			remoteRef = 5F86D4A61A07E48800D4A777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		276144BD105F51CA00F906F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2761463C105F985500F906F6 /* MainMenu.xib in Resources */,
+				6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276144DA105F523C00F906F6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		276144BE105F51CA00F906F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				276144F6105F531D00F906F6 /* SIMBLAgent.m in Sources */,
+				276156DC1060C08C00FEF11C /* SIMBL.m in Sources */,
+				27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */,
+				6CDFDC75159DBC7C002E8E63 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0C2C2FE104F376500553034 /* NSAlert_SIMBL.m in Sources */,
+				E0C2C2FF104F376600553034 /* SIMBL.m in Sources */,
+				6CDFDC73159DBC65002E8E63 /* osax.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F86D4AB1A07E4B600D4A777 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SpotlightSIMBL;
+			targetProxy = 5F86D4AA1A07E4B600D4A777 /* PBXContainerItemProxy */;
+		};
+		6CDFDC71159DBC27002E8E63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* SIMBL */;
+			targetProxy = 6CDFDC70159DBC27002E8E63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		276144CD105F523C00F906F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276144CE105F523C00F906F6 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		276144CF105F523C00F906F6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				276144D0105F523C00F906F6 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		276144C4105F51CB00F906F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
+				INSTALL_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		276144C5105F51CB00F906F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
+				INSTALL_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E0E8F442085F4D0400DCD56F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = rez/Info.plist;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Flashlight;
+				WRAPPER_EXTENSION = osax;
+			};
+			name = Debug;
+		};
+		E0E8F443085F4D0400DCD56F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = rez/Info.plist;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = Flashlight;
+				WRAPPER_EXTENSION = osax;
+			};
+			name = Release;
+		};
+		E0E8F446085F4D0400DCD56F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/SIMBL_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_VERSION = 0.10.8;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E0E8F447085F4D0400DCD56F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = src/SIMBL_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_VERSION = 0.10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		276144C7105F51CB00F906F6 /* Build configuration list for PBXNativeTarget "FlashlightSIMBLAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				276144C4105F51CB00F906F6 /* Debug */,
+				276144C5105F51CB00F906F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0E8F441085F4D0400DCD56F /* Build configuration list for PBXNativeTarget "SIMBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E8F442085F4D0400DCD56F /* Debug */,
+				E0E8F443085F4D0400DCD56F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0E8F445085F4D0400DCD56F /* Build configuration list for PBXProject "SIMBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0E8F446085F4D0400DCD56F /* Debug */,
+				E0E8F447085F4D0400DCD56F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}

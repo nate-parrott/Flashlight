@@ -32,3 +32,13 @@ This HTML will then be presented to the user:
 (this HTML will be loaded with the plugin's directory as its base URL, so you can reference images, javascript and CSS from it.)
 
 This is currently all the API does. More capabilities, like more customization of the search result, are on my to-do list.
+
+**How it works**
+
+The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading arbitrary plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.
+
+The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches Spotlight to add a new subclass of `SPQuery`, the internal class used to fetch results from different sources. It runs executables in `~/Library/FlashlightPlugins/*/executable`, and then presents their results using a custom subclass of `SPResult`.
+
+Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
+
+The Spotlight plugin is gated to run only on version `911` (which ships in Yosemite 14A361c). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
