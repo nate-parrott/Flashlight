@@ -56,10 +56,12 @@ void __SS_Start(SPQuery* self, SEL cmd) {
         NSMutableArray *pluginTasks = [NSMutableArray new];
         for (NSString *name in plugins) {
             if ([name isEqualToString:@".DS_Store"]) continue;
+            NSString *pluginDir = [pluginsDir stringByAppendingPathComponent:name];
             NSTask *task = nil;
             @try {
                 task = [NSTask new];
-                task.launchPath = [pluginsDir stringByAppendingPathComponent:name];
+                task.launchPath = [pluginDir stringByAppendingPathComponent:@"executable"];
+                task.currentDirectoryPath = pluginDir;
                 task.arguments = @[query];
                 NSPipe *pipe = [NSPipe pipe];
                 task.standardOutput = pipe;
@@ -77,19 +79,15 @@ void __SS_Start(SPQuery* self, SEL cmd) {
             [task waitUntilExit];
             NSData *data = [[task.standardOutput fileHandleForReading] readDataToEndOfFile];
             if (data) {
-                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                if (json) {
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                if (json && [json isKindOfClass:[NSDictionary class]]) {
+                    json = [json mutableCopy];
+                    json[@"pluginPath"] = task.currentDirectoryPath;
                     id result = [[__SS_SPOpenAPIResultClass() alloc] initWithQuery:query json:json];
                     if (result) {
                         [resultItems addObject:result];
-                    } else {
-                        NSLog(@"no result");
                     }
-                } else {
-                    NSLog(@"no json: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                 }
-            } else {
-                NSLog(@"No output data");
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{

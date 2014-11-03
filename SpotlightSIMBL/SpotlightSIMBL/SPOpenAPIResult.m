@@ -45,7 +45,11 @@ id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
     SPPreviewController *vc = [[NSClassFromString(@"SPPreviewController") alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
     WebView *webView = vc.view.subviews.firstObject;
     if ([webView isKindOfClass:[WebView class]]) {
-        [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:nil];
+        if (json[@"html"]) {
+            [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:json[@"pluginPath"]]];
+        } else {
+            webView.hidden = YES;
+        }
     } else {
         // TODO: log it
     }
@@ -57,6 +61,20 @@ unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
     return 1;
 }
 
+// - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;
+BOOL __SS_SSOpenWithSearchString_block(SPResult *self, SEL cmd, NSString *searchString, void (^block)()) {
+    id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
+    if (json[@"execute"]) {
+        NSTask *task = [[NSTask alloc] init];
+        [task setLaunchPath:@"/bin/bash"];
+        [task setArguments:@[ @"-c", json[@"execute"] ]];
+        [task launch];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 Class __SS_SPOpenAPIResultClass() {
     Class c = NSClassFromString(@"SPOpenAPIResult");
     if (c) return c;
@@ -65,5 +83,6 @@ Class __SS_SPOpenAPIResultClass() {
     __SS_Override(c, NSSelectorFromString(@"category"), __SS_SSOpenAPIResult_category);
     __SS_Override(c, NSSelectorFromString(@"rank"), __SS_SSOpenAPIResult_rank);
     __SS_Override(c, NSSelectorFromString(@"customPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
+    __SS_Override(c, NSSelectorFromString(@"openWithSearchString:block:"), __SS_SSOpenWithSearchString_block);
     return c;
 }
