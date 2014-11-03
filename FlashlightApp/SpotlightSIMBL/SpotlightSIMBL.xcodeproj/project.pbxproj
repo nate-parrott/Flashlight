@@ -1,0 +1,758 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F5B174D1A05758800809207 /* _Flashlight_Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B174C1A05758800809207 /* _Flashlight_Bootstrap.m */; };
+		5F5B18191A05821700809207 /* RSSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18181A05821700809207 /* RSSwizzle.m */; };
+		5F5B181E1A058CDA00809207 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B181B1A058CDA00809207 /* CTBlockDescription.m */; };
+		5F5B181F1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B181D1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m */; };
+		5F5B18221A059DB100809207 /* SPOpenAPIQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */; };
+		5F5B18311A05A1A000809207 /* MARTNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18261A05A1A000809207 /* MARTNSObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B18321A05A1A000809207 /* RTIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18281A05A1A000809207 /* RTIvar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B18331A05A1A000809207 /* RTMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B182A1A05A1A000809207 /* RTMethod.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B18341A05A1A000809207 /* RTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B182C1A05A1A000809207 /* RTProperty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B18351A05A1A000809207 /* RTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B182E1A05A1A000809207 /* RTProtocol.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B18361A05A1A000809207 /* RTUnregisteredClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18301A05A1A000809207 /* RTUnregisteredClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5F5B183C1A06C6EE00809207 /* NSObject+LogProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B183B1A06C6EE00809207 /* NSObject+LogProperties.m */; };
+		5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */; };
+		5F5B18411A06EDB600809207 /* MethodOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18401A06EDB600809207 /* MethodOverride.m */; };
+		5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightSIMBL.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5B17451A05757500809207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5B174B1A05758800809207 /* _Flashlight_Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Flashlight_Bootstrap.h; sourceTree = "<group>"; };
+		5F5B174C1A05758800809207 /* _Flashlight_Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Flashlight_Bootstrap.m; sourceTree = "<group>"; };
+		5F5B17521A057AB100809207 /* _MKPlaceViewControllerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "_MKPlaceViewControllerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17531A057AB100809207 /* CDStructures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
+		5F5B17541A057AB100809207 /* NSApplicationDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSApplicationDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17551A057AB100809207 /* NSArray-SPArrayExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray-SPArrayExtensions.h"; sourceTree = "<group>"; };
+		5F5B17561A057AB100809207 /* NSAttributedString-SPAttributedStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString-SPAttributedStringExtensions.h"; sourceTree = "<group>"; };
+		5F5B17571A057AB100809207 /* NSCoding-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCoding-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17581A057AB100809207 /* NSControlTextEditingDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSControlTextEditingDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17591A057AB100809207 /* NSCopying-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCopying-Protocol.h"; sourceTree = "<group>"; };
+		5F5B175A1A057AB100809207 /* NSDictionary-SPDictionaryExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary-SPDictionaryExtensions.h"; sourceTree = "<group>"; };
+		5F5B175B1A057AB100809207 /* NSDraggingSource-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDraggingSource-Protocol.h"; sourceTree = "<group>"; };
+		5F5B175C1A057AB100809207 /* NSImage-SPImageExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage-SPImageExtensions.h"; sourceTree = "<group>"; };
+		5F5B175D1A057AB100809207 /* NSMutableArray-SPArrayExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray-SPArrayExtensions.h"; sourceTree = "<group>"; };
+		5F5B175E1A057AB100809207 /* NSMutableAttributedString-SPMutableAttributedStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString-SPMutableAttributedStringExtensions.h"; sourceTree = "<group>"; };
+		5F5B175F1A057AB100809207 /* NSObject-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17601A057AB100809207 /* NSPasteboardItemDataProvider-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPasteboardItemDataProvider-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17611A057AB100809207 /* NSPasteboardWriting-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPasteboardWriting-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17621A057AB100809207 /* NSSecureCoding-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSecureCoding-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17631A057AB100809207 /* NSSoundDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSoundDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17641A057AB100809207 /* NSSplitViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSplitViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17651A057AB100809207 /* NSString-firstLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-firstLine.h"; sourceTree = "<group>"; };
+		5F5B17661A057AB100809207 /* NSString-MDStringAbbreviations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-MDStringAbbreviations.h"; sourceTree = "<group>"; };
+		5F5B17671A057AB100809207 /* NSString-SPStringExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString-SPStringExtensions.h"; sourceTree = "<group>"; };
+		5F5B17681A057AB100809207 /* NSTableViewDataSource-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableViewDataSource-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17691A057AB100809207 /* NSTableViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTableViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B176A1A057AB100809207 /* NSTextDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B176B1A057AB100809207 /* NSTextInputClient_IncrementalSearch-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextInputClient_IncrementalSearch-Protocol.h"; sourceTree = "<group>"; };
+		5F5B176C1A057AB100809207 /* NSTextViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B176D1A057AB100809207 /* NSView-Materials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView-Materials.h"; sourceTree = "<group>"; };
+		5F5B176E1A057AB100809207 /* NSVisualEffectView-SPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSVisualEffectView-SPExtensions.h"; sourceTree = "<group>"; };
+		5F5B176F1A057AB100809207 /* NSWindowDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindowDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17701A057AB100809207 /* NSXPCListenerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXPCListenerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17711A057AB100809207 /* PRSBaseCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSBaseCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B17721A057AB100809207 /* PRSBaseResult-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSBaseResult-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17731A057AB100809207 /* PRSCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B17741A057AB100809207 /* PRSDescriptionCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSDescriptionCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B17751A057AB100809207 /* PRSMapsResult-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSMapsResult-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17761A057AB100809207 /* PRSMovieListCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSMovieListCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B17771A057AB100809207 /* PRSPredictionSupport-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSPredictionSupport-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17781A057AB100809207 /* PRSRichTitleCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSRichTitleCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B17791A057AB100809207 /* PRSRowCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSRowCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B177A1A057AB100809207 /* PRSSimpleResult-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSSimpleResult-Protocol.h"; sourceTree = "<group>"; };
+		5F5B177B1A057AB100809207 /* PRSTextColumnsCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSTextColumnsCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B177C1A057AB100809207 /* PRSTitleCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSTitleCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B177D1A057AB100809207 /* PRSTrackListCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSTrackListCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B177E1A057AB100809207 /* PRSTwitterUserCardSection-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PRSTwitterUserCardSection-Extensions.h"; sourceTree = "<group>"; };
+		5F5B177F1A057AB100809207 /* QLPreviewCustomView-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QLPreviewCustomView-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17801A057AB100809207 /* QLPreviewViewDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QLPreviewViewDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17811A057AB100809207 /* QLSeamlessOpenerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QLSeamlessOpenerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17821A057AB100809207 /* SPAgent-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPAgent-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17831A057AB100809207 /* SPAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAgent.h; sourceTree = "<group>"; };
+		5F5B17841A057AB100809207 /* SPAggregateQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAggregateQuery.h; sourceTree = "<group>"; };
+		5F5B17851A057AB100809207 /* SPAggregateResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAggregateResponse.h; sourceTree = "<group>"; };
+		5F5B17861A057AB100809207 /* SPAlbumResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAlbumResult.h; sourceTree = "<group>"; };
+		5F5B17871A057AB100809207 /* SPAppDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppDefaults.h; sourceTree = "<group>"; };
+		5F5B17881A057AB100809207 /* SPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppDelegate.h; sourceTree = "<group>"; };
+		5F5B17891A057AB100809207 /* SPAppearanceTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppearanceTextField.h; sourceTree = "<group>"; };
+		5F5B178A1A057AB100809207 /* SPApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPApplication.h; sourceTree = "<group>"; };
+		5F5B178B1A057AB100809207 /* SPApplicationQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPApplicationQuery.h; sourceTree = "<group>"; };
+		5F5B178C1A057AB100809207 /* SPAppPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAppPreviewController.h; sourceTree = "<group>"; };
+		5F5B178D1A057AB100809207 /* SPAssistantPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAssistantPreviewController.h; sourceTree = "<group>"; };
+		5F5B178E1A057AB100809207 /* SPBaseTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBaseTableRowView.h; sourceTree = "<group>"; };
+		5F5B178F1A057AB100809207 /* SPCalculationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculationResult.h; sourceTree = "<group>"; };
+		5F5B17901A057AB100809207 /* SPCalculationResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculationResultController.h; sourceTree = "<group>"; };
+		5F5B17911A057AB100809207 /* SPCalculationSlice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculationSlice.h; sourceTree = "<group>"; };
+		5F5B17921A057AB100809207 /* SPCalculatorPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculatorPreviewController.h; sourceTree = "<group>"; };
+		5F5B17931A057AB100809207 /* SPCalculatorQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculatorQuery.h; sourceTree = "<group>"; };
+		5F5B17941A057AB100809207 /* SPCalculatorResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalculatorResult.h; sourceTree = "<group>"; };
+		5F5B17951A057AB100809207 /* SPCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCalendarViewController.h; sourceTree = "<group>"; };
+		5F5B17961A057AB100809207 /* SPCardSectionSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCardSectionSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17971A057AB100809207 /* SPCATableRowGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCATableRowGroupView.h; sourceTree = "<group>"; };
+		5F5B17981A057AB100809207 /* SPCATableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCATableRowView.h; sourceTree = "<group>"; };
+		5F5B17991A057AB100809207 /* SPColumnsSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPColumnsSliceView.h; sourceTree = "<group>"; };
+		5F5B179A1A057AB100809207 /* SPColumnsSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPColumnsSliceViewController.h; sourceTree = "<group>"; };
+		5F5B179B1A057AB100809207 /* SPConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConversion.h; sourceTree = "<group>"; };
+		5F5B179C1A057AB100809207 /* SPConversionPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConversionPreviewController.h; sourceTree = "<group>"; };
+		5F5B179D1A057AB100809207 /* SPConversionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPConversionResult.h; sourceTree = "<group>"; };
+		5F5B179E1A057AB100809207 /* SPCurrencyConversionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCurrencyConversionResult.h; sourceTree = "<group>"; };
+		5F5B179F1A057AB100809207 /* SPDarkenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDarkenView.h; sourceTree = "<group>"; };
+		5F5B17A01A057AB100809207 /* SPDarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDarkView.h; sourceTree = "<group>"; };
+		5F5B17A11A057AB100809207 /* SPDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDefaults.h; sourceTree = "<group>"; };
+		5F5B17A21A057AB100809207 /* SPDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDemo.h; sourceTree = "<group>"; };
+		5F5B17A31A057AB100809207 /* SPDescriptionSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDescriptionSliceView.h; sourceTree = "<group>"; };
+		5F5B17A41A057AB100809207 /* SPDescriptionSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDescriptionSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17A51A057AB100809207 /* SPDictionaryQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDictionaryQuery.h; sourceTree = "<group>"; };
+		5F5B17A61A057AB100809207 /* SPDictionaryResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDictionaryResult.h; sourceTree = "<group>"; };
+		5F5B17A71A057AB100809207 /* SPDummyPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDummyPreviewController.h; sourceTree = "<group>"; };
+		5F5B17A81A057AB100809207 /* SPEncyclopediaPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPEncyclopediaPreviewController.h; sourceTree = "<group>"; };
+		5F5B17A91A057AB100809207 /* SPFakeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFakeResult.h; sourceTree = "<group>"; };
+		5F5B17AA1A057AB100809207 /* SPFolderPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFolderPreviewController.h; sourceTree = "<group>"; };
+		5F5B17AB1A057AB100809207 /* SPFolderQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFolderQuery.h; sourceTree = "<group>"; };
+		5F5B17AC1A057AB100809207 /* SPFTEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFTEController.h; sourceTree = "<group>"; };
+		5F5B17AD1A057AB100809207 /* SPFusedResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFusedResult.h; sourceTree = "<group>"; };
+		5F5B17AE1A057AB100809207 /* SPGridlinedTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGridlinedTableRowView.h; sourceTree = "<group>"; };
+		5F5B17AF1A057AB100809207 /* SPGroupHeadingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGroupHeadingResult.h; sourceTree = "<group>"; };
+		5F5B17B01A057AB100809207 /* SPGroupTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGroupTableCellView.h; sourceTree = "<group>"; };
+		5F5B17B11A057AB100809207 /* SPImageQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImageQuery.h; sourceTree = "<group>"; };
+		5F5B17B21A057AB100809207 /* SPImageResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImageResult.h; sourceTree = "<group>"; };
+		5F5B17B31A057AB100809207 /* SPImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPImageView.h; sourceTree = "<group>"; };
+		5F5B17B41A057AB100809207 /* SPIndexingProgressResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPIndexingProgressResult.h; sourceTree = "<group>"; };
+		5F5B17B51A057AB100809207 /* SPIndexingProgressTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPIndexingProgressTableCellView.h; sourceTree = "<group>"; };
+		5F5B17B61A057AB100809207 /* SPLevelIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLevelIndicatorView.h; sourceTree = "<group>"; };
+		5F5B17B71A057AB100809207 /* SPLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLineView.h; sourceTree = "<group>"; };
+		5F5B17B81A057AB100809207 /* SPLinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLinkButton.h; sourceTree = "<group>"; };
+		5F5B17B91A057AB100809207 /* SPLinkTableSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLinkTableSliceView.h; sourceTree = "<group>"; };
+		5F5B17BA1A057AB100809207 /* SPLinkTableSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLinkTableSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17BB1A057AB100809207 /* SPListenerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPListenerDelegate.h; sourceTree = "<group>"; };
+		5F5B17BC1A057AB100809207 /* SPLocationPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLocationPreviewController.h; sourceTree = "<group>"; };
+		5F5B17BD1A057AB100809207 /* SPLogisticWithNaiveBayesEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLogisticWithNaiveBayesEngine.h; sourceTree = "<group>"; };
+		5F5B17BE1A057AB100809207 /* SPMainViewController-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPMainViewController-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17BF1A057AB100809207 /* SPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMainViewController.h; sourceTree = "<group>"; };
+		5F5B17C01A057AB100809207 /* SPMapQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMapQuery.h; sourceTree = "<group>"; };
+		5F5B17C11A057AB100809207 /* SPMapResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMapResult.h; sourceTree = "<group>"; };
+		5F5B17C21A057AB100809207 /* SPMetadataGroupHeadingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMetadataGroupHeadingResult.h; sourceTree = "<group>"; };
+		5F5B17C31A057AB100809207 /* SPMetadataPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMetadataPattern.h; sourceTree = "<group>"; };
+		5F5B17C41A057AB100809207 /* SPMetadataQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMetadataQuery.h; sourceTree = "<group>"; };
+		5F5B17C51A057AB100809207 /* SPMetadataResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMetadataResult.h; sourceTree = "<group>"; };
+		5F5B17C61A057AB100809207 /* SPMLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMLManager.h; sourceTree = "<group>"; };
+		5F5B17C71A057AB100809207 /* SPMoviesSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMoviesSliceView.h; sourceTree = "<group>"; };
+		5F5B17C81A057AB100809207 /* SPMoviesSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMoviesSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17C91A057AB100809207 /* SpotlightLearningProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpotlightLearningProtocol-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17CA1A057AB100809207 /* SpotlightNetHelperProtocol-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpotlightNetHelperProtocol-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17CB1A057AB100809207 /* SPParsecGroupHeadingResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecGroupHeadingResult.h; sourceTree = "<group>"; };
+		5F5B17CC1A057AB100809207 /* SPParsecMapsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecMapsResult.h; sourceTree = "<group>"; };
+		5F5B17CD1A057AB100809207 /* SPParsecPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecPattern.h; sourceTree = "<group>"; };
+		5F5B17CE1A057AB100809207 /* SPParsecQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecQuery.h; sourceTree = "<group>"; };
+		5F5B17CF1A057AB100809207 /* SPParsecResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecResult.h; sourceTree = "<group>"; };
+		5F5B17D01A057AB100809207 /* SPParsecSimpleResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecSimpleResult.h; sourceTree = "<group>"; };
+		5F5B17D11A057AB100809207 /* SPParsecWebQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPParsecWebQuery.h; sourceTree = "<group>"; };
+		5F5B17D21A057AB100809207 /* SPPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPattern.h; sourceTree = "<group>"; };
+		5F5B17D31A057AB100809207 /* SPPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPreviewController.h; sourceTree = "<group>"; };
+		5F5B17D41A057AB100809207 /* SPPreviewHostingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPreviewHostingView.h; sourceTree = "<group>"; };
+		5F5B17D51A057AB100809207 /* SPPreviewResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPreviewResultController.h; sourceTree = "<group>"; };
+		5F5B17D61A057AB100809207 /* SPPriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPriorityQueue.h; sourceTree = "<group>"; };
+		5F5B17D71A057AB100809207 /* SPQLThumbnailPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPQLThumbnailPreviewController.h; sourceTree = "<group>"; };
+		5F5B17D81A057AB100809207 /* SPQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPQuery.h; sourceTree = "<group>"; };
+		5F5B17D91A057AB100809207 /* SPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResponse.h; sourceTree = "<group>"; };
+		5F5B17DA1A057AB100809207 /* SPResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResult.h; sourceTree = "<group>"; };
+		5F5B17DB1A057AB100809207 /* SPResultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultsView.h; sourceTree = "<group>"; };
+		5F5B17DC1A057AB100809207 /* SPResultTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultTableCellView.h; sourceTree = "<group>"; };
+		5F5B17DD1A057AB100809207 /* SPResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultTableViewController.h; sourceTree = "<group>"; };
+		5F5B17DE1A057AB100809207 /* SPResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultViewController.h; sourceTree = "<group>"; };
+		5F5B17DF1A057AB100809207 /* SPResultViewControllerDelegate-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SPResultViewControllerDelegate-Protocol.h"; sourceTree = "<group>"; };
+		5F5B17E01A057AB100809207 /* SPResultWithoutSubitemsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultWithoutSubitemsHelper.h; sourceTree = "<group>"; };
+		5F5B17E11A057AB100809207 /* SPResultWithSubitemsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultWithSubitemsHelper.h; sourceTree = "<group>"; };
+		5F5B17E21A057AB100809207 /* SPResultWithSubItemsPreviewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPResultWithSubItemsPreviewControllerViewController.h; sourceTree = "<group>"; };
+		5F5B17E31A057AB100809207 /* SPRichTitleSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRichTitleSliceView.h; sourceTree = "<group>"; };
+		5F5B17E41A057AB100809207 /* SPRichTitleSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRichTitleSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17E51A057AB100809207 /* SPRowSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRowSliceView.h; sourceTree = "<group>"; };
+		5F5B17E61A057AB100809207 /* SPRowSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPRowSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17E71A057AB100809207 /* SPSearchField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearchField.h; sourceTree = "<group>"; };
+		5F5B17E81A057AB100809207 /* SPSearchFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearchFieldCell.h; sourceTree = "<group>"; };
+		5F5B17E91A057AB100809207 /* SPSearchFieldEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearchFieldEditor.h; sourceTree = "<group>"; };
+		5F5B17EA1A057AB100809207 /* SPSearchPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearchPanel.h; sourceTree = "<group>"; };
+		5F5B17EB1A057AB100809207 /* SPSearchPanelContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSearchPanelContentView.h; sourceTree = "<group>"; };
+		5F5B17EC1A057AB100809207 /* SPShortcutPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShortcutPattern.h; sourceTree = "<group>"; };
+		5F5B17ED1A057AB100809207 /* SPShortcuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShortcuts.h; sourceTree = "<group>"; };
+		5F5B17EE1A057AB100809207 /* SPShowAllInFinderResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPShowAllInFinderResult.h; sourceTree = "<group>"; };
+		5F5B17EF1A057AB100809207 /* SPSidewaysMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSidewaysMainViewController.h; sourceTree = "<group>"; };
+		5F5B17F01A057AB100809207 /* SPSlice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSlice.h; sourceTree = "<group>"; };
+		5F5B17F11A057AB100809207 /* SPSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17F21A057AB100809207 /* SPSpacerSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpacerSliceView.h; sourceTree = "<group>"; };
+		5F5B17F31A057AB100809207 /* SPSpacerSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpacerSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17F41A057AB100809207 /* SPSpotQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSpotQuery.h; sourceTree = "<group>"; };
+		5F5B17F51A057AB100809207 /* SPStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStatistics.h; sourceTree = "<group>"; };
+		5F5B17F61A057AB100809207 /* SPStatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPStatusItemView.h; sourceTree = "<group>"; };
+		5F5B17F71A057AB100809207 /* SPSubItemPreviewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSubItemPreviewImageView.h; sourceTree = "<group>"; };
+		5F5B17F81A057AB100809207 /* SPSubItemPreviewTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSubItemPreviewTableCellView.h; sourceTree = "<group>"; };
+		5F5B17F91A057AB100809207 /* SPTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTableRowView.h; sourceTree = "<group>"; };
+		5F5B17FA1A057AB100809207 /* SPTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTableView.h; sourceTree = "<group>"; };
+		5F5B17FB1A057AB100809207 /* SPTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextContainer.h; sourceTree = "<group>"; };
+		5F5B17FC1A057AB100809207 /* SPTextFieldSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextFieldSliceView.h; sourceTree = "<group>"; };
+		5F5B17FD1A057AB100809207 /* SPTextFieldSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextFieldSliceViewController.h; sourceTree = "<group>"; };
+		5F5B17FE1A057AB100809207 /* SPTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTextView.h; sourceTree = "<group>"; };
+		5F5B17FF1A057AB100809207 /* SPThreeMoviesSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPThreeMoviesSliceView.h; sourceTree = "<group>"; };
+		5F5B18001A057AB100809207 /* SPTitleSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTitleSliceView.h; sourceTree = "<group>"; };
+		5F5B18011A057AB100809207 /* SPTitleSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTitleSliceViewController.h; sourceTree = "<group>"; };
+		5F5B18021A057AB100809207 /* SPTrackSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrackSliceView.h; sourceTree = "<group>"; };
+		5F5B18031A057AB100809207 /* SPTrackSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrackSliceViewController.h; sourceTree = "<group>"; };
+		5F5B18041A057AB100809207 /* SPTrailersSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrailersSliceView.h; sourceTree = "<group>"; };
+		5F5B18051A057AB100809207 /* SPTrailersSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTrailersSliceViewController.h; sourceTree = "<group>"; };
+		5F5B18061A057AB100809207 /* SPTwitterUserSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTwitterUserSliceView.h; sourceTree = "<group>"; };
+		5F5B18071A057AB100809207 /* SPTwitterUserSliceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTwitterUserSliceViewController.h; sourceTree = "<group>"; };
+		5F5B18081A057AB100809207 /* SPTwoColumnsSliceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTwoColumnsSliceView.h; sourceTree = "<group>"; };
+		5F5B18091A057AB100809207 /* SPUnitConversionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUnitConversionResult.h; sourceTree = "<group>"; };
+		5F5B180A1A057AB100809207 /* SPWebPreviewCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebPreviewCache.h; sourceTree = "<group>"; };
+		5F5B180B1A057AB100809207 /* SPWebPreviewCacheItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebPreviewCacheItem.h; sourceTree = "<group>"; };
+		5F5B180C1A057AB100809207 /* SPWebResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebResult.h; sourceTree = "<group>"; };
+		5F5B180D1A057AB100809207 /* SPWebSliceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebSliceController.h; sourceTree = "<group>"; };
+		5F5B180E1A057AB100809207 /* SPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewController.h; sourceTree = "<group>"; };
+		5F5B18171A05821700809207 /* RSSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSwizzle.h; sourceTree = "<group>"; };
+		5F5B18181A05821700809207 /* RSSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSwizzle.m; sourceTree = "<group>"; };
+		5F5B181A1A058CDA00809207 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
+		5F5B181B1A058CDA00809207 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
+		5F5B181C1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
+		5F5B181D1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
+		5F5B18201A059DB100809207 /* SPOpenAPIQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOpenAPIQuery.h; sourceTree = "<group>"; };
+		5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOpenAPIQuery.m; sourceTree = "<group>"; };
+		5F5B18251A05A1A000809207 /* MARTNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARTNSObject.h; sourceTree = "<group>"; };
+		5F5B18261A05A1A000809207 /* MARTNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARTNSObject.m; sourceTree = "<group>"; };
+		5F5B18271A05A1A000809207 /* RTIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTIvar.h; sourceTree = "<group>"; };
+		5F5B18281A05A1A000809207 /* RTIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTIvar.m; sourceTree = "<group>"; };
+		5F5B18291A05A1A000809207 /* RTMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMethod.h; sourceTree = "<group>"; };
+		5F5B182A1A05A1A000809207 /* RTMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTMethod.m; sourceTree = "<group>"; };
+		5F5B182B1A05A1A000809207 /* RTProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTProperty.h; sourceTree = "<group>"; };
+		5F5B182C1A05A1A000809207 /* RTProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTProperty.m; sourceTree = "<group>"; };
+		5F5B182D1A05A1A000809207 /* RTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTProtocol.h; sourceTree = "<group>"; };
+		5F5B182E1A05A1A000809207 /* RTProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTProtocol.m; sourceTree = "<group>"; };
+		5F5B182F1A05A1A000809207 /* RTUnregisteredClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTUnregisteredClass.h; sourceTree = "<group>"; };
+		5F5B18301A05A1A000809207 /* RTUnregisteredClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTUnregisteredClass.m; sourceTree = "<group>"; };
+		5F5B183A1A06C6EE00809207 /* NSObject+LogProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LogProperties.h"; sourceTree = "<group>"; };
+		5F5B183B1A06C6EE00809207 /* NSObject+LogProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LogProperties.m"; sourceTree = "<group>"; };
+		5F5B183D1A06CB0000809207 /* SPOpenAPIResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOpenAPIResult.h; sourceTree = "<group>"; };
+		5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOpenAPIResult.m; sourceTree = "<group>"; };
+		5F5B18401A06EDB600809207 /* MethodOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodOverride.m; sourceTree = "<group>"; };
+		5F5B18421A06EDBE00809207 /* MethodOverride.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodOverride.h; sourceTree = "<group>"; };
+		5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPOpenAPIPreviewViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F5B173E1A05757400809207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F5B17381A05757400809207 = {
+			isa = PBXGroup;
+			children = (
+				5F5B17431A05757500809207 /* SpotlightSIMBL */,
+				5F5B17421A05757500809207 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F5B17421A05757500809207 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F5B17431A05757500809207 /* SpotlightSIMBL */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B17441A05757500809207 /* Supporting Files */,
+				5F5B174B1A05758800809207 /* _Flashlight_Bootstrap.h */,
+				5F5B174C1A05758800809207 /* _Flashlight_Bootstrap.m */,
+				5F5B18421A06EDBE00809207 /* MethodOverride.h */,
+				5F5B18401A06EDB600809207 /* MethodOverride.m */,
+				5F5B18201A059DB100809207 /* SPOpenAPIQuery.h */,
+				5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */,
+				5F5B183D1A06CB0000809207 /* SPOpenAPIResult.h */,
+				5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */,
+				5F5B183A1A06C6EE00809207 /* NSObject+LogProperties.h */,
+				5F5B183B1A06C6EE00809207 /* NSObject+LogProperties.m */,
+				5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */,
+				5F5B18381A05A1B800809207 /* RSSwizzle */,
+				5F5B18391A05A1BD00809207 /* CTObjectiveCRuntimeAdditions */,
+				5F5B18371A05A1AC00809207 /* MAObjcRuntime */,
+				5F5B17511A057AB100809207 /* SpotlightHeaders */,
+			);
+			path = SpotlightSIMBL;
+			sourceTree = "<group>";
+		};
+		5F5B17441A05757500809207 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B17451A05757500809207 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F5B17511A057AB100809207 /* SpotlightHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B17521A057AB100809207 /* _MKPlaceViewControllerDelegate-Protocol.h */,
+				5F5B17531A057AB100809207 /* CDStructures.h */,
+				5F5B17541A057AB100809207 /* NSApplicationDelegate-Protocol.h */,
+				5F5B17551A057AB100809207 /* NSArray-SPArrayExtensions.h */,
+				5F5B17561A057AB100809207 /* NSAttributedString-SPAttributedStringExtensions.h */,
+				5F5B17571A057AB100809207 /* NSCoding-Protocol.h */,
+				5F5B17581A057AB100809207 /* NSControlTextEditingDelegate-Protocol.h */,
+				5F5B17591A057AB100809207 /* NSCopying-Protocol.h */,
+				5F5B175A1A057AB100809207 /* NSDictionary-SPDictionaryExtensions.h */,
+				5F5B175B1A057AB100809207 /* NSDraggingSource-Protocol.h */,
+				5F5B175C1A057AB100809207 /* NSImage-SPImageExtensions.h */,
+				5F5B175D1A057AB100809207 /* NSMutableArray-SPArrayExtensions.h */,
+				5F5B175E1A057AB100809207 /* NSMutableAttributedString-SPMutableAttributedStringExtensions.h */,
+				5F5B175F1A057AB100809207 /* NSObject-Protocol.h */,
+				5F5B17601A057AB100809207 /* NSPasteboardItemDataProvider-Protocol.h */,
+				5F5B17611A057AB100809207 /* NSPasteboardWriting-Protocol.h */,
+				5F5B17621A057AB100809207 /* NSSecureCoding-Protocol.h */,
+				5F5B17631A057AB100809207 /* NSSoundDelegate-Protocol.h */,
+				5F5B17641A057AB100809207 /* NSSplitViewDelegate-Protocol.h */,
+				5F5B17651A057AB100809207 /* NSString-firstLine.h */,
+				5F5B17661A057AB100809207 /* NSString-MDStringAbbreviations.h */,
+				5F5B17671A057AB100809207 /* NSString-SPStringExtensions.h */,
+				5F5B17681A057AB100809207 /* NSTableViewDataSource-Protocol.h */,
+				5F5B17691A057AB100809207 /* NSTableViewDelegate-Protocol.h */,
+				5F5B176A1A057AB100809207 /* NSTextDelegate-Protocol.h */,
+				5F5B176B1A057AB100809207 /* NSTextInputClient_IncrementalSearch-Protocol.h */,
+				5F5B176C1A057AB100809207 /* NSTextViewDelegate-Protocol.h */,
+				5F5B176D1A057AB100809207 /* NSView-Materials.h */,
+				5F5B176E1A057AB100809207 /* NSVisualEffectView-SPExtensions.h */,
+				5F5B176F1A057AB100809207 /* NSWindowDelegate-Protocol.h */,
+				5F5B17701A057AB100809207 /* NSXPCListenerDelegate-Protocol.h */,
+				5F5B17711A057AB100809207 /* PRSBaseCardSection-Extensions.h */,
+				5F5B17721A057AB100809207 /* PRSBaseResult-Protocol.h */,
+				5F5B17731A057AB100809207 /* PRSCardSection-Extensions.h */,
+				5F5B17741A057AB100809207 /* PRSDescriptionCardSection-Extensions.h */,
+				5F5B17751A057AB100809207 /* PRSMapsResult-Protocol.h */,
+				5F5B17761A057AB100809207 /* PRSMovieListCardSection-Extensions.h */,
+				5F5B17771A057AB100809207 /* PRSPredictionSupport-Protocol.h */,
+				5F5B17781A057AB100809207 /* PRSRichTitleCardSection-Extensions.h */,
+				5F5B17791A057AB100809207 /* PRSRowCardSection-Extensions.h */,
+				5F5B177A1A057AB100809207 /* PRSSimpleResult-Protocol.h */,
+				5F5B177B1A057AB100809207 /* PRSTextColumnsCardSection-Extensions.h */,
+				5F5B177C1A057AB100809207 /* PRSTitleCardSection-Extensions.h */,
+				5F5B177D1A057AB100809207 /* PRSTrackListCardSection-Extensions.h */,
+				5F5B177E1A057AB100809207 /* PRSTwitterUserCardSection-Extensions.h */,
+				5F5B177F1A057AB100809207 /* QLPreviewCustomView-Protocol.h */,
+				5F5B17801A057AB100809207 /* QLPreviewViewDelegate-Protocol.h */,
+				5F5B17811A057AB100809207 /* QLSeamlessOpenerDelegate-Protocol.h */,
+				5F5B17821A057AB100809207 /* SPAgent-Protocol.h */,
+				5F5B17831A057AB100809207 /* SPAgent.h */,
+				5F5B17841A057AB100809207 /* SPAggregateQuery.h */,
+				5F5B17851A057AB100809207 /* SPAggregateResponse.h */,
+				5F5B17861A057AB100809207 /* SPAlbumResult.h */,
+				5F5B17871A057AB100809207 /* SPAppDefaults.h */,
+				5F5B17881A057AB100809207 /* SPAppDelegate.h */,
+				5F5B17891A057AB100809207 /* SPAppearanceTextField.h */,
+				5F5B178A1A057AB100809207 /* SPApplication.h */,
+				5F5B178B1A057AB100809207 /* SPApplicationQuery.h */,
+				5F5B178C1A057AB100809207 /* SPAppPreviewController.h */,
+				5F5B178D1A057AB100809207 /* SPAssistantPreviewController.h */,
+				5F5B178E1A057AB100809207 /* SPBaseTableRowView.h */,
+				5F5B178F1A057AB100809207 /* SPCalculationResult.h */,
+				5F5B17901A057AB100809207 /* SPCalculationResultController.h */,
+				5F5B17911A057AB100809207 /* SPCalculationSlice.h */,
+				5F5B17921A057AB100809207 /* SPCalculatorPreviewController.h */,
+				5F5B17931A057AB100809207 /* SPCalculatorQuery.h */,
+				5F5B17941A057AB100809207 /* SPCalculatorResult.h */,
+				5F5B17951A057AB100809207 /* SPCalendarViewController.h */,
+				5F5B17961A057AB100809207 /* SPCardSectionSliceViewController.h */,
+				5F5B17971A057AB100809207 /* SPCATableRowGroupView.h */,
+				5F5B17981A057AB100809207 /* SPCATableRowView.h */,
+				5F5B17991A057AB100809207 /* SPColumnsSliceView.h */,
+				5F5B179A1A057AB100809207 /* SPColumnsSliceViewController.h */,
+				5F5B179B1A057AB100809207 /* SPConversion.h */,
+				5F5B179C1A057AB100809207 /* SPConversionPreviewController.h */,
+				5F5B179D1A057AB100809207 /* SPConversionResult.h */,
+				5F5B179E1A057AB100809207 /* SPCurrencyConversionResult.h */,
+				5F5B179F1A057AB100809207 /* SPDarkenView.h */,
+				5F5B17A01A057AB100809207 /* SPDarkView.h */,
+				5F5B17A11A057AB100809207 /* SPDefaults.h */,
+				5F5B17A21A057AB100809207 /* SPDemo.h */,
+				5F5B17A31A057AB100809207 /* SPDescriptionSliceView.h */,
+				5F5B17A41A057AB100809207 /* SPDescriptionSliceViewController.h */,
+				5F5B17A51A057AB100809207 /* SPDictionaryQuery.h */,
+				5F5B17A61A057AB100809207 /* SPDictionaryResult.h */,
+				5F5B17A71A057AB100809207 /* SPDummyPreviewController.h */,
+				5F5B17A81A057AB100809207 /* SPEncyclopediaPreviewController.h */,
+				5F5B17A91A057AB100809207 /* SPFakeResult.h */,
+				5F5B17AA1A057AB100809207 /* SPFolderPreviewController.h */,
+				5F5B17AB1A057AB100809207 /* SPFolderQuery.h */,
+				5F5B17AC1A057AB100809207 /* SPFTEController.h */,
+				5F5B17AD1A057AB100809207 /* SPFusedResult.h */,
+				5F5B17AE1A057AB100809207 /* SPGridlinedTableRowView.h */,
+				5F5B17AF1A057AB100809207 /* SPGroupHeadingResult.h */,
+				5F5B17B01A057AB100809207 /* SPGroupTableCellView.h */,
+				5F5B17B11A057AB100809207 /* SPImageQuery.h */,
+				5F5B17B21A057AB100809207 /* SPImageResult.h */,
+				5F5B17B31A057AB100809207 /* SPImageView.h */,
+				5F5B17B41A057AB100809207 /* SPIndexingProgressResult.h */,
+				5F5B17B51A057AB100809207 /* SPIndexingProgressTableCellView.h */,
+				5F5B17B61A057AB100809207 /* SPLevelIndicatorView.h */,
+				5F5B17B71A057AB100809207 /* SPLineView.h */,
+				5F5B17B81A057AB100809207 /* SPLinkButton.h */,
+				5F5B17B91A057AB100809207 /* SPLinkTableSliceView.h */,
+				5F5B17BA1A057AB100809207 /* SPLinkTableSliceViewController.h */,
+				5F5B17BB1A057AB100809207 /* SPListenerDelegate.h */,
+				5F5B17BC1A057AB100809207 /* SPLocationPreviewController.h */,
+				5F5B17BD1A057AB100809207 /* SPLogisticWithNaiveBayesEngine.h */,
+				5F5B17BE1A057AB100809207 /* SPMainViewController-Protocol.h */,
+				5F5B17BF1A057AB100809207 /* SPMainViewController.h */,
+				5F5B17C01A057AB100809207 /* SPMapQuery.h */,
+				5F5B17C11A057AB100809207 /* SPMapResult.h */,
+				5F5B17C21A057AB100809207 /* SPMetadataGroupHeadingResult.h */,
+				5F5B17C31A057AB100809207 /* SPMetadataPattern.h */,
+				5F5B17C41A057AB100809207 /* SPMetadataQuery.h */,
+				5F5B17C51A057AB100809207 /* SPMetadataResult.h */,
+				5F5B17C61A057AB100809207 /* SPMLManager.h */,
+				5F5B17C71A057AB100809207 /* SPMoviesSliceView.h */,
+				5F5B17C81A057AB100809207 /* SPMoviesSliceViewController.h */,
+				5F5B17C91A057AB100809207 /* SpotlightLearningProtocol-Protocol.h */,
+				5F5B17CA1A057AB100809207 /* SpotlightNetHelperProtocol-Protocol.h */,
+				5F5B17CB1A057AB100809207 /* SPParsecGroupHeadingResult.h */,
+				5F5B17CC1A057AB100809207 /* SPParsecMapsResult.h */,
+				5F5B17CD1A057AB100809207 /* SPParsecPattern.h */,
+				5F5B17CE1A057AB100809207 /* SPParsecQuery.h */,
+				5F5B17CF1A057AB100809207 /* SPParsecResult.h */,
+				5F5B17D01A057AB100809207 /* SPParsecSimpleResult.h */,
+				5F5B17D11A057AB100809207 /* SPParsecWebQuery.h */,
+				5F5B17D21A057AB100809207 /* SPPattern.h */,
+				5F5B17D31A057AB100809207 /* SPPreviewController.h */,
+				5F5B17D41A057AB100809207 /* SPPreviewHostingView.h */,
+				5F5B17D51A057AB100809207 /* SPPreviewResultController.h */,
+				5F5B17D61A057AB100809207 /* SPPriorityQueue.h */,
+				5F5B17D71A057AB100809207 /* SPQLThumbnailPreviewController.h */,
+				5F5B17D81A057AB100809207 /* SPQuery.h */,
+				5F5B17D91A057AB100809207 /* SPResponse.h */,
+				5F5B17DA1A057AB100809207 /* SPResult.h */,
+				5F5B17DB1A057AB100809207 /* SPResultsView.h */,
+				5F5B17DC1A057AB100809207 /* SPResultTableCellView.h */,
+				5F5B17DD1A057AB100809207 /* SPResultTableViewController.h */,
+				5F5B17DE1A057AB100809207 /* SPResultViewController.h */,
+				5F5B17DF1A057AB100809207 /* SPResultViewControllerDelegate-Protocol.h */,
+				5F5B17E01A057AB100809207 /* SPResultWithoutSubitemsHelper.h */,
+				5F5B17E11A057AB100809207 /* SPResultWithSubitemsHelper.h */,
+				5F5B17E21A057AB100809207 /* SPResultWithSubItemsPreviewControllerViewController.h */,
+				5F5B17E31A057AB100809207 /* SPRichTitleSliceView.h */,
+				5F5B17E41A057AB100809207 /* SPRichTitleSliceViewController.h */,
+				5F5B17E51A057AB100809207 /* SPRowSliceView.h */,
+				5F5B17E61A057AB100809207 /* SPRowSliceViewController.h */,
+				5F5B17E71A057AB100809207 /* SPSearchField.h */,
+				5F5B17E81A057AB100809207 /* SPSearchFieldCell.h */,
+				5F5B17E91A057AB100809207 /* SPSearchFieldEditor.h */,
+				5F5B17EA1A057AB100809207 /* SPSearchPanel.h */,
+				5F5B17EB1A057AB100809207 /* SPSearchPanelContentView.h */,
+				5F5B17EC1A057AB100809207 /* SPShortcutPattern.h */,
+				5F5B17ED1A057AB100809207 /* SPShortcuts.h */,
+				5F5B17EE1A057AB100809207 /* SPShowAllInFinderResult.h */,
+				5F5B17EF1A057AB100809207 /* SPSidewaysMainViewController.h */,
+				5F5B17F01A057AB100809207 /* SPSlice.h */,
+				5F5B17F11A057AB100809207 /* SPSliceViewController.h */,
+				5F5B17F21A057AB100809207 /* SPSpacerSliceView.h */,
+				5F5B17F31A057AB100809207 /* SPSpacerSliceViewController.h */,
+				5F5B17F41A057AB100809207 /* SPSpotQuery.h */,
+				5F5B17F51A057AB100809207 /* SPStatistics.h */,
+				5F5B17F61A057AB100809207 /* SPStatusItemView.h */,
+				5F5B17F71A057AB100809207 /* SPSubItemPreviewImageView.h */,
+				5F5B17F81A057AB100809207 /* SPSubItemPreviewTableCellView.h */,
+				5F5B17F91A057AB100809207 /* SPTableRowView.h */,
+				5F5B17FA1A057AB100809207 /* SPTableView.h */,
+				5F5B17FB1A057AB100809207 /* SPTextContainer.h */,
+				5F5B17FC1A057AB100809207 /* SPTextFieldSliceView.h */,
+				5F5B17FD1A057AB100809207 /* SPTextFieldSliceViewController.h */,
+				5F5B17FE1A057AB100809207 /* SPTextView.h */,
+				5F5B17FF1A057AB100809207 /* SPThreeMoviesSliceView.h */,
+				5F5B18001A057AB100809207 /* SPTitleSliceView.h */,
+				5F5B18011A057AB100809207 /* SPTitleSliceViewController.h */,
+				5F5B18021A057AB100809207 /* SPTrackSliceView.h */,
+				5F5B18031A057AB100809207 /* SPTrackSliceViewController.h */,
+				5F5B18041A057AB100809207 /* SPTrailersSliceView.h */,
+				5F5B18051A057AB100809207 /* SPTrailersSliceViewController.h */,
+				5F5B18061A057AB100809207 /* SPTwitterUserSliceView.h */,
+				5F5B18071A057AB100809207 /* SPTwitterUserSliceViewController.h */,
+				5F5B18081A057AB100809207 /* SPTwoColumnsSliceView.h */,
+				5F5B18091A057AB100809207 /* SPUnitConversionResult.h */,
+				5F5B180A1A057AB100809207 /* SPWebPreviewCache.h */,
+				5F5B180B1A057AB100809207 /* SPWebPreviewCacheItem.h */,
+				5F5B180C1A057AB100809207 /* SPWebResult.h */,
+				5F5B180D1A057AB100809207 /* SPWebSliceController.h */,
+				5F5B180E1A057AB100809207 /* SPWebViewController.h */,
+			);
+			path = SpotlightHeaders;
+			sourceTree = "<group>";
+		};
+		5F5B18371A05A1AC00809207 /* MAObjcRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B18251A05A1A000809207 /* MARTNSObject.h */,
+				5F5B18261A05A1A000809207 /* MARTNSObject.m */,
+				5F5B18271A05A1A000809207 /* RTIvar.h */,
+				5F5B18281A05A1A000809207 /* RTIvar.m */,
+				5F5B18291A05A1A000809207 /* RTMethod.h */,
+				5F5B182A1A05A1A000809207 /* RTMethod.m */,
+				5F5B182B1A05A1A000809207 /* RTProperty.h */,
+				5F5B182C1A05A1A000809207 /* RTProperty.m */,
+				5F5B182D1A05A1A000809207 /* RTProtocol.h */,
+				5F5B182E1A05A1A000809207 /* RTProtocol.m */,
+				5F5B182F1A05A1A000809207 /* RTUnregisteredClass.h */,
+				5F5B18301A05A1A000809207 /* RTUnregisteredClass.m */,
+			);
+			name = MAObjcRuntime;
+			sourceTree = "<group>";
+		};
+		5F5B18381A05A1B800809207 /* RSSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B18171A05821700809207 /* RSSwizzle.h */,
+				5F5B18181A05821700809207 /* RSSwizzle.m */,
+			);
+			name = RSSwizzle;
+			sourceTree = "<group>";
+		};
+		5F5B18391A05A1BD00809207 /* CTObjectiveCRuntimeAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				5F5B181A1A058CDA00809207 /* CTBlockDescription.h */,
+				5F5B181B1A058CDA00809207 /* CTBlockDescription.m */,
+				5F5B181C1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.h */,
+				5F5B181D1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m */,
+			);
+			name = CTObjectiveCRuntimeAdditions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F5B17401A05757400809207 /* SpotlightSIMBL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F5B17481A05757500809207 /* Build configuration list for PBXNativeTarget "SpotlightSIMBL" */;
+			buildPhases = (
+				5F5B173D1A05757400809207 /* Sources */,
+				5F5B173E1A05757400809207 /* Frameworks */,
+				5F5B173F1A05757400809207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotlightSIMBL;
+			productName = SpotlightSIMBL;
+			productReference = 5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F5B17391A05757400809207 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Nate Parrott";
+				TargetAttributes = {
+					5F5B17401A05757400809207 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 5F5B173C1A05757400809207 /* Build configuration list for PBXProject "SpotlightSIMBL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5F5B17381A05757400809207;
+			productRefGroup = 5F5B17421A05757500809207 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F5B17401A05757400809207 /* SpotlightSIMBL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F5B173F1A05757400809207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F5B173D1A05757400809207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F5B18341A05A1A000809207 /* RTProperty.m in Sources */,
+				5F5B183C1A06C6EE00809207 /* NSObject+LogProperties.m in Sources */,
+				5F5B18351A05A1A000809207 /* RTProtocol.m in Sources */,
+				5F5B18221A059DB100809207 /* SPOpenAPIQuery.m in Sources */,
+				5F5B18361A05A1A000809207 /* RTUnregisteredClass.m in Sources */,
+				5F5B174D1A05758800809207 /* _Flashlight_Bootstrap.m in Sources */,
+				5F5B18321A05A1A000809207 /* RTIvar.m in Sources */,
+				5F5B181F1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m in Sources */,
+				5F5B18331A05A1A000809207 /* RTMethod.m in Sources */,
+				5F5B18311A05A1A000809207 /* MARTNSObject.m in Sources */,
+				5F5B18411A06EDB600809207 /* MethodOverride.m in Sources */,
+				5F5B181E1A058CDA00809207 /* CTBlockDescription.m in Sources */,
+				5F5B18191A05821700809207 /* RSSwizzle.m in Sources */,
+				5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5F5B17461A05757500809207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5F5B17471A05757500809207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		5F5B17491A05757500809207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = SpotlightSIMBL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		5F5B174A1A05757500809207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = SpotlightSIMBL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SYMROOT = "$(PROJECT_DIR)/build";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F5B173C1A05757400809207 /* Build configuration list for PBXProject "SpotlightSIMBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5B17461A05757500809207 /* Debug */,
+				5F5B17471A05757500809207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F5B17481A05757500809207 /* Build configuration list for PBXNativeTarget "SpotlightSIMBL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F5B17491A05757500809207 /* Debug */,
+				5F5B174A1A05757500809207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F5B17391A05757400809207 /* Project object */;
+}
