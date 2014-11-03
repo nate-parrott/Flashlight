@@ -9,10 +9,10 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>bundle</string>
+				<string>flashlightplugin</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>SIMBL Plugin</string>
+			<string>Flashlight Spotlight Plugin</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>

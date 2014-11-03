@@ -72,7 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		276144C1105F51CA00F906F6 /* SIMBL Agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SIMBL Agent.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276144C1105F51CA00F906F6 /* FlashlightSIMBLAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashlightSIMBLAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276144CE105F523C00F906F6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		276144D0105F523C00F906F6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		276144D8105F523C00F906F6 /* SIMBLAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBLAgent.h; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				276144C1105F51CA00F906F6 /* SIMBL Agent.app */,
+				276144C1105F51CA00F906F6 /* FlashlightSIMBLAgent.app */,
 				8D5B49B6048680CD000E48DA /* Flashlight.osax */,
 			);
 			name = Products;
@@ -215,7 +215,7 @@
 			);
 			name = FlashlightSIMBLAgent;
 			productName = "SIMBL Agent";
-			productReference = 276144C1105F51CA00F906F6 /* SIMBL Agent.app */;
+			productReference = 276144C1105F51CA00F906F6 /* FlashlightSIMBLAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8D5B49AC048680CD000E48DA /* SIMBL */ = {
@@ -244,6 +244,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					276144C0105F51CA00F906F6 = {
+						DevelopmentTeam = V626J4XE97;
+					};
+				};
 			};
 			buildConfigurationList = E0E8F445085F4D0400DCD56F /* Build configuration list for PBXProject "SIMBL" */;
 			compatibilityVersion = "Xcode 3.2";
