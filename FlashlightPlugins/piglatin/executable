@@ -43,7 +43,7 @@ def print_translation(text):
 
 if __name__=='__main__':
 	text = sys.argv[1]
-	for prefix in ['piglatin', 'pig latin']:
+	for prefix in ['piglatin ', 'pig latin ']:
 		if text.lower().startswith(prefix):
 			print_translation(text[len(prefix):])
 			break

@@ -1,0 +1,12 @@
+#!/usr/bin/python
+import sys, json
+
+if __name__=='__main__':
+	text = sys.argv[1]
+	for prefix in ['say ', 'speak ']:
+		if text.lower().startswith(prefix):
+			text = text[len(prefix):]
+			print json.dumps({
+				"title": u'Speak "{0}"'.format(text),
+				"execute": u'say "{0}"'.format(text)
+			})
