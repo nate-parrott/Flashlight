@@ -11,6 +11,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic) NSString *loginItemBundleIdentifier;
+@property (nonatomic) NSString *loginItemPath;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSButton *useSIMBL;

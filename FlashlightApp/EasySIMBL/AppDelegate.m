@@ -42,6 +42,7 @@
         SIMBLLogNotice(@"no loginItems found at %@", loginItemsPath);
     } else {
         loginItemBundlePath = [loginItemsPath stringByAppendingPathComponent:[loginItems objectAtIndex:0]];
+        self.loginItemPath = loginItemBundlePath;
         loginItemBundle = [NSBundle bundleWithPath:loginItemBundlePath];
         loginItemBundleVersion = [loginItemBundle _dt_bundleVersion];
         self.loginItemBundleIdentifier = [loginItemBundle bundleIdentifier];
@@ -110,8 +111,14 @@
 - (IBAction)toggleUseSIMBL:(id)sender {
     NSInteger result = self.useSIMBL.state;
     
-    CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-    if (!SMLoginItemSetEnabled(bundleIdentifeierRef, self.useSIMBL.state == NSOnState)) {
+    NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
+    OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
+    if (status != noErr) {
+        NSLog(@"Failed to LSRegisterURL '%@': %jd", loginItemURL, (intmax_t)status);
+    }
+    
+    CFStringRef bundleIdentifierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
+    if (!SMLoginItemSetEnabled(bundleIdentifierRef, self.useSIMBL.state == NSOnState)) {
         self.useSIMBL.state = self.useSIMBL.state == NSOnState ? NSOffState : NSOnState;
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }

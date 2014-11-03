@@ -77,6 +77,8 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
         }
         [[NSProcessInfo processInfo]enableSuddenTermination];
     }
+    
+    [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
 }
 
 #pragma mark SBApplicationDelegate Protocol
