@@ -13,6 +13,8 @@ Clone and build using Xcode, or [download Flashlight.app from _releases_](https:
 
 **API**
 
+The best way to get started writing a plugin is to copy an existing one and modify it. Try installing a simple plugin like 'say' or 'Pig latin,' and find it in `[your-user-directory]/Library/FlashlightPlugins`. Right click and 'show bundle contents,' then open the `executable` in a text editor. Plugins don't need to be reloaded.
+
 Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They have a simple directory structure:
 
 ```
