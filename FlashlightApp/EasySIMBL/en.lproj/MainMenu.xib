@@ -674,7 +674,7 @@
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="65" rowSizeStyle="automatic" viewBased="YES" id="2Bw-eW-td2">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="65" rowSizeStyle="automatic" viewBased="YES" id="2Bw-eW-td2">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -793,7 +793,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4I6-zG-9ut">
-                                <rect key="frame" x="33" y="30" width="238" height="17"/>
+                                <rect key="frame" x="33" y="29.999999779112191" width="238" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
@@ -873,6 +873,6 @@ Gw
                 <outlet property="failedToLoadDirectoryBanner" destination="eIK-Jf-OGb" id="BJ2-yH-ZoO"/>
             </connections>
         </customObject>
-        <arrayController id="714"/>
+        <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
     </objects>
 </document>

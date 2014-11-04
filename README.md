@@ -1,37 +1,44 @@
 Flashlight
 ==========
 
+_The missing Spotlight plugin system_
+
+![Image of a Spotlight window showing 'ellohay orldway' as the Pig Latin translation of 'hello world'](https://raw.github.com/nate-parrott/flashlight/master/PigLatinExampleImage.png) ![Image of a a UI for selecting Spotlight plugins](https://raw.github.com/nate-parrott/flashlight/master/UIExampleImage.png)
+
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
 
 **Installation**
 
-Flashlight depends on [EasySIMBL](https://github.com/norio-nomura/EasySIMBL), a runtime code-injection framework. (like MobileSubstrate, but for OS X). 
-
-When you build and run the Xcode project, it generates a bundle called `SpotlightSIMBL.bundle`, automatically copies it to `~/Library/Application Support/SIMBL/Plugins`, then restarts Spotlight.
+Clone and build using Xcode, or [download Flashlight.app from _releases_](https://github.com/nate-parrott/Flashlight/releases).
 
 **API**
 
-After installation, Flashlight reads plugins from `~/Library/FlashlightPlugins`. Each plugin must be a directory containing an executable named `executable`.
+Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They have a simple directory structure:
 
-Every time you type a character into Spotlight, each plugin's executable will be invoked with your query as the first argument (`argv[1]`). If the plugin decides to respond to the query, it should print a json document to `stdout` in this format:
+```
+- MyPlugin.bundle
+  - executable 
+  		(probably a script in your favorite language, starting with #!/usr/bin/python|ruby|php|bash)
+  - Info.plist
+     (create these with Xcode. Must contain 'CFBundleDisplayName' and 'Description' keys)
+```
+
+When you enter text into Spotlight, Flashlight will invoke all the `*.bundle/executable` files. (in order for the system to know what interpreter to use, you've got to include the [shebang line](http://en.wikipedia.org/wiki/Shebang_(Unix)).)
+
+Flashlight will pass the Spotlight query as the first argument (`argv[1]`).
+
+If you want to show a search result, just print a JSON structure to stdout:
 
 ```
 {
-	"title": "'Hello world' in Pig Latin",
-	"html": "<h1>ellohay, orldway</h1>",
-	"execute": "(shell string to execute when enter is pressed)"
+	"title": "Search result title",
+	"html": "<h1>HTML to show inline <em>inside Spotlight</em></h1>",
+	"execute": "bash shell script to run if the user hits enter"
 }
 ```
 
-(if the plugin doesn't want to provide a response, just don't print anything.)
+For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
 
-This HTML will then be presented to the user:
-
-![Image of a Spotlight window showing 'ellohay orldway' as the Pig Latin translation of 'hello world'](https://raw.github.com/nate-parrott/flashlight/master/PigLatinExampleImage.png)
-
-(this HTML will be loaded with the plugin's directory as its base URL, so you can reference images, javascript and CSS from it.)
-
-This is currently all the API does. More capabilities, like more customization of the search result, are on my to-do list.
 
 **How it works**
 
