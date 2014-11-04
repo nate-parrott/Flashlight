@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'zipzap' target in the 'zipzap' project
+//
+
+#include <zlib.h>
+
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
+#include <CoreGraphics/CoreGraphics.h>
+#elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+#include <ApplicationServices/ApplicationServices.h>
+#endif
+
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
+

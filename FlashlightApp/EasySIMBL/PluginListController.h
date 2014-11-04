@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class PluginModel;
+
 @interface PluginListController : NSObject
 
 @property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
-@property (nonatomic,weak) IBOutlet NSTableView *tableView;
 
 - (IBAction)reloadPluginsFromWeb:(id)sender;
+
+- (void)installPlugin:(PluginModel *)plugin;
+- (void)uninstallPlugin:(PluginModel *)plugin;
+
+@property (nonatomic,weak) IBOutlet NSView *failedToLoadDirectoryBanner;
 
 @end

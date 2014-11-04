@@ -28,6 +28,8 @@
 {
     self.SIMBLOn = NO;
     
+    [self checkSpotlightVersion];
+    
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
     NSString *loginItemBundleVersion = nil;
@@ -122,12 +124,35 @@
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }
     self.SIMBLOn = result;
+    
+    if (!result) {
+        // restart spotlight after 1 sec to remove injected code:
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
+        });
+    }
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn {
     _SIMBLOn = SIMBLOn;
     self.useSIMBLSwitch.on = SIMBLOn;
     self.tableView.enabled = SIMBLOn;
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
+}
+
+#pragma mark Version checking
+- (void)checkSpotlightVersion {
+    NSString *spotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
+    NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
+    if (![spotlightVersion isEqualToString:@"911"]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Flashlight doesn't work with your version of Spotlight." defaultButton:@"Okay" alternateButton:@"Check for updates" otherButton:nil informativeTextWithFormat:@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them."];
+            alert.alertStyle = NSCriticalAlertStyle;
+            NSModalResponse resp = [alert runModal];
+            if (resp == NSAlertAlternateReturn) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/nate-parrott/flashlight"]];
+            }
+        });
+    }
 }
 
 @end

@@ -705,7 +705,7 @@
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                 <connections>
-                                                                    <binding destination="FQb-yf-BXy" name="value" keyPath="objectValue.name" id="PDX-2A-akW"/>
+                                                                    <binding destination="FQb-yf-BXy" name="value" keyPath="objectValue.displayName" id="gNH-g4-vwE"/>
                                                                 </connections>
                                                             </textFieldCell>
                                                         </textField>
@@ -724,6 +724,9 @@
                                                         <customView id="GuL-dQ-r0u" customClass="ITSwitch">
                                                             <rect key="frame" x="238" y="17" width="56" height="33"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <connections>
+                                                                <action selector="toggleInstalled:" target="FQb-yf-BXy" id="chV-NU-b19"/>
+                                                            </connections>
                                                         </customView>
                                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Agl-8K-jT3">
                                                             <rect key="frame" x="214" y="24.5" width="16" height="16"/>
@@ -744,6 +747,9 @@
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="delegate" destination="715" id="ZV9-wI-bOo"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -773,6 +779,41 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <customView hidden="YES" id="eIK-Jf-OGb" userLabel="Error banner">
+                        <rect key="frame" x="0.0" y="73" width="300" height="53"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" id="iPu-Kd-ZWI">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="ARr-OJ-3Gj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.98431372549999996" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4I6-zG-9ut">
+                                <rect key="frame" x="33" y="30" width="238" height="17"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" id="9nN-QT-MfC">
+                                <rect key="frame" x="103" y="0.0" width="94" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="Try again" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R1V-Ae-nee">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="reloadPluginsFromWeb:" target="715" id="zox-q8-pZe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </customView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="237" y="227"/>
@@ -829,6 +870,7 @@ Gw
         <customObject id="715" customClass="PluginListController">
             <connections>
                 <outlet property="arrayController" destination="714" id="716"/>
+                <outlet property="failedToLoadDirectoryBanner" destination="eIK-Jf-OGb" id="BJ2-yH-ZoO"/>
             </connections>
         </customObject>
         <arrayController id="714"/>

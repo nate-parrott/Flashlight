@@ -8,9 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ITSwitch.h"
+@class PluginListController;
 
 @interface PluginCellView : NSTableCellView
 
 @property (nonatomic,weak) IBOutlet ITSwitch *switchControl;
+@property (nonatomic,weak) IBOutlet PluginListController *listController;
 
 @end
