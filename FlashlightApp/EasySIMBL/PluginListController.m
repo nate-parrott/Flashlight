@@ -20,7 +20,7 @@
 @property (nonatomic) dispatch_source_t dispatchSource;
 @property (nonatomic) int fileDesc;
 
-@property (nonatomic) BOOL needsReloadFromDisk;
+@property (nonatomic) BOOL waitingToReloadFromDisk;
 
 @end
 
@@ -33,8 +33,7 @@
     self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"installed" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
     
     [self startWatchingPluginsDir];
-    self.needsReloadFromDisk = YES;
-    [self reloadFromDiskIfNeeded];
+    [self reloadFromDisk];
     [self reloadPluginsFromWeb:nil];
 }
 - (void)dealloc {
@@ -102,6 +101,10 @@
 
 #pragma mark Local plugin files
 - (void)startWatchingPluginsDir {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[self localPluginsPath]]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:[self localPluginsPath] withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
     self.fileDesc = open([[self localPluginsPath] fileSystemRepresentation], O_EVTONLY);
     
     // watch the file descriptor for writes
@@ -111,10 +114,11 @@
     __weak PluginListController *weakSelf = self;
     dispatch_source_set_event_handler(self.dispatchSource, ^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ // work around some bug when reloading after install
-            if (!weakSelf.needsReloadFromDisk) {
-                weakSelf.needsReloadFromDisk = YES;
+            if (!weakSelf.waitingToReloadFromDisk) {
+                weakSelf.waitingToReloadFromDisk = YES;
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf reloadFromDiskIfNeeded];
+                    self.waitingToReloadFromDisk = NO;
+                    [weakSelf reloadFromDisk];
                 });
             }
         });
@@ -133,8 +137,7 @@
     dispatch_cancel(self.dispatchSource);
 }
 
-- (void)reloadFromDiskIfNeeded {
-    self.needsReloadFromDisk = NO;
+- (void)reloadFromDisk {
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self localPluginsPath] error:nil];
     NSMutableArray *models = [NSMutableArray new];
     for (NSString *itemName in contents) {
