@@ -3,7 +3,7 @@ Flashlight
 
 _The missing Spotlight plugin system_
 
-<img src='https://raw.github.com/nate-parrott/flashlight/master/WeatherExampleImage.png' width=200/> <img src='https://raw.github.com/nate-parrott/flashlight/master/UIExampleImage.png' width=100 />
+<img src='https://raw.github.com/nate-parrott/flashlight/master/WeatherExampleImage.png' width=400/> <img src='https://raw.github.com/nate-parrott/flashlight/master/UIExampleImage.png' width=200 />
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
 
