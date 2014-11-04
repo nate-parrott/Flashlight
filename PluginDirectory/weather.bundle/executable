@@ -1,0 +1,19 @@
+#!/usr/bin/python
+
+import sys, json, urllib
+
+def print_weather_json(location):
+	html = open("weather.html").read().replace("<!--LOCATION-->", location)
+	j = json.dumps({
+		"title": '"{0}" weather'.format(location),
+		"html": html,
+		"execute": 'open "http://openweathermap.org/find?q={0}"'.format(urllib.quote(location))
+	})
+	print j
+
+if __name__=='__main__':
+	text = sys.argv[1]
+	for prefix in ['weather ', 'forecast ']:
+		if text.lower().startswith(prefix):
+			print_weather_json(text[len(prefix):])
+			break

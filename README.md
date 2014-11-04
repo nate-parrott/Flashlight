@@ -3,7 +3,7 @@ Flashlight
 
 _The missing Spotlight plugin system_
 
-![Image of a Spotlight window showing 'ellohay orldway' as the Pig Latin translation of 'hello world'](https://raw.github.com/nate-parrott/flashlight/master/PigLatinExampleImage.png) ![Image of a a UI for selecting Spotlight plugins](https://raw.github.com/nate-parrott/flashlight/master/UIExampleImage.png)
+<img src='https://raw.github.com/nate-parrott/flashlight/master/WeatherExampleImage.png' width=200/> <img src='https://raw.github.com/nate-parrott/flashlight/master/UIExampleImage.png' width=100 />
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
 
@@ -38,6 +38,8 @@ If you want to show a search result, just print a JSON structure to stdout:
 ```
 
 For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
+
+**Please note that currently, no results are returned from Flashlight plugins until _all_ plugins finish.** If you need to do slow things like network requests or serious computation, please do this in Javascript inside your html. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.
 
 
 **How it works**
