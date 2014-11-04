@@ -45,6 +45,11 @@
     ((PluginCellView *)[rowView viewAtColumn:0]).listController = self;
 }
 
+- (NSIndexSet *)tableView:(NSTableView *)tableView
+selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
+    return nil;
+}
+
 #pragma mark Data
 - (IBAction)reloadPluginsFromWeb:(id)sender {
     [self.failedToLoadDirectoryBanner setHidden:YES];
