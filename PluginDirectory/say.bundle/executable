@@ -7,6 +7,6 @@ if __name__=='__main__':
 		if text.lower().startswith(prefix):
 			text = text[len(prefix):]
 			print json.dumps({
-				"title": u'Speak "{0}"'.format(text),
+				"title": u'Speak "{0}" (press enter)'.format(text),
 				"execute": u'say "{0}"'.format(text)
 			})

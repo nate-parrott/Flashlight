@@ -36,7 +36,7 @@ void __SS_markPathExecutable(NSString *path) {
     
     /* Make the file user-executable. */
     mode_t mode = buf.st_mode;
-    if (!(mode | S_IXUSR)) {
+    if (!(mode & S_IXUSR)) {
         mode |= S_IXUSR;
         error = chmod([path fileSystemRepresentation], mode);
     }

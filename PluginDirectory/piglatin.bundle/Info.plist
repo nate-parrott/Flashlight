@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Pig latin &lt;anything&gt;</string>
+	<string>Pig latin &lt;message&gt;</string>
 	<key>Description</key>
-	<string>Translates the given text into Pig Latin.</string>
+	<string>Translates your message into Pig Latin.</string>
 </dict>
 </plist>

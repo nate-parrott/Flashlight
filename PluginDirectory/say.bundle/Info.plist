@@ -3,8 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Say &lt;anything&gt;</string>
+	<string>Say &lt;message&gt;</string>
 	<key>Description</key>
-	<string>Reads the given text out loud.</string>
+	<string>Speaks your message out-loud.</string>
 </dict>
 </plist>
