@@ -5,6 +5,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import "ITSwitch.h"
 
 @class ESPluginListManager;
 
@@ -14,8 +15,10 @@
 @property (nonatomic) NSString *loginItemPath;
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSButton *useSIMBL;
-@property (weak) IBOutlet ESPluginListManager *pluginListManager;
+@property (nonatomic) IBOutlet ITSwitch *useSIMBLSwitch;
+@property (nonatomic) IBOutlet NSTableView *tableView;
 - (IBAction)toggleUseSIMBL:(id)sender;
+
+@property (nonatomic) BOOL SIMBLOn;
 
 @end

@@ -7,15 +7,12 @@
 #import <ServiceManagement/SMLoginItem.h>
 #import "AppDelegate.h"
 #import "SIMBL.h"
-#import "ESPluginListManager.h"
 
 @implementation AppDelegate
 
 @synthesize loginItemBundleIdentifier=_loginItemBundleIdentifier;
 
 @synthesize window = _window;
-@synthesize useSIMBL = _useSIMBL;
-@synthesize pluginListManager = _pluginListManager;
 
 #pragma mark User defaults
 
@@ -29,6 +26,8 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+    self.SIMBLOn = NO;
+    
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
     NSString *loginItemBundleVersion = nil;
@@ -64,7 +63,7 @@
                 SIMBLLogInfo(@"Already 'SIMBL Agent' is running, but version is different.");
                 
                 CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-                [self.useSIMBL setEnabled:NO];
+                [self.useSIMBLSwitch setEnabled:NO];
                 state = NSOffState;
                 NSRunningApplication *runningApplication = [runningApplications objectAtIndex:0];
                 [runningApplication addObserver:self
@@ -78,9 +77,9 @@
         } else {
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
         }
-        self.useSIMBL.state = state;
+        self.SIMBLOn = state == NSOnState ? YES : NO;
     } else {
-        [self.useSIMBL setEnabled:NO];
+        [self.useSIMBLSwitch setEnabled:NO];
     }
 }
 
@@ -91,7 +90,7 @@
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-    [self.pluginListManager installPlugins:filenames];
+    // TODO: install the plugin
     [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
 }
 
@@ -101,7 +100,7 @@
 {
     if ([keyPath isEqualToString:@"isTerminated"]) {
         [object removeObserver:self forKeyPath:keyPath];
-        [self.useSIMBL setEnabled:YES];
+        [self.useSIMBLSwitch setEnabled:YES];
         CFRelease((CFTypeRef)context);
     }
 }
@@ -109,7 +108,7 @@
 #pragma mark IBAction
 
 - (IBAction)toggleUseSIMBL:(id)sender {
-    NSInteger result = self.useSIMBL.state;
+    BOOL result = !self.SIMBLOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
     OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
@@ -118,10 +117,17 @@
     }
     
     CFStringRef bundleIdentifierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-    if (!SMLoginItemSetEnabled(bundleIdentifierRef, self.useSIMBL.state == NSOnState)) {
-        self.useSIMBL.state = self.useSIMBL.state == NSOnState ? NSOffState : NSOnState;
+    if (!SMLoginItemSetEnabled(bundleIdentifierRef, result)) {
+        result = !result;
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }
-    self.useSIMBL.state = result;
+    self.SIMBLOn = result;
 }
+- (void)setSIMBLOn:(BOOL)SIMBLOn {
+    _SIMBLOn = SIMBLOn;
+    self.useSIMBLSwitch.on = SIMBLOn;
+    self.tableView.enabled = SIMBLOn;
+    [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
+}
+
 @end

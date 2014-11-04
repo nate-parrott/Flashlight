@@ -15,7 +15,8 @@
 #import "SPDictionaryResult.h"
 #import "SPOpenAPIResult.h"
 #import "MethodOverride.h"
-
+#include <sys/types.h>
+#include <sys/stat.h>
 
 // define initWithDisplayName: as selector so that we can use it in @selector()
 @interface DummyInterface : NSObject
@@ -26,6 +27,20 @@
     return nil;
 }
 @end
+
+void __SS_markPathExecutable(NSString *path) {
+    // make launch path executable:
+    struct stat buf;
+    int error = stat([path fileSystemRepresentation], &buf);
+    /* check and handle error */
+    
+    /* Make the file user-executable. */
+    mode_t mode = buf.st_mode;
+    if (!(mode | S_IXUSR)) {
+        mode |= S_IXUSR;
+        error = chmod([path fileSystemRepresentation], mode);
+    }
+}
 
 
 @class SPResponse, SPResult;
@@ -61,6 +76,8 @@ void __SS_Start(SPQuery* self, SEL cmd) {
             @try {
                 task = [NSTask new];
                 task.launchPath = [pluginDir stringByAppendingPathComponent:@"executable"];
+                __SS_markPathExecutable(task.launchPath);
+                
                 task.currentDirectoryPath = pluginDir;
                 task.arguments = @[query];
                 NSPipe *pipe = [NSPipe pipe];

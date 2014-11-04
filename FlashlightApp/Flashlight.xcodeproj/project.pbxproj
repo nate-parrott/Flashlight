@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C3A4C44159EADF900985CCD /* SIMBL Agent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* SIMBL Agent.app */; };
-		6C4AAA6B15AEE600009B0BBA /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 6C4AAA6A15AEE600009B0BBA /* icon.iconset */; };
+		5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326B81A082FA900CE241E /* ITSwitch.m */; };
+		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
+		5F6326C01A08313E00CE241E /* PluginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BF1A08313E00CE241E /* PluginModel.m */; };
+		5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6326C11A083A1300CE241E /* QuartzCore.framework */; };
+		5F6326C41A083E1F00CE241E /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F6326C31A083E1F00CE241E /* Icon.icns */; };
+		5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326C81A08538B00CE241E /* PluginCellView.m */; };
+		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
 		6C564491159E7C0800215467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C564490159E7C0800215467 /* main.m */; };
@@ -17,9 +22,6 @@
 		6C56449B159E7C0900215467 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C564499159E7C0900215467 /* MainMenu.xib */; };
 		6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5644B7159E7D3900215467 /* ServiceManagement.framework */; };
 		6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */; };
-		AA7EB1DB15A45EC100D76CFC /* ESPluginListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EB1DA15A45EC100D76CFC /* ESPluginListManager.m */; };
-		AA7EB1E115A4617700D76CFC /* ESPluginListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EB1E015A4617700D76CFC /* ESPluginListTableView.m */; };
-		AA7EB1E415A4625500D76CFC /* ESPluginListCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7EB1E315A4625500D76CFC /* ESPluginListCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,15 +55,24 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				6C3A4C44159EADF900985CCD /* SIMBL Agent.app in CopyFiles */,
+				6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F6326B71A082FA900CE241E /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
+		5F6326B81A082FA900CE241E /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
+		5F6326BB1A0830F700CE241E /* PluginListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListController.h; sourceTree = "<group>"; };
+		5F6326BC1A0830F700CE241E /* PluginListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginListController.m; sourceTree = "<group>"; };
+		5F6326BE1A08313E00CE241E /* PluginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginModel.h; sourceTree = "<group>"; };
+		5F6326BF1A08313E00CE241E /* PluginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginModel.m; sourceTree = "<group>"; };
+		5F6326C11A083A1300CE241E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5F6326C31A083E1F00CE241E /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		5F6326C71A08538B00CE241E /* PluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCellView.h; sourceTree = "<group>"; };
+		5F6326C81A08538B00CE241E /* PluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCellView.m; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
-		6C4AAA6A15AEE600009B0BBA /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = icon.iconset; path = ../icon.iconset; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6C564487159E7C0800215467 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -79,12 +90,6 @@
 		6C6AF45E1842DE3700E2ACBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SIMBL.h; path = ../src/SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SIMBL.m; path = ../src/SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AA7EB1D915A45EC100D76CFC /* ESPluginListManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPluginListManager.h; sourceTree = "<group>"; };
-		AA7EB1DA15A45EC100D76CFC /* ESPluginListManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ESPluginListManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AA7EB1DF15A4617700D76CFC /* ESPluginListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPluginListTableView.h; sourceTree = "<group>"; };
-		AA7EB1E015A4617700D76CFC /* ESPluginListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPluginListTableView.m; sourceTree = "<group>"; };
-		AA7EB1E215A4625500D76CFC /* ESPluginListCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESPluginListCellView.h; sourceTree = "<group>"; };
-		AA7EB1E315A4625500D76CFC /* ESPluginListCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESPluginListCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */,
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
 				6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */,
 			);
@@ -100,11 +106,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F6326B61A082FA900CE241E /* ITSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				5F6326B71A082FA900CE241E /* ITSwitch.h */,
+				5F6326B81A082FA900CE241E /* ITSwitch.m */,
+			);
+			path = ITSwitch;
+			sourceTree = "<group>";
+		};
 		6C3A4C2C159E7E6F00985CCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C3A4C35159E7E7000985CCD /* SIMBL Agent.app */,
-				6C3A4C37159E7E7000985CCD /* EasySIMBL.osax */,
+				6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */,
+				6C3A4C37159E7E7000985CCD /* Flashlight.osax */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +146,7 @@
 		6C564483159E7C0800215467 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F6326C11A083A1300CE241E /* QuartzCore.framework */,
 				6C564484159E7C0800215467 /* Cocoa.framework */,
 				6C5644B7159E7D3900215467 /* ServiceManagement.framework */,
 				6C564486159E7C0800215467 /* Other Frameworks */,
@@ -151,19 +167,19 @@
 		6C56448A159E7C0800215467 /* EasySIMBL */ = {
 			isa = PBXGroup;
 			children = (
-				6C4AAA6A15AEE600009B0BBA /* icon.iconset */,
 				6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */,
 				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
+				5F6326BB1A0830F700CE241E /* PluginListController.h */,
+				5F6326BC1A0830F700CE241E /* PluginListController.m */,
+				5F6326BE1A08313E00CE241E /* PluginModel.h */,
+				5F6326BF1A08313E00CE241E /* PluginModel.m */,
+				5F6326C71A08538B00CE241E /* PluginCellView.h */,
+				5F6326C81A08538B00CE241E /* PluginCellView.m */,
 				6C564499159E7C0900215467 /* MainMenu.xib */,
+				5F6326B61A082FA900CE241E /* ITSwitch */,
 				6C56448B159E7C0800215467 /* Supporting Files */,
-				AA7EB1D915A45EC100D76CFC /* ESPluginListManager.h */,
-				AA7EB1DA15A45EC100D76CFC /* ESPluginListManager.m */,
-				AA7EB1DF15A4617700D76CFC /* ESPluginListTableView.h */,
-				AA7EB1E015A4617700D76CFC /* ESPluginListTableView.m */,
-				AA7EB1E215A4625500D76CFC /* ESPluginListCellView.h */,
-				AA7EB1E315A4625500D76CFC /* ESPluginListCellView.m */,
 			);
 			path = EasySIMBL;
 			sourceTree = "<group>";
@@ -171,6 +187,7 @@
 		6C56448B159E7C0800215467 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F6326C31A083E1F00CE241E /* Icon.icns */,
 				6C56448C159E7C0800215467 /* Flashlight-Info.plist */,
 				6C56448D159E7C0800215467 /* InfoPlist.strings */,
 				6C564490159E7C0800215467 /* main.m */,
@@ -234,15 +251,14 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6C3A4C35159E7E7000985CCD /* SIMBL Agent.app */ = {
+		6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			name = "SIMBL Agent.app";
 			path = FlashlightSIMBLAgent.app;
 			remoteRef = 6C3A4C34159E7E7000985CCD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		6C3A4C37159E7E7000985CCD /* EasySIMBL.osax */ = {
+		6C3A4C37159E7E7000985CCD /* Flashlight.osax */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = Flashlight.osax;
@@ -257,9 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */,
+				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				6C564495159E7C0900215467 /* Credits.rtf in Resources */,
 				6C56449B159E7C0900215467 /* MainMenu.xib in Resources */,
-				6C4AAA6B15AEE600009B0BBA /* icon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,10 +288,11 @@
 			files = (
 				6C564491159E7C0800215467 /* main.m in Sources */,
 				6C564498159E7C0900215467 /* AppDelegate.m in Sources */,
-				AA7EB1DB15A45EC100D76CFC /* ESPluginListManager.m in Sources */,
-				AA7EB1E115A4617700D76CFC /* ESPluginListTableView.m in Sources */,
-				AA7EB1E415A4625500D76CFC /* ESPluginListCellView.m in Sources */,
+				5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */,
+				5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */,
+				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
 				6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */,
+				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
