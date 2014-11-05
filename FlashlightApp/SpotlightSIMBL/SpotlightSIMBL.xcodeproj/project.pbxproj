@@ -22,6 +22,7 @@
 		5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */; };
 		5F5B18411A06EDB600809207 /* MethodOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18401A06EDB600809207 /* MethodOverride.m */; };
 		5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */; };
+		5F97AD401A0AC51B00838C7C /* _SS_PluginRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -245,6 +246,8 @@
 		5F5B18401A06EDB600809207 /* MethodOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodOverride.m; sourceTree = "<group>"; };
 		5F5B18421A06EDBE00809207 /* MethodOverride.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodOverride.h; sourceTree = "<group>"; };
 		5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPOpenAPIPreviewViewController.xib; sourceTree = "<group>"; };
+		5F97AD3E1A0AC51B00838C7C /* _SS_PluginRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_PluginRunner.h; sourceTree = "<group>"; };
+		5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_PluginRunner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,8 @@
 				5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */,
 				5F5B183D1A06CB0000809207 /* SPOpenAPIResult.h */,
 				5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */,
+				5F97AD3E1A0AC51B00838C7C /* _SS_PluginRunner.h */,
+				5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */,
 				5F5B183A1A06C6EE00809207 /* NSObject+LogProperties.h */,
 				5F5B183B1A06C6EE00809207 /* NSObject+LogProperties.m */,
 				5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */,
@@ -617,6 +622,7 @@
 				5F5B181F1A058CDA00809207 /* CTObjectiveCRuntimeAdditions.m in Sources */,
 				5F5B18331A05A1A000809207 /* RTMethod.m in Sources */,
 				5F5B18311A05A1A000809207 /* MARTNSObject.m in Sources */,
+				5F97AD401A0AC51B00838C7C /* _SS_PluginRunner.m in Sources */,
 				5F5B18411A06EDB600809207 /* MethodOverride.m in Sources */,
 				5F5B181E1A058CDA00809207 /* CTBlockDescription.m in Sources */,
 				5F5B18191A05821700809207 /* RSSwizzle.m in Sources */,

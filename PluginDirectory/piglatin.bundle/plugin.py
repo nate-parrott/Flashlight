@@ -1,5 +1,4 @@
-#!/usr/bin/python
-import re, json, sys
+import re
 
 def piglatin(english):
 	def preserve_case(fn):
@@ -30,20 +29,13 @@ def piglatin(english):
 assert piglatin("hello world") == "ellohay orldway"
 assert piglatin("i am happy. day") == "iay amay appyhay. ayday"
 
-def print_translation(text):
+
+def results(parsed, original_query):
 	html = """
 	<h2 style='font-weight: normal; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial; line-height: 1.2'>
 	{0}
-	</h2>""".format(piglatin(text))
-	j = json.dumps({
-		"title": '"{0}" in Pig Latin'.format(text),
+	</h2>""".format(piglatin(parsed['~text']))
+	return {
+		"title": "'{0}' in Pig Latin".format(parsed['~text']),
 		"html": html
-	})
-	print j
-
-if __name__=='__main__':
-	text = sys.argv[1]
-	for prefix in ['piglatin ', 'pig latin ']:
-		if text.lower().startswith(prefix):
-			print_translation(text[len(prefix):])
-			break
+	}

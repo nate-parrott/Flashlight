@@ -19,30 +19,44 @@ Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They ha
 
 ```
 - MyPlugin.bundle
-  - executable 
-  		(probably a script in your favorite language, starting with #!/usr/bin/python|ruby|php|bash)
+  - plugin.py 
+  - examples.txt
   - Info.plist
      (create these with Xcode. Must contain 'CFBundleDisplayName' and 'Description' keys)
 ```
 
-When you enter text into Spotlight, Flashlight will invoke all the `*.bundle/executable` files. (in order for the system to know what interpreter to use, you've got to include the [shebang line](http://en.wikipedia.org/wiki/Shebang_(Unix)).)
-
-Flashlight will pass the Spotlight query as the first argument (`argv[1]`).
-
-If you want to show a search result, just print a JSON structure to stdout:
+`examples.txt` looks like this:
 
 ```
-{
-	"title": "Search result title",
-	"html": "<h1>HTML to show inline <em>inside Spotlight</em></h1>",
-	"execute": "bash shell script to run if the user hits enter"
-}
+weather location(brooklyn)
+weather in location(new york)
+how's the weather in location(queens)?
+forecast for location(the bronx)
+```
+
+Each line is an example of a command that will invoke this plugin. The `location()` identifies part of the string as a location.
+
+When a command looks sufficiently like your examples and is routed to your plugin, Flashlight imports your `plugin.py` and calls `results(parsed, original_query)`, where `parsed` is a dictionary containing the keys captured from the query (e.g. location). `results()` should return an array of (or a single) JSON dictionaries with the following keys:
+
+ - `title`: the title of the result
+ - `html`: _optional_ HTML to be displayed inside the Spotlight preview
+ - `run_args`: _optional_ if the user presses enter on your result, we'll call a function `run()` that you can define inside `plugin.py`, passing `run_args` as arguments. These need to be JSON-serializable.
+
+For example, the *say* plugin's `plugin.py` looks like this:
+
+```
+def results(parsed, original_query):
+	return {
+		"title": "Say '{0}' (press enter)".format(parsed['~message']),
+		"run_args": [parsed['~message']]
+	}
+
+def run(message):
+	import os
+	os.system('say "{0}"'.format(message))
 ```
 
 For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
-
-**Please note that currently, no results are returned from Flashlight plugins until _all_ plugins finish.** If you need to do slow things like network requests or serious computation, please do this in Javascript inside your html. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.
-
 
 **How it works**
 
@@ -52,4 +66,4 @@ The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches 
 
 Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
 
-The Spotlight plugin is gated to run only on version `911` (which ships in Yosemite 14A361c). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
+The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM through 10.10.1 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.

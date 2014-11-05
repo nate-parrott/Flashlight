@@ -82,7 +82,7 @@
     });
     
     
-    NSLog(@"Hello from Flashlight!");
+    NSLog(@"Hello from Flashlight 0.11!");
 }
 
 @end

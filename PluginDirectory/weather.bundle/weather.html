@@ -81,7 +81,7 @@
 	
 	function createHTMLForJson(json) {
 		var laterDays = crel("div", {"id": "laterDays"});
-		var el = crel("div", crel("div", {id: 'location'}, json.city.name), crel("div", {"id": "today"}, createHTMLForDay(json.list[0], 128)), laterDays);
+		var el = crel("div", crel("div", {id: 'location'}, json.city.name + ", " + json.city.country), crel("div", {"id": "today"}, createHTMLForDay(json.list[0], 128)), laterDays);
 		json.list.slice(1).forEach(function(day) {
 			laterDays.appendChild(createHTMLForDay(day, 64));
 		})
@@ -132,7 +132,8 @@
 		color: gray;
 	}
 	#location {
-		display: none;
+		font-size: small;
+		color: gray;
 	}
 	</style>
 </head>
