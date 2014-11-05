@@ -62,7 +62,7 @@ For examples, look at the ['say' example](https://github.com/nate-parrott/Flashl
 
 The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading runtime injection of plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.
 
-The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches Spotlight to add a new subclass of `SPQuery`, the internal class used to fetch results from different sources. It runs executables in `~/Library/FlashlightPlugins/*/executable`, and then presents their results using a custom subclass of `SPResult`.
+The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches Spotlight to add a new subclass of `SPQuery`, the internal class used to fetch results from different sources. It runs a bundled Python script, which uses [commanding](https://github.com/nate-parrott/commanding) to parse queries and determine their intents and parameters, then invokes the appropriate plugin's `plugin.py` script and presents the results using a custom subclass of `SPResult`.
 
 Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
 
