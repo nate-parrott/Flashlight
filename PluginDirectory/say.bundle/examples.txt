@@ -1,0 +1,2 @@
+say ~message(hello, world)
+speak ~message(good morning)

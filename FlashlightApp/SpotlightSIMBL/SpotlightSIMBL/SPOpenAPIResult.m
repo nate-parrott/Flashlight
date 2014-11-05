@@ -17,8 +17,9 @@
 #import "MethodOverride.h"
 #import "SPPreviewController.h"
 #import <WebKit/WebKit.h>
+#import "_SS_PluginRunner.h"
 
-id __SS_SSOpenAPIResult_initWithQuery_json(SPResult *self, SEL cmd, NSString *displayName, id json) {
+id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd, NSString *query, id json, NSString *sourcePlugin) {
     if (![json isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
@@ -33,6 +34,7 @@ id __SS_SSOpenAPIResult_initWithQuery_json(SPResult *self, SEL cmd, NSString *di
     [self setType:@"Type"]; // TODO: what does *this* do?
     [self setCategoryForCP:@"MENU_EXPRESSION"];
     objc_setAssociatedObject(self, @selector(jsonAssociatedObject), json, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(sourcePluginAssociatedObject), sourcePlugin, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return self;
 }
 
@@ -44,9 +46,11 @@ id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
     id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
     SPPreviewController *vc = [[NSClassFromString(@"SPPreviewController") alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
     WebView *webView = vc.view.subviews.firstObject;
+    NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
     if ([webView isKindOfClass:[WebView class]]) {
         if (json[@"html"]) {
-            [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:json[@"pluginPath"]]];
+            NSString *pluginPath = [[[[NSHomeDirectory() stringByAppendingPathComponent:@"Library/FlashlightPlugins"] stringByAppendingPathComponent:sourcePlugin] stringByAppendingPathExtension:@"bundle"] stringByAppendingPathComponent:@"index.html"];
+            [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
         } else {
             webView.hidden = YES;
         }
@@ -64,11 +68,9 @@ unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
 // - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;
 BOOL __SS_SSOpenWithSearchString_block(SPResult *self, SEL cmd, NSString *searchString, void (^block)()) {
     id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
-    if (json[@"execute"]) {
-        NSTask *task = [[NSTask alloc] init];
-        [task setLaunchPath:@"/bin/bash"];
-        [task setArguments:@[ @"-c", json[@"execute"] ]];
-        [task launch];
+    NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
+    if (json[@"run_args"]) {
+        [_SS_PluginRunner runQueryResultWithArgs:json[@"run_args"] sourcePlugin:sourcePlugin];
         return YES;
     } else {
         return NO;
@@ -79,7 +81,7 @@ Class __SS_SPOpenAPIResultClass() {
     Class c = NSClassFromString(@"SPOpenAPIResult");
     if (c) return c;
     c = [(Class)NSClassFromString(@"SPResult") rt_createSubclassNamed:@"SPOpenAPIResult"];
-    __SS_Override(c, NSSelectorFromString(@"initWithQuery:json:"), __SS_SSOpenAPIResult_initWithQuery_json);
+    __SS_Override(c, NSSelectorFromString(@"initWithQuery:json:sourcePlugin:"), __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin);
     __SS_Override(c, NSSelectorFromString(@"category"), __SS_SSOpenAPIResult_category);
     __SS_Override(c, NSSelectorFromString(@"rank"), __SS_SSOpenAPIResult_rank);
     __SS_Override(c, NSSelectorFromString(@"customPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
