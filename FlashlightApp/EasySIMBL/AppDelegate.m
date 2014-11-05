@@ -141,7 +141,8 @@
 
 #pragma mark Version checking
 - (void)checkSpotlightVersion {
-    NSString *spotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
+    NSString *fullSpotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
+    NSString *spotlightVersion = [fullSpotlightVersion componentsSeparatedByString:@"."][0];
     NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
     if (![@[@"911", @"916"] containsObject:spotlightVersion]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
