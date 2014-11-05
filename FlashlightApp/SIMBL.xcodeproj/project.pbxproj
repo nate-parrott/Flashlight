@@ -373,6 +373,7 @@
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 0.2;
 			};
 			name = Debug;
 		};
@@ -385,6 +386,7 @@
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_VERSION = 0.2;
 			};
 			name = Release;
 		};
