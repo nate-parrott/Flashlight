@@ -4,9 +4,11 @@ def results(parsed, original_query):
 	url = "http://m.wolframalpha.com/input/?i={0}".format(urllib.quote_plus(parsed['wa_query']))
 	html = """
 	<script>
-	window.location = {0};
+	setTimeout(function() {
+		window.location = %s;
+	}, 150); // throttle a little
 	</script>
-	""".format(json.dumps(url))
+	""" % (json.dumps(url))
 	return {
 		"title": "Ask Wolfram|Alpha '{0}'".format(parsed['wa_query']),
 		"html": html,
