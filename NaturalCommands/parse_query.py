@@ -9,6 +9,7 @@ import imp
 from shared import plugin_dir, WorkingDirAs
 
 example_phrases = []
+plugins_to_always_invoke = set()
 for plugin in os.listdir(plugin_dir):
 	if os.path.isdir(os.path.join(plugin_dir, plugin)):
 		plugin_name, extension = os.path.splitext(plugin)
@@ -17,7 +18,9 @@ for plugin in os.listdir(plugin_dir):
 			if os.path.exists(examples_file):
 				for line in open(examples_file):
 					line = line.strip()
-					if len(line):
+					if line == '!always_invoke':
+						plugins_to_always_invoke.add(plugin_name)
+					elif len(line):
 						example_phrases.append(parse_example_to_phrase(plugin_name, line))
 
 # add baseline nonsense parses:
@@ -34,13 +37,21 @@ def parse_query(query):
 
 if __name__=='__main__':
 	query = sys.argv[1]
+	plugins_to_invoke = set(plugins_to_always_invoke)
 	parsed = parse_query(query)
-	if parsed == None:
-		quit()
-	plugin_path = os.path.join(plugin_dir, parsed['plugin']+'.bundle', 'plugin.py')
-	with WorkingDirAs(os.path.split(plugin_path)[0]):
-		plugin_module = imp.load_source('plugin', plugin_path)
-		results = plugin_module.results(parsed['arguments'], query) # can return a dict or a list of result dicts
-	if type(results) != list:
-		results = [results]
-	print json.dumps({parsed['plugin']: results})
+	if parsed != None:
+		plugins_to_invoke.add(parsed['plugin'])
+	
+	results = {}
+	for plugin in plugins_to_invoke:
+		plugin_path = os.path.join(plugin_dir, plugin+'.bundle', 'plugin.py')
+		with WorkingDirAs(os.path.split(plugin_path)[0]):
+			plugin_module = imp.load_source(plugin_name, plugin_path)
+			args = parsed['arguments'] if parsed and parsed['plugin'] == plugin else None
+			res = plugin_module.results(args, query) # can return a dict or a list of result dicts
+			if type(res) == dict:
+				results[plugin] = [res]
+			elif type(res) == list:
+				results[plugin] = res
+	
+	print json.dumps(results)

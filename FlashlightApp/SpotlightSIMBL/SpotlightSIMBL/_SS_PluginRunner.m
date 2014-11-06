@@ -73,7 +73,14 @@ void __SS_markPathExecutable(NSString *path) {
     task.arguments = @[pluginName, runArgsAsJson];
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
+    NSPipe *errorPipe = [NSPipe pipe];
+    task.standardError = errorPipe;
     [task launch];
+    /*[[task.standardOutput fileHandleForReading] readDataToEndOfFile];
+    NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
+    if (errorData.length) {
+        NSLog(@"ERROR: %@", [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]);
+    }*/
 }
 
 @end
