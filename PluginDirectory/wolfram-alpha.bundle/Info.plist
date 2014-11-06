@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Ask Wolfram Alpha &lt;a question&rt;</string>
+	<string>Ask Wolfram Alpha &lt;a question&gt;</string>
 	<key>Description</key>
 	<string>Search Wolfram|Alpha.</string>
 </dict>
