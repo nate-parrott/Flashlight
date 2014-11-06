@@ -49,7 +49,7 @@ id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
     NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
     if ([webView isKindOfClass:[WebView class]]) {
         if (json[@"html"]) {
-            NSString *pluginPath = [[[[NSHomeDirectory() stringByAppendingPathComponent:@"Library/FlashlightPlugins"] stringByAppendingPathComponent:sourcePlugin] stringByAppendingPathExtension:@"bundle"] stringByAppendingPathComponent:@"index.html"];
+            NSString *pluginPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"index.html"];
             [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
         } else {
             webView.hidden = YES;
@@ -62,7 +62,24 @@ id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
 }
 
 unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
-    return 1;
+    id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
+    if ([json[@"dont_force_top_hit"] boolValue]) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
+    NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
+    NSString *iconPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"icon.png"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
+        NSBundle *appBundle = [NSBundle bundleWithPath:[_SS_PluginRunner pathForPlugin:sourcePlugin]];
+        if (appBundle.infoDictionary[@"IconPath"]) {
+            iconPath = appBundle.infoDictionary[@"IconPath"];
+        }
+    }
+    return [[NSImage alloc] initByReferencingFile:iconPath];
 }
 
 // - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;
@@ -85,6 +102,8 @@ Class __SS_SPOpenAPIResultClass() {
     __SS_Override(c, NSSelectorFromString(@"category"), __SS_SSOpenAPIResult_category);
     __SS_Override(c, NSSelectorFromString(@"rank"), __SS_SSOpenAPIResult_rank);
     __SS_Override(c, NSSelectorFromString(@"customPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
+    __SS_Override(c, NSSelectorFromString(@"iconImage"), __SS_SSOpenAPIResult_iconImage);
+    __SS_Override(c, NSSelectorFromString(@"iconImageForApplication"), __SS_SSOpenAPIResult_iconImage);
     __SS_Override(c, NSSelectorFromString(@"openWithSearchString:block:"), __SS_SSOpenWithSearchString_block);
     return c;
 }

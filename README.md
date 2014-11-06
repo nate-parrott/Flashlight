@@ -58,6 +58,8 @@ def run(message):
 
 For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
 
+*Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.*
+
 **How it works**
 
 The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading runtime injection of plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.

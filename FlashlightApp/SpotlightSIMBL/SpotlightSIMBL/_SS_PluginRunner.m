@@ -9,6 +9,7 @@
 #import "_SS_PluginRunner.h"
 #import <AppKit/AppKit.h>
 #import <sys/stat.h>
+#import "NSTask+_FlashlightExtensions.h"
 
 void __SS_markPathExecutable(NSString *path) {
     // make launch path executable:
@@ -39,6 +40,10 @@ void __SS_markPathExecutable(NSString *path) {
     return [[self naturalCommandScriptsDir] stringByAppendingPathComponent:@"run.py"];
 }
 
++ (NSString *)pathForPlugin:(NSString *)pluginName {
+    return [[[NSHomeDirectory() stringByAppendingPathComponent:@"Library/FlashlightPlugins"] stringByAppendingPathComponent:pluginName] stringByAppendingPathExtension:@"bundle"];
+}
+
 + (NSDictionary *)resultDictionariesFromPluginsForQuery:(NSString *)query {
     NSTask *task = [NSTask new];
     task.launchPath = [self parseQueryScriptPath];
@@ -48,14 +53,8 @@ void __SS_markPathExecutable(NSString *path) {
     task.arguments = @[query];
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
-    NSPipe *errorPipe = [NSPipe pipe];
-    task.standardError = errorPipe;
-    [task launch];
+    [task launchWithTimeout:2 consoleLabelForErrorDump:@"Querying Flashlight plugins"];
     NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
-    NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
-    if (errorData.length) {
-        NSLog(@"ERROR: %@", [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]);
-    }
     if (data) {
         return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     } else {
@@ -73,14 +72,7 @@ void __SS_markPathExecutable(NSString *path) {
     task.arguments = @[pluginName, runArgsAsJson];
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
-    NSPipe *errorPipe = [NSPipe pipe];
-    task.standardError = errorPipe;
-    [task launch];
-    /*[[task.standardOutput fileHandleForReading] readDataToEndOfFile];
-    NSData *errorData = [[errorPipe fileHandleForReading] readDataToEndOfFile];
-    if (errorData.length) {
-        NSLog(@"ERROR: %@", [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]);
-    }*/
+    [task launchWithTimeout:2 consoleLabelForErrorDump:[NSString stringWithFormat:@"Running action for Flashlight plugin '%@'", pluginName]];
 }
 
 @end

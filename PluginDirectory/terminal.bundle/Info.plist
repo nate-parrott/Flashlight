@@ -6,5 +6,7 @@
 	<string>Terminal</string>
 	<key>Description</key>
 	<string>Run a terminal command.</string>
+	<key>IconPath</key>
+	<string>/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns</string>
 </dict>
 </plist>
