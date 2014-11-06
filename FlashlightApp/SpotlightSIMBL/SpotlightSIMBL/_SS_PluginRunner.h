@@ -12,5 +12,6 @@
 
 + (NSDictionary *)resultDictionariesFromPluginsForQuery:(NSString *)query;
 + (void)runQueryResultWithArgs:(id)runArgs sourcePlugin:(NSString *)pluginName;
++ (NSString *)pathForPlugin:(NSString *)pluginName;
 
 @end
