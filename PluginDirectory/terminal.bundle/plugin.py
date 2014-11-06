@@ -24,14 +24,15 @@ def run(command):
 	tell application "Finder" 
 	 	if (count of Finder windows) is not 0 then
 			set currentDir to (target of front Finder window) as text
+			set dir to (quoted form of POSIX path of currentDir)
 		else
-			set currentDir to "~/Desktop"
+			set dir to "~/"
 		end if
 	end tell
 	
 	tell application "Terminal"
 		activate
-		do script "cd " & (quoted form of POSIX path of currentDir) & " && " & {0}
+		do script "cd " & dir & " && " & {0}
 	end tell
 	'''.format(asquote(command))
 
