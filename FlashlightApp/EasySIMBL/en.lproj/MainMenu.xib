@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="1070" identifier="macosx"/>
         <development version="5000" identifier="xcode"/>
@@ -662,7 +662,7 @@
             <rect key="contentRect" x="168" y="456" width="300" height="374"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="300" height="300"/>
-            <value key="maxSize" type="size" width="2000" height="2000"/>
+            <value key="maxSize" type="size" width="600" height="2000"/>
             <view key="contentView" id="652">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="374"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -793,7 +793,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="4I6-zG-9ut">
-                                <rect key="frame" x="33" y="29.999999779112191" width="238" height="17"/>
+                                <rect key="frame" x="33" y="30.000000024393874" width="238" height="17"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
