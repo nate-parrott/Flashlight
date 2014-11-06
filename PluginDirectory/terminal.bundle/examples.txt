@@ -1,0 +1,5 @@
+terminal ~command(git commit -m hello)
+run ~command(echo 'hello world') in the terminal
+execute ~command(say 'gheoiggerhgoi')
+$ command(rm -rf /)
+!always_invoke

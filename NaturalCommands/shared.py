@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 plugin_dir = os.path.expanduser("~/Library/FlashlightPlugins")
 
@@ -8,5 +8,7 @@ class WorkingDirAs(object):
 	def __enter__(self):
 		self.saved_cwd = os.getcwd()
 		os.chdir(self.dir)
+		sys.path.append(self.dir)
 	def __exit__(self, type, value, traceback):
 		os.chdir(self.saved_cwd)
+		sys.path.remove(self.dir)
