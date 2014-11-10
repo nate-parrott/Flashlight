@@ -24,6 +24,7 @@
 		5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */; };
 		5F97AD401A0AC51B00838C7C /* _SS_PluginRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */; };
 		5F97AD461A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */; };
+		5FB199031A105BD10048DC46 /* _SS_InlineWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -251,6 +252,8 @@
 		5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_PluginRunner.m; sourceTree = "<group>"; };
 		5F97AD441A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+_FlashlightExtensions.h"; sourceTree = "<group>"; };
 		5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+_FlashlightExtensions.m"; sourceTree = "<group>"; };
+		5FB199011A105BD10048DC46 /* _SS_InlineWebViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_InlineWebViewContainer.h; sourceTree = "<group>"; };
+		5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_InlineWebViewContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +295,8 @@
 				5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */,
 				5F5B183D1A06CB0000809207 /* SPOpenAPIResult.h */,
 				5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */,
+				5FB199011A105BD10048DC46 /* _SS_InlineWebViewContainer.h */,
+				5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */,
 				5F97AD3E1A0AC51B00838C7C /* _SS_PluginRunner.h */,
 				5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */,
 				5F97AD441A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.h */,
@@ -621,6 +626,7 @@
 				5F5B183C1A06C6EE00809207 /* NSObject+LogProperties.m in Sources */,
 				5F5B18351A05A1A000809207 /* RTProtocol.m in Sources */,
 				5F5B18221A059DB100809207 /* SPOpenAPIQuery.m in Sources */,
+				5FB199031A105BD10048DC46 /* _SS_InlineWebViewContainer.m in Sources */,
 				5F5B18361A05A1A000809207 /* RTUnregisteredClass.m in Sources */,
 				5F5B174D1A05758800809207 /* _Flashlight_Bootstrap.m in Sources */,
 				5F5B18321A05A1A000809207 /* RTIvar.m in Sources */,

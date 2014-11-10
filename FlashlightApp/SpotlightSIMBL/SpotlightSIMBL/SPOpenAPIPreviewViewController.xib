@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A361c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
         <plugIn identifier="com.apple.WebKitIBPlugin" version="6250"/>
@@ -12,23 +12,37 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
+        <customView id="c22-O7-iKe" customClass="_SS_InlineWebViewContainer">
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <webView translatesAutoresizingMaskIntoConstraints="NO" id="HDd-zA-9Ah">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
-                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
                         <nil key="identifier"/>
                     </webPreferences>
+                    <connections>
+                        <outlet property="frameLoadDelegate" destination="c22-O7-iKe" id="9DR-0q-C2C"/>
+                        <outlet property="policyDelegate" destination="c22-O7-iKe" id="MUe-90-c4f"/>
+                    </connections>
                 </webView>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="4Wr-Z3-AVi">
+                    <rect key="frame" x="444" y="20" width="16" height="16"/>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="HDd-zA-9Ah" secondAttribute="trailing" id="AKE-A3-HIB"/>
+                <constraint firstAttribute="trailing" secondItem="4Wr-Z3-AVi" secondAttribute="trailing" constant="20" id="euj-QZ-QgC"/>
                 <constraint firstItem="HDd-zA-9Ah" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="ltS-69-uGQ"/>
                 <constraint firstAttribute="bottom" secondItem="HDd-zA-9Ah" secondAttribute="bottom" id="oHv-bK-AJC"/>
                 <constraint firstItem="HDd-zA-9Ah" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="tmk-OL-jcm"/>
+                <constraint firstAttribute="bottom" secondItem="4Wr-Z3-AVi" secondAttribute="bottom" constant="20" id="tvN-q2-YbJ"/>
             </constraints>
+            <connections>
+                <outlet property="loader" destination="4Wr-Z3-AVi" id="xwL-z2-Fp4"/>
+                <outlet property="webView" destination="HDd-zA-9Ah" id="IKi-gO-fHb"/>
+            </connections>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="xiP-DD-W1h"/>
     </objects>
 </document>

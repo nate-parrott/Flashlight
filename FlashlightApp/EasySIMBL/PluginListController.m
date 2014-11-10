@@ -35,14 +35,30 @@
     [self startWatchingPluginsDir];
     [self reloadFromDisk];
     [self reloadPluginsFromWeb:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resized) name:NSViewFrameDidChangeNotification object:self.tableView];
+    [self.tableView setPostsFrameChangedNotifications:YES];
 }
 - (void)dealloc {
-    [self startWatchingPluginsDir];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self stopWatchingPluginsDir];
 }
 
 #pragma mark UI
 - (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row {
     ((PluginCellView *)[rowView viewAtColumn:0]).listController = self;
+}
+
+- (void)resized {
+    [self.tableView noteHeightOfRowsWithIndexesChanged:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.arrayController.arrangedObjects count])]];
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    CGFloat leftInset = 7;
+    CGFloat topInset = 7;
+    CGFloat bottomInset = 7;
+    CGFloat rightInset = 65;
+    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-leftInset-rightInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + topInset + bottomInset;
 }
 
 - (NSIndexSet *)tableView:(NSTableView *)tableView
