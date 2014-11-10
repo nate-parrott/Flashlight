@@ -14,6 +14,8 @@
 
 @property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
 
+@property (nonatomic) IBOutlet NSTableView *tableView;
+
 - (IBAction)reloadPluginsFromWeb:(id)sender;
 
 - (void)installPlugin:(PluginModel *)plugin;

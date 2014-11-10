@@ -60,4 +60,11 @@
     }
 }
 
+- (NSAttributedString *)attributedString {
+    NSMutableAttributedString* s = [NSMutableAttributedString new];
+    [s appendAttributedString:[[NSAttributedString alloc] initWithString:[self.displayName stringByAppendingString:@"\n"] attributes:@{NSFontAttributeName: [NSFont boldSystemFontOfSize:[NSFont systemFontSize]]}]];
+    [s appendAttributedString:[[NSAttributedString alloc] initWithString:self.pluginDescription attributes:@{NSFontAttributeName: [NSFont systemFontOfSize:[NSFont systemFontSize]]}]];
+    return s;
+}
+
 @end

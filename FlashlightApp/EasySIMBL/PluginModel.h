@@ -20,4 +20,6 @@
 
 + (NSArray *)mergeDuplicates:(NSArray *)models;
 
+@property (nonatomic,readonly) NSAttributedString *attributedString;
+
 @end
