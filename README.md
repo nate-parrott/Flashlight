@@ -21,8 +21,11 @@ Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They ha
 - MyPlugin.bundle
   - plugin.py 
   - examples.txt
-  - Info.plist
-     (create these with Xcode. Must contain 'CFBundleDisplayName' and 'Description' keys)
+  - Info.json
+     - key 'name' (string): name of the folder, without .bundle
+	  - key 'displayName' (string)
+	  - key 'description' (string)
+	  - key 'examples' (array of strings): usage examples
 ```
 
 `examples.txt` looks like this:

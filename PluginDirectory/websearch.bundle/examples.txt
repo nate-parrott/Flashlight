@@ -1,0 +1,12 @@
+duck duck go search ~duckduckgoquery(query here)
+search duck duck go for ~duckduckgoquery(query here)
+ddg ~duckduckgoquery(query here)
+
+google search ~googlequery(query here)
+search the web for ~googlequery(query here)
+g ~googlequery(query here)
+
+image search for ~googleimagequery(query here)
+show me images of ~googleimagequery(query here)
+show me a picture of ~googleimagequery(query here)
+gi ~googleimagequery(query here)

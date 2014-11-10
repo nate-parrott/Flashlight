@@ -1,0 +1,6 @@
+{
+	"name": "say",
+	"displayName": "Say",
+	"description": "Speak a message out loud.",
+	"examples": ["say good morning"]
+}

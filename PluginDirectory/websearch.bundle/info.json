@@ -1,0 +1,5 @@
+{
+	"name": "websearch",
+	"displayName": "Web Search",
+	"examples": ["google Apple stock", "g Apple stock", "search duck duck go for Flashlight", "ddg Flashlight", "image search for rubber ducks"]
+}
