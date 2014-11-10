@@ -18,6 +18,7 @@
 #import "SPPreviewController.h"
 #import <WebKit/WebKit.h>
 #import "_SS_PluginRunner.h"
+#import "_SS_InlineWebViewContainer.h"
 
 id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd, NSString *query, id json, NSString *sourcePlugin) {
     if (![json isKindOfClass:[NSDictionary class]]) {
@@ -43,20 +44,9 @@ id __SS_SSOpenAPIResult_category(SPResult *self, SEL cmd) {
 }
 
 id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
-    id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
     SPPreviewController *vc = [[NSClassFromString(@"SPPreviewController") alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
-    WebView *webView = vc.view.subviews.firstObject;
-    NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
-    if ([webView isKindOfClass:[WebView class]]) {
-        if (json[@"html"]) {
-            NSString *pluginPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"index.html"];
-            [[webView mainFrame] loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
-        } else {
-            webView.hidden = YES;
-        }
-    } else {
-        // TODO: log it
-    }
+    _SS_InlineWebViewContainer *container = (id)vc.view;
+    container.result = self;
     vc.internalPreviewResult = self;
     return vc;
 }
