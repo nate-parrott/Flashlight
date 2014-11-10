@@ -50,6 +50,7 @@ void __SS_Start(SPQuery* self, SEL cmd) {
                 }
             }
         }
+        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]]];
         dispatch_async(dispatch_get_main_queue(), ^{
             SPResponse *resp = [[NSClassFromString(@"SPResponse") alloc] initWithResults:resultItems];
             resp.userQueryString = query;

@@ -36,6 +36,11 @@
         RSSWCallOriginal(cat);
     }), 0, NULL);*/
     
+    /*RSSwizzleInstanceMethod(NSClassFromString(@"SPMetadataResult"), NSSelectorFromString(@"displayName"), RSSWReturnType(NSString*), RSSWArguments(), RSSWReplacement({
+        NSString *original = RSSWCallOriginal();
+        return [original stringByAppendingString:@" fuck fuck fuck"];
+    }), 0, NULL);*/
+    
     /*
     // determine type of SPQuery response callbacks at runtime:
     RSSwizzleInstanceMethod(NSClassFromString(@"SPQuery"), NSSelectorFromString(@"startWithResponseHandler:"), RSSWReturnType(void), RSSWArguments(id block), RSSWReplacement({
@@ -81,8 +86,7 @@
         return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
     });
     
-    
-    NSLog(@"Hello from Flashlight 0.11!");
+    NSLog(@"Hello from Flashlight 0.21!");
 }
 
 @end
