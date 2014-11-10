@@ -31,7 +31,7 @@ id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd,
     superIMP(self, cmd, @"text/html", json[@"title"]); // TODO: what does contentType actually do? it probably isn't a mime type
     self.title = json[@"title"];
     // self.isParsecTopHit = YES;
-    [self setType:@"Type"]; // TODO: what does *this* do?
+    // [self setType:@"Type"]; // TODO: what does *this* do?
     [self setCategoryForCP:@"MENU_EXPRESSION"];
     objc_setAssociatedObject(self, @selector(jsonAssociatedObject), json, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, @selector(sourcePluginAssociatedObject), sourcePlugin, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -63,11 +63,18 @@ id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
 
 unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
     id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
-    if ([json[@"dont_force_top_hit"] boolValue]) {
-        return 0;
+    if (json[@"rank"]) {
+        return json[@"rank"];
+    } else if ([json[@"dont_force_top_hit"] boolValue]) {
+        return 2;
     } else {
         return 1;
     }
+}
+
+BOOL __SS_SSOpenAPIResult_shouldNotBeTopHit(SPResult *self, SEL cmd) {
+    id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
+    return [json[@"dont_force_top_hit"] boolValue];
 }
 
 id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
@@ -105,5 +112,6 @@ Class __SS_SPOpenAPIResultClass() {
     __SS_Override(c, NSSelectorFromString(@"iconImage"), __SS_SSOpenAPIResult_iconImage);
     __SS_Override(c, NSSelectorFromString(@"iconImageForApplication"), __SS_SSOpenAPIResult_iconImage);
     __SS_Override(c, NSSelectorFromString(@"openWithSearchString:block:"), __SS_SSOpenWithSearchString_block);
+    __SS_Override(c, NSSelectorFromString(@"shouldNotBeTopHit"), __SS_SSOpenAPIResult_shouldNotBeTopHit);
     return c;
 }
