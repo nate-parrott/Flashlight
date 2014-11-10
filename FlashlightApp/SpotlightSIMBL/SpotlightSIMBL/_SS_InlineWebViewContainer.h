@@ -7,10 +7,13 @@
 //
 
 #import <WebKit/WebKit.h>
+#import "SPResult.h"
 
 @interface _SS_InlineWebViewContainer : NSView
 
 @property (nonatomic) IBOutlet NSProgressIndicator *loader;
-@property (nonatomic) IBOutlet WebView *webView;
+@property (nonatomic) WebView *webView;
+
+@property (nonatomic) SPResult *result;
 
 @end

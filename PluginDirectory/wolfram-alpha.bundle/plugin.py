@@ -6,7 +6,7 @@ def results(parsed, original_query):
 	<script>
 	setTimeout(function() {
 		window.location = %s;
-	}, 150); // throttle a little
+	}, 500); // throttle a little
 	</script>
 	""" % (json.dumps(url))
 	return {
