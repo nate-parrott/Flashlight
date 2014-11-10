@@ -17,24 +17,16 @@
     p.pluginDescription = self.pluginDescription;
     p.installed = self.installed;
     p.installing = self.installing;
+    p.examples = self.examples;
     return p;
-}
-
-+ (PluginModel *)fromPath:(NSString *)path {
-    NSBundle *bundle = [NSBundle bundleWithPath:path];
-    PluginModel *model = [PluginModel new];
-    model.name = [path lastPathComponent].stringByDeletingPathExtension;
-    model.displayName = [bundle infoDictionary][@"CFBundleDisplayName"];
-    model.pluginDescription = [bundle infoDictionary][@"Description"];
-    model.installed = YES;
-    return model;
 }
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url {
     PluginModel *model = [PluginModel new];
     model.name = json[@"name"];
-    model.displayName = json[@"CFBundleDisplayName"];
-    model.pluginDescription = json[@"Description"];
+    model.displayName = json[@"displayName"];
+    model.pluginDescription = json[@"description"];
+    model.examples = json[@"examples"];
     model.installed = NO;
     model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
     return model;
@@ -61,9 +53,27 @@
 }
 
 - (NSAttributedString *)attributedString {
-    NSMutableAttributedString* s = [NSMutableAttributedString new];
-    [s appendAttributedString:[[NSAttributedString alloc] initWithString:[self.displayName stringByAppendingString:@"\n"] attributes:@{NSFontAttributeName: [NSFont boldSystemFontOfSize:[NSFont systemFontSize]]}]];
-    [s appendAttributedString:[[NSAttributedString alloc] initWithString:self.pluginDescription attributes:@{NSFontAttributeName: [NSFont systemFontOfSize:[NSFont systemFontSize]]}]];
+    NSMutableArray *stringsToJoin = [NSMutableArray new];
+    [stringsToJoin addObject:[[NSAttributedString alloc] initWithString:self.displayName attributes:@{NSFontAttributeName: [NSFont boldSystemFontOfSize:[NSFont systemFontSize]]}]];
+    if (self.pluginDescription.length) {
+        [stringsToJoin addObject:[[NSAttributedString alloc] initWithString:self.pluginDescription attributes:@{NSFontAttributeName: [NSFont systemFontOfSize:[NSFont systemFontSize]]}]];
+    }
+    if (self.examples.count) {
+        NSMutableParagraphStyle *para = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+        NSFont *font = [[NSFontManager sharedFontManager] convertFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]] toHaveTrait:NSItalicFontMask];
+        NSColor *color = [NSColor grayColor];
+        NSDictionary *attrs = @{NSFontAttributeName: font, NSForegroundColorAttributeName: color, NSParagraphStyleAttributeName: para};
+        NSAttributedString *s = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\"%@\"", [self.examples componentsJoinedByString:@"\"    \""]] attributes:attrs];
+        [stringsToJoin addObject:s];
+    }
+    
+    NSMutableAttributedString *s = [NSMutableAttributedString new];
+    for (NSAttributedString *a  in stringsToJoin) {
+        [s appendAttributedString:a];
+        if (a != stringsToJoin.lastObject) {
+            [s appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n"]];
+        }
+    }
     return s;
 }
 

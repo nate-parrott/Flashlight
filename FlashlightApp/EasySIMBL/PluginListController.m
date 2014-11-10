@@ -58,7 +58,7 @@
     CGFloat topInset = 7;
     CGFloat bottomInset = 7;
     CGFloat rightInset = 65;
-    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-leftInset-rightInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + topInset + bottomInset;
+    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-leftInset-rightInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + topInset + bottomInset + 4;
 }
 
 - (NSIndexSet *)tableView:(NSTableView *)tableView
@@ -163,7 +163,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSMutableArray *models = [NSMutableArray new];
     for (NSString *itemName in contents) {
         if ([[itemName pathExtension] isEqualToString:@"bundle"]) {
-            [models addObject:[PluginModel fromPath:[[self localPluginsPath] stringByAppendingPathComponent:itemName]]];
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[[self localPluginsPath] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]] options:0 error:nil];
+            PluginModel *model = [PluginModel fromJson:json baseURL:nil];
+            model.installed = YES;
+            [models addObject:model];
         }
     }
     self.installedPlugins = models;
