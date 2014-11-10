@@ -1,0 +1,6 @@
+{
+	"name": "im-feeling-lucky",
+	"displayName": "I'm Feeling Lucky",
+	"description": "Immediately go to the first search result for your query.",
+	"examples": ["i'm feeling lucky gmail", "ifl facebook"]
+}
