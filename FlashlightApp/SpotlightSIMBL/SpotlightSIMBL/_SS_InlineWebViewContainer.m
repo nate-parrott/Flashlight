@@ -12,6 +12,8 @@
 
 @interface _SS_InlineWebViewContainer ()
 
+@property (nonatomic) BOOL linksOpenInBrowser;
+
 @end
 
 @implementation _SS_InlineWebViewContainer
@@ -19,7 +21,12 @@
 #pragma mark Navigation interception
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-    NSLog(@"POLICY");
+    if (self.linksOpenInBrowser && [actionInformation[WebActionNavigationTypeKey] integerValue] == WebNavigationTypeLinkClicked) {
+        [listener ignore];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSWorkspace sharedWorkspace] openURL:request.URL];
+        });
+    }
     [listener use];
 }
 
@@ -59,6 +66,12 @@
         [self ensureWebview];
         NSString *pluginPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"index.html"];
         [_webView.mainFrame loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
+        if (json[@"webview_user_agent"]) {
+            [_webView setCustomUserAgent:json[@"webview_user_agent"]];
+        }
+        if ([json[@"webview_links_open_in_browser"] boolValue]) {
+            self.linksOpenInBrowser = YES;
+        }
     } else {
         for (NSView *v in self.subviews) {
             v.hidden = YES;
