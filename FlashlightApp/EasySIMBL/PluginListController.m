@@ -116,10 +116,12 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://raw.githubusercontent.com/nate-parrott/flashlight/master/PluginDirectories/1/index.json"]];
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSDictionary *d = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSMutableArray *plugins = [NSMutableArray new];
-        for (NSDictionary *dict in d[@"plugins"]) {
-            [plugins addObject:[PluginModel fromJson:dict baseURL:url]];
+        if (data) {
+            NSDictionary *d = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            for (NSDictionary *dict in d[@"plugins"]) {
+                [plugins addObject:[PluginModel fromJson:dict baseURL:url]];
+            }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setPluginsFromWeb:plugins];
@@ -205,10 +207,13 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSMutableArray *models = [NSMutableArray new];
     for (NSString *itemName in contents) {
         if ([[itemName pathExtension] isEqualToString:@"bundle"]) {
-            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[[self localPluginsPath] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]] options:0 error:nil];
-            PluginModel *model = [PluginModel fromJson:json baseURL:nil];
-            model.installed = YES;
-            [models addObject:model];
+            NSData *data = [NSData dataWithContentsOfFile:[[[self localPluginsPath] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]];
+            if (data) {
+                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                PluginModel *model = [PluginModel fromJson:json baseURL:nil];
+                model.installed = YES;
+                [models addObject:model];
+            }
         }
     }
     self.installedPlugins = models;
@@ -234,16 +239,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     self.installTasksInProgress = self.installTasksInProgress ? [self.installTasksInProgress setByAddingObject:task] : [NSSet setWithObject:task];
     [task startInstallationIntoPluginsDirectory:[self localPluginsPath] withCallback:^(BOOL success, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            /*if (!success) {
-                NSAlert *alert = [NSAlert new];
-                NSMutableString *errorMsg = [NSMutableString stringWithFormat:@"Couldn't install \"%@\".", plugin.displayName];
-                if (error) {
-                    [errorMsg appendFormat:@"\n(%@)", error.localizedFailureReason];
-                }
-                alert.messageText = errorMsg;
-                [alert addButtonWithTitle:@"Okay"];
-                [alert runModal];
-            }*/
             if (!success) {
                 NSAlert *alert = error ? [NSAlert alertWithError:error] : [NSAlert alertWithMessageText:@"Couldn't install plugin." defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:nil];
                 alert.alertStyle = NSWarningAlertStyle;
