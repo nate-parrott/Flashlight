@@ -20,7 +20,7 @@
 }
 - (void)startInstallationIntoPluginsDirectory:(NSString *)directory withCallback:(void(^)(BOOL success, NSError *error))callback {
     [[[NSURLSession sharedSession] dataTaskWithURL:self.plugin.zipURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        if (data) {
+        if (data && !error) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                 NSError *zipError = nil;
                 ZZArchive *archive = [ZZArchive archiveWithData:data error:&zipError];
