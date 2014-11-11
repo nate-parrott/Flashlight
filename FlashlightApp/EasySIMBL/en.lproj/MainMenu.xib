@@ -789,9 +789,9 @@
                                     <color key="backgroundColor" red="0.98431372549999996" green="0.0" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-zG-9ut">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-zG-9ut">
                                 <rect key="frame" x="29" y="30" width="242" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
