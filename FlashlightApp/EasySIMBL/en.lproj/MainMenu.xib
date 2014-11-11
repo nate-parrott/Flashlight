@@ -807,7 +807,7 @@
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="reloadPluginsFromWeb:" target="715" id="zox-q8-pZe"/>
+                                    <action selector="errorButtonAction:" target="715" id="srg-Dr-4rc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -889,7 +889,9 @@ Gw
         <customObject id="715" customClass="PluginListController">
             <connections>
                 <outlet property="arrayController" destination="714" id="716"/>
-                <outlet property="failedToLoadDirectoryBanner" destination="eIK-Jf-OGb" id="BJ2-yH-ZoO"/>
+                <outlet property="errorBanner" destination="eIK-Jf-OGb" id="bJL-om-cww"/>
+                <outlet property="errorButton" destination="9nN-QT-MfC" id="Jom-wc-gLW"/>
+                <outlet property="errorText" destination="4I6-zG-9ut" id="bIG-CJ-HIx"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="Fpj-ZY-CR6"/>
                 <outlet property="view" destination="652" id="deO-wQ-SCo"/>
             </connections>
