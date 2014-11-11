@@ -663,7 +663,7 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="300" height="300"/>
             <value key="maxSize" type="size" width="600" height="2000"/>
-            <view key="contentView" id="652">
+            <view key="contentView" wantsLayer="YES" id="652">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="374"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -778,7 +778,7 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIK-Jf-OGb" userLabel="Error banner">
+                    <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIK-Jf-OGb" userLabel="Error banner">
                         <rect key="frame" x="0.0" y="73" width="300" height="53"/>
                         <subviews>
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="iPu-Kd-ZWI">
@@ -891,6 +891,7 @@ Gw
                 <outlet property="arrayController" destination="714" id="716"/>
                 <outlet property="failedToLoadDirectoryBanner" destination="eIK-Jf-OGb" id="BJ2-yH-ZoO"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="Fpj-ZY-CR6"/>
+                <outlet property="view" destination="652" id="deO-wQ-SCo"/>
             </connections>
         </customObject>
         <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
