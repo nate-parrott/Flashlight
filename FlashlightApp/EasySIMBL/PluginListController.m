@@ -22,6 +22,8 @@
 
 @property (nonatomic) BOOL waitingToReloadFromDisk;
 
+@property (nonatomic) BOOL initializedYet;
+
 @end
 
 @implementation PluginListController
@@ -29,15 +31,17 @@
 #pragma mark Lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
-    self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"installed" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
-    
-    [self startWatchingPluginsDir];
-    [self reloadFromDisk];
-    [self reloadPluginsFromWeb:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resized) name:NSViewFrameDidChangeNotification object:self.tableView];
-    [self.tableView setPostsFrameChangedNotifications:YES];
+    if (!self.initializedYet) {
+        self.initializedYet = YES;
+        self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"installed" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
+        
+        [self startWatchingPluginsDir];
+        [self reloadFromDisk];
+        [self reloadPluginsFromWeb:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resized) name:NSViewFrameDidChangeNotification object:self.view];
+        [self.view setPostsFrameChangedNotifications:YES];
+    }
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -70,7 +74,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (IBAction)reloadPluginsFromWeb:(id)sender {
     [self.failedToLoadDirectoryBanner setHidden:YES];
     
-    NSURL *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/nate-parrott/flashlight/master/PluginDirectory/index.json"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://raw.githubusercontent.com/nate-parrott/flashlight/master/PluginDirectories/1/index.json"]];
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSDictionary *d = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSMutableArray *plugins = [NSMutableArray new];

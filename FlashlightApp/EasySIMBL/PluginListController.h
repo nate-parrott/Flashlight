@@ -13,7 +13,7 @@
 @interface PluginListController : NSObject
 
 @property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
-
+@property (nonatomic) IBOutlet NSView *view;
 @property (nonatomic) IBOutlet NSTableView *tableView;
 
 - (IBAction)reloadPluginsFromWeb:(id)sender;
