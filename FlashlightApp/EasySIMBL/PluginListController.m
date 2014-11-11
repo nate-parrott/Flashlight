@@ -10,6 +10,7 @@
 #import "PluginModel.h"
 #import "PluginCellView.h"
 #import "PluginInstallTask.h"
+#import "Updater.h"
 
 @interface PluginListController () <NSTableViewDelegate>
 
@@ -23,6 +24,10 @@
 @property (nonatomic) BOOL waitingToReloadFromDisk;
 
 @property (nonatomic) BOOL initializedYet;
+
+@property (nonatomic) BOOL failedToLoadWebPlugins;
+
+@property (nonatomic,strong) Updater *updater;
 
 @end
 
@@ -41,6 +46,11 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resized) name:NSViewFrameDidChangeNotification object:self.view];
         [self.view setPostsFrameChangedNotifications:YES];
+        
+        self.updater = [Updater new];
+        [self.updater checkForUpdates:^{
+            [self performSelectorOnMainThread:@selector(updateUI) withObject:nil waitUntilDone:NO];
+        }];
     }
 }
 - (void)dealloc {
@@ -49,6 +59,36 @@
 }
 
 #pragma mark UI
+- (void)updateUI {
+    __weak PluginListController* weakSelf = self;
+    if (self.updater.updatedVersionName) {
+        self.errorText.stringValue = @"A new version is available. New plugins won't work on old versions.";
+        self.errorButton.title = @"Download update";
+        self.errorButtonAction = ^{
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[weakSelf.updater updateURL]]];
+        };
+        self.errorBanner.hidden = NO;
+    } else if (self.failedToLoadWebPlugins) {
+        self.errorText.stringValue = @"Couldn't load the list of available online plugins.";
+        self.errorButton.title = @"Try again";
+        self.errorButtonAction = ^{
+            [weakSelf reloadPluginsFromWeb:nil];
+        };
+        self.errorBanner.hidden = NO;
+    } else {
+        self.errorBanner.hidden = YES;
+    }
+}
+
+- (IBAction)errorButtonAction:(id)sender {
+    if (self.errorButtonAction) self.errorButtonAction();
+}
+
+- (void)setFailedToLoadWebPlugins:(BOOL)failedToLoadWebPlugins {
+    _failedToLoadWebPlugins = failedToLoadWebPlugins;
+    [self updateUI];
+}
+
 - (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row {
     ((PluginCellView *)[rowView viewAtColumn:0]).listController = self;
 }
@@ -72,7 +112,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 #pragma mark Data
 - (IBAction)reloadPluginsFromWeb:(id)sender {
-    [self.failedToLoadDirectoryBanner setHidden:YES];
+    self.failedToLoadWebPlugins = NO;
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://raw.githubusercontent.com/nate-parrott/flashlight/master/PluginDirectories/1/index.json"]];
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -83,9 +123,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setPluginsFromWeb:plugins];
-            if (plugins.count == 0) {
-                [self.failedToLoadDirectoryBanner setHidden:NO];
-            }
+            self.failedToLoadWebPlugins = plugins.count==0;
         });
     }] resume];
 }

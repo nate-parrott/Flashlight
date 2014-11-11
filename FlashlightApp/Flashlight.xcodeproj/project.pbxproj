@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F59310C1A11C4D300657ED8 /* Updater.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59310A1A11C4D300657ED8 /* Updater.m */; };
 		5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326B81A082FA900CE241E /* ITSwitch.m */; };
 		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
 		5F6326C01A08313E00CE241E /* PluginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BF1A08313E00CE241E /* PluginModel.m */; };
@@ -83,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F59310A1A11C4D300657ED8 /* Updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Updater.m; sourceTree = "<group>"; };
+		5F59310B1A11C4D300657ED8 /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		5F6326B71A082FA900CE241E /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		5F6326B81A082FA900CE241E /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
 		5F6326BB1A0830F700CE241E /* PluginListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListController.h; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
+				5F59310B1A11C4D300657ED8 /* Updater.h */,
+				5F59310A1A11C4D300657ED8 /* Updater.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
 				5F6326BE1A08313E00CE241E /* PluginModel.h */,
@@ -432,6 +437,7 @@
 				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
 				5F6327091A0933E800CE241E /* ZZOldArchiveEntryWriter.mm in Sources */,
 				5F6327011A0933E800CE241E /* ZZDeflateOutputStream.m in Sources */,
+				5F59310C1A11C4D300657ED8 /* Updater.m in Sources */,
 				5F6327041A0933E800CE241E /* ZZFileChannelOutput.m in Sources */,
 				5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */,
 				5F6326FF1A0933E800CE241E /* ZZDataChannel.m in Sources */,

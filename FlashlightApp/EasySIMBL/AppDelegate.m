@@ -83,6 +83,22 @@
     } else {
         [self.useSIMBLSwitch setEnabled:NO];
     }
+    
+    [self restartSIMBLIfUpdated];
+}
+
+- (void)restartSIMBLIfUpdated {
+    NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"LastVersion"] isEqualToString:currentVersion]) {
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:@"LastVersion"];
+        // restart simbl:
+        if (self.SIMBLOn) {
+            self.SIMBLOn = NO;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.SIMBLOn = YES;
+            });
+        }
+    }
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication

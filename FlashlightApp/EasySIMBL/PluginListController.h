@@ -21,6 +21,9 @@
 - (void)installPlugin:(PluginModel *)plugin;
 - (void)uninstallPlugin:(PluginModel *)plugin;
 
-@property (nonatomic,weak) IBOutlet NSView *failedToLoadDirectoryBanner;
+@property (nonatomic,weak) IBOutlet NSView *errorBanner;
+@property (nonatomic,weak) IBOutlet NSTextField *errorText;
+@property (nonatomic,weak) IBOutlet NSButton *errorButton;
+@property (nonatomic,strong) void (^errorButtonAction)();
 
 @end
