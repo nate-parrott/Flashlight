@@ -32,9 +32,10 @@
 	}
 	
 	var locationName = "<!--LOCATION-->";
+	var units = "<!--UNITS-->";
 	
 	function load() {
-		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units=imperial&q=" + encodeURIComponent(locationName);
+		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units="+units+"&q=" + encodeURIComponent(locationName);
 		xhr(url, function(response) {
 			document.getElementById("loading").style.display = 'none';
 			var parsed;
@@ -71,10 +72,11 @@
 	}
 	
 	function createHTMLForDay(day, iconSize) {
+		var tempUnit = units=='metric' ? "°C" : "°F";
 		return crel("div", {"class": "forecast"},
 		iconElementForWeatherCode(day.weather[0].id, day.weather[0].icon.match(/.*n/), iconSize),
 		crel("div", {"class": "day"}, weekdayFromTimestamp(day.dt)),
-		crel("div", {"class": "temp"}, Math.round(day.temp.day) + "°F"),
+		crel("div", {"class": "temp"}, Math.round(day.temp.day) + tempUnit),
 		crel("div", {"class": "condition"}, day.weather[0].description)
 		)
 	}
