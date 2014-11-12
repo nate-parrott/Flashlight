@@ -1,7 +1,8 @@
 import json, urllib, os
 
 def results(parsed, original_query):
-	url = "http://m.wolframalpha.com/input/?i={0}".format(urllib.quote_plus(parsed['wa_query']))
+	q = parsed['wa_query'] if 'wa_query' in parsed else parsed['~wa_query']
+	url = "http://m.wolframalpha.com/input/?i={0}".format(urllib.quote_plus(q))
 	html = """
 	<script>
 	setTimeout(function() {
@@ -10,9 +11,9 @@ def results(parsed, original_query):
 	</script>
 	""" % (json.dumps(url))
 	return {
-		"title": "Ask Wolfram|Alpha '{0}'".format(parsed['wa_query']),
+		"title": "Ask Wolfram|Alpha '{0}'".format(q),
 		"html": html,
-		"run_args": [parsed['wa_query']]
+		"run_args": [q]
 	}
 
 def run(query):
