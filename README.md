@@ -11,7 +11,7 @@ Flashlight is an **unofficial Spotlight API** that allows you to programmaticall
 
 Clone and build using Xcode, or [download Flashlight.app from _releases_](https://github.com/nate-parrott/Flashlight/releases).
 
-**API**
+## API
 
 The best way to get started writing a plugin is to copy an existing one and modify it. Try installing a simple plugin like 'say' or 'Pig latin,' and find it in `[your-user-directory]/Library/FlashlightPlugins`. Right click and 'show bundle contents,' then open the `executable` in a text editor. Plugins don't need to be reloaded.
 
@@ -37,7 +37,10 @@ weather location(brooklyn)
 weather in location(new york)
 how's the weather in location(queens)?
 forecast for location(the bronx)
+search for ~stackoverflow_query(kanye west) on stack overflow
 ```
+
+`location` and `~stackoverflow_query` are fields, which the parser will find for us and let us extract them later. Free-text fields, where the content of the field may be absolutely anything (and so word-frequency shouldn't be used as criteria in matching) should begin with `~`.
 
 Each line is an example of a command that will invoke this plugin. The `location()` identifies part of the string as a location.
 
@@ -65,7 +68,7 @@ For examples, look at the ['say' example](https://github.com/nate-parrott/Flashl
 
 *Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.*
 
-**How it works**
+## How it works
 
 The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading runtime injection of plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.
 
@@ -74,3 +77,11 @@ The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches 
 Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
 
 The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM through 10.10.1 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
+
+## Credits
+
+The iOS-style switches in the app (`ITSwitch.h/m`) are [https://github.com/iluuu1994/ITSwitch](ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
+
+The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
+
+Licensed under the GPL.
