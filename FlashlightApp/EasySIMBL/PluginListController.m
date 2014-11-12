@@ -206,12 +206,17 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self localPluginsPath] error:nil];
     NSMutableArray *models = [NSMutableArray new];
     for (NSString *itemName in contents) {
-        if ([[itemName pathExtension] isEqualToString:@"bundle"]) {
+        NSString *ext = [itemName pathExtension];
+        if ([@[@"bundle", @"disabled-bundle"] containsObject:ext]) {
             NSData *data = [NSData dataWithContentsOfFile:[[[self localPluginsPath] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]];
             if (data) {
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 PluginModel *model = [PluginModel fromJson:json baseURL:nil];
-                model.installed = YES;
+                if ([ext isEqualToString:@"bundle"]) {
+                    model.installed = YES;
+                } else {
+                    model.disabledPluginPath = [[self localPluginsPath] stringByAppendingPathComponent:itemName];
+                }
                 [models addObject:model];
             }
         }
@@ -253,7 +258,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)uninstallPlugin:(PluginModel *)plugin {
     if ([self isPluginCurrentlyBeingInstalled:plugin]) return;
     
-    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"bundle"]] error:nil];
+    NSString *path = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"bundle"]];
+    NSString *disabledPath = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"disabled-bundle"]];
+    [[NSFileManager defaultManager] moveItemAtPath:path toPath:disabledPath error:nil];
 }
 
 @end

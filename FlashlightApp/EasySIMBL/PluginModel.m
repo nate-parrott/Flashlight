@@ -18,6 +18,7 @@
     p.installed = self.installed;
     p.installing = self.installing;
     p.examples = self.examples;
+    p.disabledPluginPath = self.disabledPluginPath;
     return p;
 }
 
