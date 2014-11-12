@@ -1,0 +1,5 @@
+{
+	"name": "moresearch",
+	"displayName": "Search more websites",
+	"examples": ["imdb/i interstellar", "youtube/yt erb, stackoverflow/so python", "netflix/n chuck", "urbandictionary/ud hello"]
+}
