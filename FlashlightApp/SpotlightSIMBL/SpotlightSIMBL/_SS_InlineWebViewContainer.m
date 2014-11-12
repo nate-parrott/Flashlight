@@ -88,6 +88,7 @@
         _webView.policyDelegate = self;
         _webView.frame = self.bounds;
         _webView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
+        _webView.drawsBackground = NO;
     }
 }
 

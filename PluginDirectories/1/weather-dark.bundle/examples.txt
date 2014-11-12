@@ -1,0 +1,7 @@
+weather location(brooklyn)
+weather in location(new york)
+how's the weather in location(queens)?
+forecast for location(the bronx)
+location(london) weather
+location(istanbul) forecast
+location(san francisco) weather
