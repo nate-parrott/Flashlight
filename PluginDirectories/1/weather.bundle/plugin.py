@@ -8,7 +8,6 @@ def use_metric():
 
 def results(parsed, original_query):
 	location = parsed['location']
-	metric = use_metric()
 	html = open("weather.html").read().replace("<!--LOCATION-->", location).replace("<!--UNITS-->", "metric" if use_metric() else "imperial")
 	return {
 		"title": '"{0}" weather'.format(location),
