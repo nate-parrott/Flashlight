@@ -74,6 +74,10 @@ If Flashlight encounters an error while running your Python script, you won't se
 
 *Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.*
 
+** Submitting a plugin **
+
+Right now there isn't a fancy process for submitting. Place your plugin in `PluginDirectories/$HIGHEST_NUMBER/`, then run `python generate_index.py`. Submit a pull request.
+
 ## How it works
 
 The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading runtime injection of plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.
