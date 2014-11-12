@@ -20,6 +20,17 @@
             "zip_url": "imdb.zip"
         },
         {
+            "displayName": "Search more websites",
+            "examples": [
+                "imdb/i interstellar",
+                "youtube/yt erb, stackoverflow/so python",
+                "netflix/n chuck",
+                "urbandictionary/ud hello"
+            ],
+            "name": "moresearch",
+            "zip_url": "moresearch.zip"
+        },
+        {
             "description": "Translate a message into Pig Latin",
             "displayName": "Pig Latin",
             "examples": [
