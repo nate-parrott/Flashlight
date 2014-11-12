@@ -33,6 +33,7 @@
 	
 	var locationName = "<!--LOCATION-->";
 	var units = "<!--UNITS-->";
+	var appearance = "<!--APPEARANCE-->";
 	
 	function load() {
 		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units="+units+"&q=" + encodeURIComponent(locationName);
@@ -52,7 +53,7 @@
 	
 	function iconElementForWeatherCode(code, nighttime, size) {
 		// CLEAR_DAY, CLEAR_NIGHT, PARTLY_CLOUDY, PARTLY_CLOUDY_NIGHT, CLOUDY, RAIN, SLEET
-		var skycons = new Skycons({color: "black"});
+		var skycons = new Skycons({color: appearance=='dark' ? 'white' : 'black'});
 		var hundred = Math.floor(code / 100);
 		var codes = [
 		Skycons.CLEAR_DAY,
@@ -100,6 +101,9 @@
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
 		line-height: 1.2;
 	}
+	body.dark {
+		color: white;
+	}
 	body > div {
 		display: table;
 	}
@@ -131,15 +135,15 @@
 		margin: 5px;
 	}
 	.condition {
-		color: gray;
+		opacity: 0.6;
 	}
 	#location {
 		font-size: small;
-		color: gray;
+		opacity: 0.6;
 	}
 	</style>
 </head>
-<body>
+<body class='<!--APPEARANCE-->'>
 	<div>
 		<div>
 			<div id='loading'>

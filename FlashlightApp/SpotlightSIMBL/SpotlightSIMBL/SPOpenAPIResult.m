@@ -71,9 +71,12 @@ id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
     NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
     NSString *iconPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"icon.png"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
-        NSData *infoJsonData = [NSData dataWithContentsOfFile:[[_SS_PluginRunner pathForPlugin:sourcePlugin]]
-        if (appBundle.infoDictionary[@"IconPath"]) {
-            iconPath = appBundle.infoDictionary[@"IconPath"];
+        NSData *infoJsonData = [NSData dataWithContentsOfFile:[[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"info.json"]];
+        if (infoJsonData) {
+            NSDictionary *info = [NSJSONSerialization JSONObjectWithData:infoJsonData options:0 error:nil];
+            if (info[@"iconPath"]) {
+                iconPath = info[@"iconPath"];
+            }
         }
     }
     return [[NSImage alloc] initByReferencingFile:iconPath];

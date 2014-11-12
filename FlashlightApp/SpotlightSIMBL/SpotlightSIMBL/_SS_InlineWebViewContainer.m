@@ -72,6 +72,9 @@
         if ([json[@"webview_links_open_in_browser"] boolValue]) {
             self.linksOpenInBrowser = YES;
         }
+        if ([json[@"webview_transparent_background"] boolValue]) {
+            _webView.drawsBackground = NO;
+        }
     } else {
         for (NSView *v in self.subviews) {
             v.hidden = YES;
@@ -83,7 +86,6 @@
     if (!_webView) {
         _webView = [WebView new];
         [self addSubview:_webView positioned:NSWindowBelow relativeTo:_loader];
-        // [_webView setCustomUserAgent:@"Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_4 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B350 Safari/8536.25"];
         _webView.frameLoadDelegate = self;
         _webView.policyDelegate = self;
         _webView.frame = self.bounds;
