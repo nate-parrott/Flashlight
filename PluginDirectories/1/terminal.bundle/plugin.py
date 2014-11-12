@@ -19,7 +19,7 @@ def results(parsed, original_query):
 
 def run(command):
 	from applescript import asrun, asquote
-	# TODO: set the current working dir to the frontmost dir in Finder
+	from pipes import quote
 	ascript = '''
 	tell application "Finder" 
 	 	if (count of Finder windows) is not 0 then
@@ -32,7 +32,8 @@ def run(command):
 	
 	tell application "Terminal"
 		activate
-		do script "sh -c \"cd " & dir & " && " & {0} & "\""
+		do script "cd " & dir
+		do script {0} in front window
 	end tell
 	'''.format(asquote(command))
 
