@@ -2,7 +2,7 @@ import urllib, json
 
 def results(parsed, original_query):
 	search_specs = [
-		 ["IMDB", "~imdbquery", "http://m.imdb.com/find?q=", "http://imbdb.com/find?q="]
+		 ["IMDB", "~imdbquery", "http://m.imdb.com/find?q=", "http://imdb.com/find?q="]
 	]
 	for name, key, mobile_url, url in search_specs:
 		if key in parsed:
