@@ -1,0 +1,6 @@
+{
+	"name": "shorten",
+	"displayName": "Shorten url",
+	"description": "Make a long url short w/ goo.gl",
+	"examples": ["shorten http://google.com"]
+}
