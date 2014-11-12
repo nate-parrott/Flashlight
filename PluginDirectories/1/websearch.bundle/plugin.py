@@ -4,7 +4,11 @@ def results(parsed, original_query):
 	search_specs = [
 		 ["Google", "~googlequery", "https://www.google.com/search?q="],
 		 ["Duck Duck Go", "~duckduckgoquery", "https://duckduckgo.com/?q="],
-		 ["Google Images", "~googleimagequery", "https://www.google.com/search?tbm=isch&q="]
+		 ["Google Images", "~googleimagequery", "https://www.google.com/search?tbm=isch&q="],
+         ["Baidu", "~baiduquery", "http://www.baidu.com/s?wd="],
+         ["Bing", "~bingquery", "http://www.bing.com/search?q="],
+         ["Yahoo", "~yahooquery", "https://sg.search.yahoo.com/search?p="],
+         ["Twitter", "~twitterquery", "https://mobile.twitter.com/search?q="]
 	]
 	for name, key, url in search_specs:
 		if key in parsed:

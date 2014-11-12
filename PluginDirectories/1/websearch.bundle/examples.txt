@@ -10,3 +10,17 @@ image search for ~googleimagequery(query here)
 show me images of ~googleimagequery(query here)
 show me a picture of ~googleimagequery(query here)
 gi ~googleimagequery(query here)
+
+baidu search for ~baiduquery(query here)
+baidu ~baiduquery(query here)
+bd ~baiduquery(query here)
+
+bing search for ~bingquery(query here)
+bing ~bingquery(query here)
+bg ~bingquery(query here)
+
+yahoo ~yahooquery(query here)
+yh ~yahooquery(query here)
+
+twitter ~twitterquery(query here)
+tt ~twitterquery(query here)
