@@ -1,1 +1,3 @@
 yelp ~yelpquery(query here)
+search yelp for ~yelpquery(query here)
+find ~yelpquery(chinese takeout) on yelp
