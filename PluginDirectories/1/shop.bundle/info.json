@@ -1,0 +1,6 @@
+{
+	"name": "shopping",
+	"displayName": "Shopping",
+	"description": "Search the stuff on Shopping Mall",
+	"examples": ["amazon flashlight", "a flashlight", "ebay flashlight", "e flashlight", "jd flashlight", "j flashlight", "taobao flashlight", "t flashlight"]
+}
