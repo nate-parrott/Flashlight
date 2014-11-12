@@ -32,7 +32,7 @@ def run(command):
 	
 	tell application "Terminal"
 		activate
-		do script "cd " & dir & " && " & {0}
+		do script "sh -c \"cd " & dir & " && " & {0} & "\""
 	end tell
 	'''.format(asquote(command))
 
