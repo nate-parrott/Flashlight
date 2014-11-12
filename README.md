@@ -86,7 +86,7 @@ The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM t
 
 ## Credits
 
-The iOS-style switches in the app (`ITSwitch.h/m`) are [https://github.com/iluuu1994/ITSwitch](ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
+The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
 The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
 
