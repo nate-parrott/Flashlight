@@ -1,0 +1,5 @@
+lock
+shutdown
+logout
+restart
+sleep
