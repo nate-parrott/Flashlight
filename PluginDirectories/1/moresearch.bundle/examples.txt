@@ -1,0 +1,14 @@
+imdb ~imdbquery(query here)
+i ~imdbquery(query here)
+
+youtube ~youtubequery(query here)
+yt ~youtubequery(query here)
+
+stackoverflow ~soquery(query here)
+so ~soquery(query here)
+
+urbandictionary ~udquery(query here)
+ud ~udquery(query here)
+
+netflix ~netflixquery(query here)
+n ~netflixquery(query here)
