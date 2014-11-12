@@ -15,6 +15,7 @@
 @property (nonatomic) BOOL installed;
 @property (nonatomic) BOOL installing;
 @property (nonatomic) NSURL *zipURL;
+@property (nonatomic) NSString *disabledPluginPath;
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url;
 
