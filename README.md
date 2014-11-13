@@ -28,6 +28,8 @@ Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They ha
 	  - key 'displayName' (string)
 	  - key 'description' (string)
 	  - key 'examples' (array of strings): usage examples
+	  - key 'categories' (array of strings): array of category names, from the left side of the Flashlight window. Add your own if appropriate
+  - Icon.png _optional_ the icon that'll appear next to your results in Spotlight. Not larger tha 512x512.
 ```
 
 `examples.txt` looks like this:
@@ -49,6 +51,8 @@ When a command looks sufficiently like your examples and is routed to your plugi
  - `title`: the title of the result
  - `html`: _optional_ HTML to be displayed inside the Spotlight preview
  - `run_args`: _optional_ if the user presses enter on your result, we'll call a function `run()` that you can define inside `plugin.py`, passing `run_args` as arguments. These need to be JSON-serializable.
+ - `webview_links_open_in_browser`: _optional_ when the user clicks links in the webview, they'll close Spotlight and open in a browser
+ - `webview_user_agent`: _optional_ override the user agent in the webview. Useful if you want to load a mobile-optimized site that fits the size of the Spotlight window.
 
 For example, the *say* plugin's `plugin.py` looks like this:
 
