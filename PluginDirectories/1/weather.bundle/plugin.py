@@ -11,7 +11,7 @@ def use_metric():
 	return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
 
 def results(parsed, original_query):
-	location = parsed['location']
+	location = parsed['~location']
 	html = open("weather.html").read().replace("<!--LOCATION-->", location).replace("<!--UNITS-->", "metric" if use_metric() else "imperial").replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
 	return {
 		"title": '"{0}" weather'.format(location),
