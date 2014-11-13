@@ -64,7 +64,7 @@ def run(message):
 	os.system('say "{0}"'.format(message))
 ```
 
-For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
+For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/piglatin.bundle).
 
 ** Debugging**
 
