@@ -93,6 +93,18 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Make a long url short w/ goo.gl",
+            "displayName": "Shorten url",
+            "examples": [
+                "shorten http://google.com"
+            ],
+            "name": "shorten",
+            "zip_url": "shorten.zip"
+        },
+        {
+            "categories": [
                 "System",
                 "Featured"
             ],
@@ -107,6 +119,15 @@
             ],
             "name": "shutdown",
             "zip_url": "shutdown.zip"
+        },
+        {
+            "description": "Search for an artist, album or track in Spotify.",
+            "displayName": "Spotify",
+            "examples": [
+                "spotify/spt Michael Jackson"
+            ],
+            "name": "Spotify",
+            "zip_url": "spotify.zip"
         },
         {
             "categories": [
