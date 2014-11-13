@@ -1,0 +1,6 @@
+{
+	"name": "Spotify",
+	"displayName": "Spotify",
+	"description": "Search for an artist, album or track in Spotify.",
+	"examples": ["spotify/spt Michael Jackson"]
+}
