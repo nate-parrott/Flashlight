@@ -28,6 +28,19 @@
         },
         {
             "categories": [
+                "Language"
+            ],
+            "description": "Translate words from English to Spanish.",
+            "displayName": "Instranslator",
+            "examples": [
+                "translate rain to spanish",
+                "rain ttr"
+            ],
+            "name": "Instranslator",
+            "zip_url": "Instranslator.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "displayName": "Search more websites",
