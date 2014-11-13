@@ -309,6 +309,22 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [ordered addObject:@"Unknown"];
     return ordered;
 }
+- (NSImage *)iconForCategory:(NSString *)category {
+    NSDictionary *imageNamesForCategories = @{
+                            @"Installed": @"download",
+                            @"Featured": @"star",
+                            @"Information": @"info",
+                            @"Language": @"translate",
+                            @"Search": @"search",
+                            @"System": @"cog",
+                            @"Utilities": @"wrench",
+                            @"Weather": @"cloud",
+                            @"News": @"newspaper",
+                            @"Unknown": @"plugin"
+                            };
+    NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
+    return [NSImage imageNamed:imageName];
+}
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
     if (item==nil) {
         return [self categoriesForDisplay].count;
@@ -324,6 +340,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     } else {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = item;
+        view.imageView.image = [self iconForCategory:item];
+        view.imageView.alphaValue = 0.47;
         return view;
     }
 }
