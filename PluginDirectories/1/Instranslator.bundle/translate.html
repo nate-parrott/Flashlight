@@ -1,0 +1,118 @@
+<html>
+<style>
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ .content-wrapper {
+    width: 90%;
+    padding: 20px;
+    background-color: #E6E6E6;
+ }
+
+ .content-wrapper #translation {
+    text-transform: capitalize;
+    text-align: left;
+ }
+
+</style>
+
+<div class="content-wrapper">
+    <p id="translation" >HOLA QUE ASE </p>
+</div>
+
+<script>
+    var disabled = false,
+        BASE_URL = "http://translate.google.com/translate_a/t?client=t&sl=en&tl=es&hl=en&sc=2&ie=UTF-8&oe=UTF-8&pc=1&oc=1&otf=1&ssel=0&q=";
+
+    function translate(words) {
+        var serverResponse = ajaxRequest(words);
+        var content = processText(serverResponse);
+        plotDiv(content);
+    }
+
+    function ajaxRequest(words) {
+        var xhReq = new XMLHttpRequest(),
+            serverResponse;
+        xhReq.open("GET", BASE_URL + words, false);
+        xhReq.send(null);
+        serverResponse = xhReq.responseText;
+        return serverResponse;
+    }
+
+    /**
+    *   Gets the translated text and apply regex to clean the output.
+    */
+    function processText(response) {
+        var translation = "",
+            word,
+            alternatives;
+        response = response.replace(/\d+/g, '');
+        response = response.split("]");
+        word = response[0];
+        alternatives = response[1];
+        word = word.replace(/\[/g, '');
+        word = word.replace(/\"/g, '');
+        word = word.split(",");
+        word = word[0];
+        translation += word + ". ";
+        translation = translation.replace(".", ".\n");
+        return translation;
+    }
+
+    function plotDiv(text) {
+        holder = document.getElementById("translation").innerHTML = text;
+    }
+
+	translate("----aaa----");
+
+
+</script><script>
+    var disabled = false,
+        BASE_URL = "http://translate.google.com/translate_a/t?client=t&sl=en&tl=es&hl=en&sc=2&ie=UTF-8&oe=UTF-8&pc=1&oc=1&otf=1&ssel=0&q=";
+
+    var translate = function translate(words) {
+        serverResponse = ajaxRequest(words);
+        content = processText(serverResponse);
+        plotDiv(content);
+    }
+
+    function ajaxRequest(words) {
+        var xhReq = new XMLHttpRequest(),
+            serverResponse;
+        xhReq.open("GET", BASE_URL + words, false);
+        xhReq.send(null);
+        serverResponse = xhReq.responseText;
+        return serverResponse;
+    }
+
+    /**
+    *   Gets the translated text and apply regex to clean the output.
+    */
+    function processText(response) {
+        var translation = "",
+            word,
+            alternatives;
+        response = response.replace(/\d+/g, '');
+        response = response.split("]");
+        word = response[0];
+        alternatives = response[1];
+        word = word.replace(/\[/g, '');
+        word = word.replace(/\"/g, '');
+        word = word.split(",");
+        word = word[0];
+        translation += word + ". ";
+        translation.replace(".", ".\n");
+        return translation;
+    }
+
+    function plotDiv(text) {
+        holder = document.getElementById("translation").innerHTML = text;
+    }
+
+	translate("----words----");
+
+
+</script>
+</html>

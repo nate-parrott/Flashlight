@@ -1,0 +1,7 @@
+{
+	"name": "Instranslator",
+	"displayName": "Instranslator",
+	"description": "Translate words from English to Spanish.",
+	"examples": ["translate rain to spanish", "rain ttr"],
+	"categories": ["Language"]
+}
