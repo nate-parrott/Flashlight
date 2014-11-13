@@ -1,0 +1,3 @@
+shorten ~url(http://google.com)
+sh ~url(http://google.com)
+
