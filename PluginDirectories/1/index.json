@@ -54,6 +54,9 @@
             "zip_url": "moresearch.zip"
         },
         {
+            "categories": [
+                "Language"
+            ],
             "description": "Translate a message into Pig Latin",
             "displayName": "Pig Latin",
             "examples": [

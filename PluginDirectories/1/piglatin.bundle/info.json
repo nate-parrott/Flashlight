@@ -2,5 +2,6 @@
 	"name": "piglatin",
 	"displayName": "Pig Latin",
 	"description": "Translate a message into Pig Latin",
-	"examples": ["translate hello world into pig latin", "pig latin hello world"]
+	"examples": ["translate hello world into pig latin", "pig latin hello world"],
+	"categories": ["Language"]
 }

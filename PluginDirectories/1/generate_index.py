@@ -11,6 +11,7 @@ for filename in os.listdir('.'):
 		zipped = zipfile.ZipFile(name + ".zip", "w")
 		for (dir, dirs, files) in os.walk(filename):
 			for f in files:
+				if os.path.splitext(f)[-1] == '.pyc': continue
 				zipped.write(os.path.join(dir, f), os.path.join(dir, f))
 		zipped.close()
 		info = json.load(open(os.path.join(filename, 'info.json')))
