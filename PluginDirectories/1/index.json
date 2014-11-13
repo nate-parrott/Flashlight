@@ -20,6 +20,17 @@
             "zip_url": "imdb.zip"
         },
         {
+            "description": "Translate words from English to Spanish.",
+            "displayName": "Instranslator",
+            "examples": [
+                "Do ttr",
+                "rain ttr",
+                "Bigger ttr"
+            ],
+            "name": "Instranslator",
+            "zip_url": "Instranslator.zip"
+        },
+        {
             "displayName": "Search more websites",
             "examples": [
                 "imdb/i interstellar",
