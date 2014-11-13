@@ -35,6 +35,7 @@
 		5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */; };
 		5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63270D1A0939A900CE241E /* libz.dylib */; };
 		5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */ = {isa = PBXBuildFile; fileRef = 5F97AD411A0ACA0100838C7C /* NaturalCommands */; };
+		5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */; };
 		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
@@ -144,6 +145,8 @@
 		5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZStoreOutputStream.m; sourceTree = "<group>"; };
 		5F63270D1A0939A900CE241E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5F97AD411A0ACA0100838C7C /* NaturalCommands */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NaturalCommands; path = ../../NaturalCommands; sourceTree = "<group>"; };
+		5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvenienceCategories.h; sourceTree = "<group>"; };
+		5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvenienceCategories.m; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -300,6 +303,8 @@
 				5F59310A1A11C4D300657ED8 /* Updater.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
+				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
+				5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */,
 				5F6326BE1A08313E00CE241E /* PluginModel.h */,
 				5F6326BF1A08313E00CE241E /* PluginModel.m */,
 				5F6326CB1A09310F00CE241E /* PluginInstallTask.h */,
@@ -427,6 +432,7 @@
 				5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */,
 				5F6327001A0933E800CE241E /* ZZDataChannelOutput.m in Sources */,
 				5F6326FD1A0933E800CE241E /* ZZArchiveEntry.m in Sources */,
+				5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */,
 				5F6326FE1A0933E800CE241E /* ZZConstants.m in Sources */,
 				5F6326FC1A0933E800CE241E /* ZZArchive.mm in Sources */,
 				5F6327071A0933E800CE241E /* ZZNewArchiveEntryWriter.mm in Sources */,

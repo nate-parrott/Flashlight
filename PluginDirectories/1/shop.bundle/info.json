@@ -2,5 +2,6 @@
 	"name": "shop",
 	"displayName": "Shopping Search",
 	"description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
-	"examples": ["amazon flashlight", "a flashlight", "ebay flashlight", "e flashlight", "jd flashlight", "j flashlight", "taobao flashlight", "t flashlight"]
+	"examples": ["amazon flashlight", "a flashlight", "ebay flashlight", "e flashlight", "jd flashlight", "j flashlight", "taobao flashlight", "t flashlight"],
+	"categories": ["Search"]
 }

@@ -2,5 +2,6 @@
 	"name": "shutdown",
 	"displayName": "Shutdown",
 	"description": "Provides additional commands such as shutdown, restart and logout",
-	"examples": ["shutdown", "restart", "logout", "sleep", "lock"]
+	"examples": ["shutdown", "restart", "logout", "sleep", "lock"],
+	"categories": ["System", "Featured"]
 }

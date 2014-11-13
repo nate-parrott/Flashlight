@@ -1,5 +1,6 @@
 {
 	"name": "yelp",
 	"displayName": "Yelp",
-	"examples": ["yelp pizza"]
+	"examples": ["yelp pizza"],
+	"categories": ["Search"]
 }

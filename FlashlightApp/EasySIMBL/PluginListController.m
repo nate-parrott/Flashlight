@@ -11,8 +11,9 @@
 #import "PluginCellView.h"
 #import "PluginInstallTask.h"
 #import "Updater.h"
+#import "ConvenienceCategories.h"
 
-@interface PluginListController () <NSTableViewDelegate>
+@interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource>
 
 @property (nonatomic) NSArray *pluginsFromWeb;
 @property (nonatomic) NSArray *installedPlugins;
@@ -29,6 +30,8 @@
 
 @property (nonatomic,strong) Updater *updater;
 
+@property (nonatomic) NSString *selectedCategory;
+
 @end
 
 @implementation PluginListController
@@ -37,6 +40,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     if (!self.initializedYet) {
+        self.selectedCategory = @"Featured";
+        
+        [self.toolbarItem setView:self.toggleView];
+        
+        self.sourceList.selectionHighlightStyle = NSTableViewSelectionHighlightStyleSourceList;
+        
         self.initializedYet = YES;
         self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"installed" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
         
@@ -132,17 +141,23 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 - (void)setPluginsFromWeb:(NSArray *)pluginsFromWeb {
     _pluginsFromWeb = pluginsFromWeb;
-    [self updateArrayController];
+    [self updateControllers];
 }
 
 - (void)setInstalledPlugins:(NSArray *)installedPlugins {
     _installedPlugins = installedPlugins;
-    [self updateArrayController];
+    [self updateControllers];
 }
 
 - (void)setInstallTasksInProgress:(NSSet *)installTasksInProgress {
     _installTasksInProgress = installTasksInProgress;
-    [self updateArrayController];
+    [self updateControllers];
+}
+
+- (void)updateControllers {
+    [self.sourceList reloadData];
+    self.selectedCategory = self.selectedCategory;
+     ;
 }
 
 - (void)updateArrayController {
@@ -160,8 +175,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     for (PluginModel *plugin in plugins) {
         plugin.installing = [self isPluginCurrentlyBeingInstalled:plugin];
     }
+    plugins = [plugins map:^id(PluginModel *p) {
+        return [p.allCategories containsObject:self.selectedCategory] ? p : nil;
+    }];
     [self.arrayController addObjects:plugins];
-    [self.arrayController rearrangeObjects];
+    // [self.arrayController rearrangeObjects];
 }
 
 #pragma mark Local plugin files
@@ -261,6 +279,80 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSString *path = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"bundle"]];
     NSString *disabledPath = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"disabled-bundle"]];
     [[NSFileManager defaultManager] moveItemAtPath:path toPath:disabledPath error:nil];
+}
+
+#pragma mark Categorization
+- (NSArray *)categoriesForDisplay {
+    // returns category names or NSNull's for section breaks
+    NSMutableSet *categories = [NSMutableSet new];
+    for (PluginModel *p in self.pluginsFromWeb) {
+        for (NSString *c in p.allCategories) {
+            [categories addObject:c];
+        }
+    }
+    for (PluginModel *p in self.installedPlugins) {
+        for (NSString *c in p.allCategories) {
+            [categories addObject:c];
+        }
+    }
+    NSMutableArray *ordered = categories.allObjects.mutableCopy;
+    [ordered sortUsingSelector:@selector(compare:)];
+    [ordered removeObject:@"Installed"];
+    [ordered removeObject:@"Featured"];
+    [ordered removeObject:@"Unknown"];
+    
+    [ordered insertObject:[NSNull null] atIndex:0];
+    [ordered insertObject:@"Installed" atIndex:1];
+    [ordered insertObject:[NSNull null] atIndex:2];
+    [ordered insertObject:@"Featured" atIndex:3];
+    [ordered insertObject:[NSNull null] atIndex:4];
+    [ordered addObject:@"Unknown"];
+    return ordered;
+}
+- (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
+    if (item==nil) {
+        return [self categoriesForDisplay].count;
+    } else {
+        return 0;
+    }
+}
+- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item {
+    if ([item isKindOfClass:[NSNull class]]) {
+        NSTableCellView *view = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
+        view.textField.stringValue = @"";
+        return view;
+    } else {
+        NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+        view.textField.stringValue = item;
+        return view;
+    }
+}
+- (id)outlineView:(NSOutlineView *)outlineView child:(NSInteger)index ofItem:(id)item {
+    if (item == nil) {
+        return [self categoriesForDisplay][index];
+    } else {
+        return nil;
+    }
+}
+- (BOOL)outlineView:(NSOutlineView *)outlineView isItemExpandable:(id)item {
+    return NO;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
+    return ![item isKindOfClass:[NSNull class]];
+}
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
+    self.selectedCategory = [self categoriesForDisplay][[self.sourceList selectedRow]];
+}
+
+- (void)setSelectedCategory:(NSString *)selectedCategory {
+    _selectedCategory = selectedCategory;
+    NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
+    if (i != NSNotFound) {
+        [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+    }
+    [self updateArrayController];
 }
 
 @end
