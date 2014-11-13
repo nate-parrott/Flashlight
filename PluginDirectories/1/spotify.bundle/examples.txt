@@ -1,0 +1,2 @@
+spotify ~search(Michael Jackson)
+spt ~search(Thriller)
