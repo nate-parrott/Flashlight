@@ -19,6 +19,7 @@
     p.installing = self.installing;
     p.examples = self.examples;
     p.disabledPluginPath = self.disabledPluginPath;
+    p.categories = self.categories;
     return p;
 }
 
@@ -30,6 +31,7 @@
     model.examples = json[@"examples"];
     model.installed = NO;
     model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
+    model.categories = json[@"categories"] ? : @[@"Unknown"];
     return model;
 }
 
@@ -76,6 +78,14 @@
         }
     }
     return s;
+}
+
+- (NSArray *)allCategories {
+    NSMutableArray *cats = [self.categories mutableCopy];
+    if (self.installed) {
+        [cats addObject:@"Installed"];
+    }
+    return cats;
 }
 
 @end

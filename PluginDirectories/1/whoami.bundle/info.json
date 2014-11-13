@@ -2,5 +2,6 @@
 	"name": "whoami",
 	"displayName": "Who am I?",
 	"description": "Tell me who I am",
-	"examples": ["Who am I?"]
+	"examples": ["Who am I?"],
+	"categories": ["System"]
 }

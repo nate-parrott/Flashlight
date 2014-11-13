@@ -1,5 +1,6 @@
 {
 	"name": "wolfram-alpha",
 	"displayName": "Wolfram|Alpha Search",
-	"examples": ["ask wolfram alpha 1 + 1", "wa first 10 prime numbers", "population of india"]
+	"examples": ["ask wolfram alpha 1 + 1", "wa first 10 prime numbers", "population of india"],
+	"categories": ["Information", "Featured"]
 }

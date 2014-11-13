@@ -1,5 +1,6 @@
 {
 	"name": "imdb",
 	"displayName": "IMDB",
-	"examples": ["imdb Phantom of the Opera"]
+	"examples": ["imdb Phantom of the Opera"],
+	"categories": ["Search"]
 }

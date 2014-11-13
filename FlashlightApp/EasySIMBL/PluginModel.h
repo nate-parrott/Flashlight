@@ -16,11 +16,14 @@
 @property (nonatomic) BOOL installing;
 @property (nonatomic) NSURL *zipURL;
 @property (nonatomic) NSString *disabledPluginPath;
+@property (nonatomic) NSArray *categories;
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url;
 
 + (NSArray *)mergeDuplicates:(NSArray *)models;
 
 @property (nonatomic,readonly) NSAttributedString *attributedString;
+
+- (NSArray *)allCategories;
 
 @end

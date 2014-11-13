@@ -3,5 +3,6 @@
 	"displayName": "Terminal",
 	"description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
 	"examples": ["rm -f *.py", "git push", "$ ping google.com"],
-	"iconPath": "/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns"
+	"iconPath": "/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns",
+	"categories": ["System"]
 }
