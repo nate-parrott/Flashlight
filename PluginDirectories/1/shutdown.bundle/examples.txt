@@ -3,3 +3,4 @@ shutdown
 logout
 restart
 sleep
+empty trash
