@@ -64,7 +64,7 @@ def run(message):
 	os.system('say "{0}"'.format(message))
 ```
 
-For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/piglatin.bundle).
+For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/piglatin.bundle).
 
 ** Debugging**
 
@@ -72,7 +72,7 @@ Debugging support isn't the best right now — it's best to test as much of your
 
 If Flashlight encounters an error while running your Python script, you won't see any visible error — but you'll see messages like `Spotlight: querying Flashlight plugins` in `console.app`. Expand these for a full stack trace of the error.
 
-*Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectory/weather.bundle) is a good example of this.*
+*Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/weather.bundle) is a good example of this.*
 
 ** Submitting a plugin **
 
