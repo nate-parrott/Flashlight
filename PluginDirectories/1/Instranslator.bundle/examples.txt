@@ -1,0 +1,3 @@
+~text(Bigger) ttr
+translate ~text(rain) to spanish
+how do you say ~text(rain) in spanish?
