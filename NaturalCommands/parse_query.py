@@ -10,6 +10,7 @@ from shared import plugin_dir, WorkingDirAs
 
 example_phrases = []
 plugins_to_always_invoke = set()
+regexes = {}
 for plugin in os.listdir(plugin_dir):
 	if os.path.isdir(os.path.join(plugin_dir, plugin)):
 		plugin_name, extension = os.path.splitext(plugin)
@@ -18,8 +19,12 @@ for plugin in os.listdir(plugin_dir):
 			if os.path.exists(examples_file):
 				for line in open(examples_file):
 					line = line.strip()
-					if line == '!always_invoke':
-						plugins_to_always_invoke.add(plugin_name)
+					if line.startswith('!'):
+						if line == '!always_invoke':
+							plugins_to_always_invoke.add(plugin_name)
+						elif line.startswith('!regex '):
+							_, field_name, regex = line.split(' ', 2)
+							regexes[field_name[1:]] = regex
 					elif len(line):
 						example_phrases.append(parse_example_to_phrase(plugin_name, line))
 
@@ -30,7 +35,7 @@ example_phrases.append(commanding.Phrase("", ["wurt turt gurt", ["~burt", "nurt"
 example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeough egoiheroi"]]))
 
 def parse_query(query):
-	parsed = commanding.parse_phrase(query, example_phrases)
+	parsed = commanding.parse_phrase(query, example_phrases, regexes)
 	if parsed == None or parsed.intent == '':
 		return None
 	return {"plugin": parsed.intent, "arguments": parsed.tags()}
