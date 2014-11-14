@@ -41,13 +41,14 @@
         },
         {
             "categories": [
-                "Language"
+                "Language",
+                "Featured"
             ],
-            "description": "Translate words from English to Spanish.",
+            "description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French and German.",
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",
-                "rain ttr"
+                "translate bonjour from french to arabic"
             ],
             "name": "Instranslator",
             "zip_url": "Instranslator.zip"

@@ -1,47 +1,54 @@
 <html>
 <style>
- * {
-    margin: 0;
-    padding: 0;
- }
 
+body {
+   padding: 0px;
+   font-family: sans-serif;
+}
  .content-wrapper {
-    width: 90%;
-    padding: 20px;
-    background-color: #E6E6E6;
+    width: 100%;
+    height: 100%;
+    display: table;
  }
 
  .content-wrapper #translation {
-    text-transform: capitalize;
-    text-align: left;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
  }
 
 </style>
 
 <div class="content-wrapper">
-    <p id="translation" > </p>
+    <h3 id="translation" > </h3>
 </div>
 
 <script>
-    var lang = "----lang----";
+   var from_lang = "----fromlang----";
+    var to_lang = "----tolang----";
     var disabled = false,
-        BASE_URL = "http://translate.google.es/translate_a/single?client=t&sl=auto&tl="+
-        lang + "&hl="+ lang + 
+        BASE_URL = "http://translate.google.es/translate_a/single?client=t&sl=" + from_lang + "&tl="+
+        to_lang + "&hl="+ to_lang + 
         "&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&ssel=0&tsel=3&otf=1&&q=";
 
     var translate = function translate(words) {
-        serverResponse = ajaxRequest(words);
-        content = processText(serverResponse);
-        plotDiv(content);
+        ajaxRequest(words, function(serverResponse) {
+           content = processText(serverResponse);
+           plotDiv(content);
+        });
     }
 
-    function ajaxRequest(words) {
+    function ajaxRequest(words, callback) {
         var xhReq = new XMLHttpRequest(),
             serverResponse;
-        xhReq.open("GET", BASE_URL + words, false);
+        xhReq.open("GET", BASE_URL + words);
+        xhReq.onreadystatechange=function() {
+          if (xhReq.readyState==4 && xhReq.status==200)
+            {
+               callback(xhReq.responseText);
+            }
+        }
         xhReq.send(null);
-        serverResponse = xhReq.responseText;
-        return serverResponse;
     }
 
     /**
@@ -65,11 +72,11 @@
     }
 
     function plotDiv(text) {
-        holder = document.getElementById("translation").innerHTML = text;
+      document.getElementById("translation").innerText = text;
     }
 
 	 setTimeout(function() {
-	 	translate("----words----");
+	 	translate("----text----");
 	 }, 500);
 
 
