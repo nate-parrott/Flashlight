@@ -11,7 +11,7 @@
                 http://flashlight.nateparrott.com/updates/0.6
             </sparkle:releaseNotesLink>
             <pubDate>Fri, 14 Jan 2014 19:20:11 +0000</pubDate>
-            <enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.6-alpha/Flashlight.zip" sparkle:version="2.0" type="application/octet-stream" sparkle:dsaSignature="MC0CFCn3ZGaIeXBn8raODcaP2ksssSsnAhUAkjUT32ITt93h9lrA2/YNBt7oBYs=" />
+            <enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.6-alpha/Flashlight.zip" sparkle:version="11" sparkle:shortVersionString="0.6" type="application/octet-stream" sparkle:dsaSignature="MC0CFCn3ZGaIeXBn8raODcaP2ksssSsnAhUAkjUT32ITt93h9lrA2/YNBt7oBYs=" />
             <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
         </item>
     </channel>
