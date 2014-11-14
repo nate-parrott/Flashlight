@@ -1,3 +1,7 @@
+# OSX
+#
+.DS_Store
+
 # Xcode
 #
 build/
