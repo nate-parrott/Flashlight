@@ -9,6 +9,7 @@
 #import "PluginCellView.h"
 #import "PluginModel.h"
 #import "PluginListController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation PluginCellView
 
@@ -18,7 +19,12 @@
 
 - (void)setObjectValue:(id)objectValue {
     [super setObjectValue:objectValue];
+    
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
     self.switchControl.on = [self plugin].installed;
+    [CATransaction commit];
+    
     [self.switchControl setEnabled:![self plugin].installing];
 }
 

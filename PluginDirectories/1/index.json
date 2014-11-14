@@ -3,6 +3,19 @@
     "plugins": [
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+            "displayName": "Developer color copier",
+            "examples": [
+                "copy color",
+                "copy color as UIColor"
+            ],
+            "name": "copycolor",
+            "zip_url": "copycolor.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Featured"
             ],
@@ -183,10 +196,8 @@
             "examples": [
                 "google Apple stock",
                 "g Apple stock",
-                "search duck duck go for Flashlight",
-                "ddg Flashlight",
-                "image search for rubber ducks",
-                "baidu search for flashlight"
+                "duck duck go Flashlight",
+                "image search ducks"
             ],
             "name": "websearch",
             "zip_url": "websearch.zip"

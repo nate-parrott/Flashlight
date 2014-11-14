@@ -1,0 +1,7 @@
+{
+	"name": "copycolor",
+	"displayName": "Developer color copier",
+	"description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+	"examples": ["copy color", "copy color as UIColor"],
+	"categories": ["Utilities"]
+}
