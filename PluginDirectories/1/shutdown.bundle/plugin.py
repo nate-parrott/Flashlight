@@ -4,38 +4,38 @@ def run(cmd):
 	os.system(cmd)
 
 def results(parsed, original_query):
-	if ("lock" == original_query):
+	if ("lock_command" in parsed):
 		return {
-			"title": "Lock",
+			"title": "Lock Mac",
 			"run_args": ["/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"]
 		}
 
-	if ("restart" == original_query):
+	if ('restart_command' in parsed):
 		return {
-			"title": "Restart",
+			"title": "Restart Mac",
 			"run_args": ["osascript -e 'tell app \"System Events\" to restart'"]
 		}
 
-	if ("sleep" == original_query):
+	if ('sleep_command' in parsed):
 		return {
-			"title": "Sleep",
+			"title": "Put Mac to sleep",
 			"run_args": ["osascript -e 'tell app \"System Events\" to sleep'"]
 		}
 
-	if ("shutdown" == original_query):
+	if ('shutdown_command' in parsed):
 		return {
-			"title": "Shutdown",
+			"title": "Shut down Mac",
 			"run_args": ["osascript -e 'tell app \"System Events\" to shut down'"]
 		}
 
-	if ("logout" == original_query):
+	if ('logout_command' in parsed):
 		return {
-			"title": "Logout",
+			"title": "Log out",
 			"run_args": ["osascript -e 'tell app \"System Events\" to log out'"]
 		}
 
-	if ("empty trash" == original_query):
+	if ('empty_trash_command' in parsed):
 		return {
-			"title": "Empty Trash",
-			"run_args": ["osascript -e 'tell app \"Finder\" to empty'"]
+			"title": "Empty the Trash",
+			"run_args": ["osascript -e 'tell app \"Finder\" to empty the trash'"]
 		}
