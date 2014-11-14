@@ -49,7 +49,14 @@
 }
 
 - (PluginModel *)mergeWith:(PluginModel *)other {
-    if (self.installed && !self.disabledPluginPath) {
+    if (!self.installed && self.disabledPluginPath && other.zipURL) {
+        // self=a disabled plugin. other=a web plugin
+        other.disabledPluginPath = self.disabledPluginPath;
+        return other;
+    } else if (!other.installed && other.disabledPluginPath && self.zipURL) {
+        self.disabledPluginPath = other.disabledPluginPath;
+        return self;
+    } else if (self.installed) {
         return self;
     } else {
         return other;
