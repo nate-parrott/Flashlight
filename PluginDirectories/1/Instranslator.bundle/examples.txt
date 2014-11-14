@@ -1,3 +1,4 @@
-~text(Bigger) ttr
+~text(el mejor día de mi vida) t english
+~text(Bigger house) t hindi
 translate ~text(rain) to spanish
-how do you say ~text(rain) in spanish?
+how do you say ~text(after all) in french?
