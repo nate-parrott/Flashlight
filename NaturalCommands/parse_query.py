@@ -11,6 +11,15 @@ from shared import plugin_dir, WorkingDirAs
 example_phrases = []
 plugins_to_always_invoke = set()
 regexes = {}
+
+# add baseline nonsense parses:
+example_phrases.append(commanding.Phrase("", ["ihrfeiiehrgogiheog"]))
+example_phrases.append(commanding.Phrase("", ["ihrfeio iehrgogih eog"]))
+example_phrases.append(commanding.Phrase("", ["eyfght oehrgueig erobf", ["ehheiog","hegoegn"]]))
+example_phrases.append(commanding.Phrase("", ["wurt turt gurt", ["~burt", "nurt"]]))
+example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeough egoiheroi"]]))
+example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeoughegoiheroi"]]))
+
 for plugin in os.listdir(plugin_dir):
     if os.path.isdir(os.path.join(plugin_dir, plugin)):
         plugin_name, extension = os.path.splitext(plugin)
@@ -27,12 +36,6 @@ for plugin in os.listdir(plugin_dir):
                             regexes[field_name[1:]] = regex
                     elif len(line):
                         example_phrases.append(parse_example_to_phrase(plugin_name, line))
-
-# add baseline nonsense parses:
-example_phrases.append(commanding.Phrase("", ["ihrfeio iehrgogih eog"]))
-example_phrases.append(commanding.Phrase("", ["eyfght oehrgueig erobf", ["ehheiog","hegoegn"]]))
-example_phrases.append(commanding.Phrase("", ["wurt turt gurt", ["~burt", "nurt"]]))
-example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeough egoiheroi"]]))
 
 def parse_query(query):
     parsed = commanding.parse_phrase(query, example_phrases, regexes)
