@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		46E0EAEC7E124EAFB3A2338A /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24BCFBED9524B02917D164A /* libPods-Flashlight.a */; };
-		5F59310C1A11C4D300657ED8 /* Updater.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F59310A1A11C4D300657ED8 /* Updater.m */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
 		5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326B81A082FA900CE241E /* ITSwitch.m */; };
 		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
@@ -90,8 +89,6 @@
 
 /* Begin PBXFileReference section */
 		1C6F37F05A3F43EFBC263B06 /* Pods-Flashlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.xcconfig"; path = "Pods/Pods-Flashlight.xcconfig"; sourceTree = "<group>"; };
-		5F59310A1A11C4D300657ED8 /* Updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Updater.m; sourceTree = "<group>"; };
-		5F59310B1A11C4D300657ED8 /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F6326B71A082FA900CE241E /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
@@ -314,8 +311,6 @@
 				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
-				5F59310B1A11C4D300657ED8 /* Updater.h */,
-				5F59310A1A11C4D300657ED8 /* Updater.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
 				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
@@ -499,7 +494,6 @@
 				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
 				5F6327091A0933E800CE241E /* ZZOldArchiveEntryWriter.mm in Sources */,
 				5F6327011A0933E800CE241E /* ZZDeflateOutputStream.m in Sources */,
-				5F59310C1A11C4D300657ED8 /* Updater.m in Sources */,
 				5F6327041A0933E800CE241E /* ZZFileChannelOutput.m in Sources */,
 				5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */,
 				5F6326FF1A0933E800CE241E /* ZZDataChannel.m in Sources */,
