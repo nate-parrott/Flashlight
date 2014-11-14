@@ -47,7 +47,6 @@ if __name__=='__main__':
     query = sys.argv[1]
     plugins_to_invoke = set(plugins_to_always_invoke)
     parsed = parse_query(query)
-    print parsed
     if parsed != None:
         plugins_to_invoke.add(parsed['plugin'])
     
