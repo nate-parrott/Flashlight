@@ -33,3 +33,9 @@ def results(parsed, original_query):
 			"title": "Logout",
 			"run_args": ["osascript -e 'tell app \"System Events\" to log out'"]
 		}
+
+	if ("empty trash" == original_query):
+		return {
+			"title": "Empty Trash",
+			"run_args": ["osascript -e 'tell app \"Finder\" to empty'"]
+		}
