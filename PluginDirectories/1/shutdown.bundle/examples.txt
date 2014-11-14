@@ -1,6 +1,10 @@
-lock
-shutdown
-logout
-restart
-sleep
-empty trash
+lock_command(lock)
+shutdown_command(shutdown)
+shutdown_command(shut down)
+logout_command(logout)
+logout_command(log out)
+restart_command(restart)
+restart_command(reboot)
+sleep_command(sleep)
+empty_trash_command(empty trash)
+empty_trash_command(empty the trash)
