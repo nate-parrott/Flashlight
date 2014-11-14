@@ -10,7 +10,6 @@
 #import "PluginModel.h"
 #import "PluginCellView.h"
 #import "PluginInstallTask.h"
-#import "Updater.h"
 #import "ConvenienceCategories.h"
 
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource>
@@ -27,8 +26,6 @@
 @property (nonatomic) BOOL initializedYet;
 
 @property (nonatomic) BOOL failedToLoadWebPlugins;
-
-@property (nonatomic,strong) Updater *updater;
 
 @property (nonatomic) NSString *selectedCategory;
 
@@ -55,11 +52,6 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resized) name:NSViewFrameDidChangeNotification object:self.view];
         [self.view setPostsFrameChangedNotifications:YES];
-        
-        self.updater = [Updater new];
-        [self.updater checkForUpdates:^{
-            [self performSelectorOnMainThread:@selector(updateUI) withObject:nil waitUntilDone:NO];
-        }];
     }
 }
 - (void)dealloc {
@@ -70,14 +62,7 @@
 #pragma mark UI
 - (void)updateUI {
     __weak PluginListController* weakSelf = self;
-    if (self.updater.updatedVersionName) {
-        self.errorText.stringValue = @"A new version is available. New plugins won't work on old versions.";
-        self.errorButton.title = @"Download update";
-        self.errorButtonAction = ^{
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[weakSelf.updater updateURL]]];
-        };
-        self.errorBanner.hidden = NO;
-    } else if (self.failedToLoadWebPlugins) {
+    if (self.failedToLoadWebPlugins) {
         self.errorText.stringValue = @"Couldn't load the list of available online plugins.";
         self.errorButton.title = @"Try again";
         self.errorButtonAction = ^{
