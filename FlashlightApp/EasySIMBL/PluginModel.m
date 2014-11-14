@@ -49,7 +49,7 @@
 }
 
 - (PluginModel *)mergeWith:(PluginModel *)other {
-    if (self.installed) {
+    if (self.installed && !self.disabledPluginPath) {
         return self;
     } else {
         return other;
