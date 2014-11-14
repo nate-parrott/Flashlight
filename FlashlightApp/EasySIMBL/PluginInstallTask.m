@@ -40,6 +40,10 @@
                                 return;
                             }
                         }
+                        // success:
+                        if (self.plugin.disabledPluginPath) {
+                            [[NSFileManager defaultManager] removeItemAtPath:self.plugin.disabledPluginPath error:nil];
+                        }
                         callback(YES, nil);
                     } else {
                         callback(NO, zipError);
