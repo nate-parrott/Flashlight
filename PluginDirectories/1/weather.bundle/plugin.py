@@ -21,4 +21,4 @@ def results(parsed, original_query):
 	}
 
 def run(location):
-	os.system('open "http://openweathermap.org/find?q={0}"'.format(urllib.quote(location)))
+	os.system('open "http://openweathermap.org/find?q={0}"'.format(urllib.encode(location)))
