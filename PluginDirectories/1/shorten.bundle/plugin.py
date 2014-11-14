@@ -2,14 +2,14 @@ import urllib2
 import json
 
 def results(parsed, original_query):
-	return {
-		"title": "Shorten '{0}' (press enter)".format(parsed['*url']),
-		"run_args": [parsed['*url']]
-	}
+    return {
+        "title": "Shorten '{0}' (press enter)".format(parsed['*url']),
+        "run_args": [parsed['*url']]
+    }
 
 def run(message):
-	import os
-	os.system('echo ' + shorten(message) + " | pbcopy && osascript -e 'display notification \"Short URL copied to clipboard.\" with title \"Flashlight\"'")
+    import os
+    os.system('echo ' + shorten(message) + " | pbcopy && osascript -e 'display notification \"Short URL copied to clipboard.\" with title \"Flashlight\"'")
 
 def shorten(url):
     post_url = 'https://www.googleapis.com/urlshortener/v1/url'
