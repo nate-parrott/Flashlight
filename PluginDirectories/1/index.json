@@ -44,7 +44,7 @@
                 "Language",
                 "Featured"
             ],
-            "description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French and German.",
+            "description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French, Portuguese, Chinese, Italian, Japanese and German.",
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",

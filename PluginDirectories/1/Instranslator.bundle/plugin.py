@@ -2,11 +2,14 @@ lang_codes = {
     'spanish': 'es',
     'english': 'en',
     'arabic': 'ar',
-    "french" : "fr",
-    "german" : "de",
-    'hindi' : "hi",
-    'chinese' : "zh",
-    "auto" : "auto"
+    'french' : 'fr',
+    'german' : 'de',
+    'hindi' : 'hi',
+    'portuguese' : 'pt',
+    'chinese' : 'zh-CN',
+    'italian' : 'it',
+    'japanese' : 'ja',
+    'auto' : 'auto',
 }
 
 def results(parsed, original_query):
@@ -18,7 +21,7 @@ def results(parsed, original_query):
             from_lang = key.split('/')[1]
         elif key.startswith('to_language/'):
             to_lang = key.split('/')[1]
-    html = open("translate.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang])
+    html = open("translate.min.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang])
     if from_lang == 'auto':
         title = "Translate \"{0}\" to {1}".format(text, to_lang)
     else:
