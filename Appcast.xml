@@ -5,14 +5,14 @@
         <link>https://raw.githubusercontent.com/nate-parrott/flashlight/master/Appcast.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
-        <!--<item>
-            <title>Version 2.0 (2 bugs fixed; 3 new features)</title>
+        <item>
+            <title>Version 0.6</title>
             <sparkle:releaseNotesLink>
-                http://you.com/app/2.0.html
+                http://flashlight.nateparrott.com/updates/0.6
             </sparkle:releaseNotesLink>
-            <pubDate>Wed, 09 Jan 2006 19:20:11 +0000</pubDate>
-            <enclosure url="http://you.com/app/Your%20Great%20App%202.0.zip" sparkle:version="2.0" length="1623481" type="application/octet-stream" sparkle:dsaSignature="BAFJW4B6B1K1JyW30nbkBwainOzrN6EQuAh" />
-            <sparkle:minimumSystemVersion>10.7</sparkle:minimumSystemVersion>
-        </item>-->
+            <pubDate>Fri, 14 Jan 2014 19:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.6-alpha/Flashlight.zip" sparkle:version="2.0" type="application/octet-stream" sparkle:dsaSignature="MC0CFCn3ZGaIeXBn8raODcaP2ksssSsnAhUAkjUT32ITt93h9lrA2/YNBt7oBYs=" />
+            <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
