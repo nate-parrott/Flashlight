@@ -23,8 +23,11 @@
 </div>
 
 <script>
+    var lang = "----lang----";
     var disabled = false,
-        BASE_URL = "http://translate.google.com/translate_a/t?client=t&sl=en&tl=es&hl=en&sc=2&ie=UTF-8&oe=UTF-8&pc=1&oc=1&otf=1&ssel=0&q=";
+        BASE_URL = "http://translate.google.es/translate_a/single?client=t&sl=auto&tl="+
+        lang + "&hl="+ lang + 
+        "&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&dt=at&dt=sw&ie=UTF-8&oe=UTF-8&ssel=0&tsel=3&otf=1&&q=";
 
     var translate = function translate(words) {
         serverResponse = ajaxRequest(words);
