@@ -43,6 +43,10 @@
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.githubusercontent.com/nate-parrott/flashlight/master/Appcast.xml</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

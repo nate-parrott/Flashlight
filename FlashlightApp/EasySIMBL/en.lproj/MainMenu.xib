@@ -28,6 +28,12 @@
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
                             <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem title="Check for Updates..." id="i36-Vw-g23">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="4AR-H2-g27" id="fgW-du-Q6I"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -893,6 +899,7 @@
             </toolbar>
             <point key="canvasLocation" x="266" y="263.5"/>
         </window>
+        <customObject id="4AR-H2-g27" customClass="SUUpdater"/>
         <userDefaultsController representsSharedInstance="YES" id="702"/>
         <customObject id="715" customClass="PluginListController">
             <connections>
