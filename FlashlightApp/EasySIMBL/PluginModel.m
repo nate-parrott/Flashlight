@@ -7,6 +7,7 @@
 //
 
 #import "PluginModel.h"
+#import "ConvenienceCategories.h"
 
 @implementation PluginModel
 
@@ -63,10 +64,15 @@
     }
     if (self.examples.count) {
         NSMutableParagraphStyle *para = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
-        NSFont *font = [[NSFontManager sharedFontManager] convertFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]] toHaveTrait:NSItalicFontMask];
+        //NSFont *font = [[NSFontManager sharedFontManager] convertFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]] toHaveTrait:NSItalicFontMask];
+        NSFont *font = [NSFont systemFontOfSize:[NSFont smallSystemFontSize]];
         NSColor *color = [NSColor grayColor];
         NSDictionary *attrs = @{NSFontAttributeName: font, NSForegroundColorAttributeName: color, NSParagraphStyleAttributeName: para};
-        NSAttributedString *s = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\"%@\"", [self.examples componentsJoinedByString:@"\"    \""]] attributes:attrs];
+        NSString *unattributed = [[[self.examples subarrayWithRange:NSMakeRange(0, MIN(self.examples.count, 4))] map:^id(id obj) {
+            obj = [obj stringByReplacingOccurrencesOfString:@" " withString:@"\u00a0"]; // ' ' -> '&nbsp'
+            return [NSString stringWithFormat:@"“%@”", obj];
+        }] componentsJoinedByString:@"    "];
+        NSAttributedString *s = [[NSAttributedString alloc] initWithString:unattributed attributes:attrs];
         [stringsToJoin addObject:s];
     }
     

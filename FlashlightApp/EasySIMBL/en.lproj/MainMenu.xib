@@ -659,16 +659,16 @@
         <window title="Flashlight" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="651">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="168" y="456" width="481" height="374"/>
+            <rect key="contentRect" x="168" y="456" width="602" height="447"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="300" height="300"/>
-            <value key="maxSize" type="size" width="600" height="2000"/>
+            <value key="maxSize" type="size" width="2000" height="2000"/>
             <view key="contentView" wantsLayer="YES" id="652">
-                <rect key="frame" x="0.0" y="0.0" width="481" height="374"/>
+                <rect key="frame" x="0.0" y="-2" width="602" height="447"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="67" horizontalPageScroll="10" verticalLineScroll="67" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG">
-                        <rect key="frame" x="149" y="0.0" width="333" height="375"/>
+                        <rect key="frame" x="149" y="0.0" width="454" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="puk-vq-Kg7">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
@@ -680,7 +680,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn width="328" minWidth="40" maxWidth="999999" id="1hD-Dq-kq9">
+                                        <tableColumn width="449" minWidth="40" maxWidth="999999" id="1hD-Dq-kq9">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                 <font key="font" metaFont="smallSystem"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -694,11 +694,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="FQb-yf-BXy" customClass="PluginCellView">
-                                                    <rect key="frame" x="1" y="1" width="328" height="65"/>
+                                                    <rect key="frame" x="1" y="1" width="449" height="65"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="6mi-ds-L3P">
-                                                            <rect key="frame" x="7" y="7" width="256" height="51"/>
+                                                            <rect key="frame" x="7" y="7" width="377" height="51"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This plugin does some crazy stuff like change the word and everything." id="rtk-em-P81">
                                                                 <font key="font" metaFont="system"/>
@@ -710,14 +710,14 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <customView id="GuL-dQ-r0u" customClass="ITSwitch">
-                                                            <rect key="frame" x="269" y="19" width="52" height="26"/>
+                                                            <rect key="frame" x="390" y="19" width="52" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <action selector="toggleInstalled:" target="FQb-yf-BXy" id="chV-NU-b19"/>
                                                             </connections>
                                                         </customView>
                                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Agl-8K-jT3">
-                                                            <rect key="frame" x="245" y="25" width="16" height="16"/>
+                                                            <rect key="frame" x="366" y="25" width="16" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <binding destination="FQb-yf-BXy" name="animate" keyPath="objectValue.installing" id="PM8-oS-CTm"/>
@@ -751,11 +751,11 @@
                         </scroller>
                     </scrollView>
                     <customView id="eIK-Jf-OGb" userLabel="Error banner">
-                        <rect key="frame" x="0.0" y="0.0" width="481" height="53"/>
+                        <rect key="frame" x="0.0" y="0.0" width="602" height="53"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" id="iPu-Kd-ZWI">
-                                <rect key="frame" x="0.0" y="0.0" width="481" height="53"/>
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="ARr-OJ-3Gj">
                                     <font key="font" metaFont="system"/>
@@ -764,7 +764,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="4I6-zG-9ut">
-                                <rect key="frame" x="13" y="25" width="455" height="21"/>
+                                <rect key="frame" x="13" y="25" width="576" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
@@ -773,7 +773,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" id="9nN-QT-MfC">
-                                <rect key="frame" x="193" y="0.0" width="94" height="28"/>
+                                <rect key="frame" x="253.5" y="0.0" width="94" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Try again" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R1V-Ae-nee">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -786,7 +786,7 @@
                         </subviews>
                     </customView>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="0o7-M4-qA2">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="448"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                         <clipView key="contentView" drawsBackground="NO" id="cqf-AD-pCG">
                             <rect key="frame" x="1" y="1" width="148" height="398"/>
@@ -891,7 +891,7 @@
                     <toolbarItem reference="6NI-Ay-AA6"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="205.5" y="227"/>
+            <point key="canvasLocation" x="266" y="263.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="702"/>
         <customObject id="715" customClass="PluginListController">

@@ -1,0 +1,5 @@
+copy color
+copy color as hex
+copy color as copy_uicolor(UIColor)
+pick a color
+pick a color as copy_uicolor(UIColor)

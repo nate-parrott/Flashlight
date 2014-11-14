@@ -107,11 +107,9 @@
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    CGFloat leftInset = 7;
-    CGFloat topInset = 7;
-    CGFloat bottomInset = 7;
-    CGFloat rightInset = 65;
-    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-leftInset-rightInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + topInset + bottomInset + 4;
+    CGFloat xInset = 72 + 6;
+    CGFloat yInset = 14;
+    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
 }
 
 - (NSIndexSet *)tableView:(NSTableView *)tableView
