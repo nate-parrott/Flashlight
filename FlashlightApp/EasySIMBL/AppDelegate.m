@@ -7,6 +7,7 @@
 #import <ServiceManagement/SMLoginItem.h>
 #import "AppDelegate.h"
 #import "SIMBL.h"
+#import "ITSwitch+Additions.h"
 
 @implementation AppDelegate
 
@@ -79,7 +80,7 @@
         } else {
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
         }
-        self.SIMBLOn = state == NSOnState ? YES : NO;
+        [self setSIMBLOn:state == NSOnState animated:NO];
     } else {
         [self.useSIMBLSwitch setEnabled:NO];
     }
@@ -149,8 +150,15 @@
     }
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn {
+    [self setSIMBLOn:SIMBLOn animated:YES];
+}
+- (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
-    self.useSIMBLSwitch.on = SIMBLOn;
+    if (animated) {
+        self.useSIMBLSwitch.on = SIMBLOn;
+    } else {
+        [self.useSIMBLSwitch setOnWithoutAnimation:SIMBLOn];
+    }
     self.tableView.enabled = SIMBLOn;
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
 }
