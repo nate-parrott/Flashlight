@@ -1,8 +1,14 @@
 import matplotlib.colors as colors
 
 def rgbFromHex(hexString):
-    if hexString.find("#") == -1:
-        hexString = "#"+hexString
+    if hexString.find("#") != -1:
+        hexString = hexString[1:]
+
+    if len(hexString) < 6:
+        hexString = "".join([2*value for value in hexString])
+
+    hexString = "#"+hexString
+
     rgb = colors.hex2color(hexString)
 
     return tuple([int(255.0*x) for x in rgb])
