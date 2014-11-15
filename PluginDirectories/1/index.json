@@ -252,6 +252,19 @@
             ],
             "name": "yelp",
             "zip_url": "yelp.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Translation between English and Chinese based on dic.youdao.com",
+            "displayName": "YouDao Dictionary",
+            "examples": [
+                "yd why",
+                "youdao why"
+            ],
+            "name": "youdaodic",
+            "zip_url": "youdaodic.zip"
         }
     ]
 }
