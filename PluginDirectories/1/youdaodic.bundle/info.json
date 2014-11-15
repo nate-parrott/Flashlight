@@ -1,0 +1,7 @@
+{
+	"name": "youdaodic",
+	"displayName": "YouDao Dictionary",
+	"description": "Translation between English and Chinese based on dic.youdao.com",
+	"examples": ["yd why", "youdao why"],
+    "categories": ["Language"]
+}

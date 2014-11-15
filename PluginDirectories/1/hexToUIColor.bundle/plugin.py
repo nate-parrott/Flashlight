@@ -29,14 +29,20 @@ def colorString(rgb, swift = False):
 
 
 def results(parsed, original_query):
-    useSwift = ("swift" in original_query)
-    hexValue = parsed["color"]
+    useSwift = ("translate_to_swift" in parsed)
+    hexValue = parsed["*hex_color"]
     rgb = rgbFromHex(hexValue)
     string = colorString(rgb, useSwift)
 
     html = """
-	<h2 style='font-weight: normal; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial; line-height: 1.2'>
-	{0}
-	</h2>""".format(string)
+    <div style='font-weight: normal; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial; line-height: 1.2'>
+    <h2 >{0}</h2>
+    <p style='color: gray'>Press enter to copy</p>
+    </div>
+    """.format(string)
 
-    return {"title": "'UIColor from {0}'".format(hexValue), "html": html}
+    return {"title": "'UIColor from {0}'".format(hexValue), "html": html, "run_args": [string]}
+
+def run(message):
+    import os
+    os.system('echo ' + message + " | pbcopy && osascript -e 'display notification \"Color copied to clipboard.\" with title \"Flashlight\"'")
