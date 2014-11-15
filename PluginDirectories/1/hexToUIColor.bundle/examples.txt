@@ -1,3 +1,7 @@
-UIColor color(3083D6)
-UIColor swift color(3083D6)
-UIColor objc color(3083D6)
+UIColor *hex_color(3083D6)
+UIColor translate_to_swift(swift) *hex_color(3083D6)
+UIColor *hex_color(3083D6) translate_to_swift(swift)
+UIColor objc *hex_color(3083D6)
+*hex_color(3083D6) to UIColor
+*hex_color(3083D6) to UIColor for translate_to_swift(swift)
+!regex *hex_color #?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})
