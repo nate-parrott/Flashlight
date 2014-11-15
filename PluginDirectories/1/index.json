@@ -151,6 +151,19 @@
             "zip_url": "shutdown.zip"
         },
         {
+            "categories": [
+                "Language"
+            ],
+            "description": "Translate a message into Pig Latin",
+            "displayName": "Pig Latin",
+            "examples": [
+                "translate hello world into pig latin",
+                "pig latin hello world"
+            ],
+            "name": "piglatin",
+            "zip_url": "social.zip"
+        },
+        {
             "description": "Search for an artist, album or track in Spotify.",
             "displayName": "Spotify",
             "examples": [
