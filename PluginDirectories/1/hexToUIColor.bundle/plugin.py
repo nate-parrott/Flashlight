@@ -1,10 +1,11 @@
-import re
+import matplotlib.colors as colors
 
-_NUMERALS = '0123456789abcdefABCDEF'
-_HEXDEC = {v: int(v, 16) for v in (x+y for x in _NUMERALS for y in _NUMERALS)}
+def rgbFromHex(hexString):
+    if hexString.find("#") == -1:
+        hexString = "#"+hexString
+    rgb = colors.hex2color(hexString)
 
-def rgb(triplet):
-    return _HEXDEC[triplet[0:2]], _HEXDEC[triplet[2:4]], _HEXDEC[triplet[4:6]]
+    return tuple([int(255.0*x) for x in rgb])
 
 def colorString(rgb, swift = False):
     isGray = (rgb[0] == rgb[1] and rgb[1] == rgb[2])
@@ -24,8 +25,8 @@ def colorString(rgb, swift = False):
 def results(parsed, original_query):
     useSwift = "swift" in original_query
     hexValue = parsed["color"]
-    values = rgb(hexValue)
-    string = colorString(values, useSwift)
+    rgb = rgbFromHex(hexValue)
+    string = colorString(rgb, useSwift)
 
     html = """
 	<h2 style='font-weight: normal; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial; line-height: 1.2'>
