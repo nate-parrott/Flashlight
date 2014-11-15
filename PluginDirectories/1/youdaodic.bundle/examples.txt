@@ -1,0 +1,2 @@
+yd ~string(hello world)
+youdao ~string(call me why)
