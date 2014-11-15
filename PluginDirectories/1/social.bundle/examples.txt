@@ -1,4 +1,0 @@
-translate ~text(hello world) into pig latin
-piglatin ~text(hey there)
-pig latin ~text(yum)
-how do I say ~text(what's up) in pig latin?
