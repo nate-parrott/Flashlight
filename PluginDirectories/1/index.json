@@ -16,6 +16,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Convert a hex color value into a UIColor instance",
+            "displayName": "Hex To UIColor",
+            "examples": [
+                "UIColor #3083D6",
+                "UIColor swift #3083D6"
+            ],
+            "name": "hexToUIColor",
+            "zip_url": "hexToUIColor.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Featured"
             ],
