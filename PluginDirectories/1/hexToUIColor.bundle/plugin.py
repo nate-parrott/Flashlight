@@ -11,14 +11,14 @@ def colorString(rgb, swift = False):
     if isGray:
         white = rgb[0]/255.0
         if swift:
-            return "UIColor(white:%f)" % white
+            return "UIColor(white: {0:.3f})".format(white)
         else:
-            return "[UIColor colorWithWhite:%ff]" % white
+            return "[UIColor colorWithWhite: {0:.3f}f]".format(white)
     else:
         if swift:
-            return "UIColor(red:%f, green:%f, blue:%f)" % rgb
+            return "UIColor(red: {0:.3f}, green: {1:.3f}, blue: {2:.3f})".format(rgb[0], rgb[1], rgb[2])
         else:
-            return "[UIColor colorWithRed:%ff green:%ff blue:%ff]" % rgb
+            return "[UIColor colorWithRed: {0:.3f}f green: {1:.3f}f blue: {2:.3f}f]".format(rgb[0], rgb[1], rgb[2])
 
 
 def results(parsed, original_query):
