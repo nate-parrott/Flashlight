@@ -29,7 +29,7 @@ def colorString(rgb, swift = False):
 
 
 def results(parsed, original_query):
-    useSwift = "swift" in original_query
+    useSwift = ("swift" in original_query)
     hexValue = parsed["color"]
     rgb = rgbFromHex(hexValue)
     string = colorString(rgb, useSwift)
