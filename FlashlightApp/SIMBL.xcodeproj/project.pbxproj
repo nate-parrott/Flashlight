@@ -372,8 +372,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PRODUCT_VERSION = 0.2;
+				PRODUCT_VERSION = 3;
 			};
 			name = Debug;
 		};
@@ -385,8 +386,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "SIMBL Agent/Info.plist";
 				INSTALL_PATH = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PRODUCT_VERSION = 0.2;
+				PRODUCT_VERSION = 3;
 			};
 			name = Release;
 		};

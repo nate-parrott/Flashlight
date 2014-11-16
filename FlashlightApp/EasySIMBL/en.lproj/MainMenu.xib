@@ -656,6 +656,7 @@
         </menu>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="2My-Fx-DJv"/>
                 <outlet property="useSIMBLSwitch" destination="cgt-Ry-pUm" id="m6y-V0-Lqj"/>
                 <outlet property="window" destination="651" id="653"/>
@@ -897,6 +898,9 @@
                     <toolbarItem reference="6NI-Ay-AA6"/>
                 </defaultToolbarItems>
             </toolbar>
+            <connections>
+                <outlet property="delegate" destination="715" id="tdr-qd-Hey"/>
+            </connections>
             <point key="canvasLocation" x="266" y="263.5"/>
         </window>
         <customObject id="4AR-H2-g27" customClass="SUUpdater"/>

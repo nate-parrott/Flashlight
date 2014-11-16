@@ -7,7 +7,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ITSwitch.h"
 
-@class ESPluginListManager;
+@class PluginListController;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -20,5 +20,7 @@
 - (IBAction)toggleUseSIMBL:(id)sender;
 
 @property (nonatomic) BOOL SIMBLOn;
+
+@property (nonatomic,weak) IBOutlet PluginListController *pluginListController;
 
 @end
