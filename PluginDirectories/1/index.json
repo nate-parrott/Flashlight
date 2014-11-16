@@ -205,13 +205,14 @@
                 "Search",
                 "Featured"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) and Twitter (tt).",
+            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt) and Reddit (rdt).",
             "displayName": "Web Search",
             "examples": [
                 "google Apple stock",
                 "g Apple stock",
                 "duck duck go Flashlight",
-                "image search ducks"
+                "image search ducks",
+                "reddit cats"
             ],
             "name": "websearch",
             "zip_url": "websearch.zip"

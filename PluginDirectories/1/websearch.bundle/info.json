@@ -1,7 +1,7 @@
 {
 	"name": "websearch",
 	"displayName": "Web Search",
-	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) and Twitter (tt).",
-	"examples": ["google Apple stock", "g Apple stock", "duck duck go Flashlight", "image search ducks"],
+	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt) and Reddit (rdt).",
+	"examples": ["google Apple stock", "g Apple stock", "duck duck go Flashlight", "image search ducks", "reddit cats"],
 	"categories": ["Search", "Featured"]
 }
