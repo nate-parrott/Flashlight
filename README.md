@@ -96,4 +96,6 @@ The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github
 
 The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
 
+The [ZipZap library by Glen Low](https://github.com/pixelglow/zipzap) is used internally.
+
 Licensed under the GPL.

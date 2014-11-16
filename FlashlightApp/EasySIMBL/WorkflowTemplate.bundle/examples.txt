@@ -1,0 +1,3 @@
+show a notification saying ~message(hello)
+toast ~message(hello world)
+notify ~message(good morning!)

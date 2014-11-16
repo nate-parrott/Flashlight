@@ -72,7 +72,7 @@ void __SS_markPathExecutable(NSString *path) {
     task.arguments = @[pluginName, runArgsAsJson];
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
-    [task launchWithTimeout:2 consoleLabelForErrorDump:[NSString stringWithFormat:@"Running action for Flashlight plugin '%@'", pluginName]];
+    [task launchWithTimeout:0 consoleLabelForErrorDump:[NSString stringWithFormat:@"Running action for Flashlight plugin '%@'", pluginName]];
 }
 
 @end

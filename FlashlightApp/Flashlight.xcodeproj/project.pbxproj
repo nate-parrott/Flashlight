@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		46E0EAEC7E124EAFB3A2338A /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24BCFBED9524B02917D164A /* libPods-Flashlight.a */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
+		5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */; };
+		5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */; };
+		5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */; };
 		5F6326B91A082FA900CE241E /* ITSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326B81A082FA900CE241E /* ITSwitch.m */; };
 		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
 		5F6326C01A08313E00CE241E /* PluginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BF1A08313E00CE241E /* PluginModel.m */; };
@@ -91,6 +94,10 @@
 		1C6F37F05A3F43EFBC263B06 /* Pods-Flashlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.xcconfig"; path = "Pods/Pods-Flashlight.xcconfig"; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
+		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
+		5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginEditorWindowController.m; sourceTree = "<group>"; };
+		5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PluginEditorWindowController.xib; sourceTree = "<group>"; };
+		5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WorkflowTemplate.bundle; sourceTree = "<group>"; };
 		5F6326B71A082FA900CE241E /* ITSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSwitch.h; sourceTree = "<group>"; };
 		5F6326B81A082FA900CE241E /* ITSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSwitch.m; sourceTree = "<group>"; };
 		5F6326BB1A0830F700CE241E /* PluginListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListController.h; sourceTree = "<group>"; };
@@ -322,6 +329,10 @@
 				5F6326C71A08538B00CE241E /* PluginCellView.h */,
 				5F6326C81A08538B00CE241E /* PluginCellView.m */,
 				6C564499159E7C0900215467 /* MainMenu.xib */,
+				5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */,
+				5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */,
+				5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */,
+				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
 				5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */,
 				5F97AD411A0ACA0100838C7C /* NaturalCommands */,
 				5F6326CE1A0933E800CE241E /* zipzap */,
@@ -425,10 +436,12 @@
 			files = (
 				5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */,
 				6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */,
+				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
 				6C564495159E7C0900215467 /* Credits.rtf in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
+				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,
 				6C56449B159E7C0900215467 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +502,7 @@
 				5F6327071A0933E800CE241E /* ZZNewArchiveEntryWriter.mm in Sources */,
 				5F6327061A0933E800CE241E /* ZZNewArchiveEntry.mm in Sources */,
 				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
+				5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */,
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
 				6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */,
 				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,

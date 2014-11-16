@@ -11,8 +11,9 @@
 #import "PluginCellView.h"
 #import "PluginInstallTask.h"
 #import "ConvenienceCategories.h"
+#import "PluginEditorWindowController.h"
 
-@interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource>
+@interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
 @property (nonatomic) NSArray *pluginsFromWeb;
 @property (nonatomic) NSArray *installedPlugins;
@@ -43,8 +44,11 @@
         
         self.sourceList.selectionHighlightStyle = NSTableViewSelectionHighlightStyleSourceList;
         
+        [self.tableView setDoubleAction:@selector(doubleClickedPlugin:)];
+        [self.tableView setTarget:self];
+        
         self.initializedYet = YES;
-        self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"installed" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
+        self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
         
         [self startWatchingPluginsDir];
         [self reloadFromDisk];
@@ -97,9 +101,21 @@
     return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
 }
 
-- (NSIndexSet *)tableView:(NSTableView *)tableView
+/*- (NSIndexSet *)tableView:(NSTableView *)tableView
 selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     return nil;
+}*/
+- (IBAction)doubleClickedPlugin:(id)sender {
+    PluginModel *plugin = [(PluginCellView *)[self.tableView viewAtColumn:[self.tableView clickedColumn] row:[self.tableView clickedRow] makeIfNecessary:YES] plugin];
+    if (!plugin.installed) return;
+    if (plugin.isAutomatorWorkflow) {
+        PluginEditorWindowController *editor = [[PluginEditorWindowController alloc] initWithWindowNibName:@"PluginEditorWindowController"];
+        editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:plugin.name] stringByAppendingPathExtension:@"bundle"];
+        [editor showWindow:nil];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"This plugin has no additional options." defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        [alert runModal];
+    }
 }
 
 #pragma mark Data
@@ -162,7 +178,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         return [p.allCategories containsObject:self.selectedCategory] ? p : nil;
     }];
     [self.arrayController addObjects:plugins];
-    // [self.arrayController rearrangeObjects];
+    [self.arrayController rearrangeObjects];
 }
 
 #pragma mark Local plugin files
@@ -354,6 +370,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
     }
     [self updateArrayController];
+}
+#pragma mark WIndow delegate
+- (void)windowDidBecomeMain:(NSNotification *)notification {
+    // [self reloadFromDisk];
 }
 
 @end

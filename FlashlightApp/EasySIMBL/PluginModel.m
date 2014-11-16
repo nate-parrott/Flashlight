@@ -33,6 +33,7 @@
     model.installed = NO;
     model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
     model.categories = json[@"categories"] ? : @[@"Unknown"];
+    model.isAutomatorWorkflow = [json[@"isAutomatorWorkflow"] boolValue];
     return model;
 }
 

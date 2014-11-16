@@ -17,6 +17,7 @@
 @property (nonatomic) NSURL *zipURL;
 @property (nonatomic) NSString *disabledPluginPath;
 @property (nonatomic) NSArray *categories;
+@property (nonatomic) BOOL isAutomatorWorkflow;
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url;
 

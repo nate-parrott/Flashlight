@@ -13,8 +13,7 @@
 - (void)launchWithTimeout:(NSTimeInterval)timeout consoleLabelForErrorDump:(NSString *)label {
     NSPipe *errorPipe = [NSPipe pipe];
     self.standardError = errorPipe;
-    [self launch];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    void (^onDone)() = ^{
         NSData *errorData = [[errorPipe fileHandleForReading] availableData];
         if (errorData.length) {
             NSLog(@"%@:\n%@", label, [[NSString alloc] initWithData:errorData encoding:NSUTF8StringEncoding]);
@@ -23,7 +22,19 @@
             [self terminate];
             NSLog(@"%@: [timed out]", label);
         }
-    });
+    };
+    
+    if (timeout) {
+        [self launch];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            onDone();
+        });
+    } else {
+        self.terminationHandler = ^(NSTask *t){
+            onDone();
+        };
+        [self launch];
+    }
 }
 
 @end
