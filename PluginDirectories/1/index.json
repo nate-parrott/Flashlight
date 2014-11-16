@@ -5,6 +5,20 @@
             "categories": [
                 "Utilities"
             ],
+            "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
+            "displayName": "Open with Atom",
+            "examples": [
+                "atom file",
+                "atom folder"
+            ],
+            "iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
+            "name": "atom",
+            "zip_url": "atom.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
             "displayName": "Developer color copier",
             "examples": [
@@ -170,6 +184,19 @@
             ],
             "name": "stocks",
             "zip_url": "stocks.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
+            "displayName": "Open with Sublime Text",
+            "examples": [
+                "sublime"
+            ],
+            "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
+            "name": "sublime",
+            "zip_url": "sublime.zip"
         },
         {
             "categories": [
