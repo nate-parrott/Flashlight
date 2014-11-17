@@ -18,7 +18,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="501" y="248" width="503" height="299"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <value key="minSize" type="size" width="300" height="137"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="503" height="299"/>
@@ -89,7 +89,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="gL9-NG-iOV">
-                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="141"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="325" height="141"/>
@@ -110,7 +110,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OxB-az-9jb">
+                    <button horizontalHuggingPriority="500" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OxB-az-9jb">
                         <rect key="frame" x="367" y="13" width="122" height="32"/>
                         <buttonCell key="cell" type="push" title="Delete Plugin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UKi-Vj-zax">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -120,23 +120,33 @@
                             <action selector="deletePlugin:" target="-2" id="xKT-El-dpz"/>
                         </connections>
                     </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuv-Tx-lar">
+                        <rect key="frame" x="18" y="109" width="132" height="70"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." id="iIz-Oc-6rk">
+                            <font key="font" metaFont="miniSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Qgh-ON-3Rs" firstAttribute="top" secondItem="fyK-z0-Dik" secondAttribute="bottom" constant="8" id="2Os-Wa-Y2K"/>
+                    <constraint firstAttribute="bottom" secondItem="OxB-az-9jb" secondAttribute="bottom" constant="20" id="4a2-lm-dAe"/>
                     <constraint firstItem="fyK-z0-Dik" firstAttribute="centerY" secondItem="U3Q-SJ-Dbq" secondAttribute="centerY" constant="-0.5" id="5f6-Nn-oar"/>
                     <constraint firstItem="klM-VR-Tpz" firstAttribute="leading" secondItem="u5v-ml-STc" secondAttribute="trailing" constant="8" id="98r-qc-D64"/>
                     <constraint firstAttribute="trailing" secondItem="U3Q-SJ-Dbq" secondAttribute="trailing" constant="20" id="BTe-8Y-4ai"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="Bat-jo-VeA"/>
                     <constraint firstItem="89y-Y2-CrW" firstAttribute="top" secondItem="Qgh-ON-3Rs" secondAttribute="bottom" constant="8" id="FX2-EQ-Vb6"/>
+                    <constraint firstItem="Uuv-Tx-lar" firstAttribute="top" secondItem="89y-Y2-CrW" secondAttribute="bottom" constant="8" id="Gwg-gF-3xN"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="leading" secondItem="89y-Y2-CrW" secondAttribute="leading" id="MVX-9b-Tie"/>
-                    <constraint firstAttribute="bottom" secondItem="OxB-az-9jb" secondAttribute="bottom" constant="20" id="SA9-S3-yu2"/>
+                    <constraint firstItem="Uuv-Tx-lar" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="PBR-eM-Z1N"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="width" secondItem="fyK-z0-Dik" secondAttribute="width" id="Vfo-f3-9qa"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="leading" secondItem="fyK-z0-Dik" secondAttribute="leading" id="VyP-mf-qD5"/>
-                    <constraint firstItem="OxB-az-9jb" firstAttribute="top" secondItem="Qw1-LY-9t7" secondAttribute="bottom" constant="20" id="Ygs-N1-fr9"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="width" secondItem="89y-Y2-CrW" secondAttribute="width" id="Yp4-nI-BP6"/>
                     <constraint firstItem="aAw-Sf-5nO" firstAttribute="leading" secondItem="Qgh-ON-3Rs" secondAttribute="trailing" constant="8" id="eAB-HA-so7"/>
                     <constraint firstItem="fyK-z0-Dik" firstAttribute="top" secondItem="u5v-ml-STc" secondAttribute="bottom" constant="8" id="eIY-9j-it3"/>
                     <constraint firstAttribute="trailing" secondItem="OxB-az-9jb" secondAttribute="trailing" constant="20" id="fO9-NN-MbI"/>
+                    <constraint firstItem="OxB-az-9jb" firstAttribute="top" secondItem="Qw1-LY-9t7" secondAttribute="bottom" constant="20" id="fQO-kc-Bxn"/>
                     <constraint firstItem="Qw1-LY-9t7" firstAttribute="leading" secondItem="89y-Y2-CrW" secondAttribute="trailing" constant="8" id="gCH-dr-RlJ"/>
                     <constraint firstAttribute="trailing" secondItem="klM-VR-Tpz" secondAttribute="trailing" constant="20" id="gjG-1q-uY3"/>
                     <constraint firstItem="U3Q-SJ-Dbq" firstAttribute="leading" secondItem="fyK-z0-Dik" secondAttribute="trailing" constant="8" id="hy1-0F-YOD"/>
@@ -146,6 +156,7 @@
                     <constraint firstItem="u5v-ml-STc" firstAttribute="centerY" secondItem="klM-VR-Tpz" secondAttribute="centerY" constant="-0.5" id="sYm-av-UXs"/>
                     <constraint firstItem="u5v-ml-STc" firstAttribute="leading" secondItem="Qgh-ON-3Rs" secondAttribute="leading" id="vcI-FU-IBA"/>
                     <constraint firstAttribute="trailing" secondItem="Qw1-LY-9t7" secondAttribute="trailing" constant="20" id="xPD-LH-3Ir"/>
+                    <constraint firstItem="Qw1-LY-9t7" firstAttribute="leading" secondItem="Uuv-Tx-lar" secondAttribute="trailing" constant="8" id="yQn-TZ-99w"/>
                     <constraint firstItem="Qw1-LY-9t7" firstAttribute="top" secondItem="aAw-Sf-5nO" secondAttribute="bottom" constant="6" id="zZE-Em-bBM"/>
                 </constraints>
             </view>

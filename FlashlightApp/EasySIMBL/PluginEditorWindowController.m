@@ -8,6 +8,8 @@
 
 #import "PluginEditorWindowController.h"
 
+NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNotification";
+
 @interface PluginEditorWindowController () <NSTextViewDelegate, NSTextFieldDelegate>
 
 @property (nonatomic,weak) IBOutlet NSTextField *nameField, *descriptionField;
@@ -36,6 +38,8 @@
     
     self.saveTimer = nil;
     self.pendingSave = NO;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
 }
 #pragma mark Actions
 - (IBAction)edited:(id)sender {
@@ -50,7 +54,12 @@
     [[NSWorkspace sharedWorkspace] openFile:[self.pluginPath stringByAppendingPathComponent:@"workflow.workflow"]];
 }
 - (IBAction)deletePlugin:(id)sender {
-    
+    [[NSFileManager defaultManager] removeItemAtPath:[self pluginPath] error:nil];
+    self.pendingSave = NO;
+    [self.saveTimer invalidate];
+    self.saveTimer = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
+    [self close];
 }
 #pragma mark NSTextViewDelegate
 - (void)textDidChange:(NSNotification *)notification {
