@@ -1,0 +1,4 @@
+dash ~dashquery(query here)
+search dash for ~dashquery(ember each)
+dash ~dashquery(query here) in ~docset(docset)
+search dash for ~dashquery(ember each) in ~docset(docset)
