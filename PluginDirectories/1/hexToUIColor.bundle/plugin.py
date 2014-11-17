@@ -18,14 +18,14 @@ def colorString(rgb, swift = False):
     if isGray:
         white = rgb[0]/255.0
         if swift:
-            return "UIColor(white: {0:.3f})".format(white)
+            return "UIColor(white: {0:.3f}, alpha: 1.0)".format(white)
         else:
-            return "[UIColor colorWithWhite: {0:.3f}f]".format(white)
+            return "[UIColor colorWithWhite:{0:.3f}f alpha:1.0f]".format(white)
     else:
         if swift:
-            return "UIColor(red: {0:.3f}, green: {1:.3f}, blue: {2:.3f})".format(rgb[0], rgb[1], rgb[2])
+            return "UIColor(red: {0:.3f}, green: {1:.3f}, blue: {2:.3f}, alpha: 1.0)".format(rgb[0], rgb[1], rgb[2])
         else:
-            return "[UIColor colorWithRed: {0:.3f}f green: {1:.3f}f blue: {2:.3f}f]".format(rgb[0], rgb[1], rgb[2])
+            return "[UIColor colorWithRed:{0:.3f}f green:{1:.3f}f blue:{2:.3f}f alpha:1.0f]".format(rgb[0], rgb[1], rgb[2])
 
 
 def results(parsed, original_query):
@@ -46,4 +46,3 @@ def results(parsed, original_query):
 def run(message):
     import os
     os.system('echo ' + message + " | pbcopy && osascript -e 'display notification \"Color copied to clipboard.\" with title \"Flashlight\"'")
-
