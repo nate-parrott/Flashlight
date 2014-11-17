@@ -25,3 +25,6 @@ yh ~yahooquery(query here)
 
 twitter ~twitterquery(query here)
 tt ~twitterquery(query here)
+
+reddit ~redditquery(query here)
+rdt ~redditquery(query here)
