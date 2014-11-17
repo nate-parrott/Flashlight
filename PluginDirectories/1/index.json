@@ -16,6 +16,19 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "a search plugin for dash - http://kapeli.com/dash",
+            "displayName": "DASH",
+            "examples": [
+                "dash ember each"
+            ],
+            "name": "dash",
+            "zip_url": "dash.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Convert a hex color value into a UIColor instance",
@@ -162,7 +175,8 @@
                 "restart",
                 "logout",
                 "sleep",
-                "lock"
+                "lock",
+                "screen saver"
             ],
             "name": "shutdown",
             "zip_url": "shutdown.zip"
