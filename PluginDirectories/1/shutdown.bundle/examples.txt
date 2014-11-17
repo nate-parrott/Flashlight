@@ -1,3 +1,5 @@
+screen_saver(ssaver)
+screen_saver(screen saver)
 lock_command(lock)
 shutdown_command(shutdown)
 shutdown_command(shut down)

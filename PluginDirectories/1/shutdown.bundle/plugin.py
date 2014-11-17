@@ -39,3 +39,9 @@ def results(parsed, original_query):
             "title": "Empty the Trash",
             "run_args": ["osascript -e 'tell app \"Finder\" to empty the trash'"]
         }
+    
+    if('screen_saver' in parsed):
+        return {
+	    "title":"Turn on Screen Saver",
+	    "run_args":["open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"]
+        }
