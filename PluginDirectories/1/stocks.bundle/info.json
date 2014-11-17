@@ -2,5 +2,5 @@
 	"name": "stocks",
 	"displayName": "Stocks in Yahoo Finance",
 	"examples": ["stock FB", "stock ERBB"],
-	"categories": ["News"]
+	"categories": ["Information"]
 }

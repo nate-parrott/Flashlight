@@ -3,7 +3,7 @@
     "plugins": [
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
             "displayName": "Developer color copier",
@@ -16,7 +16,7 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Convert a hex color value into a UIColor instance",
             "displayName": "Hex To UIColor",
@@ -168,6 +168,9 @@
             "zip_url": "shutdown.zip"
         },
         {
+            "categories": [
+                "Search"
+            ],
             "description": "Search for an artist, album or track in Spotify.",
             "displayName": "Spotify",
             "examples": [
@@ -178,7 +181,7 @@
         },
         {
             "categories": [
-                "News"
+                "Information"
             ],
             "displayName": "Stocks in Yahoo Finance",
             "examples": [
@@ -190,7 +193,8 @@
         },
         {
             "categories": [
-                "System"
+                "System",
+                "Developer"
             ],
             "description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
             "displayName": "Terminal",
