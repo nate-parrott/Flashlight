@@ -3,5 +3,5 @@
 	"displayName": "DASH",
 	"description": "a search plugin for dash - http://kapeli.com/dash",
 	"examples": ["dash ember each"],
-	"categories": ["Search"]
+	"categories": ["Search", "Developer"]
 }
