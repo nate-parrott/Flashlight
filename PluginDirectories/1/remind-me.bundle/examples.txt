@@ -1,0 +1,4 @@
+remind me to ~message(take out the trash)
+new reminder saying ~message(do homework)
+create a reminder ~message(pick up eggs)
+remind ~message(walk the dog)

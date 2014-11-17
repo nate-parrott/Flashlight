@@ -94,6 +94,23 @@
             "zip_url": "piglatin.zip"
         },
         {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Creates a new reminder.",
+            "displayName": "Remind Me",
+            "examples": [
+                "remind me to ~message(take out the trash)",
+                "new reminder saying ~message(do homework)",
+                "create a reminder ~message(pick up eggs)",
+                "remind ~message(walk the dog)",
+                ""
+            ],
+            "isAutomatorWorkflow": true,
+            "name": "remind-me",
+            "zip_url": "remind-me.zip"
+        },
+        {
             "description": "Speak a message out loud.",
             "displayName": "Say",
             "examples": [
