@@ -30,6 +30,8 @@
 
 @property (nonatomic) NSString *selectedCategory;
 
+@property (nonatomic) NSString *selectedPluginName;
+
 @end
 
 @implementation PluginListController
@@ -101,17 +103,21 @@
     return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
 }
 
-/*- (NSIndexSet *)tableView:(NSTableView *)tableView
+- (NSIndexSet *)tableView:(NSTableView *)tableView
 selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
-    return nil;
-}*/
+    if (proposedSelectionIndexes.firstIndex == NSNotFound) {
+        self.selectedPluginName = nil;
+        return proposedSelectionIndexes;
+    } else {
+        self.selectedPluginName = [self.arrayController.arrangedObjects[proposedSelectionIndexes.firstIndex] name];
+        return [NSIndexSet indexSetWithIndex:proposedSelectionIndexes.firstIndex];
+    }
+}
 - (IBAction)doubleClickedPlugin:(id)sender {
     PluginModel *plugin = [(PluginCellView *)[self.tableView viewAtColumn:[self.tableView clickedColumn] row:[self.tableView clickedRow] makeIfNecessary:YES] plugin];
     if (!plugin.installed) return;
     if (plugin.isAutomatorWorkflow) {
-        PluginEditorWindowController *editor = [[PluginEditorWindowController alloc] initWithWindowNibName:@"PluginEditorWindowController"];
-        editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:plugin.name] stringByAppendingPathExtension:@"bundle"];
-        [editor showWindow:nil];
+        [self editPluginNamed:plugin.name];
     } else {
         NSAlert *alert = [NSAlert alertWithMessageText:@"This plugin has no additional options." defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
         [alert runModal];
@@ -179,6 +185,23 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     }];
     [self.arrayController addObjects:plugins];
     [self.arrayController rearrangeObjects];
+    [self.tableView reloadData];
+    
+    if (self.selectedPluginName) {
+        NSArray *objects = self.arrayController.arrangedObjects;
+        BOOL found = false;
+        for (NSInteger i=0; i<objects.count; i++) {
+            PluginModel *model = objects[i];
+            if ([model.name isEqualToString:self.selectedPluginName]) {
+                [self.tableView selectColumnIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
+                [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+                [self.tableView scrollRowToVisible:i];
+                found = true;
+                break;
+            }
+        }
+        //if (!found) self.selectedPluginName = nil;
+    }
 }
 
 #pragma mark Local plugin files
@@ -190,7 +213,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     self.fileDesc = open([[self localPluginsPath] fileSystemRepresentation], O_EVTONLY);
     
     // watch the file descriptor for writes
-    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, self.fileDesc, DISPATCH_VNODE_WRITE, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, self.fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
     
     // call the passed block if the source is modified
     __weak PluginListController *weakSelf = self;
@@ -213,10 +236,13 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     
     // at this point the dispatch source is paused, so start watching
     dispatch_resume(self.dispatchSource);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFromDisk) name:PluginDidChangeOnDiskNotification object:nil];
 }
 
 - (void)stopWatchingPluginsDir {
     dispatch_cancel(self.dispatchSource);
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:PluginDidChangeOnDiskNotification object:nil];
 }
 
 - (void)reloadFromDisk {
@@ -360,7 +386,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
-    self.selectedCategory = [self categoriesForDisplay][[self.sourceList selectedRow]];
+    NSString *category = [self categoriesForDisplay][[self.sourceList selectedRow]];
+    if (![self.selectedCategory isEqualToString:category]) {
+        self.selectedCategory = category;
+        self.selectedPluginName = nil;
+    }
 }
 
 - (void)setSelectedCategory:(NSString *)selectedCategory {
@@ -374,6 +404,28 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 #pragma mark WIndow delegate
 - (void)windowDidBecomeMain:(NSNotification *)notification {
     // [self reloadFromDisk];
+}
+
+#pragma mark Creation/Editing
+- (IBAction)newPlugin:(id)sender {
+    NSString *name = [[NSUUID UUID] UUIDString];
+    NSString *path = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"WorkflowTemplate" ofType:@"bundle"] toPath:path error:nil];
+    // rename the template:
+    NSString *infoJsonPath = [path stringByAppendingPathComponent:@"info.json"];
+    NSMutableDictionary *d = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:infoJsonPath] options:0 error:nil] mutableCopy];
+    d[@"name"] = name;
+    [[NSJSONSerialization dataWithJSONObject:d options:0 error:nil] writeToFile:infoJsonPath atomically:YES];
+    self.selectedCategory = @"Installed";
+    self.selectedPluginName = name;
+    [self reloadFromDisk];
+    [self editPluginNamed:name];
+}
+
+- (void)editPluginNamed:(NSString *)name {
+    PluginEditorWindowController *editor = [[PluginEditorWindowController alloc] initWithWindowNibName:@"PluginEditorWindowController"];
+    editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    [editor showWindow:nil];
 }
 
 @end
