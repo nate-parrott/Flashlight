@@ -14,7 +14,7 @@
 		27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
 		5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276144CD105F523C00F906F6 /* InfoPlist.strings */; };
-		6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* Flashlight.osax */; };
+		6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* Flashlight.osax */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6CDFDC73159DBC65002E8E63 /* osax.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFDC72159DBC65002E8E63 /* osax.m */; };
 		6CDFDC75159DBC7C002E8E63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFDC74159DBC7C002E8E63 /* main.m */; };
 		6CF6D4CE159DD16000916EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4B3159DD14100916EA5 /* Cocoa.framework */; };
@@ -243,7 +243,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				TargetAttributes = {
 					276144C0105F51CA00F906F6 = {
 						DevelopmentTeam = V626J4XE97;
@@ -395,7 +395,6 @@
 		E0E8F442085F4D0400DCD56F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -410,7 +409,6 @@
 		E0E8F443085F4D0400DCD56F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
