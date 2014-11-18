@@ -9,8 +9,17 @@ translate ~text(hello world) to to_language/chinese(chinese)
 
 what is ~text(good morning) in to_language/french(french)
 
-translate ~text(hello) from from_language/english(english) to to_language/spanish(spanish)
-translate ~text(bonjour) from from_language/french(french) to to_language/german(german)
-translate ~text(guten tag) from from_language/german(german) into to_language/chinese(chinese)
-translate ~text(hola) from from_language/spanish(spanish) into to_language/chinese(chinese)
+
+translate ~text(hello) from from_language/spanish(spanish) to to_language/spanish(spanish)
+
+translate ~text(hello) from from_language/english(english) to to_language/english(english)
+
+translate ~text(hello) from from_language/brazilian(brazilian) to to_language/brazilian(brazilian)
+
+translate ~text(bonjour) from from_language/french(french) to to_language/french(french)
+
+translate ~text(guten tag) from from_language/german(german) into to_language/german(german)
+
+translate ~text(hola) from from_language/chinese(chinese) into to_language/chinese(chinese)
+
 translate ~text(hello) from from_language/hindi(hindi) into to_language/hindi(hindi)
