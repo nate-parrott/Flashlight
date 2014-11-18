@@ -6,6 +6,8 @@ lang_codes = {
     "german" : "de",
     'hindi' : "hi",
     'chinese' : "zh",
+    'portuguese' : "pt",
+    'brazilian' : "pt_br",
     "auto" : "auto"
 }
 
