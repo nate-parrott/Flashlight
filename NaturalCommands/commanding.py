@@ -64,6 +64,13 @@ class Phrase(object):
             if isinstance(item, list):
                 d[item[0]] = item[1]
         return d
+    
+    def multitags(self):
+        d = {}
+        for item in self.items:
+            if isinstance(item, list):
+                d[item[0]] = d.get(item[0], []) + [item[1]]
+        return d
 
 def flatten(list_of_lists):
     return reduce(lambda a, b: a+b, list_of_lists, [])
@@ -73,6 +80,8 @@ def split_strings_by_regex(strings, regex):
     return flatten(map(lambda s: re.split(regex, s), strings))
 
 def tokenize(text, preserve_regexes=None):
+    for c in ",.?!\"'":
+        text = text.replace(c, " {0} ".format(c))
     text = text.lower()
     tokens = re.split(r"\s+", text)
     return tokens
@@ -99,7 +108,7 @@ def phrase_from_candidate(candidate, tokens):
         tokens = tokens[n_tokens:]
     return Phrase(intent, items)
 
-def parse_phrase(text, examples, state_regexes=None):
+def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
     if state_regexes == None: state_regexes = {}
     transition_probs = defaultdict(ProbabilityCounter)
     emission_probs = defaultdict(ProbabilityCounter)
@@ -118,6 +127,10 @@ def parse_phrase(text, examples, state_regexes=None):
             if name[0] != '~':
                 for token in tokenize(item[1]):
                     emission_probs[name].add(token)
+    for tag, samples in supplemental_tags.iteritems():
+        for sample in samples:
+            for token in tokenize(sample):
+                emission_probs[tag].add(token)
     def get_emission_prob(state, token):
         if state[0] == '~':
             return FREE_TEXT_PROB
