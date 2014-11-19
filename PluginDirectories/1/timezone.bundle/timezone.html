@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<style>
+		html, body, body > div {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+			line-height: 1.2;
+		}
+		body > div {
+			display: table;
+		}
+		body > div > div {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: x-large;
+		}
+		body > div > div {
+			margin: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div>
+			<div id="placeholder">[PLACEHOLDER]</div>
+			<div>
+				<img src="Icon.png" style="max-width:512px; max-height:512px;">
+			</div>
+			<div id="results"></div>
+		</div>
+	</div>
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<div id="map-canvas"></div>
+	<script>
+		var geocoder;
+		var map;
+		function initialize() {
+			geocoder = new google.maps.Geocoder();
+			map = new google.maps.Map(document.getElementById('map-canvas'));
+		}
+
+		function codeAddress() {
+			var address = document.getElementById('placeholder').innerText;
+			geocoder.geocode( { 'address': address}, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					result(results[0].geometry.location, results[0].formatted_address);
+				} else {
+					document.getElementById("results").innerText = "No result :(";
+				}
+			});
+		}
+
+		function getTimeZone (lat, long, title){
+			var url = "http://www.earthtools.org/timezone-1.1/"+lat+"/"+long;
+			console.log(url);
+			xhr = new XMLHttpRequest();
+			xhr.onload=function(e){
+				var time = this.responseText.split('\n')[10].split(' ')[3];
+				document.getElementById("results").innerText = time.split(':')[0] + ':' + time.split(':')[1];
+				document.getElementById("placeholder").innerText = title;
+				
+			}
+			xhr.open("GET",url,true);
+			xhr.send();
+		}
+
+		function result(res, title){
+			getTimeZone(res.k, res.B, title);
+		};
+
+		setTimeout(function() {
+
+			initialize();
+			codeAddress();
+		}, 100);
+	</script>
+</body>
+</html>
