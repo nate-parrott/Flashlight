@@ -27,7 +27,7 @@ Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They ha
 	  - key 'description' (string)
 	  - key 'examples' (array of strings): usage examples
 	  - key 'categories' (array of strings): array of category names, from the left side of the Flashlight window. Add your own if appropriate
-  - Icon.png _optional_ the icon that'll appear next to your results in Spotlight. Not larger tha 512x512.
+  - Icon.png _optional_ the icon that'll appear next to your results in Spotlight. Not larger than 512x512.
 ```
 
 `examples.txt` looks like this:
