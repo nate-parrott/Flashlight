@@ -37,16 +37,18 @@ for plugin in os.listdir(plugin_dir):
                     elif len(line):
                         example_phrases.append(parse_example_to_phrase(plugin_name, line))
 
-def parse_query(query):
-    parsed = commanding.parse_phrase(query, example_phrases, regexes)
+def parse_query(query, supplemental_tags):
+    parsed = commanding.parse_phrase(query, example_phrases, regexes, supplemental_tags)
     if parsed == None or parsed.intent == '':
         return None
-    return {"plugin": parsed.intent, "arguments": parsed.tags()}
+    return {"plugin": parsed.intent, "arguments": parsed.tags(), "object": parsed}
+
+import inspect
 
 if __name__=='__main__':
     query = sys.argv[1]
     plugins_to_invoke = set(plugins_to_always_invoke)
-    parsed = parse_query(query)
+    parsed = parse_query(query, supplemental_tags=json.loads(sys.argv[2]))
     if parsed != None:
         plugins_to_invoke.add(parsed['plugin'])
     
@@ -56,6 +58,9 @@ if __name__=='__main__':
         with WorkingDirAs(os.path.split(plugin_path)[0]):
             plugin_module = imp.load_source(plugin_name, plugin_path)
             args = parsed['arguments'] if parsed and parsed['plugin'] == plugin else None
+            arguments = [args, query]
+            if len(inspect.getargspec(plugin_module.results)[0]) == 3:
+                arguments.append(parsed['object'])
             res = plugin_module.results(args, query) # can return a dict or a list of result dicts
             if type(res) == dict:
                 results[plugin] = [res]
