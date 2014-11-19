@@ -83,12 +83,11 @@ void __SS_markPathExecutable(NSString *path) {
     tagger.string = query;
     NSMutableDictionary *training = [NSMutableDictionary new];
     [tagger enumerateTagsInRange:NSMakeRange(0, query.length) scheme:NSLinguisticTagSchemeNameTypeOrLexicalClass options:options usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
-        NSString *key = [@"_" stringByAppendingString:tag];
+        NSString *key = [@"~_" stringByAppendingString:tag];
         if (!training[key]) training[key] = [NSMutableArray new];
         [training[key] addObject:[tagger.string substringWithRange:tokenRange]];
     }];
     NSString *trainingString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:training options:0 error:nil] encoding:NSUTF8StringEncoding];
-    NSLog(@"SUP: %@", trainingString);
     return trainingString;
 }
 

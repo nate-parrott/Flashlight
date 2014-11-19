@@ -61,7 +61,7 @@ if __name__=='__main__':
             arguments = [args, query]
             if len(inspect.getargspec(plugin_module.results)[0]) == 3:
                 arguments.append(parsed['object'])
-            res = plugin_module.results(args, query) # can return a dict or a list of result dicts
+            res = plugin_module.results(*arguments) # can return a dict or a list of result dicts
             if type(res) == dict:
                 results[plugin] = [res]
             elif type(res) == list:

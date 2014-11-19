@@ -134,6 +134,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "description": "Send email. Optionally attach selected files from Finder.",
+            "displayName": "Send Email",
+            "examples": [
+                "send an email to nate saying hello",
+                "attach these files to a new email to nate@gmail.com with the subject Hello"
+            ],
+            "name": "send_email",
+            "zip_url": "send_email.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
