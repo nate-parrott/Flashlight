@@ -19,6 +19,3 @@ def results(parsed, original_query):
         "webview_transparent_background": True,
         "run_args": location
     }
-
-def run(location):
-    os.system('open "http://openweathermap.org/find?q={0}"'.format(urllib.quote(location)))
