@@ -2,6 +2,6 @@
 	"name": "timezone",
 	"displayName": "Time Zone",
 	"description": "View the time in Spotlight.",
-	"examples": ["time brooklyn", "brooklyn time"],
-	"categories": ["Weather", "THO"]
+	"examples": ["time Munich", "timezone Tokio"],
+	"categories": ["Weather"]
 }

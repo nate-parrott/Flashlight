@@ -1,4 +1,2 @@
 Time ~location(brooklyn)
-Zeit ~location(brooklyn)
-~location(brooklyn) Zeit
-~location(brooklyn) Time
+Timezone ~location(brooklyn)
