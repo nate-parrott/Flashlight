@@ -119,7 +119,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     if (plugin.isAutomatorWorkflow) {
         [self editPluginNamed:plugin.name];
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"This plugin has no additional options." defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@""];
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert setMessageText:@"This plugin has no additional options."];
+        [alert addButtonWithTitle:@"Okay"];
+        
         [alert runModal];
     }
 }
@@ -288,7 +291,14 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [task startInstallationIntoPluginsDirectory:[self localPluginsPath] withCallback:^(BOOL success, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!success) {
-                NSAlert *alert = error ? [NSAlert alertWithError:error] : [NSAlert alertWithMessageText:@"Couldn't install plugin." defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:nil];
+                NSAlert *alert;
+                if (error) {
+                    alert = [NSAlert alertWithError:error];
+                } else {
+                    alert = [[NSAlert alloc] init];
+                    [alert setMessageText:@"Couldn't install plugin."];
+                    [alert addButtonWithTitle:@"Okay"];
+                }
                 alert.alertStyle = NSWarningAlertStyle;
                 [alert runModal];
             }
