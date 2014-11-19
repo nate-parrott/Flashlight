@@ -170,12 +170,18 @@
     NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
     if (![@[@"911", @"916"] containsObject:spotlightVersion]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSAlert *alert = [NSAlert alertWithMessageText:@"Flashlight doesn't work with your version of Spotlight." defaultButton:@"Okay" alternateButton:@"Check for updates" otherButton:nil informativeTextWithFormat:@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)", spotlightVersion];
+            
+            NSAlert *alert = [[NSAlert alloc] init];
+            [alert setMessageText:@"Flashlight doesn't work with your version of Spotlight."];
+            [alert addButtonWithTitle:@"Okay"]; // FirstButton, rightmost button
+            [alert addButtonWithTitle:@"Check for updates"]; // SecondButton
+            [alert setInformativeText:[NSString stringWithFormat:@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)", spotlightVersion]];
             alert.alertStyle = NSCriticalAlertStyle;
             NSModalResponse resp = [alert runModal];
-            if (resp == NSAlertAlternateReturn) {
+            if (resp == NSAlertSecondButtonReturn) {
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/nate-parrott/flashlight"]];
             }
+            
         });
     }
 }
