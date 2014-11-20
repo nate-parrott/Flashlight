@@ -15,14 +15,26 @@
             "zip_url": "copycolor.zip"
         },
         {
+            "description": "Copy path to clipboard from finder",
+            "displayName": "Copy Path From Finder",
+            "examples": [
+                "copypath",
+                "copy path",
+                "path"
+            ],
+            "name": "Copy Path",
+            "zip_url": "CopyPath.zip"
+        },
+        {
             "categories": [
                 "Search",
                 "Developer"
             ],
-            "description": "a search plugin for dash - http://kapeli.com/dash",
-            "displayName": "DASH",
+            "description": "A search plugin for Dash. (requires Dash app)",
+            "displayName": "Dash",
             "examples": [
-                "dash ember each"
+                "dash ember each",
+                "dash os.system"
             ],
             "name": "dash",
             "zip_url": "dash.zip"
