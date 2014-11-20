@@ -1,0 +1,43 @@
+search deviantart ~deviantart(query here)
+searchdeviant ~deviantart(query here)
+deviantart ~deviantart(query here)
+deviant ~deviantart(query here)
+
+deviant-tag ~deviant-tag(query here)
+
+deviant-all ~deviant-all(query here)
+
+deviant-digital ~deviant-digital(query here)
+
+deviant-traditional ~deviant-traditional(query here)
+
+deviant-photog ~deviant-photog(query here)
+deviant-photos ~deviant-photog(query here)
+
+deviant-artisan ~deviant-artisan(query here)
+
+deviant-lit ~deviant-lit(query here)
+
+deviant-film ~deviant-film(query here)
+
+deviant-motionbooks ~deviant-motionbooks(query here)
+
+deviant-flash ~deviant-flash(query here)
+
+deviant-design ~deviant-designs(query here)
+deviant-designs ~deviant-designs(query here)
+
+deviant-custom ~deviant-customize(query here)
+deviant-customize ~deviant-customize(query here)
+deviant-customization ~deviant-customize(query here)
+
+deviant-cartoons ~deviant-cartoons(query here)
+deviant-cartoon ~deviant-cartoons(query here)
+
+deviant-manga ~deviant-manga(query here)
+
+deviant-anthro ~deviant-anthro(query here)
+
+deviant-fanart ~deviant-fanart(query here)
+
+deviant-resources ~deviant-resources(query here)
