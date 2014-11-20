@@ -8,7 +8,7 @@
 	
 	function load() {
         // See script source here: http://dataproxy.pommepause.com/php-manual.phps
-        // It uses DuckDuckGo 
+        // It calls http://php.net/manual-lookup.php, and adds a Access-Control-Allow-Origin header needed for AJAX.
 		var url = "http://dataproxy.pommepause.com/php-manual.php?q=" + encodeURIComponent(queryString);
 		$.ajax({
 		    method: 'GET',
