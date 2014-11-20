@@ -318,6 +318,21 @@
         },
         {
             "categories": [
+                "Search",
+                "Information"
+            ],
+            "description": "Search English Wikipedia (wiki).",
+            "displayName": "Wikipedia (EN)",
+            "examples": [
+                "wiki Dogs",
+                "search wikipedia for St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
+            "name": "wikipedia",
+            "zip_url": "wikipedia.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Featured"
             ],
