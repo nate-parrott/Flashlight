@@ -28,3 +28,8 @@ tt ~twitterquery(query here)
 
 reddit ~redditquery(query here)
 rdt ~redditquery(query here)
+
+google maps ~googlemapsquery(query here)
+show on maps ~googlemapsquery(query here)
+maps ~googlemapsquery(query here)
+gm ~googlemapsquery(query here)
