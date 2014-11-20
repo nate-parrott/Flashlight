@@ -7,6 +7,7 @@ import sys
 import json
 import imp
 from shared import plugin_dir, WorkingDirAs
+import i18n
 
 example_phrases = []
 plugins_to_always_invoke = set()
@@ -25,6 +26,7 @@ for plugin in os.listdir(plugin_dir):
         plugin_name, extension = os.path.splitext(plugin)
         if extension == '.bundle':
             examples_file = os.path.join(plugin_dir, plugin, "examples.txt")
+            examples_file = i18n.find_localized_path(examples_file)
             if os.path.exists(examples_file):
                 for line in open(examples_file):
                     line = line.strip()

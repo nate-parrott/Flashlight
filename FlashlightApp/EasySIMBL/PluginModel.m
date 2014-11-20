@@ -8,6 +8,7 @@
 
 #import "PluginModel.h"
 #import "ConvenienceCategories.h"
+#import "NSObject+InternationalizedValueForKey.h"
 
 @implementation PluginModel
 
@@ -27,9 +28,9 @@
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url {
     PluginModel *model = [PluginModel new];
     model.name = json[@"name"];
-    model.displayName = json[@"displayName"];
-    model.pluginDescription = json[@"description"];
-    model.examples = json[@"examples"];
+    model.displayName = [json internationalizedValueForKey:@"displayName"] ? : @"";
+    model.pluginDescription = [json internationalizedValueForKey:@"description"] ? : @"";
+    model.examples = [json internationalizedValueForKey:@"examples"];
     model.installed = NO;
     model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
     model.categories = json[@"categories"] ? : @[@"Unknown"];
