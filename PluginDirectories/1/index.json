@@ -29,6 +29,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Find annotations for lyrics and literature",
+            "displayName": "Genius",
+            "examples": [
+                "genius Drake",
+                "genius to be or not to be"
+            ],
+            "name": "genius",
+            "zip_url": "genius.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Convert a hex color value into a UIColor instance",
