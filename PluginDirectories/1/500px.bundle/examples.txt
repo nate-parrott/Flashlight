@@ -60,4 +60,8 @@ search500 ~500px(query here)
 500px-urbanex ~500px-urbanexploration(query here)
 500px-urbanexploration ~500px-urbanexploration(query here)
 
+<<<<<<< HEAD
 500px-uncategorized ~500px-uncategorized(query here)
+=======
+500px-uncategorized ~500px-uncategorized(query here)
+>>>>>>> 2412a1cf0dcc06b42ccb8ebe57a3a84ca0e6e6c7
