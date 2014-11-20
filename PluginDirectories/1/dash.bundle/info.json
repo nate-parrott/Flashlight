@@ -1,7 +1,7 @@
 {
 	"name": "dash",
-	"displayName": "DASH",
-	"description": "a search plugin for dash - http://kapeli.com/dash",
-	"examples": ["dash ember each"],
+	"displayName": "Dash",
+	"description": "A search plugin for Dash. (requires Dash app)",
+	"examples": ["dash ember each", "dash os.system"],
 	"categories": ["Search", "Developer"]
 }
