@@ -69,8 +69,8 @@
 - (void)updateUI {
     __weak PluginListController* weakSelf = self;
     if (self.failedToLoadWebPlugins) {
-        self.errorText.stringValue = @"Couldn't load the list of available online plugins.";
-        self.errorButton.title = @"Try again";
+        self.errorText.stringValue = NSLocalizedString(@"Couldn't load the list of available online plugins.", @"");
+        self.errorButton.title = NSLocalizedString(@"Try again", @"");
         self.errorButtonAction = ^{
             [weakSelf reloadPluginsFromWeb:nil];
         };
@@ -120,8 +120,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [self editPluginNamed:plugin.name];
     } else {
         NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"This plugin has no additional options."];
-        [alert addButtonWithTitle:@"Okay"];
+        [alert setMessageText:NSLocalizedString(@"This plugin has no additional options.", @"")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
         
         [alert runModal];
     }
@@ -296,8 +296,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                     alert = [NSAlert alertWithError:error];
                 } else {
                     alert = [[NSAlert alloc] init];
-                    [alert setMessageText:@"Couldn't install plugin."];
-                    [alert addButtonWithTitle:@"Okay"];
+                    [alert setMessageText:NSLocalizedString(@"Couldn't install plugin.", @"")];
+                    [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
                 }
                 alert.alertStyle = NSWarningAlertStyle;
                 [alert runModal];
@@ -374,7 +374,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         return view;
     } else {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
-        view.textField.stringValue = item;
+        view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
         view.imageView.alphaValue = 0.47;
         return view;
@@ -410,6 +410,26 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
     }
     [self updateArrayController];
+}
+
+- (NSString *)localizedNameForCategory:(NSString *)category {
+    static NSDictionary *dict;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        dict = @{
+                 @"Installed": NSLocalizedString(@"Installed", @""),
+                 @"Featured": NSLocalizedString(@"Featured", @""),
+                 @"Information": NSLocalizedString(@"Information", @""),
+                 @"Language": NSLocalizedString(@"Language", @""),
+                 @"Search": NSLocalizedString(@"Search", @""),
+                 @"System": NSLocalizedString(@"System", @""),
+                 @"Utilities": NSLocalizedString(@"Utilities", @""),
+                 @"Weather": NSLocalizedString(@"Weather", @""),
+                 @"News": NSLocalizedString(@"News", @""),
+                 @"Unknown": NSLocalizedString(@"Unknown", @"")
+                 };
+    });
+    return dict[category] ? : category;
 }
 #pragma mark WIndow delegate
 - (void)windowDidBecomeMain:(NSNotification *)notification {

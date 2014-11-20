@@ -9,6 +9,13 @@
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
 
+@interface AppDelegate ()
+
+@property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
+@property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
+
+@end
+
 @implementation AppDelegate
 
 @synthesize loginItemBundleIdentifier=_loginItemBundleIdentifier;
@@ -86,6 +93,10 @@
     }
     
     [self restartSIMBLIfUpdated];
+    
+    // i18n:
+    self.enablePluginsLabel.stringValue = NSLocalizedString(@"Enable Spotlight Plugins", @"");
+    self.createNewAutomatorPluginMenuItem.title = NSLocalizedString(@"New Automator Plugin...", @"");
 }
 
 - (void)restartSIMBLIfUpdated {
@@ -175,7 +186,7 @@
             [alert setMessageText:@"Flashlight doesn't work with your version of Spotlight."];
             [alert addButtonWithTitle:@"Okay"]; // FirstButton, rightmost button
             [alert addButtonWithTitle:@"Check for updates"]; // SecondButton
-            [alert setInformativeText:[NSString stringWithFormat:@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)", spotlightVersion]];
+            [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)", @""), spotlightVersion]];
             alert.alertStyle = NSCriticalAlertStyle;
             NSModalResponse resp = [alert runModal];
             if (resp == NSAlertSecondButtonReturn) {
