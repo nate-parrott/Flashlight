@@ -79,6 +79,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "description": "Send iMessages. Optionally attach selected files from Finder.",
+            "displayName": "iMessage",
+            "examples": [
+                "text nate, where are you?",
+                "imessage these files to Justin Brower"
+            ],
+            "name": "imessage",
+            "zip_url": "imessage.zip"
+        },
+        {
+            "categories": [
                 "Language",
                 "Featured"
             ],
@@ -104,6 +118,18 @@
             ],
             "name": "moresearch",
             "zip_url": "moresearch.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search php.net manual.",
+            "displayName": "PHP Manual",
+            "examples": [
+                "php urlencode"
+            ],
+            "name": "php",
+            "zip_url": "php.zip"
         },
         {
             "categories": [

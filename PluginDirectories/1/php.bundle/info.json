@@ -2,6 +2,6 @@
 	"name": "php",
 	"displayName": "PHP Manual",
 	"description": "Search php.net manual.",
-	"examples": ["php urlencode"]
+	"examples": ["php urlencode"],
 	"categories": ["Developer"]
 }
