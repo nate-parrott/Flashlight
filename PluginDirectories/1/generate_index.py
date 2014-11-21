@@ -8,6 +8,7 @@ index = []
 for filename in os.listdir('.'):
     name, ext = os.path.splitext(filename)
     if ext == '.bundle':
+        print 'Processing', name
         zipped = zipfile.ZipFile(name + ".zip", "w")
         for (dir, dirs, files) in os.walk(filename):
             for f in files:
