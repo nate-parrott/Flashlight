@@ -3,6 +3,21 @@
     "plugins": [
         {
             "categories": [
+                "Search",
+                "Art"
+            ],
+            "description": "Search 500px\u2122 (500px)",
+            "displayName": "500px\u2122 Search",
+            "examples": [
+                "search500 panda",
+                "500px sky",
+                "500px nature"
+            ],
+            "name": "500px\u2122",
+            "zip_url": "500px.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
@@ -38,6 +53,63 @@
             ],
             "name": "dash",
             "zip_url": "dash.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search docset on devdocs.io",
+            "displayName": "devdocs.io",
+            "examples": [
+                "devdocs.io sth",
+                "devdocs sth",
+                "dd sth"
+            ],
+            "iconPath": "./Icon.png",
+            "name": "devdocs.io",
+            "zip_url": "devdocs.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Art"
+            ],
+            "description": "Search deviantART\u2122 (deviant)",
+            "displayName": "deviantART\u2122 Search",
+            "examples": [
+                "searchdeviant yosemite",
+                "deviantart maverick",
+                "deviant flashlight"
+            ],
+            "name": "deviantart\u2122",
+            "zip_url": "deviantart.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Language"
+            ],
+            "description": "Translate English to German using leo",
+            "displayName": "dict.cc Translate",
+            "examples": [
+                "dict Suchmaschine"
+            ],
+            "name": "dictcc",
+            "zip_url": "dictcc.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Find annotations for lyrics and literature",
+            "displayName": "Genius",
+            "examples": [
+                "genius Drake",
+                "genius to be or not to be"
+            ],
+            "name": "genius",
+            "zip_url": "genius.zip"
         },
         {
             "categories": [
@@ -275,6 +347,32 @@
         },
         {
             "categories": [
+                "Weather"
+            ],
+            "description": "View the time in Spotlight.",
+            "displayName": "Time Zone",
+            "examples": [
+                "time Munich",
+                "timezone Tokio"
+            ],
+            "name": "timezone",
+            "zip_url": "timezone.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Vertaald woord van Engels naar nederlands",
+            "displayName": "vertaal",
+            "examples": [
+                "Vertaal car",
+                "vertaal car naar Nederlands"
+            ],
+            "name": "Vertaal",
+            "zip_url": "vertaal.zip"
+        },
+        {
+            "categories": [
                 "Weather",
                 "Featured"
             ],
@@ -292,14 +390,15 @@
                 "Search",
                 "Featured"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt) and Reddit (rdt).",
+            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) and Google Maps(gm).",
             "displayName": "Web Search",
             "examples": [
                 "google Apple stock",
                 "g Apple stock",
                 "duck duck go Flashlight",
                 "image search ducks",
-                "reddit cats"
+                "reddit cats",
+                "google maps New York"
             ],
             "name": "websearch",
             "zip_url": "websearch.zip"
@@ -368,6 +467,20 @@
             ],
             "name": "youdaodic",
             "zip_url": "youdaodic.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "Display Zhi Hu Daily to users based on youzhihu, you can get the latest questions or hot topics with it, even the news of specific date.",
+            "displayName": "Zhihu Daily",
+            "examples": [
+                "zhihu daily(show latest news)",
+                "zhihu hot(show hot topics)",
+                "zhihu 20140822(show the topics On August 22, 2014)"
+            ],
+            "name": "zhihuDaily",
+            "zip_url": "Zhihu.zip"
         }
     ]
 }
