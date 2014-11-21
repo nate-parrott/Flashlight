@@ -1,0 +1,8 @@
+{
+    "name": "Brackets",
+    "displayName": "Open with Brackets Text",
+    "description": "Open Brackets Text Finder is open, opens the current folder/file in Sublime Text.",
+    "examples": ["Brackets"],
+    "iconPath": "/Users/Matthias/Pictures/ICNS/brackets-yosemite-icon-3-color.icns",
+    "categories": ["Utilities"]
+}
