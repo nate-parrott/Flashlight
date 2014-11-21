@@ -1,0 +1,2 @@
+atom
+!always_invoke
