@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'/>
+<head>
+   <style>
+   body {
+      margin: 1em;
+      font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
+      /*background-color: #456;*/
+   }
+   #plugins {
+      padding: 0;
+      -webkit-column-width: 200px;
+      -webkit-column-gap: 1em;
+      width: 100%;
+   }
+   #plugins > li {
+      list-style-type: none;
+      padding-top: 1em;
+      -webkit-column-break-inside: avoid;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      position: relative;
+   }
+   #plugins .pod {
+      background-color: rgba(100,100,100,0.1);
+      padding: 1em;
+      border-radius: 10px;
+   }
+   .icon {
+      position: absolute;
+      height: 40px;
+      top: 0px;
+      right: 15px;
+   }
+   #plugins h4, p.description {
+      margin: 0px;
+      font-size: small;
+   }
+   .control {
+      background-color: rgba(0,0,0,0.1);
+      font-weight: bold;
+      padding: 10px;
+      margin-left: auto;
+      border-radius: 5px;
+      font-size: small;
+      text-transform: uppercase;
+   }
+   .bottom {
+      display: table;
+   }
+   .bottom > * {
+      display: table-cell;
+   }
+   .control a {
+      display: none;
+      color: #222;
+      text-decoration: none;
+   }
+   .control.install a.install {
+      display: block;
+   }
+   .control.installing a.installing {
+      display: block;
+   }
+   .control.uninstall a.uninstall {
+      display: block;
+   }
+   .examples {
+      padding: 0;
+   }
+   .examples > li {
+      list-style-type: none;
+      font-style: italic;
+      margin-top: 8px;
+      margin-bottom: 8px;
+   }
+   .examples > li:before {
+      content: "“";
+   }
+   .examples > li:after {
+      content: "”";
+   }
+   .screenshot {
+      width: 100%;
+      height: auto;
+      margin-top: 4px;
+      margin-bottom: 4px;
+   }
+   .bottom .description {
+      width: 100%;
+      vertical-align: bottom;
+      color: #666;
+   }
+   .control-container {
+      vertical-align: bottom;
+   }
+   </style>
+</head>
+<body>
+   <ul id='plugins'>
+      {% for plugin in plugins %}
+      <li class='{{ plugin.name }}'>
+         <div class='pod'>
+            {% if plugin.model.icon_url %}
+            <img class='icon' src='{{ plugin.model.icon_url }}'/>
+            {% endif %}
+            <h4>{{ plugin.displayName }}</h4>
+            <ul class='examples'>
+               {% for example in plugin.examples %}
+               <li>{{ example }}</li>
+               {% endfor %}
+            </ul>
+            {% if plugin.model.screenshot_url %}
+            <img class='screenshot' src='{{ plugin.model.screenshot_url }}'/>
+            {% endif %}
+            <div class='bottom'>
+               <p class='description'>
+                  {{ plugin.description }}
+               </p>
+               <div class='control-container'>
+                  <div class='control install'>
+                     <a class='install' href='#'>Install</a>
+                     <a class='installing'>Installing...</a>
+                     <a class='uninstall' href='#'>Uninstall</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </li>
+      {% endfor %}
+   </ul>
+</body>
+</html>

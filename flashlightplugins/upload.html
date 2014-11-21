@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+.hint {
+   font-size: small;
+   font-style: italic;
+}
+input[type=submit] {
+   font-size: large;
+}
+textarea {
+   width: 100%;
+   box-sizing: border-box;
+   height: 4em;
+}
+.message {
+   font-weight: bold;
+   color: #d22;
+   background-color: #eee;
+   padding: 1em;
+   word-wrap: break-word;
+}
+</style>
+{% endblock %}
+{% block body %}
+
+<h1>Upload a plugin</h1>
+
+<form action='{{upload_url}}' method='POST' enctype='multipart/form-data'>
+   {% if message %}
+   <h4 class='message'>{{ message }}</h4>
+   {% endif %}
+   <div>
+      <h4>Plugin .zip file</h4>
+      <p class='hint'>Right-clip your plugin.bundle and click "compress"</p>
+      <p><input type='file' name='zip'/></p>
+   </div>
+   <div>
+      <h4>Plugin secret (optional)</h4>
+      <p class='hint'>If you're updating a plugin, use the secret we gave you after your previous submission to replace it.</p>
+      <p><input type='text' name='secret' placeholder='******'/></p>
+   </div>
+   <div>
+      <h4>Anything you'd like to add?</h4>
+      <p class='hint'>Any thoughts about the API or process of developing for Flashlight, or Flashlight at all? <strong>Make sure you include a way for me to contact you.</strong></p>
+      <p><textarea name='notes'></textarea></p>
+   </div>
+   <div>
+      <div><input type='submit'/></div>
+      <p class='hint'>Note that before your plugin goes live, it needs to be reviewed to ensure it isn't malicious.</p>
+   </div>
+</form>
+
+{% endblock %}
