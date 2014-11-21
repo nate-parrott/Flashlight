@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<script src='crel.js'></script>
+	<script>
+	function xhr(url, callback) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", url, true);
+		xhr.onload = function (e) {
+		  if (xhr.readyState === 4) {
+		    if (xhr.status === 200) {
+		      callback(xhr.responseText);
+		    } else {
+		      callback(null);
+		    }
+		  }
+		};
+		xhr.onerror = function (e) {
+		  callback(null)
+		};
+		xhr.send(null);
+	}
+
+	var keyword = "<!--KEYWORD-->";
+
+	function load() {
+        var url = "http://movie.douban.com/j/subject_suggest?q=" + encodeURIComponent(keyword);
+		xhr(url, function(response) {
+			document.getElementById("loading").style.display = 'none';
+			var parsed;
+			if (response && (parsed = JSON.parse(response))) {
+				document.getElementById("results").style.display = 'block';
+				document.getElementById("results").appendChild(createHTMLForJson(parsed));
+			} else {
+				document.getElementById("error").style.display = 'block';
+			}
+		})
+	}
+
+	// MARK: rendering
+
+	function createHTMLForMovie(item) {
+		return crel("li", {"class": "movie"},
+		crel("img", {"class": "thumbnail", "src": item.img}),
+        crel("div", {"class": "text"},
+            crel("h3", {"class": "title"}, crel("a", {"href": item.url}, item.title), crel("span", {"class": "year"}, item.year)),
+            crel("p", {"class": "subtitle"}, item.sub_title)
+        )
+		)
+	}
+
+	function createHTMLForJson(json) {
+		var ul = crel("ul", {"id": "movieList"});
+		json.forEach(function(item) {
+			ul.appendChild(createHTMLForMovie(item));
+		});
+		return ul;
+	}
+
+	load();
+	</script>
+	<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+	html, body, body > div {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "HiraginoSansGB-W3", "Hiragino Sans GB W3";
+		line-height: 1.2;
+	}
+    h1, h2, h3, h4, h5 {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "HiraginoSansGB-W6", "Hiragino Sans GB W6";
+    }
+	#loading, #error {
+		text-align: center;
+	}
+	#error, #results {
+		display: none;
+	}
+    #results {
+        text-align: left;
+    }
+    h1 {
+        font-size: 32px;
+        border-bottom: #ddd 1px solid;
+        padding: 0px 0px 10px 0px;
+        margin: 0px 0px 10px 0px;
+        color: #444;
+    }
+    li.movie h3 {
+        font-size: 18px;
+        color: #444;
+    }
+    li.movie .year {
+        margin-left: 5px;
+    }
+    div.content {
+        padding: 15px;
+    }
+    ul, li {
+        list-style: none;
+    }
+    li.movie {
+        font-size: 15px;
+        color: #888;
+        padding: 5px 0;
+        width: 100%;
+        overflow: auto;
+        border-bottom: #ddd 1px dotted;
+    }
+    li.movie .text {
+        margin-left: 42px;
+    }
+    li.movie h3 .year {
+        color: #888;
+        font-weight: normal;
+    }
+    li.movie a {
+        color: #37a;
+        text-decoration: underline;
+    }
+    li.movie .subtitle {
+        font-size: 15px;
+        color: #888;
+    }
+    li.movie img.thumbnail {
+        width: 32px;
+        float: left;
+        margin-right: 10px;
+    }
+	</style>
+</head>
+<body>
+    <div>
+        <div class="content">
+            <div id='loading'>
+                Loading...
+            </div>
+            <div id='results'>
+            </div>
+            <div id='error'>
+                Oops, failed to load result.
+            </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
