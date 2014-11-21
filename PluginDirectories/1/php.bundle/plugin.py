@@ -14,4 +14,4 @@ def results(parsed, original_query):
     }
 
 def run(php_query):
-    os.system('open "https://duckduckgo.com/?q=!php%20{0}"'.format(urllib.encode(php_query)))
+    os.system('open "http://php.net/manual-lookup.php?pattern={0}"'.format(urllib.quote(php_query)))
