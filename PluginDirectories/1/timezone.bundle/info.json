@@ -1,0 +1,7 @@
+{
+	"name": "timezone",
+	"displayName": "Time Zone",
+	"description": "View the time in Spotlight.",
+	"examples": ["time Munich", "timezone Tokio"],
+	"categories": ["Weather"]
+}
