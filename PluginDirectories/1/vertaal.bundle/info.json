@@ -1,0 +1,7 @@
+{
+    "name": "Vertaal",
+    "displayName": "vertaal",
+    "description": "Vertaald woord van Engels naar nederlands",
+    "examples": ["Vertaal car", "vertaal car naar Nederlands"],
+    "categories": ["Language"]
+}
