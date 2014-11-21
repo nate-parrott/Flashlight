@@ -1,0 +1,7 @@
+{
+	"name": "douban",
+	"displayName": "Douban Movie",
+	"description": "Look for movie info on douban",
+	"examples": ["douban Interstellar"],
+    "categories": ["Information"]
+}
