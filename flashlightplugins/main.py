@@ -29,6 +29,7 @@ import json
 from file_storage import upload_file_and_get_url
 import os
 from google.appengine.api import images
+from google.appengine.api import memcache
 
 class Plugin(ndb.Model):
   info_json = ndb.TextProperty()
@@ -120,10 +121,26 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
     blob_info = blobstore.BlobInfo.get(resource)
     self.send_blob(blob_info)
 
+def compute_categories():
+    categories = set()
+    for p in Plugin.query():
+      for c in p.categories:
+        categories.add(c)
+    return categories
+
+class Categories(webapp2.RequestHandler):
+  def get(self):
+    categories = memcache.get("categories")
+    if not categories:
+      categories = compute_categories()
+      memcache.set("categories", categories, time=10 * 60) # 10 min
+    self.response.write(json.dumps(list(categories)))
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/upload', UploadHandler),
     ('/post_upload', PostUploadHandler),
     ('/directory', Directory),
     ('/serve/(.+)', ServeHandler),
+    ('/categories', Categories)
 ], debug=True)
