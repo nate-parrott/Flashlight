@@ -44,6 +44,9 @@
 		5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */; };
 		5FC016691A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */; };
 		5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */; };
+		5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */; };
+		5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD3EA801A2035AB005A312E /* WebKit.framework */; };
+		5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */; };
 		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
@@ -166,6 +169,11 @@
 		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
+		5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginDirectoryAPI.m; sourceTree = "<group>"; };
+		5FD3EA801A2035AB005A312E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLComponents+ValueForQueryKey.h"; sourceTree = "<group>"; };
+		5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLComponents+ValueForQueryKey.m"; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -192,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */,
 				5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */,
 				5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */,
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
@@ -297,6 +306,7 @@
 		6C564483159E7C0800215467 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FD3EA801A2035AB005A312E /* WebKit.framework */,
 				5F63270D1A0939A900CE241E /* libz.dylib */,
 				5F6326C11A083A1300CE241E /* QuartzCore.framework */,
 				6C564484159E7C0800215467 /* Cocoa.framework */,
@@ -322,10 +332,14 @@
 			children = (
 				6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */,
 				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
+				5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */,
+				5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
+				5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */,
+				5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */,
 				5FC016671A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.h */,
 				5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */,
 				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
@@ -508,6 +522,7 @@
 				5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */,
 				5F6326FD1A0933E800CE241E /* ZZArchiveEntry.m in Sources */,
 				5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */,
+				5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */,
 				5F6326FE1A0933E800CE241E /* ZZConstants.m in Sources */,
 				5F6326FC1A0933E800CE241E /* ZZArchive.mm in Sources */,
 				5F6327071A0933E800CE241E /* ZZNewArchiveEntryWriter.mm in Sources */,
@@ -521,6 +536,7 @@
 				5F6327091A0933E800CE241E /* ZZOldArchiveEntryWriter.mm in Sources */,
 				5F6327011A0933E800CE241E /* ZZDeflateOutputStream.m in Sources */,
 				5F6327041A0933E800CE241E /* ZZFileChannelOutput.m in Sources */,
+				5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */,
 				5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */,
 				5F6326FF1A0933E800CE241E /* ZZDataChannel.m in Sources */,
 				5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */,
@@ -607,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -637,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;

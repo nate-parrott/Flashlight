@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
 
 @class PluginModel;
 
@@ -15,8 +16,8 @@
 @property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic) IBOutlet NSView *view;
 @property (nonatomic) IBOutlet NSTableView *tableView;
-
-- (IBAction)reloadPluginsFromWeb:(id)sender;
+@property (nonatomic) IBOutlet WebView *webView;
+@property (nonatomic) IBOutlet NSVisualEffectView *effectView;
 
 - (void)installPlugin:(PluginModel *)plugin;
 - (void)uninstallPlugin:(PluginModel *)plugin;
