@@ -114,6 +114,18 @@
         },
         {
             "categories": [
+                "Language"
+            ],
+            "description": "Multimedialny s\u0142ownik angielskiego",
+            "displayName": "Diki.pl",
+            "examples": [
+                "diki apple"
+            ],
+            "name": "diki",
+            "zip_url": "diki.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Find annotations for lyrics and literature",
