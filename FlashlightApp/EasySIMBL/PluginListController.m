@@ -460,7 +460,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [script appendFormat:@"var elements = document.querySelectorAll('#plugins > li');\n"];
     [script appendFormat:@"for (var i=0; i<elements.length; i++) elements[i].setAttribute('status', 'uninstalled')\n"];
     for (PluginModel *plugin in self.installedPlugins) {
-        NSLog(@"%@", plugin);
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installed');\n"];
     }
@@ -494,6 +493,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         }
         [self reloadFromDisk];
         [listener ignore];
+    } else if ([request.URL.scheme isEqualToString:@"open"]) {
+        [listener ignore];
+        NSURLComponents *comps = [NSURLComponents componentsWithURL:request.URL resolvingAgainstBaseURL:NO];
+        comps.scheme = @"http";
+        [[NSWorkspace sharedWorkspace] openURL:comps.URL];
     } else {
         [listener use];
     }
