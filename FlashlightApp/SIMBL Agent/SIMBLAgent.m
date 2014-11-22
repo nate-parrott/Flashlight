@@ -264,7 +264,7 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
         
         // Inject!
         [sbApp setSendMode:kAENoReply | kAENeverInteract | kAEDontRecord];
-        id injectReply = [sbApp sendEvent:'ESIM' id:'load' parameters:0];
+        id injectReply = [sbApp sendEvent:'SPOT' id:'load' parameters:0];
         if (injectReply != nil) {
             SIMBLLogNotice(@"unexpected injectReply: %@", injectReply);
         }
