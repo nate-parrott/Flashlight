@@ -52,30 +52,16 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
     [defaults setValue:[[NSBundle mainBundle]_dt_bundleVersion]
                 forKey:[[NSBundle mainBundle]bundleIdentifier]];
     
-    // hold previous injected sandbox
-    NSMutableSet *previousInjectedSandboxBundleIdentifierSet = [NSMutableSet setWithArray:[defaults objectForKey:kInjectedSandboxBundleIdentifiers]];
-    [defaults removeObjectForKey:kInjectedSandboxBundleIdentifiers];
-    [defaults synchronize];
-    
+  
     NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
     [workspace addObserver:self
                 forKeyPath:@"runningApplications"
                    options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                    context:NULL];
     
-    // inject into resumed applications
+    // inject into Spotlight
     for (NSRunningApplication *runningApp in [workspace runningApplications]) {
         [self injectSIMBL:runningApp];
-    }
-    
-    // previous minus running, it should be uninject
-    [previousInjectedSandboxBundleIdentifierSet minusSet:[NSMutableSet setWithArray:[defaults objectForKey:kInjectedSandboxBundleIdentifiers]]];
-    if ([previousInjectedSandboxBundleIdentifierSet count]) {
-        [[NSProcessInfo processInfo]disableSuddenTermination];
-        for (NSString *bundleItentifier in previousInjectedSandboxBundleIdentifierSet) {
-            [self injectContainerBundleIdentifier:bundleItentifier enabled:NO];
-        }
-        [[NSProcessInfo processInfo]enableSuddenTermination];
     }
     
     [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
@@ -92,19 +78,17 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"isTerminated"]) {
-        SIMBLLogDebug(@"runningApp %@ isTerminated.", object);
-        [object removeObserver:self forKeyPath:keyPath];
-        
-        [self injectContainerForApplication:(NSRunningApplication*)object enabled:NO];
-    } else if ([keyPath isEqualToString:@"runningApplications"]) {
+    if ([keyPath isEqualToString:@"runningApplications"]) {
         // for apps which will be terminated without called @"isFinishedLaunching"
         static NSMutableSet *appsObservingFinishedLaunching = nil;
         if (!appsObservingFinishedLaunching) {
             appsObservingFinishedLaunching = [NSMutableSet set];
         }
         
-		for (NSRunningApplication *app in [change objectForKey:NSKeyValueChangeNewKey]) {
+        for (NSRunningApplication *app in [change objectForKey:NSKeyValueChangeNewKey]) {
+      
+          if (![app.bundleIdentifier isEqualToString:@"com.apple.Spotlight"]) return;
+      
             if (app.isFinishedLaunching) {
                 SIMBLLogDebug(@"runningApp %@ is already isFinishedLaunching", app);
                 [self injectSIMBL:app];
@@ -112,8 +96,11 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
                 [app addObserver:self forKeyPath:@"isFinishedLaunching" options:NSKeyValueObservingOptionNew context:NULL];
                 [appsObservingFinishedLaunching addObject:app];
             }
-		}
-		for (NSRunningApplication *app in [change objectForKey:NSKeyValueChangeOldKey]) {
+        }
+        for (NSRunningApplication *app in [change objectForKey:NSKeyValueChangeOldKey]) {
+      
+          if (![app.bundleIdentifier isEqualToString:@"com.apple.Spotlight"]) return;
+      
             if ([appsObservingFinishedLaunching containsObject:app]) {
                 [app removeObserver:self forKeyPath:@"isFinishedLaunching"];
                 [appsObservingFinishedLaunching removeObject:app];
@@ -144,39 +131,29 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
 
 - (void) injectSIMBL:(NSRunningApplication *)runningApp
 {
+  
+  if ([[NSRunningApplication currentApplication]isEqual:runningApp]) {
+        return;
+  }
+    
+	// check to see if there are plugins to load
+  if ([SIMBL shouldInstallPluginsIntoApplication:runningApp] == NO) {
+        SIMBLLogDebug(@"No plugins match for %@", runningApp);
+		return;
+	}
 	// NOTE: if you change the log level externally, there is pretty much no way
 	// to know when the changed. Just reading from the defaults doesn't validate
 	// against the backing file very ofter, or so it seems.
 	NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
 	[defaults synchronize];
-    
-    if ([[NSRunningApplication currentApplication]isEqual:runningApp]) {
-        return;
-    }
-    
-	NSString* appName = [runningApp localizedName];
-	SIMBLLogInfo(@"%@ started", appName);
-	SIMBLLogDebug(@"app start notification: %@", runningApp);
-    
-	// check to see if there are plugins to load
-    if ([SIMBL shouldInstallPluginsIntoApplication:runningApp] == NO) {
-        SIMBLLogDebug(@"No plugins match for %@", runningApp);
-		return;
-	}
+  
 	
 	// BUG: http://code.google.com/p/simbl/issues/detail?id=11
 	// NOTE: believe it or not, some applications cause a crash deep in the
 	// ScriptingBridge code. Due to the launchd behavior of restarting crashed
 	// agents, this is mostly harmless. To reduce the crashing we leave a
 	// blacklist to prevent injection.  By default, this is empty.
-	NSString* appIdentifier = [runningApp bundleIdentifier];
-	NSArray* blacklistedIdentifiers = [defaults stringArrayForKey:@"SIMBLApplicationIdentifierBlacklist"];
-	if (blacklistedIdentifiers != nil &&
-        [blacklistedIdentifiers containsObject:appIdentifier]) {
-		SIMBLLogNotice(@"ignoring injection attempt for blacklisted application %@ (%@)", appName, appIdentifier);
-		return;
-	}
-    
+  
 	SIMBLLogDebug(@"send inject event");
 	
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -237,10 +214,6 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
         }
         self.waitingInjectionNumber++;
         
-        // hardlink to Container
-        [self injectContainerForApplication:runningApp enabled:YES];
-        
-        
         // Force AppleScript to initialize in the app, by getting the dictionary
         // When initializing, you need to wait for the event reply, otherwise the
         // event might get dropped on the floor. This is only seems to happen in 10.5
@@ -264,7 +237,7 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
         
         // Inject!
         [sbApp setSendMode:kAENoReply | kAENeverInteract | kAEDontRecord];
-        id injectReply = [sbApp sendEvent:'ESIM' id:'load' parameters:0];
+        id injectReply = [sbApp sendEvent:'SPOT' id:'load' parameters:0];
         if (injectReply != nil) {
             SIMBLLogNotice(@"unexpected injectReply: %@", injectReply);
         }
@@ -272,89 +245,5 @@ NSString * const kInjectedSandboxBundleIdentifiers = @"InjectedSandboxBundleIden
     }
 }
 
-- (void)injectContainerForApplication:(NSRunningApplication*)runningApp enabled:(BOOL)bEnabled;
-{
-    NSString *identifier = [runningApp bundleIdentifier];
-    if (bEnabled) {
-        if ([self injectContainerBundleIdentifier:identifier enabled:YES]) {
-            SIMBLLogDebug(@"Start observing %@'s 'isTerminated'.", identifier);
-            
-            [runningApp addObserver:self forKeyPath:@"isTerminated" options:NSKeyValueObservingOptionNew context:NULL];
-            [self.runningSandboxedApplications addObject:runningApp];
-            
-            NSMutableSet *injectedSandboxBundleIdentifierSet = [NSMutableSet set];
-            for (NSRunningApplication *app in self.runningSandboxedApplications) {
-                [injectedSandboxBundleIdentifierSet addObject:[app bundleIdentifier]];
-            }
-            [[NSUserDefaults standardUserDefaults]setObject:[injectedSandboxBundleIdentifierSet allObjects]
-                                                     forKey:kInjectedSandboxBundleIdentifiers];
-            [[NSUserDefaults standardUserDefaults]synchronize];
-        }
-    } else {
-        BOOL (^hasSameBundleIdentifier)(id, NSUInteger, BOOL *) = ^(id obj, NSUInteger idx, BOOL *stop) {
-            return *stop = [identifier isEqualToString:[(NSRunningApplication*)obj bundleIdentifier]];
-        };
-        
-        [self.runningSandboxedApplications removeObject:runningApp];
-        // check multi instance application
-        if (NSNotFound == [self.runningSandboxedApplications indexOfObjectWithOptions:NSEnumerationConcurrent
-                                                                          passingTest:hasSameBundleIdentifier]) {
-            if ([self injectContainerBundleIdentifier:identifier enabled:NO]) {
-                
-                NSMutableSet *injectedSandboxBundleIdentifierSet = [NSMutableSet set];
-                for (NSRunningApplication *app in self.runningSandboxedApplications) {
-                    [injectedSandboxBundleIdentifierSet addObject:[app bundleIdentifier]];
-                }
-                [[NSUserDefaults standardUserDefaults]setObject:[injectedSandboxBundleIdentifierSet allObjects]
-                                                         forKey:kInjectedSandboxBundleIdentifiers];
-                [[NSUserDefaults standardUserDefaults]synchronize];
-            }
-        }
-    }
-}
-
-- (BOOL)injectContainerBundleIdentifier:(NSString*)bundleIdentifier enabled:(BOOL)bEnabled;
-{
-    BOOL bResult = NO;
-    if ([bundleIdentifier length]>0) {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,  NSUserDomainMask, YES);
-        NSString *containerPath = [NSString pathWithComponents:[NSArray arrayWithObjects:[paths objectAtIndex:0], @"Containers", bundleIdentifier, nil]];
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSError *error = nil;
-        BOOL isDirectory = NO;
-        if ([fileManager fileExistsAtPath:containerPath isDirectory:&isDirectory] && isDirectory) {
-            NSString *dataLibraryPath = @"Data/Library";
-            NSString *containerScriptingAddtionsPath = [NSString pathWithComponents:[NSArray arrayWithObjects:containerPath, dataLibraryPath, EasySIMBLScriptingAdditionsPathComponent, nil]];
-            NSString *containerApplicationSupportPath = [NSString pathWithComponents:[NSArray arrayWithObjects:containerPath, dataLibraryPath, EasySIMBLApplicationSupportPathComponent, nil]];
-            NSString *containerPlistPath = [NSString pathWithComponents:[NSArray arrayWithObjects:containerPath, dataLibraryPath,EasySIMBLPreferencesPathComponent, [EasySIMBLSuiteBundleIdentifier stringByAppendingPathExtension:EasySIMBLPreferencesExtension], nil]];
-            if (bEnabled) {
-                if (![fileManager linkItemAtPath:self.scriptingAdditionsPath toPath:containerScriptingAddtionsPath error:&error]) {
-                    SIMBLLogNotice(@"linkItemAtPath error:%@",error);
-                }
-                if (![fileManager linkItemAtPath:self.applicationSupportPath toPath:containerApplicationSupportPath error:&error]) {
-                    SIMBLLogNotice(@"linkItemAtPath error:%@",error);
-                }
-                if ([fileManager fileExistsAtPath:self.plistPath] && ![fileManager linkItemAtPath:self.plistPath toPath:containerPlistPath error:&error]) {
-                    SIMBLLogNotice(@"linkItemAtPath error:%@",error);
-                }
-                bResult = YES;
-                SIMBLLogDebug(@"%@'s container has been injected.", bundleIdentifier);
-            } else {
-                if (![fileManager removeItemAtPath:containerScriptingAddtionsPath error:&error]) {
-                    SIMBLLogNotice(@"removeItemAtPath error:%@",error);
-                }
-                if (![fileManager removeItemAtPath:containerApplicationSupportPath error:&error]) {
-                    SIMBLLogNotice(@"removeItemAtPath error:%@",error);
-                }
-                if ([fileManager fileExistsAtPath:containerPlistPath] && ![fileManager removeItemAtPath:containerPlistPath error:&error]) {
-                    SIMBLLogNotice(@"removeItemAtPath error:%@",error);
-                }
-                bResult = YES;
-                SIMBLLogDebug(@"%@'s container has been uninjected.", bundleIdentifier);
-            }
-        }
-    }
-    return bResult;
-}
 
 @end

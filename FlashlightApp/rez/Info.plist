@@ -30,7 +30,7 @@
 	<dict>
 		<key>Events</key>
 		<dict>
-			<key>ESIMload</key>
+			<key>SPOTload</key>
 			<dict>
 				<key>Context</key>
 				<string>User</string>
