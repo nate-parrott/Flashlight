@@ -108,7 +108,7 @@ static NSMutableDictionary* loadedBundleIdentifiers = nil;
         [defaults addSuiteNamed:EasySIMBLSuiteBundleIdentifier];
     }
 	if ([defaults integerForKey:SIMBLPrefKeyLogLevel] <= level) {
-		NSLog(@"#EasySIMBL %@", message);
+		NSLog(@"#Flashlight SIMBL%@", message);
 	}
 }
 
@@ -168,16 +168,9 @@ static NSMutableDictionary* loadedBundleIdentifiers = nil;
 
 + (BOOL) shouldInstallPluginsIntoApplication:(NSRunningApplication*)runningApp;
 {
-    if (![runningApp.bundleIdentifier isEqualToString:@"com.apple.Spotlight"]) return NO;
+  if (![runningApp.bundleIdentifier isEqualToString:@"com.apple.Spotlight"]) return NO;
     
-	for (NSString* path in [SIMBL pluginPathList]) {
-		BOOL bundleShouldInstallPlugins = [SIMBL shouldApplication:runningApp loadBundleAtPath:path];
-		if (bundleShouldInstallPlugins) {
-			SIMBLLogDebug(@"should install plugin %@", path);
-			return YES;
-        }
-	}
-	return NO;
+	return YES;
 }
 
 
