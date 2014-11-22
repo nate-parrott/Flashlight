@@ -16,6 +16,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Get the latest company activity in an instant",
+            "displayName": "CrunchBase",
+            "examples": [
+                "crunchbase github",
+                "crunchbase dropbox"
+            ],
+            "name": "crunchbase",
+            "zip_url": "crunchbase.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
