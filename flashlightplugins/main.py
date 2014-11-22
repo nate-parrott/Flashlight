@@ -112,6 +112,7 @@ class Directory(webapp2.RequestHandler):
     for p in Plugin.query(Plugin.categories == category, Plugin.approved == True):
       plugin = json.loads(p.info_json)
       plugin['model'] = p
+      plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
       plugins.append(plugin)
     self.response.write(template("directory.html", {"plugins": plugins}))
 

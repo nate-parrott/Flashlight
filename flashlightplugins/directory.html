@@ -7,6 +7,13 @@
       margin: 1em;
       font-family: "HelveticaNeue", "Helvetica Neue", sans-serif;
       /*background-color: #456;*/
+      cursor: default;
+      -webkit-touch-callout: none;
+       -webkit-user-select: none;
+       -khtml-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
    }
    #plugins {
       padding: 0;
@@ -40,11 +47,18 @@
    .control {
       background-color: rgba(0,0,0,0.1);
       font-weight: bold;
-      padding: 10px;
       margin-left: auto;
       border-radius: 5px;
       font-size: small;
       text-transform: uppercase;
+      text-align: center;
+      min-width: 100px;
+   }
+   .control:hover {
+      background-color: rgba(0,0,0,0.15);
+   }
+   .control:active {
+      background-color: rgba(0,0,0,0.2);
    }
    .bottom {
       display: table;
@@ -56,14 +70,18 @@
       display: none;
       color: #222;
       text-decoration: none;
+      width: 100%;
+      padding: 10px 5px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
    }
-   .control.install a.install {
+   li[status=installing] .control a.installing {
       display: block;
    }
-   .control.installing a.installing {
+   li[status=installed] .control a.uninstall {
       display: block;
    }
-   .control.uninstall a.uninstall {
+   li[status=uninstalled] .control a.install {
       display: block;
    }
    .examples {
@@ -71,7 +89,6 @@
    }
    .examples > li {
       list-style-type: none;
-      font-style: italic;
       margin-top: 8px;
       margin-bottom: 8px;
    }
@@ -94,13 +111,19 @@
    }
    .control-container {
       vertical-align: bottom;
+      padding-left: 5px;
    }
    </style>
 </head>
 <body>
+   <script>
+   window.addEventListener('onContextMenu', function(e) {
+      e.preventDefault();
+   })
+   </script>
    <ul id='plugins'>
       {% for plugin in plugins %}
-      <li class='{{ plugin.name }}'>
+      <li class='{{ plugin.name }}' status='uninstalled'>
          <div class='pod'>
             {% if plugin.model.icon_url %}
             <img class='icon' src='{{ plugin.model.icon_url }}'/>
@@ -119,10 +142,10 @@
                   {{ plugin.description }}
                </p>
                <div class='control-container'>
-                  <div class='control install'>
-                     <a class='install' href='#'>Install</a>
+                  <div class='control'>
+                     <a class='install' href='{{ plugin.install_url }}'>Install</a>
                      <a class='installing'>Installing...</a>
-                     <a class='uninstall' href='#'>Uninstall</a>
+                     <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
                   </div>
                </div>
             </div>
@@ -130,5 +153,9 @@
       </li>
       {% endfor %}
    </ul>
+   
+   <script>
+   window.location = "domready://_";
+   </script>
 </body>
 </html>

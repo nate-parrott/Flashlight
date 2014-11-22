@@ -40,10 +40,6 @@
                                 return;
                             }
                         }
-                        // success:
-                        if (self.plugin.disabledPluginPath) {
-                            [[NSFileManager defaultManager] removeItemAtPath:self.plugin.disabledPluginPath error:nil];
-                        }
                         callback(YES, nil);
                     } else {
                         callback(NO, zipError);
@@ -53,10 +49,6 @@
                 callback(NO, error);
             }
         }] resume];
-    } else if (self.plugin.disabledPluginPath) {
-        NSString *enabledPath = [[self.plugin.disabledPluginPath stringByDeletingPathExtension] stringByAppendingPathExtension:@"bundle"];
-        [[NSFileManager defaultManager] moveItemAtPath:self.plugin.disabledPluginPath toPath:enabledPath error:nil];
-        callback(YES, nil);
     }
 }
 

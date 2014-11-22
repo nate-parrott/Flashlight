@@ -20,7 +20,6 @@
     p.installed = self.installed;
     p.installing = self.installing;
     p.examples = self.examples;
-    p.disabledPluginPath = self.disabledPluginPath;
     p.categories = self.categories;
     return p;
 }
@@ -36,33 +35,6 @@
     model.categories = json[@"categories"] ? : @[@"Unknown"];
     model.isAutomatorWorkflow = [json[@"isAutomatorWorkflow"] boolValue];
     return model;
-}
-
-+ (NSArray *)mergeDuplicates:(NSArray *)models {
-    NSMutableDictionary *pluginsByName = [NSMutableDictionary new];
-    for (PluginModel *p in models) {
-        if (pluginsByName[p.name]) {
-            pluginsByName[p.name] = [p mergeWith:pluginsByName[p.name]];
-        } else {
-            pluginsByName[p.name] = p;
-        }
-    }
-    return pluginsByName.allValues;
-}
-
-- (PluginModel *)mergeWith:(PluginModel *)other {
-    if (!self.installed && self.disabledPluginPath && other.zipURL) {
-        // self=a disabled plugin. other=a web plugin
-        other.disabledPluginPath = self.disabledPluginPath;
-        return other;
-    } else if (!other.installed && other.disabledPluginPath && self.zipURL) {
-        self.disabledPluginPath = other.disabledPluginPath;
-        return self;
-    } else if (self.installed) {
-        return self;
-    } else {
-        return other;
-    }
 }
 
 - (NSAttributedString *)attributedString {
