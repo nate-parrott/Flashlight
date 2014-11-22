@@ -9,6 +9,7 @@
 #import "PluginInstallTask.h"
 #import "PluginModel.h"
 #import "zipzap.h"
+#import "PluginDirectoryAPI.h"
 
 @implementation PluginInstallTask
 
@@ -19,6 +20,7 @@
     return self;
 }
 - (void)startInstallationIntoPluginsDirectory:(NSString *)directory withCallback:(void(^)(BOOL success, NSError *error))callback {
+    [[PluginDirectoryAPI shared] logPluginInstall:self.plugin.name];
     if (self.plugin.zipURL) {
         [[[NSURLSession sharedSession] dataTaskWithURL:self.plugin.zipURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data && !error) {

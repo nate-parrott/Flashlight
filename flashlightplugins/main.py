@@ -137,11 +137,17 @@ class Categories(webapp2.RequestHandler):
       memcache.set("categories", categories, time=10 * 60) # 10 min
     self.response.write(json.dumps(list(categories)))
 
+class LogInstall(webapp2.RequestHandler):
+  def get(self):
+    name = self.request.get(name)
+    pass # TODO
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/upload', UploadHandler),
     ('/post_upload', PostUploadHandler),
     ('/directory', Directory),
     ('/serve/(.+)', ServeHandler),
-    ('/categories', Categories)
+    ('/categories', Categories),
+    ('/log_install', LogInstall)
 ], debug=True)
