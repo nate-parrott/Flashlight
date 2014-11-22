@@ -1,2 +1,3 @@
 Time ~location(brooklyn)
 Timezone ~location(brooklyn)
+what time is it in ~location(shangai)
