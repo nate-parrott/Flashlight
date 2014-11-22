@@ -1,0 +1,12 @@
+body {
+  padding: 2em;
+  line-height: 1.25;
+  color: #111;
+  font-family: sans-serif;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+a:link {
+  color: #f55;
+}

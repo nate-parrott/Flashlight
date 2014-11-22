@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+
+<h1>Success!</h1>
+<h2>"{{ plugin.name }}" has been received</h2>
+<p>{{ message }}</p>
+
+<p>If you want to upload updates in the future that replace this plugin, you'll need the following secret:</p>
+
+<p style='font-family: monospace; word-wrap: break-word'>{{ plugin.secret }}</p>
+
+<p><a href='/'>Done</a></p>
+
+{% endblock %}
+

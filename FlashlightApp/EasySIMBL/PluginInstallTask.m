@@ -9,6 +9,7 @@
 #import "PluginInstallTask.h"
 #import "PluginModel.h"
 #import "zipzap.h"
+#import "PluginDirectoryAPI.h"
 
 @implementation PluginInstallTask
 
@@ -19,6 +20,7 @@
     return self;
 }
 - (void)startInstallationIntoPluginsDirectory:(NSString *)directory withCallback:(void(^)(BOOL success, NSError *error))callback {
+    [[PluginDirectoryAPI shared] logPluginInstall:self.plugin.name];
     if (self.plugin.zipURL) {
         [[[NSURLSession sharedSession] dataTaskWithURL:self.plugin.zipURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data && !error) {
@@ -34,15 +36,14 @@
                                 if (![[NSFileManager defaultManager] fileExistsAtPath:[writeToPath stringByDeletingLastPathComponent]]) {
                                     [[NSFileManager defaultManager] createDirectoryAtPath:[writeToPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:NO];
                                 }
+                                if ([[writeToPath pathExtension] isEqualToString:@"bundle"]) {
+                                    continue;
+                                }
                                 [entryData writeToFile:writeToPath atomically:YES];
                             } else {
                                 callback(NO, zipError);
                                 return;
                             }
-                        }
-                        // success:
-                        if (self.plugin.disabledPluginPath) {
-                            [[NSFileManager defaultManager] removeItemAtPath:self.plugin.disabledPluginPath error:nil];
                         }
                         callback(YES, nil);
                     } else {
@@ -53,10 +54,6 @@
                 callback(NO, error);
             }
         }] resume];
-    } else if (self.plugin.disabledPluginPath) {
-        NSString *enabledPath = [[self.plugin.disabledPluginPath stringByDeletingPathExtension] stringByAppendingPathExtension:@"bundle"];
-        [[NSFileManager defaultManager] moveItemAtPath:self.plugin.disabledPluginPath toPath:enabledPath error:nil];
-        callback(YES, nil);
     }
 }
 
