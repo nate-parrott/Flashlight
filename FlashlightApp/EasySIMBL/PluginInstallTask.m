@@ -36,6 +36,9 @@
                                 if (![[NSFileManager defaultManager] fileExistsAtPath:[writeToPath stringByDeletingLastPathComponent]]) {
                                     [[NSFileManager defaultManager] createDirectoryAtPath:[writeToPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:NO];
                                 }
+                                if ([[writeToPath pathExtension] isEqualToString:@"bundle"]) {
+                                    continue;
+                                }
                                 [entryData writeToFile:writeToPath atomically:YES];
                             } else {
                                 callback(NO, zipError);
