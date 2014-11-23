@@ -193,6 +193,20 @@
         },
         {
             "categories": [
+                "Language",
+                "Search"
+            ],
+            "description": "Search the Japanese dictionary and translator Jisho",
+            "displayName": "Jisho",
+            "examples": [
+                "jisho \u3053\u3093\u306b\u3061\u306f",
+                "\u8f9e\u66f8 hello"
+            ],
+            "name": "jisho",
+            "zip_url": "jisho.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "displayName": "Search more websites",
