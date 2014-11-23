@@ -1,6 +1,7 @@
 {
-	"name": "say",
-	"displayName": "Say",
-	"description": "Speak a message out loud.",
-	"examples": ["say good morning"]
+   "name": "say",
+   "displayName": "Say Something",
+   "description": "Speaks your input text",
+   "examples": ["say hello world", "say good morning"],
+   "categories": ["Utilities"]
 }
