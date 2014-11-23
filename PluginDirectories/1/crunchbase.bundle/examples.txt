@@ -1,0 +1,3 @@
+crunchbase ~crunchbase(query here)
+search crunchbase for ~crunchbasequery(query here)
+find ~crunchbase(Google) on crunchbase
