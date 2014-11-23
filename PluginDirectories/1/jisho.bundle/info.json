@@ -1,0 +1,7 @@
+{
+	"name": "jisho",
+	"displayName": "Jisho",
+	"description": "Search the Japanese dictionary and translator Jisho",
+	"examples": ["jisho こんにちは", "辞書 hello"],
+	"categories": ["Language", "Search"]
+}
