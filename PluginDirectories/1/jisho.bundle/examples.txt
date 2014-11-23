@@ -1,0 +1,2 @@
+jisho ~jishoquery(query here)
+辞書 ~jishoquery(query here)
