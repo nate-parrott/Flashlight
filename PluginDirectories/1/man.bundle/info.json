@@ -1,0 +1,7 @@
+{
+	"name": "Man",
+	"displayName": "Man Search",
+	"description": "Search man pages and open in a specific window",
+	"examples": ["man ls", "man ifconfig"],
+	"categories": ["Search", "Featured"]
+}

@@ -1,0 +1,7 @@
+{
+	"name": "haomatong",
+	"displayName": "Sogou Haomatong",
+	"description": "Search for a phone number in Sogou Haomatong database",
+	"examples": ["hmt 10086", "haomatong 10086"],
+    "categories": ["Search"]
+}

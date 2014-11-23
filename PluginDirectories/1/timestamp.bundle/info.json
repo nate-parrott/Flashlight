@@ -1,0 +1,7 @@
+{
+	"name": "timestamp",
+	"displayName": "Timestamp",
+	"description": "Convert timestamp to readable string",
+	"examples": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
+    "categories": ["Utilities"]
+}

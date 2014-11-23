@@ -1,0 +1,7 @@
+{
+	"name": "daily.zhihu",
+	"displayName": "知乎日报",
+	"description": "知乎日报列表, 每篇文章作为一个搜索结果项, Enter 打开",
+	"examples": ["zhihu daily", "zhihu hot"],
+    "categories": ["Information"]
+}

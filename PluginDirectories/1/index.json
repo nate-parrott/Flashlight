@@ -56,6 +56,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Get the latest company activity in an instant",
+            "displayName": "CrunchBase",
+            "examples": [
+                "crunchbase github",
+                "crunchbase dropbox"
+            ],
+            "name": "crunchbase",
+            "zip_url": "crunchbase.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
@@ -111,6 +124,18 @@
             ],
             "name": "dictcc",
             "zip_url": "dictcc.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Multimedialny s\u0142ownik angielskiego",
+            "displayName": "Diki.pl",
+            "examples": [
+                "diki apple"
+            ],
+            "name": "diki",
+            "zip_url": "diki.zip"
         },
         {
             "categories": [
@@ -190,6 +215,20 @@
             ],
             "name": "Instranslator",
             "zip_url": "Instranslator.zip"
+        },
+        {
+            "categories": [
+                "Language",
+                "Search"
+            ],
+            "description": "Search the Japanese dictionary and translator Jisho",
+            "displayName": "Jisho",
+            "examples": [
+                "jisho \u3053\u3093\u306b\u3061\u306f",
+                "\u8f9e\u66f8 hello"
+            ],
+            "name": "jisho",
+            "zip_url": "jisho.zip"
         },
         {
             "categories": [
