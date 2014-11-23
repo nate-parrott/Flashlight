@@ -1,0 +1,7 @@
+{
+    "name": "diki",
+    "displayName": "Diki.pl",
+    "description": "Multimedialny słownik angielskiego",
+    "examples": ["diki apple"],
+    "categories": ["Language"]
+}
