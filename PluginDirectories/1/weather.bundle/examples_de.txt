@@ -1,0 +1,6 @@
+Wetter ~location(brooklyn)
+Wetter in ~location(new york)
+Wie ist das Wetter in ~location(queens)?
+Wettervorhersage für ~location(the bronx)
+~location(london) Wetter
+~location(istanbul) Wettervorhersage

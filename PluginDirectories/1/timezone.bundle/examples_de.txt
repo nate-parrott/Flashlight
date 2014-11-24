@@ -1,0 +1,4 @@
+Zeit ~location(brooklyn)
+Zeitzone ~location(brooklyn)
+Uhrzeit ~location(brooklyn)
+Wie viel Uhr ist es in ~location(shangai)
