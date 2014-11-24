@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+html, body, #main {
+   width: 100%;
+   height: 100%;
+   margin: 0px;
+}
+#main {
+   display: table;
+}
+#main > div {
+   width: 100%;
+   display: table-cell;
+   text-align: center;
+   vertical-align: middle;
+}
+#letter {
+   display: inline-block;
+   width: 60%;
+   background-image: linear-gradient(#eee, #ddd);
+   box-shadow: 0px 2px 2px gray;
+   color: black;
+   padding: 1em;
+   position: relative;
+   font-family: sans-serif;
+   border-radius: 3px;
+   border-top: 1px solid rgba(255,255,255,0.3);
+   border-bottom: 1px solid rgba(0,0,0,0.3);
+   text-align: left;
+}
+#body {
+   border-top: 1px solid #bbb;
+   padding-top: 1em;
+}
+#body:empty {
+   display: none;
+}
+#recipients {
+   margin: top;
+}
+#recipients:before {
+   color: gray;
+   content: "To: ";
+}
+#subject:before {
+   color: gray;
+   content: "Subject: ";
+}
+#attach {
+   font-size: small;
+   opacity: 0.6;
+   font-style: italic;
+}
+#attach img {
+   height: 1em;
+   width: auto;
+}
+#attach:empty {
+   display: none;
+}
+</style>
+</head>
+<body>
+   <div id='main'>
+      <div>
+         <div id='letter'>
+            <p id='recipients'><!--RECIPIENTS--></p>
+            <p id='subject'><!--SUBJECT--></p>
+            <p id='body'><!--BODY--></p>
+            <p id='attach'><!--ATTACH--></p>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

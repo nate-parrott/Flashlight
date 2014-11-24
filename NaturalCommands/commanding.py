@@ -64,6 +64,13 @@ class Phrase(object):
             if isinstance(item, list):
                 d[item[0]] = item[1]
         return d
+    
+    def multitags(self):
+        d = {}
+        for item in self.items:
+            if isinstance(item, list):
+                d[item[0]] = d.get(item[0], []) + [item[1]]
+        return d
 
 def flatten(list_of_lists):
     return reduce(lambda a, b: a+b, list_of_lists, [])
@@ -72,9 +79,17 @@ def split_strings_by_regex(strings, regex):
     print regex, type(regex), strings
     return flatten(map(lambda s: re.split(regex, s), strings))
 
-def tokenize(text, preserve_regexes=None):
+split_tokens_on_chars = ",.?!\"'"
+
+def tokenize(text, spaces_array=None):
+    if spaces_array == None:
+      spaces_array = []
+    for c in split_tokens_on_chars:
+        text = text.replace(c, " {0} ".format(c))
     text = text.lower()
-    tokens = re.split(r"\s+", text)
+    regex = r"\s+"
+    tokens = re.split(regex, text)
+    for space in re.findall(regex, text): spaces_array.append(space)
     return tokens
 
 def count_runs(items):
@@ -86,7 +101,13 @@ def count_runs(items):
             runs.append((item, 1))
     return runs
 
-def phrase_from_candidate(candidate, tokens):
+def join_tokens_using_spaces(tokens, spaces):
+  text = "".join(space+token for space, token in zip([''] + spaces, tokens))
+  for c in split_tokens_on_chars:
+    text = text.replace(" {0} ".format(c), c)
+  return text
+
+def phrase_from_candidate(candidate, tokens, spaces):
     log_prob, intent, states = candidate
     states = states[1:] # strip '$START'
     items = []
@@ -95,11 +116,13 @@ def phrase_from_candidate(candidate, tokens):
             # it's an intermediate state, so don't preserve it in output:
             items.append(" ".join(tokens[:n_tokens]))
         else:
-            items.append([state, " ".join(tokens[:n_tokens])])
+            text = join_tokens_using_spaces(tokens[:n_tokens], spaces[:n_tokens-1])
+            items.append([state, text])
         tokens = tokens[n_tokens:]
+        spaces = spaces[n_tokens:]
     return Phrase(intent, items)
 
-def parse_phrase(text, examples, state_regexes=None):
+def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
     if state_regexes == None: state_regexes = {}
     transition_probs = defaultdict(ProbabilityCounter)
     emission_probs = defaultdict(ProbabilityCounter)
@@ -118,6 +141,10 @@ def parse_phrase(text, examples, state_regexes=None):
             if name[0] != '~':
                 for token in tokenize(item[1]):
                     emission_probs[name].add(token)
+    for tag, samples in supplemental_tags.iteritems():
+        for sample in samples:
+            for token in tokenize(sample):
+                emission_probs[tag].add(token)
     def get_emission_prob(state, token):
         if state[0] == '~':
             return FREE_TEXT_PROB
@@ -129,7 +156,8 @@ def parse_phrase(text, examples, state_regexes=None):
             return emission_probs[next_state][token]
     best_candidate = None
     # 'candidates' are (log_prob, intent, [state]) tuples
-    tokens = tokenize(text, preserve_regexes = state_regexes.values())
+    spaces = []
+    tokens = tokenize(text, spaces)
     for intent in intents:
         # print 'INTENT {0}'.format(intent)
         candidates = [(0.0, intent, ['$START_{0}'.format(intent)])]
@@ -161,4 +189,4 @@ def parse_phrase(text, examples, state_regexes=None):
         for candidate in candidates:
             if best_candidate == None or candidate[0] > best_candidate[0]:
                 best_candidate = candidate
-    return phrase_from_candidate(best_candidate, tokens) if best_candidate else None
+    return phrase_from_candidate(best_candidate, tokens, spaces) if best_candidate else None

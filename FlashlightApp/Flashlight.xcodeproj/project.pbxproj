@@ -42,6 +42,11 @@
 		5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */; };
 		5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */; };
 		5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */; };
+		5FC016691A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */; };
+		5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */; };
+		5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */; };
+		5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD3EA801A2035AB005A312E /* WebKit.framework */; };
+		5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */; };
 		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
@@ -160,6 +165,15 @@
 		5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvenienceCategories.m; sourceTree = "<group>"; };
 		5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		5FC016671A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+InternationalizedValueForKey.h"; sourceTree = "<group>"; };
+		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
+		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
+		5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginDirectoryAPI.m; sourceTree = "<group>"; };
+		5FD3EA801A2035AB005A312E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLComponents+ValueForQueryKey.h"; sourceTree = "<group>"; };
+		5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLComponents+ValueForQueryKey.m"; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -186,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */,
 				5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */,
 				5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */,
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
@@ -291,6 +306,7 @@
 		6C564483159E7C0800215467 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FD3EA801A2035AB005A312E /* WebKit.framework */,
 				5F63270D1A0939A900CE241E /* libz.dylib */,
 				5F6326C11A083A1300CE241E /* QuartzCore.framework */,
 				6C564484159E7C0800215467 /* Cocoa.framework */,
@@ -316,10 +332,16 @@
 			children = (
 				6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */,
 				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
+				5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */,
+				5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
+				5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */,
+				5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */,
+				5FC016671A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.h */,
+				5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */,
 				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
 				5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */,
 				5F6326BE1A08313E00CE241E /* PluginModel.h */,
@@ -346,6 +368,7 @@
 		6C56448B159E7C0800215467 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */,
 				5F6326C31A083E1F00CE241E /* Icon.icns */,
 				6C56448C159E7C0800215467 /* Flashlight-Info.plist */,
 				6C56448D159E7C0800215467 /* InfoPlist.strings */,
@@ -387,7 +410,7 @@
 		6C564477159E7C0800215467 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = 6C56447A159E7C0800215467 /* Build configuration list for PBXProject "Flashlight" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -395,6 +418,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -439,6 +463,7 @@
 				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
+				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
 				6C564495159E7C0900215467 /* Credits.rtf in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,
@@ -497,6 +522,7 @@
 				5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */,
 				5F6326FD1A0933E800CE241E /* ZZArchiveEntry.m in Sources */,
 				5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */,
+				5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */,
 				5F6326FE1A0933E800CE241E /* ZZConstants.m in Sources */,
 				5F6326FC1A0933E800CE241E /* ZZArchive.mm in Sources */,
 				5F6327071A0933E800CE241E /* ZZNewArchiveEntryWriter.mm in Sources */,
@@ -504,11 +530,13 @@
 				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
 				5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */,
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
+				5FC016691A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m in Sources */,
 				6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */,
 				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
 				5F6327091A0933E800CE241E /* ZZOldArchiveEntryWriter.mm in Sources */,
 				5F6327011A0933E800CE241E /* ZZDeflateOutputStream.m in Sources */,
 				5F6327041A0933E800CE241E /* ZZFileChannelOutput.m in Sources */,
+				5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */,
 				5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */,
 				5F6326FF1A0933E800CE241E /* ZZDataChannel.m in Sources */,
 				5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */,
@@ -529,6 +557,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FC0166D1A1DBE7300F8E4E7 /* en */,
+				5FC0166F1A1DBE9800F8E4E7 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		6C56448D159E7C0800215467 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -566,8 +603,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -584,7 +623,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -600,9 +639,11 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -612,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 			};
 			name = Release;

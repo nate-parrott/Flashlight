@@ -86,7 +86,7 @@
         return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
     });
     
-    NSLog(@"Hello from Flashlight 0.21!");
+    NSLog(@"Hello from Flashlight 0.71!");
 }
 
 @end

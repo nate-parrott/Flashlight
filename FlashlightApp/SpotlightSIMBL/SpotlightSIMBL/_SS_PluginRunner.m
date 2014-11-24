@@ -45,12 +45,13 @@ void __SS_markPathExecutable(NSString *path) {
 }
 
 + (NSDictionary *)resultDictionariesFromPluginsForQuery:(NSString *)query {
+    
     NSTask *task = [NSTask new];
     task.launchPath = [self parseQueryScriptPath];
     __SS_markPathExecutable(task.launchPath);
     
     task.currentDirectoryPath = [self naturalCommandScriptsDir];
-    task.arguments = @[query];
+    task.arguments = @[query, [self supplementalTaggingJSONForQuery:query]];
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
     [task launchWithTimeout:2 consoleLabelForErrorDump:@"Querying Flashlight plugins"];
@@ -73,6 +74,21 @@ void __SS_markPathExecutable(NSString *path) {
     NSPipe *pipe = [NSPipe pipe];
     task.standardOutput = pipe;
     [task launchWithTimeout:0 consoleLabelForErrorDump:[NSString stringWithFormat:@"Running action for Flashlight plugin '%@'", pluginName]];
+}
+
+#pragma mark Supplemental Tagging
++ (NSString *)supplementalTaggingJSONForQuery:(NSString *)query {
+    NSLinguisticTaggerOptions options = NSLinguisticTaggerJoinNames|NSLinguisticTaggerOmitWhitespace;
+    NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:[NSLinguisticTagger availableTagSchemesForLanguage:@"en"] options:options];
+    tagger.string = query;
+    NSMutableDictionary *training = [NSMutableDictionary new];
+    [tagger enumerateTagsInRange:NSMakeRange(0, query.length) scheme:NSLinguisticTagSchemeNameTypeOrLexicalClass options:options usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
+        NSString *key = [@"~_" stringByAppendingString:tag];
+        if (!training[key]) training[key] = [NSMutableArray new];
+        [training[key] addObject:[tagger.string substringWithRange:tokenRange]];
+    }];
+    NSString *trainingString = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:training options:0 error:nil] encoding:NSUTF8StringEncoding];
+    return trainingString;
 }
 
 @end

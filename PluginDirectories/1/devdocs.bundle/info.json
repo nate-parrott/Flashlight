@@ -1,0 +1,8 @@
+{
+  "name": "devdocs.io",
+  "displayName": "devdocs.io",
+  "description": "Search docset on devdocs.io",
+  "examples": ["devdocs.io sth", "devdocs sth", "dd sth"],
+  "categories": ["Search", "Developer"],
+  "iconPath": "./Icon.png"
+}

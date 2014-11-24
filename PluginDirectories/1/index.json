@@ -3,6 +3,35 @@
     "plugins": [
         {
             "categories": [
+                "Search",
+                "Art"
+            ],
+            "description": "Search 500px\u2122 (500px)",
+            "displayName": "500px\u2122 Search",
+            "examples": [
+                "search500 panda",
+                "500px sky",
+                "500px nature"
+            ],
+            "name": "500px\u2122",
+            "zip_url": "500px.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
+            "displayName": "Open with Atom",
+            "examples": [
+                "atom file",
+                "atom folder"
+            ],
+            "iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
+            "name": "atom",
+            "zip_url": "atom.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
@@ -15,17 +44,111 @@
             "zip_url": "copycolor.zip"
         },
         {
+            "description": "Copy path to clipboard from finder",
+            "displayName": "Copy Path From Finder",
+            "examples": [
+                "copypath",
+                "copy path",
+                "path"
+            ],
+            "name": "Copy Path",
+            "zip_url": "CopyPath.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Get the latest company activity in an instant",
+            "displayName": "CrunchBase",
+            "examples": [
+                "crunchbase github",
+                "crunchbase dropbox"
+            ],
+            "name": "crunchbase",
+            "zip_url": "crunchbase.zip"
+        },
+        {
             "categories": [
                 "Search",
                 "Developer"
             ],
-            "description": "a search plugin for dash - http://kapeli.com/dash",
-            "displayName": "DASH",
+            "description": "A search plugin for Dash. (requires Dash app)",
+            "displayName": "Dash",
             "examples": [
-                "dash ember each"
+                "dash ember each",
+                "dash os.system"
             ],
             "name": "dash",
             "zip_url": "dash.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search docset on devdocs.io",
+            "displayName": "devdocs.io",
+            "examples": [
+                "devdocs.io sth",
+                "devdocs sth",
+                "dd sth"
+            ],
+            "iconPath": "./Icon.png",
+            "name": "devdocs.io",
+            "zip_url": "devdocs.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Art"
+            ],
+            "description": "Search deviantART\u2122 (deviant)",
+            "displayName": "deviantART\u2122 Search",
+            "examples": [
+                "searchdeviant yosemite",
+                "deviantart maverick",
+                "deviant flashlight"
+            ],
+            "name": "deviantart\u2122",
+            "zip_url": "deviantart.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Language"
+            ],
+            "description": "Translate English to German using leo",
+            "displayName": "dict.cc Translate",
+            "examples": [
+                "dict Suchmaschine"
+            ],
+            "name": "dictcc",
+            "zip_url": "dictcc.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Multimedialny s\u0142ownik angielskiego",
+            "displayName": "Diki.pl",
+            "examples": [
+                "diki apple"
+            ],
+            "name": "diki",
+            "zip_url": "diki.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Find annotations for lyrics and literature",
+            "displayName": "Genius",
+            "examples": [
+                "genius Drake",
+                "genius to be or not to be"
+            ],
+            "name": "genius",
+            "zip_url": "genius.zip"
         },
         {
             "categories": [
@@ -67,6 +190,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "description": "Send iMessages. Optionally attach selected files from Finder.",
+            "displayName": "iMessage",
+            "examples": [
+                "text nate, where are you?",
+                "imessage these files to Justin Brower"
+            ],
+            "name": "imessage",
+            "zip_url": "imessage.zip"
+        },
+        {
+            "categories": [
                 "Language",
                 "Featured"
             ],
@@ -81,6 +218,20 @@
         },
         {
             "categories": [
+                "Language",
+                "Search"
+            ],
+            "description": "Search the Japanese dictionary and translator Jisho",
+            "displayName": "Jisho",
+            "examples": [
+                "jisho \u3053\u3093\u306b\u3061\u306f",
+                "\u8f9e\u66f8 hello"
+            ],
+            "name": "jisho",
+            "zip_url": "jisho.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "displayName": "Search more websites",
@@ -92,6 +243,18 @@
             ],
             "name": "moresearch",
             "zip_url": "moresearch.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search php.net manual.",
+            "displayName": "PHP Manual",
+            "examples": [
+                "php urlencode"
+            ],
+            "name": "php",
+            "zip_url": "php.zip"
         },
         {
             "categories": [
@@ -131,6 +294,20 @@
             ],
             "name": "say",
             "zip_url": "say.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "description": "Send email. Optionally attach selected files from Finder.",
+            "displayName": "Send Email",
+            "examples": [
+                "send an email to nate saying hello",
+                "attach these files to a new email to nate@gmail.com with the subject Hello"
+            ],
+            "name": "send_email",
+            "zip_url": "send_email.zip"
         },
         {
             "categories": [
@@ -207,6 +384,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
+            "displayName": "Open with Sublime Text",
+            "examples": [
+                "sublime"
+            ],
+            "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
+            "name": "sublime",
+            "zip_url": "sublime.zip"
+        },
+        {
+            "categories": [
                 "System",
                 "Developer"
             ],
@@ -220,6 +410,32 @@
             "iconPath": "/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns",
             "name": "terminal",
             "zip_url": "terminal.zip"
+        },
+        {
+            "categories": [
+                "Weather"
+            ],
+            "description": "View the time in Spotlight.",
+            "displayName": "Time Zone",
+            "examples": [
+                "time Munich",
+                "timezone Tokio"
+            ],
+            "name": "timezone",
+            "zip_url": "timezone.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Vertaald woord van Engels naar nederlands",
+            "displayName": "vertaal",
+            "examples": [
+                "Vertaal car",
+                "vertaal car naar Nederlands"
+            ],
+            "name": "Vertaal",
+            "zip_url": "vertaal.zip"
         },
         {
             "categories": [
@@ -240,14 +456,15 @@
                 "Search",
                 "Featured"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt) and Reddit (rdt).",
+            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) and Google Maps(gm).",
             "displayName": "Web Search",
             "examples": [
                 "google Apple stock",
                 "g Apple stock",
                 "duck duck go Flashlight",
                 "image search ducks",
-                "reddit cats"
+                "reddit cats",
+                "google maps New York"
             ],
             "name": "websearch",
             "zip_url": "websearch.zip"
@@ -263,6 +480,21 @@
             ],
             "name": "whoami",
             "zip_url": "whoami.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Information"
+            ],
+            "description": "Search English Wikipedia (wiki).",
+            "displayName": "Wikipedia (EN)",
+            "examples": [
+                "wiki Dogs",
+                "search wikipedia for St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
+            "name": "wikipedia",
+            "zip_url": "wikipedia.zip"
         },
         {
             "categories": [
@@ -301,6 +533,20 @@
             ],
             "name": "youdaodic",
             "zip_url": "youdaodic.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "Display Zhi Hu Daily to users based on youzhihu, you can get the latest questions or hot topics with it, even the news of specific date.",
+            "displayName": "Zhihu Daily",
+            "examples": [
+                "zhihu daily(show latest news)",
+                "zhihu hot(show hot topics)",
+                "zhihu 20140822(show the topics On August 22, 2014)"
+            ],
+            "name": "zhihuDaily",
+            "zip_url": "Zhihu.zip"
         }
     ]
 }

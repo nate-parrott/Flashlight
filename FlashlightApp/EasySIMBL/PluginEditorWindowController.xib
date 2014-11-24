@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PluginEditorWindowController">
             <connections>
+                <outlet property="deletePluginButton" destination="OxB-az-9jb" id="Qqe-TL-hZL"/>
                 <outlet property="descriptionField" destination="U3Q-SJ-Dbq" id="Nb1-qo-MXd"/>
+                <outlet property="descriptionLabel" destination="fyK-z0-Dik" id="Zsx-DX-B44"/>
+                <outlet property="editWorkflowButton" destination="aAw-Sf-5nO" id="mzG-D4-3PT"/>
                 <outlet property="examples" destination="gL9-NG-iOV" id="Npj-ex-mH8"/>
+                <outlet property="examplesInfoText" destination="Uuv-Tx-lar" id="tYT-4W-ffQ"/>
+                <outlet property="examplesLabel" destination="89y-Y2-CrW" id="2wi-VC-O22"/>
                 <outlet property="nameField" destination="klM-VR-Tpz" id="bR7-lI-fdf"/>
+                <outlet property="titleLabel" destination="u5v-ml-STc" id="b3a-jg-b5z"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+                <outlet property="workflowLabel" destination="Qgh-ON-3Rs" id="7gr-PG-2tc"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -18,7 +25,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="501" y="248" width="503" height="299"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="300" height="137"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="503" height="299"/>
@@ -57,8 +64,8 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-Sf-5nO">
-                        <rect key="frame" x="150" y="203" width="124" height="32"/>
-                        <buttonCell key="cell" type="push" title="Edit workflow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tph-aK-VTp">
+                        <rect key="frame" x="150" y="203" width="125" height="32"/>
+                        <buttonCell key="cell" type="push" title="Edit Workflow" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Tph-aK-VTp">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -120,7 +127,7 @@
                             <action selector="deletePlugin:" target="-2" id="xKT-El-dpz"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuv-Tx-lar">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uuv-Tx-lar">
                         <rect key="frame" x="18" y="109" width="132" height="70"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." id="iIz-Oc-6rk">
                             <font key="font" metaFont="miniSystem"/>

@@ -1,0 +1,4 @@
+wiki ~enWiki(query here)
+wikipedia ~enWiki(query here)
+wiki ~enWiki(query here)
+search wikipedia for ~enWiki(query here)
