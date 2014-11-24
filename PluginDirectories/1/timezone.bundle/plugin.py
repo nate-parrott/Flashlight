@@ -2,6 +2,7 @@
 
 import sys, urllib, os
 import AppKit
+import i18n
 
 def dark_mode():
     import Foundation

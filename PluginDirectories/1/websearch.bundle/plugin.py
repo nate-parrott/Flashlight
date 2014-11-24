@@ -1,6 +1,8 @@
 import urllib, json
+import i18n
 
 def results(parsed, original_query):
+
     search_specs = [
          ["Google", "~googlequery", "https://www.google.com/search?q="],
          ["Duck Duck Go", "~duckduckgoquery", "https://duckduckgo.com/?q="],
@@ -14,9 +16,11 @@ def results(parsed, original_query):
     ]
     for name, key, url in search_specs:
         if key in parsed:
-            search_url = url + urllib.quote_plus(parsed[key])
+            localizedurl = i18n.localstr(url)
+            search_url = localizedurl + urllib.quote_plus(parsed[key])
+            title = i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]);
             return {
-                "title": "Search {0} for '{1}'".format(name, parsed[key]),
+                "title": title,
                 "run_args": [search_url],
                 "html": """
                 <script>
