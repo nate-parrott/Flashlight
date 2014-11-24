@@ -1,0 +1,7 @@
+{
+	"name": "dictcc",
+	"displayName": "dict.cc Translate",
+	"description": "Translate English to German using leo",
+	"examples": ["dict Suchmaschine"],
+	"categories": ["Search", "Language"]
+}
