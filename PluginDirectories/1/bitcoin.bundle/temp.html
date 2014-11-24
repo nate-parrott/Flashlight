@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        background-color: #ececec;
+        font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+    }
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        width: 280px;
+    }
+    .icon{
+        float: left;
+        width: 60px;
+        height: 60px;
+        margin-top: 20px;
+    }
+    .content{
+        margin-left: 80px;
+        text-align: left;
+    }
+    h2 {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 150%;
+        margin: 0px 0px 5px 0px;
+        padding: 0px;
+        word-wrap: break-word;
+        color: #999;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 150%;
+        margin: 0px 0px 5px 0px;
+        padding: 0px;
+        word-wrap: break-word;
+        color: #000;
+    }
+
+    </style>
+    <script src='moment.js'></script>
+    <script src='jquery.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            var $dates = $('.time');
+            if($dates){
+                $dates.each(function(i, d){
+                    var $d = $(d);
+                    var date = $d.html();
+                    if(date){
+                        var m = moment(new Date(date * 1000));
+                        if(m){
+                            $d.html(m.fromNow());
+                        }
+                    } 
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class='container'>
+        <div class='icon'><img src='glyph.png' width='60px' height='60px' /></div>
+        <div class='content'>
+            <h2><!--bitcoin--></h2>
+            <h1><!--money--></h1>
+        </div>
+    </div>
+</body>
+</html>
