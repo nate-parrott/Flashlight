@@ -1,0 +1,7 @@
+{
+	"name": "crunchbase",
+	"displayName": "CrunchBase",
+	"description": "Get the latest company activity in an instant",
+	"examples": ["crunchbase github", "crunchbase dropbox"],
+	"categories": ["Search"]
+}

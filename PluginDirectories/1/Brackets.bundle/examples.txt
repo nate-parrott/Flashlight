@@ -1,0 +1,2 @@
+Open with brackets
+!always_invoke
