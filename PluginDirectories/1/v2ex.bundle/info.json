@@ -1,0 +1,7 @@
+{
+	"name": "v2ex",
+	"displayName": "V2EX",
+	"description": "V2EX latest topics",
+	"examples": ["v2ex"],
+    "categories": ["Information"]
+}

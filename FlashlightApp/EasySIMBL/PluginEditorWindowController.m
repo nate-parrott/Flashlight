@@ -17,6 +17,9 @@ NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNoti
 @property (nonatomic) NSTimer *saveTimer;
 @property (nonatomic) BOOL pendingSave;
 
+@property (nonatomic) IBOutlet NSTextField *titleLabel, *descriptionLabel, *workflowLabel, *examplesLabel, *examplesInfoText;
+@property (nonatomic) IBOutlet NSButton *editWorkflowButton, *deletePluginButton;
+
 @end
 
 @implementation PluginEditorWindowController
@@ -82,6 +85,16 @@ NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNoti
     self.nameField.delegate = self;
     self.descriptionField.delegate = self;
     self.examples.delegate = self;
+    
+    // set localized strings:
+    [self.editWorkflowButton setTitle:NSLocalizedString(@"Edit Workflow", @"")];
+    self.titleLabel.stringValue = NSLocalizedString(@"Title:", @"");
+    self.descriptionLabel.stringValue = NSLocalizedString(@"Description:", @"");
+    self.workflowLabel.stringValue = NSLocalizedString(@"Automator workflow:", @"");
+    self.examplesLabel.stringValue = NSLocalizedString(@"Usage examples:", @"");
+    self.examplesInfoText.stringValue = NSLocalizedString(@"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples.", @"");
+    self.deletePluginButton.stringValue = NSLocalizedString(@"Delete Plugin", @"");
+    self.window.title = NSLocalizedString(@"Edit Plugin", @"");
 }
 - (void)setPendingSave:(BOOL)pendingSave {
     _pendingSave = pendingSave;

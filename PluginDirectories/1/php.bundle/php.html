@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+    <script src="jquery-2.1.1.min.js"></script>
+	<script>
+	var queryString = "<!--QUERY-->";
+	
+	function load() {
+        // See script source here: http://dataproxy.pommepause.com/php-manual.phps
+        // It calls http://php.net/manual-lookup.php, and adds a Access-Control-Allow-Origin header needed for AJAX.
+		var url = "http://dataproxy.pommepause.com/php-manual.php?q=" + encodeURIComponent(queryString);
+		$.ajax({
+		    method: 'GET',
+            url: url,
+            success: function(response) {
+                console.log(response);
+                $('html').html(response);
+            }
+		});
+	}
+	load();
+	</script>
+	<style>
+	html, body, body > div {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+		line-height: 1.2;
+	}
+	body.dark {
+		color: white;
+	}
+	body > div {
+		display: table;
+	}
+	body > div > div {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		font-size: x-large;
+	}
+	body > div > div {
+		margin: 20px;
+	}
+	#loading, #error {
+		font-style: italic;
+	}
+	#error, #results {
+		display: none;
+	}
+	</style>
+</head>
+<body class=''>
+	<div>
+		<div>
+			<div id='loading'>
+				Loading...
+			</div>
+			<div id='results'>
+				
+			</div>
+			<div id='error'>
+				???
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+	"name": "imessage",
+	"displayName": "iMessage",
+	"description": "Send iMessages. Optionally attach selected files from Finder.",
+	"examples": ["text nate, where are you?", "imessage these files to Justin Brower"],
+	"categories": ["Utilities", "Featured"]
+}

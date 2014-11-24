@@ -1,0 +1,3 @@
+genius ~geniusquery(query here)
+search genius for ~geniusquery(query here)
+find ~geniusquery(Kanye West) on genius

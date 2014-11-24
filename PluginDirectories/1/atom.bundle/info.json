@@ -1,0 +1,8 @@
+{
+	"name": "atom",
+	"displayName": "Open with Atom",
+	"description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
+	"examples": ["atom file", "atom folder"],
+	"iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
+	"categories": ["Utilities"]
+}
