@@ -1,12 +1,14 @@
 duck duck go suche ~duckduckgoquery(query here)
-suche duck duck go for ~duckduckgoquery(query here)
+suche duck duck go nach ~duckduckgoquery(query here)
 ddg ~duckduckgoquery(query here)
 
 google suche ~googlequery(query here)
 suche im Internet nach ~googlequery(query here)
 g ~googlequery(query here)
 
-Bilder suche for ~googleimagequery(query here)
+Suche Bilder nach ~googleimagequery(query here)
+Bildersuche nach ~googleimagequery(query here)
+Bildersuche ~googleimagequery(query here)
 Zeige mir Bilder von ~googleimagequery(query here)
 Zeige mir ein Bild von ~googleimagequery(query here)
 Google Bilder ~googleimagequery(query here)
