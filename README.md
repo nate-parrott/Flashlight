@@ -13,7 +13,7 @@ Clone and build using Xcode, or [download Flashlight.app from _releases_](https:
 
 ## Writing Plugins
 
-**Start with the [tutorial on writing plugins](https://raw.github.com/nate-parrott/flashlight/master/Docs/Tutorial.markdown).**
+**Start with the [tutorial on writing plugins](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown).**
 
 ## How it works
 
