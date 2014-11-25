@@ -1,6 +1,7 @@
 from collections import defaultdict
 import math
 import re
+import unicodedata
 
 class ProbabilityCounter(object):
     def __init__(self):
@@ -28,9 +29,18 @@ class Phrase(object):
         self.intent = intent
         self.items = items
 
+    def with_strings_not_unicode(self):
+        # for compatibility with existing plugins
+        def map_item(i):
+            if type(i) == list:
+                return map(map_item, i)
+            else:
+                return i.encode('utf-8')
+        return Phrase(self.intent.encode('utf-8'), map(map_item, self.items))
+
     def items_with_intermediate_states(self):
         items = []
-        prev_item_name = "$START_{0}".format(self.intent)
+        prev_item_name = u"$START_{0}".format(self.intent)
         for item, i in zip(self.items, xrange(len(self.items))):
             if isinstance(item, list):
                 name = item[0]
@@ -38,7 +48,7 @@ class Phrase(object):
                 items.append(item)
             elif isinstance(item, str) or isinstance(item, unicode):
                 next_item_name = self.items[i+1][0] if i+1 < len(self.items) else "$END_{0}".format(self.intent)
-                intermediate_item_name = "[{0}:{1}..{2}]".format(self.intent, prev_item_name, next_item_name)
+                intermediate_item_name = u"[{0}:{1}..{2}]".format(self.intent, prev_item_name, next_item_name)
                 items.append([intermediate_item_name, item])
         return items
 
@@ -75,17 +85,21 @@ class Phrase(object):
 def flatten(list_of_lists):
     return reduce(lambda a, b: a+b, list_of_lists, [])
 
-def split_strings_by_regex(strings, regex):
+"""def split_strings_by_regex(strings, regex):
     print regex, type(regex), strings
     return flatten(map(lambda s: re.split(regex, s), strings))
+"""
 
 split_tokens_on_chars = ",.?!\"'"
 
 def tokenize(text, spaces_array=None):
+    if type(text) == str:
+        text = text.decode('utf-8')
+    text = unicodedata.normalize('NFKC', text)
     if spaces_array == None:
       spaces_array = []
     for c in split_tokens_on_chars:
-        text = text.replace(c, " {0} ".format(c))
+        text = text.replace(c, u" {0} ".format(c))
     text = text.lower()
     regex = r"\s+"
     tokens = re.split(regex, text)
@@ -132,7 +146,7 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
         intents.add(ex.intent)
         # count transitions:
         states = map(lambda (token, state): state, ex.token_state_tuples())
-        for state, next_state in zip(['$START_{0}'.format(ex.intent)] + states, states + ['$END_{0}'.format(ex.intent)]):
+        for state, next_state in zip([u'$START_{0}'.format(ex.intent)] + states, states + ['$END_{0}'.format(ex.intent)]):
             transition_probs[state.split('/')[0]].add(next_state.split('/')[0])
             states_for_root_states[state.split('/')[0]].add(state)
         # count emissions:
@@ -160,7 +174,7 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
     tokens = tokenize(text, spaces)
     for intent in intents:
         # print 'INTENT {0}'.format(intent)
-        candidates = [(0.0, intent, ['$START_{0}'.format(intent)])]
+        candidates = [(0.0, intent, [u'$START_{0}'.format(intent)])]
         for token in tokens + [None]:
             # if intent == 'search': print candidates
             best_candidates_for_last_state = {}
@@ -169,7 +183,7 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
                 for next_state_root, transition_prob in transition_probs[state].iteritems():
                     new_candidate = None
                     if token == None: 
-                        if next_state_root == "$END_{0}".format(intent):
+                        if next_state_root == u"$END_{0}".format(intent):
                             # print state, next_state_root, transition_prob
                             new_candidate = (candidate_log_prob + smooth_log_prob(transition_prob), candidate_intent, candidate_states)
                             if next_state_root not in best_candidates_for_last_state or new_candidate[0] > best_candidates_for_last_state[next_state_root][0]:
