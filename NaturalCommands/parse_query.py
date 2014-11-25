@@ -8,6 +8,7 @@ import json
 import imp
 from shared import plugin_dir, WorkingDirAs
 import i18n
+import codecs
 
 example_phrases = []
 plugins_to_always_invoke = set()
@@ -28,7 +29,7 @@ for plugin in os.listdir(plugin_dir):
             examples_file = os.path.join(plugin_dir, plugin, "examples.txt")
             examples_file = i18n.find_localized_path(examples_file)
             if os.path.exists(examples_file):
-                for line in open(examples_file):
+                for line in codecs.open(examples_file, 'r', 'utf-8'):
                     line = line.strip()
                     if line.startswith('!'):
                         if line == '!always_invoke':
@@ -43,12 +44,13 @@ def parse_query(query, supplemental_tags):
     parsed = commanding.parse_phrase(query, example_phrases, regexes, supplemental_tags)
     if parsed == None or parsed.intent == '':
         return None
+    parsed = parsed.with_strings_not_unicode() # for compatibility; TODO: add flag in `info.json` to pass unicode to plugin.py instead of utf-8
     return {"plugin": parsed.intent, "arguments": parsed.tags(), "object": parsed}
 
 import inspect
 
 if __name__=='__main__':
-    query = sys.argv[1]
+    query = sys.argv[1].decode('utf-8')
     plugins_to_invoke = set(plugins_to_always_invoke)
     parsed = parse_query(query, supplemental_tags=json.loads(sys.argv[2]))
     if parsed != None:
