@@ -2,6 +2,6 @@
 	"name": "Doc Webdev",
 	"displayName": "Documentation Webdev",
 	"description": "Open Documentations",
-	"examples": ["docpy class", "docdj translation",],
-	"categories": ["Documentations"]
+	"examples": ["docpy class", "docdj translation"],
+	"categories": ["Developer"]
 }
