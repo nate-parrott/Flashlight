@@ -1,0 +1,7 @@
+{
+	"name": "bitcoin",
+	"displayName": "Bitcoin Price",
+	"description": "Show latest Bitcoin price",
+	"examples": ["bitcoin", "btc", "2 bitcoin", "2 btc"],
+    "categories": ["Information"]
+}
