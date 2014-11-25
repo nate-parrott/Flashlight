@@ -252,9 +252,9 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Veränderungen" id="450">
+                            <menuItem title="Änderungen" id="450">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Veränderungen" id="451">
+                                <menu key="submenu" title="Änderungen" id="451">
                                     <items>
                                         <menuItem title="Nur Großbuchstaben" id="452">
                                             <modifierMask key="keyEquivalentModifierMask"/>
