@@ -82,8 +82,6 @@ def run(message):
 
 There. **Now our plugin should work.** Type "say hello" into Spotlight, hit enter, watch it go.
 
-_The rest of this document is coming soon_
-
 ## Showing HTML inline in Spotlight
 
 Many plugins, like Weather and Google, return HTML and JavaScript to show content inline in the Spotlight window. You can do this by returning an HTML string from your `results` function:
