@@ -2,9 +2,12 @@
 	"name": "timezone",
 	"displayName": "Time Zone",
 	"displayName_de": "Zeitzonen",
+	"displayName_fr": "Fuseaux horaire",
 	"description": "View the time in Spotlight.",
 	"description_de": "Suche die Uhrzeit über die Spotlight.",
+	"description_fr":"Consulter et interagir avec le temps",
 	"examples": ["time Munich", "timezone Tokio"],
 	"examples_de": ["Zeit Munich", "Uhrzeit Tokio"],
+	"examples_fr": ["heure Munich", "fuseau Tokio"],
 	"categories": ["Weather"]
 }

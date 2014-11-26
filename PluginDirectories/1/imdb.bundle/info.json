@@ -1,6 +1,8 @@
 {
 	"name": "imdb",
 	"displayName": "IMDB",
+	"displayName_fr": "IMDB",
 	"examples": ["imdb Phantom of the Opera"],
+	"examples_fr": ["imdb La Soupe aux Choux"],
 	"categories": ["Search"]
 }
