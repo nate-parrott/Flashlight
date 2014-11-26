@@ -1,12 +1,11 @@
-
-def results(parsed, original_query):
-    return {
-        "title": "Say '{0}' (press enter)".format(parsed['~message']),
-        "run_args": [parsed['~message']]
-    }
-
+def results(fields, original_query):
+  message = fields['~message']
+  return {
+    "title": "Say '{0}'".format(message),
+    "run_args": [message]
+  }
 
 def run(message):
-    import os
-    os.system('say "{0}"'.format(message))
+  import os, pipes
+  os.system('say "{0}"'.format(pipes.quote(message.encode('utf8'))))
 

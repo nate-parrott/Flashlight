@@ -63,6 +63,7 @@
         [self.view setPostsFrameChangedNotifications:YES];
         
         [self.webView setDrawsBackground:NO];
+        self.webView.preferences.suppressesIncrementalRendering = YES;
         
         [self updateUI];
     }

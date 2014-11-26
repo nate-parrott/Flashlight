@@ -30,6 +30,8 @@ from file_storage import upload_file_and_get_url
 import os
 from google.appengine.api import images
 from google.appengine.api import memcache
+from google.appengine.api import users
+import bs4
 
 class Plugin(ndb.Model):
   info_json = ndb.TextProperty()
@@ -44,7 +46,7 @@ class Plugin(ndb.Model):
   screenshot_url = ndb.StringProperty()
 
 def send_upload_form(request, message=None):
-  request.response.write(template("upload.html", {"upload_url": blobstore.create_upload_url('/post_upload'), "message": message}))
+  request.response.write(template("upload.html", {"upload_url": blobstore.create_upload_url('/post_upload'), "message": message, "admin": users.is_current_user_admin()}))
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -100,6 +102,13 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
       return
     plugin.secret = base64.b64encode(os.urandom(128))
     plugin.notes = self.request.get('notes')
+    if users.is_current_user_admin():
+      existing = Plugin.query(Plugin.name == plugin.name).fetch()
+      if len(existing):
+        existing[0].approved = False
+        existing[0].put()
+    if users.is_current_user_admin():
+      plugin.approved = True
     plugin.put()
     approval_msg = " It'll be public after it's been approved." if not is_update else ""
     message = "Your plugin was uploaded!" + approval_msg
@@ -142,6 +151,20 @@ class LogInstall(webapp2.RequestHandler):
     name = self.request.get(name)
     pass # TODO
 
+class Login(webapp2.RequestHandler):
+  def get(self):
+    self.redirect(users.create_login_url('/'))
+
+class LatestDownload(webapp2.RequestHandler):
+  def get(self):
+    url = memcache.get("download_url", None)
+    if url == None:
+      data = urllib2.urlopen("https://raw.githubusercontent.com/nate-parrott/Flashlight/master/Appcast.xml").read()
+      soup = bs4.BeautifulSoup(data)
+      url = soup.find_all("enclosure")[0]["url"]
+      memcache.set("download_url", url, time=60 * 10)
+    self.redirect(url.encode('utf8'))
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/upload', UploadHandler),
@@ -149,5 +172,7 @@ app = webapp2.WSGIApplication([
     ('/directory', Directory),
     ('/serve/(.+)', ServeHandler),
     ('/categories', Categories),
-    ('/log_install', LogInstall)
+    ('/log_install', LogInstall),
+    ('/login', Login),
+    ('/latest_download', LatestDownload)
 ], debug=True)
