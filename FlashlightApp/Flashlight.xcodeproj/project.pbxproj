@@ -196,6 +196,9 @@
 		6C8030501A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SIMBL.h; path = ../src/SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SIMBL.m; path = ../src/SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		E25A65951A26495900A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E25A65971A26496800A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E25A65981A26497300A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E28AC1DF1A23D21D00673B7C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F24BCFBED9524B02917D164A /* libPods-Flashlight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flashlight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -580,6 +583,7 @@
 			children = (
 				6C56448E159E7C0800215467 /* en */,
 				6C80304F1A24C22F006E6A2E /* zh-Hans */,
+				E25A65971A26496800A3A8C7 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -589,6 +593,7 @@
 			children = (
 				6C564494159E7C0900215467 /* en */,
 				6C8030501A24C22F006E6A2E /* zh-Hans */,
+				E25A65981A26497300A3A8C7 /* de */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 			children = (
 				6C56449A159E7C0900215467 /* en */,
 				6C80304D1A24C22F006E6A2E /* zh-Hans */,
+				E25A65951A26495900A3A8C7 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";

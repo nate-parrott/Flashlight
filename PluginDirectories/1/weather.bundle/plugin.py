@@ -4,12 +4,15 @@ import sys, urllib, os
 import AppKit
 import i18n
 
+
 def dark_mode():
     import Foundation
     return Foundation.NSUserDefaults.standardUserDefaults().persistentDomainForName_(Foundation.NSGlobalDomain).objectForKey_("AppleInterfaceStyle") == "Dark"
 
+
 def use_metric():
     return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
+
 
 def results(parsed, original_query):
     location = parsed['~location']
@@ -21,6 +24,7 @@ def results(parsed, original_query):
         "webview_transparent_background": True,
         "run_args": location
     }
+
 
 def run(location):
     os.system('open "http://openweathermap.org/find?q={0}"'.format(urllib.quote(location)))
