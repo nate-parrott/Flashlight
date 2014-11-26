@@ -19,7 +19,7 @@
                 <menuItem title="Flashlight" id="56">
                     <menu key="submenu" title="Flashlight" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="Über Flashlight" id="58">
+                            <menuItem title="Over Flashlight" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -28,8 +28,8 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Einstellungen..." keyEquivalent="," id="129"/>
-                            <menuItem title="Nach Updates überprüfen..." id="i36-Vw-g23">
+                            <menuItem title="Voorkeuren" keyEquivalent="," id="129"/>
+                            <menuItem title="Zoek naar Updates..." id="i36-Vw-g23">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="4AR-H2-g27" id="fgW-du-Q6I"/>
@@ -38,24 +38,24 @@
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Dienste" id="131">
-                                <menu key="submenu" title="Dienste" systemMenu="services" id="130"/>
+                            <menuItem title="Voorzieningen" id="131">
+                                <menu key="submenu" title="Voorzieningen" systemMenu="services" id="130"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Flashlight ausblenden" keyEquivalent="h" id="134">
+                            <menuItem title="Verberg Flashlight" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Andere ausblenden" keyEquivalent="h" id="145">
+                            <menuItem title="Verberg anderen" keyEquivalent="h" id="145">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="hideOtherApplications:" target="-1" id="368"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alle anzeigen" id="150">
+                            <menuItem title="Toon alles" id="150">
                                 <connections>
                                     <action selector="unhideAllApplications:" target="-1" id="370"/>
                                 </connections>
@@ -63,7 +63,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Flashlight Beenden" keyEquivalent="q" id="136">
+                            <menuItem title="Stop Flashlight" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -71,17 +71,17 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Ablage" id="83">
-                    <menu key="submenu" title="Ablage" id="wJP-7d-WaF">
+                <menuItem title="Archief" id="83">
+                    <menu key="submenu" title="Archief" id="wJP-7d-WaF">
                         <items>
-                            <menuItem title="Neues Automator Plugin" id="9gl-iY-4Kh">
+                            <menuItem title="Nieuwe Automator Plugin" id="9gl-iY-4Kh">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="newPlugin:" target="715" id="c1b-7k-sVC"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="IrJ-fc-bWH"/>
-                            <menuItem title="Schließen" keyEquivalent="w" id="KSp-5B-nrs">
+                            <menuItem title="Sluit" keyEquivalent="w" id="KSp-5B-nrs">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="MKg-5j-BNg"/>
                                 </connections>
@@ -89,15 +89,15 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Bearbeiten" id="217">
-                    <menu key="submenu" title="Bearbeiten" id="205">
+                <menuItem title="Wijzig" id="217">
+                    <menu key="submenu" title="Wijzig" id="205">
                         <items>
-                            <menuItem title="Wiederrufen" keyEquivalent="z" id="207">
+                            <menuItem title="Herstel" keyEquivalent="z" id="207">
                                 <connections>
                                     <action selector="undo:" target="-1" id="223"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Wiederholen" keyEquivalent="Z" id="215">
+                            <menuItem title="Opnieuw" keyEquivalent="Z" id="215">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="redo:" target="-1" id="231"/>
@@ -106,33 +106,33 @@
                             <menuItem isSeparatorItem="YES" id="206">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Ausschneiden" keyEquivalent="x" id="199">
+                            <menuItem title="Knip" keyEquivalent="x" id="199">
                                 <connections>
                                     <action selector="cut:" target="-1" id="228"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Kopieren" keyEquivalent="c" id="197">
+                            <menuItem title="Kopieer" keyEquivalent="c" id="197">
                                 <connections>
                                     <action selector="copy:" target="-1" id="224"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Einfügen" keyEquivalent="v" id="203">
+                            <menuItem title="Plak" keyEquivalent="v" id="203">
                                 <connections>
                                     <action selector="paste:" target="-1" id="226"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Paste and Match Style" keyEquivalent="V" id="485">
+                            <menuItem title="Plak en pas stijl aan" keyEquivalent="V" id="485">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="pasteAsPlainText:" target="-1" id="486"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Löschen" id="202">
+                            <menuItem title="Verwijder" id="202">
                                 <connections>
                                     <action selector="delete:" target="-1" id="235"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Alles auswählen" keyEquivalent="a" id="198">
+                            <menuItem title="Selecteer alles" keyEquivalent="a" id="198">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="232"/>
                                 </connections>
@@ -140,37 +140,37 @@
                             <menuItem isSeparatorItem="YES" id="214">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Suchen" id="218">
-                                <menu key="submenu" title="Suchen" id="220">
+                            <menuItem title="Zoek" id="218">
+                                <menu key="submenu" title="Zoek" id="220">
                                     <items>
-                                        <menuItem title="Suchen" tag="1" keyEquivalent="f" id="209">
+                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="209">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="241"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Suchen und Ersetzen…" tag="12" keyEquivalent="f" id="534">
+                                        <menuItem title="Find and Replace…" tag="12" keyEquivalent="f" id="534">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="535"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Weitersuchen (vorwärts)" tag="2" keyEquivalent="g" id="208">
+                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="208">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="487"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Weitersuchen (rückwärts)" tag="3" keyEquivalent="G" id="213">
+                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="213">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="488"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Auswahl für Suche übernehmen" tag="7" keyEquivalent="e" id="221">
+                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="221">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="489"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Auswahl anzeigen" keyEquivalent="j" id="210">
+                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="210">
                                             <connections>
                                                 <action selector="centerSelectionInVisibleArea:" target="-1" id="245"/>
                                             </connections>
@@ -178,31 +178,31 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Rechtschreibung und Grammatik" id="216">
-                                <menu key="submenu" title="Rechtschreibung und Grammatik" id="200">
+                            <menuItem title="Spelling en Grammatica" id="216">
+                                <menu key="submenu" title="Spelling en Grammatica" id="200">
                                     <items>
-                                        <menuItem title="Rechtschreibung und Grammatik einblenden" keyEquivalent=":" id="204">
+                                        <menuItem title="Show Spelling and Grammar" keyEquivalent=":" id="204">
                                             <connections>
                                                 <action selector="showGuessPanel:" target="-1" id="230"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Rechtschreibung prüfen" keyEquivalent=";" id="201">
+                                        <menuItem title="Check Document Now" keyEquivalent=";" id="201">
                                             <connections>
                                                 <action selector="checkSpelling:" target="-1" id="225"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="453"/>
-                                        <menuItem title="Während der Texteingabe prüfen" id="219">
+                                        <menuItem title="Check Spelling While Typing" id="219">
                                             <connections>
                                                 <action selector="toggleContinuousSpellChecking:" target="-1" id="222"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Rechtschreib- und Grammatikprüfung" id="346">
+                                        <menuItem title="Check Grammar With Spelling" id="346">
                                             <connections>
                                                 <action selector="toggleGrammarChecking:" target="-1" id="347"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Rechtschreibung automatisch prüfen" id="454">
+                                        <menuItem title="Correct Spelling Automatically" id="454">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticSpellingCorrection:" target="-1" id="456"/>
@@ -211,27 +211,27 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Ersetzungen" id="348">
-                                <menu key="submenu" title="Ersetzungen" id="349">
+                            <menuItem title="Vervanging" id="348">
+                                <menu key="submenu" title="Vervanging" id="349">
                                     <items>
-                                        <menuItem title="Ersetzungen anzeigen" id="457">
+                                        <menuItem title="Show Substitutions" id="457">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontSubstitutionsPanel:" target="-1" id="458"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="459"/>
-                                        <menuItem title="Smart Kopieren/Einfügen" tag="1" keyEquivalent="f" id="350">
+                                        <menuItem title="Smart Copy/Paste" tag="1" keyEquivalent="f" id="350">
                                             <connections>
                                                 <action selector="toggleSmartInsertDelete:" target="-1" id="355"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Smart Anführunszeichen" tag="2" keyEquivalent="g" id="351">
+                                        <menuItem title="Smart Quotes" tag="2" keyEquivalent="g" id="351">
                                             <connections>
                                                 <action selector="toggleAutomaticQuoteSubstitution:" target="-1" id="356"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Smart Striche" id="460">
+                                        <menuItem title="Smart Dashes" id="460">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticDashSubstitution:" target="-1" id="461"/>
@@ -243,7 +243,7 @@
                                                 <action selector="toggleAutomaticLinkDetection:" target="-1" id="357"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Text Ersetzen" id="462">
+                                        <menuItem title="Text Replacement" id="462">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticTextReplacement:" target="-1" id="463"/>
@@ -252,23 +252,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Änderungen" id="450">
+                            <menuItem title="Omzetting" id="450">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Änderungen" id="451">
+                                <menu key="submenu" title="Omzetting" id="451">
                                     <items>
-                                        <menuItem title="Nur Großbuchstaben" id="452">
+                                        <menuItem title="Make Upper Case" id="452">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="uppercaseWord:" target="-1" id="464"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Nur Kleinbuchstaben" id="465">
+                                        <menuItem title="Make Lower Case" id="465">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="lowercaseWord:" target="-1" id="468"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Groß schreiben" id="466">
+                                        <menuItem title="Capitalize" id="466">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="capitalizeWord:" target="-1" id="467"/>
@@ -277,15 +277,15 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Sprachausgabe" id="211">
-                                <menu key="submenu" title="Sprachausgabe" id="212">
+                            <menuItem title="Spraak" id="211">
+                                <menu key="submenu" title="Spraak" id="212">
                                     <items>
-                                        <menuItem title="Sprachausgabe starten" id="196">
+                                        <menuItem title="Start Speaking" id="196">
                                             <connections>
                                                 <action selector="startSpeaking:" target="-1" id="233"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Sprachausgabe beenden" id="195">
+                                        <menuItem title="Stop Speaking" id="195">
                                             <connections>
                                                 <action selector="stopSpeaking:" target="-1" id="227"/>
                                             </connections>
@@ -296,15 +296,15 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Fenster" id="19">
-                    <menu key="submenu" title="Fenster" systemMenu="window" id="24">
+                <menuItem title="Venster" id="19">
+                    <menu key="submenu" title="Venster" systemMenu="window" id="24">
                         <items>
-                            <menuItem title="Minimieren" keyEquivalent="m" id="23">
+                            <menuItem title="Minimaliseer" keyEquivalent="m" id="23">
                                 <connections>
                                     <action selector="performMiniaturize:" target="-1" id="37"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Zoom" id="239">
+                            <menuItem title="Vergroot/verklein" id="239">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="240"/>
                                 </connections>
@@ -312,7 +312,7 @@
                             <menuItem isSeparatorItem="YES" id="92">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Alle in den Vordergrund bringen" id="5">
+                            <menuItem title="Alles op voorgrond" id="5">
                                 <connections>
                                     <action selector="arrangeInFront:" target="-1" id="39"/>
                                 </connections>
@@ -320,11 +320,11 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Hilfe" id="490">
+                <menuItem title="Help" id="490">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Hilfe" systemMenu="help" id="491">
+                    <menu key="submenu" title="Help" systemMenu="help" id="491">
                         <items>
-                            <menuItem title="Flashlight Hilfe" keyEquivalent="?" id="492">
+                            <menuItem title="Flashlight Help" keyEquivalent="?" id="492">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
@@ -389,7 +389,7 @@
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="6mi-ds-L3P">
                                                             <rect key="frame" x="7" y="7" width="377" height="51"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Dieses Plugin macht verrückte Dinge, wie zum Bespiel die Welt verändern." id="rtk-em-P81">
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This plugin does some crazy stuff like change the word and everything." id="rtk-em-P81">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -446,7 +446,9 @@
                     <webView id="DEt-An-xUj">
                         <rect key="frame" x="149" y="0.0" width="453" height="447"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
                         <connections>
                             <outlet property="frameLoadDelegate" destination="715" id="vlM-pm-tM0"/>
                             <outlet property="policyDelegate" destination="715" id="eGv-RY-hAh"/>
@@ -459,7 +461,7 @@
                             <rect key="frame" x="1" y="1" width="148" height="398"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="YEo-XA-tnD" id="76J-wG-jzB">
+                                <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="YEo-XA-tnD" id="76J-wG-jzB">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -556,7 +558,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="4I6-zG-9ut">
                                 <rect key="frame" x="13" y="25" width="576" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Konnte den Pfad für Online Plugins nicht laden." id="6Rm-1o-2sX">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -565,7 +567,7 @@
                             <button verticalHuggingPriority="750" id="9nN-QT-MfC">
                                 <rect key="frame" x="253.5" y="0.0" width="94" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="push" title="Nochmal versuchen" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R1V-Ae-nee">
+                                <buttonCell key="cell" type="push" title="Try again" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R1V-Ae-nee">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
                                 </buttonCell>
@@ -623,7 +625,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fPh-3V-djF">
                     <rect key="frame" x="56" y="12" width="219" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Spotlight Plugins aktivieren" id="1Mz-sE-pRt">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Enable Spotlight plugins" id="1Mz-sE-pRt">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

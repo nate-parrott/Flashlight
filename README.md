@@ -11,74 +11,9 @@ Flashlight is an **unofficial Spotlight API** that allows you to programmaticall
 
 Clone and build using Xcode, or [download Flashlight.app from _releases_](https://github.com/nate-parrott/Flashlight/releases).
 
-## API
+## Writing Plugins
 
-The best way to get started writing a plugin is to copy an existing one and modify it. Try installing a simple plugin like 'say' or 'Pig latin,' and find it in `[your-user-directory]/Library/FlashlightPlugins`. Right click and 'show bundle contents,' then open the `executable` in a text editor. Plugins don't need to be reloaded.
-
-Flashlight plugins are `.bundle` files in `~/Library/FlashlightPlugins`. They have a simple directory structure:
-
-```
-- MyPlugin.bundle
-  - plugin.py 
-  - examples.txt
-  - Info.json
-     - key 'name' (string): name of the folder, without .bundle
-	  - key 'displayName' (string)
-	  - key 'description' (string)
-	  - key 'examples' (array of strings): usage examples
-	  - key 'categories' (array of strings): array of category names, from the left side of the Flashlight window. Add your own if appropriate
-  - Icon.png _optional_ the icon that'll appear next to your results in Spotlight. Not larger than 512x512.
-```
-
-`examples.txt` looks like this:
-
-```
-weather location(brooklyn)
-weather in location(new york)
-how's the weather in location(queens)?
-forecast for location(the bronx)
-search for ~stackoverflow_query(kanye west) on stack overflow
-```
-
-`location` and `~stackoverflow_query` are fields, which the parser will find for us and let us extract them later. Free-text fields, where the content of the field may be absolutely anything (and so word-frequency shouldn't be used as criteria in matching) should begin with `~`.
-
-Each line is an example of a command that will invoke this plugin. The `location()` identifies part of the string as a location.
-
-When a command looks sufficiently like your examples and is routed to your plugin, Flashlight imports your `plugin.py` and calls `results(parsed, original_query)`, where `parsed` is a dictionary containing the keys captured from the query (e.g. location). `results()` should return an array of (or a single) JSON dictionaries with the following keys:
-
- - `title`: the title of the result
- - `html`: _optional_ HTML to be displayed inside the Spotlight preview
- - `run_args`: _optional_ if the user presses enter on your result, we'll call a function `run()` that you can define inside `plugin.py`, passing `run_args` as arguments. These need to be JSON-serializable.
- - `webview_links_open_in_browser`: _optional_ when the user clicks links in the webview, they'll close Spotlight and open in a browser
- - `webview_user_agent`: _optional_ override the user agent in the webview. Useful if you want to load a mobile-optimized site that fits the size of the Spotlight window.
-
-For example, the *say* plugin's `plugin.py` looks like this:
-
-```
-def results(parsed, original_query):
-	return {
-		"title": "Say '{0}' (press enter)".format(parsed['~message']),
-		"run_args": [parsed['~message']]
-	}
-
-def run(message):
-	import os
-	os.system('say "{0}"'.format(message))
-```
-
-For examples, look at the ['say' example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/say.bundle) or the [Pig Latin example](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/piglatin.bundle).
-
-** Debugging**
-
-Debugging support isn't the best right now — it's best to test as much of your code as possible in an ordinary Python script before running it in the plugin environment.
-
-If Flashlight encounters an error while running your Python script, you won't see any visible error — but you'll see messages like `Spotlight: querying Flashlight plugins` in `console.app`. Expand these for a full stack trace of the error.
-
-*Please note that all Flashlight plugins currently share a 2-second quota. If you need to do costly things like network accesses, please do them in your Javascript inside the HTML you return. The [weather plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/weather.bundle) is a good example of this.*
-
-** Submitting a plugin **
-
-Right now there isn't a fancy process for submitting. Place your plugin in `PluginDirectories/$HIGHEST_NUMBER/`, then run `python generate_index.py`. Submit a pull request.
+**Start with the [tutorial on writing plugins](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown).**
 
 ## How it works
 

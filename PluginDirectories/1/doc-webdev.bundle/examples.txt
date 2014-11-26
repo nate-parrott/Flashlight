@@ -1,0 +1,6 @@
+docpy ~querypy(hello world)
+docdj ~querydj(hello world)
+dochtml ~queryhtml(hello world)
+doccss ~querycss(hello world)
+docjq ~queryjq(hello world)
+docng ~queryng(hello world)
