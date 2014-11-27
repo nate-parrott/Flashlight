@@ -32,6 +32,42 @@
         },
         {
             "categories": [
+                "Information"
+            ],
+            "description": "Show latest Bitcoin price",
+            "description_fr": "Affiche les derniers prix du Bitcoin",
+            "displayName": "Bitcoin Price",
+            "displayName_fr": "Prix du Bitcoin",
+            "examples": [
+                "bitcoin",
+                "btc",
+                "2 bitcoin",
+                "2 btc"
+            ],
+            "examples_fr": [
+                "bitcoin",
+                "btc",
+                "2 bitcoin",
+                "2 btc"
+            ],
+            "name": "bitcoin",
+            "zip_url": "bitcoin.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Open Brackets Text Finder is open, opens the current folder/file in Sublime Text.",
+            "displayName": "Open with Brackets Text",
+            "examples": [
+                "Brackets"
+            ],
+            "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
+            "name": "Brackets",
+            "zip_url": "Brackets.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
@@ -69,6 +105,19 @@
         },
         {
             "categories": [
+                "Information"
+            ],
+            "description": "\u77e5\u4e4e\u65e5\u62a5\u5217\u8868, \u6bcf\u7bc7\u6587\u7ae0\u4f5c\u4e3a\u4e00\u4e2a\u641c\u7d22\u7ed3\u679c\u9879, Enter \u6253\u5f00",
+            "displayName": "\u77e5\u4e4e\u65e5\u62a5",
+            "examples": [
+                "zhihu daily",
+                "zhihu hot"
+            ],
+            "name": "daily.zhihu",
+            "zip_url": "daily.zhihu.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
@@ -87,8 +136,15 @@
                 "Developer"
             ],
             "description": "Search docset on devdocs.io",
+            "description_fr": "Recherche de documentation sur devdocs.io",
             "displayName": "devdocs.io",
+            "displayName_fr": "devdocs.io",
             "examples": [
+                "devdocs.io sth",
+                "devdocs sth",
+                "dd sth"
+            ],
+            "examples_fr": [
                 "devdocs.io sth",
                 "devdocs sth",
                 "dd sth"
@@ -139,6 +195,31 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "description": "Open Documentations",
+            "displayName": "Documentation Webdev",
+            "examples": [
+                "docpy class",
+                "docdj translation"
+            ],
+            "name": "Doc Webdev",
+            "zip_url": "doc-webdev.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "Look for movie info on douban",
+            "displayName": "Douban Movie",
+            "examples": [
+                "douban Interstellar"
+            ],
+            "name": "douban",
+            "zip_url": "douban.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Find annotations for lyrics and literature",
@@ -149,6 +230,19 @@
             ],
             "name": "genius",
             "zip_url": "genius.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search for a phone number in Sogou Haomatong database",
+            "displayName": "Sogou Haomatong",
+            "examples": [
+                "hmt 10086",
+                "haomatong 10086"
+            ],
+            "name": "haomatong",
+            "zip_url": "haomatong.zip"
         },
         {
             "categories": [
@@ -182,8 +276,12 @@
                 "Search"
             ],
             "displayName": "IMDB",
+            "displayName_fr": "IMDB",
             "examples": [
                 "imdb Phantom of the Opera"
+            ],
+            "examples_fr": [
+                "imdb La Soupe aux Choux"
             ],
             "name": "imdb",
             "zip_url": "imdb.zip"
@@ -232,6 +330,53 @@
         },
         {
             "categories": [
+                "Information"
+            ],
+            "description": "Look for express info",
+            "displayName": "Kuaidi",
+            "examples": [
+                "kuaidi 100033892580"
+            ],
+            "name": "kuaidi",
+            "zip_url": "kuaidi.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "description": "Search man pages and open in a specific window",
+            "description_fr": "Recherche les pages de manuel pour la commande unix sp\u00e9cifi\u00e9e",
+            "displayName": "Man Search",
+            "displayName_fr": "Recherche Man",
+            "examples": [
+                "man ls",
+                "man ifconfig"
+            ],
+            "examples_fr": [
+                "man ls",
+                "man ifconfig"
+            ],
+            "name": "Man",
+            "zip_url": "man.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search at Mozilla developer Network",
+            "displayName": "Search at MDN",
+            "examples": [
+                "mdn body",
+                "Mozilla developer Network URL"
+            ],
+            "iconPath": "./Icon.png",
+            "name": "Search at Mozilla developer Network",
+            "zip_url": "mdn.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "displayName": "Search more websites",
@@ -249,8 +394,13 @@
                 "Developer"
             ],
             "description": "Search php.net manual.",
+            "description_fr": "Recherceher dans la documentation PHP.",
             "displayName": "PHP Manual",
+            "displayName_fr": "Manuel PHP",
             "examples": [
+                "php urlencode"
+            ],
+            "examples_fr": [
                 "php urlencode"
             ],
             "name": "php",
@@ -271,6 +421,21 @@
         },
         {
             "categories": [
+                "Search",
+                "Information"
+            ],
+            "description": "Search The Pirate Bay for torrents",
+            "displayName": "The Pirate Bay",
+            "examples": [
+                "pb 2001: A Space Odyssey",
+                "pb Rick Astley",
+                "pb Trailer Park Boys"
+            ],
+            "name": "thepiratebay",
+            "zip_url": "piratebay.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "description": "Creates a new reminder.",
@@ -287,10 +452,20 @@
             "zip_url": "remind-me.zip"
         },
         {
-            "description": "Speak a message out loud.",
-            "displayName": "Say",
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Speaks your input text",
+            "description_fr": "Pronnonce le texte voulu",
+            "displayName": "Say Something",
+            "displayName_fr": "Dire quelque-chose",
             "examples": [
+                "say hello world",
                 "say good morning"
+            ],
+            "examples_fr": [
+                "dire Bonjour",
+                "dire Comment \u00e7a va ?"
             ],
             "name": "say",
             "zip_url": "say.zip"
@@ -346,7 +521,9 @@
                 "Featured"
             ],
             "description": "Provides additional commands such as shutdown, restart and logout",
+            "description_fr": "Fournit des commandes additionnelles comme \u00e9teindre, red\u00e9marrer et d\u00e9connection",
             "displayName": "Shutdown",
+            "displayName_fr": "\u00c9teindre",
             "examples": [
                 "shutdown",
                 "restart",
@@ -354,6 +531,14 @@
                 "sleep",
                 "lock",
                 "screen saver"
+            ],
+            "examples_fr": [
+                "\u00e9teindre",
+                "red\u00e9marrer",
+                "d\u00e9connection",
+                "veille",
+                "verouiller",
+                "\u00e9cran de veille"
             ],
             "name": "shutdown",
             "zip_url": "shutdown.zip"
@@ -374,10 +559,17 @@
             "categories": [
                 "Information"
             ],
-            "displayName": "Stocks in Yahoo Finance",
+            "description": "Display stocks from Yahoo Finance",
+            "description_fr": "Affiche les cours de bourse depuis Yahoo Finance",
+            "displayName": "Stocks",
+            "displayName_fr": "Bourse depuis Yahoo Finance",
             "examples": [
                 "stock FB",
                 "stock ERBB"
+            ],
+            "examples_fr": [
+                "bourse FB",
+                "bourse ERBB"
             ],
             "name": "stocks",
             "zip_url": "stocks.zip"
@@ -401,8 +593,15 @@
                 "Developer"
             ],
             "description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
+            "description_fr": "Ex\u00e9cute une commande Terminal. Si le Finder est ouvert, la commande sera \u00e9x\u00e9cut\u00e9e dans le dossier courant",
             "displayName": "Terminal",
+            "displayName_fr": "Terminal",
             "examples": [
+                "rm -f *.py",
+                "git push",
+                "$ ping google.com"
+            ],
+            "examples_fr": [
                 "rm -f *.py",
                 "git push",
                 "$ ping google.com"
@@ -413,16 +612,76 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Convert timestamp to readable string",
+            "description_fr": "Convertit un timestamp en texte lisible",
+            "displayName": "Timestamp",
+            "displayName_fr": "Timestamp",
+            "examples": [
+                "timestamp",
+                "timestamp 1400000000",
+                "ts",
+                "ts 1400000000"
+            ],
+            "examples_fr": [
+                "timestamp",
+                "timestamp 1400000000",
+                "ts",
+                "ts 1400000000"
+            ],
+            "name": "timestamp",
+            "zip_url": "timestamp.zip"
+        },
+        {
+            "categories": [
                 "Weather"
             ],
             "description": "View the time in Spotlight.",
+            "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
+            "description_fr": "Consulter et interagir avec le temps",
             "displayName": "Time Zone",
+            "displayName_de": "Zeitzonen",
+            "displayName_fr": "Fuseaux horaire",
             "examples": [
                 "time Munich",
                 "timezone Tokio"
             ],
+            "examples_de": [
+                "Zeit Munich",
+                "Uhrzeit Tokio"
+            ],
+            "examples_fr": [
+                "heure Munich",
+                "fuseau Tokio"
+            ],
             "name": "timezone",
             "zip_url": "timezone.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Torrentz (t), Kickass (k)",
+            "displayName": "Search torrents",
+            "examples": [
+                "torrentz new movies",
+                "kickass godzilla"
+            ],
+            "name": "torrent",
+            "zip_url": "torrent.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "V2EX latest topics",
+            "displayName": "V2EX",
+            "examples": [
+                "v2ex"
+            ],
+            "name": "v2ex",
+            "zip_url": "v2ex.zip"
         },
         {
             "categories": [
@@ -443,10 +702,16 @@
                 "Featured"
             ],
             "description": "View the forecast in Spotlight.",
+            "description_de": "Wettervorhersage in der Spotlight.",
             "displayName": "Weather",
+            "displayName_de": "Wetter",
             "examples": [
                 "weather brooklyn",
                 "how's the weather in houston?"
+            ],
+            "examples_de": [
+                "Wetter M\u00fcnchen",
+                "Wie ist das Wetter in M\u00fcnchen?"
             ],
             "name": "weather",
             "zip_url": "weather.zip"
@@ -457,12 +722,22 @@
                 "Featured"
             ],
             "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) and Google Maps(gm).",
+            "description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) und Google Maps(gm).",
             "displayName": "Web Search",
+            "displayName_de": "Web Suche",
             "examples": [
                 "google Apple stock",
                 "g Apple stock",
                 "duck duck go Flashlight",
                 "image search ducks",
+                "reddit cats",
+                "google maps New York"
+            ],
+            "examples_de": [
+                "google Apple stock",
+                "g Apple stock",
+                "duck duck go Flashlight",
+                "Bildersuche nach ducks",
                 "reddit cats",
                 "google maps New York"
             ],
@@ -487,10 +762,17 @@
                 "Information"
             ],
             "description": "Search English Wikipedia (wiki).",
+            "description_fr": "Recherche sur Wikipedia.",
             "displayName": "Wikipedia (EN)",
+            "displayName_fr": "Wikipedia (FR)",
             "examples": [
                 "wiki Dogs",
                 "search wikipedia for St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
+            "examples_fr": [
+                "wiki Chiens",
+                "recherche wikipedia Canard",
                 "wikipedia Flashlight"
             ],
             "name": "wikipedia",
@@ -502,8 +784,9 @@
                 "Featured"
             ],
             "displayName": "Wolfram|Alpha Search",
+            "displayName_fr": "Recherche Wolfram|Alpha (Anglais uniquement)",
             "examples": [
-                "ask wolfram alpha 1 + 1",
+                "demander \u00e0 wolfram alpha 1 + 1",
                 "wa first 10 prime numbers",
                 "population of india"
             ],
