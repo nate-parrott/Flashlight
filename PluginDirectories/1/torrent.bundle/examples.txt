@@ -1,0 +1,5 @@
+search torrent t for ~torrentzquery(godzilla)
+torrentz ~torrentzquery(godzilla)
+
+search torrent k for ~kickassquery(godzilla)
+kickass ~kickassquery(query here)
