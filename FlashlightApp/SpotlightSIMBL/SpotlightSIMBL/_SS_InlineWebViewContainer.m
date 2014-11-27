@@ -55,7 +55,10 @@
 
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
 {
-    [windowScriptObject setValue:self forKey:@"flashlight"];
+    if (frame.DOMDocument.domain.length == 0) {
+        // only insert on non-remote pages:
+        [windowScriptObject setValue:self forKey:@"flashlight"];
+    }
 }
 
 #pragma mark Navigation interception
