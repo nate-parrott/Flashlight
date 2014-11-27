@@ -93,6 +93,23 @@ def read_plugin_info(plugin, zip_data):
       plugin.screenshot_url = resize_and_store(data, 600)
   return has_info
 
+def language_suffixes(languages):
+  for lang in languages:
+    while True:
+      yield "_" + lang if lang != 'en' else ''
+      if '-' in lang:
+        lang = lang[:lang.rfind('-')]
+      else:
+        break
+  yield ''
+
+def get_localized_key(dict, name, languages, default=None):
+  for suffix in language_suffixes(languages):
+    key = name + suffix
+    if key in dict:
+      return dict[key]
+  return default
+
 class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
   def post(self):
     secret = self.request.get('secret', '')
@@ -139,9 +156,13 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
 class Directory(webapp2.RequestHandler):
   def get(self):
     category = self.request.get('category')
+    languages = self.request.get('languages', '').split(',') + ['en']
     plugins = []
     for p in Plugin.query(Plugin.categories == category, Plugin.approved == True):
       plugin = json.loads(p.info_json)
+      plugin['displayName'] = get_localized_key(plugin, "displayName", languages, "")
+      plugin['description'] = get_localized_key(plugin, "description", languages, "")
+      plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
       plugin['model'] = p
       plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
       plugins.append(plugin)
