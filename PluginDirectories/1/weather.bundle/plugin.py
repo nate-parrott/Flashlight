@@ -22,7 +22,7 @@ def results(parsed, original_query):
         "title": title,
         "html": html,
         "webview_transparent_background": True,
-        "run_args": location
+        "run_args": [location]
     }
 
 
