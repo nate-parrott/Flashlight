@@ -31,7 +31,6 @@
     task.standardInput = pipeIn;
     task.standardOutput = pipeOut;
     
-    [task waitUntilExit];
     [task launch];
     
     NSData *data = [file readDataToEndOfFile];
