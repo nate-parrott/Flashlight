@@ -27,6 +27,17 @@ The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM t
 
 ## Credits
 
+Huge thanks to everyone who's contributed translations:
+
+ - [xremix](http://github.com/xremix) for German
+ - [matth96](http://github.com/matth96) for Dutch
+ - [tiphedor](http://github.com/tiphedor) for French
+ - [lipe1966](http://github.com/lipe1966) for Portugese
+ - [chuyik](http://github.com/chuyik) for Chinese
+ - [suer](http://github.com/suer) for Japanese
+
+If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
+
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
 The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
