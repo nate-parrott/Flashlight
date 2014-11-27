@@ -1,7 +1,10 @@
 {
 	"name": "timestamp",
 	"displayName": "Timestamp",
+	"displayName_fr": "Timestamp",
 	"description": "Convert timestamp to readable string",
+	"description_fr": "Convertit un timestamp en texte lisible",
 	"examples": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
+	"examples_fr": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
     "categories": ["Utilities"]
 }

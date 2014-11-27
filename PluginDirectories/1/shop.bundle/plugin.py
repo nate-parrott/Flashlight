@@ -1,11 +1,11 @@
-import urllib, json
+import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-        ["Amazon", "~amazonquery", "http://www.amazon.com/s/ref=nb_sb_noss?field-keywords="],
+        ["Amazon", "~amazonquery", "localizedamazonurl"],
         ["Alibaba", "~alibabaquery", "http://m.alibaba.com/trade/search?SearchText="],
         ["AliExpress", "~aliexpressquery", "http://m.aliexpress.com/search.htm?keywords="],
-        ["eBay", "~ebayquery", "http://www.ebay.com/sch/i.html?_nkw="],
+        ["eBay", "~ebayquery", "localizedebayurl"],
         ["JD", "~jdquery", "http://m.jd.com/ware/search.action?keyword="],
         ["Taobao", "~taobaoquery", "http://s.m.taobao.com/h5?q="],
         ["YHD", "~yhdquery", "http://m.yhd.com/search/?req.keyword="],
@@ -14,9 +14,10 @@ def results(parsed, original_query):
     ]
     for name, key, url in search_specs:
         if key in parsed:
+            url = i18n.localstr(url)
             search_url = url + urllib.quote_plus(parsed[key])
             return {
-                "title": "Search {0} for '{1}'".format(name, parsed[key]),
+                "title": i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]),
                 "run_args": [search_url],
                 "html": """
                 <script>

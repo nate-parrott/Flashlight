@@ -1,0 +1,4 @@
+wiki ~frWiki(query here)
+wikipedia ~frWiki(query here)
+wiki ~frWiki(query here)
+recherche wikipedia ~frWiki(query here)

@@ -1,0 +1,8 @@
+bitcoin
+btc
+~n(1) bitcoin
+~n(1) btc
+bitcoin ~n(1)
+btc ~n(1)
+~n(1)bitcoin
+~n(1)btc

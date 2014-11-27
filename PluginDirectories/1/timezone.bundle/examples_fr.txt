@@ -1,0 +1,3 @@
+heure ~location(brooklyn)
+Fuseau ~location(brooklyn)
+Quelle heure est-im à ~location(shangai)

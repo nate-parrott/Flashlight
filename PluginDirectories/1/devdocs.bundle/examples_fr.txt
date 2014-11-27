@@ -1,0 +1,6 @@
+devdocs.io ~query(sth)
+devdocs ~query(sth)
+dd ~query(sth)
+devdocs.io ~query(lang sth)
+devdocs ~query(lang sth)
+dd ~query(lang sth)

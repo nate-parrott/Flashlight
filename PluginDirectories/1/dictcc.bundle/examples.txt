@@ -1,2 +1,3 @@
 dict ~query(query here)
+dictcc ~query(query here)
 dict.cc ~query(query here)

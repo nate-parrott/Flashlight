@@ -1,7 +1,10 @@
 {
 	"name": "bitcoin",
 	"displayName": "Bitcoin Price",
+	"displayName_fr": "Prix du Bitcoin",
 	"description": "Show latest Bitcoin price",
+	"description_fr": "Affiche les derniers prix du Bitcoin",
 	"examples": ["bitcoin", "btc", "2 bitcoin", "2 btc"],
+	"examples_fr": ["bitcoin", "btc", "2 bitcoin", "2 btc"],
     "categories": ["Information"]
 }

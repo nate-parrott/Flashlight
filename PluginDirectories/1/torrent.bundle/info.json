@@ -1,0 +1,7 @@
+{
+   "name": "torrent",
+   "displayName": "Search torrents",
+   "description": "Search Torrentz (t), Kickass (k)",
+   "examples": ["torrentz new movies", "kickass godzilla"],
+   "categories": ["Search"]
+}

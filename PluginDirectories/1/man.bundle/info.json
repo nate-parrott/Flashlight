@@ -1,7 +1,10 @@
 {
 	"name": "Man",
 	"displayName": "Man Search",
+	"displayName_fr": "Recherche Man",
 	"description": "Search man pages and open in a specific window",
+	"description_fr": "Recherche les pages de manuel pour la commande unix spécifiée",
 	"examples": ["man ls", "man ifconfig"],
+	"examples_fr": ["man ls", "man ifconfig"],
 	"categories": ["Search", "Featured"]
 }

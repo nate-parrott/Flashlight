@@ -53,6 +53,9 @@ textarea {
 
 {% if admin %}
 <h6>You're logged in as an admin</h6>
+<form method='POST' action='/generate_console_key'>
+   <input type='submit' value='Generate console key'/>
+</form>
 {% endif %}
 
 {% endblock %}

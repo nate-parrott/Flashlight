@@ -1,0 +1,4 @@
+pb ~thePirateBay(query here)
+pirate bay ~ thePirateBay(query here)
+pb ~ thePirateBay(query here)
+search The Pirate Bay for ~ thePirateBay(query here)
