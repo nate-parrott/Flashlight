@@ -32,6 +32,8 @@ from google.appengine.api import images
 from google.appengine.api import memcache
 from google.appengine.api import users
 import bs4
+import base64
+import hashlib
 
 class Plugin(ndb.Model):
   info_json = ndb.TextProperty()
@@ -44,6 +46,15 @@ class Plugin(ndb.Model):
   notes = ndb.TextProperty()
   icon_url = ndb.StringProperty()
   screenshot_url = ndb.StringProperty()
+  zip_md5 = ndb.StringProperty()
+
+  @classmethod
+  def by_name(cls, name):
+    plugins = Plugin.query(Plugin.name == name).fetch()
+    if len(plugins) > 0:
+      return plugins[0]
+    else:
+      return None
 
 def send_upload_form(request, message=None):
   request.response.write(template("upload.html", {"upload_url": blobstore.create_upload_url('/post_upload'), "message": message, "admin": users.is_current_user_admin()}))
@@ -62,8 +73,8 @@ def resize_and_store(data, size):
   data = img.execute_transforms(output_encoding=images.PNG)
   return upload_file_and_get_url(data, 'image/png')
 
-def read_plugin_info(plugin):
-  file = StringIO.StringIO(urllib2.urlopen(plugin.zip_url).read())
+def read_plugin_info(plugin, zip_data):
+  file = StringIO.StringIO(zip_data)
   archive = zipfile.ZipFile(file)
   has_info = False
   for name in archive.namelist():
@@ -84,7 +95,7 @@ def read_plugin_info(plugin):
 
 class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
   def post(self):
-    secret = self.request.get('secret')
+    secret = self.request.get('secret', '')
     is_update = False
     if len(secret):
       plugins = Plugin.query(Plugin.secret == secret).fetch()
@@ -97,22 +108,33 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
     else:
       plugin = Plugin()
     plugin.zip_url = 'http://' + os.environ['HTTP_HOST'] + '/serve/' + str(self.get_uploads('zip')[0].key())
-    if not read_plugin_info(plugin):
+    zip_data = urllib2.urlopen(plugin.zip_url).read()
+    if not read_plugin_info(plugin, zip_data):
       send_upload_form(self, "We couldn't find a valid info.json file in your zip.")
       return
+
+    console_key = self.request.get('console_key', None)
+
     plugin.secret = base64.b64encode(os.urandom(128))
-    plugin.notes = self.request.get('notes')
-    if users.is_current_user_admin():
-      existing = Plugin.query(Plugin.name == plugin.name).fetch()
-      if len(existing):
-        existing[0].approved = False
-        existing[0].put()
-    if users.is_current_user_admin():
+    plugin.notes = self.request.get('notes', '')
+
+    plugin.zip_md5 = hashlib.md5(zip_data).hexdigest()
+
+    admin = users.is_current_user_admin() or (console_key and console_key_is_valid(console_key))
+    if admin:
+      existing = Plugin.by_name(plugin.name)
+      if existing:
+        existing.approved = False
+        existing.put()
       plugin.approved = True
     plugin.put()
-    approval_msg = " It'll be public after it's been approved." if not is_update else ""
-    message = "Your plugin was uploaded!" + approval_msg
-    self.response.write(template("uploaded.html", {"message": message, "plugin": plugin}))
+
+    if console_key != None:
+      self.response.write({"success": True})
+    else:
+      approval_msg = " It'll be public after it's been approved." if not is_update else ""
+      message = "Your plugin was uploaded!" + approval_msg
+      self.response.write(template("uploaded.html", {"message": message, "plugin": plugin}))
 
 class Directory(webapp2.RequestHandler):
   def get(self):
@@ -165,6 +187,23 @@ class LatestDownload(webapp2.RequestHandler):
       memcache.set("download_url", url, time=60 * 10)
     self.redirect(url.encode('utf8'))
 
+class GenerateConsoleKey(webapp2.RequestHandler):
+  def post(self):
+    key = base64.b64encode(os.urandom(64))
+    memcache.set(key, True, time=60 * 60)
+    message = "For 60 minutes, the following key will be valid for uploading plugins via the command line:\n\n{0}".format(key)
+    self.response.write(template("message.html", {"message": message}))
+
+def console_key_is_valid(key):
+  return memcache.get(key) != None
+
+class ConsoleUpload(webapp2.RequestHandler):
+  def get(self, name):
+    plugin = Plugin.by_name(name)
+    existing_md5 = plugin.zip_md5 if plugin else None
+    url = blobstore.create_upload_url('/post_upload')
+    self.response.write(json.dumps({"md5": existing_md5, "upload_url": url}))
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/upload', UploadHandler),
@@ -174,5 +213,7 @@ app = webapp2.WSGIApplication([
     ('/categories', Categories),
     ('/log_install', LogInstall),
     ('/login', Login),
-    ('/latest_download', LatestDownload)
+    ('/latest_download', LatestDownload),
+    ('/generate_console_key', GenerateConsoleKey),
+    ('/console_upload/(.+)', ConsoleUpload)
 ], debug=True)
