@@ -16,6 +16,8 @@ translate ~text(hello) from from_language/english(english) to to_language/englis
 
 translate ~text(hello) from from_language/brazilian(brazilian) to to_language/brazilian(brazilian)
 
+translate ~text(hello) from from_language/portuguese(portuguese) to to_language/portuguese(portuguese )
+
 translate ~text(bonjour) from from_language/french(french) to to_language/french(french)
 
 translate ~text(guten tag) from from_language/german(german) into to_language/german(german)
