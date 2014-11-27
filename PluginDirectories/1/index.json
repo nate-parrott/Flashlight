@@ -173,7 +173,7 @@
                 "Search",
                 "Language"
             ],
-            "description": "Translate English to German using leo",
+            "description": "Translate English to German using dict.cc",
             "displayName": "dict.cc Translate",
             "examples": [
                 "dict Suchmaschine"
@@ -490,6 +490,7 @@
             ],
             "description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
             "displayName": "Shopping Search",
+            "displayName_de": "Shopping Suche",
             "examples": [
                 "amazon flashlight",
                 "a flashlight",
