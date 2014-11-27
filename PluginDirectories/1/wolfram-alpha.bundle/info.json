@@ -1,6 +1,8 @@
 {
 	"name": "wolfram-alpha",
 	"displayName": "Wolfram|Alpha Search",
+	"displayName_fr": "Recherche Wolfram|Alpha (Anglais uniquement)",
 	"examples": ["ask wolfram alpha 1 + 1", "wa first 10 prime numbers", "population of india"],
+	"examples": ["demander à wolfram alpha 1 + 1", "wa first 10 prime numbers", "population of india"],
 	"categories": ["Information", "Featured"]
 }

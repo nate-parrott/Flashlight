@@ -1,7 +1,10 @@
 {
 	"name": "php",
 	"displayName": "PHP Manual",
+	"displayName_fr": "Manuel PHP",
 	"description": "Search php.net manual.",
+	"description_fr": "Recherceher dans la documentation PHP.",
 	"examples": ["php urlencode"],
+	"examples_fr": ["php urlencode"],
 	"categories": ["Developer"]
 }

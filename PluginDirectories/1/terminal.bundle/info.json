@@ -1,8 +1,11 @@
 {
 	"name": "terminal",
 	"displayName": "Terminal",
+	"displayName_fr": "Terminal",
 	"description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
+	"description_fr": "Exécute une commande Terminal. Si le Finder est ouvert, la commande sera éxécutée dans le dossier courant",
 	"examples": ["rm -f *.py", "git push", "$ ping google.com"],
+	"examples_fr": ["rm -f *.py", "git push", "$ ping google.com"],
 	"iconPath": "/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns",
 	"categories": ["System", "Developer"]
 }
