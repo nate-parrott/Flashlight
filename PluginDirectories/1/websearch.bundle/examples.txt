@@ -2,6 +2,7 @@ duck duck go search ~duckduckgoquery(query here)
 search duck duck go for ~duckduckgoquery(query here)
 ddg ~duckduckgoquery(query here)
 
+google ~googlequery(query here)
 google search ~googlequery(query here)
 search the web for ~googlequery(query here)
 g ~googlequery(query here)
