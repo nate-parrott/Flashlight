@@ -3,6 +3,7 @@ suche duck duck go nach ~duckduckgoquery(query here)
 ddg ~duckduckgoquery(query here)
 
 google suche ~googlequery(query here)
+google ~googlequery(query here)
 suche im Internet nach ~googlequery(query here)
 g ~googlequery(query here)
 

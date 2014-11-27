@@ -199,6 +199,9 @@
 		80D11BB01A261AE400BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80D11BB11A26229D00BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		80D11BB21A26232000BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E25A65951A26495900A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E25A65971A26496800A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E25A65981A26497300A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E28AC1DF1A23D21D00673B7C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F24BCFBED9524B02917D164A /* libPods-Flashlight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flashlight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -585,6 +588,7 @@
 			children = (
 				6C56448E159E7C0800215467 /* en */,
 				6C80304F1A24C22F006E6A2E /* zh-Hans */,
+				E25A65971A26496800A3A8C7 /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -595,6 +599,7 @@
 				6C564494159E7C0900215467 /* en */,
 				6C8030501A24C22F006E6A2E /* zh-Hans */,
 				80D11BB11A26229D00BB9DA4 /* ja */,
+				E25A65981A26497300A3A8C7 /* de */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				6C56449A159E7C0900215467 /* en */,
 				6C80304D1A24C22F006E6A2E /* zh-Hans */,
 				80D11BB21A26232000BB9DA4 /* ja */,
+				E25A65951A26495900A3A8C7 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
