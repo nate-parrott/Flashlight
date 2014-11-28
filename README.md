@@ -34,9 +34,8 @@ Huge thanks to everyone who's contributed translations:
  - [tiphedor](http://github.com/tiphedor) for French
  - [lipe1966](http://github.com/lipe1966) for Portugese
  - [chuyik](http://github.com/chuyik) for Chinese
- - [andreaponza](http://github.com/andreaponza) for Italian
  - [suer](http://github.com/suer) for Japanese
-
+ - [andreaponza](http://github.com/andreaponza) for Italian
  - [iltercengiz](http://github.com/iltercengiz) for Turkish
  
 
@@ -49,3 +48,6 @@ The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIM
 The [ZipZap library by Glen Low](https://github.com/pixelglow/zipzap) is used internally.
 
 Licensed under the GPL.
+
+**Helping out**
+You can help out by [writing a plugin you want](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown), taking a look at [the Github issues](https://github.com/nate-parrott/Flashlight/issues), or sharing the app with friends on Twitter or Facebook.
