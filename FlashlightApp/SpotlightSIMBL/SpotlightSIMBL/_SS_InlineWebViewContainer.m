@@ -92,9 +92,10 @@
 
 #pragma mark Lifecycle
 - (void)dealloc {
+    [self.webView.windowScriptObject removeWebScriptKey:@"flashlight"];
     self.webView.frameLoadDelegate = nil;
     self.webView.policyDelegate = nil;
-    [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
+    // [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
     [self.webView stopLoading:nil];
 }
 
