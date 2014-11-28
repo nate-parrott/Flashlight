@@ -5,6 +5,6 @@
 	"description": "View the time in Spotlight.",
 	"description_de": "Suche die Uhrzeit über die Spotlight.",
 	"examples": ["time Munich", "timezone Tokio"],
-	"examples_de": ["Zeit Munich", "Uhrzeit Tokio"],
+	"examples_de": ["Zeit München", "Uhrzeit Tokio"],
 	"categories": ["Weather"]
 }
