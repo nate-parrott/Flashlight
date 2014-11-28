@@ -12,6 +12,7 @@ class Plugin(ndb.Model):
   icon_url = ndb.StringProperty()
   screenshot_url = ndb.StringProperty()
   zip_md5 = ndb.StringProperty()
+  downloads = ndb.IntegerProperty(default=0)
   @classmethod
   def by_name(cls, name):
     plugins = Plugin.query(Plugin.name == name, Plugin.approved == True).fetch()
@@ -19,3 +20,13 @@ class Plugin(ndb.Model):
       return plugins[0]
     else:
       return None
+
+def increment_download_count(name):
+  key = Plugin.by_name(name).key
+  increment_download_count_by_key(key)
+
+@ndb.transactional
+def increment_download_count_by_key(key):
+  plugin = key.get()
+  plugin.downloads = 1 + (plugin.downloads if plugin.downloads else 0)
+  plugin.put()
