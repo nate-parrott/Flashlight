@@ -50,9 +50,9 @@
     NSString *endpoint = [NSString stringWithFormat:@"%@/log_install", [[self class] APIRoot]];
     NSURLComponents *comps = [NSURLComponents componentsWithString:endpoint];
     comps.queryItems = @[[NSURLQueryItem queryItemWithName:@"name" value:name]];
-    [[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:comps.URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:comps.URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // disregard result
-    }];
+    }] resume];
 }
 
 @end

@@ -34,6 +34,7 @@ from google.appengine.api import users
 import bs4
 import base64
 import hashlib
+import model
 from model import Plugin
 
 def send_upload_form(request, message=None):
@@ -171,8 +172,7 @@ class Categories(webapp2.RequestHandler):
 
 class LogInstall(webapp2.RequestHandler):
   def get(self):
-    name = self.request.get(name)
-    pass # TODO
+    model.increment_download_count(self.request.get('name'))
 
 class Login(webapp2.RequestHandler):
   def get(self):
