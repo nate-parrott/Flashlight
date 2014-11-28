@@ -34,7 +34,11 @@ Huge thanks to everyone who's contributed translations:
  - [tiphedor](http://github.com/tiphedor) for French
  - [lipe1966](http://github.com/lipe1966) for Portugese
  - [chuyik](http://github.com/chuyik) for Chinese
+ - [andreaponza](http://github.com/andreaponza) for Italian
  - [suer](http://github.com/suer) for Japanese
+
+ - [iltercengiz](http://github.com/iltercengiz) for Turkish
+ 
 
 If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
 
