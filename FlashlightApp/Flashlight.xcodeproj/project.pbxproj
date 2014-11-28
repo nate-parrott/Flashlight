@@ -169,16 +169,15 @@
 		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC65E171A290B11006187EB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC65E181A290B20006187EB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
 		5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginDirectoryAPI.m; sourceTree = "<group>"; };
 		5FD3EA801A2035AB005A312E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLComponents+ValueForQueryKey.h"; sourceTree = "<group>"; };
 		5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLComponents+ValueForQueryKey.m"; sourceTree = "<group>"; };
 		653963C51A2766CD00D8F6E9 /* libPods-Flashlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Flashlight.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug/libPods-Flashlight.a"; sourceTree = "<group>"; };
-		658988FA1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		658988FB1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		658988FC1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		658988FD1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = it; path = it.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -195,18 +194,10 @@
 		6C56449A159E7C0900215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6C5644B7159E7D3900215467 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		6C6AF45E1842DE3700E2ACBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		6C80304D1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		6C80304E1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		6C80304F1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		6C8030501A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SIMBL.h; path = ../src/SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SIMBL.m; path = ../src/SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		80D11BB01A261AE400BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		80D11BB11A26229D00BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
-		80D11BB21A26232000BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E25A65951A26495900A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E25A65971A26496800A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E25A65981A26497300A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
 		E28AC1DF1A23D21D00673B7C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -438,6 +429,8 @@
 				"zh-Hans",
 				ja,
 				it,
+				nl,
+				tr,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -585,6 +578,8 @@
 				6C80304E1A24C22F006E6A2E /* zh-Hans */,
 				80D11BB01A261AE400BB9DA4 /* ja */,
 				658988FB1A270ACF00ABE5E9 /* it */,
+				5FC65E171A290B11006187EB /* nl */,
+				5FC65E181A290B20006187EB /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -593,9 +588,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C56448E159E7C0800215467 /* en */,
-				6C80304F1A24C22F006E6A2E /* zh-Hans */,
-				E25A65971A26496800A3A8C7 /* de */,
-				658988FC1A270ACF00ABE5E9 /* it */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -604,10 +596,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C564494159E7C0900215467 /* en */,
-				6C8030501A24C22F006E6A2E /* zh-Hans */,
-				80D11BB11A26229D00BB9DA4 /* ja */,
-				E25A65981A26497300A3A8C7 /* de */,
-				658988FD1A270ACF00ABE5E9 /* it */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -616,10 +604,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C56449A159E7C0900215467 /* en */,
-				6C80304D1A24C22F006E6A2E /* zh-Hans */,
-				80D11BB21A26232000BB9DA4 /* ja */,
-				E25A65951A26495900A3A8C7 /* de */,
-				658988FA1A270ACF00ABE5E9 /* it */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
