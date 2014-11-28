@@ -51,7 +51,6 @@
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
 		6C564491159E7C0800215467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C564490159E7C0800215467 /* main.m */; };
-		6C564495159E7C0900215467 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6C564493159E7C0900215467 /* Credits.rtf */; };
 		6C564498159E7C0900215467 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C564497159E7C0900215467 /* AppDelegate.m */; };
 		6C56449B159E7C0900215467 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C564499159E7C0900215467 /* MainMenu.xib */; };
 		6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5644B7159E7D3900215467 /* ServiceManagement.framework */; };
@@ -188,7 +187,6 @@
 		6C56448E159E7C0800215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6C564490159E7C0800215467 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C564492159E7C0900215467 /* Flashlight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flashlight-Prefix.pch"; sourceTree = "<group>"; };
-		6C564494159E7C0900215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6C564496159E7C0900215467 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C564497159E7C0900215467 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6C56449A159E7C0900215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -380,7 +378,6 @@
 				6C56448D159E7C0800215467 /* InfoPlist.strings */,
 				6C564490159E7C0800215467 /* main.m */,
 				6C564492159E7C0900215467 /* Flashlight-Prefix.pch */,
-				6C564493159E7C0900215467 /* Credits.rtf */,
 				5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */,
 			);
 			name = "Supporting Files";
@@ -476,7 +473,6 @@
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
-				6C564495159E7C0900215467 /* Credits.rtf in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,
 				6C56449B159E7C0900215467 /* MainMenu.xib in Resources */,
@@ -590,14 +586,6 @@
 				6C56448E159E7C0800215467 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6C564493159E7C0900215467 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C564494159E7C0900215467 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		6C564499159E7C0900215467 /* MainMenu.xib */ = {

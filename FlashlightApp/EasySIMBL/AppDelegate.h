@@ -23,4 +23,6 @@
 
 @property (nonatomic,weak) IBOutlet PluginListController *pluginListController;
 
+- (IBAction)openURLFromButton:(NSButton *)sender;
+
 @end
