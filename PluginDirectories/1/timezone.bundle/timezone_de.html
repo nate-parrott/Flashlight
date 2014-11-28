@@ -34,7 +34,7 @@
 		#color-setting{
 			display: none;
 		}
-		.darkmode{
+		.dark-mode{
 		    -webkit-filter: invert(100%);
 		    filter: invert(100%);
 		}
@@ -96,8 +96,8 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 </head>
-<body>
-	<div id="color-setting"><!--APPEARANCE--></div>
+<body class="light-mode">
+	<div id="color-setting"></div>
 	<div id="map-canvas"></div>
 	<div>
 		<div>
@@ -169,16 +169,7 @@
 			xhr.send();
 		}
 
-
-		function setDarkMode(){
-			document.getElementsByTagName('body')[0].className+=' darkmode'
-		};
-
 		setTimeout(function() {
-			if(document.getElementById("color-setting").innerText === 'dark'){
-				setDarkMode();
-			}
-
 			initializeGoogleAPI();
 			getCoordinateFromAddress(document.getElementById('placeholder').innerText);
 		}, 100);
