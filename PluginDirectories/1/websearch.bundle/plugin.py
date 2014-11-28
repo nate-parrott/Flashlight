@@ -12,7 +12,8 @@ def results(parsed, original_query):
          ["Yahoo", "~yahooquery", "https://sg.search.yahoo.com/search?p="],
          ["Twitter", "~twitterquery", "https://mobile.twitter.com/search?q="],
          ["Reddit", "~redditquery", "https://www.reddit.com/search?q="],
-         ["Google Maps", "~googlemapsquery", "localizedgooglemapsurl"]
+         ["Google Maps", "~googlemapsquery", "localizedgooglemapsurl"],
+         ["Github", "~githubquery", "https://github.com/search?q="]
     ]
     for name, key, url in search_specs:
         if key in parsed:

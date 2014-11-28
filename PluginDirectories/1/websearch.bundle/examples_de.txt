@@ -36,3 +36,6 @@ google maps ~googlemapsquery(query here)
 Zeige in maps ~googlemapsquery(query here)
 maps ~googlemapsquery(query here)
 gm ~googlemapsquery(query here)
+
+github ~githubquery(query here)
+gh ~githubquery(query here)
