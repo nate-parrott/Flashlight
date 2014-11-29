@@ -722,8 +722,8 @@
                 "Search",
                 "Featured"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) and Google Maps(gm).",
-            "description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt) und Google Maps(gm).",
+            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
+            "description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) und Github (gh).",
             "displayName": "Web Search",
             "displayName_de": "Web Suche",
             "examples": [
@@ -732,7 +732,8 @@
                 "duck duck go Flashlight",
                 "image search ducks",
                 "reddit cats",
-                "google maps New York"
+                "google maps New York",
+                "gh bootstrap"
             ],
             "examples_de": [
                 "google Apple stock",
@@ -740,7 +741,8 @@
                 "duck duck go Flashlight",
                 "Bildersuche nach ducks",
                 "reddit cats",
-                "google maps New York"
+                "google maps New York",
+                "gh bootstrap"
             ],
             "name": "websearch",
             "zip_url": "websearch.zip"
