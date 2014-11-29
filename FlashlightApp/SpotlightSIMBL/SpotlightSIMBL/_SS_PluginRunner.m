@@ -46,7 +46,7 @@ void __SS_markPathExecutable(NSString *path) {
 
 + (NSDictionary *)resultDictionariesFromPluginsForQuery:(NSString *)query {
     
-    NSTask *task = [NSTask new];
+    NSTask *task = [self createSinglePluginTask]; // will kill previous plugin tasks
     task.launchPath = [self parseQueryScriptPath];
     __SS_markPathExecutable(task.launchPath);
     
@@ -60,6 +60,15 @@ void __SS_markPathExecutable(NSString *path) {
         return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     } else {
         return nil;
+    }
+}
+
++ (NSTask *)createSinglePluginTask {
+    static NSTask *task = nil;
+    @synchronized(self) {
+        [task terminate];
+        task = [NSTask new];
+        return task;
     }
 }
 

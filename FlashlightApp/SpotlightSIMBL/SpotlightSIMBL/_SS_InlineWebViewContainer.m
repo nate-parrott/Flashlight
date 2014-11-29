@@ -9,6 +9,7 @@
 #import "_SS_InlineWebViewContainer.h"
 #import <objc/runtime.h>
 #import "_SS_PluginRunner.h"
+#import "_SS_WebScriptObject.h"
 
 @interface _SS_InlineWebViewContainer ()
 
@@ -20,44 +21,11 @@
 
 #pragma mark Window Scripting Layer
 
-- (NSString *)bash:(NSString*) args {
-    NSPipe *pipeIn = [NSPipe pipe];
-    NSPipe *pipeOut = [NSPipe pipe];
-    NSFileHandle *file = pipeOut.fileHandleForReading;
-    
-    NSTask *task = [[NSTask alloc] init];
-    task.launchPath = @"/bin/bash";
-    task.arguments = [NSArray arrayWithObjects:@"-l", @"-c", args, nil];
-    task.standardInput = pipeIn;
-    task.standardOutput = pipeOut;
-    
-    [task waitUntilExit];
-    [task launch];
-    
-    NSData *data = [file readDataToEndOfFile];
-    [file closeFile];
-    
-    NSString *grepOutput = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    return grepOutput;
-}
-
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)sel {
-    if(sel == @selector(bash:))
-        return NO;
-    return YES;
-}
-
-+ (NSString *)webScriptNameForSelector:(SEL)sel {
-    if(sel == @selector(bash:))
-        return @"bash";
-    return nil;
-}
-
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
 {
     if (frame.DOMDocument.domain.length == 0) {
         // only insert on non-remote pages:
-        [windowScriptObject setValue:self forKey:@"flashlight"];
+        [windowScriptObject setValue:[_SS_WebScriptObject new] forKey:@"flashlight"];
     }
 }
 
@@ -92,7 +60,6 @@
 
 #pragma mark Lifecycle
 - (void)dealloc {
-    [self.webView.windowScriptObject removeWebScriptKey:@"flashlight"];
     self.webView.frameLoadDelegate = nil;
     self.webView.policyDelegate = nil;
     // [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
