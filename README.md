@@ -3,6 +3,8 @@ Flashlight
 
 _The missing Spotlight plugin system_
 
+_Das fehlende Plugin-System für Spotlight._
+
 <img src='https://raw.github.com/nate-parrott/flashlight/master/Image.png' width='100%'/>
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
@@ -23,7 +25,7 @@ The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches 
 
 Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
 
-The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM through 10.10.1 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
+The Spotlight plugin is gated to run only on versions `911-916` (Yosemite GM through 10.10.2 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
 
 ## Credits
 
