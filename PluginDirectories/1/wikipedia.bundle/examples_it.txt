@@ -1,0 +1,4 @@
+wiki ~itWiki(query here)
+wikipedia ~itWiki(query here)
+wiki ~itWiki(query here)
+recherche wikipedia ~itWiki(query here)
