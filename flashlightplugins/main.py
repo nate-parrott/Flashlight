@@ -122,10 +122,10 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
     if admin:
       existing = Plugin.by_name(plugin.name)
       if existing:
-        existing.approved = False
-        existing.put()
-      plugin.approved = True
+        existing.disable()
     plugin.put()
+    if admin:
+      plugin.enable()
 
     if console_key != None:
       self.response.write({"success": True})
