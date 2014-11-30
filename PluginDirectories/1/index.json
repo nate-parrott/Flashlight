@@ -638,7 +638,7 @@
             "categories": [
                 "Weather"
             ],
-            "description": "View the time in Spotlight.",
+            "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
             "description_fr": "Consulter et interagir avec le temps",
             "displayName": "Time Zone",
@@ -657,6 +657,7 @@
                 "fuseau Tokio"
             ],
             "name": "timezone",
+            "search_keywords": "world clock",
             "zip_url": "timezone.zip"
         },
         {
@@ -728,8 +729,7 @@
             "displayName_de": "Web Suche",
             "examples": [
                 "google Apple stock",
-                "g Apple stock",
-                "duck duck go Flashlight",
+                "ddg Flashlight",
                 "image search ducks",
                 "reddit cats",
                 "google maps New York",
