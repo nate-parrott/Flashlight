@@ -1,4 +1,5 @@
 from google.appengine.ext import ndb
+import search
 
 class Plugin(ndb.Model):
   info_json = ndb.TextProperty()
@@ -13,6 +14,18 @@ class Plugin(ndb.Model):
   screenshot_url = ndb.StringProperty()
   zip_md5 = ndb.StringProperty()
   downloads = ndb.IntegerProperty(default=0)
+  search_doc_id = ndb.StringProperty()
+  
+  def disable(self):
+    self.approved = False
+    self.put()
+    search.remove_plugin_from_index(self)
+  
+  def enable(self):
+    self.approved = True
+    self.put()
+    search.ensure_plugin_indexed(self)
+    
   @classmethod
   def by_name(cls, name):
     plugins = Plugin.query(Plugin.name == name, Plugin.approved == True).fetch()

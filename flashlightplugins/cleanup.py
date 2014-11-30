@@ -1,13 +1,19 @@
 import webapp2
 from google.appengine.ext import ndb
 from model import Plugin
+import search
 
 class CleanUp(webapp2.RequestHandler):
     def get(self):
         self.response.write("<form method='post'><input type='submit'/></form>")
     def post(self):
+        ensure_documents_indexed()
         remove_duplicates()
         self.response.write("Done.")
+
+def ensure_documents_indexed():
+  for plugin in Plugin.query(Plugin.approved == True):
+    search.ensure_plugin_indexed(plugin)
 
 def remove_duplicates():
     plugins = list(Plugin.query().fetch())
