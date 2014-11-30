@@ -301,6 +301,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
             }
             NSMutableSet *tasks = self.installTasksInProgress.mutableCopy;
             [tasks removeObject:task];
+            [self clearNLPModelCache];
             self.installTasksInProgress = tasks;
             [self reloadFromDisk];
             [self updatePluginStatuses];
@@ -316,6 +317,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [[NSFileManager defaultManager] removeItemAtPath:disabledPath error:nil];
     }
     [[NSFileManager defaultManager] moveItemAtPath:path toPath:disabledPath error:nil];
+    [self clearNLPModelCache];
+}
+
+- (void)clearNLPModelCache {
+    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.picke"] error:nil];
 }
 
 #pragma mark Categorization
