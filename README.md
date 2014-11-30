@@ -39,6 +39,7 @@ Huge thanks to everyone who's contributed translations:
  - [suer](http://github.com/suer) for Japanese
  - [andreaponza](http://github.com/andreaponza) for Italian
  - [iltercengiz](http://github.com/iltercengiz) for Turkish
+ - [AlAdler](http://github.com/AlAdler) for Spanish
  
 
 If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)

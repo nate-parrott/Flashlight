@@ -96,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1C6F37F05A3F43EFBC263B06 /* Pods-Flashlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.xcconfig"; path = "Pods/Pods-Flashlight.xcconfig"; sourceTree = "<group>"; };
+		5F11C2FD1A2B0834005A1731 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
@@ -428,6 +429,7 @@
 				it,
 				nl,
 				tr,
+				es,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -576,6 +578,7 @@
 				658988FB1A270ACF00ABE5E9 /* it */,
 				5FC65E171A290B11006187EB /* nl */,
 				5FC65E181A290B20006187EB /* tr */,
+				5F11C2FD1A2B0834005A1731 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
