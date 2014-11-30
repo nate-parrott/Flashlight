@@ -25,7 +25,9 @@ The first thing we need is an `info.json` file. Here's what to put in it:
    "displayName": "Say Something",
    "description": "Speaks your input text",
    "examples": ["say hello world", "say good morning"], (these appear by your plugin's description),
-   "categories": ["Utilities"]
+   "categories": ["Utilities"],
+   "creator_name": "Your name",
+   "creator_url": "A link of your choosing"
 }
 ```
 

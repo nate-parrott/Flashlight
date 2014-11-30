@@ -4,7 +4,7 @@
 	"displayName_de": "Web Suche",
 	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
 	"description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) und Github (gh).",
-	"examples": ["google Apple stock", "g Apple stock", "duck duck go Flashlight", "image search ducks", "reddit cats", "google maps New York", "gh bootstrap"],
+	"examples": ["google Apple stock", "ddg Flashlight", "image search ducks", "reddit cats", "google maps New York", "gh bootstrap"],
 	"examples_de": ["google Apple stock", "g Apple stock", "duck duck go Flashlight", "Bildersuche nach ducks", "reddit cats", "google maps New York", "gh bootstrap"],
 	"categories": ["Search", "Featured"]
 }

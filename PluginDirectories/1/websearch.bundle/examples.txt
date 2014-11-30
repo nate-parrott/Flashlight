@@ -33,6 +33,7 @@ rdt ~redditquery(query here)
 google maps ~googlemapsquery(query here)
 show on maps ~googlemapsquery(query here)
 maps ~googlemapsquery(query here)
+map of ~googlemapsquery(san francisco)
 gm ~googlemapsquery(query here)
 
 github ~githubquery(query here)
