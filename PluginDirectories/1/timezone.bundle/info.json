@@ -9,6 +9,6 @@
 	"examples": ["time Munich", "timezone Tokio"],
 	"examples_de": ["Zeit Munich", "Uhrzeit Tokio"],
 	"examples_fr": ["heure Munich", "fuseau Tokio"],
-	"categories": ["Weather"],
+	"categories": ["Weather", "Featured"],
     "search_keywords": "world clock"
 }
