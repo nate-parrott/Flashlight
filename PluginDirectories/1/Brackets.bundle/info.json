@@ -1,7 +1,7 @@
 {
     "name": "Brackets",
-    "displayName": "Open with Brackets Text",
-    "description": "Open Brackets Text Finder is open, opens the current folder/file in Sublime Text.",
+    "displayName": "Open with Brackets",
+    "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
     "examples": ["Brackets"],
     "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
     "categories": ["Utilities"]
