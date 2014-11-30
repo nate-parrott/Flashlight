@@ -42,7 +42,7 @@ def send_upload_form(request, message=None):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.redirect('/upload')
+        self.response.write(template("index.html"))
 
 class UploadHandler(webapp2.RequestHandler):
   def get(self):
