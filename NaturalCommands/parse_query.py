@@ -43,7 +43,7 @@ def create_example_phrases():
     
     return (example_phrases, plugins_to_always_invoke, regexes)
 
-cache_path = "NLPModel.pickle"
+cache_path = os.path.join(plugin_dir, "NLPModel.pickle")
 cache_max_age = 20 # 20 sec
 (example_phrases, plugins_to_always_invoke, regexes) = get_cached_data_structure(cache_path, cache_max_age, create_example_phrases)
 
