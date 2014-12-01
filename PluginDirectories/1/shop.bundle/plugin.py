@@ -2,10 +2,12 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-        ["Amazon", "~amazonquery", "localizedamazonurl"],
+        ["Amazon", "~amazonquery", "http://www.amazon.com/s/ref=nb_sb_noss?field-keywords="],
+        ["Amazon", "~amazonqueryde", "http://www.amazon.de/s/ref=nb_sb_noss?field-keywords="],
         ["Alibaba", "~alibabaquery", "http://m.alibaba.com/trade/search?SearchText="],
         ["AliExpress", "~aliexpressquery", "http://m.aliexpress.com/search.htm?keywords="],
-        ["eBay", "~ebayquery", "localizedebayurl"],
+        ["eBay", "~ebayquery", "http://www.ebay.com/sch/i.html?_nkw="],
+        ["eBay", "~ebayqueryde", "http://www.ebay.de/sch/i.html?_nkw="],
         ["JD", "~jdquery", "http://m.jd.com/ware/search.action?keyword="],
         ["Taobao", "~taobaoquery", "http://s.m.taobao.com/h5?q="],
         ["YHD", "~yhdquery", "http://m.yhd.com/search/?req.keyword="],

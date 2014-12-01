@@ -1,0 +1,4 @@
+Sage ~message(Guten Morgen)
+Sag ~message(Hallo, Welt)
+Spreche ~message(Hallo, Welt)
+Bitte sage ~message(Was geht)

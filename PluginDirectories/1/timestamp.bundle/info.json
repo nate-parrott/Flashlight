@@ -4,6 +4,7 @@
 	"displayName_fr": "Timestamp",
 	"description": "Convert timestamp to readable string",
 	"description_fr": "Convertit un timestamp en texte lisible",
+	"description_de": "Konvertiert Timestamps in leserliche Strings",
 	"examples": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
 	"examples_fr": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
     "categories": ["Utilities"]
