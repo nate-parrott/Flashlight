@@ -7,5 +7,5 @@
 	"description_de": "Konvertiert Timestamps in leserliche Strings",
 	"examples": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
 	"examples_fr": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
-    "categories": ["Utilities"]
+    "categories": ["Developer"]
 }
