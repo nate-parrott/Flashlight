@@ -1,6 +1,3 @@
 {
-  "Search {0} for '{1}'": "Suche auf {0} nach '{1}'",
-  "localizedgoogleurl": "https://www.google.de/search?q=",
-  "localizedgoogleimageurl": "https://www.google.de/search?tbm=isch&q=",
-  "localizedgooglemapsurl": "https://www.google.de/maps/place/"
+  "Search {0} for '{1}'": "Suche auf {0} nach '{1}'"
 }
