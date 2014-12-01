@@ -5,5 +5,7 @@
 	"description": "Copy path to clipboard from finder",
 	"description_de": "Kopiere den Pfad vom Finder",
 	"examples": ["copypath", "copy path", "path"],
-	"examples_de": ["Pfad kopieren", "kopere Pfad", "Pfad"]
+	"examples_de": ["Pfad kopieren", "kopere Pfad", "Pfad"],
+	"examples": ["copypath", "copy path", "path"],
+	"categories": ["Utilities"]
 }
