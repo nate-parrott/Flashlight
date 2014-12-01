@@ -2,6 +2,7 @@
 	"name": "whoami",
 	"displayName": "Who am I?",
 	"description": "Tell me who I am",
+	"description_de": "Erzähl mir wer ich bin",
 	"examples": ["Who am I?"],
 	"categories": ["System"]
 }
