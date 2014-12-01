@@ -3,7 +3,6 @@
     "plugins": [
         {
             "categories": [
-                "Search",
                 "Art"
             ],
             "description": "Search 500px\u2122 (500px)",
@@ -18,13 +17,15 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
+            "description_de": "\u00d6ffne Atom. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
             "displayName": "Open with Atom",
+            "displayName_de": "Mit Atom \u00f6ffnen",
             "examples": [
-                "atom file",
-                "atom folder"
+                "atom Datei",
+                "atom Ornder"
             ],
             "iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
             "name": "atom",
@@ -35,8 +36,10 @@
                 "Information"
             ],
             "description": "Show latest Bitcoin price",
+            "description_de": "Zeigt den aktuellen Bitcoin Preis an.",
             "description_fr": "Affiche les derniers prix du Bitcoin",
             "displayName": "Bitcoin Price",
+            "displayName_de": "Bitcoin Preis",
             "displayName_fr": "Prix du Bitcoin",
             "examples": [
                 "bitcoin",
@@ -55,9 +58,10 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
+            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
             "displayName": "Open with Brackets",
             "examples": [
                 "Brackets"
@@ -68,6 +72,7 @@
         },
         {
             "categories": [
+                "Art",
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
@@ -80,6 +85,9 @@
             "zip_url": "copycolor.zip"
         },
         {
+            "categories": [
+                "Utilities"
+            ],
             "description": "Copy path to clipboard from finder",
             "description_de": "Kopiere den Pfad vom Finder",
             "displayName": "Copy Path From Finder",
@@ -125,10 +133,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "A search plugin for Dash. (requires Dash app)",
+            "description_de": "Ein Such Plugin f\u00fcr Dash. (Setzt die Dash App vorraus)",
             "displayName": "Dash",
             "examples": [
                 "dash ember each",
@@ -139,10 +147,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "Search docset on devdocs.io",
+            "description_de": "Durchsucht Dokumente auf devdocs.io",
             "description_fr": "Recherche de documentation sur devdocs.io",
             "displayName": "devdocs.io",
             "displayName_fr": "devdocs.io",
@@ -162,10 +170,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Art"
             ],
             "description": "Search deviantART\u2122 (deviant)",
+            "description_de": "Durchsuche deviantART\u2122 (deviant)",
             "displayName": "deviantART\u2122 Search",
             "examples": [
                 "searchdeviant yosemite",
@@ -177,7 +185,6 @@
         },
         {
             "categories": [
-                "Search",
                 "Language"
             ],
             "description": "Translate English to German using dict.cc",
@@ -207,7 +214,9 @@
                 "Developer"
             ],
             "description": "Open Documentations",
+            "description_de": "\u00d6ffnet Dokumentationen",
             "displayName": "Documentation Webdev",
+            "displayName_de": "Webentwickler Documentationen",
             "examples": [
                 "docpy class",
                 "docdj translation"
@@ -217,10 +226,13 @@
         },
         {
             "categories": [
-                "Information"
+                "Information",
+                "Search"
             ],
             "description": "Look for movie info on douban",
+            "description_zh": "\u5feb\u901f\u641c\u7d22\u8c46\u74e3\u7535\u5f71",
             "displayName": "Douban Movie",
+            "displayName_zh": "\u8c46\u74e3\u7535\u5f71",
             "examples": [
                 "douban Interstellar"
             ],
@@ -232,6 +244,7 @@
                 "Search"
             ],
             "description": "Find annotations for lyrics and literature",
+            "description_de": "Finde Informationen zu Songtexten und Literatur",
             "displayName": "Genius",
             "examples": [
                 "genius Drake",
@@ -242,10 +255,12 @@
         },
         {
             "categories": [
-                "Search"
+                "Search",
+                "Infomation"
             ],
-            "description": "Search for a phone number in Sogou Haomatong database",
+            "description": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
             "displayName": "Sogou Haomatong",
+            "displayName_zh": "\u641c\u72d7\u53f7\u7801\u901a",
             "examples": [
                 "hmt 10086",
                 "haomatong 10086"
@@ -302,10 +317,15 @@
                 "Featured"
             ],
             "description": "Send iMessages. Optionally attach selected files from Finder.",
+            "description_de": "Sende iMessages. Optional kannst du Anh\u00e4nge ausgew\u00e4lter Dateien aus dem Finder anh\u00e4ngen.",
             "displayName": "iMessage",
             "examples": [
                 "text nate, where are you?",
                 "imessage these files to Justin Brower"
+            ],
+            "examples_de": [
+                "sende nate, Wo bist du?",
+                "Bildernachricht mit diesen Datien an Justin Brower"
             ],
             "name": "imessage",
             "zip_url": "imessage.zip"
@@ -340,10 +360,13 @@
         },
         {
             "categories": [
-                "Information"
+                "Information",
+                "Search"
             ],
             "description": "Look for express info",
+            "description_zh": "\u5728\u5feb\u9012 100 \u4e0a\u641c\u7d22\u5feb\u9012\u4fe1\u606f",
             "displayName": "Kuaidi",
+            "displayName_zh": "\u5feb\u9012 100",
             "examples": [
                 "kuaidi 100033892580"
             ],
@@ -352,12 +375,14 @@
         },
         {
             "categories": [
-                "Search",
+                "Developer",
                 "Featured"
             ],
             "description": "Search man pages and open in a specific window",
+            "description_de": "Durchsuche Man Seiten \u00f6ffne sie in einem extra Fenster",
             "description_fr": "Recherche les pages de manuel pour la commande unix sp\u00e9cifi\u00e9e",
             "displayName": "Man Search",
+            "displayName_de": "Man Suche",
             "displayName_fr": "Recherche Man",
             "examples": [
                 "man ls",
@@ -372,7 +397,6 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "Search at Mozilla developer Network",
@@ -390,6 +414,7 @@
                 "Search"
             ],
             "displayName": "Search more websites",
+            "displayName_de": "Durchsuche weitere Webseiten",
             "examples": [
                 "imdb/i interstellar",
                 "youtube/yt erb, stackoverflow/so python",
@@ -453,6 +478,13 @@
             "displayName": "Remind Me",
             "displayName_de": "Erinner Mich",
             "examples": [
+                "remind me to ~message(take out the trash)",
+                "new reminder saying ~message(do homework)",
+                "create a reminder ~message(pick up eggs)",
+                "remind ~message(walk the dog)",
+                ""
+            ],
+            "examples_de": [
                 "Erinner mich ~message(M\u00fcll rausbringen)",
                 "Neue Erinnerung f\u00fcr ~message(Hausaufgaben erledigen)",
                 "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
@@ -506,6 +538,7 @@
                 "Search"
             ],
             "description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
+            "description_de": "Durchsuche Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) und 1688 mit der Spotlight.",
             "displayName": "Shopping Search",
             "displayName_de": "Shopping Suche",
             "examples": [
@@ -543,9 +576,11 @@
                 "System",
                 "Featured"
             ],
-            "description": "Provides additional commands such as shutdown, restart and logout",
+            "description": "Provides additional commands such as shutdown, restart and logout.",
+            "description_de": "Bietet zus\u00e4tzliche Funktionen wie Herunterfahren, Neustarten und Abmelden.",
             "description_fr": "Fournit des commandes additionnelles comme \u00e9teindre, red\u00e9marrer et d\u00e9connection",
             "displayName": "Shutdown",
+            "displayName_de": "Herunterfahren",
             "displayName_fr": "\u00c9teindre",
             "examples": [
                 "shutdown",
@@ -607,7 +642,7 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
             "description_de": "\u00d6ffne Sublime Text. Der Pfad vom offenen Finder Fenster wird in Sublime Text ge\u00f6ffnet.",
@@ -646,9 +681,10 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Convert timestamp to readable string",
+            "description_de": "Konvertiert Timestamps in leserliche Strings",
             "description_fr": "Convertit un timestamp en texte lisible",
             "displayName": "Timestamp",
             "displayName_fr": "Timestamp",
@@ -786,6 +822,7 @@
                 "System"
             ],
             "description": "Tell me who I am",
+            "description_de": "Erz\u00e4hl mir wer ich bin",
             "displayName": "Who am I?",
             "examples": [
                 "Who am I?"

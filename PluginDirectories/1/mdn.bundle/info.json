@@ -3,6 +3,6 @@
     "displayName": "Search at MDN",
     "description": "Search at Mozilla developer Network",
     "examples": ["mdn body", "Mozilla developer Network URL"],
-    "categories": ["Search", "Developer"],
+    "categories": ["Developer"],
      "iconPath": "./Icon.png"
 }
