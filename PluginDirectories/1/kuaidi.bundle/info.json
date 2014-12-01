@@ -1,7 +1,9 @@
 {
 	"name": "kuaidi",
 	"displayName": "Kuaidi",
+	"displayName_zh": "快递 100",
 	"description": "Look for express info",
+	"description_zh": "在快递 100 上搜索快递信息",
 	"examples": ["kuaidi 100033892580"],
-    "categories": ["Information"]
+    "categories": ["Information", "Search"]
 }
