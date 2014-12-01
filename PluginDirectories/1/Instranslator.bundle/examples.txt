@@ -3,16 +3,21 @@ ttr ~text(bigger) to_language/spanish(spanish)
 
 translate ~text(rain) to to_language/german(german)
 
-how do you say ~text(rain) in to_language/arabic(arabic)?
+how do you say ~text(rain) in to_language/arabic(arabic) ?
 
 translate ~text(hello world) to to_language/chinese(chinese)
 
 what is ~text(good morning) in to_language/french(french)
 
+what does ~text(como estas) mean in to_language/english(english) ?
 
 translate ~text(hello) from from_language/spanish(spanish) to to_language/spanish(spanish)
 
 translate ~text(hello) from from_language/english(english) to to_language/english(english)
+
+translate ~text(hello) from from_language/portuguese(portuguese) to to_language/portuguese(portuguese)
+
+translate ~text(hello) from from_language/brazilian(brazilian portuguese) to to_language/brazilian(brazilian portuguese)
 
 translate ~text(hello) from from_language/brazilian(brazilian) to to_language/brazilian(brazilian)
 

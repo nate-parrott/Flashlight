@@ -3,6 +3,8 @@ Flashlight
 
 _The missing Spotlight plugin system_
 
+_Das fehlende Plugin-System für Spotlight._
+
 <img src='https://raw.github.com/nate-parrott/flashlight/master/Image.png' width='100%'/>
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
@@ -23,9 +25,24 @@ The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches 
 
 Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
 
-The Spotlight plugin is gated to run only on versions `911-916.1` (Yosemite GM through 10.10.1 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
+The Spotlight plugin is gated to run only on versions `911-916` (Yosemite GM through 10.10.2 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
 
 ## Credits
+
+Huge thanks to everyone who's contributed translations:
+
+ - [xremix](http://github.com/xremix) for German
+ - [matth96](http://github.com/matth96) for Dutch
+ - [tiphedor](http://github.com/tiphedor) for French
+ - [lipe1966](http://github.com/lipe1966) for Portugese
+ - [chuyik](http://github.com/chuyik) for Chinese
+ - [suer](http://github.com/suer) for Japanese
+ - [andreaponza](http://github.com/andreaponza) for Italian
+ - [iltercengiz](http://github.com/iltercengiz) for Turkish
+ - [AlAdler](http://github.com/AlAdler) for Spanish
+ 
+
+If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
 
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
@@ -34,3 +51,6 @@ The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIM
 The [ZipZap library by Glen Low](https://github.com/pixelglow/zipzap) is used internally.
 
 Licensed under the GPL.
+
+**Helping out**
+You can help out by [writing a plugin you want](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown), taking a look at [the Github issues](https://github.com/nate-parrott/Flashlight/issues), or sharing the app with friends on Twitter or Facebook.

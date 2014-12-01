@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46E0EAEC7E124EAFB3A2338A /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24BCFBED9524B02917D164A /* libPods-Flashlight.a */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
 		5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */; };
 		5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */; };
@@ -47,11 +46,11 @@
 		5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */; };
 		5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD3EA801A2035AB005A312E /* WebKit.framework */; };
 		5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */; };
+		653963C61A2766CD00D8F6E9 /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 653963C51A2766CD00D8F6E9 /* libPods-Flashlight.a */; };
 		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
 		6C564491159E7C0800215467 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C564490159E7C0800215467 /* main.m */; };
-		6C564495159E7C0900215467 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6C564493159E7C0900215467 /* Credits.rtf */; };
 		6C564498159E7C0900215467 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C564497159E7C0900215467 /* AppDelegate.m */; };
 		6C56449B159E7C0900215467 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C564499159E7C0900215467 /* MainMenu.xib */; };
 		6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5644B7159E7D3900215467 /* ServiceManagement.framework */; };
@@ -97,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1C6F37F05A3F43EFBC263B06 /* Pods-Flashlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.xcconfig"; path = "Pods/Pods-Flashlight.xcconfig"; sourceTree = "<group>"; };
+		5F11C2FD1A2B0834005A1731 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
@@ -169,11 +169,15 @@
 		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC65E171A290B11006187EB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC65E181A290B20006187EB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
 		5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginDirectoryAPI.m; sourceTree = "<group>"; };
 		5FD3EA801A2035AB005A312E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLComponents+ValueForQueryKey.h"; sourceTree = "<group>"; };
 		5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLComponents+ValueForQueryKey.m"; sourceTree = "<group>"; };
+		653963C51A2766CD00D8F6E9 /* libPods-Flashlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Flashlight.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug/libPods-Flashlight.a"; sourceTree = "<group>"; };
+		658988FB1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C3A4C2B159E7E6F00985CCD /* SIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SIMBL.xcodeproj; sourceTree = "<group>"; };
 		6C564480159E7C0800215467 /* Flashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C564484159E7C0800215467 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -184,23 +188,16 @@
 		6C56448E159E7C0800215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6C564490159E7C0800215467 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6C564492159E7C0900215467 /* Flashlight-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flashlight-Prefix.pch"; sourceTree = "<group>"; };
-		6C564494159E7C0900215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		6C564496159E7C0900215467 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6C564497159E7C0900215467 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6C56449A159E7C0900215467 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6C5644B7159E7D3900215467 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		6C6AF45E1842DE3700E2ACBB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		6C80304D1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		6C80304E1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		6C80304F1A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		6C8030501A24C22F006E6A2E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SIMBL.h; path = ../src/SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SIMBL.m; path = ../src/SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		E25A65951A26495900A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = de; path = de.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E25A65971A26496800A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E25A65981A26497300A3A8C7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = de; path = de.lproj/Credits.rtf; sourceTree = "<group>"; };
+		80D11BB01A261AE400BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E28AC1DF1A23D21D00673B7C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F24BCFBED9524B02917D164A /* libPods-Flashlight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Flashlight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,12 +205,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653963C61A2766CD00D8F6E9 /* libPods-Flashlight.a in Frameworks */,
 				5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */,
 				5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */,
 				5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */,
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
 				6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */,
-				46E0EAEC7E124EAFB3A2338A /* libPods-Flashlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +317,7 @@
 				6C564484159E7C0800215467 /* Cocoa.framework */,
 				6C5644B7159E7D3900215467 /* ServiceManagement.framework */,
 				6C564486159E7C0800215467 /* Other Frameworks */,
-				F24BCFBED9524B02917D164A /* libPods-Flashlight.a */,
+				653963C51A2766CD00D8F6E9 /* libPods-Flashlight.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -382,7 +379,6 @@
 				6C56448D159E7C0800215467 /* InfoPlist.strings */,
 				6C564490159E7C0800215467 /* main.m */,
 				6C564492159E7C0900215467 /* Flashlight-Prefix.pch */,
-				6C564493159E7C0900215467 /* Credits.rtf */,
 				5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */,
 			);
 			name = "Supporting Files";
@@ -429,6 +425,11 @@
 				fr,
 				de,
 				"zh-Hans",
+				ja,
+				it,
+				nl,
+				tr,
+				es,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -474,7 +475,6 @@
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
-				6C564495159E7C0900215467 /* Credits.rtf in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,
 				6C56449B159E7C0900215467 /* MainMenu.xib in Resources */,
@@ -574,6 +574,11 @@
 				5FC0166F1A1DBE9800F8E4E7 /* fr */,
 				E28AC1DF1A23D21D00673B7C /* de */,
 				6C80304E1A24C22F006E6A2E /* zh-Hans */,
+				80D11BB01A261AE400BB9DA4 /* ja */,
+				658988FB1A270ACF00ABE5E9 /* it */,
+				5FC65E171A290B11006187EB /* nl */,
+				5FC65E181A290B20006187EB /* tr */,
+				5F11C2FD1A2B0834005A1731 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -582,28 +587,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C56448E159E7C0800215467 /* en */,
-				6C80304F1A24C22F006E6A2E /* zh-Hans */,
-				E25A65971A26496800A3A8C7 /* de */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6C564493159E7C0900215467 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6C564494159E7C0900215467 /* en */,
-				6C8030501A24C22F006E6A2E /* zh-Hans */,
-				E25A65981A26497300A3A8C7 /* de */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		6C564499159E7C0900215467 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6C56449A159E7C0900215467 /* en */,
-				6C80304D1A24C22F006E6A2E /* zh-Hans */,
-				E25A65951A26495900A3A8C7 /* de */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -685,6 +676,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
 				INFOPLIST_FILE = "EasySIMBL/Flashlight-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -700,6 +695,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
 				INFOPLIST_FILE = "EasySIMBL/Flashlight-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Pods-gpoaxpycjinulnbzpvilkgtvohcj/Build/Products/Debug",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
