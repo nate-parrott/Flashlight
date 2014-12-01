@@ -6,6 +6,6 @@
   "description_fr": "Recherche de documentation sur devdocs.io",
   "examples": ["devdocs.io sth", "devdocs sth", "dd sth"],
   "examples_fr": ["devdocs.io sth", "devdocs sth", "dd sth"],
-  "categories": ["Search", "Developer"],
+  "categories": ["Developer"],
   "iconPath": "./Icon.png"
 }

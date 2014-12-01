@@ -3,5 +3,5 @@
 	"displayName": "Dash",
 	"description": "A search plugin for Dash. (requires Dash app)",
 	"examples": ["dash ember each", "dash os.system"],
-	"categories": ["Search", "Developer"]
+	"categories": ["Developer"]
 }
