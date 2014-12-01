@@ -2,6 +2,7 @@
 	"name": "dash",
 	"displayName": "Dash",
 	"description": "A search plugin for Dash. (requires Dash app)",
+	"description_de": "Ein Such Plugin für Dash. (Setzt die Dash App vorraus)",
 	"examples": ["dash ember each", "dash os.system"],
 	"categories": ["Search", "Developer"]
 }
