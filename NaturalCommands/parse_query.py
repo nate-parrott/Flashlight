@@ -6,39 +6,46 @@ from parse_example import parse_example_to_phrase
 import sys
 import json
 import imp
-from shared import plugin_dir, WorkingDirAs
+from shared import plugin_dir, WorkingDirAs, get_cached_data_structure
 import i18n
 import codecs
 
-example_phrases = []
-plugins_to_always_invoke = set()
-regexes = {}
+def create_example_phrases():
+    example_phrases = []
+    plugins_to_always_invoke = set()
+    regexes = {}
 
-# add baseline nonsense parses:
-example_phrases.append(commanding.Phrase("", ["ihrfeiiehrgogiheog"]))
-example_phrases.append(commanding.Phrase("", ["ihrfeio iehrgogih eog"]))
-example_phrases.append(commanding.Phrase("", ["eyfght oehrgueig erobf", ["ehheiog","hegoegn"]]))
-example_phrases.append(commanding.Phrase("", ["wurt turt gurt", ["~burt", "nurt"]]))
-example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeough egoiheroi"]]))
-example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeoughegoiheroi"]]))
+    # add baseline nonsense parses:
+    example_phrases.append(commanding.Phrase("", ["ihrfeiiehrgogiheog"]))
+    example_phrases.append(commanding.Phrase("", ["ihrfeio iehrgogih eog"]))
+    example_phrases.append(commanding.Phrase("", ["eyfght oehrgueig erobf", ["ehheiog","hegoegn"]]))
+    example_phrases.append(commanding.Phrase("", ["wurt turt gurt", ["~burt", "nurt"]]))
+    example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeough egoiheroi"]]))
+    example_phrases.append(commanding.Phrase("", [["~uirguieg", "hgeoughegoiheroi"]]))
 
-for plugin in os.listdir(plugin_dir):
-    if os.path.isdir(os.path.join(plugin_dir, plugin)):
-        plugin_name, extension = os.path.splitext(plugin)
-        if extension == '.bundle':
-            examples_file = os.path.join(plugin_dir, plugin, "examples.txt")
-            examples_file = i18n.find_localized_path(examples_file)
-            if os.path.exists(examples_file):
-                for line in codecs.open(examples_file, 'r', 'utf-8'):
-                    line = line.strip()
-                    if line.startswith('!'):
-                        if line == '!always_invoke':
-                            plugins_to_always_invoke.add(plugin_name)
-                        elif line.startswith('!regex '):
-                            _, field_name, regex = line.split(' ', 2)
-                            regexes[field_name[1:]] = regex
-                    elif len(line):
-                        example_phrases.append(parse_example_to_phrase(plugin_name, line))
+    for plugin in os.listdir(plugin_dir):
+        if os.path.isdir(os.path.join(plugin_dir, plugin)):
+            plugin_name, extension = os.path.splitext(plugin)
+            if extension == '.bundle':
+                examples_file = os.path.join(plugin_dir, plugin, "examples.txt")
+                examples_file = i18n.find_localized_path(examples_file)
+                if os.path.exists(examples_file):
+                    for line in codecs.open(examples_file, 'r', 'utf-8'):
+                        line = line.strip()
+                        if line.startswith('!'):
+                            if line == '!always_invoke':
+                                plugins_to_always_invoke.add(plugin_name)
+                            elif line.startswith('!regex '):
+                                _, field_name, regex = line.split(' ', 2)
+                                regexes[field_name[1:]] = regex
+                        elif len(line):
+                            example_phrases.append(parse_example_to_phrase(plugin_name, line))
+    
+    return (example_phrases, plugins_to_always_invoke, regexes)
+
+cache_path = os.path.join(plugin_dir, "NLPModel.pickle")
+cache_max_age = 20 # 20 sec
+(example_phrases, plugins_to_always_invoke, regexes) = get_cached_data_structure(cache_path, cache_max_age, create_example_phrases)
 
 def parse_query(query, supplemental_tags):
     parsed = commanding.parse_phrase(query, example_phrases, regexes, supplemental_tags)
@@ -60,7 +67,7 @@ if __name__=='__main__':
     for plugin in plugins_to_invoke:
         plugin_path = os.path.join(plugin_dir, plugin+'.bundle', 'plugin.py')
         with WorkingDirAs(os.path.split(plugin_path)[0]):
-            plugin_module = imp.load_source(plugin_name, plugin_path)
+            plugin_module = imp.load_source("plugin", plugin_path)
             args = parsed['arguments'] if parsed and parsed['plugin'] == plugin else None
             arguments = [args, query]
             if len(inspect.getargspec(plugin_module.results)[0]) == 3:

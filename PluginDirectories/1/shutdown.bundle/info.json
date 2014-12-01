@@ -5,6 +5,6 @@
 	"description_fr":"Fournit des commandes additionnelles comme éteindre, redémarrer et déconnection",
 	"description": "Provides additional commands such as shutdown, restart and logout",
 	"examples": ["shutdown", "restart", "logout", "sleep", "lock","screen saver"],
-	"examples_fr" :["éteindre", "redémarrer", "déconnection", "veill", "verouiller", "écran de veille"],
+	"examples_fr" :["éteindre", "redémarrer", "déconnection", "veille", "verouiller", "écran de veille"],
 	"categories": ["System", "Featured"]
 }

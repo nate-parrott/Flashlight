@@ -2,9 +2,13 @@
 	"name": "timezone",
 	"displayName": "Time Zone",
 	"displayName_de": "Zeitzonen",
-	"description": "View the time in Spotlight.",
+	"displayName_fr": "Fuseaux horaire",
+	"description": "View the time in any city.",
 	"description_de": "Suche die Uhrzeit über die Spotlight.",
+	"description_fr":"Consulter et interagir avec le temps",
 	"examples": ["time Munich", "timezone Tokio"],
 	"examples_de": ["Zeit München", "Uhrzeit Tokio"],
-	"categories": ["Weather"]
+	"examples_fr": ["heure Munich", "fuseau Tokio"],
+	"categories": ["Weather", "Featured"],
+    "search_keywords": "world clock"
 }

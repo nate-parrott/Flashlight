@@ -9,6 +9,7 @@
 #import "_SS_InlineWebViewContainer.h"
 #import <objc/runtime.h>
 #import "_SS_PluginRunner.h"
+#import "_SS_WebScriptObject.h"
 
 @interface _SS_InlineWebViewContainer ()
 
@@ -17,6 +18,16 @@
 @end
 
 @implementation _SS_InlineWebViewContainer
+
+#pragma mark Window Scripting Layer
+
+- (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
+{
+    if (frame.DOMDocument.domain.length == 0) {
+        // only insert on non-remote pages:
+        [windowScriptObject setValue:[_SS_WebScriptObject new] forKey:@"flashlight"];
+    }
+}
 
 #pragma mark Navigation interception
 
@@ -51,7 +62,7 @@
 - (void)dealloc {
     self.webView.frameLoadDelegate = nil;
     self.webView.policyDelegate = nil;
-    [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
+    // [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
     [self.webView stopLoading:nil];
 }
 

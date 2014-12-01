@@ -3,6 +3,8 @@ import urllib, json
 def results(parsed, original_query):
     search_specs = [
           ["English Wikipedia", "~enWiki", "https://en.m.wikipedia.org/w/index.php?search=", "https://en.wikipedia.org/w/index.php?search="],
+          ["French Wikipedia", "~frWiki", "https://fr.m.wikipedia.org/w/index.php?search=", "https://fr.wikipedia.org/w/index.php?search="],
+          ["Italian Wikipedia", "~itWiki", "https://it.m.wikipedia.org/w/index.php?search=", "https://it.wikipedia.org/w/index.php?search="],
  #        ["Duck Duck Go", "~duckduckgoquery", "https://duckduckgo.com/?q="],
  #        ["Google Images", "~googleimagequery", "https://www.google.com/search?tbm=isch&q="],
  #        ["Baidu", "~baiduquery", "http://www.baidu.com/s?wd="],

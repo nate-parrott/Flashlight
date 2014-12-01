@@ -46,13 +46,14 @@ void __SS_markPathExecutable(NSString *path) {
 
 + (NSDictionary *)resultDictionariesFromPluginsForQuery:(NSString *)query {
     
-    NSTask *task = [NSTask new];
+    NSTask *task = [self createSinglePluginTask]; // will kill previous plugin tasks
+    NSPipe *pipe = nil;
     task.launchPath = [self parseQueryScriptPath];
     __SS_markPathExecutable(task.launchPath);
     
     task.currentDirectoryPath = [self naturalCommandScriptsDir];
     task.arguments = @[query, [self supplementalTaggingJSONForQuery:query]];
-    NSPipe *pipe = [NSPipe pipe];
+    pipe = [NSPipe pipe];
     task.standardOutput = pipe;
     [task launchWithTimeout:2 consoleLabelForErrorDump:@"Querying Flashlight plugins"];
     NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
@@ -60,6 +61,24 @@ void __SS_markPathExecutable(NSString *path) {
         return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     } else {
         return nil;
+    }
+}
+
++ (NSTask *)createSinglePluginTask {
+    static NSTask *task = nil;
+    @synchronized(self) {
+        @try {
+            [task terminate];
+        }
+        @catch (NSException *exception) {
+            if ([[exception name] isEqualToString:NSInvalidArgumentException]) {
+                // it's okay (hopefully...)
+            } else {
+                @throw; // rethrow
+            }
+        }
+        task = [NSTask new];
+        return task;
     }
 }
 

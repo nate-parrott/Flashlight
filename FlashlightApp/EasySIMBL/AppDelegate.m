@@ -174,6 +174,14 @@
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
 }
 
+- (IBAction)openURLFromButton:(NSButton *)sender {
+    NSString *str = sender.title;
+    if ([str rangeOfString:@"://"].location == NSNotFound) {
+        str = [@"http://" stringByAppendingString:str];
+    }
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:str]];
+}
+
 #pragma mark Version checking
 - (void)checkSpotlightVersion {
     NSString *fullSpotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];

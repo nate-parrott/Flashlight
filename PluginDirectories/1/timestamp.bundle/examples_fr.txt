@@ -1,0 +1,4 @@
+ts
+ts timestamp(1400000000)
+timestamp
+timestamp timestamp(1400000000)
