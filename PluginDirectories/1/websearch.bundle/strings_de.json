@@ -1,3 +1,6 @@
 {
-  "Search {0} for '{1}'": "Suche auf {0} nach '{1}'"
+  "Search {0} for '{1}'": "Suche auf {0} nach '{1}'",
+  "https://www.google.com/search?q=": "https://www.google.de/search?q=",
+  "https://www.google.com/search?tbm=isch&q=": "https://www.google.de/search?tbm=isch&q=",
+  "https://www.google.com/maps/place/": "https://www.google.de/maps/place/"
 }
