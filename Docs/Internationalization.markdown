@@ -17,6 +17,6 @@ Different parts of your plugin should be internationalized in different ways:
 
 **Strings** that are returned by Python can be translated any way you'd like. The easiest way is probably to use Flashlight's `i18n` module. The strings you're going to display to the user, put them in a file called `strings_zh.json`, using the English phrases as keys and the translated phrases as values, and then call `i18n.localstr("english text")` to get a local string. _Do not_ create a `strings_en.json` — just use English strings as keys.
 
-**Other files** like HTML can be localized by copying them with names like `myHTML_zh.html`, then getting the _appropriate localized file's path_ by calling `i18n.find_localized_path("myHTML.html")`.
+**Other files** like HTML can be localized by copying them with names like `myHTML_zh.html`, then getting the _appropriate localized file's path_ by calling `i18n.find_localized_path("myHTML.html")`. Don't create `myHTML_en.html` — just use `myHTML.html` for the English resource.
 
 _A good example of a localized plugin is the [timezone plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/timezone.bundle)._
