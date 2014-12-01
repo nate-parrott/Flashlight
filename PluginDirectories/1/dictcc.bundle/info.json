@@ -3,5 +3,5 @@
 	"displayName": "dict.cc Translate",
 	"description": "Translate English to German using dict.cc",
 	"examples": ["dict Suchmaschine"],
-	"categories": ["Search", "Language"]
+	"categories": ["Language"]
 }
