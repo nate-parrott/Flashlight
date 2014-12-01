@@ -1,9 +1,11 @@
 {
 	"name": "shutdown",
 	"displayName": "Shutdown",
+	"displayName_de": "Herunterfahren",
 	"displayName_fr":"Éteindre",
 	"description_fr":"Fournit des commandes additionnelles comme éteindre, redémarrer et déconnection",
-	"description": "Provides additional commands such as shutdown, restart and logout",
+	"description": "Provides additional commands such as shutdown, restart and logout.",
+	"description_de": "Bietet zusätzliche Funktionen wie Herunterfahren, Neustarten und Abmelden.",
 	"examples": ["shutdown", "restart", "logout", "sleep", "lock","screen saver"],
 	"examples_fr" :["éteindre", "redémarrer", "déconnection", "veille", "verouiller", "écran de veille"],
 	"categories": ["System", "Featured"]

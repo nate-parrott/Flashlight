@@ -57,8 +57,8 @@
             "categories": [
                 "Utilities"
             ],
-            "description": "Open Brackets Text Finder is open, opens the current folder/file in Sublime Text.",
-            "displayName": "Open with Brackets Text",
+            "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
+            "displayName": "Open with Brackets",
             "examples": [
                 "Brackets"
             ],
@@ -81,11 +81,18 @@
         },
         {
             "description": "Copy path to clipboard from finder",
+            "description_de": "Kopiere den Pfad vom Finder",
             "displayName": "Copy Path From Finder",
+            "displayName_de": "Pfad vom Finder kopieren",
             "examples": [
                 "copypath",
                 "copy path",
                 "path"
+            ],
+            "examples_de": [
+                "Pfad kopieren",
+                "kopere Pfad",
+                "Pfad"
             ],
             "name": "Copy Path",
             "zip_url": "CopyPath.zip"
@@ -174,7 +181,9 @@
                 "Language"
             ],
             "description": "Translate English to German using dict.cc",
+            "description_de": "\u00dcbersetze von English nach German mit dict.cc",
             "displayName": "dict.cc Translate",
+            "displayName_de": "dict.cc \u00dcbersetzer",
             "examples": [
                 "dict Suchmaschine"
             ],
@@ -263,6 +272,7 @@
                 "Featured"
             ],
             "description": "Immediately go to the first search result for your query.",
+            "description_de": "Gehe sofort zum ersten Suchergebnis deiner Suchanfrage.",
             "displayName": "I'm Feeling Lucky",
             "examples": [
                 "i'm feeling lucky gmail",
@@ -439,12 +449,14 @@
                 "Utilities"
             ],
             "description": "Creates a new reminder.",
+            "description_de": "Erstellt eine neue Erinnerung.",
             "displayName": "Remind Me",
+            "displayName_de": "Erinner Mich",
             "examples": [
-                "remind me to ~message(take out the trash)",
-                "new reminder saying ~message(do homework)",
-                "create a reminder ~message(pick up eggs)",
-                "remind ~message(walk the dog)",
+                "Erinner mich ~message(M\u00fcll rausbringen)",
+                "Neue Erinnerung f\u00fcr ~message(Hausaufgaben erledigen)",
+                "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
+                "Erinnerung ~message(Mit dem Hund spazieren gehen)",
                 ""
             ],
             "isAutomatorWorkflow": true,
@@ -455,13 +467,18 @@
             "categories": [
                 "Utilities"
             ],
-            "description": "Speaks your input text",
+            "description": "Spricht deinen eingegebenen Text",
             "description_fr": "Pronnonce le texte voulu",
             "displayName": "Say Something",
+            "displayName_de": "Sage etwas",
             "displayName_fr": "Dire quelque-chose",
             "examples": [
                 "say hello world",
                 "say good morning"
+            ],
+            "examples_de": [
+                "Sage Hallo Welt",
+                "Spreche Guten Morgen"
             ],
             "examples_fr": [
                 "dire Bonjour",
@@ -509,9 +526,14 @@
                 "Utilities"
             ],
             "description": "Make a long url short w/ goo.gl",
+            "description_de": "Mache einen langen Link kurz w/ goo.gl",
             "displayName": "Shorten url",
+            "displayName_de": "K\u00fcrze URL",
             "examples": [
                 "shorten http://google.com"
+            ],
+            "examples_de": [
+                "K\u00fcrze http://google.com"
             ],
             "name": "shorten",
             "zip_url": "shorten.zip"
@@ -549,9 +571,11 @@
                 "Search"
             ],
             "description": "Search for an artist, album or track in Spotify.",
+            "description_de": "Suche nach einem K\u00fcnstler, Album oder Song in Spotify.",
             "displayName": "Spotify",
             "examples": [
-                "spotify/spt Michael Jackson"
+                "spotify Michael Jackson",
+                "spt Michael Jackson"
             ],
             "name": "Spotify",
             "zip_url": "spotify.zip"
@@ -561,12 +585,18 @@
                 "Information"
             ],
             "description": "Display stocks from Yahoo Finance",
+            "description_de": "Zeigt Aktien von Yahoo Finance an",
             "description_fr": "Affiche les cours de bourse depuis Yahoo Finance",
             "displayName": "Stocks",
+            "displayName_de": "Aktien",
             "displayName_fr": "Bourse depuis Yahoo Finance",
             "examples": [
                 "stock FB",
                 "stock ERBB"
+            ],
+            "examples_de": [
+                "Aktie FB",
+                "Aktie ERBB"
             ],
             "examples_fr": [
                 "bourse FB",
@@ -580,7 +610,9 @@
                 "Utilities"
             ],
             "description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
+            "description_de": "\u00d6ffne Sublime Text. Der Pfad vom offenen Finder Fenster wird in Sublime Text ge\u00f6ffnet.",
             "displayName": "Open with Sublime Text",
+            "displayName_de": "Sublime Text",
             "examples": [
                 "sublime"
             ],
@@ -594,6 +626,7 @@
                 "Developer"
             ],
             "description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
+            "description_de": "Starte Terminal Befehle. Falls der Finder ge\u00f6ffnet ist, werden die Befeehle von den aktuellen Ordner gestartet.",
             "description_fr": "Ex\u00e9cute une commande Terminal. Si le Finder est ouvert, la commande sera \u00e9x\u00e9cut\u00e9e dans le dossier courant",
             "displayName": "Terminal",
             "displayName_fr": "Terminal",
@@ -636,7 +669,8 @@
         },
         {
             "categories": [
-                "Weather"
+                "Weather",
+                "Featured"
             ],
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
@@ -649,7 +683,7 @@
                 "timezone Tokio"
             ],
             "examples_de": [
-                "Zeit Munich",
+                "Zeit M\u00fcnchen",
                 "Uhrzeit Tokio"
             ],
             "examples_fr": [
@@ -765,17 +799,31 @@
                 "Information"
             ],
             "description": "Search English Wikipedia (wiki).",
+            "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
             "description_fr": "Recherche sur Wikipedia.",
+            "description_it": "Cerca su Wikipedia.",
             "displayName": "Wikipedia (EN)",
+            "displayName_de": "Wikipedia (DE)",
             "displayName_fr": "Wikipedia (FR)",
+            "displayName_it": "Wikipedia (IT)",
             "examples": [
                 "wiki Dogs",
                 "search wikipedia for St. Louis, MO",
                 "wikipedia Flashlight"
             ],
+            "examples_de": [
+                "wiki Hunde",
+                "Suche Wikipedia nach St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
             "examples_fr": [
                 "wiki Chiens",
                 "recherche wikipedia Canard",
+                "wikipedia Flashlight"
+            ],
+            "examples_it": [
+                "wiki cani",
+                "cerca wikipedia Ponza",
                 "wikipedia Flashlight"
             ],
             "name": "wikipedia",

@@ -2,6 +2,7 @@
 	"name": "im-feeling-lucky",
 	"displayName": "I'm Feeling Lucky",
 	"description": "Immediately go to the first search result for your query.",
+	"description_de": "Gehe sofort zum ersten Suchergebnis deiner Suchanfrage.",
 	"examples": ["i'm feeling lucky gmail", "ifl facebook"],
 	"categories": ["Search", "Featured"]
 }

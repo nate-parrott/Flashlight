@@ -1,8 +1,8 @@
-import os
+import os, i18n
 
 def results(parsed, original_query):
     return {
-        "title": "Copy Path",
+        "title": i18n.localstr('Copy Path'),
             "run_args": ['']
     }
 

@@ -1,0 +1,4 @@
+wiki ~deWiki(query here)
+wikipedia ~deWiki(query here)
+wiki ~deWiki(query here)
+suche wikipedia nach ~deWiki(query here)
