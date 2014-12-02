@@ -1,0 +1,3 @@
+baidu search for ~baiduquery(query here)
+baidu ~baiduquery(query here)
+bd ~baiduquery(query here)

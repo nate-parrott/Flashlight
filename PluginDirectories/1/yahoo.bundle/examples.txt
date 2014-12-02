@@ -1,0 +1,2 @@
+yahoo ~yahooquery(query here)
+yh ~yahooquery(query here)
