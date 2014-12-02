@@ -4,7 +4,7 @@
     "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
     "examples": ["Brackets"],
     "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
-    "categories": ["Utilities"]
+    "categories": ["Developer"]
 }
 
 
