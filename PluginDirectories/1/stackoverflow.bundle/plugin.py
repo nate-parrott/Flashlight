@@ -2,12 +2,7 @@ import urllib, json
 
 def results(parsed, original_query):
     search_specs = [
-         ["IMDB", "~imdbquery", "http://m.imdb.com/find?q="],
-         ["YouTube", "~youtubequery", "https://www.youtube.com/results?search_query="],
-         ["YouTube", "~youtubequeryde", "https://www.youtube.com/results?gl=DE&hl=de&search_query="],
-         ["StackOverflow", "~soquery", "http://stackoverflow.com/search?q="],
-         ["Urban Dictionary", "~udquery", "http://www.urbandictionary.com/define.php?term="],
-         ["Netflix", "~netflixquery", "http://www.netflix.com/search/"]
+         ["StackOverflow", "~soquery", "http://stackoverflow.com/search?q="]
     ]
     for name, key, url in search_specs:
         if key in parsed:

@@ -1,7 +1,0 @@
-{
-	"name": "moresearch",
-	"displayName": "Search more websites",
-	"displayName_de": "Durchsuche weitere Webseiten",
-	"examples": ["imdb/i interstellar", "youtube/yt erb, stackoverflow/so python", "netflix/n chuck", "urbandictionary/ud hello"],
-	"categories": ["Search"]
-}

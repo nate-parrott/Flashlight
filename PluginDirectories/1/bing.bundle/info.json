@@ -1,0 +1,7 @@
+{
+	"name": "bing",
+	"displayName": "Bing Search",
+	"description": "Search Bing (bg).",
+	"examples": ["bing 'search term', bg 'search term', bing search for 'search term'"],
+	"categories": ["Search"]
+}

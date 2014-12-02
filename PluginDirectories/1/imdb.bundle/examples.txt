@@ -1,2 +1,3 @@
 imdb ~imdbquery(query here)
 search imdb for ~imdbquery(no country for old men)
+i ~imdbquery(query here)
