@@ -3,6 +3,7 @@
   "displayName": "devdocs.io",
   "displayName_fr": "devdocs.io",
   "description": "Search docset on devdocs.io",
+  "description_de": "Durchsucht Dokumente auf devdocs.io",
   "description_fr": "Recherche de documentation sur devdocs.io",
   "examples": ["devdocs.io sth", "devdocs sth", "dd sth"],
   "examples_fr": ["devdocs.io sth", "devdocs sth", "dd sth"],

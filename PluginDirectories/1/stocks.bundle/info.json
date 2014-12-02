@@ -2,9 +2,12 @@
 	"name": "stocks",
 	"displayName": "Stocks",
 	"displayName_fr":"Bourse depuis Yahoo Finance",
+	"displayName_de":"Aktien",
 	"description":"Display stocks from Yahoo Finance",
+	"description_de":"Zeigt Aktien von Yahoo Finance an",
 	"description_fr":"Affiche les cours de bourse depuis Yahoo Finance",
 	"examples": ["stock FB", "stock ERBB"],
+	"examples_de": ["Aktie FB", "Aktie ERBB"],
 	"examples_fr": ["bourse FB", "bourse ERBB"],
 	"categories": ["Information"]
 }

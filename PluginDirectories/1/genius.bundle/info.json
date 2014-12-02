@@ -2,6 +2,7 @@
 	"name": "genius",
 	"displayName": "Genius",
 	"description": "Find annotations for lyrics and literature",
+	"description_de": "Finde Informationen zu Songtexten und Literatur",
 	"examples": ["genius Drake", "genius to be or not to be"],
 	"categories": ["Search"]
 }

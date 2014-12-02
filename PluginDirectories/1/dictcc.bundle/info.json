@@ -1,7 +1,9 @@
 {
 	"name": "dictcc",
 	"displayName": "dict.cc Translate",
+	"displayName_de": "dict.cc Übersetzer",
 	"description": "Translate English to German using dict.cc",
+	"description_de": "Übersetze von English nach German mit dict.cc",
 	"examples": ["dict Suchmaschine"],
 	"categories": ["Language"]
 }

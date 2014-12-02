@@ -2,6 +2,7 @@
     "name": "Brackets",
     "displayName": "Open with Brackets",
     "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
+    "description_de": "Öffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom geöffnet.",
     "examples": ["Brackets"],
     "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
     "categories": ["Developer"]
