@@ -1,0 +1,2 @@
+amazon ~amazonquery(query here)
+a ~amazonquery(query here)
