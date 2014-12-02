@@ -4,5 +4,5 @@
 	"description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
 	"examples": ["sublime"],
 	"iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
-	"categories": ["Utilities"]
+	"categories": ["Developer"]
 }

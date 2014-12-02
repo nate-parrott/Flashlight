@@ -3,5 +3,5 @@
 	"displayName": "deviantART™ Search",
 	"description": "Search deviantART™ (deviant)",
 	"examples": ["searchdeviant yosemite", "deviantart maverick", "deviant flashlight"],
-	"categories": ["Search", "Art"]
+	"categories": ["Art"]
 }
