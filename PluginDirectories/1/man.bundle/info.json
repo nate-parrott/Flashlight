@@ -2,8 +2,10 @@
 	"name": "Man",
 	"displayName": "Man Search",
 	"displayName_fr": "Recherche Man",
+	"displayName_de": "Man Suche",
 	"description": "Search man pages and open in a specific window",
 	"description_fr": "Recherche les pages de manuel pour la commande unix spécifiée",
+	"description_de": "Durchsuche Man Seiten öffne sie in einem extra Fenster",
 	"examples": ["man ls", "man ifconfig"],
 	"examples_fr": ["man ls", "man ifconfig"],
 	"categories": ["Developer", "Featured"]

@@ -3,6 +3,7 @@
 	"displayName": "Terminal",
 	"displayName_fr": "Terminal",
 	"description": "Run Terminal commands. If Finder is open, commands are run in the current folder.",
+	"description_de": "Starte Terminal Befehle. Falls der Finder geöffnet ist, werden die Befeehle von den aktuellen Ordner gestartet.",
 	"description_fr": "Exécute une commande Terminal. Si le Finder est ouvert, la commande sera éxécutée dans le dossier courant",
 	"examples": ["rm -f *.py", "git push", "$ ping google.com"],
 	"examples_fr": ["rm -f *.py", "git push", "$ ping google.com"],

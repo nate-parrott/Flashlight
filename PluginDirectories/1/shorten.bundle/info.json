@@ -1,7 +1,10 @@
 {
 	"name": "shorten",
 	"displayName": "Shorten url",
+	"displayName_de": "Kürze URL",
 	"description": "Make a long url short w/ goo.gl",
+	"description_de": "Mache einen langen Link kurz w/ goo.gl",
 	"examples": ["shorten http://google.com"],
+	"examples_de": ["Kürze http://google.com"],
 	"categories": ["Utilities"]
 }

@@ -2,6 +2,7 @@
 	"name": "Spotify",
 	"displayName": "Spotify",
 	"description": "Search for an artist, album or track in Spotify.",
-	"examples": ["spotify/spt Michael Jackson"],
+	"description_de": "Suche nach einem Künstler, Album oder Song in Spotify.",
+	"examples": ["spotify Michael Jackson", "spt Michael Jackson"],
     "categories": ["Search"]
 }

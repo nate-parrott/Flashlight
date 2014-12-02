@@ -1,0 +1,5 @@
+Erinner mich ~message(take out the trash)
+Erinner mich an ~message(take out the trash)
+Neue Erinnerung für ~message(do homework)
+Erstelle eine neue Erinnerung ~message(pick up eggs)
+Erinnerung ~message(walk the dog)

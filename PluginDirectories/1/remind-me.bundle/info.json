@@ -3,12 +3,21 @@
         "Utilities"
     ],
     "description": "Creates a new reminder.",
+    "description_de": "Erstellt eine neue Erinnerung.",
     "displayName": "Remind Me",
+    "displayName_de": "Erinner Mich",
     "examples": [
         "remind me to ~message(take out the trash)",
         "new reminder saying ~message(do homework)",
         "create a reminder ~message(pick up eggs)",
         "remind ~message(walk the dog)",
+        ""
+    ],
+    "examples_de": [
+        "Erinner mich ~message(Müll rausbringen)",
+        "Neue Erinnerung für ~message(Hausaufgaben erledigen)",
+        "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
+        "Erinnerung ~message(Mit dem Hund spazieren gehen)",
         ""
     ],
     "isAutomatorWorkflow": true,

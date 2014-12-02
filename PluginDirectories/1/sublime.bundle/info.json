@@ -1,7 +1,9 @@
 {
 	"name": "sublime",
 	"displayName": "Open with Sublime Text",
+	"displayName_de": "Sublime Text",
 	"description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
+	"description_de": "Öffne Sublime Text. Der Pfad vom offenen Finder Fenster wird in Sublime Text geöffnet.",
 	"examples": ["sublime"],
 	"iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
 	"categories": ["Developer"]
