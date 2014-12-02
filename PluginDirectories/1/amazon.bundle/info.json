@@ -1,0 +1,7 @@
+{
+	"name": "amazon",
+	"displayName": "Amazon Search",
+	"description": "Search Amazon (shortcut: a).",
+	"examples": ["amazon flashlight", "a flashlight"],
+	"categories": ["Search"]
+}
