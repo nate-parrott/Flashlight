@@ -1,0 +1,6 @@
+{
+	"name": "googleimages",
+	"displayName": "Google Image Search",
+	"examples": ["image search for ducks", "gi ducks", "show me images of ducks", "show me a picture of ducks", "google images ducks"],
+	"categories": ["Search", "Featured"]
+}

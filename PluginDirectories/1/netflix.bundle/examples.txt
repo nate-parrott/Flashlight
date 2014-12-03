@@ -1,0 +1,2 @@
+netflix ~netflixquery(query here)
+n ~netflixquery(query here)

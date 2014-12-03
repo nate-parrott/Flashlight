@@ -34,8 +34,10 @@ class Phrase(object):
         def map_item(i):
             if type(i) == list:
                 return map(map_item, i)
-            else:
+            elif type(i) == str:
                 return i.encode('utf-8')
+            else:
+                return i
         return Phrase(self.intent.encode('utf-8'), map(map_item, self.items))
 
     def items_with_intermediate_states(self):
@@ -121,7 +123,7 @@ def join_tokens_using_spaces(tokens, spaces):
     text = text.replace(" {0} ".format(c), c)
   return text
 
-def phrase_from_candidate(candidate, tokens, spaces):
+def phrase_from_candidate(candidate, tokens, spaces, tag_processing_functions):
     log_prob, intent, states = candidate
     states = states[1:] # strip '$START'
     items = []
@@ -130,13 +132,15 @@ def phrase_from_candidate(candidate, tokens, spaces):
             # it's an intermediate state, so don't preserve it in output:
             items.append(" ".join(tokens[:n_tokens]))
         else:
-            text = join_tokens_using_spaces(tokens[:n_tokens], spaces[:n_tokens-1])
-            items.append([state, text])
+            data = join_tokens_using_spaces(tokens[:n_tokens], spaces[:n_tokens-1])
+            if state[0] == '@' and state in tag_processing_functions:
+              data = tag_processing_functions[state](data)
+            items.append([state, data])
         tokens = tokens[n_tokens:]
         spaces = spaces[n_tokens:]
     return Phrase(intent, items)
 
-def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
+def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}, tag_processing_functions={}):
     if state_regexes == None: state_regexes = {}
     transition_probs = defaultdict(ProbabilityCounter)
     emission_probs = defaultdict(ProbabilityCounter)
@@ -203,4 +207,4 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}):
         for candidate in candidates:
             if best_candidate == None or candidate[0] > best_candidate[0]:
                 best_candidate = candidate
-    return phrase_from_candidate(best_candidate, tokens, spaces) if best_candidate else None
+    return phrase_from_candidate(best_candidate, tokens, spaces, tag_processing_functions) if best_candidate else None

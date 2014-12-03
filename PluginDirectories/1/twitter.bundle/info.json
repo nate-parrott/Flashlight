@@ -1,0 +1,7 @@
+{
+	"name": "twitter",
+	"displayName": "Twitter Search",
+	"description": "Search Twitter (tt).",
+	"examples": ["twitter 'search term'", "tt 'search term'"],
+	"categories": ["Search"]
+}

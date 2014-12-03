@@ -47,12 +47,26 @@ cache_path = os.path.join(plugin_dir, "NLPModel.pickle")
 cache_max_age = 20 # 20 sec
 (example_phrases, plugins_to_always_invoke, regexes) = get_cached_data_structure(cache_path, cache_max_age, create_example_phrases)
 
+tag_processing_functions = {}
+
 def parse_query(query, supplemental_tags):
-    parsed = commanding.parse_phrase(query, example_phrases, regexes, supplemental_tags)
+    supplemental_tags = merge_dicts([supplemental_tags, special_tag_supplemental_examples])
+    parsed = commanding.parse_phrase(query, example_phrases, regexes, supplemental_tags, tag_processing_functions)
     if parsed == None or parsed.intent == '':
         return None
     parsed = parsed.with_strings_not_unicode() # for compatibility; TODO: add flag in `info.json` to pass unicode to plugin.py instead of utf-8
     return {"plugin": parsed.intent, "arguments": parsed.tags(), "object": parsed}
+
+def merge_dicts(dicts):
+  return dict(reduce(lambda a,b: a+b, map(lambda d: d.items(), dicts)))
+
+# import special fields:
+special_tag_supplemental_examples = {}
+tag_processing_functions = {}
+import date_field
+for special_field in [date_field]:
+  tag_processing_functions[special_field.name] = special_field.transform
+  special_tag_supplemental_examples[special_field.name] = special_field.examples
 
 import inspect
 
@@ -60,6 +74,7 @@ if __name__=='__main__':
     query = sys.argv[1].decode('utf-8')
     plugins_to_invoke = set(plugins_to_always_invoke)
     parsed = parse_query(query, supplemental_tags=json.loads(sys.argv[2]))
+    # print 'PARSED', parsed
     if parsed != None:
         plugins_to_invoke.add(parsed['plugin'])
     
