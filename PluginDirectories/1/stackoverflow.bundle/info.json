@@ -1,0 +1,6 @@
+{
+	"name": "stackoverflow",
+	"displayName": "Search Stackoverflow",
+	"examples": ["stackoverflow/so python"],
+	"categories": ["Search"]
+}

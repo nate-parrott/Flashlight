@@ -1,0 +1,7 @@
+{
+	"name": "reddit",
+	"displayName": "Reddit Search",
+	"description": "Search Reddit (rdt).",
+	"examples": ["reddit cats", "rdt cats"],
+	"categories": ["Search", "Featured"]
+}

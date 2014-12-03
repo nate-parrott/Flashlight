@@ -1,0 +1,7 @@
+{
+	"name": "duckduckgo",
+	"displayName": "DuckDuckGo Search",
+	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
+	"examples": ["duckduckgo Apple stock", "ddg Flashlight", "search duckduckgo for 'search term'"],
+	"categories": ["Search"]
+}

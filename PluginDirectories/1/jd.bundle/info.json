@@ -1,0 +1,7 @@
+{
+	"name": "jd",
+	"displayName": "JD Search",
+	"description": "Search jd.com (jd).",
+	"examples": ["jd flashlight", "j flashlight"],
+	"categories": ["Search"]
+}

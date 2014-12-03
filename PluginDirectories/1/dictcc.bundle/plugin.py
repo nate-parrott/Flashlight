@@ -4,7 +4,7 @@ def results(parsed, original_query):
     search_url = "http://pocket.dict.cc/?s=" + urllib.quote_plus(parsed["~query"])
     
     return {
-        "title": i18n.localstr("Translate '{0} using dict.cc").format(parsed["~query"]),
+        "title": i18n.localstr("Translate '{0}' using dict.cc").encode("utf-8").format(parsed["~query"]),
         "run_args": [search_url],
         "html": """
         <script>

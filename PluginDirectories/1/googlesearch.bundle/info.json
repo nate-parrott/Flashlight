@@ -1,0 +1,7 @@
+{
+	"name": "googleserach",
+	"displayName": "Google Search",
+	"description": "Search Google (g).",
+	"examples": ["google Apple stock", "google serach Flashlight", "search web for OSX Yosemite", "g Flashlight"],
+	"categories": ["Search"]
+}

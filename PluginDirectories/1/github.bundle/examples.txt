@@ -1,0 +1,2 @@
+github ~githubquery(query here)
+gh ~githubquery(query here)
