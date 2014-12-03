@@ -149,6 +149,7 @@ class Directory(webapp2.RequestHandler):
       plugins = search_plugins(search)
     else:
       plugins = []
+    plugins = stable_daily_shuffle(plugins)
     plugin_dicts = []
     for p in plugins:
       plugin = json.loads(p.info_json)
