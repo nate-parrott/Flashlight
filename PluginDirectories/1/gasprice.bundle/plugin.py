@@ -5,21 +5,22 @@ def dark_mode():
     return Foundation.NSUserDefaults.standardUserDefaults().persistentDomainForName_(Foundation.NSGlobalDomain).objectForKey_("AppleInterfaceStyle") == "Dark"
 
 def results(parsed, original_query):
-	benzin = "yes"
+	benzine = "yes"
 	query = "~dieselquery"
 	
-	if(parsed.get('~benzinquery', "nobenzin") != "nobenzin"):
- 		if parsed["~benzinquery"]:
-	 		benzin = "benzin"
-	 		query = "~benzinquery"
+	if(parsed.get('~benzinequery', "nobenzin") != "nobenzin"):
+ 		if parsed["~benzinequery"]:
+	 		benzine = "benzine"
+	 		query = "~benzinequery"
 		elif parsed["~dieselquery"]:
-	 		benzin = "diesel"
+	 		benzine = "diesel"
 	elif parsed["~dieselquery"]:
-	 	benzin = "diesel"
+	 	benzine = "diesel"
 
  	title = i18n.localstr("Gas Price for '{0}'").format(parsed[query])
 	return {
 
         "title": title,
-        "html": open(i18n.find_localized_path("mehrtanken.html")).read().replace("SEARCHQUERY", parsed[query]).replace("FUELSETTING",benzin).replace("light-mode", "dark-mode" if dark_mode() else "light-mode")
+        "html": open(i18n.find_localized_path("mehrtanken.html")).read().replace("SEARCHQUERY", parsed[query]).replace("FUELSETTING",benzine).replace("light-mode", "dark-mode" if dark_mode() else "light-mode"),
+        "webview_transparent_background": True
     }

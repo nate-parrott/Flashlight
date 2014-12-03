@@ -5,6 +5,7 @@
 <style type="text/css">
 	body{
 		margin-top: 10px;
+		background: none !important;
 	}
 	.row{
 		margin-bottom: 10px;
@@ -28,12 +29,12 @@
 	setTimeout(function(){
 		var searchText = document.getElementById('searchText').innerText;
 		var diesel = 4;
-		var benzin = 1;
+		var benzine = 1;
 		var range = 5;
 		var lang = "de";
 
 		var sprit = FUELSETTING;
-		//var sprit = benzin;
+		//var sprit = benzine;
 		var url = "https://mehr-tanken.de/getStationList?result=json&searchText="+searchText+"&brand=0&fuel="+sprit+"&range="+range+"&order=price&lat=undefined&lon=undefined&device=mobile&lang=" + lang;
 		console.log(searchText);
 
@@ -49,7 +50,7 @@
 
 								         + '<div class="col-xs-4">';
 									    if(response.stations[i].fuels)
-						    template+=     '<img src="http://mehr-tanken.de/createPrice.php?size=26&text='+ response.stations[i].fuels[0].fuelPrice + '">' 	
+						    template+=     '<img src="http://mehr-tanken.de/createPrice.php?size=26&bg=transparent&text='+ response.stations[i].fuels[0].fuelPrice + '">' 		
 								        
 					        template+=     '</div>'
 								         + '<div class="col-xs-8">'
