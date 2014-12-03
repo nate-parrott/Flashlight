@@ -169,7 +169,7 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
 
 def compute_categories():
     categories = set()
-    for p in Plugin.query():
+    for p in Plugin.query(Plugin.approved == True):
       for c in p.categories:
         categories.add(c)
     return categories
