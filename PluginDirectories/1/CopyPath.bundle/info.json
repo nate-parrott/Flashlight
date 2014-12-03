@@ -3,7 +3,8 @@
 	"displayName": "Copy Path From Finder",
 	"displayName_de": "Finder Pfad kopieren",
 	"description": "Copy path to clipboard from finder",
-	"examples": ["copypath", "copy path", "path"],
 	"categories": ["Utilities"],
-	"examples_de": ["Pfad kopieren", "kopiere Pfad", "Pfad"]
+	"description_de": "Kopiert den Pfad vom Finder",
+	"examples_de": ["Pfad kopieren", "kopiere Pfad", "Pfad"],
+	"examples": ["copypath", "copy path", "path"]
 }

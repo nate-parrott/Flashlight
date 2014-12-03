@@ -3,7 +3,18 @@
     "plugins": [
         {
             "categories": [
-                "Search",
+                "Search"
+            ],
+            "description": "Search 1688 from Spotlight.",
+            "displayName": "1688 Search",
+            "examples": [
+                "1688 flashlight"
+            ],
+            "name": "1688",
+            "zip_url": "1688.zip"
+        },
+        {
+            "categories": [
                 "Art"
             ],
             "description": "Search 500px\u2122 (500px)",
@@ -18,13 +29,54 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Search"
+            ],
+            "description": "Search Alibaba (ab) from Spotlight.",
+            "displayName": "Alibaba Search",
+            "examples": [
+                "alibaba flashlight",
+                "ab flashlight"
+            ],
+            "name": "alibaba",
+            "zip_url": "alibaba.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search AliExpress (ae) from Spotlight.",
+            "displayName": "Aliexpress Search",
+            "examples": [
+                "aliexpress flashlight",
+                "ae flashlight"
+            ],
+            "name": "aliexpress",
+            "zip_url": "aliexpress.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Amazon (shortcut: a).",
+            "displayName": "Amazon Search",
+            "examples": [
+                "amazon flashlight",
+                "a flashlight"
+            ],
+            "name": "amazon",
+            "zip_url": "amazon.zip"
+        },
+        {
+            "categories": [
+                "Developer"
             ],
             "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
+            "description_de": "\u00d6ffne Atom. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
             "displayName": "Open with Atom",
+            "displayName_de": "Mit Atom \u00f6ffnen",
             "examples": [
-                "atom file",
-                "atom folder"
+                "atom Datei",
+                "atom Ornder"
             ],
             "iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
             "name": "atom",
@@ -32,11 +84,36 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search Baidu (bd).",
+            "displayName": "Baidu Search",
+            "examples": [
+                "baidu 'search term', bd 'search term'"
+            ],
+            "name": "baidu",
+            "zip_url": "baidu.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Bing Search",
+            "examples": [
+                "bing 'search term', bg 'search term', bing search for 'search term'"
+            ],
+            "name": "bing",
+            "zip_url": "bing.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "Show latest Bitcoin price",
+            "description_de": "Zeigt den aktuellen Bitcoin Preis an.",
             "description_fr": "Affiche les derniers prix du Bitcoin",
             "displayName": "Bitcoin Price",
+            "displayName_de": "Bitcoin Preis",
             "displayName_fr": "Prix du Bitcoin",
             "examples": [
                 "bitcoin",
@@ -55,9 +132,10 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
+            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
             "displayName": "Open with Brackets",
             "examples": [
                 "Brackets"
@@ -68,6 +146,7 @@
         },
         {
             "categories": [
+                "Art",
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
@@ -80,6 +159,9 @@
             "zip_url": "copycolor.zip"
         },
         {
+            "categories": [
+                "Utilities"
+            ],
             "description": "Copy path to clipboard from finder",
             "description_de": "Kopiere den Pfad vom Finder",
             "displayName": "Copy Path From Finder",
@@ -125,10 +207,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "A search plugin for Dash. (requires Dash app)",
+            "description_de": "Ein Such Plugin f\u00fcr Dash. (Setzt die Dash App vorraus)",
             "displayName": "Dash",
             "examples": [
                 "dash ember each",
@@ -139,10 +221,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "Search docset on devdocs.io",
+            "description_de": "Durchsucht Dokumente auf devdocs.io",
             "description_fr": "Recherche de documentation sur devdocs.io",
             "displayName": "devdocs.io",
             "displayName_fr": "devdocs.io",
@@ -162,10 +244,10 @@
         },
         {
             "categories": [
-                "Search",
                 "Art"
             ],
             "description": "Search deviantART\u2122 (deviant)",
+            "description_de": "Durchsuche deviantART\u2122 (deviant)",
             "displayName": "deviantART\u2122 Search",
             "examples": [
                 "searchdeviant yosemite",
@@ -177,7 +259,6 @@
         },
         {
             "categories": [
-                "Search",
                 "Language"
             ],
             "description": "Translate English to German using dict.cc",
@@ -207,7 +288,9 @@
                 "Developer"
             ],
             "description": "Open Documentations",
+            "description_de": "\u00d6ffnet Dokumentationen",
             "displayName": "Documentation Webdev",
+            "displayName_de": "Webentwickler Documentationen",
             "examples": [
                 "docpy class",
                 "docdj translation"
@@ -217,10 +300,13 @@
         },
         {
             "categories": [
-                "Information"
+                "Information",
+                "Search"
             ],
             "description": "Look for movie info on douban",
+            "description_zh": "\u5feb\u901f\u641c\u7d22\u8c46\u74e3\u7535\u5f71",
             "displayName": "Douban Movie",
+            "displayName_zh": "\u8c46\u74e3\u7535\u5f71",
             "examples": [
                 "douban Interstellar"
             ],
@@ -231,7 +317,34 @@
             "categories": [
                 "Search"
             ],
+            "displayName": "DuckDuckGo Search",
+            "examples": [
+                "duckduckgo Apple stock",
+                "ddg Flashlight",
+                "search duckduckgo for 'search term'"
+            ],
+            "name": "duckduckgo",
+            "zip_url": "duckduckgo.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search eBay (e) from Spotlight.",
+            "displayName": "eBay Search",
+            "examples": [
+                "ebay flashlight",
+                "e flashlight"
+            ],
+            "name": "ebay",
+            "zip_url": "ebay.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "description": "Find annotations for lyrics and literature",
+            "description_de": "Finde Informationen zu Songtexten und Literatur",
             "displayName": "Genius",
             "examples": [
                 "genius Drake",
@@ -244,8 +357,68 @@
             "categories": [
                 "Search"
             ],
-            "description": "Search for a phone number in Sogou Haomatong database",
+            "description": "Search Github (gh).",
+            "displayName": "GitHub Search",
+            "examples": [
+                "gh bootstrap",
+                "gitub bootstrap"
+            ],
+            "name": "github",
+            "zip_url": "github.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "displayName": "Google Image Search",
+            "examples": [
+                "image search for ducks",
+                "gi ducks",
+                "show me images of ducks",
+                "show me a picture of ducks",
+                "google images ducks"
+            ],
+            "name": "googleimages",
+            "zip_url": "googleimages.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Google Maps",
+            "examples": [
+                "google maps New York",
+                "show on maps new york",
+                "maps new york",
+                "map of new york",
+                "gm new york"
+            ],
+            "name": "googlemaps",
+            "zip_url": "googlemaps.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "displayName": "Google Search",
+            "examples": [
+                "google Apple stock",
+                "search the web for OSX Yosemite",
+                "g Flashlight"
+            ],
+            "name": "googleserach",
+            "zip_url": "googlesearch.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Information"
+            ],
+            "description": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
             "displayName": "Sogou Haomatong",
+            "displayName_zh": "\u641c\u72d7\u53f7\u7801\u901a",
             "examples": [
                 "hmt 10086",
                 "haomatong 10086"
@@ -302,10 +475,15 @@
                 "Featured"
             ],
             "description": "Send iMessages. Optionally attach selected files from Finder.",
+            "description_de": "Sende iMessages. Optional kannst du Anh\u00e4nge ausgew\u00e4lter Dateien aus dem Finder anh\u00e4ngen.",
             "displayName": "iMessage",
             "examples": [
                 "text nate, where are you?",
                 "imessage these files to Justin Brower"
+            ],
+            "examples_de": [
+                "sende nate, Wo bist du?",
+                "Bildernachricht mit diesen Datien an Justin Brower"
             ],
             "name": "imessage",
             "zip_url": "imessage.zip"
@@ -326,6 +504,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search jd.com (jd).",
+            "displayName": "JD Search",
+            "examples": [
+                "jd flashlight",
+                "j flashlight"
+            ],
+            "name": "jd",
+            "zip_url": "jd.zip"
+        },
+        {
+            "categories": [
                 "Language",
                 "Search"
             ],
@@ -340,10 +531,13 @@
         },
         {
             "categories": [
-                "Information"
+                "Information",
+                "Search"
             ],
             "description": "Look for express info",
+            "description_zh": "\u5728\u5feb\u9012 100 \u4e0a\u641c\u7d22\u5feb\u9012\u4fe1\u606f",
             "displayName": "Kuaidi",
+            "displayName_zh": "\u5feb\u9012 100",
             "examples": [
                 "kuaidi 100033892580"
             ],
@@ -352,12 +546,14 @@
         },
         {
             "categories": [
-                "Search",
+                "Developer",
                 "Featured"
             ],
             "description": "Search man pages and open in a specific window",
+            "description_de": "Durchsuche Man Seiten \u00f6ffne sie in einem extra Fenster",
             "description_fr": "Recherche les pages de manuel pour la commande unix sp\u00e9cifi\u00e9e",
             "displayName": "Man Search",
+            "displayName_de": "Man Suche",
             "displayName_fr": "Recherche Man",
             "examples": [
                 "man ls",
@@ -372,7 +568,6 @@
         },
         {
             "categories": [
-                "Search",
                 "Developer"
             ],
             "description": "Search at Mozilla developer Network",
@@ -389,15 +584,12 @@
             "categories": [
                 "Search"
             ],
-            "displayName": "Search more websites",
+            "displayName": "Search Netflix",
             "examples": [
-                "imdb/i interstellar",
-                "youtube/yt erb, stackoverflow/so python",
-                "netflix/n chuck",
-                "urbandictionary/ud hello"
+                "netflix/n chuck"
             ],
-            "name": "moresearch",
-            "zip_url": "moresearch.zip"
+            "name": "netflix",
+            "zip_url": "netflix.zip"
         },
         {
             "categories": [
@@ -446,6 +638,20 @@
         },
         {
             "categories": [
+                "Search",
+                "Featured"
+            ],
+            "description": "Search Reddit (rdt).",
+            "displayName": "Reddit Search",
+            "examples": [
+                "reddit cats",
+                "rdt cats"
+            ],
+            "name": "reddit",
+            "zip_url": "reddit.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "description": "Creates a new reminder.",
@@ -453,6 +659,13 @@
             "displayName": "Remind Me",
             "displayName_de": "Erinner Mich",
             "examples": [
+                "remind me to ~message(take out the trash)",
+                "new reminder saying ~message(do homework)",
+                "create a reminder ~message(pick up eggs)",
+                "remind ~message(walk the dog)",
+                ""
+            ],
+            "examples_de": [
                 "Erinner mich ~message(M\u00fcll rausbringen)",
                 "Neue Erinnerung f\u00fcr ~message(Hausaufgaben erledigen)",
                 "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
@@ -503,26 +716,6 @@
         },
         {
             "categories": [
-                "Search"
-            ],
-            "description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
-            "displayName": "Shopping Search",
-            "displayName_de": "Shopping Suche",
-            "examples": [
-                "amazon flashlight",
-                "a flashlight",
-                "ebay flashlight",
-                "e flashlight",
-                "jd flashlight",
-                "j flashlight",
-                "taobao flashlight",
-                "t flashlight"
-            ],
-            "name": "shop",
-            "zip_url": "shop.zip"
-        },
-        {
-            "categories": [
                 "Utilities"
             ],
             "description": "Make a long url short w/ goo.gl",
@@ -543,9 +736,11 @@
                 "System",
                 "Featured"
             ],
-            "description": "Provides additional commands such as shutdown, restart and logout",
+            "description": "Provides additional commands such as shutdown, restart and logout.",
+            "description_de": "Bietet zus\u00e4tzliche Funktionen wie Herunterfahren, Neustarten und Abmelden.",
             "description_fr": "Fournit des commandes additionnelles comme \u00e9teindre, red\u00e9marrer et d\u00e9connection",
             "displayName": "Shutdown",
+            "displayName_de": "Herunterfahren",
             "displayName_fr": "\u00c9teindre",
             "examples": [
                 "shutdown",
@@ -582,6 +777,17 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "displayName": "Search Stackoverflow",
+            "examples": [
+                "stackoverflow/so python"
+            ],
+            "name": "stackoverflow",
+            "zip_url": "stackoverflow.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "Display stocks from Yahoo Finance",
@@ -607,7 +813,7 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Open Sublime Text Finder is open, opens the current folder/file in Sublime Text.",
             "description_de": "\u00d6ffne Sublime Text. Der Pfad vom offenen Finder Fenster wird in Sublime Text ge\u00f6ffnet.",
@@ -619,6 +825,19 @@
             "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
             "name": "sublime",
             "zip_url": "sublime.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Taobao (t) from Spotlight.",
+            "displayName": "Taobao Search",
+            "examples": [
+                "taobao flashlight",
+                "t flashlight"
+            ],
+            "name": "taobao",
+            "zip_url": "taobao.zip"
         },
         {
             "categories": [
@@ -646,9 +865,10 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Developer"
             ],
             "description": "Convert timestamp to readable string",
+            "description_de": "Konvertiert Timestamps in leserliche Strings",
             "description_fr": "Convertit un timestamp en texte lisible",
             "displayName": "Timestamp",
             "displayName_fr": "Timestamp",
@@ -709,6 +929,30 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search Twitter (tt).",
+            "displayName": "Twitter Search",
+            "examples": [
+                "twitter 'search term'",
+                "tt 'search term'"
+            ],
+            "name": "twitter",
+            "zip_url": "twitter.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Search Urbandictionary",
+            "examples": [
+                "urbandictionary/ud hello"
+            ],
+            "name": "urbandictionary",
+            "zip_url": "urbandictionary.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "V2EX latest topics",
@@ -754,38 +998,22 @@
         },
         {
             "categories": [
-                "Search",
-                "Featured"
+                "Utilities"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
-            "description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) und Github (gh).",
-            "displayName": "Web Search",
-            "displayName_de": "Web Suche",
+            "displayName": "When Is",
             "examples": [
-                "google Apple stock",
-                "ddg Flashlight",
-                "image search ducks",
-                "reddit cats",
-                "google maps New York",
-                "gh bootstrap"
+                "day of week january 21",
+                "date next thursday"
             ],
-            "examples_de": [
-                "google Apple stock",
-                "g Apple stock",
-                "duck duck go Flashlight",
-                "Bildersuche nach ducks",
-                "reddit cats",
-                "google maps New York",
-                "gh bootstrap"
-            ],
-            "name": "websearch",
-            "zip_url": "websearch.zip"
+            "name": "whenis",
+            "zip_url": "whenis.disabled-bundle.zip"
         },
         {
             "categories": [
                 "System"
             ],
             "description": "Tell me who I am",
+            "description_de": "Erz\u00e4hl mir wer ich bin",
             "displayName": "Who am I?",
             "examples": [
                 "Who am I?"
@@ -848,12 +1076,51 @@
             "categories": [
                 "Search"
             ],
+            "description": "Search Yahoo (yh).",
+            "displayName": "Yahoo Search",
+            "examples": [
+                "yahoo Apple stock",
+                "yh Flashlight"
+            ],
+            "name": "yahoo",
+            "zip_url": "yahoo.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "displayName": "Yelp",
             "examples": [
                 "yelp pizza"
             ],
             "name": "yelp",
             "zip_url": "yelp.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search YHD.com (y) from Spotlight.",
+            "displayName": "YHD Search",
+            "examples": [
+                "yhd flashlight",
+                "y flashlight"
+            ],
+            "name": "YHD",
+            "zip_url": "yhd.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Yixun (yx) from Spotlight.",
+            "displayName": "YiXun Search",
+            "examples": [
+                "yixun flashlight",
+                "yx flashlight"
+            ],
+            "name": "YiXun",
+            "zip_url": "yixun.zip"
         },
         {
             "categories": [
@@ -867,6 +1134,17 @@
             ],
             "name": "youdaodic",
             "zip_url": "youdaodic.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Search Youtube",
+            "examples": [
+                "youtube/yt erb"
+            ],
+            "name": "youtube",
+            "zip_url": "youtube.zip"
         },
         {
             "categories": [
