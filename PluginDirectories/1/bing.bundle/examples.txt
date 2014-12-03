@@ -1,0 +1,3 @@
+bing search for ~bingquery(query here)
+bing ~bingquery(query here)
+bg ~bingquery(query here)

@@ -1,0 +1,7 @@
+{
+	"name": "aliexpress",
+	"displayName": "Aliexpress Search",
+	"description": "Search AliExpress (ae) from Spotlight.",
+	"examples": ["aliexpress flashlight", "ae flashlight"],
+	"categories": ["Search"]
+}
