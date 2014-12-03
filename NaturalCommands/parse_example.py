@@ -1,7 +1,7 @@
 import re
 from commanding import Phrase
 
-tagged_text = re.compile(r"([a-zA-Z0-9_\-\~\*\/]+)\(([^\)]+)\)")
+tagged_text = re.compile(r"([a-zA-Z0-9_\-\~\*\/@]+)\(([^\)]+)\)")
 
 def parse_example_to_phrase(phrase_intent, example):
         prev_index = 0

@@ -1,0 +1,8 @@
+when is @date(wednesday)
+what is the date @date(next tuesday)
+what day of the week is @date(friday the 13th)?
+what is @date(tomorrow)'s date?
+whats the date @date(tomorrow)?
+date @date(next wednesday)
+day of week @date(december 21)
+@date(october 19) day of week
