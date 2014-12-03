@@ -5,5 +5,5 @@
 	"description": "Search for a phone number in Sogou Haomatong database",
 	"description": "在搜狗号码通数据库中搜索号码相关信息",
 	"examples": ["hmt 10086", "haomatong 10086"],
-    "categories": ["Search", "Infomation"]
+    "categories": ["Search", "Information"]
 }
