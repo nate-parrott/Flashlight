@@ -3,6 +3,18 @@
     "plugins": [
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search 1688 from Spotlight.",
+            "displayName": "1688 Search",
+            "examples": [
+                "1688 flashlight"
+            ],
+            "name": "1688",
+            "zip_url": "1688.zip"
+        },
+        {
+            "categories": [
                 "Art"
             ],
             "description": "Search 500px\u2122 (500px)",
@@ -14,6 +26,45 @@
             ],
             "name": "500px\u2122",
             "zip_url": "500px.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Alibaba (ab) from Spotlight.",
+            "displayName": "Alibaba Search",
+            "examples": [
+                "alibaba flashlight",
+                "ab flashlight"
+            ],
+            "name": "alibaba",
+            "zip_url": "alibaba.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search AliExpress (ae) from Spotlight.",
+            "displayName": "Aliexpress Search",
+            "examples": [
+                "aliexpress flashlight",
+                "ae flashlight"
+            ],
+            "name": "aliexpress",
+            "zip_url": "aliexpress.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Amazon (shortcut: a).",
+            "displayName": "Amazon Search",
+            "examples": [
+                "amazon flashlight",
+                "a flashlight"
+            ],
+            "name": "amazon",
+            "zip_url": "amazon.zip"
         },
         {
             "categories": [
@@ -30,6 +81,29 @@
             "iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
             "name": "atom",
             "zip_url": "atom.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Baidu (bd).",
+            "displayName": "Baidu Search",
+            "examples": [
+                "baidu 'search term', bd 'search term'"
+            ],
+            "name": "baidu",
+            "zip_url": "baidu.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Bing Search",
+            "examples": [
+                "bing 'search term', bg 'search term', bing search for 'search term'"
+            ],
+            "name": "bing",
+            "zip_url": "bing.zip"
         },
         {
             "categories": [
@@ -243,6 +317,32 @@
             "categories": [
                 "Search"
             ],
+            "displayName": "DuckDuckGo Search",
+            "examples": [
+                "duckduckgo Apple stock",
+                "ddg Flashlight",
+                "search duckduckgo for 'search term'"
+            ],
+            "name": "duckduckgo",
+            "zip_url": "duckduckgo.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search eBay (e) from Spotlight.",
+            "displayName": "eBay Search",
+            "examples": [
+                "ebay flashlight",
+                "e flashlight"
+            ],
+            "name": "ebay",
+            "zip_url": "ebay.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "description": "Find annotations for lyrics and literature",
             "description_de": "Finde Informationen zu Songtexten und Literatur",
             "displayName": "Genius",
@@ -255,8 +355,66 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search Github (gh).",
+            "displayName": "GitHub Search",
+            "examples": [
+                "gh bootstrap",
+                "gitub bootstrap"
+            ],
+            "name": "github",
+            "zip_url": "github.zip"
+        },
+        {
+            "categories": [
                 "Search",
-                "Infomation"
+                "Featured"
+            ],
+            "displayName": "Google Image Search",
+            "examples": [
+                "image search for ducks",
+                "gi ducks",
+                "show me images of ducks",
+                "show me a picture of ducks",
+                "google images ducks"
+            ],
+            "name": "googleimages",
+            "zip_url": "googleimages.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Google Maps",
+            "examples": [
+                "google maps New York",
+                "show on maps new york",
+                "maps new york",
+                "map of new york",
+                "gm new york"
+            ],
+            "name": "googlemaps",
+            "zip_url": "googlemaps.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "displayName": "Google Search",
+            "examples": [
+                "google Apple stock",
+                "search the web for OSX Yosemite",
+                "g Flashlight"
+            ],
+            "name": "googleserach",
+            "zip_url": "googlesearch.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Information"
             ],
             "description": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
             "displayName": "Sogou Haomatong",
@@ -346,6 +504,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search jd.com (jd).",
+            "displayName": "JD Search",
+            "examples": [
+                "jd flashlight",
+                "j flashlight"
+            ],
+            "name": "jd",
+            "zip_url": "jd.zip"
+        },
+        {
+            "categories": [
                 "Language",
                 "Search"
             ],
@@ -413,16 +584,12 @@
             "categories": [
                 "Search"
             ],
-            "displayName": "Search more websites",
-            "displayName_de": "Durchsuche weitere Webseiten",
+            "displayName": "Search Netflix",
             "examples": [
-                "imdb/i interstellar",
-                "youtube/yt erb, stackoverflow/so python",
-                "netflix/n chuck",
-                "urbandictionary/ud hello"
+                "netflix/n chuck"
             ],
-            "name": "moresearch",
-            "zip_url": "moresearch.zip"
+            "name": "netflix",
+            "zip_url": "netflix.zip"
         },
         {
             "categories": [
@@ -468,6 +635,20 @@
             ],
             "name": "thepiratebay",
             "zip_url": "piratebay.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "description": "Search Reddit (rdt).",
+            "displayName": "Reddit Search",
+            "examples": [
+                "reddit cats",
+                "rdt cats"
+            ],
+            "name": "reddit",
+            "zip_url": "reddit.zip"
         },
         {
             "categories": [
@@ -535,27 +716,6 @@
         },
         {
             "categories": [
-                "Search"
-            ],
-            "description": "Search Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) and 1688 from Spotlight.",
-            "description_de": "Durchsuche Amazon (shortcut: a), Alibaba (ab), AliExpress (ae), eBay (e), jd.com (jd), Taobao (t), YHD.com (y), Yixun (yx) und 1688 mit der Spotlight.",
-            "displayName": "Shopping Search",
-            "displayName_de": "Shopping Suche",
-            "examples": [
-                "amazon flashlight",
-                "a flashlight",
-                "ebay flashlight",
-                "e flashlight",
-                "jd flashlight",
-                "j flashlight",
-                "taobao flashlight",
-                "t flashlight"
-            ],
-            "name": "shop",
-            "zip_url": "shop.zip"
-        },
-        {
-            "categories": [
                 "Utilities"
             ],
             "description": "Make a long url short w/ goo.gl",
@@ -617,6 +777,17 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "displayName": "Search Stackoverflow",
+            "examples": [
+                "stackoverflow/so python"
+            ],
+            "name": "stackoverflow",
+            "zip_url": "stackoverflow.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "Display stocks from Yahoo Finance",
@@ -654,6 +825,19 @@
             "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
             "name": "sublime",
             "zip_url": "sublime.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Taobao (t) from Spotlight.",
+            "displayName": "Taobao Search",
+            "examples": [
+                "taobao flashlight",
+                "t flashlight"
+            ],
+            "name": "taobao",
+            "zip_url": "taobao.zip"
         },
         {
             "categories": [
@@ -745,6 +929,30 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search Twitter (tt).",
+            "displayName": "Twitter Search",
+            "examples": [
+                "twitter 'search term'",
+                "tt 'search term'"
+            ],
+            "name": "twitter",
+            "zip_url": "twitter.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Search Urbandictionary",
+            "examples": [
+                "urbandictionary/ud hello"
+            ],
+            "name": "urbandictionary",
+            "zip_url": "urbandictionary.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "V2EX latest topics",
@@ -790,32 +998,15 @@
         },
         {
             "categories": [
-                "Search",
-                "Featured"
+                "Utilities"
             ],
-            "description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
-            "description_de": "Suche Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) und Github (gh).",
-            "displayName": "Web Search",
-            "displayName_de": "Web Suche",
+            "displayName": "When Is",
             "examples": [
-                "google Apple stock",
-                "ddg Flashlight",
-                "image search ducks",
-                "reddit cats",
-                "google maps New York",
-                "gh bootstrap"
+                "day of week january 21",
+                "date next thursday"
             ],
-            "examples_de": [
-                "google Apple stock",
-                "g Apple stock",
-                "duck duck go Flashlight",
-                "Bildersuche nach ducks",
-                "reddit cats",
-                "google maps New York",
-                "gh bootstrap"
-            ],
-            "name": "websearch",
-            "zip_url": "websearch.zip"
+            "name": "whenis",
+            "zip_url": "whenis.disabled-bundle.zip"
         },
         {
             "categories": [
@@ -885,12 +1076,51 @@
             "categories": [
                 "Search"
             ],
+            "description": "Search Yahoo (yh).",
+            "displayName": "Yahoo Search",
+            "examples": [
+                "yahoo Apple stock",
+                "yh Flashlight"
+            ],
+            "name": "yahoo",
+            "zip_url": "yahoo.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "displayName": "Yelp",
             "examples": [
                 "yelp pizza"
             ],
             "name": "yelp",
             "zip_url": "yelp.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search YHD.com (y) from Spotlight.",
+            "displayName": "YHD Search",
+            "examples": [
+                "yhd flashlight",
+                "y flashlight"
+            ],
+            "name": "YHD",
+            "zip_url": "yhd.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Yixun (yx) from Spotlight.",
+            "displayName": "YiXun Search",
+            "examples": [
+                "yixun flashlight",
+                "yx flashlight"
+            ],
+            "name": "YiXun",
+            "zip_url": "yixun.zip"
         },
         {
             "categories": [
@@ -904,6 +1134,17 @@
             ],
             "name": "youdaodic",
             "zip_url": "youdaodic.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "displayName": "Search Youtube",
+            "examples": [
+                "youtube/yt erb"
+            ],
+            "name": "youtube",
+            "zip_url": "youtube.zip"
         },
         {
             "categories": [

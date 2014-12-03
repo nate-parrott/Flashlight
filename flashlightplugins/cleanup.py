@@ -7,9 +7,23 @@ class CleanUp(webapp2.RequestHandler):
     def get(self):
         self.response.write("<form method='post'><input type='submit'/></form>")
     def post(self):
+        aggregate_download_counts()
         ensure_documents_indexed()
         remove_duplicates()
         self.response.write("Done.")
+
+def aggregate_download_counts():
+  names = set()
+  for plugin in Plugin.query(Plugin.approved == False):
+    names.add(plugin.name)
+  for name in names:
+    plugins = list(Plugin.query(Plugin.name == name))
+    total = sum([plugin.downloads for plugin in plugins])
+    any_approved = len([p for p in plugins if p.approved]) > 0
+    if any_approved:
+      for p in plugins:
+        p.downloads = total if p.approved else 0
+        p.put()
 
 def ensure_documents_indexed():
   for plugin in Plugin.query(Plugin.approved == True):

@@ -1,7 +1,6 @@
 {
 	"name": "googleimages",
-	"displayName": "Google Images Search",
-	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
+	"displayName": "Google Image Search",
 	"examples": ["image search for ducks", "gi ducks", "show me images of ducks", "show me a picture of ducks", "google images ducks"],
-	"categories": ["Search"]
+	"categories": ["Search", "Featured"]
 }

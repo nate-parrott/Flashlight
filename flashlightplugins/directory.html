@@ -17,7 +17,7 @@
    }
    #plugins {
       padding: 0;
-      -webkit-column-width: 200px;
+      -webkit-column-width: 220px;
       -webkit-column-gap: 1em;
       width: 100%;
    }
@@ -31,7 +31,7 @@
    }
    #plugins .pod {
       background-color: rgba(100,100,100,0.1);
-      padding: 1em;
+      padding: 14px;
       border-radius: 10px;
    }
    .icon {
@@ -104,14 +104,33 @@
       margin-top: 4px;
       margin-bottom: 4px;
    }
-   .bottom .description {
-      width: 100%;
-      vertical-align: bottom;
+   .description {
       color: #666;
+      padding-bottom: 0.5em;
+   }
+   .bottom .info {
+      width: 100%;
+      vertical-align: middle;
+      text-align: left;
+      font-size: x-small;
    }
    .control-container {
       vertical-align: bottom;
       padding-left: 5px;
+   }
+   .download_count {
+      font-weight: 300;
+      padding-left: 0.25em;
+   }
+   h3 {
+      font-weight: 200;
+   }
+   #search_summary h2 {
+      margin-bottom: 0;
+   }
+   #search_summary h3 {
+      margin-top: 0px;
+      margin-bottom: -15px;
    }
    </style>
 </head>
@@ -121,6 +140,12 @@
       e.preventDefault();
    })
    </script>
+   {% if search %}
+   <div id='search_summary'>
+      <h2>{{ search }}</h2>
+      <h3>{{ plugins|length }} results</h3>
+   </div>
+   {% endif %}
    <ul id='plugins'>
       {% for plugin in plugins %}
       <li class='{{ plugin.name }}' status='uninstalled'>
@@ -137,13 +162,16 @@
             {% if plugin.model.screenshot_url %}
             <img class='screenshot' src='{{ plugin.model.screenshot_url }}'/>
             {% endif %}
+            <p class='description'>
+               {{ plugin.description }}
+            </p>
             <div class='bottom'>
-               <p class='description'>
-                  {{ plugin.description }}
-               </p>
+               <div class='info'>
+                  
+               </div>
                <div class='control-container'>
                   <div class='control'>
-                     <a class='install' href='{{ plugin.install_url }}'>Install</a>
+                     <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
                   </div>
@@ -153,9 +181,10 @@
       </li>
       {% endfor %}
    </ul>
-   
+   {% if not browse %}
    <script>
    window.location = "domready://_";
    </script>
+   {% endif %}
 </body>
 </html>

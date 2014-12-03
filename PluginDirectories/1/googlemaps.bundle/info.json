@@ -1,7 +1,6 @@
 {
 	"name": "googlemaps",
-	"displayName": "Google Maps Search",
-	"description": "Search Google (g), DuckDuckGo (ddg), Google Images (gi), Baidu (bd), Bing (bg) Twitter (tt), Reddit (rdt), Google Maps(gm) and Github (gh).",
+	"displayName": "Google Maps",
 	"examples": ["google maps New York", "show on maps new york", "maps new york", "map of new york", "gm new york"],
 	"categories": ["Search"]
 }

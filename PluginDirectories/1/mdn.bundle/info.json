@@ -1,5 +1,5 @@
 {
-    "name": "Search at Mozilla developer Network",
+    "name": "mdn",
     "displayName": "Search at MDN",
     "description": "Search at Mozilla developer Network",
     "examples": ["mdn body", "Mozilla developer Network URL"],
