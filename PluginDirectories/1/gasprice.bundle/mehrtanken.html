@@ -14,8 +14,14 @@
 		display: none;
 	}
 	.dark-mode{
-	    -webkit-filter: invert(100%);
-		filter: invert(100%);
+		background-color: black;
+		-webkit-filter: invert(100%);
+	}
+	.error{
+		display: none;
+	}
+	.dark-mode img{
+		-webkit-filter: grayscale(100%) ;
 	}
 </style>
 <script type="text/javascript">
@@ -23,9 +29,12 @@
 		var searchText = document.getElementById('searchText').innerText;
 		var diesel = 4;
 		var benzin = 1;
+		var range = 5;
+		var lang = "de";
 
 		var sprit = FUELSETTING;
-		var url = "https://mehr-tanken.de/getStationList?result=json&searchText="+searchText+"&brand=0&fuel="+sprit+"&range=5&order=price&lat=undefined&lon=undefined&device=mobile&lang=de";
+		//var sprit = benzin;
+		var url = "https://mehr-tanken.de/getStationList?result=json&searchText="+searchText+"&brand=0&fuel="+sprit+"&range="+range+"&order=price&lat=undefined&lon=undefined&device=mobile&lang=" + lang;
 		console.log(searchText);
 
 	    function handleStateChange()
@@ -34,7 +43,7 @@
 				try {
 				    var response = JSON.parse(this.response);
 			        var resultView = '';
-			        for (var i = response.stations.length - 1; i >= 0; i--) {
+			        for (var i = 0; i <= response.stations.length - 1; i++) {
 			        	console.log(response.stations[i]);
 			        	var template = '<div class="row">'
 
@@ -52,14 +61,14 @@
 			        	resultView += template;
 			        };
 			        document.getElementById('resultview').innerHTML = resultView;
+				    document.getElementsByClassName('error')[0].style.display = 'none';
 				}
 				catch (e) {
 					console.log(this);
 					console.log(e);
 				     document.getElementById('resultview').innerHTML = e;
+				     document.getElementsByClassName('error')[0].style.display = 'block';
 				}
-
-		       
 	        }
 	    }
 
@@ -70,8 +79,9 @@
 	},500);
 </script>
 </head>
-<!--Disabled<body class="light-mode">-->
+<body class="light-mode">
 <body>
+<div class="error">Couldn't load :(</div>
 <div class="container-fluid">
 	<div id="searchText">SEARCHQUERY</div>
 	<!--<div id="searchText">Olching</div>-->
