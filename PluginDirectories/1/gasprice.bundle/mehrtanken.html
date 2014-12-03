@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<style type="text/css">
+	body{
+		margin-top: 10px;
+		background: none !important;
+	}
+	.row{
+		margin-bottom: 10px;
+		border-bottom: 2px solid lightgray;
+	}
+	#searchText{
+		display: none;
+	}
+	.dark-mode{
+		background-color: black;
+		-webkit-filter: invert(100%);
+	}
+	.error{
+		display: none;
+	}
+	.dark-mode img{
+		-webkit-filter: grayscale(100%) ;
+	}
+</style>
+<script type="text/javascript">
+	setTimeout(function(){
+		var searchText = document.getElementById('searchText').innerText;
+		var diesel = 4;
+		var benzine = 1;
+		var range = 5;
+		var lang = "de";
+
+		var sprit = FUELSETTING;
+		//var sprit = benzine;
+		var url = "https://mehr-tanken.de/getStationList?result=json&searchText="+searchText+"&brand=0&fuel="+sprit+"&range="+range+"&order=price&lat=undefined&lon=undefined&device=mobile&lang=" + lang;
+		console.log(searchText);
+
+	    function handleStateChange()
+	    {
+	        if(xmlHttpObject.status === 200 && xmlHttpObject.readyState === 4){
+				try {
+				    var response = JSON.parse(this.response);
+			        var resultView = '';
+			        for (var i = 0; i <= response.stations.length - 1; i++) {
+			        	console.log(response.stations[i]);
+			        	var template = '<div class="row">'
+
+								         + '<div class="col-xs-4">';
+									    if(response.stations[i].fuels)
+						    template+=     '<img src="http://mehr-tanken.de/createPrice.php?size=26&bg=transparent&text='+ response.stations[i].fuels[0].fuelPrice + '">' 		
+								        
+					        template+=     '</div>'
+								         + '<div class="col-xs-8">'
+								         	+ '<b>'+response.stations[i].name+'</b><br/><span><b>'+response.stations[i].city + '</b><br/>' +response.stations[i].address+'</span><br/>'
+								         	+ '<i>'+response.stations[i].openText+'</i>'
+								         	
+								         + '</div>'
+							         +'</div>';
+			        	resultView += template;
+			        };
+			        document.getElementById('resultview').innerHTML = resultView;
+				    document.getElementsByClassName('error')[0].style.display = 'none';
+				}
+				catch (e) {
+					console.log(this);
+					console.log(e);
+				     document.getElementById('resultview').innerHTML = e;
+				     document.getElementsByClassName('error')[0].style.display = 'block';
+				}
+	        }else{
+			     document.getElementsByClassName('error')[0].style.display = 'block';
+	        	
+	        }
+	    }
+
+		var xmlHttpObject = new XMLHttpRequest();
+        xmlHttpObject.open('GET', url);
+        xmlHttpObject.onreadystatechange = handleStateChange;
+        xmlHttpObject.send(null);
+	},500);
+</script>
+</head>
+<body class="light-mode">
+<body>
+<div class="error">Couldn't load :(</div>
+<div class="container-fluid">
+	<div id="searchText">SEARCHQUERY</div>
+	<!--<div id="searchText">Olching</div>-->
+	<div id="resultview"></div>
+</div>
+
+</body>
+</html>
