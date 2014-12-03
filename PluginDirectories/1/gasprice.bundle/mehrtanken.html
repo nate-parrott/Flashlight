@@ -39,7 +39,7 @@
 
 	    function handleStateChange()
 	    {
-	        if(xmlHttpObject.status === 200){
+	        if(xmlHttpObject.status === 200 && xmlHttpObject.readyState === 4){
 				try {
 				    var response = JSON.parse(this.response);
 			        var resultView = '';
@@ -69,6 +69,9 @@
 				     document.getElementById('resultview').innerHTML = e;
 				     document.getElementsByClassName('error')[0].style.display = 'block';
 				}
+	        }else{
+			     document.getElementsByClassName('error')[0].style.display = 'block';
+	        	
 	        }
 	    }
 
