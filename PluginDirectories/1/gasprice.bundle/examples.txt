@@ -1,0 +1,9 @@
+petrol ~benzinequery(query here)
+petrolprice ~benzinequery(query here)
+petrol price ~benzinequery(query here)
+
+diesel ~dieselquery(query here)
+dieselprice ~dieselquery(query here)
+diesel price ~dieselquery(query here)
+
+gas price ~benzinequery(query here)
