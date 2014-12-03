@@ -1,0 +1,7 @@
+{
+	"name": "YHD",
+	"displayName": "YHD Search",
+	"description": "Search YHD.com (y) from Spotlight.",
+	"examples": ["yhd flashlight", "y flashlight"],
+	"categories": ["Search"]
+}

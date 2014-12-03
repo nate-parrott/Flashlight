@@ -1,0 +1,2 @@
+twitter ~twitterquery(query here)
+tt ~twitterquery(query here)

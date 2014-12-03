@@ -1,0 +1,3 @@
+duckduckgo search ~duckduckgoquery(query here)
+search duckduckgo for ~duckduckgoquery(query here)
+ddg ~duckduckgoquery(query here)

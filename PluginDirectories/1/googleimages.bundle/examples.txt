@@ -1,0 +1,5 @@
+image search for ~googleimagequery(query here)
+show me images of ~googleimagequery(query here)
+show me a picture of ~googleimagequery(query here)
+google images ~googleimagequery(query here)
+gi ~googleimagequery(query here)

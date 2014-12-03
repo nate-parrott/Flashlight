@@ -1,0 +1,7 @@
+{
+	"name": "alibaba",
+	"displayName": "Alibaba Search",
+	"description": "Search Alibaba (ab) from Spotlight.",
+	"examples": ["alibaba flashlight", "ab flashlight"],
+	"categories": ["Search"]
+}

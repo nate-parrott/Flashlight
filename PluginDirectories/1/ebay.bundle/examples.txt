@@ -1,0 +1,2 @@
+ebay ~ebayquery(query here)
+e ~ebayquery(query here)
