@@ -1,0 +1,10 @@
+benzin ~benzinequery(query here)
+benzinpreis ~benzinequery(query here)
+benzin preis ~benzinequery(query here)
+
+diesel ~dieselquery(query here)
+dieselpreis ~dieselquery(query here)
+diesel preis ~dieselquery(query here)
+
+sprit ~benzinequery(query here)
+spritpreis ~benzinequery(query here)
