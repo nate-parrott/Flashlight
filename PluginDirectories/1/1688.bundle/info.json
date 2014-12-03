@@ -1,0 +1,7 @@
+{
+	"name": "1688",
+	"displayName": "1688 Search",
+	"description": "Search 1688 from Spotlight.",
+	"examples": ["1688 flashlight"],
+	"categories": ["Search"]
+}

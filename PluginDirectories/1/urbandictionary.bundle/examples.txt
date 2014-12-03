@@ -1,0 +1,2 @@
+urbandictionary ~udquery(query here)
+ud ~udquery(query here)

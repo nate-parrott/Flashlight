@@ -1,0 +1,7 @@
+{
+	"name": "baidu",
+	"displayName": "Baidu Search",
+	"description": "Search Baidu (bd).",
+	"examples": ["baidu 'search term', bd 'search term'"],
+	"categories": ["Search"]
+}

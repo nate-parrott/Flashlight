@@ -1,0 +1,2 @@
+reddit ~redditquery(query here)
+rdt ~redditquery(query here)

@@ -1,0 +1,7 @@
+{
+	"name": "ebay",
+	"displayName": "eBay Search",
+	"description": "Search eBay (e) from Spotlight.",
+	"examples": ["ebay flashlight", "e flashlight"],
+	"categories": ["Search"]
+}

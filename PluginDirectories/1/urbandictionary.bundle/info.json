@@ -1,0 +1,6 @@
+{
+	"name": "urbandictionary",
+	"displayName": "Search Urbandictionary",
+	"examples": ["urbandictionary/ud hello"],
+	"categories": ["Search"]
+}

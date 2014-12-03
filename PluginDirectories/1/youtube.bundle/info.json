@@ -1,0 +1,6 @@
+{
+	"name": "youtube",
+	"displayName": "Search Youtube",
+	"examples": ["youtube/yt erb"],
+	"categories": ["Search"]
+}

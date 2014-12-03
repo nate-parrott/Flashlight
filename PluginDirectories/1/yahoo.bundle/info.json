@@ -1,0 +1,7 @@
+{
+	"name": "yahoo",
+	"displayName": "Yahoo Search",
+	"description": "Search Yahoo (yh).",
+	"examples": ["yahoo Apple stock", "yh Flashlight"],
+	"categories": ["Search"]
+}
