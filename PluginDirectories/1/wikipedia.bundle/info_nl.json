@@ -1,7 +1,0 @@
-{
-    "name": "wikipedia",
-    "displayName": "Wikipedia (NL)",
-    "description": "Zoek op de Nederlandse Wikipedia (wiki).",
-    "examples": ["wiki hond", "Zoek op wikipedia voor St. Louis, MO", "wikipedia Flashlight"],
-    "categories": ["Search", "Information"]
-}
