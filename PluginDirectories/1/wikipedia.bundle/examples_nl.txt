@@ -1,4 +1,4 @@
-wiki ~enWiki(query here)
-wikipedia ~enWiki(query here)
-wiki ~enWiki(query here)
-Zoek op wikipedia voor ~enWiki(query here)
+wiki ~nlWiki(query here)
+wikipedia ~nlWiki(query here)
+wiki ~nlWiki(query here)
+Zoek op wikipedia voor ~nlWiki(query here)
