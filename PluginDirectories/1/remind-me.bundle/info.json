@@ -7,17 +7,17 @@
     "displayName": "Remind Me",
     "displayName_de": "Erinner Mich",
     "examples": [
-        "remind me to ~message(take out the trash)",
-        "new reminder saying ~message(do homework)",
-        "create a reminder ~message(pick up eggs)",
-        "remind ~message(walk the dog)",
+        "remind me to take out the trash",
+        "new reminder saying do homework",
+        "create a reminder pick up eggs",
+        "remind walk the dog",
         ""
     ],
     "examples_de": [
-        "Erinner mich ~message(Müll rausbringen)",
-        "Neue Erinnerung für ~message(Hausaufgaben erledigen)",
-        "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
-        "Erinnerung ~message(Mit dem Hund spazieren gehen)",
+        "Erinner mich Müll rausbringen",
+        "Neue Erinnerung für Hausaufgaben erledigen",
+        "Erstelle eine neue Erinnerung Eier mitnehmen",
+        "Erinnerung Mit dem Hund spazieren gehen",
         ""
     ],
     "isAutomatorWorkflow": true,

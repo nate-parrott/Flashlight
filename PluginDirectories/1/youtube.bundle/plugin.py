@@ -1,4 +1,4 @@
-import urllib, json
+import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
@@ -8,7 +8,7 @@ def results(parsed, original_query):
         if key in parsed:
             search_url = url + urllib.quote_plus(parsed[key])
             return {
-                "title": "Search {0} for '{1}'".format(name, parsed[key]),
+                "title": i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]),
                 "run_args": [search_url if name is not 'IMDB' else search_url.replace("m.imdb", "imdb")],
                 "html": """
                 <script>

@@ -1,7 +1,10 @@
 {
 	"name": "amazon",
 	"displayName": "Amazon Search",
+	"displayName": "Amazon Suche",
 	"description": "Search Amazon (shortcut: a).",
+	"_deescription": "Durchsuche Amazon (shortcut: a).",
 	"examples": ["amazon flashlight", "a flashlight"],
+	"examples_de": ["amazon Taschenlampe", "a Taschenlampe"],
 	"categories": ["Search"]
 }

@@ -1,7 +1,10 @@
 {
 	"name": "copycolor",
 	"displayName": "Developer color copier",
+	"displayName_de": "Entwickler Farbauswahl",
 	"description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+	"description": "Öffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
 	"examples": ["copy color", "copy color as UIColor"],
+	"examples_de": ["Kopiere Farbe", "Kopiere Farbe als UIColor"],
 	"categories": ["Art", "Developer"]
 }
