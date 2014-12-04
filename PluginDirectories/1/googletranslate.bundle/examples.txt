@@ -1,0 +1,4 @@
+gtr enru ~text(this is a text)
+gtr ruen ~text(this is a text)
+gtr enes ~text(this is a text)
+gtr rues ~text(this is a text)
