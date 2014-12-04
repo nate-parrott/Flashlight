@@ -2,5 +2,6 @@
 	"name": "googlemaps",
 	"displayName": "Google Maps",
 	"examples": ["google maps New York", "show on maps new york", "maps new york", "map of new york", "gm new york"],
+	"examples_de": ["google maps New York", "Zeige auf Google Maps New York", "Karte New York", "Karte von New York", "gm New York"],
 	"categories": ["Search"]
 }

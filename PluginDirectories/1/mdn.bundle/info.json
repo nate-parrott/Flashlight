@@ -1,7 +1,9 @@
 {
     "name": "mdn",
     "displayName": "Search at MDN",
+    "displayName_de": "Suche auf MDN",
     "description": "Search at Mozilla developer Network",
+    "description_de": "Durchsuche das Mozilla developer Network",
     "examples": ["mdn body", "Mozilla developer Network URL"],
     "categories": ["Developer"],
      "iconPath": "./Icon.png"
