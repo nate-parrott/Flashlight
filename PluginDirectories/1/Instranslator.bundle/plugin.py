@@ -11,6 +11,10 @@ lang_codes = {
     "auto" : "auto"
 }
 
+def dark_mode():
+    import Foundation
+    return Foundation.NSUserDefaults.standardUserDefaults().persistentDomainForName_(Foundation.NSGlobalDomain).objectForKey_("AppleInterfaceStyle") == "Dark"
+
 def results(parsed, original_query):
     text = parsed['~text']
     from_lang = "auto"
@@ -20,12 +24,13 @@ def results(parsed, original_query):
             from_lang = key.split('/')[1]
         elif key.startswith('to_language/'):
             to_lang = key.split('/')[1]
-    html = open("translate.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang])
+    html = open("translate.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang]).replace("light-mode", "dark-mode" if dark_mode() else "light-mode")
     if from_lang == 'auto':
         title = "Translate \"{0}\" to {1}".format(text, to_lang)
     else:
         title = "Translate \"{0}\" from {1} to {2}".format(text, from_lang, to_lang)
     return {
         "title": title,
-        "html": html
+        "html": html,
+        "webview_transparent_background": True,
     }
