@@ -169,6 +169,7 @@
 		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC34AE81A314C4E007CCE4E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E171A290B11006187EB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E181A290B20006187EB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
@@ -430,6 +431,7 @@
 				nl,
 				tr,
 				es,
+				ko,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -579,6 +581,7 @@
 				5FC65E171A290B11006187EB /* nl */,
 				5FC65E181A290B20006187EB /* tr */,
 				5F11C2FD1A2B0834005A1731 /* es */,
+				5FC34AE81A314C4E007CCE4E /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
