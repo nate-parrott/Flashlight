@@ -24,7 +24,7 @@
                 "500px sky",
                 "500px nature"
             ],
-            "name": "500px\u2122",
+            "name": "500px",
             "zip_url": "500px.zip"
         },
         {
@@ -54,14 +54,19 @@
             "zip_url": "aliexpress.zip"
         },
         {
+            "_deescription": "Durchsuche Amazon (shortcut: a).",
             "categories": [
                 "Search"
             ],
             "description": "Search Amazon (shortcut: a).",
-            "displayName": "Amazon Search",
+            "displayName": "Amazon Suche",
             "examples": [
                 "amazon flashlight",
                 "a flashlight"
+            ],
+            "examples_de": [
+                "amazon Taschenlampe",
+                "a Taschenlampe"
             ],
             "name": "amazon",
             "zip_url": "amazon.zip"
@@ -98,9 +103,16 @@
             "categories": [
                 "Search"
             ],
-            "displayName": "Bing Search",
+            "displayName": "Bing Suche",
             "examples": [
-                "bing 'search term', bg 'search term', bing search for 'search term'"
+                "bing 'search term'",
+                "bg 'search term'",
+                "bing search for 'search term'"
+            ],
+            "examples_de": [
+                "bing Flashlight",
+                "bg FlashLight",
+                "Bing Suche nach Flashlight"
             ],
             "name": "bing",
             "zip_url": "bing.zip"
@@ -149,11 +161,16 @@
                 "Art",
                 "Developer"
             ],
-            "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+            "description": "\u00d6ffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
             "displayName": "Developer color copier",
+            "displayName_de": "Entwickler Farbauswahl",
             "examples": [
                 "copy color",
                 "copy color as UIColor"
+            ],
+            "examples_de": [
+                "Kopiere Farbe",
+                "Kopiere Farbe als UIColor"
             ],
             "name": "copycolor",
             "zip_url": "copycolor.zip"
@@ -163,9 +180,9 @@
                 "Utilities"
             ],
             "description": "Copy path to clipboard from finder",
-            "description_de": "Kopiere den Pfad vom Finder",
+            "description_de": "Kopiert den Pfad vom Finder",
             "displayName": "Copy Path From Finder",
-            "displayName_de": "Pfad vom Finder kopieren",
+            "displayName_de": "Finder Pfad kopieren",
             "examples": [
                 "copypath",
                 "copy path",
@@ -173,7 +190,7 @@
             ],
             "examples_de": [
                 "Pfad kopieren",
-                "kopere Pfad",
+                "kopiere Pfad",
                 "Pfad"
             ],
             "name": "Copy Path",
@@ -254,7 +271,7 @@
                 "deviantart maverick",
                 "deviant flashlight"
             ],
-            "name": "deviantart\u2122",
+            "name": "deviantart",
             "zip_url": "deviantart.zip"
         },
         {
@@ -262,7 +279,7 @@
                 "Language"
             ],
             "description": "Translate English to German using dict.cc",
-            "description_de": "\u00dcbersetze von English nach German mit dict.cc",
+            "description_de": "\u00dcbersetze von Englisch nach Deutsch mit dict.cc",
             "displayName": "dict.cc Translate",
             "displayName_de": "dict.cc \u00dcbersetzer",
             "examples": [
@@ -343,6 +360,20 @@
             "categories": [
                 "Search"
             ],
+            "description": "German Gas Price using mehr-tanken.de",
+            "description_de": "Benzinpreise von mehr-tanken.de",
+            "displayName": "German Gas Price",
+            "displayName_de": "Benzinpreise",
+            "examples": [
+                "Benzin Munich"
+            ],
+            "name": "gasprice",
+            "zip_url": "gasprice.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "description": "Find annotations for lyrics and literature",
             "description_de": "Finde Informationen zu Songtexten und Literatur",
             "displayName": "Genius",
@@ -358,7 +389,9 @@
                 "Search"
             ],
             "description": "Search Github (gh).",
+            "description_de": "Durchsucht Github (gh).",
             "displayName": "GitHub Search",
+            "displayName_de": "GitHub Suche",
             "examples": [
                 "gh bootstrap",
                 "gitub bootstrap"
@@ -372,12 +405,20 @@
                 "Featured"
             ],
             "displayName": "Google Image Search",
+            "displayName_de": "Google Bilder Suche",
             "examples": [
                 "image search for ducks",
                 "gi ducks",
                 "show me images of ducks",
                 "show me a picture of ducks",
                 "google images ducks"
+            ],
+            "examples_de": [
+                "Bildersuche nach Enten",
+                "gi Enten",
+                "Zeige mir Bilder von Enten",
+                "Zeige mir ein Bild von Enten",
+                "Google Bilder Enten"
             ],
             "name": "googleimages",
             "zip_url": "googleimages.zip"
@@ -394,6 +435,13 @@
                 "map of new york",
                 "gm new york"
             ],
+            "examples_de": [
+                "google maps New York",
+                "Zeige auf Google Maps New York",
+                "Karte New York",
+                "Karte von New York",
+                "gm New York"
+            ],
             "name": "googlemaps",
             "zip_url": "googlemaps.zip"
         },
@@ -403,9 +451,15 @@
                 "Featured"
             ],
             "displayName": "Google Search",
+            "displayName_de": "Google Suche",
             "examples": [
                 "google Apple stock",
                 "search the web for OSX Yosemite",
+                "g Flashlight"
+            ],
+            "examples_de": [
+                "google Apple Aktie",
+                "Suche im Internet nach OSX Yosemite",
                 "g Flashlight"
             ],
             "name": "googleserach",
@@ -430,8 +484,9 @@
             "categories": [
                 "Developer"
             ],
-            "description": "Convert a hex color value into a UIColor instance",
+            "description": "Konvertiert eine Hex-Farbe in eine UIColor",
             "displayName": "Hex To UIColor",
+            "displayName_de": "Hex zu UIColor",
             "examples": [
                 "UIColor #3083D6",
                 "UIColor swift #3083D6"
@@ -462,6 +517,9 @@
             "displayName_fr": "IMDB",
             "examples": [
                 "imdb Phantom of the Opera"
+            ],
+            "examples_de": [
+                "imdb Phantom der Oper"
             ],
             "examples_fr": [
                 "imdb La Soupe aux Choux"
@@ -494,6 +552,7 @@
                 "Featured"
             ],
             "description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French and German.",
+            "description_de": "\u00dcbersetze Text zwischen Englisch, Arabisch, Spanisch, Hindi, Chinesisch, Franz\u00f6sisch und Deutsch.",
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",
@@ -571,31 +630,50 @@
                 "Developer"
             ],
             "description": "Search at Mozilla developer Network",
+            "description_de": "Durchsuche das Mozilla developer Network",
             "displayName": "Search at MDN",
+            "displayName_de": "Suche auf MDN",
             "examples": [
                 "mdn body",
                 "Mozilla developer Network URL"
             ],
             "iconPath": "./Icon.png",
-            "name": "Search at Mozilla developer Network",
+            "name": "mdn",
             "zip_url": "mdn.zip"
         },
         {
             "categories": [
                 "Search"
             ],
-            "displayName": "Search Netflix",
+            "displayName": "Netflix Suche",
             "examples": [
-                "netflix/n chuck"
+                "netflix chuck",
+                "n chuck"
             ],
             "name": "netflix",
             "zip_url": "netflix.zip"
         },
         {
             "categories": [
+                "Weather"
+            ],
+            "description": "Ninetan's forecasting system",
+            "description_ja": "\u306a\u3044\u3093\u305f\u3093\u5929\u6c17\u4e88\u5831",
+            "displayName": "Ninetan",
+            "displayName_ja": "\u306a\u3044\u3093\u305f\u3093",
+            "examples": [
+                "sx9 kyoto",
+                "ninetan osaka"
+            ],
+            "name": "sx9",
+            "zip_url": "nintan.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search php.net manual.",
+            "description_de": "Durchsuche php.net",
             "description_fr": "Recherceher dans la documentation PHP.",
             "displayName": "PHP Manual",
             "displayName_fr": "Manuel PHP",
@@ -659,17 +737,17 @@
             "displayName": "Remind Me",
             "displayName_de": "Erinner Mich",
             "examples": [
-                "remind me to ~message(take out the trash)",
-                "new reminder saying ~message(do homework)",
-                "create a reminder ~message(pick up eggs)",
-                "remind ~message(walk the dog)",
+                "remind me to take out the trash",
+                "new reminder saying do homework",
+                "create a reminder pick up eggs",
+                "remind walk the dog",
                 ""
             ],
             "examples_de": [
-                "Erinner mich ~message(M\u00fcll rausbringen)",
-                "Neue Erinnerung f\u00fcr ~message(Hausaufgaben erledigen)",
-                "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
-                "Erinnerung ~message(Mit dem Hund spazieren gehen)",
+                "Erinner mich M\u00fcll rausbringen",
+                "Neue Erinnerung f\u00fcr Hausaufgaben erledigen",
+                "Erstelle eine neue Erinnerung Eier mitnehmen",
+                "Erinnerung Mit dem Hund spazieren gehen",
                 ""
             ],
             "isAutomatorWorkflow": true,
@@ -750,6 +828,15 @@
                 "lock",
                 "screen saver"
             ],
+            "examples_de": [
+                "Herunterfahren",
+                "Neustart",
+                "Abmelden",
+                "Schlafen",
+                "Sperren",
+                "Bildschirmschoner",
+                "Papierkorb leeren"
+            ],
             "examples_fr": [
                 "\u00e9teindre",
                 "red\u00e9marrer",
@@ -780,6 +867,7 @@
                 "Search"
             ],
             "displayName": "Search Stackoverflow",
+            "displayName_de": "Stackoverflow Suche",
             "examples": [
                 "stackoverflow/so python"
             ],
@@ -932,7 +1020,9 @@
                 "Search"
             ],
             "description": "Search Twitter (tt).",
+            "description_de": "Durchsuche Twitter (tt).",
             "displayName": "Twitter Search",
+            "displayName_de": "Twitter Suche",
             "examples": [
                 "twitter 'search term'",
                 "tt 'search term'"
@@ -944,9 +1034,13 @@
             "categories": [
                 "Search"
             ],
-            "displayName": "Search Urbandictionary",
+            "displayName": "Urbandictionary Suche",
             "examples": [
                 "urbandictionary/ud hello"
+            ],
+            "examples_de": [
+                "urbandictionary hallo",
+                "ud hallo"
             ],
             "name": "urbandictionary",
             "zip_url": "urbandictionary.zip"
@@ -1013,7 +1107,7 @@
                 "System"
             ],
             "description": "Tell me who I am",
-            "description_de": "Erz\u00e4hl mir wer ich bin",
+            "description_de": "Sage mir wer ich bin",
             "displayName": "Who am I?",
             "examples": [
                 "Who am I?"
@@ -1030,13 +1124,15 @@
             "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
             "description_fr": "Recherche sur Wikipedia.",
             "description_it": "Cerca su Wikipedia.",
+            "description_nl": "Zoek op de Nederlandse Wikipedia (wiki).",
             "displayName": "Wikipedia (EN)",
             "displayName_de": "Wikipedia (DE)",
             "displayName_fr": "Wikipedia (FR)",
             "displayName_it": "Wikipedia (IT)",
+            "displayName_nl": "Wikipedia (NL)",
             "examples": [
-                "wiki Dogs",
-                "search wikipedia for St. Louis, MO",
+                "wiki hond",
+                "Zoek op wikipedia voor St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "examples_de": [
@@ -1063,8 +1159,19 @@
                 "Featured"
             ],
             "displayName": "Wolfram|Alpha Search",
+            "displayName_de": "Wolfram|Alpha Suche",
             "displayName_fr": "Recherche Wolfram|Alpha (Anglais uniquement)",
             "examples": [
+                "ask wolfram alpha 1 + 1",
+                "wa first 10 prime numbers",
+                "population of india"
+            ],
+            "examples_de": [
+                "Frage wolfram alpha 1 + 1",
+                "wa first 10 prime numbers",
+                "population of india"
+            ],
+            "examples_fr": [
                 "demander \u00e0 wolfram alpha 1 + 1",
                 "wa first 10 prime numbers",
                 "population of india"
@@ -1140,6 +1247,7 @@
                 "Search"
             ],
             "displayName": "Search Youtube",
+            "displayName_de": "Durchsuche Youtube",
             "examples": [
                 "youtube/yt erb"
             ],
