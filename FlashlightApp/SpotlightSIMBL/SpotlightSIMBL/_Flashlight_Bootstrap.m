@@ -83,7 +83,12 @@
      */
     
     RSSwizzleClassMethod(NSClassFromString(@"SPSpotQuery"), NSSelectorFromString(@"queryClasses"), id, RSSWArguments(), {
-        return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
+        if (__SS_SPOpenAPIQueryClass()) {
+            return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
+        } else {
+            NSLog(@"Failed to initialize Flashlight.");
+            return RSSWCallOriginal();
+        }
     });
     
     NSLog(@"Hello from Flashlight 0.71!");

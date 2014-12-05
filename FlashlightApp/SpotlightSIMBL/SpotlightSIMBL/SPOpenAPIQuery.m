@@ -66,6 +66,7 @@ Class __SS_SPOpenAPIQueryClass() {
     c = [(Class)NSClassFromString(@"SPQuery") rt_createSubclassNamed:@"SPOpenAPIQuery"];
     __SS_Override(c, NSSelectorFromString(@"start"), __SS_Start);
     __SS_Override(objc_getMetaClass("SPOpenAPIQuery"), NSSelectorFromString(@"isQuerySupported:"), __SS_isQuerySupported);
+    NSLog(@"Create class: %@", c);
     return c;
 }
 
