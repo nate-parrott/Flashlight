@@ -4,6 +4,7 @@
 	"displayName_fr": "Manuel PHP",
 	"description": "Search php.net manual.",
 	"description_fr": "Recherceher dans la documentation PHP.",
+	"description_de": "Durchsuche php.net",
 	"examples": ["php urlencode"],
 	"examples_fr": ["php urlencode"],
 	"categories": ["Developer"]
