@@ -1,0 +1,9 @@
+frage wolfram alpha ~wa_query(where was abraham lincoln born) ?
+wolfram alpha ~wa_query(what time is it in shangai)
+walpha ~wa_query(population of india)
+wa_query(what is the population of china)
+wa_query(population of india)
+wa_query(how many calories in a bagel) ?
+~wa_query(how far is it from bristol to liverpool) wolfram alpha
+frage wolfram alpha nach ~wa_query(the size of alaska) ?
+wa ~wa_query(100th prime number)
