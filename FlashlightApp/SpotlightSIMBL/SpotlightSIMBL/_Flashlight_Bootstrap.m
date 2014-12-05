@@ -19,7 +19,11 @@
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
-    __SS_SPOpenAPIQueryClass();
+    if (__SS_SPOpenAPIQueryClass()) {
+        NSLog(@"Hello from Flashlight!");
+    } else {
+        NSLog(@"Failed to initialize Flashlight");
+    }
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();
@@ -86,12 +90,10 @@
         if (__SS_SPOpenAPIQueryClass()) {
             return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
         } else {
-            NSLog(@"Failed to initialize Flashlight.");
             return RSSWCallOriginal();
         }
     });
     
-    NSLog(@"Hello from Flashlight 0.71!");
 }
 
 @end
