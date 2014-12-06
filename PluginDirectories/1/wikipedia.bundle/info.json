@@ -18,5 +18,5 @@
     "examples_de": ["wiki Hunde", "Suche Wikipedia nach St. Louis, MO", "wikipedia Flashlight"],
     "examples": ["wiki hond", "Zoek op wikipedia voor St. Louis, MO", "wikipedia Flashlight"],
 
-    "categories": ["Search", "Information"]
+    "categories": ["Search", "Information", "Featured"]
 }
