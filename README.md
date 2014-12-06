@@ -40,7 +40,7 @@ Huge thanks to everyone who's contributed translations:
  - [andreaponza](http://github.com/andreaponza) for Italian
  - [iltercengiz](http://github.com/iltercengiz) for Turkish
  - [AlAdler](http://github.com/AlAdler) for Spanish
- - [readingsnal](http://github.com/readingsnal) for Korean
+ - [readingsnail](http://github.com/readingsnail) for Korean
  
 
 If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
