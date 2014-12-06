@@ -13,6 +13,11 @@
 #import "SPSpotQuery.h"
 #import "NSObject+LogProperties.h"
 #import "SPParsecSimpleResult.h"
+#import "_SS_MetadataResponseDelayer.h"
+
+BOOL _Flashlight_Is_10_10_2_Spotlight() {
+    return NSClassFromString(@"SPQuery") == nil;
+}
 
 @class SPQuery;
 
@@ -94,6 +99,7 @@
         }
     });
     
+    [[_SS_MetadataResponseDelayer shared] setup];
 }
 
 @end

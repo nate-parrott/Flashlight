@@ -226,8 +226,8 @@ static void swizzle(Class classToSwizzle,
     
     const char *methodType = method_getTypeEncoding(method);
     
-    NSCAssert(blockIsCompatibleWithMethodType(newIMPBlock,methodType),
-             @"Block returned from factory is not compatible with method type.");
+    //NSCAssert(blockIsCompatibleWithMethodType(newIMPBlock,methodType),
+    //         @"Block returned from factory is not compatible with method type.");
     
     IMP newIMP = imp_implementationWithBlock(newIMPBlock);
     
