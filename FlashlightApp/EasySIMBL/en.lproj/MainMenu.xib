@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C68m" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C78c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="101000" identifier="macosx"/>
         <development version="5000" identifier="xcode"/>
@@ -590,9 +590,29 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         </customView>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E18DCE5D-A04B-49D0-94F9-418631669D3B" label="Custom View" paletteLabel="Custom View" id="sSL-rY-WNy">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="96" height="22"/>
+                        <size key="maxSize" width="119" height="22"/>
+                        <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="B2I-e5-KQB">
+                            <rect key="frame" x="0.0" y="14" width="119" height="22"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="5o2-5F-0um">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </searchFieldCell>
+                            <connections>
+                                <action selector="search:" target="715" id="OcS-7q-A7C"/>
+                            </connections>
+                        </searchField>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="0Ui-sl-VA0"/>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="6NI-Ay-AA6"/>
+                    <toolbarItem reference="0Ui-sl-VA0"/>
+                    <toolbarItem reference="sSL-rY-WNy"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
@@ -609,6 +629,7 @@
                 <outlet property="errorBanner" destination="eIK-Jf-OGb" id="bJL-om-cww"/>
                 <outlet property="errorButton" destination="9nN-QT-MfC" id="Jom-wc-gLW"/>
                 <outlet property="errorText" destination="4I6-zG-9ut" id="bIG-CJ-HIx"/>
+                <outlet property="searchField" destination="B2I-e5-KQB" id="CEZ-40-eaP"/>
                 <outlet property="sourceList" destination="76J-wG-jzB" id="LkR-LD-LdE"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="Fpj-ZY-CR6"/>
                 <outlet property="toggleView" destination="9dh-Cp-Auf" id="H5c-0P-FHt"/>
@@ -619,7 +640,7 @@
         </customObject>
         <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
         <customView id="9dh-Cp-Auf" userLabel="Toggle view">
-            <rect key="frame" x="0.0" y="0.0" width="273" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="262" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fPh-3V-djF">
@@ -639,7 +660,7 @@
                     </connections>
                 </customView>
             </subviews>
-            <point key="canvasLocation" x="225.5" y="589"/>
+            <point key="canvasLocation" x="220" y="589"/>
         </customView>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>

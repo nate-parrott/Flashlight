@@ -14,6 +14,7 @@
 
 - (void)loadCategoriesWithCallback:(void (^)(NSArray *categories, NSError *error))callback;
 - (NSURL *)URLForCategory:(NSString *)category;
+- (NSURL *)URLForSearchQuery:(NSString *)query;
 - (void)logPluginInstall:(NSString *)name;
 
 @end
