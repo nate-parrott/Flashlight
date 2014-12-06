@@ -51,7 +51,8 @@ void __SS_Start(SPQuery* self, SEL cmd) {
                 }
             }
         }
-        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]]];
+        BOOL sortAscending = !_Flashlight_Is_10_10_2_Spotlight();
+        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:sortAscending]]];
         dispatch_async(dispatch_get_main_queue(), ^{
             Class cls = NSClassFromString(@"SPResponse")? : NSClassFromString(@"SPKResponse");
             SPResponse *resp = [[cls alloc] initWithResults:resultItems];
