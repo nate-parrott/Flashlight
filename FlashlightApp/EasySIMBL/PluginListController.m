@@ -15,6 +15,10 @@
 #import "PluginDirectoryAPI.h"
 #import "NSURLComponents+ValueForQueryKey.h"
 
+NSString * const kCategoryInstalled = @"Installed";
+NSString * const kCategoryFeatured = @"Featured";
+NSString * const kCategorySearchResults = @"_SearchResults";
+
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
 @property (nonatomic) NSArray *installedPlugins;
@@ -34,6 +38,8 @@
 @property (nonatomic) NSString *selectedCategory;
 
 @property (nonatomic) NSString *selectedPluginName;
+
+@property (nonatomic) IBOutlet NSSearchField *searchField;
 
 @end
 
@@ -88,7 +94,7 @@
     }
     [self updateControllers];
     
-    BOOL showingInstalled = [self.selectedCategory isEqualToString:@"Installed"];
+    BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
     self.webView.hidden = showingInstalled;
     self.tableView.hidden = !showingInstalled;
     self.effectView.hidden = self.webView.hidden;
@@ -329,22 +335,22 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     // returns category names or NSNull's for section breaks
     NSMutableArray *ordered = self.categories.mutableCopy ? : [NSMutableArray new];
     [ordered sortUsingSelector:@selector(compare:)];
-    [ordered removeObject:@"Installed"];
-    [ordered removeObject:@"Featured"];
+    [ordered removeObject:kCategoryInstalled];
+    [ordered removeObject:kCategoryFeatured];
     [ordered removeObject:@"Unknown"];
     
     [ordered insertObject:[NSNull null] atIndex:0];
-    [ordered insertObject:@"Installed" atIndex:1];
+    [ordered insertObject:kCategoryInstalled atIndex:1];
     [ordered insertObject:[NSNull null] atIndex:2];
-    [ordered insertObject:@"Featured" atIndex:3];
+    [ordered insertObject:kCategoryFeatured atIndex:3];
     [ordered insertObject:[NSNull null] atIndex:4];
     [ordered addObject:@"Unknown"];
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
     NSDictionary *imageNamesForCategories = @{
-                            @"Installed": @"download",
-                            @"Featured": @"star",
+                            kCategoryInstalled: @"download",
+                            kCategoryFeatured: @"star",
                             @"Information": @"info",
                             @"Language": @"translate",
                             @"Search": @"search",
@@ -352,7 +358,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"Utilities": @"wrench",
                             @"Weather": @"cloud",
                             @"News": @"newspaper",
-                            @"Unknown": @"plugin"
+                            @"Unknown": @"plugin",
+                            @"Art": @"palette",
+                            @"Developer": @"console"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
     return [NSImage imageNamed:imageName];
@@ -403,10 +411,14 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)setSelectedCategory:(NSString *)selectedCategory {
     _selectedCategory = selectedCategory;
     [self updateUI];
-    if (![selectedCategory isEqualToString:@"Installed"]) {
+    if (![selectedCategory isEqualToString:kCategoryInstalled]) {
         self.webView.alphaValue = 0;
         [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
-        [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
+        if ([selectedCategory isEqualToString:kCategorySearchResults]) {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForSearchQuery:self.searchField.stringValue]]];
+        } else {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
+        }
     }
 }
 
@@ -424,6 +436,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"Utilities": NSLocalizedString(@"Utilities", @""),
                  @"Weather": NSLocalizedString(@"Weather", @""),
                  @"News": NSLocalizedString(@"News", @""),
+                 @"Art": NSLocalizedString(@"Art", @""),
+                 @"Developer": NSLocalizedString(@"Developer", @""),
                  @"Unknown": NSLocalizedString(@"Unknown", @"")
                  };
     });
@@ -444,7 +458,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSMutableDictionary *d = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:infoJsonPath] options:0 error:nil] mutableCopy];
     d[@"name"] = name;
     [[NSJSONSerialization dataWithJSONObject:d options:0 error:nil] writeToFile:infoJsonPath atomically:YES];
-    self.selectedCategory = @"Installed";
+    self.selectedCategory = kCategoryInstalled;
     self.selectedPluginName = name;
     [self reloadFromDisk];
     [self editPluginNamed:name];
@@ -507,6 +521,13 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [[NSWorkspace sharedWorkspace] openURL:comps.URL];
     } else {
         [listener use];
+    }
+}
+
+#pragma mark Search
+- (IBAction)search:(id)sender {
+    if (self.searchField.stringValue.length > 0) {
+        self.selectedCategory = kCategorySearchResults;
     }
 }
 
