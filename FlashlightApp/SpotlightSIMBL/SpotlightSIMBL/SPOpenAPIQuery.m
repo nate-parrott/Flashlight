@@ -17,6 +17,7 @@
 #import "MethodOverride.h"
 #import "_SS_PluginRunner.h"
 #import "_SS_MetadataResponseDelayer.h"
+#import "_Flashlight_Bootstrap.h"
 
 // define initWithDisplayName: as selector so that we can call it on `id`
 @interface DummyInterface : NSObject
@@ -56,7 +57,9 @@ void __SS_Start(SPQuery* self, SEL cmd) {
             SPResponse *resp = [[cls alloc] initWithResults:resultItems];
             resp.userQueryString = query;
             responseHandler(resp);
-            [[_SS_MetadataResponseDelayer shared] sentPluginResponseForQuery:query];
+            if (_Flashlight_Is_10_10_2_Spotlight()) {
+                [[_SS_MetadataResponseDelayer shared] sentPluginResponseForQuery:query];
+            }
         });
     });
 }
