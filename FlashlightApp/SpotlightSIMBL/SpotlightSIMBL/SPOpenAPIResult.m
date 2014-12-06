@@ -19,6 +19,7 @@
 #import <WebKit/WebKit.h>
 #import "_SS_PluginRunner.h"
 #import "_SS_InlineWebViewContainer.h"
+#import "_Flashlight_Bootstrap.h"
 
 id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd, NSString *query, id json, NSString *sourcePlugin) {
     if (![json isKindOfClass:[NSDictionary class]]) {
@@ -27,15 +28,10 @@ id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd,
     if (!json[@"title"]) {
         return nil;
     }
-    Class superclass = NSClassFromString(@"SPResult");
+    Class superclass = NSClassFromString(@"SPResult") ? : NSClassFromString(@"PRSResult");
     void (*superIMP)(id, SEL, NSString*, NSString*) = (void *)[superclass instanceMethodForSelector: @selector(initWithContentType:displayName:)];
-    static NSInteger i = 0;
-    NSString *contentType = [NSString stringWithFormat:@"%li", i++]; // cycle the contentType to prevent the system from dropping new results that have an unchanged title
-    superIMP(self, cmd, contentType, json[@"title"]); // TODO: what does contentType actually do? it probably isn't a mime type
+    superIMP(self, cmd, nil, json[@"title"]); // TODO: what does contentType actually do? it probably isn't a mime type
     self.title = json[@"title"];
-    // self.isParsecTopHit = YES;
-    // [self setType:@"Type"]; // TODO: what does *this* do?
-    [self setCategoryForCP:@"MENU_EXPRESSION"];
     objc_setAssociatedObject(self, @selector(jsonAssociatedObject), json, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, @selector(sourcePluginAssociatedObject), sourcePlugin, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return self;
@@ -46,21 +42,22 @@ id __SS_SSOpenAPIResult_category(SPResult *self, SEL cmd) {
 }
 
 id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
-    SPPreviewController *vc = [[NSClassFromString(@"SPPreviewController") alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
+    Class cls = NSClassFromString(@"SPPreviewController") ? : NSClassFromString(@"PRSPreviewController");
+    SPPreviewController *vc = [[cls alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
     _SS_InlineWebViewContainer *container = (id)vc.view;
     container.result = self;
-    vc.internalPreviewResult = self;
+    if (!_Flashlight_Is_10_10_2_Spotlight()) {
+        vc.internalPreviewResult = self;
+    }
     return vc;
 }
 
 unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
     id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
-    if (json[@"rank"]) {
-        return json[@"rank"];
-    } else if ([json[@"dont_force_top_hit"] boolValue]) {
-        return 2;
-    } else {
+    if ([json[@"dont_force_top_hit"] boolValue]) {
         return 1;
+    } else {
+        return 0xffffffffffffffff; // for top hit
     }
 }
 
@@ -99,11 +96,16 @@ BOOL __SS_SSOpenWithSearchString_block(SPResult *self, SEL cmd, NSString *search
 Class __SS_SPOpenAPIResultClass() {
     Class c = NSClassFromString(@"SPOpenAPIResult");
     if (c) return c;
-    c = [(Class)NSClassFromString(@"SPResult") rt_createSubclassNamed:@"SPOpenAPIResult"];
+    Class superclass = NSClassFromString(@"SPResult") ? : NSClassFromString(@"PRSResult");
+    c = [superclass rt_createSubclassNamed:@"SPOpenAPIResult"];
     __SS_Override(c, NSSelectorFromString(@"initWithQuery:json:sourcePlugin:"), __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin);
     __SS_Override(c, NSSelectorFromString(@"category"), __SS_SSOpenAPIResult_category);
     __SS_Override(c, NSSelectorFromString(@"rank"), __SS_SSOpenAPIResult_rank);
-    __SS_Override(c, NSSelectorFromString(@"customPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
+    if (_Flashlight_Is_10_10_2_Spotlight()) {
+        __SS_Override(c, NSSelectorFromString(@"sharedCustomPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
+    } else {
+        __SS_Override(c, NSSelectorFromString(@"customPreviewController"), __SS_SSOpenAPIResult_customPreviewController);
+    }
     __SS_Override(c, NSSelectorFromString(@"iconImage"), __SS_SSOpenAPIResult_iconImage);
     __SS_Override(c, NSSelectorFromString(@"iconImageForApplication"), __SS_SSOpenAPIResult_iconImage);
     __SS_Override(c, NSSelectorFromString(@"openWithSearchString:block:"), __SS_SSOpenWithSearchString_block);
