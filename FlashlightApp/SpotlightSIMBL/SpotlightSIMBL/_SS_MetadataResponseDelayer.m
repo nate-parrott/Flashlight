@@ -9,6 +9,7 @@
 #import "_SS_MetadataResponseDelayer.h"
 #import "RSSwizzle.h"
 #import "SPQuery.h"
+#import "_Flashlight_Bootstrap.h"
 
 @interface _SS_MetadataQueryTracker : NSObject
 
@@ -41,6 +42,10 @@
 }
 
 - (void)setup {
+    if (!_Flashlight_Is_10_10_2_Spotlight()) {
+        return;
+    }
+    
     self.queryTrackers = [NSMutableDictionary new];
     
     Class spMetadataQuery = NSClassFromString(@"SPMetadataQuery");
