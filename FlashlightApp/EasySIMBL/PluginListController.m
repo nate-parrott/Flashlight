@@ -363,7 +363,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"Developer": @"console"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
-    return [NSImage imageNamed:imageName];
+    NSImage *image = [NSImage imageNamed:imageName];
+    [image setTemplate:YES];
+    return image;
 }
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
     if (item==nil) {
@@ -381,7 +383,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
-        view.imageView.alphaValue = 0.47;
+        // view.imageView.alphaValue = 0.47;
         return view;
     }
 }

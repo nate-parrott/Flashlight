@@ -34,6 +34,8 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+    NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
+    
     self.SIMBLOn = NO;
     
     [self checkSpotlightVersion];
@@ -172,6 +174,7 @@
     }
     self.tableView.enabled = SIMBLOn;
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
+    [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {

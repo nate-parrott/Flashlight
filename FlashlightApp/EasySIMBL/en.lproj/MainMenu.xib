@@ -341,6 +341,7 @@
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="2My-Fx-DJv"/>
                 <outlet property="useSIMBLSwitch" destination="cgt-Ry-pUm" id="m6y-V0-Lqj"/>
+                <outlet property="webView" destination="DEt-An-xUj" id="I1w-Qg-DeT"/>
                 <outlet property="window" destination="651" id="653"/>
             </connections>
         </customObject>
