@@ -6,6 +6,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ITSwitch.h"
+#import <WebKit/WebKit.h>
 
 @class PluginListController;
 
@@ -17,6 +18,7 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic) IBOutlet ITSwitch *useSIMBLSwitch;
 @property (nonatomic) IBOutlet NSTableView *tableView;
+@property (nonatomic) IBOutlet WebView *webView;
 - (IBAction)toggleUseSIMBL:(id)sender;
 
 @property (nonatomic) BOOL SIMBLOn;
