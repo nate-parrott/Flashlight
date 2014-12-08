@@ -30,7 +30,9 @@ id __SS_SSOpenAPIResult_initWithQuery_json_sourcePlugin(SPResult *self, SEL cmd,
     }
     Class superclass = NSClassFromString(@"SPResult") ? : NSClassFromString(@"PRSResult");
     void (*superIMP)(id, SEL, NSString*, NSString*) = (void *)[superclass instanceMethodForSelector: @selector(initWithContentType:displayName:)];
-    superIMP(self, cmd, nil, json[@"title"]); // TODO: what does contentType actually do? it probably isn't a mime type
+    static NSInteger i = 0;
+    NSString *contentType = [NSString stringWithFormat:@"%li", i++]; // cycle the contentType to prevent the system from dropping new results that have an unchanged title
+    superIMP(self, cmd, contentType, json[@"title"]); // TODO: what does contentType actually do? it probably isn't a mime type
     self.title = json[@"title"];
     objc_setAssociatedObject(self, @selector(jsonAssociatedObject), json, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, @selector(sourcePluginAssociatedObject), sourcePlugin, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
