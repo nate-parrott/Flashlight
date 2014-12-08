@@ -1,0 +1,7 @@
+{
+	"name": "flickr",
+	"displayName": "Flickr",
+	"description": "Search Flickr",
+	"examples": ["flickr sunset"],
+	"categories": ["Art"]
+}

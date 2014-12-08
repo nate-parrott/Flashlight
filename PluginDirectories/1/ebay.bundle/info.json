@@ -1,7 +1,10 @@
 {
 	"name": "ebay",
 	"displayName": "eBay Search",
+	"displayName_de": "eBay Suche",
 	"description": "Search eBay (e) from Spotlight.",
+	"description_de": "Durchsucht eBay (e) durch die Spotlight",
 	"examples": ["ebay flashlight", "e flashlight"],
+	"examples_de": ["ebay Taschenlampe", "e Taschenlampe"],
 	"categories": ["Search"]
 }
