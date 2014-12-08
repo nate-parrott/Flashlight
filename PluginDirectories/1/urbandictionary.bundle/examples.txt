@@ -1,2 +1,6 @@
-urbandictionary ~udquery(query here)
-ud ~udquery(query here)
+urban ~query(query here)
+urbandictionary ~query(query here)
+urban dictionary ~query(query here)
+urban dict ~query(query here)
+ud ~query(query here)
+udict ~query(query here)

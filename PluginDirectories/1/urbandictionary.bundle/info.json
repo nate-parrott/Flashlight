@@ -1,8 +1,8 @@
 {
 	"name": "urbandictionary",
-	"displayName": "Search Urbandictionary",
-	"displayName": "Urbandictionary Suche",
-	"examples": ["urbandictionary/ud hello"],
-	"examples_de": ["urbandictionary hallo", "ud hallo"],
-	"categories": ["Search"]
+	"displayName": "Urban Dictionary",
+	"description": "Searches the Urban Dictionary",
+	"description_de": "Durchsucht das Urban Dictionary",
+	"examples": ["urban dictionary gurl", "urban dict flashlight"],
+	"categories": ["Language"]
 }
