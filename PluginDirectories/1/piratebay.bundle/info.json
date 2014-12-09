@@ -3,5 +3,5 @@
 	"displayName": "The Pirate Bay",
 	"description": "Search The Pirate Bay for torrents",
 	"examples": ["pb 2001: A Space Odyssey", "pb Rick Astley", "pb Trailer Park Boys"],
-	"categories": ["Search", "Information"]
+	"categories": ["Media"]
 }
