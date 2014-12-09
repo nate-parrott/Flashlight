@@ -1,7 +1,9 @@
 {
 	"name": "yahoo",
 	"displayName": "Yahoo Search",
+	"displayName_de": "Yahoo Suche",
 	"description": "Search Yahoo (yh).",
+	"description_de": "Durchsucht Yahoo (yh).",
 	"examples": ["yahoo Apple stock", "yh Flashlight"],
 	"categories": ["Search"]
 }
