@@ -3,5 +3,5 @@
 	"displayName": "Search Youtube",
 	"displayName_de": "Durchsuche Youtube",
 	"examples": ["youtube/yt erb"],
-	"categories": ["Search"]
+	"categories": ["Media"]
 }

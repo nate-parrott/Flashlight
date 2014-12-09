@@ -5,5 +5,5 @@
 	"description": "Search Github (gh).",
 	"description_de": "Durchsucht Github (gh).",
 	"examples": ["gh bootstrap", "gitub bootstrap"],
-	"categories": ["Search"]
+	"categories": ["Developer"]
 }
