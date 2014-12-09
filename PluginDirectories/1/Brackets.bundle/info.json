@@ -1,6 +1,7 @@
 {
     "name": "Brackets",
     "displayName": "Open with Brackets",
+    "displayName_de": "Mit Brackets öffnen",
     "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
     "description_de": "Öffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom geöffnet.",
     "examples": ["Brackets"],

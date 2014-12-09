@@ -1,6 +1,7 @@
 {
 	"name": "deviantart",
 	"displayName": "deviantART™ Search",
+	"displayName_de": "deviantART™ Suche",
 	"description": "Search deviantART™ (deviant)",
 	"description_de": "Durchsuche deviantART™ (deviant)",
 	"examples": ["searchdeviant yosemite", "deviantart maverick", "deviant flashlight"],
