@@ -4,6 +4,6 @@
 	"displayName_de": "GitHub Suche",
 	"description": "Search GitHub (gh).",
 	"description_de": "Durchsucht GitHub (gh).",
-	"examples": ["gh bootstrap", "github bootstrap"],
-	"categories": ["Developer", "Search"]
+	"examples": ["gh flashlight", "github flashlight"],
+	"categories": ["Developer"]
 }
