@@ -4,5 +4,5 @@
 	"description": "Search for an artist, album or track in Spotify.",
 	"description_de": "Suche nach einem Künstler, Album oder Song in Spotify.",
 	"examples": ["spotify Michael Jackson", "spt Michael Jackson"],
-    "categories": ["Search"]
+    "categories": ["Media"]
 }
