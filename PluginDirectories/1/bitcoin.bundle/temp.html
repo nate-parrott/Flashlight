@@ -46,32 +46,32 @@
     }
 
     </style>
-    <script src='moment.js'></script>
     <script src='jquery.min.js'></script>
     <script>
-        $(document).ready(function(){
-            var $dates = $('.time');
-            if($dates){
-                $dates.each(function(i, d){
-                    var $d = $(d);
-                    var date = $d.html();
-                    if(date){
-                        var m = moment(new Date(date * 1000));
-                        if(m){
-                            $d.html(m.fromNow());
-                        }
-                    } 
-                });
-            }
-        });
+       $(document).ready(function() {
+          var symbol = "<!--symbol-->";
+          var url = "<!--url-->";
+          var count = "<!--count-->";
+          setTimeout(function() {
+             $.ajax({
+                url: url,
+                success: function(resultText) {
+                   console.log(resultText)
+                   var res = JSON.parse(resultText);
+                   var price = res.ticker.last;
+                   $("#money").text(symbol + (price * count));
+                }
+             })
+          }, 500);
+       })
     </script>
 </head>
 <body>
     <div class='container'>
         <div class='icon'><img src='glyph.png' width='60px' height='60px' /></div>
         <div class='content'>
-            <h2><!--bitcoin--></h2>
-            <h1><!--money--></h1>
+            <h2 id='bitcoin'><!--count--> BTC</h2>
+            <h1 id='money'>loading...</h1>
         </div>
     </div>
 </body>
