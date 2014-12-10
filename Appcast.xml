@@ -6,6 +6,15 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.94</title>
+            <sparkle:releaseNotesLink>
+                http://flashlightupdates.42pag.es/0.94
+            </sparkle:releaseNotesLink>
+            <pubDate>Wed, 10 Dec 2014 19:27:11 +0000</pubDate>
+            <enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.94/Flashlight.zip" sparkle:version="22" sparkle:shortVersionString="0.94" type="application/octet-stream" sparkle:dsaSignature="MC0CFQDKV66bgE6RoMRwlXyYRH5rRktGZAIUG8SZRYOcSgHqG+DjhwkDMF7KNfg=" />
+            <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
+        </item>
+        <item>
             <title>Version 0.93</title>
             <sparkle:releaseNotesLink>
                 http://flashlightupdates.42pag.es/0.93
