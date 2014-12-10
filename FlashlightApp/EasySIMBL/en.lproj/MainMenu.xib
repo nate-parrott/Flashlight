@@ -663,45 +663,65 @@
             </subviews>
             <point key="canvasLocation" x="220" y="589"/>
         </customView>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="109" y="138" width="242" height="179"/>
+            <rect key="contentRect" x="109" y="138" width="242" height="260"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
-            <value key="minSize" type="size" width="242" height="179"/>
-            <value key="maxSize" type="size" width="242" height="179"/>
+            <value key="minSize" type="size" width="242" height="260"/>
+            <value key="maxSize" type="size" width="242" height="260"/>
             <view key="contentView" id="ML2-hK-xgc">
-                <rect key="frame" x="0.0" y="-6" width="242" height="179"/>
+                <rect key="frame" x="0.0" y="1" width="242" height="260"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bs8-1N-RgN">
-                        <rect key="frame" x="75" y="67" width="92" height="92"/>
+                        <rect key="frame" x="75" y="148" width="92" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="QLY-QW-30e"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="b4m-8B-Vhn">
-                        <rect key="frame" x="18" y="42" width="206" height="17"/>
+                        <rect key="frame" x="18" y="114" width="206" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Flashlight" id="CKY-mr-H4g">
-                            <font key="font" metaFont="systemBold"/>
+                            <font key="font" size="25" name="HelveticaNeue-Light"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button id="no0-HV-O9k">
-                        <rect key="frame" x="0.0" y="20" width="242" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="inline" title="github.com/nate-parrott/Flashlight" bezelStyle="inline" alignment="center" inset="2" id="P0e-Mj-nLE">
+                        <rect key="frame" x="38" y="49" width="166" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="bevel" title="Contribute on GitHub" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="P0e-Mj-nLE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="smallSystemBold"/>
+                            <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="openURLFromButton:" target="494" id="G87-1n-uQT"/>
+                            <action selector="openGithub:" target="494" id="Mxx-Ec-Gtf"/>
                         </connections>
                     </button>
+                    <button id="YyB-xf-RjT">
+                        <rect key="frame" x="38" y="17" width="166" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="bevel" title="Leave Feedback" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="NO4-GD-LyW">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="leaveFeedback:" target="494" id="EH7-na-ItT"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gNj-56-AoU">
+                        <rect key="frame" x="18" y="89" width="206" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Search anything." id="Zut-6I-UVj">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-305" y="514.5"/>
+            <point key="canvasLocation" x="-305" y="555"/>
         </window>
     </objects>
     <resources>
