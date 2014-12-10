@@ -1,0 +1,7 @@
+{
+	"name": "zhihuDaily",
+	"displayName": "Zhihu Daily",
+	"description": "Display Zhi Hu Daily to users based on youzhihu, you can get the latest questions or hot topics with it, even the news of specific date.",
+	"examples": ["zhihu daily(show latest news)", "zhihu hot(show hot topics)", "zhihu 20140822(show the topics On August 22, 2014)"],
+    "categories": ["Information"]
+}

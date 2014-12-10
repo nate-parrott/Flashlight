@@ -1,9 +1,0 @@
-{
-	"name": "hexToUIColor",
-	"displayName": "Hex To UIColor",
-	"displayName_de": "Hex zu UIColor",
-	"description": "Convert a hex color value into a UIColor instance",
-	"description": "Konvertiert eine Hex-Farbe in eine UIColor",
-	"examples": ["UIColor #3083D6", "UIColor swift #3083D6"],
-	"categories": ["Developer"]
-}

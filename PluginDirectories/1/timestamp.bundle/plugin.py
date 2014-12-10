@@ -1,9 +1,16 @@
 #!/usr/bin/python
 
 import sys, urllib, os, time, datetime
+from post_notification import post_notification
 
 def results(parsed, original_query):
-    timestamp = int(parsed.get('timestamp', time.time()))
+    title = 'Current Timestamp'
+    timestamp = time.time()
+    if '@date' in parsed:
+      timestamp = parsed['@date']['timestamp']
+      title = u"Unix timestamp for {0}".format(parsed['@date']['text'])
+    elif '*timestamp' in parsed:
+      timestamp = float(parsed['*timestamp'])
     date = datetime.datetime.utcfromtimestamp(timestamp)
     timestring = date.strftime('%Y-%m-%d %H:%M:%S UTC')
     style = '''
@@ -48,10 +55,11 @@ def results(parsed, original_query):
 	</style>
     '''
     return {
-        "title": '"%s" (%d) - Press ENTER to copy' % (timestring, timestamp),
+        "title": title,
         "html": "%s%s" % (style, "<div><div class=\"content\"><h1>%s</h1><h3>%s</h3></div></div>" % (timestamp, timestring)),
         "run_args": ['"%s" (%d)' % (timestring, timestamp)]
     }
 
 def run(string):
     os.system('echo "{0}" | pbcopy'.format(string.replace("\"", "\\\"")))
+    post_notification("Copied date and timestamp to clipboard.")

@@ -2,17 +2,19 @@ import datetime
 from centered_text import centered_text
 
 def results(fields, original_query):
-  # print fields['@date']
   d = None
   has_time = False
+  title = "now"
   if '@date' in fields:
-    timestamp, resolution = fields['@date']
+    timestamp = fields['@date']['timestamp']
+    resolution = fields['@date']['resolution']
+    title = fields['@date']['text']
     has_time = resolution < 24 * 60 * 60
     d = datetime.datetime.fromtimestamp(timestamp)
   date = "<p><strong>{0}</strong></p>".format(d.strftime("%A, %B %d %Y"))
   time = "<p>{0}</p>".format(d.strftime("%I:%M %p")) if has_time else ""
   return {
-    "title": original_query,
+    "title": u"Date: {0}".format(title),
     "html": centered_text(date + time, "Press Enter to open in Calendar"),
     "webview_transparent_background": True,
     "run_args": [timestamp]
