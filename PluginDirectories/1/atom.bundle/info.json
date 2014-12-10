@@ -5,7 +5,7 @@
 	"description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
 	"description_de": "Öffne Atom. Der Pfad vom offenen Finder Fenster wird in Atom geöffnet.",
 	"examples": ["atom file", "atom folder"],
-	"examples": ["atom Datei", "atom Ornder"],
+	"examples_de": ["atom Datei", "atom Ornder"],
 	"iconPath": "/Applications/Atom.app/Contents/Resources/Atom.icns",
 	"categories": ["Developer"]
 }
