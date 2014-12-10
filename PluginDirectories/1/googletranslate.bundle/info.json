@@ -1,0 +1,9 @@
+{
+	"name": "googletranslate",
+	"displayName": "Google Translate",
+	"description": "Translate words and phrases with Google (gtr).",
+	"examples": ["gtr enru This text will be translated from English to Russian", "gtr ruen Россия вперед!", "gtr esen Te amo, España!"],
+	"categories": ["Utilities", "Language"],
+	"creator_name": "Alex Zavrazhniy",
+	"creator_url": "http://themengzor.com"
+}
