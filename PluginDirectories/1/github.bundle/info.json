@@ -2,8 +2,8 @@
 	"name": "github",
 	"displayName": "GitHub Search",
 	"displayName_de": "GitHub Suche",
-	"description": "Search Github (gh).",
-	"description_de": "Durchsucht Github (gh).",
-	"examples": ["gh bootstrap", "gitub bootstrap"],
+	"description": "Search GitHub (gh).",
+	"description_de": "Durchsucht GitHub (gh).",
+	"examples": ["gh bootstrap", "github bootstrap"],
 	"categories": ["Search"]
 }
