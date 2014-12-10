@@ -1,0 +1,9 @@
+{
+	"name": "mate",
+	"displayName": "Open with Text mate",
+	"displayName_de": "Textmate",
+	"description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+	"examples": ["mate"],
+	"iconPath": "/Applications/TextMate.app/Contents/Resources/TextMate.icns",
+	"categories": ["Developer"]
+}
