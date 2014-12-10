@@ -54,12 +54,13 @@
             "zip_url": "aliexpress.zip"
         },
         {
-            "_deescription": "Durchsuche Amazon (shortcut: a).",
             "categories": [
                 "Search"
             ],
             "description": "Search Amazon (shortcut: a).",
-            "displayName": "Amazon Suche",
+            "description_de": "Durchsuche Amazon (shortcut: a).",
+            "displayName": "Amazon Search",
+            "displayName_de": "Amazon Suche",
             "examples": [
                 "amazon flashlight",
                 "a flashlight"
@@ -80,6 +81,10 @@
             "displayName": "Open with Atom",
             "displayName_de": "Mit Atom \u00f6ffnen",
             "examples": [
+                "atom file",
+                "atom folder"
+            ],
+            "examples_de": [
                 "atom Datei",
                 "atom Ornder"
             ],
@@ -103,7 +108,8 @@
             "categories": [
                 "Search"
             ],
-            "displayName": "Bing Suche",
+            "displayName": "Bing Search",
+            "displayName_de": "Bing Suche",
             "examples": [
                 "bing 'search term'",
                 "bg 'search term'",
@@ -147,8 +153,9 @@
                 "Developer"
             ],
             "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
-            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
+            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Brackets ge\u00f6ffnet.",
             "displayName": "Open with Brackets",
+            "displayName_de": "Mit Brackets \u00f6ffnen",
             "examples": [
                 "Brackets"
             ],
@@ -161,7 +168,8 @@
                 "Art",
                 "Developer"
             ],
-            "description": "\u00d6ffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
+            "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+            "description_de": "\u00d6ffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
             "displayName": "Developer color copier",
             "displayName_de": "Entwickler Farbauswahl",
             "examples": [
@@ -266,6 +274,7 @@
             "description": "Search deviantART\u2122 (deviant)",
             "description_de": "Durchsuche deviantART\u2122 (deviant)",
             "displayName": "deviantART\u2122 Search",
+            "displayName_de": "deviantART\u2122 Suche",
             "examples": [
                 "searchdeviant yosemite",
                 "deviantart maverick",
@@ -348,17 +357,35 @@
                 "Search"
             ],
             "description": "Search eBay (e) from Spotlight.",
+            "description_de": "Durchsucht eBay (e) durch die Spotlight",
             "displayName": "eBay Search",
+            "displayName_de": "eBay Suche",
             "examples": [
                 "ebay flashlight",
                 "e flashlight"
+            ],
+            "examples_de": [
+                "ebay Taschenlampe",
+                "e Taschenlampe"
             ],
             "name": "ebay",
             "zip_url": "ebay.zip"
         },
         {
             "categories": [
-                "Search"
+                "Art"
+            ],
+            "description": "Search Flickr",
+            "displayName": "Flickr",
+            "examples": [
+                "flickr sunset"
+            ],
+            "name": "flickr",
+            "zip_url": "flickr.zip"
+        },
+        {
+            "categories": [
+                "Information"
             ],
             "description": "German Gas Price using mehr-tanken.de",
             "description_de": "Benzinpreise von mehr-tanken.de",
@@ -386,15 +413,16 @@
         },
         {
             "categories": [
+                "Developer",
                 "Search"
             ],
-            "description": "Search Github (gh).",
-            "description_de": "Durchsucht Github (gh).",
+            "description": "Search GitHub (gh).",
+            "description_de": "Durchsucht GitHub (gh).",
             "displayName": "GitHub Search",
             "displayName_de": "GitHub Suche",
             "examples": [
                 "gh bootstrap",
-                "gitub bootstrap"
+                "github bootstrap"
             ],
             "name": "github",
             "zip_url": "github.zip"
@@ -402,6 +430,7 @@
         {
             "categories": [
                 "Search",
+                "Media",
                 "Featured"
             ],
             "displayName": "Google Image Search",
@@ -467,10 +496,28 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Language"
+            ],
+            "creator_name": "Alex Zavrazhniy",
+            "creator_url": "http://themengzor.com",
+            "description": "Translate words and phrases with Google (gtr).",
+            "displayName": "Google Translate",
+            "examples": [
+                "gtr enru This text will be translated from English to Russian",
+                "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
+                "gtr esen Te amo, Espa\u00f1a!"
+            ],
+            "name": "googletranslate",
+            "zip_url": "googletranslate.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Information"
             ],
-            "description": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
+            "description": "Search for a phone number in Sogou Haomatong database",
+            "description_zh": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
             "displayName": "Sogou Haomatong",
             "displayName_zh": "\u641c\u72d7\u53f7\u7801\u901a",
             "examples": [
@@ -576,8 +623,7 @@
         },
         {
             "categories": [
-                "Language",
-                "Search"
+                "Language"
             ],
             "description": "Search the Japanese dictionary and translator Jisho",
             "displayName": "Jisho",
@@ -629,6 +675,20 @@
             "categories": [
                 "Developer"
             ],
+            "description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+            "displayName": "Open with Text mate",
+            "displayName_de": "Textmate",
+            "examples": [
+                "mate"
+            ],
+            "iconPath": "/Applications/TextMate.app/Contents/Resources/TextMate.icns",
+            "name": "mate",
+            "zip_url": "mate.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
             "description": "Search at Mozilla developer Network",
             "description_de": "Durchsuche das Mozilla developer Network",
             "displayName": "Search at MDN",
@@ -643,9 +703,10 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
-            "displayName": "Netflix Suche",
+            "displayName": "Search Netflix",
+            "displayName_de": "Netflix Suche",
             "examples": [
                 "netflix chuck",
                 "n chuck"
@@ -666,7 +727,7 @@
                 "ninetan osaka"
             ],
             "name": "ninetan",
-            "zip_url": "nintan.zip"
+            "zip_url": "ninetan.zip"
         },
         {
             "categories": [
@@ -701,8 +762,7 @@
         },
         {
             "categories": [
-                "Search",
-                "Information"
+                "Media"
             ],
             "description": "Search The Pirate Bay for torrents",
             "displayName": "The Pirate Bay",
@@ -720,7 +780,9 @@
                 "Featured"
             ],
             "description": "Search Reddit (rdt).",
+            "description_de": "Durchsucht Reddit (rdt).",
             "displayName": "Reddit Search",
+            "displayName_de": "Reddit Suche",
             "examples": [
                 "reddit cats",
                 "rdt cats"
@@ -740,15 +802,13 @@
                 "remind me to take out the trash",
                 "new reminder saying do homework",
                 "create a reminder pick up eggs",
-                "remind walk the dog",
-                ""
+                "remind walk the dog"
             ],
             "examples_de": [
                 "Erinner mich M\u00fcll rausbringen",
                 "Neue Erinnerung f\u00fcr Hausaufgaben erledigen",
                 "Erstelle eine neue Erinnerung Eier mitnehmen",
-                "Erinnerung Mit dem Hund spazieren gehen",
-                ""
+                "Erinnerung Mit dem Hund spazieren gehen"
             ],
             "isAutomatorWorkflow": true,
             "name": "remind-me",
@@ -850,7 +910,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
             "description_de": "Suche nach einem K\u00fcnstler, Album oder Song in Spotify.",
@@ -1027,14 +1087,19 @@
                 "twitter 'search term'",
                 "tt 'search term'"
             ],
+            "examples_de": [
+                "twitter 'Suchbegriff'",
+                "tt 'Suchbegriff'"
+            ],
             "name": "twitter",
             "zip_url": "twitter.zip"
         },
         {
             "categories": [
-                "Search"
+                "Language"
             ],
-            "displayName": "Urbandictionary Suche",
+            "displayName": "Search Urbandictionary",
+            "displayName_de": "Urbandictionary Suche",
             "examples": [
                 "urbandictionary/ud hello"
             ],
@@ -1118,7 +1183,8 @@
         {
             "categories": [
                 "Search",
-                "Information"
+                "Information",
+                "Featured"
             ],
             "description": "Search English Wikipedia (wiki).",
             "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
@@ -1184,7 +1250,9 @@
                 "Search"
             ],
             "description": "Search Yahoo (yh).",
+            "description_de": "Durchsucht Yahoo (yh).",
             "displayName": "Yahoo Search",
+            "displayName_de": "Yahoo Suche",
             "examples": [
                 "yahoo Apple stock",
                 "yh Flashlight"
@@ -1244,7 +1312,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "Search Youtube",
             "displayName_de": "Durchsuche Youtube",
@@ -1253,20 +1321,6 @@
             ],
             "name": "youtube",
             "zip_url": "youtube.zip"
-        },
-        {
-            "categories": [
-                "Information"
-            ],
-            "description": "Display Zhi Hu Daily to users based on youzhihu, you can get the latest questions or hot topics with it, even the news of specific date.",
-            "displayName": "Zhihu Daily",
-            "examples": [
-                "zhihu daily(show latest news)",
-                "zhihu hot(show hot topics)",
-                "zhihu 20140822(show the topics On August 22, 2014)"
-            ],
-            "name": "zhihuDaily",
-            "zip_url": "Zhihu.zip"
         }
     ]
 }

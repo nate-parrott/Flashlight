@@ -27,4 +27,7 @@
 
 - (IBAction)openURLFromButton:(NSButton *)sender;
 
+- (IBAction)openGithub:(id)sender;
+- (IBAction)leaveFeedback:(id)sender;
+
 @end

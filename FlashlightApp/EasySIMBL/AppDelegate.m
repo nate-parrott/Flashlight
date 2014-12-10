@@ -208,4 +208,12 @@
     }
 }
 
+#pragma mark About Window actions
+- (IBAction)openGithub:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight"]];
+}
+- (IBAction)leaveFeedback:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
+}
+
 @end
