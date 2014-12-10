@@ -1,0 +1,1 @@
+flickr ~query(query here)
