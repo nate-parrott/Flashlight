@@ -3,7 +3,7 @@
 	"displayName": "Sogou Haomatong",
 	"displayName_zh": "搜狗号码通",
 	"description": "Search for a phone number in Sogou Haomatong database",
-	"description": "在搜狗号码通数据库中搜索号码相关信息",
+	"description_zh": "在搜狗号码通数据库中搜索号码相关信息",
 	"examples": ["hmt 10086", "haomatong 10086"],
     "categories": ["Search", "Information"]
 }
