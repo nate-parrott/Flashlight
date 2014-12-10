@@ -24,3 +24,4 @@ include_files(send these) to ~_PersonalName(nate)
 include_files(send this) to ~_PersonalName(nate)
 include_files(send these files)
 compose an email
+email ~_PersonalName(john) : ~message(hello)

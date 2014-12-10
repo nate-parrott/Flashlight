@@ -17,8 +17,11 @@ class ProbabilityCounter(object):
 
     def iteritems(self):
         return ((item, count * 1.0 / self.total) for (item, count) in self.counts.iteritems())
+    
+    def __repr__(self):
+      return str(dict(self.iteritems()))
 
-SMOOTHING = 0.000001
+SMOOTHING = 0.0000001
 FREE_TEXT_PROB = 0.0001
 
 def smooth_log_prob(p):
@@ -92,7 +95,7 @@ def flatten(list_of_lists):
     return flatten(map(lambda s: re.split(regex, s), strings))
 """
 
-split_tokens_on_chars = ",.?!\"'"
+split_tokens_on_chars = ",.?!\"':"
 
 def tokenize(text, spaces_array=None):
     if type(text) == str:
