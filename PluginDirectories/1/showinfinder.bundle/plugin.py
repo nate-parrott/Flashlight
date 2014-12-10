@@ -1,4 +1,5 @@
-import urllib, json, i18n, os
+import urllib, json, os
+import i18n
 
 def dark_mode():
     import Foundation
@@ -23,8 +24,9 @@ def results(parsed, original_query):
         url = os.path.expanduser("~")
     else:
         url = os.path.abspath(url)
+    title = i18n.localstr("Open '{0}' in Finder").format(url)
     return {
-        "title": i18n.localstr("Show '{0}' in Finder").format(url),
+        "title":title,
         "run_args": [url],
         "webview_transparent_background": True,
         "html": generateHtml(getFiles(url))
