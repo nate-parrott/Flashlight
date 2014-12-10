@@ -1,23 +1,21 @@
 {
     "categories": [
-        "Utilities"
+        "Utilities", "Featured"
     ],
     "description": "Creates a new reminder.",
     "description_de": "Erstellt eine neue Erinnerung.",
     "displayName": "Remind Me",
     "displayName_de": "Erinner Mich",
     "examples": [
-        "remind me to take out the trash",
-        "new reminder saying do homework",
-        "create a reminder pick up eggs",
-        "remind walk the dog"
+        "remind me to read a book",
+        "new reminder Walk dog due tomorrow at 1:30 PM"
     ],
     "examples_de": [
         "Erinner mich Müll rausbringen",
         "Neue Erinnerung für Hausaufgaben erledigen",
         "Erstelle eine neue Erinnerung Eier mitnehmen",
-        "Erinnerung Mit dem Hund spazieren gehen"
+        "Erinnerung Mit dem Hund spazieren gehen",
+        ""
     ],
-    "isAutomatorWorkflow": true,
     "name": "remind-me"
 }

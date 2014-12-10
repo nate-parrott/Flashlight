@@ -8,7 +8,9 @@ def parse_example_to_phrase(phrase_intent, example):
         tokens = []
         for match in re.finditer(tagged_text, example):
             if match.start() > prev_index:
-                tokens.append(example[prev_index:match.start()].strip())
+                text = example[prev_index:match.start()].strip()
+                if len(text):
+                    tokens.append(text)
             tokens.append([match.group(1).strip(), match.group(2).strip()])
             prev_index = match.end()
         if prev_index < len(example):
