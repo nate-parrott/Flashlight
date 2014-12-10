@@ -1,4 +1,9 @@
 ts
-ts timestamp(1400000000)
+ts *timestamp(1400000000)
 timestamp
-timestamp timestamp(1400000000)
+timestamp *timestamp(1400000000)
+timestamp @date(tomorrow)
+timestamp for @date(tomorrow)
+unix time of @date(today at 9:30 PM)
+
+!regex *timestamp [0-9]+

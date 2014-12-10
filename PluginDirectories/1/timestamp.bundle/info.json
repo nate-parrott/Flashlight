@@ -5,7 +5,7 @@
 	"description": "Convert timestamp to readable string",
 	"description_fr": "Convertit un timestamp en texte lisible",
 	"description_de": "Konvertiert Timestamps in leserliche Strings",
-	"examples": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
+	"examples": ["timestamp for today at 9:30 PM", "ts 1400000000"],
 	"examples_fr": ["timestamp", "timestamp 1400000000", "ts", "ts 1400000000"],
     "categories": ["Developer"]
 }
