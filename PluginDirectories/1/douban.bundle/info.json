@@ -5,5 +5,5 @@
 	"description": "Look for movie info on douban",
 	"description_zh": "快速搜索豆瓣电影",
 	"examples": ["douban Interstellar"],
-    "categories": ["Information", "Search"]
+    "categories": ["Information", "Media"]
 }
