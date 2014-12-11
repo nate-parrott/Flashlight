@@ -1,0 +1,2 @@
+finder ~path(query here)
+öffne ~path(query here)
