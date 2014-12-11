@@ -43,15 +43,21 @@ id __SS_SSOpenAPIResult_category(SPResult *self, SEL cmd) {
     return @"MENU_EXPRESSION";
 }
 
-id __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
-    Class cls = NSClassFromString(@"SPPreviewController") ? : NSClassFromString(@"PRSPreviewController");
-    SPPreviewController *vc = [[cls alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
-    _SS_InlineWebViewContainer *container = (id)vc.view;
-    container.result = self;
-    if (!_Flashlight_Is_10_10_2_Spotlight()) {
-        vc.internalPreviewResult = self;
+SPPreviewController* __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
+    SPPreviewController *vc = objc_getAssociatedObject(self, @selector(customPreviewController));
+    if (vc) {
+        return vc;
+    } else {
+        Class cls = NSClassFromString(@"SPPreviewController") ? : NSClassFromString(@"PRSPreviewController");
+        vc = [[cls alloc] initWithNibName:@"SPOpenAPIPreviewViewController" bundle:[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"]];
+        _SS_InlineWebViewContainer *container = (id)vc.view;
+        container.result = self;
+        if (!_Flashlight_Is_10_10_2_Spotlight()) {
+            vc.internalPreviewResult = self;
+        }
+        objc_setAssociatedObject(self, @selector(customPreviewController), vc, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return vc;
     }
-    return vc;
 }
 
 unsigned long long __SS_SSOpenAPIResult_rank(SPResult *self, SEL cmd) {
@@ -86,13 +92,25 @@ id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
 // - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;
 BOOL __SS_SSOpenWithSearchString_block(SPResult *self, SEL cmd, NSString *searchString, void (^block)()) {
     id json = objc_getAssociatedObject(self, @selector(jsonAssociatedObject));
+    
+    BOOL hasRunArgs = json[@"pass_result_of_output_function_as_first_run_arg"] || json[@"run_args"];
+    
+    NSMutableArray *runArgs = [NSMutableArray new];
+    if ([json[@"pass_result_of_output_function_as_first_run_arg"] boolValue]) {
+        SPPreviewController *previewVC = __SS_SSOpenAPIResult_customPreviewController(self, @selector(customPreviewController));
+        _SS_InlineWebViewContainer *webViewContainer = (id)previewVC.view;
+        [runArgs addObject:[webViewContainer resultOfOutputFunction]];
+    }
+    
     NSString *sourcePlugin = objc_getAssociatedObject(self, @selector(sourcePluginAssociatedObject));
     if (json[@"run_args"]) {
-        [_SS_PluginRunner runQueryResultWithArgs:json[@"run_args"] sourcePlugin:sourcePlugin];
-        return YES;
-    } else {
-        return NO;
+        [runArgs addObjectsFromArray:json[@"run_args"]];
     }
+    
+    if (hasRunArgs) {
+        [_SS_PluginRunner runQueryResultWithArgs:runArgs sourcePlugin:sourcePlugin];
+    }
+    return hasRunArgs;
 }
 
 Class __SS_SPOpenAPIResultClass() {
