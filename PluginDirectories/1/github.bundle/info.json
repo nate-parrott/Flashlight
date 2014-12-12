@@ -4,6 +4,7 @@
 	"displayName_de": "GitHub Suche",
 	"description": "Search GitHub (gh).",
 	"description_de": "Durchsucht GitHub (gh).",
+	"description_ko": "Github를 검색합니다 (gh).",	
 	"examples": ["gh flashlight", "github flashlight"],
 	"categories": ["Developer"]
 }

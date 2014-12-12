@@ -1,0 +1,9 @@
+{
+	"name": "gasprice",
+	"displayName": "German Gas Price",
+	"displayName_de": "Benzinpreise",
+	"description": "German Gas Price using mehr-tanken.de",
+	"description_de": "Benzinpreise von mehr-tanken.de",
+	"examples": ["Benzin Munich"],
+	"categories": ["Information"]
+}
