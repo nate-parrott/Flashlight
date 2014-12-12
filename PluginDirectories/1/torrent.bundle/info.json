@@ -2,7 +2,6 @@
    "name": "torrent",
    "displayName": "Search torrents",
    "description": "Search Torrentz (t), Kickass (k)",
-   "description_ko": "토렌트를 검색합니다. Torrentz (t), Kickass (k)",
    "examples": ["torrentz new movies", "kickass godzilla"],
    "categories": ["Search"]
 }

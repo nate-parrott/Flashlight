@@ -2,7 +2,10 @@
 	"name": "thepiratebay",
 	"displayName": "The Pirate Bay",
 	"description": "Search The Pirate Bay for torrents",
+<<<<<<< HEAD
 	"description_ko": “Pirate Bay에서 토렌트를 검색합니다.",
+=======
+>>>>>>> parent of a547657... update
 	"examples": ["pb 2001: A Space Odyssey", "pb Rick Astley", "pb Trailer Park Boys"],
 	"categories": ["Media"]
 }

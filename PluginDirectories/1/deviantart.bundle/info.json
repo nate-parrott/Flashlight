@@ -4,7 +4,10 @@
 	"displayName_de": "deviantART™ Suche",
 	"description": "Search deviantART™ (deviant)",
 	"description_de": "Durchsuche deviantART™ (deviant)",
+<<<<<<< HEAD
 	"description_ko”: “DeviantART를 검색합니다. (deviant)”,
+=======
+>>>>>>> parent of a547657... update
 	"examples": ["searchdeviant yosemite", "deviantart maverick", "deviant flashlight"],
 	"categories": ["Art"]
 }
