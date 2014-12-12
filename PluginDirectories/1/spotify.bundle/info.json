@@ -2,7 +2,8 @@
 	"name": "Spotify",
 	"displayName": "Spotify",
 	"description": "Search for an artist, album or track in Spotify.",
-	"description_de": "Suche nach einem Künstler, Album oder Song in Spotify.",
+	"description_de": "Suche nach einem Künstler, Album oder Song in Spotify.”,
+	"description_ko": "Spotify에서 아티스트, 앨범 혹은 트랙을 검색합니다.",
 	"examples": ["spotify Michael Jackson", "spt Michael Jackson"],
     "categories": ["Media"]
 }
