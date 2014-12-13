@@ -1,2 +1,2 @@
 sublime
-!always_invoke
+open with sublime
