@@ -327,7 +327,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)clearNLPModelCache {
-    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.picke"] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.pickle"] error:nil];
 }
 
 #pragma mark Categorization
