@@ -532,5 +532,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         self.selectedCategory = kCategorySearchResults;
     }
 }
+#pragma mark Revealing Individual Plugins
+- (void)showPluginWithName:(NSString *)name {
+    
+}
 
 @end
