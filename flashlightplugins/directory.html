@@ -171,7 +171,11 @@
                </div>
                <div class='control-container'>
                   <div class='control'>
+                     {% if browse %}
+                     <a class='install' href='javascript:reveal("{{ plugin.name }}")'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     {% else %}
                      <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     {% endif %}
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
                   </div>
@@ -181,7 +185,13 @@
       </li>
       {% endfor %}
    </ul>
-   {% if not browse %}
+   {% if browse %}
+   <script>
+   function reveal(name) {
+      window.location = '/latest_download';
+   }
+   </script>
+   {% else %}
    <script>
    window.location = "domready://_";
    </script>
