@@ -42,7 +42,7 @@ a:link, a:visited {
     }
 }
 @media screen and (max-width: 460px) {
-    #top .fa, #top img {
+    #top .label {
         display: none;
     }
 }
@@ -74,11 +74,21 @@ img {
     font-weight: 200;
     max-width: 80%;
 }
+@media screen and (max-width: 460px) {
+    #index h2 {
+        font-weight: normal;
+    }
+}
 #images {
     margin-top: 2em;
 }
 #images img {
     width: 385px;
+}
+@media screen and (max-width: 768px) {
+    #images img {
+        width: 300px;
+    }
 }
 #footer-links a {
     color: white;
@@ -102,6 +112,11 @@ a:hover {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+}
+@media screen and (max-width: 500px) {
+    #social > div {
+        display: inline-block;
+    }
 }
 /* Browse */
 #browse .description {
