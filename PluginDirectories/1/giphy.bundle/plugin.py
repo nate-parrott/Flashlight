@@ -22,6 +22,7 @@ def results(parsed, original):
     height: 100%;
     width: 100%;
     font-family: sans-serif;
+    margin: 0;
   }
   #centered {
     display: table;
@@ -66,15 +67,15 @@ def results(parsed, original):
   var query = <!--QUERY-->;
   setTimeout(function() {
     $.ajax({
-      url: "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + encodeURIComponent(query),
+      url: "http://api.giphy.com/v1/gifs/translate?api_key=dc6zaTOxFJmzC&rating=pg-13&s=" + encodeURIComponent(query),
       success: function(response) {
-        var gifs = response.data;
-        if (gifs.length) {
-          GIF = gifs[0];
+        var data = response.data;
+        if (data.length == 0) {
+           $("#content").text("No results.");
+        } else {
+          GIF = data;
            var url = GIF.images.fixed_height_downsampled.url;
            $("#content").empty().append($("<img/>").attr({src: url}));
-        } else {
-          $("#content").text("No results.");
         }
       }
     })
