@@ -4,5 +4,6 @@
 	"description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French and German.",
 	"description_de": "Übersetze Text zwischen Englisch, Arabisch, Spanisch, Hindi, Chinesisch, Französisch und Deutsch.",
 	"examples": ["translate rain to spanish", "translate bonjour from french to arabic"],
-	"categories": ["Language", "Featured"]
+	"categories": ["Language", "Featured"],
+    "version": 2
 }

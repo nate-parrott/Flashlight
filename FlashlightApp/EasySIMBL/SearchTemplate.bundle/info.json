@@ -1,0 +1,8 @@
+{
+	"name": "WorkflowTemplate",
+	"displayName": "Show a Notification (an example plugin)",
+	"description": "Shows a notification with your message.",
+	"examples": ["show a notification saying hello", "toast Hello, world"],
+	"categories": ["Custom"],
+    "isAutomatorWorkflow": true
+}
