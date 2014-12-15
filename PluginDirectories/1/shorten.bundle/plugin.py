@@ -3,8 +3,8 @@ import json
 
 def results(parsed, original_query):
     return {
-        "title": "Shorten '{0}' (press enter)".format(parsed['*url']),
-        "run_args": [parsed['*url']]
+        "title": "Shorten '{0}' (press enter)".format(parsed['~url']),
+        "run_args": [parsed['~url']]
     }
 
 def run(message):

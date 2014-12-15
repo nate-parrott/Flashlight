@@ -327,7 +327,7 @@
         {
             "categories": [
                 "Information",
-                "Search"
+                "Media"
             ],
             "description": "Look for movie info on douban",
             "description_zh": "\u5feb\u901f\u641c\u7d22\u8c46\u74e3\u7535\u5f71",
@@ -376,9 +376,13 @@
                 "Art"
             ],
             "description": "Search Flickr",
+            "description_de": "Flickr Suche",
             "displayName": "Flickr",
             "examples": [
                 "flickr sunset"
+            ],
+            "examples_de": [
+                "flickr Sonnenuntergang"
             ],
             "name": "flickr",
             "zip_url": "flickr.zip"
@@ -413,16 +417,27 @@
         },
         {
             "categories": [
-                "Developer",
-                "Search"
+                "Media"
+            ],
+            "description": "Search for GIFs with Giphy",
+            "examples": [
+                "giphy basketball",
+                "slam dunk gifs"
+            ],
+            "name": "Giphy",
+            "zip_url": "giphy.zip"
+        },
+        {
+            "categories": [
+                "Developer"
             ],
             "description": "Search GitHub (gh).",
             "description_de": "Durchsucht GitHub (gh).",
             "displayName": "GitHub Search",
             "displayName_de": "GitHub Suche",
             "examples": [
-                "gh bootstrap",
-                "github bootstrap"
+                "gh flashlight",
+                "github flashlight"
             ],
             "name": "github",
             "zip_url": "github.zip"
@@ -502,9 +517,16 @@
             "creator_name": "Alex Zavrazhniy",
             "creator_url": "http://themengzor.com",
             "description": "Translate words and phrases with Google (gtr).",
+            "description_de": "\u00dcbersetzte W\u00f6rter und S\u00e4tze mit Google (gtr).",
             "displayName": "Google Translate",
+            "displayName_de": "Google \u00dcbersetzer",
             "examples": [
                 "gtr enru This text will be translated from English to Russian",
+                "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
+                "gtr esen Te amo, Espa\u00f1a!"
+            ],
+            "examples_de": [
+                "gtr deru Dieser Text wird von Deutsch in Russisch \u00fcbersetzt",
                 "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
                 "gtr esen Te amo, Espa\u00f1a!"
             ],
@@ -544,7 +566,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "IMDB",
             "displayName_fr": "IMDB",
@@ -856,6 +878,20 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Opens a path in Finder",
+            "description_de": "Zeigt einen Pfad im Finder an",
+            "displayName": "Show in Finder",
+            "displayName_de": "Im Finder zeigen",
+            "examples": [
+                "finder /Applications/iTunes.app"
+            ],
+            "name": "showinfinder",
+            "zip_url": "showinfinder.zip"
+        },
+        {
+            "categories": [
                 "System",
                 "Featured"
             ],
@@ -909,7 +945,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Developer"
             ],
             "displayName": "Search Stackoverflow",
             "displayName_de": "Stackoverflow Suche",
@@ -1020,8 +1056,7 @@
         },
         {
             "categories": [
-                "Weather",
-                "Featured"
+                "Weather"
             ],
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
@@ -1201,6 +1236,23 @@
             ],
             "name": "wikipedia",
             "zip_url": "wikipedia.zip"
+        },
+        {
+            "categories": [
+                "Information",
+                "Language"
+            ],
+            "description": "Search the Wiktionary.",
+            "description_de": "Durchsuche Wiktionary",
+            "displayName": "Wiktionary (EN)",
+            "displayName_de": "Wiktionary (DE)",
+            "examples": [
+                "wiktionary COB",
+                "wiktionary ASAP",
+                "wiktionary Taschenlampe"
+            ],
+            "name": "wiktionary",
+            "zip_url": "wiktionary.zip"
         },
         {
             "categories": [

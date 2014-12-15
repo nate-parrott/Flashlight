@@ -132,6 +132,10 @@
       margin-top: 0px;
       margin-bottom: -15px;
    }
+   .plugin_link {
+      text-decoration: none;
+      color: inherit;
+   }
    </style>
 </head>
 <body>
@@ -153,15 +157,16 @@
             {% if plugin.model.icon_url %}
             <img class='icon' src='{{ plugin.model.icon_url }}'/>
             {% endif %}
-            <h4>{{ plugin.displayName }}</h4>
+            <h4>
+               {% if browse %} <a class='plugin_link' href='/plugin/{{ plugin.name }}'> {% endif %}
+               {{ plugin.displayName }}
+               {% if browse %} </a> {% endif %}
+            </h4>
             <ul class='examples'>
                {% for example in plugin.examples %}
                <li>{{ example }}</li>
                {% endfor %}
             </ul>
-            {% if plugin.model.screenshot_url %}
-            <img class='screenshot' src='{{ plugin.model.screenshot_url }}'/>
-            {% endif %}
             <p class='description'>
                {{ plugin.description }}
             </p>
@@ -171,7 +176,11 @@
                </div>
                <div class='control-container'>
                   <div class='control'>
+                     {% if browse %}
+                     <a class='install' href='javascript:reveal("{{ plugin.name }}")'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     {% else %}
                      <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     {% endif %}
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
                   </div>
@@ -181,7 +190,13 @@
       </li>
       {% endfor %}
    </ul>
-   {% if not browse %}
+   {% if browse %}
+   <script>
+   function reveal(name) {
+      window.location = '/latest_download';
+   }
+   </script>
+   {% else %}
    <script>
    window.location = "domready://_";
    </script>

@@ -1,0 +1,4 @@
+google ~googlequery(a)
+g ~googlequery(a b)
+search google for ~googlequery(a b c)
+~googlequery(a) search google

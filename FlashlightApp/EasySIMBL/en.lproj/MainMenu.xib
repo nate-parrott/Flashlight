@@ -71,16 +71,28 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="New Plugin" id="e7p-Pf-F9W" userLabel="New Plugin">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="New Plugin" id="BA6-O3-mGg">
+                        <items>
+                            <menuItem title="Run an Automator Workflow" id="ate-NX-h2e">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="newPlugin:" target="715" id="hOo-0M-TPz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Python API..." id="xYz-ja-uoP" userLabel="Python API...">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showPythonAPI:" target="494" id="scO-z8-adG"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="File" id="83">
                     <menu key="submenu" title="File" id="wJP-7d-WaF">
                         <items>
-                            <menuItem title="New Automator Plugin" id="9gl-iY-4Kh">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="newPlugin:" target="715" id="c1b-7k-sVC"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="IrJ-fc-bWH"/>
                             <menuItem title="Close" keyEquivalent="w" id="KSp-5B-nrs">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="MKg-5j-BNg"/>
@@ -336,7 +348,6 @@
         </menu>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="createNewAutomatorPluginMenuItem" destination="9gl-iY-4Kh" id="mTI-ta-ayN"/>
                 <outlet property="enablePluginsLabel" destination="fPh-3V-djF" id="GQh-mz-yUH"/>
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="2My-Fx-DJv"/>
@@ -721,7 +732,7 @@
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-305" y="555"/>
+            <point key="canvasLocation" x="-242" y="485"/>
         </window>
     </objects>
     <resources>
