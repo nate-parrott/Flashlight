@@ -13,13 +13,22 @@
 #import "SPSpotQuery.h"
 #import "NSObject+LogProperties.h"
 #import "SPParsecSimpleResult.h"
+#import "_SS_MetadataResponseDelayer.h"
+
+BOOL _Flashlight_Is_10_10_2_Spotlight() {
+    return NSClassFromString(@"SPQuery") == nil;
+}
 
 @class SPQuery;
 
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
-    __SS_SPOpenAPIQueryClass();
+    if (__SS_SPOpenAPIQueryClass()) {
+        NSLog(@"Hello from Flashlight!");
+    } else {
+        NSLog(@"Failed to initialize Flashlight");
+    }
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();
@@ -83,10 +92,14 @@
      */
     
     RSSwizzleClassMethod(NSClassFromString(@"SPSpotQuery"), NSSelectorFromString(@"queryClasses"), id, RSSWArguments(), {
-        return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
+        if (__SS_SPOpenAPIQueryClass()) {
+            return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
+        } else {
+            return RSSWCallOriginal();
+        }
     });
     
-    NSLog(@"Hello from Flashlight 0.71!");
+    [[_SS_MetadataResponseDelayer shared] setup];
 }
 
 @end

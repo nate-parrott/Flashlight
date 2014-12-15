@@ -12,9 +12,16 @@ lang_codes = {
 }
 
 def results(parsed, original_query):
+    if '~unknown_language' in parsed:
+      from centered_text import centered_text
+      return {
+        "title": "Translate",
+        "html": centered_text(u"Unsupported language: {0}".format(parsed['~unknown_language'])),
+        "webview_transparent_background": True
+      }
     text = parsed['~text']
     from_lang = "auto"
-    to_lang = "spanish"
+    to_lang = "english"
     for key, val in parsed.iteritems():
         if key.startswith('from_language/'):
             from_lang = key.split('/')[1]

@@ -17,7 +17,7 @@ def use_metric():
 def results(parsed, original_query):
     location = parsed['~location']
     title = i18n.localstr('"{0}" weather').format(location)
-    html = open(i18n.find_localized_path("weather.html")).read().replace("<!--LOCATION-->", location).replace("<!--UNITS-->", "metric" if use_metric() else "imperial").replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
+    html = open(i18n.find_localized_path("weather.html")).read().decode('utf-8').replace("<!--LOCATION-->", location).replace("<!--UNITS-->", "metric" if use_metric() else "imperial").replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
     return {
         "title": title,
         "html": html,

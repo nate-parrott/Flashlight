@@ -1,7 +1,9 @@
 {
 	"name": "github",
 	"displayName": "GitHub Search",
-	"description": "Search Github (gh).",
-	"examples": ["gh bootstrap", "gitub bootstrap"],
-	"categories": ["Search"]
+	"displayName_de": "GitHub Suche",
+	"description": "Search GitHub (gh).",
+	"description_de": "Durchsucht GitHub (gh).",
+	"examples": ["gh flashlight", "github flashlight"],
+	"categories": ["Developer"]
 }

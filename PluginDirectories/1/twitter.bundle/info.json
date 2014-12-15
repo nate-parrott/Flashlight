@@ -1,7 +1,10 @@
 {
 	"name": "twitter",
 	"displayName": "Twitter Search",
+	"displayName_de": "Twitter Suche",
 	"description": "Search Twitter (tt).",
+	"description_de": "Durchsuche Twitter (tt).",
 	"examples": ["twitter 'search term'", "tt 'search term'"],
+	"examples_de": ["twitter 'Suchbegriff'", "tt 'Suchbegriff'"],
 	"categories": ["Search"]
 }

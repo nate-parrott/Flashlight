@@ -1,0 +1,12 @@
+{
+    "name": "wiktionary",
+    "displayName": "Wiktionary (EN)",
+    "displayName_de": "Wiktionary (DE)",
+
+    "description": "Search the Wiktionary.",
+    "description_de": "Durchsuche Wiktionary",
+
+    "examples": ["wiktionary COB", "wiktionary ASAP", "wiktionary Flashlight"],
+    "examples": ["wiktionary COB", "wiktionary ASAP", "wiktionary Taschenlampe"],
+    "categories": ["Information", "Language"]
+}

@@ -14,6 +14,12 @@
 #import "PluginEditorWindowController.h"
 #import "PluginDirectoryAPI.h"
 #import "NSURLComponents+ValueForQueryKey.h"
+#import "SearchPluginEditorWindowController.h"
+
+NSString * const kCategoryInstalled = @"Installed";
+NSString * const kCategoryFeatured = @"Featured";
+NSString * const kCategorySearchResults = @"_SearchResults";
+NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
@@ -34,6 +40,8 @@
 @property (nonatomic) NSString *selectedCategory;
 
 @property (nonatomic) NSString *selectedPluginName;
+
+@property (nonatomic) IBOutlet NSSearchField *searchField;
 
 @end
 
@@ -88,7 +96,7 @@
     }
     [self updateControllers];
     
-    BOOL showingInstalled = [self.selectedCategory isEqualToString:@"Installed"];
+    BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
     self.webView.hidden = showingInstalled;
     self.tableView.hidden = !showingInstalled;
     self.effectView.hidden = self.webView.hidden;
@@ -138,7 +146,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     PluginModel *plugin = [(PluginCellView *)[self.tableView viewAtColumn:[self.tableView clickedColumn] row:[self.tableView clickedRow] makeIfNecessary:YES] plugin];
     if (!plugin.installed) return;
     if (plugin.isAutomatorWorkflow) {
-        [self editPluginNamed:plugin.name];
+        [self editAutomatorPluginNamed:plugin.name];
+    } else if (plugin.isSearchPlugin) {
+        [self editSearchPluginNamed:plugin.name];
     } else {
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setMessageText:NSLocalizedString(@"This plugin has no additional options.", @"")];
@@ -321,7 +331,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)clearNLPModelCache {
-    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.picke"] error:nil];
+    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.pickle"] error:nil];
 }
 
 #pragma mark Categorization
@@ -329,22 +339,22 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     // returns category names or NSNull's for section breaks
     NSMutableArray *ordered = self.categories.mutableCopy ? : [NSMutableArray new];
     [ordered sortUsingSelector:@selector(compare:)];
-    [ordered removeObject:@"Installed"];
-    [ordered removeObject:@"Featured"];
+    [ordered removeObject:kCategoryInstalled];
+    [ordered removeObject:kCategoryFeatured];
     [ordered removeObject:@"Unknown"];
     
     [ordered insertObject:[NSNull null] atIndex:0];
-    [ordered insertObject:@"Installed" atIndex:1];
+    [ordered insertObject:kCategoryInstalled atIndex:1];
     [ordered insertObject:[NSNull null] atIndex:2];
-    [ordered insertObject:@"Featured" atIndex:3];
+    [ordered insertObject:kCategoryFeatured atIndex:3];
     [ordered insertObject:[NSNull null] atIndex:4];
     [ordered addObject:@"Unknown"];
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
     NSDictionary *imageNamesForCategories = @{
-                            @"Installed": @"download",
-                            @"Featured": @"star",
+                            kCategoryInstalled: @"download",
+                            kCategoryFeatured: @"star",
                             @"Information": @"info",
                             @"Language": @"translate",
                             @"Search": @"search",
@@ -352,10 +362,14 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"Utilities": @"wrench",
                             @"Weather": @"cloud",
                             @"News": @"newspaper",
-                            @"Unknown": @"plugin"
+                            @"Unknown": @"plugin",
+                            @"Art": @"palette",
+                            @"Developer": @"console"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
-    return [NSImage imageNamed:imageName];
+    NSImage *image = [NSImage imageNamed:imageName];
+    [image setTemplate:YES];
+    return image;
 }
 - (NSInteger)outlineView:(NSOutlineView *)outlineView numberOfChildrenOfItem:(id)item {
     if (item==nil) {
@@ -373,7 +387,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
-        view.imageView.alphaValue = 0.47;
+        // view.imageView.alphaValue = 0.47;
         return view;
     }
 }
@@ -403,10 +417,16 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)setSelectedCategory:(NSString *)selectedCategory {
     _selectedCategory = selectedCategory;
     [self updateUI];
-    if (![selectedCategory isEqualToString:@"Installed"]) {
+    if (![selectedCategory isEqualToString:kCategoryInstalled]) {
         self.webView.alphaValue = 0;
         [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
-        [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
+        if ([selectedCategory isEqualToString:kCategorySearchResults]) {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForSearchQuery:self.searchField.stringValue]]];
+        } else if ([selectedCategory isEqualToString:kCategoryShowIndividualPlugin]) {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForPluginNamed:self.selectedPluginName]]];
+        } else {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
+        }
     }
 }
 
@@ -424,6 +444,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"Utilities": NSLocalizedString(@"Utilities", @""),
                  @"Weather": NSLocalizedString(@"Weather", @""),
                  @"News": NSLocalizedString(@"News", @""),
+                 @"Art": NSLocalizedString(@"Art", @""),
+                 @"Developer": NSLocalizedString(@"Developer", @""),
                  @"Unknown": NSLocalizedString(@"Unknown", @"")
                  };
     });
@@ -444,14 +466,35 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     NSMutableDictionary *d = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:infoJsonPath] options:0 error:nil] mutableCopy];
     d[@"name"] = name;
     [[NSJSONSerialization dataWithJSONObject:d options:0 error:nil] writeToFile:infoJsonPath atomically:YES];
-    self.selectedCategory = @"Installed";
+    self.selectedCategory = kCategoryInstalled;
     self.selectedPluginName = name;
     [self reloadFromDisk];
-    [self editPluginNamed:name];
+    [self editAutomatorPluginNamed:name];
 }
 
-- (void)editPluginNamed:(NSString *)name {
+- (void)editAutomatorPluginNamed:(NSString *)name {
     PluginEditorWindowController *editor = [[PluginEditorWindowController alloc] initWithWindowNibName:@"PluginEditorWindowController"];
+    editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    [editor showWindow:nil];
+}
+
+- (IBAction)newSearchPlugin:(id)sender {
+    NSString *name = [[NSUUID UUID] UUIDString];
+    NSString *path = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"SearchTemplate" ofType:@"bundle"] toPath:path error:nil];
+    // rename the template:
+    NSString *infoJsonPath = [path stringByAppendingPathComponent:@"info.json"];
+    NSMutableDictionary *d = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:infoJsonPath] options:0 error:nil] mutableCopy];
+    d[@"name"] = name;
+    [[NSJSONSerialization dataWithJSONObject:d options:0 error:nil] writeToFile:infoJsonPath atomically:YES];
+    self.selectedCategory = kCategoryInstalled;
+    self.selectedPluginName = name;
+    [self reloadFromDisk];
+    [self editSearchPluginNamed:name];
+}
+
+- (void)editSearchPluginNamed:(NSString *)name {
+    SearchPluginEditorWindowController *editor = [[SearchPluginEditorWindowController alloc] initWithWindowNibName:@"SearchPluginEditorWindowController"];
     editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
     [editor showWindow:nil];
 }
@@ -508,6 +551,18 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     } else {
         [listener use];
     }
+}
+
+#pragma mark Search
+- (IBAction)search:(id)sender {
+    if (self.searchField.stringValue.length > 0) {
+        self.selectedCategory = kCategorySearchResults;
+    }
+}
+#pragma mark Revealing Individual Plugins
+- (void)showPluginWithName:(NSString *)name {
+    self.selectedPluginName = name;
+    self.selectedCategory = kCategoryShowIndividualPlugin;
 }
 
 @end
