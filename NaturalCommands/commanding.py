@@ -143,7 +143,7 @@ def phrase_from_candidate(candidate, tokens, spaces, tag_processing_functions):
         spaces = spaces[n_tokens:]
     return Phrase(intent, items)
 
-def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}, tag_processing_functions={}):
+def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}, tag_processing_functions={}, weight_first_word=1.5):
     if state_regexes == None: state_regexes = {}
     transition_probs = defaultdict(ProbabilityCounter)
     emission_probs = defaultdict(ProbabilityCounter)
@@ -182,7 +182,7 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}, tag_p
     for intent in intents:
         # print 'INTENT {0}'.format(intent)
         candidates = [(0.0, intent, [u'$START_{0}'.format(intent)])]
-        for token in tokens + [None]:
+        for i, token in enumerate(tokens + [None]):
             # if intent == 'search': print candidates
             best_candidates_for_last_state = {}
             for (candidate_log_prob, candidate_intent, candidate_states) in candidates:
@@ -206,6 +206,8 @@ def parse_phrase(text, examples, state_regexes=None, supplemental_tags={}, tag_p
                             if next_state not in best_candidates_for_last_state or new_candidate[0] > best_candidates_for_last_state[next_state][0]:
                                 best_candidates_for_last_state[next_state] = new_candidate
             candidates = best_candidates_for_last_state.values()
+            if i == 0:
+              candidates = [(prob * weight_first_word, intent, states) for (prob, intent, states) in candidates]
         #print candidates
         for candidate in candidates:
             if best_candidate == None or candidate[0] > best_candidate[0]:

@@ -138,28 +138,40 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
       message = "Your plugin was uploaded!" + approval_msg
       self.response.write(template("uploaded.html", {"message": message, "plugin": plugin}))
 
+def directory_html(category=None, search=None, languages=['en'], browse=False, name=None):
+  if category:
+    plugins = list(Plugin.query(Plugin.categories == category, Plugin.approved == True))
+    plugins = stable_daily_shuffle(plugins)
+  elif search:
+    plugins = search_plugins(search)
+  elif name:
+    plugin = Plugin.by_name(name)
+    plugins = [plugin] if plugin else []
+  else:
+    plugins = []
+  plugin_dicts = []
+  for p in plugins:
+    plugin = info_dict_for_plugin(p, languages)
+    plugin_dicts.append(plugin)
+  return template("directory.html", {"plugins": plugin_dicts, "browse": browse, "search": search})
+
+def info_dict_for_plugin(p, languages=['en']):
+  plugin = json.loads(p.info_json)
+  plugin['displayName'] = get_localized_key(plugin, "displayName", languages, "")
+  plugin['description'] = get_localized_key(plugin, "description", languages, "")
+  plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
+  plugin['model'] = p
+  plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
+  return plugin
+
 class Directory(webapp2.RequestHandler):
   def get(self):
     languages = self.request.get('languages', '').split(',') + ['en']
     category = self.request.get('category', None)
     search = self.request.get('search', None)
-    if category:
-      plugins = list(Plugin.query(Plugin.categories == category, Plugin.approved == True))
-      plugins = stable_daily_shuffle(plugins)
-    elif search:
-      plugins = search_plugins(search)
-    else:
-      plugins = []
-    plugin_dicts = []
-    for p in plugins:
-      plugin = json.loads(p.info_json)
-      plugin['displayName'] = get_localized_key(plugin, "displayName", languages, "")
-      plugin['description'] = get_localized_key(plugin, "description", languages, "")
-      plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
-      plugin['model'] = p
-      plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
-      plugin_dicts.append(plugin)
-    self.response.write(template("directory.html", {"plugins": plugin_dicts, "browse": self.request.get('browse', '')!='', "search": search}))
+    browse = self.request.get('browse', '')!=''
+    name = self.request.get('name', None)
+    self.response.write(directory_html(category, search, languages, browse, name))
 
 class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
   def get(self, resource):
@@ -174,13 +186,16 @@ def compute_categories():
         categories.add(c)
     return categories
 
-class Categories(webapp2.RequestHandler):
-  def get(self):
+def categories():
     categories = memcache.get("categories")
     if not categories:
       categories = compute_categories()
       memcache.set("categories", categories, time=10 * 60) # 10 min
-    self.response.write(json.dumps(list(categories)))
+    return categories
+
+class Categories(webapp2.RequestHandler):
+  def get(self):
+    self.response.write(json.dumps(list(categories())))
 
 class LogInstall(webapp2.RequestHandler):
   def get(self):
@@ -217,8 +232,31 @@ class ConsoleUpload(webapp2.RequestHandler):
     url = blobstore.create_upload_url('/post_upload')
     self.response.write(json.dumps({"md5": existing_md5, "upload_url": url}))
 
+class BrowseHandler(webapp2.RequestHandler):
+  def get(self):
+    cats = list(categories())
+    if 'Featured' in cats:
+      cats.remove('Featured')
+    cats.insert(0, 'Featured')
+    self.response.write(template("browse.html", {
+      "categories": cats,
+      "initial_html": directory_html(category='Featured', browse=True)
+    }))
+
+class PluginPageHandler(webapp2.RequestHandler):
+  def get(self, name):
+    plugin = Plugin.by_name(name)
+    if not plugin:
+      self.error(404)
+      return
+    self.response.write(template("plugin_page.html", {
+      "plugin": info_dict_for_plugin(plugin)
+    }))
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
+    ('/browse', BrowseHandler),
+    ('/plugin/(.+)', PluginPageHandler),
     ('/upload', UploadHandler),
     ('/post_upload', PostUploadHandler),
     ('/directory', Directory),

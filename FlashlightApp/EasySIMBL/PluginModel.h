@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL installing;
 @property (nonatomic) NSURL *zipURL;
 @property (nonatomic) NSArray *categories;
-@property (nonatomic) BOOL isAutomatorWorkflow;
+@property (nonatomic) BOOL isAutomatorWorkflow, isSearchPlugin;
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url;
 
