@@ -24,7 +24,7 @@
                 "500px sky",
                 "500px nature"
             ],
-            "name": "500px\u2122",
+            "name": "500px",
             "zip_url": "500px.zip"
         },
         {
@@ -58,10 +58,16 @@
                 "Search"
             ],
             "description": "Search Amazon (shortcut: a).",
+            "description_de": "Durchsuche Amazon (shortcut: a).",
             "displayName": "Amazon Search",
+            "displayName_de": "Amazon Suche",
             "examples": [
                 "amazon flashlight",
                 "a flashlight"
+            ],
+            "examples_de": [
+                "amazon Taschenlampe",
+                "a Taschenlampe"
             ],
             "name": "amazon",
             "zip_url": "amazon.zip"
@@ -75,6 +81,10 @@
             "displayName": "Open with Atom",
             "displayName_de": "Mit Atom \u00f6ffnen",
             "examples": [
+                "atom file",
+                "atom folder"
+            ],
+            "examples_de": [
                 "atom Datei",
                 "atom Ornder"
             ],
@@ -99,8 +109,16 @@
                 "Search"
             ],
             "displayName": "Bing Search",
+            "displayName_de": "Bing Suche",
             "examples": [
-                "bing 'search term', bg 'search term', bing search for 'search term'"
+                "bing 'search term'",
+                "bg 'search term'",
+                "bing search for 'search term'"
+            ],
+            "examples_de": [
+                "bing Flashlight",
+                "bg FlashLight",
+                "Bing Suche nach Flashlight"
             ],
             "name": "bing",
             "zip_url": "bing.zip"
@@ -135,8 +153,9 @@
                 "Developer"
             ],
             "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
-            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Atom ge\u00f6ffnet.",
+            "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Brackets ge\u00f6ffnet.",
             "displayName": "Open with Brackets",
+            "displayName_de": "Mit Brackets \u00f6ffnen",
             "examples": [
                 "Brackets"
             ],
@@ -150,10 +169,16 @@
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+            "description_de": "\u00d6ffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
             "displayName": "Developer color copier",
+            "displayName_de": "Entwickler Farbauswahl",
             "examples": [
                 "copy color",
                 "copy color as UIColor"
+            ],
+            "examples_de": [
+                "Kopiere Farbe",
+                "Kopiere Farbe als UIColor"
             ],
             "name": "copycolor",
             "zip_url": "copycolor.zip"
@@ -163,9 +188,9 @@
                 "Utilities"
             ],
             "description": "Copy path to clipboard from finder",
-            "description_de": "Kopiere den Pfad vom Finder",
+            "description_de": "Kopiert den Pfad vom Finder",
             "displayName": "Copy Path From Finder",
-            "displayName_de": "Pfad vom Finder kopieren",
+            "displayName_de": "Finder Pfad kopieren",
             "examples": [
                 "copypath",
                 "copy path",
@@ -173,7 +198,7 @@
             ],
             "examples_de": [
                 "Pfad kopieren",
-                "kopere Pfad",
+                "kopiere Pfad",
                 "Pfad"
             ],
             "name": "Copy Path",
@@ -249,12 +274,13 @@
             "description": "Search deviantART\u2122 (deviant)",
             "description_de": "Durchsuche deviantART\u2122 (deviant)",
             "displayName": "deviantART\u2122 Search",
+            "displayName_de": "deviantART\u2122 Suche",
             "examples": [
                 "searchdeviant yosemite",
                 "deviantart maverick",
                 "deviant flashlight"
             ],
-            "name": "deviantart\u2122",
+            "name": "deviantart",
             "zip_url": "deviantart.zip"
         },
         {
@@ -262,7 +288,7 @@
                 "Language"
             ],
             "description": "Translate English to German using dict.cc",
-            "description_de": "\u00dcbersetze von English nach German mit dict.cc",
+            "description_de": "\u00dcbersetze von Englisch nach Deutsch mit dict.cc",
             "displayName": "dict.cc Translate",
             "displayName_de": "dict.cc \u00dcbersetzer",
             "examples": [
@@ -301,7 +327,7 @@
         {
             "categories": [
                 "Information",
-                "Search"
+                "Media"
             ],
             "description": "Look for movie info on douban",
             "description_zh": "\u5feb\u901f\u641c\u7d22\u8c46\u74e3\u7535\u5f71",
@@ -331,13 +357,49 @@
                 "Search"
             ],
             "description": "Search eBay (e) from Spotlight.",
+            "description_de": "Durchsucht eBay (e) durch die Spotlight",
             "displayName": "eBay Search",
+            "displayName_de": "eBay Suche",
             "examples": [
                 "ebay flashlight",
                 "e flashlight"
             ],
+            "examples_de": [
+                "ebay Taschenlampe",
+                "e Taschenlampe"
+            ],
             "name": "ebay",
             "zip_url": "ebay.zip"
+        },
+        {
+            "categories": [
+                "Art"
+            ],
+            "description": "Search Flickr",
+            "description_de": "Flickr Suche",
+            "displayName": "Flickr",
+            "examples": [
+                "flickr sunset"
+            ],
+            "examples_de": [
+                "flickr Sonnenuntergang"
+            ],
+            "name": "flickr",
+            "zip_url": "flickr.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "German Gas Price using mehr-tanken.de",
+            "description_de": "Benzinpreise von mehr-tanken.de",
+            "displayName": "German Gas Price",
+            "displayName_de": "Benzinpreise",
+            "examples": [
+                "Benzin Munich"
+            ],
+            "name": "gasprice",
+            "zip_url": "gasprice.zip"
         },
         {
             "categories": [
@@ -355,13 +417,27 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
-            "description": "Search Github (gh).",
-            "displayName": "GitHub Search",
+            "description": "Search for GIFs with Giphy",
             "examples": [
-                "gh bootstrap",
-                "gitub bootstrap"
+                "giphy basketball",
+                "slam dunk gifs"
+            ],
+            "name": "Giphy",
+            "zip_url": "giphy.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search GitHub (gh).",
+            "description_de": "Durchsucht GitHub (gh).",
+            "displayName": "GitHub Search",
+            "displayName_de": "GitHub Suche",
+            "examples": [
+                "gh flashlight",
+                "github flashlight"
             ],
             "name": "github",
             "zip_url": "github.zip"
@@ -369,15 +445,24 @@
         {
             "categories": [
                 "Search",
+                "Media",
                 "Featured"
             ],
             "displayName": "Google Image Search",
+            "displayName_de": "Google Bilder Suche",
             "examples": [
                 "image search for ducks",
                 "gi ducks",
                 "show me images of ducks",
                 "show me a picture of ducks",
                 "google images ducks"
+            ],
+            "examples_de": [
+                "Bildersuche nach Enten",
+                "gi Enten",
+                "Zeige mir Bilder von Enten",
+                "Zeige mir ein Bild von Enten",
+                "Google Bilder Enten"
             ],
             "name": "googleimages",
             "zip_url": "googleimages.zip"
@@ -394,6 +479,13 @@
                 "map of new york",
                 "gm new york"
             ],
+            "examples_de": [
+                "google maps New York",
+                "Zeige auf Google Maps New York",
+                "Karte New York",
+                "Karte von New York",
+                "gm New York"
+            ],
             "name": "googlemaps",
             "zip_url": "googlemaps.zip"
         },
@@ -403,9 +495,15 @@
                 "Featured"
             ],
             "displayName": "Google Search",
+            "displayName_de": "Google Suche",
             "examples": [
                 "google Apple stock",
                 "search the web for OSX Yosemite",
+                "g Flashlight"
+            ],
+            "examples_de": [
+                "google Apple Aktie",
+                "Suche im Internet nach OSX Yosemite",
                 "g Flashlight"
             ],
             "name": "googleserach",
@@ -413,10 +511,35 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Language"
+            ],
+            "creator_name": "Alex Zavrazhniy",
+            "creator_url": "http://themengzor.com",
+            "description": "Translate words and phrases with Google (gtr).",
+            "description_de": "\u00dcbersetzte W\u00f6rter und S\u00e4tze mit Google (gtr).",
+            "displayName": "Google Translate",
+            "displayName_de": "Google \u00dcbersetzer",
+            "examples": [
+                "gtr enru This text will be translated from English to Russian",
+                "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
+                "gtr esen Te amo, Espa\u00f1a!"
+            ],
+            "examples_de": [
+                "gtr deru Dieser Text wird von Deutsch in Russisch \u00fcbersetzt",
+                "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
+                "gtr esen Te amo, Espa\u00f1a!"
+            ],
+            "name": "googletranslate",
+            "zip_url": "googletranslate.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Information"
             ],
-            "description": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
+            "description": "Search for a phone number in Sogou Haomatong database",
+            "description_zh": "\u5728\u641c\u72d7\u53f7\u7801\u901a\u6570\u636e\u5e93\u4e2d\u641c\u7d22\u53f7\u7801\u76f8\u5173\u4fe1\u606f",
             "displayName": "Sogou Haomatong",
             "displayName_zh": "\u641c\u72d7\u53f7\u7801\u901a",
             "examples": [
@@ -425,19 +548,6 @@
             ],
             "name": "haomatong",
             "zip_url": "haomatong.zip"
-        },
-        {
-            "categories": [
-                "Developer"
-            ],
-            "description": "Convert a hex color value into a UIColor instance",
-            "displayName": "Hex To UIColor",
-            "examples": [
-                "UIColor #3083D6",
-                "UIColor swift #3083D6"
-            ],
-            "name": "hexToUIColor",
-            "zip_url": "hexToUIColor.zip"
         },
         {
             "categories": [
@@ -456,12 +566,15 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "IMDB",
             "displayName_fr": "IMDB",
             "examples": [
                 "imdb Phantom of the Opera"
+            ],
+            "examples_de": [
+                "imdb Phantom der Oper"
             ],
             "examples_fr": [
                 "imdb La Soupe aux Choux"
@@ -494,6 +607,7 @@
                 "Featured"
             ],
             "description": "Translate text between English, Arabic, Spanish, Hindi, Chinese, French and German.",
+            "description_de": "\u00dcbersetze Text zwischen Englisch, Arabisch, Spanisch, Hindi, Chinesisch, Franz\u00f6sisch und Deutsch.",
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",
@@ -517,8 +631,7 @@
         },
         {
             "categories": [
-                "Language",
-                "Search"
+                "Language"
             ],
             "description": "Search the Japanese dictionary and translator Jisho",
             "displayName": "Jisho",
@@ -570,32 +683,66 @@
             "categories": [
                 "Developer"
             ],
+            "description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+            "displayName": "Open with Text mate",
+            "displayName_de": "Textmate",
+            "examples": [
+                "mate"
+            ],
+            "iconPath": "/Applications/TextMate.app/Contents/Resources/TextMate.icns",
+            "name": "mate",
+            "zip_url": "mate.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
             "description": "Search at Mozilla developer Network",
+            "description_de": "Durchsuche das Mozilla developer Network",
             "displayName": "Search at MDN",
+            "displayName_de": "Suche auf MDN",
             "examples": [
                 "mdn body",
                 "Mozilla developer Network URL"
             ],
             "iconPath": "./Icon.png",
-            "name": "Search at Mozilla developer Network",
+            "name": "mdn",
             "zip_url": "mdn.zip"
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "Search Netflix",
+            "displayName_de": "Netflix Suche",
             "examples": [
-                "netflix/n chuck"
+                "netflix chuck",
+                "n chuck"
             ],
             "name": "netflix",
             "zip_url": "netflix.zip"
         },
         {
             "categories": [
+                "Weather"
+            ],
+            "description": "Ninetan's forecasting system",
+            "description_ja": "\u306a\u3044\u3093\u305f\u3093\u5929\u6c17\u4e88\u5831",
+            "displayName": "Ninetan",
+            "displayName_ja": "\u306a\u3044\u3093\u305f\u3093",
+            "examples": [
+                "sx9 kyoto",
+                "ninetan osaka"
+            ],
+            "name": "ninetan",
+            "zip_url": "ninetan.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search php.net manual.",
+            "description_de": "Durchsuche php.net",
             "description_fr": "Recherceher dans la documentation PHP.",
             "displayName": "PHP Manual",
             "displayName_fr": "Manuel PHP",
@@ -623,8 +770,7 @@
         },
         {
             "categories": [
-                "Search",
-                "Information"
+                "Media"
             ],
             "description": "Search The Pirate Bay for torrents",
             "displayName": "The Pirate Bay",
@@ -642,7 +788,9 @@
                 "Featured"
             ],
             "description": "Search Reddit (rdt).",
+            "description_de": "Durchsucht Reddit (rdt).",
             "displayName": "Reddit Search",
+            "displayName_de": "Reddit Suche",
             "examples": [
                 "reddit cats",
                 "rdt cats"
@@ -652,27 +800,24 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Utilities",
+                "Featured"
             ],
             "description": "Creates a new reminder.",
             "description_de": "Erstellt eine neue Erinnerung.",
             "displayName": "Remind Me",
             "displayName_de": "Erinner Mich",
             "examples": [
-                "remind me to ~message(take out the trash)",
-                "new reminder saying ~message(do homework)",
-                "create a reminder ~message(pick up eggs)",
-                "remind ~message(walk the dog)",
-                ""
+                "remind me to read a book",
+                "new reminder Walk dog due tomorrow at 1:30 PM"
             ],
             "examples_de": [
-                "Erinner mich ~message(M\u00fcll rausbringen)",
-                "Neue Erinnerung f\u00fcr ~message(Hausaufgaben erledigen)",
-                "Erstelle eine neue Erinnerung ~message(Eier mitnehmen)",
-                "Erinnerung ~message(Mit dem Hund spazieren gehen)",
+                "Erinner mich M\u00fcll rausbringen",
+                "Neue Erinnerung f\u00fcr Hausaufgaben erledigen",
+                "Erstelle eine neue Erinnerung Eier mitnehmen",
+                "Erinnerung Mit dem Hund spazieren gehen",
                 ""
             ],
-            "isAutomatorWorkflow": true,
             "name": "remind-me",
             "zip_url": "remind-me.zip"
         },
@@ -733,6 +878,20 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Opens a path in Finder",
+            "description_de": "Zeigt einen Pfad im Finder an",
+            "displayName": "Show in Finder",
+            "displayName_de": "Im Finder zeigen",
+            "examples": [
+                "finder /Applications/iTunes.app"
+            ],
+            "name": "showinfinder",
+            "zip_url": "showinfinder.zip"
+        },
+        {
+            "categories": [
                 "System",
                 "Featured"
             ],
@@ -750,6 +909,15 @@
                 "lock",
                 "screen saver"
             ],
+            "examples_de": [
+                "Herunterfahren",
+                "Neustart",
+                "Abmelden",
+                "Schlafen",
+                "Sperren",
+                "Bildschirmschoner",
+                "Papierkorb leeren"
+            ],
             "examples_fr": [
                 "\u00e9teindre",
                 "red\u00e9marrer",
@@ -763,7 +931,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
             "description_de": "Suche nach einem K\u00fcnstler, Album oder Song in Spotify.",
@@ -777,9 +945,10 @@
         },
         {
             "categories": [
-                "Search"
+                "Developer"
             ],
             "displayName": "Search Stackoverflow",
+            "displayName_de": "Stackoverflow Suche",
             "examples": [
                 "stackoverflow/so python"
             ],
@@ -873,9 +1042,7 @@
             "displayName": "Timestamp",
             "displayName_fr": "Timestamp",
             "examples": [
-                "timestamp",
-                "timestamp 1400000000",
-                "ts",
+                "timestamp for today at 9:30 PM",
                 "ts 1400000000"
             ],
             "examples_fr": [
@@ -889,8 +1056,7 @@
         },
         {
             "categories": [
-                "Weather",
-                "Featured"
+                "Weather"
             ],
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
@@ -900,7 +1066,7 @@
             "displayName_fr": "Fuseaux horaire",
             "examples": [
                 "time Munich",
-                "timezone Tokio"
+                "what time is it in Shanghai?"
             ],
             "examples_de": [
                 "Zeit M\u00fcnchen",
@@ -932,21 +1098,32 @@
                 "Search"
             ],
             "description": "Search Twitter (tt).",
+            "description_de": "Durchsuche Twitter (tt).",
             "displayName": "Twitter Search",
+            "displayName_de": "Twitter Suche",
             "examples": [
                 "twitter 'search term'",
                 "tt 'search term'"
+            ],
+            "examples_de": [
+                "twitter 'Suchbegriff'",
+                "tt 'Suchbegriff'"
             ],
             "name": "twitter",
             "zip_url": "twitter.zip"
         },
         {
             "categories": [
-                "Search"
+                "Language"
             ],
             "displayName": "Search Urbandictionary",
+            "displayName_de": "Urbandictionary Suche",
             "examples": [
                 "urbandictionary/ud hello"
+            ],
+            "examples_de": [
+                "urbandictionary hallo",
+                "ud hallo"
             ],
             "name": "urbandictionary",
             "zip_url": "urbandictionary.zip"
@@ -1006,14 +1183,14 @@
                 "date next thursday"
             ],
             "name": "whenis",
-            "zip_url": "whenis.disabled-bundle.zip"
+            "zip_url": "whenis.zip"
         },
         {
             "categories": [
                 "System"
             ],
             "description": "Tell me who I am",
-            "description_de": "Erz\u00e4hl mir wer ich bin",
+            "description_de": "Sage mir wer ich bin",
             "displayName": "Who am I?",
             "examples": [
                 "Who am I?"
@@ -1024,19 +1201,22 @@
         {
             "categories": [
                 "Search",
-                "Information"
+                "Information",
+                "Featured"
             ],
             "description": "Search English Wikipedia (wiki).",
             "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
             "description_fr": "Recherche sur Wikipedia.",
             "description_it": "Cerca su Wikipedia.",
+            "description_nl": "Zoek op de Nederlandse Wikipedia (wiki).",
             "displayName": "Wikipedia (EN)",
             "displayName_de": "Wikipedia (DE)",
             "displayName_fr": "Wikipedia (FR)",
             "displayName_it": "Wikipedia (IT)",
+            "displayName_nl": "Wikipedia (NL)",
             "examples": [
-                "wiki Dogs",
-                "search wikipedia for St. Louis, MO",
+                "wiki hond",
+                "Zoek op wikipedia voor St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "examples_de": [
@@ -1060,11 +1240,39 @@
         {
             "categories": [
                 "Information",
+                "Language"
+            ],
+            "description": "Search the Wiktionary.",
+            "description_de": "Durchsuche Wiktionary",
+            "displayName": "Wiktionary (EN)",
+            "displayName_de": "Wiktionary (DE)",
+            "examples": [
+                "wiktionary COB",
+                "wiktionary ASAP",
+                "wiktionary Taschenlampe"
+            ],
+            "name": "wiktionary",
+            "zip_url": "wiktionary.zip"
+        },
+        {
+            "categories": [
+                "Information",
                 "Featured"
             ],
             "displayName": "Wolfram|Alpha Search",
+            "displayName_de": "Wolfram|Alpha Suche",
             "displayName_fr": "Recherche Wolfram|Alpha (Anglais uniquement)",
             "examples": [
+                "ask wolfram alpha 1 + 1",
+                "wa first 10 prime numbers",
+                "population of india"
+            ],
+            "examples_de": [
+                "Frage wolfram alpha 1 + 1",
+                "wa first 10 prime numbers",
+                "population of india"
+            ],
+            "examples_fr": [
                 "demander \u00e0 wolfram alpha 1 + 1",
                 "wa first 10 prime numbers",
                 "population of india"
@@ -1077,7 +1285,9 @@
                 "Search"
             ],
             "description": "Search Yahoo (yh).",
+            "description_de": "Durchsucht Yahoo (yh).",
             "displayName": "Yahoo Search",
+            "displayName_de": "Yahoo Suche",
             "examples": [
                 "yahoo Apple stock",
                 "yh Flashlight"
@@ -1137,9 +1347,10 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "Search Youtube",
+            "displayName_de": "Durchsuche Youtube",
             "examples": [
                 "youtube/yt erb"
             ],

@@ -1,6 +1,8 @@
 {
 	"name": "bing",
 	"displayName": "Bing Search",
-	"examples": ["bing 'search term', bg 'search term', bing search for 'search term'"],
+	"displayName_de": "Bing Suche",
+	"examples": ["bing 'search term'", "bg 'search term'", "bing search for 'search term'"],
+	"examples_de": ["bing Flashlight", "bg FlashLight", "Bing Suche nach Flashlight"],
 	"categories": ["Search"]
 }

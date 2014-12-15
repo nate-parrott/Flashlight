@@ -16,14 +16,14 @@ def get_response(url):
     response = urllib2.urlopen(req).read()
     return response
 
-def get_cny_price():
+"""def get_cny_price():
     data = json.loads(get_response(cny_api_url))
     return data['ticker']['last']
 
 def get_usd_price():
     data = json.loads(get_response(usd_api_url))
     return data['ticker']['last']
-
+"""
 def use_cny():
     return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleCurrencyCode) == 'CNY'
     
@@ -33,17 +33,14 @@ def results(parsed, original_query):
     if'~n' in parsed.keys():
         count = parsed['~n']
     price = 0
-    symbol = '$'
-    if use_cny():
-        price = get_cny_price()
-        symbol = '￥'
-    else:
-        price = get_usd_price()
+    symbol = '¥' if use_cny() else '$'
+    url = cny_api_url if use_cny() else usd_api_url
     money = float(count) * float(price)
     html = (open('temp.html').read()
-        .replace('<!--bitcoin-->', count + ' BTC')
-        .replace('<!--money-->', symbol  + ' ' + str(money)))
+        .replace('<!--url-->', url)
+        .replace('<!--count-->', count)
+        .replace('<!--symbol-->', symbol))
     return {
-        'title': count + ' BTC = ' + symbol + ' '+ str(money),
+        'title': ("Bitcoin price" if count=="1" else "Price of {0} bitcoins".format(count)),
         'html': html
     }

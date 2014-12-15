@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+<title>Browse Plugins for Spotlight — Flashlight</title>
+{% endblock %}
+
+{% block body %}
+
+<div id='browse'>
+   <ul id='categories'>
+      {% for category in categories %}
+      <li data-category="{{ category }}">{{ category }}</li>
+      {% endfor %}
+   </ul>
+   <div id='category'>
+      {{ initial_html | safe }}
+   </div>
+</div>
+
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script>
+$("#categories > li").each(function(i, li) {
+   $(li).click(function() {
+      showCategory($(li).attr("data-category"))
+   })
+})
+function showCategory(category) {
+   $("#category").load("/directory?browse=1&category=" + encodeURIComponent(category));
+}
+</script>
+
+{% endblock %}

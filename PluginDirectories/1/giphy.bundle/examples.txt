@@ -1,0 +1,6 @@
+giphy ~query(dancing burrito)
+gif ~query(cats)
+gifs of ~query(dancing bill gates)
+~query(friday) gif
+~query(hello world) giphy
+~query(rubber duck) gifs

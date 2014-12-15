@@ -1,0 +1,4 @@
+google ~googlequery(query here)
+google search ~googlequery(query here)
+search the web for ~googlequery(query here)
+g ~googlequery(query here)

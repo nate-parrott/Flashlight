@@ -14,4 +14,6 @@ NSString * const PluginDidChangeOnDiskNotification;
 
 @property (nonatomic) NSString *pluginPath;
 
++ (NSMutableSet *)globalOpenWindows;
+
 @end

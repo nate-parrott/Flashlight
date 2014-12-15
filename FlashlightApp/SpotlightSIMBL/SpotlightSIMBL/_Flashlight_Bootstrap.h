@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+BOOL _Flashlight_Is_10_10_2_Spotlight();
+
 @interface _Flashlight_Bootstrap : NSObject
 
 @end

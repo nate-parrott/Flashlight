@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
+#import "PluginListController.h"
 
 @interface AppDelegate ()
 
@@ -34,9 +35,13 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+    NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
+    
     self.SIMBLOn = NO;
     
     [self checkSpotlightVersion];
+    
+    [self setupURLHandling];
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
@@ -172,6 +177,7 @@
     }
     self.tableView.enabled = SIMBLOn;
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
+    [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {
@@ -202,6 +208,32 @@
             }
             
         });
+    }
+}
+
+#pragma mark About Window actions
+- (IBAction)openGithub:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight"]];
+}
+- (IBAction)leaveFeedback:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
+}
+#pragma mark Links
+- (IBAction)showPythonAPI:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
+
+}
+
+#pragma mark URL scheme
+- (void)setupURLHandling {
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+}
+- (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+    NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject]
+                        stringValue];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    if ([url.scheme isEqualToString:@"flashlight-show"]) {
+        [self.pluginListController showPluginWithName:url.host];
     }
 }
 

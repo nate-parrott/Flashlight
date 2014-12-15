@@ -1,0 +1,2 @@
+wiktionary ~enWiki(query here)
+search wiktionary for ~enWiki(query here)

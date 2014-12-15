@@ -23,10 +23,14 @@
 
 - (void)webView:(WebView *)sender didClearWindowObject:(WebScriptObject *)windowScriptObject forFrame:(WebFrame *)frame
 {
-    if (frame.DOMDocument.domain.length == 0) {
+    if ([self isWebFrameShowingLocalData:frame]) {
         // only insert on non-remote pages:
         [windowScriptObject setValue:[_SS_WebScriptObject new] forKey:@"flashlight"];
     }
+}
+
+- (BOOL)isWebFrameShowingLocalData:(WebFrame *)frame {
+    return frame.DOMDocument.domain.length == 0;
 }
 
 #pragma mark Navigation interception
@@ -102,6 +106,15 @@
         _webView.frame = self.bounds;
         _webView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     }
+}
+
+#pragma mark Output function
+
+- (id)resultOfOutputFunction {
+    if ([self isWebFrameShowingLocalData:self.webView.mainFrame]) {
+        return [self.webView stringByEvaluatingJavaScriptFromString:@"output()"] ? : [NSNull null];
+    }
+    return [NSNull null];
 }
 
 @end

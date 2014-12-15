@@ -25,6 +25,9 @@ void __SS_markPathExecutable(NSString *path) {
     }
 }
 
+@interface _SS_PluginRunner ()
+
+@end
 
 @implementation _SS_PluginRunner
 

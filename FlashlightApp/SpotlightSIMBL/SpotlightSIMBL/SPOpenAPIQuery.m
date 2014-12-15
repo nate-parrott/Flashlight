@@ -16,7 +16,8 @@
 #import "SPOpenAPIResult.h"
 #import "MethodOverride.h"
 #import "_SS_PluginRunner.h"
-
+#import "_SS_MetadataResponseDelayer.h"
+#import "_Flashlight_Bootstrap.h"
 
 // define initWithDisplayName: as selector so that we can call it on `id`
 @interface DummyInterface : NSObject
@@ -50,11 +51,16 @@ void __SS_Start(SPQuery* self, SEL cmd) {
                 }
             }
         }
-        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:YES]]];
+        BOOL sortAscending = !_Flashlight_Is_10_10_2_Spotlight();
+        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:sortAscending]]];
         dispatch_async(dispatch_get_main_queue(), ^{
-            SPResponse *resp = [[NSClassFromString(@"SPResponse") alloc] initWithResults:resultItems];
+            Class cls = NSClassFromString(@"SPResponse")? : NSClassFromString(@"SPKResponse");
+            SPResponse *resp = [[cls alloc] initWithResults:resultItems];
             resp.userQueryString = query;
             responseHandler(resp);
+            if (_Flashlight_Is_10_10_2_Spotlight()) {
+                [[_SS_MetadataResponseDelayer shared] sentPluginResponseForQuery:query];
+            }
         });
     });
 }
@@ -63,9 +69,11 @@ void __SS_Start(SPQuery* self, SEL cmd) {
 Class __SS_SPOpenAPIQueryClass() {
     Class c = NSClassFromString(@"SPOpenAPIQuery");
     if (c) return c;
-    c = [(Class)NSClassFromString(@"SPQuery") rt_createSubclassNamed:@"SPOpenAPIQuery"];
+    Class superclass = NSClassFromString(@"SPQuery") ? : NSClassFromString(@"SPKQuery");
+    c = [superclass rt_createSubclassNamed:@"SPOpenAPIQuery"];
     __SS_Override(c, NSSelectorFromString(@"start"), __SS_Start);
     __SS_Override(objc_getMetaClass("SPOpenAPIQuery"), NSSelectorFromString(@"isQuerySupported:"), __SS_isQuerySupported);
+    NSLog(@"Create class: %@", c);
     return c;
 }
 

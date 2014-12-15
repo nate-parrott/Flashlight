@@ -21,6 +21,8 @@
     p.installing = self.installing;
     p.examples = self.examples;
     p.categories = self.categories;
+    p.isAutomatorWorkflow = self.isAutomatorWorkflow;
+    p.isSearchPlugin = self.isSearchPlugin;
     return p;
 }
 
@@ -34,6 +36,7 @@
     model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
     model.categories = json[@"categories"] ? : @[@"Unknown"];
     model.isAutomatorWorkflow = [json[@"isAutomatorWorkflow"] boolValue];
+    model.isSearchPlugin = [json[@"isSearchPlugin"] boolValue];
     return model;
 }
 

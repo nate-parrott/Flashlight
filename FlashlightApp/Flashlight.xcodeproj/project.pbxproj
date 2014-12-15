@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */; };
+		5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
 		5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */; };
 		5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */; };
@@ -97,6 +99,9 @@
 /* Begin PBXFileReference section */
 		1C6F37F05A3F43EFBC263B06 /* Pods-Flashlight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flashlight.xcconfig"; path = "Pods/Pods-Flashlight.xcconfig"; sourceTree = "<group>"; };
 		5F11C2FD1A2B0834005A1731 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginEditorWindowController.h; sourceTree = "<group>"; };
+		5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginEditorWindowController.m; sourceTree = "<group>"; };
+		5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPluginEditorWindowController.xib; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
@@ -169,6 +174,7 @@
 		5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5FC0166D1A1DBE7300F8E4E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC0166F1A1DBE9800F8E4E7 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FC34AE81A314C4E007CCE4E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E171A290B11006187EB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E181A290B20006187EB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
@@ -359,6 +365,9 @@
 				5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */,
 				5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */,
 				5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */,
+				5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */,
+				5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */,
+				5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */,
 				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
 				5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */,
 				5F97AD411A0ACA0100838C7C /* NaturalCommands */,
@@ -430,6 +439,7 @@
 				nl,
 				tr,
 				es,
+				ko,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -472,6 +482,7 @@
 				5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */,
 				6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */,
 				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
+				5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */,
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
@@ -540,6 +551,7 @@
 				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
 				5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */,
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
+				5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */,
 				5FC016691A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m in Sources */,
 				6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */,
 				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
@@ -579,6 +591,7 @@
 				5FC65E171A290B11006187EB /* nl */,
 				5FC65E181A290B20006187EB /* tr */,
 				5F11C2FD1A2B0834005A1731 /* es */,
+				5FC34AE81A314C4E007CCE4E /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

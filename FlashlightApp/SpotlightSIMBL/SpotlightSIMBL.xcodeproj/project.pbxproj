@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F10F4B81A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F10F4B71A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m */; };
 		5F5B174D1A05758800809207 /* _Flashlight_Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B174C1A05758800809207 /* _Flashlight_Bootstrap.m */; };
 		5F5B18191A05821700809207 /* RSSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18181A05821700809207 /* RSSwizzle.m */; };
 		5F5B181E1A058CDA00809207 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B181B1A058CDA00809207 /* CTBlockDescription.m */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F10F4B61A3288DC00D0F51D /* _SS_MetadataResponseDelayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_MetadataResponseDelayer.h; sourceTree = "<group>"; };
+		5F10F4B71A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_MetadataResponseDelayer.m; sourceTree = "<group>"; };
 		5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightSIMBL.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5B17451A05757500809207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F5B174B1A05758800809207 /* _Flashlight_Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Flashlight_Bootstrap.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				5FC65E1A1A298BE6006187EB /* _SS_WebScriptObject.m */,
 				5F97AD3E1A0AC51B00838C7C /* _SS_PluginRunner.h */,
 				5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */,
+				5F10F4B61A3288DC00D0F51D /* _SS_MetadataResponseDelayer.h */,
+				5F10F4B71A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m */,
 				5F97AD441A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.h */,
 				5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */,
 				5F5B183A1A06C6EE00809207 /* NSObject+LogProperties.h */,
@@ -644,6 +649,7 @@
 				5F5B181E1A058CDA00809207 /* CTBlockDescription.m in Sources */,
 				5F97AD461A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m in Sources */,
 				5F5B18191A05821700809207 /* RSSwizzle.m in Sources */,
+				5F10F4B81A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m in Sources */,
 				5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

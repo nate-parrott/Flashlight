@@ -39,4 +39,4 @@ def transform(text):
     result, what = c.parse(text)
     dt = datetime.datetime( *result[:6] )
     resolution = 60 if what == 3 else 24 * 60 * 60
-    return [time.mktime(dt.timetuple()), resolution]
+    return {"timestamp": time.mktime(dt.timetuple()), "resolution": resolution, "text": text}

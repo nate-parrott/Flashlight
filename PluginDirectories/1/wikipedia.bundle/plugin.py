@@ -5,6 +5,8 @@ def results(parsed, original_query):
           ["English Wikipedia", "~enWiki", "https://en.m.wikipedia.org/w/index.php?search=", "https://en.wikipedia.org/w/index.php?search="],
           ["French Wikipedia", "~frWiki", "https://fr.m.wikipedia.org/w/index.php?search=", "https://fr.wikipedia.org/w/index.php?search="],
           ["Italian Wikipedia", "~itWiki", "https://it.m.wikipedia.org/w/index.php?search=", "https://it.wikipedia.org/w/index.php?search="],
+          ["Wikipedia", "~deWiki", "https://de.m.wikipedia.org/w/index.php?search=", "https://de.wikipedia.org/w/index.php?search="],
+          ["Nederlandse Wikipedia", "~nlWiki", "https://nl.m.wikipedia.org/w/index.php?search=", "https://nl.wikipedia.org/w/index.php?search="],
           ["Wikipedia", "~deWiki", "https://de.m.wikipedia.org/w/index.php?search=", "https://de.wikipedia.org/w/index.php?search="]
     ]
     for name, key, mobile_url, url in search_specs:
