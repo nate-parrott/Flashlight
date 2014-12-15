@@ -151,14 +151,18 @@ def directory_html(category=None, search=None, languages=['en'], browse=False, n
     plugins = []
   plugin_dicts = []
   for p in plugins:
-    plugin = json.loads(p.info_json)
-    plugin['displayName'] = get_localized_key(plugin, "displayName", languages, "")
-    plugin['description'] = get_localized_key(plugin, "description", languages, "")
-    plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
-    plugin['model'] = p
-    plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
+    plugin = info_dict_for_plugin(p, languages)
     plugin_dicts.append(plugin)
   return template("directory.html", {"plugins": plugin_dicts, "browse": browse, "search": search})
+
+def info_dict_for_plugin(p, languages=['en']):
+  plugin = json.loads(p.info_json)
+  plugin['displayName'] = get_localized_key(plugin, "displayName", languages, "")
+  plugin['description'] = get_localized_key(plugin, "description", languages, "")
+  plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
+  plugin['model'] = p
+  plugin['install_url'] = 'install://_?' + urllib.urlencode([("zip_url", p.zip_url), ("name", p.name.encode('utf8'))])
+  return plugin
 
 class Directory(webapp2.RequestHandler):
   def get(self):
@@ -239,9 +243,20 @@ class BrowseHandler(webapp2.RequestHandler):
       "initial_html": directory_html(category='Featured', browse=True)
     }))
 
+class PluginPageHandler(webapp2.RequestHandler):
+  def get(self, name):
+    plugin = Plugin.by_name(name)
+    if not plugin:
+      self.error(404)
+      return
+    self.response.write(template("plugin_page.html", {
+      "plugin": info_dict_for_plugin(plugin)
+    }))
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/browse', BrowseHandler),
+    ('/plugin/(.+)', PluginPageHandler),
     ('/upload', UploadHandler),
     ('/post_upload', PostUploadHandler),
     ('/directory', Directory),

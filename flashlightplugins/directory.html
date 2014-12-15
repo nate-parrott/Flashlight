@@ -132,6 +132,10 @@
       margin-top: 0px;
       margin-bottom: -15px;
    }
+   .plugin_link {
+      text-decoration: none;
+      color: inherit;
+   }
    </style>
 </head>
 <body>
@@ -153,15 +157,16 @@
             {% if plugin.model.icon_url %}
             <img class='icon' src='{{ plugin.model.icon_url }}'/>
             {% endif %}
-            <h4>{{ plugin.displayName }}</h4>
+            <h4>
+               {% if browse %} <a class='plugin_link' href='/plugin/{{ plugin.name }}'> {% endif %}
+               {{ plugin.displayName }}
+               {% if browse %} </a> {% endif %}
+            </h4>
             <ul class='examples'>
                {% for example in plugin.examples %}
                <li>{{ example }}</li>
                {% endfor %}
             </ul>
-            {% if plugin.model.screenshot_url %}
-            <img class='screenshot' src='{{ plugin.model.screenshot_url }}'/>
-            {% endif %}
             <p class='description'>
                {{ plugin.description }}
             </p>
