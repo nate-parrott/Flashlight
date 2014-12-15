@@ -28,3 +28,10 @@ translate ~text(guten tag) from from_language/german(german) into to_language/ge
 translate ~text(hola) from from_language/chinese(chinese) into to_language/chinese(chinese)
 
 translate ~text(hello) from from_language/hindi(hindi) into to_language/hindi(hindi)
+
+translate ~text(hello)
+
+translate ~text(hello) from ~unknown_language(___) into ~unknown_language(___)
+translate ~text(hello) to ~unknown_language(___)
+translate ~text(hello) into ~unknown_language(___)
+translate ~text(hello) in ~unknown_language(___)

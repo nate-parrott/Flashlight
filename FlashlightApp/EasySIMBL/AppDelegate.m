@@ -218,6 +218,11 @@
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
 }
+#pragma mark Links
+- (IBAction)showPythonAPI:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
+
+}
 
 #pragma mark URL scheme
 - (void)setupURLHandling {

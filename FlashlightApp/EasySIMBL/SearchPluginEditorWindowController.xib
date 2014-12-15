@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C78c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SearchPluginEditorWindowController">
+            <connections>
+                <outlet property="extraKeywordsField" destination="Uww-QP-ncw" id="6PI-s4-O8E"/>
+                <outlet property="mobileUrlField" destination="MJt-h4-HX9" id="qk3-Ae-2fD"/>
+                <outlet property="nameField" destination="BpK-vl-26d" id="VJM-eD-4ib"/>
+                <outlet property="urlField" destination="mXz-yO-t0d" id="3fT-Dz-OCw"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Custom Search Plugin" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="553" height="328"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <value key="minSize" type="size" width="553" height="328"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="553" height="328"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pL3-xF-l2c">
+                        <rect key="frame" x="18" y="291" width="192" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="188" id="A9a-hl-4qB"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Name of website:" id="Nln-Tg-pAn">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sJS-u5-1qK">
+                        <rect key="frame" x="18" y="206" width="192" height="51"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="What URL do you get when you search for the phrase &quot;test search&quot;?" id="Pq4-2v-4n9">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6L-gd-PDt">
+                        <rect key="frame" x="18" y="172" width="192" height="17"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="What about on mobile?" id="B5C-Yy-00S">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L8o-2o-PF5">
+                        <rect key="frame" x="18" y="122" width="192" height="42"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Optional. It usually makes sense to show the mobile version of a site inline in Spotlight." id="pBi-dX-bcL">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNc-6q-Wy3">
+                        <rect key="frame" x="18" y="90" width="192" height="17"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Additional keywords:" id="cuN-XD-HNz">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgS-aS-KBd">
+                        <rect key="frame" x="18" y="40" width="192" height="42"/>
+                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="Searching for these keyboards in Spotlight will also trigger this plugin." id="UEt-nB-54W">
+                            <font key="font" metaFont="smallSystem"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BpK-vl-26d">
+                        <rect key="frame" x="216" y="288" width="317" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Google Search" drawsBackground="YES" id="Xbx-85-udV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="BHb-g5-kVR"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mXz-yO-t0d">
+                        <rect key="frame" x="216" y="236" width="317" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="https://www.google.com/search?q=test+search" drawsBackground="YES" id="h4T-7h-nYW">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="plQ-Qs-hBh"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MJt-h4-HX9">
+                        <rect key="frame" x="216" y="167" width="317" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="https://m.google.com/search?q=test+search" drawsBackground="YES" id="fHa-H9-4Zg">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="vgO-r3-shw"/>
+                        </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uww-QP-ncw">
+                        <rect key="frame" x="216" y="87" width="317" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="google, g, ggl" drawsBackground="YES" id="Ae7-Fn-LL0">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="w0p-RM-YPM"/>
+                        </connections>
+                    </textField>
+                    <button horizontalHuggingPriority="500" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w6K-hv-U8f">
+                        <rect key="frame" x="417" y="13" width="122" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="TUi-Bw-r0M"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Delete Plugin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="o1I-ek-DAR">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="deletePlugin:" target="-2" id="BxM-G4-CLC"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cNc-6q-Wy3" firstAttribute="top" secondItem="Uww-QP-ncw" secondAttribute="top" constant="2" id="0Bn-lG-vsB"/>
+                    <constraint firstAttribute="trailing" secondItem="BpK-vl-26d" secondAttribute="trailing" constant="20" id="0Kl-cY-HCs"/>
+                    <constraint firstItem="kgS-aS-KBd" firstAttribute="top" secondItem="cNc-6q-Wy3" secondAttribute="bottom" constant="8" id="1oa-A8-OAv"/>
+                    <constraint firstItem="sJS-u5-1qK" firstAttribute="leading" secondItem="pL3-xF-l2c" secondAttribute="leading" id="2TG-ue-FDl"/>
+                    <constraint firstItem="MJt-h4-HX9" firstAttribute="leading" secondItem="O6L-gd-PDt" secondAttribute="trailing" constant="8" id="2qm-Tr-yTD"/>
+                    <constraint firstItem="L8o-2o-PF5" firstAttribute="leading" secondItem="cNc-6q-Wy3" secondAttribute="leading" id="3ae-zR-V46"/>
+                    <constraint firstItem="sJS-u5-1qK" firstAttribute="top" secondItem="pL3-xF-l2c" secondAttribute="bottom" constant="34" id="4Uf-WS-jVj"/>
+                    <constraint firstAttribute="trailing" secondItem="Uww-QP-ncw" secondAttribute="trailing" constant="20" id="5Ee-Ce-jHz"/>
+                    <constraint firstItem="L8o-2o-PF5" firstAttribute="width" secondItem="cNc-6q-Wy3" secondAttribute="width" id="7lp-ia-L9P"/>
+                    <constraint firstAttribute="trailing" secondItem="w6K-hv-U8f" secondAttribute="trailing" constant="20" id="8W5-50-MGO"/>
+                    <constraint firstAttribute="trailing" secondItem="mXz-yO-t0d" secondAttribute="trailing" constant="20" id="Bq2-XS-sKH"/>
+                    <constraint firstItem="mXz-yO-t0d" firstAttribute="leading" secondItem="sJS-u5-1qK" secondAttribute="trailing" constant="8" id="Dsz-wn-i6f"/>
+                    <constraint firstItem="L8o-2o-PF5" firstAttribute="width" secondItem="O6L-gd-PDt" secondAttribute="width" id="HsO-MS-R71"/>
+                    <constraint firstItem="MJt-h4-HX9" firstAttribute="top" secondItem="O6L-gd-PDt" secondAttribute="top" id="JUY-vF-9Vm"/>
+                    <constraint firstItem="L8o-2o-PF5" firstAttribute="leading" secondItem="O6L-gd-PDt" secondAttribute="leading" id="LGu-Yy-GMh"/>
+                    <constraint firstItem="cNc-6q-Wy3" firstAttribute="top" secondItem="L8o-2o-PF5" secondAttribute="bottom" constant="15" id="Nas-c2-dDp"/>
+                    <constraint firstAttribute="bottom" secondItem="w6K-hv-U8f" secondAttribute="bottom" constant="20" id="Qq6-QX-ZZx"/>
+                    <constraint firstItem="BpK-vl-26d" firstAttribute="top" secondItem="pL3-xF-l2c" secondAttribute="top" constant="-2" id="Rwr-O4-TcC"/>
+                    <constraint firstItem="O6L-gd-PDt" firstAttribute="width" secondItem="sJS-u5-1qK" secondAttribute="width" id="SmF-Lu-RY8"/>
+                    <constraint firstItem="Uww-QP-ncw" firstAttribute="leading" secondItem="cNc-6q-Wy3" secondAttribute="trailing" constant="8" id="UBq-X2-oju"/>
+                    <constraint firstItem="O6L-gd-PDt" firstAttribute="top" secondItem="sJS-u5-1qK" secondAttribute="bottom" constant="17" id="Vpb-gE-tzg"/>
+                    <constraint firstItem="kgS-aS-KBd" firstAttribute="leading" secondItem="cNc-6q-Wy3" secondAttribute="leading" id="b7a-7g-JXe"/>
+                    <constraint firstItem="pL3-xF-l2c" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="e9u-SH-fJx"/>
+                    <constraint firstItem="BpK-vl-26d" firstAttribute="leading" secondItem="pL3-xF-l2c" secondAttribute="trailing" constant="8" id="fbb-pX-5gW"/>
+                    <constraint firstItem="pL3-xF-l2c" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="hiY-Mf-KSb"/>
+                    <constraint firstItem="O6L-gd-PDt" firstAttribute="leading" secondItem="sJS-u5-1qK" secondAttribute="leading" id="hvX-2t-FHf"/>
+                    <constraint firstItem="L8o-2o-PF5" firstAttribute="top" secondItem="O6L-gd-PDt" secondAttribute="bottom" constant="8" id="keD-R5-Fij"/>
+                    <constraint firstItem="sJS-u5-1qK" firstAttribute="width" secondItem="pL3-xF-l2c" secondAttribute="width" id="mi4-o3-aPn"/>
+                    <constraint firstItem="kgS-aS-KBd" firstAttribute="width" secondItem="cNc-6q-Wy3" secondAttribute="width" id="uyb-am-uDJ"/>
+                    <constraint firstAttribute="trailing" secondItem="MJt-h4-HX9" secondAttribute="trailing" constant="20" id="vDV-RP-ROe"/>
+                    <constraint firstItem="mXz-yO-t0d" firstAttribute="top" secondItem="sJS-u5-1qK" secondAttribute="top" constant="-1" id="ys8-C0-LnQ"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="306.5" y="390"/>
+        </window>
+    </objects>
+</document>
