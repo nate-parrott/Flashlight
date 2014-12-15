@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<style>
+		html, body, body > div {
+			margin: 0;
+			width: 100%;
+			height: 100%;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+			line-height: 1.2;
+		}
+		body > div {
+			display: table;
+		}
+		body > div > div {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: x-large;
+		}
+		body > div > div {
+			margin: 20px;
+		}
+		#placeholder{
+			font-size: 24px;
+		}
+		#postdata{
+			font-size:16px;
+		}
+		#color-setting{
+			display: none;
+		}
+		.dark-mode{
+		    -webkit-filter: invert(100%);
+		    filter: invert(100%);
+		}
+		.spinner {
+		  margin: 10px auto;
+		  width: 50px;
+		  height: 30px;
+		  text-align: center;
+		  font-size: 10px;
+		}
+
+		.spinner > div {
+		  background-color: #333;
+		  height: 100%;
+		  width: 6px;
+		  display: inline-block;
+		  
+		  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+		  animation: stretchdelay 1.2s infinite ease-in-out;
+		}
+		.spinner .rect2 {
+		  -webkit-animation-delay: -1.1s;
+		  animation-delay: -1.1s;
+		}
+
+		.spinner .rect3 {
+		  -webkit-animation-delay: -1.0s;
+		  animation-delay: -1.0s;
+		}
+
+		.spinner .rect4 {
+		  -webkit-animation-delay: -0.9s;
+		  animation-delay: -0.9s;
+		}
+
+		.spinner .rect5 {
+		  -webkit-animation-delay: -0.8s;
+		  animation-delay: -0.8s;
+		}
+
+		@-webkit-keyframes stretchdelay {
+		  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+		  20% { -webkit-transform: scaleY(1.0) }
+		}
+
+		@keyframes stretchdelay {
+		  0%, 40%, 100% { 
+		    transform: scaleY(0.4);
+		    -webkit-transform: scaleY(0.4);
+		  }  20% { 
+		    transform: scaleY(1.0);
+		    -webkit-transform: scaleY(1.0);
+		  }
+		}
+	</style>
+
+</head>
+<body class="light-mode">
+	<div>
+		<div>
+			<div id="results">
+            [PLACEHOLDER]
+				<div class="spinner">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
+				</div>
+			</div>
+			<div>
+				<img src="Icon.png" style="max-width:128px; max-height:128px;">
+			</div>
+			<div id="postdata"></div>
+		</div>
+	</div>
+
+	<script>
+		function showResult(res, d){
+			document.getElementById("results").innerText = res;
+			document.getElementById("postdata").innerHTML = d;
+		};
+
+      function callback(x) {
+             /*"domain": "example.com",
+               "port": 80,
+               "status_code": 1,
+               "response_ip": "192.0.43.10",
+               "response_code": 302,
+               "response_time": 0.087*/
+            if (x.status_code === 1) {
+               showResult(x.domain + " is up", "IP: " + x.response_ip + "<br />Code: " + x.response_code + "<br />Time: " + x.response_time);
+            } else if (x.status_code === 2) {
+               showResult(x.domain + " is down", "");
+            } else if (x.status_code === 3) {
+               showResult("Unable to check", "DNS error");
+            } else {
+               showResult("Unable to check", "Script error");
+            }
+      }
+	</script>
+
+   <script src="http://isitup.org/[PLACEHOLDER].json?callback=callback"></script>
+</body>
+</html>
