@@ -19,6 +19,7 @@
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
 NSString * const kCategorySearchResults = @"_SearchResults";
+NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
@@ -421,6 +422,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
         if ([selectedCategory isEqualToString:kCategorySearchResults]) {
             [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForSearchQuery:self.searchField.stringValue]]];
+        } else if ([selectedCategory isEqualToString:kCategoryShowIndividualPlugin]) {
+            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForPluginNamed:self.selectedPluginName]]];
         } else {
             [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
         }
@@ -558,7 +561,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 #pragma mark Revealing Individual Plugins
 - (void)showPluginWithName:(NSString *)name {
-    // TODO
+    self.selectedPluginName = name;
+    self.selectedCategory = kCategoryShowIndividualPlugin;
 }
 
 @end
