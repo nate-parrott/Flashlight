@@ -1,0 +1,10 @@
+ja nein
+ja oder nein
+ja
+nein
+eintscheide für mich
+sollte ~query(ich das machen)
+soll ~query(ich das machen)
+will ~query(ich das machen)
+darf ~query(ich das machen)
+mag ~query(ich das machen)

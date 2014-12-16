@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yes No</title>
+	<link rel=stylesheet href="animate.css">
+</head>
+<style>
+img{
+	width:100%;
+	height:100%;
+}
+	#answer{
+		position:fixed;
+		top:50%;
+		bottom:50%;
+		left:50%;
+		right:50%;
+		margin-top:-40px;
+		margin-left:-40px;
+		color:white;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		font-size: 80px;
+	}
+</style>
+<body>
+<div id="answer" class="animated bounceIn"></div>
+<div id="imgcontainer"><img id="resultimg"/></div>
+<script>
+function sendRequest(url, callback){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+	        callback(JSON.parse(xmlhttp.responseText));
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+}
+
+function translateText(text){
+	switch(text) {
+    case "yes":
+        return "yes"
+    case "no":
+        return "no"
+    default:
+        return "doh"
+}
+
+}
+
+sendRequest("http://yesno.wtf/api/", function(json){
+	document.querySelector('#resultimg').src = json.image;
+	document.querySelector('#answer').innerHTML = translateText(json.answer);
+});
+</script>
+</body>
+</html>

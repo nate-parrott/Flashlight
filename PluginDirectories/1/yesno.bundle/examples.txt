@@ -1,0 +1,8 @@
+yes no
+yes or no
+yes 
+no
+decide for me
+do ~query(I do that)
+should ~query(I do this)
+can ~query(I do that)
