@@ -1,6 +1,7 @@
 {
     "name": "ipuseragent",
-    "displayName": "IP / Useragent",
+    "displayName": "External IP / Useragent",
+    "displayName_de": "Externe IP / Useragent",
     "categories": ["Developer"],
     "examples": ["what is my ip", "useragent", "ip"],
     "examples_de": ["was ist meine ip", "useragent", "ip"],
