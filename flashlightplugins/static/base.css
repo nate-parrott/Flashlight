@@ -1,12 +1,138 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
 body {
-  padding: 2em;
   line-height: 1.25;
-  color: #111;
-  font-family: sans-serif;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: white;
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  background-image: url(/static/images/bg.png);
+  background-color: #333334;
+  margin: 0 !important;
+  margin-bottom: 2em;
+  padding: 0;
 }
-a:link {
-  color: #f55;
+a:link, a:visited {
+  color: white;
+}
+#top {
+    /*background-image: linear-gradient(#FFDF93, rgba(224, 65, 23, 0));*/
+}
+#top-content {
+    display: table;
+    width: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+#top-content > * {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    padding: 0.75em 0;
+}
+#top a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 550px) {
+    #top a {
+        font-size: 0.6em;
+    }
+    #top-content {
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+    }
+}
+@media screen and (max-width: 460px) {
+    #top .label {
+        display: none;
+    }
+    #top {
+        font-size: 2em;
+    }
+}
+a:hover {
+    opacity: 0.7;
+}
+#top img {
+    max-height: 1em;
+    vertical-align: baseline;
+    position: relative;
+    top: 0px;
+}
+#content, #top-content {
+    max-width: 776px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    max-width: 100%;
+}
+/* Browse */
+#browse .description {
+    color: white;
+    opacity: 0.7;
+}
+#browse .control a {
+    color: white;
+}
+#browse {
+    text-align: center;
+}
+#categories {
+    width: 100%;
+    padding: 0;
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 0px;
+}
+#categories > li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 7px;
+}
+#categories > li:hover {
+    background-color: white;
+    color: #D92A00;
+}
+#category {
+    text-align: left;
+}
+/* footer */
+#footer-container {
+    background-color: #f8f8f8;
+    color: #222;
+    padding: 1em;
+}
+#footer {
+    margin: auto;
+    max-width: 800px;
+    text-align: center;
+}
+#footer a {
+    color: #222;
+}
+/* social */
+#social {
+    display: table;
+    margin: auto;
+}
+#social > div {
+    padding: 0 10px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+@media screen and (max-width: 500px) {
+    #social > div {
+        display: inline-block;
+    }
+}
+#plugin h1 {
+    background-color: white;
+    color: #222;
+    padding: 10px;
+    margin-left: -10px;
 }

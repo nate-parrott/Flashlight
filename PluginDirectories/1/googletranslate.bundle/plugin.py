@@ -8,7 +8,7 @@ def results(parsed, original_query):
     lang_from = original_query[4:6].encode('UTF-8')
     lang_to = original_query[6:8].encode('UTF-8')
 
-    text = parsed['~text']
+    text = parsed['~text'].encode('UTF-8')
     if text[0:4] == '%s%s' % (lang_from, lang_to):
         text = text[5:]
 

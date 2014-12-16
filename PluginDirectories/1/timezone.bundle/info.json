@@ -9,6 +9,6 @@
 	"examples": ["time Munich", "what time is it in Shanghai?"],
 	"examples_de": ["Zeit München", "Uhrzeit Tokio"],
 	"examples_fr": ["heure Munich", "fuseau Tokio"],
-	"categories": ["Weather", "Featured"],
+	"categories": ["Weather", "Utilities"],
     "search_keywords": "world clock"
 }

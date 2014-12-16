@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
+#import "PluginListController.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +40,8 @@
     self.SIMBLOn = NO;
     
     [self checkSpotlightVersion];
+    
+    [self setupURLHandling];
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
@@ -214,6 +217,24 @@
 }
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
+}
+#pragma mark Links
+- (IBAction)showPythonAPI:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
+
+}
+
+#pragma mark URL scheme
+- (void)setupURLHandling {
+    [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+}
+- (void)handleURLEvent:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent {
+    NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject]
+                        stringValue];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    if ([url.scheme isEqualToString:@"flashlight-show"]) {
+        [self.pluginListController showPluginWithName:url.host];
+    }
 }
 
 @end

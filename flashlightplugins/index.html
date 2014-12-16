@@ -1,8 +1,92 @@
 {% extends "base.html" %}
 
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' href='/static/index.css' />
+{% endblock %}
+
+{% block outside_content %}
+
+<div id='splash'>
+   <div>
+      <h1><img id='whatif' src='/static/images/whatif.png' alt='what if Spotlight could do anything?'/></h1>
+      <h2>
+         Flashlight is an app that adds plugins to Spotlight. You can search the weather, send an iMessage, set a reminder, run an Automator workflow, and <a href='/browse'>a lot more.</a> And if you know Python, you can <a href='https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown'>write your own features.</a>
+      </h2>
+      <p>
+         <a id='download' href='/latest_download'>
+            <span class='fa fa-download'></span>
+            Download
+         </a>
+      </p>
+      <p class='small'>For OS X Yosemite. Completely open-source. No crazy installer. Uninstall with one click.</p>
+   </div>
+</div>
+
+{% endblock %}
+
 {% block body %}
 
-<h1>Hello there.</h1>
-<p>This is an internal web service to support the Flashlight plugin directory. You probably want the <a href='http://flashlight.nateparrott.com'>main Flashlight site</a>.</p>
+<div id='index'>
+   
+   <div id='images'>
+      <img src='/static/images/weather.png'/>
+      <img src='/static/images/reminder.png'/>
+      <img src='/static/images/email.png'/>
+      <img src='/static/images/ping.png'/>
+      <img src='/static/images/translate.png'/>
+      <img src='/static/images/wolfram.png'/>
+      <img src='/static/images/imessage.png'/>
+      <img src='/static/images/images.png'/>
+   </div>   
+</div>
 
+{% endblock %}
+
+{% block footer %}
+<div id='footer-container'>
+<div id='footer'>
+   <p id='footer-links'>
+      <a href='/latest_download'>
+         <span class='fa fa-download'></span>
+         <strong>Download</strong> for OS X Yosemite
+      </a>
+      <a href='/browse'>
+         <span class='fa fa-puzzle-piece'></span>
+         <strong>Browse</strong> all plugins
+      </a>
+      <a href='https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown'>
+         <span class='fa fa-file-code-o'></span>
+         <strong>Develop</strong> a plugin
+      </a>
+   </p>
+   
+   <div id='social'>
+      <div>
+         <div id="fb-root"></div>
+         <script>(function(d, s, id) {
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=385205984962960&version=v2.0";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));</script>
+         <div class="fb-like" data-href="http://flashlight.nateparrott.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+      </div>
+      
+      <div>
+   		<iframe data-wr_replaced="true" frameborder="0" height="20" scrolling="0" style="" src="http://ghbtns.com/github-btn.html?user=nate-parrott&amp;repo=Flashlight&amp;type=watch&amp;count=true" width="95" allowtransparency="true"></iframe>
+      </div>
+      
+      <div>
+         <a href="https://twitter.com/share" class="twitter-share-button" data-related="nateparrott">Tweet</a>
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+   </div>
+   
+   <p>
+      By <a href='http://nateparrott.com'>Nate Parrott</a> and <a href='https://github.com/nate-parrott/Flashlight/graphs/contributors'>many others.</a>
+   </p>
+</div>
+</div>
 {% endblock %}

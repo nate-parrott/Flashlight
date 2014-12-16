@@ -16,4 +16,6 @@
 
 @property (nonatomic) SPResult *result;
 
+- (id)resultOfOutputFunction;
+
 @end
