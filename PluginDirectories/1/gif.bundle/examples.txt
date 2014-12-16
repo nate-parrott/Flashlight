@@ -1,0 +1,4 @@
+gif ~query(animated gif)
+animate ~query(animated gif)
+animate me ~query(animated gif)
+~query(animated gif) animation
