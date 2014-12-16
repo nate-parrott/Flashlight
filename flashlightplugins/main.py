@@ -158,7 +158,7 @@ def directory_html(category=None, search=None, languages=['en'], browse=False,
                    name=None):
     if category:
         plugins = list(Plugin.query(Plugin.categories == category,
-                                    Plugin.approved is True))
+                                    Plugin.approved == True))
         plugins = stable_daily_shuffle(plugins)
     elif search:
         plugins = search_plugins(search)
@@ -210,7 +210,7 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
 
 def compute_categories():
     categories = set()
-    for p in Plugin.query(Plugin.approved is True):
+    for p in Plugin.query(Plugin.approved == True):
         for c in p.categories:
             categories.add(c)
     return categories
