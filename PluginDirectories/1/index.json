@@ -420,11 +420,12 @@
                 "Media"
             ],
             "description": "Search for GIFs with Giphy",
+            "displayName": "Giphy",
             "examples": [
                 "giphy basketball",
                 "slam dunk gifs"
             ],
-            "name": "Giphy",
+            "name": "giphy",
             "zip_url": "giphy.zip"
         },
         {
@@ -614,6 +615,7 @@
                 "translate bonjour from french to arabic"
             ],
             "name": "Instranslator",
+            "version": 2,
             "zip_url": "Instranslator.zip"
         },
         {

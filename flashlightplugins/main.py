@@ -71,7 +71,7 @@ def read_plugin_info(plugin, zip_data):
       plugin.icon_url = resize_and_store(data, 128)
     elif name.endswith('/Screenshot.png'):
       screenshot = archive.open(name).read()
-      plugin.screenshot_url = resize_and_store(data, 600)
+      plugin.screenshot_url = resize_and_store(screenshot, 600)
   return has_info
 
 def language_suffixes(languages):
