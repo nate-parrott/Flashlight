@@ -48,8 +48,11 @@ h6 {
    padding-left: 0;
 }
 #screenshot {
-   max-width: 70%;
-   
+   max-width: 70%;  
+}
+#icon {
+   max-height: 1em;
+   vertical-align: bottom;
 }
 </style>
 {% endblock %}
@@ -77,10 +80,15 @@ h6 {
    <p id='description'>
       {{ plugin.description }}
    </p>
+      
    <p id='controls'>
       <a href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
-      <a href='flashlight-show://{{ plugin.name }}'>Install Flashlight</a>
    </p>
+   
+   <p>
+      <em><a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.</em>
+   </p>
+   
    <div id='social'>
       <div>{{plugin.model.downloads}} downloads.</div>
       

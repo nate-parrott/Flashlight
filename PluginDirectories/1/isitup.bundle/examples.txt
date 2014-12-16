@@ -1,0 +1,6 @@
+Up ~site(google.com)
+Down ~site(wikipedia.org)
+Is ~site(synapse.cx) up?
+Is ~site(duckduckgo.com) down
+
+
