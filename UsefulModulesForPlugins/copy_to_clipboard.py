@@ -1,6 +1,14 @@
 def copy_to_clipboard(text):
-  import pipes, os
-  os.system("echo %s | pbcopy"%pipes.quote(text))
+  from AppKit import NSPasteboard, NSArray
+  pb = NSPasteboard.generalPasteboard()
+  pb.clearContents()
+  a = NSArray.arrayWithObject_(text)
+  pb.writeObjects_(a)
+
+def clipboard_text():
+  from AppKit import NSPasteboard, NSStringPboardType
+  pb = NSPasteboard.generalPasteboard()
+  return pb.stringForType_(NSStringPboardType)
   
 if __name__=='__main__':
   copy_to_clipboard("this is a test")
