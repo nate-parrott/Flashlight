@@ -5,13 +5,39 @@ def is_valid_command(name):
     whereis = subprocess.Popen(['whereis', name], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
     return len(whereis.communicate("")[0]) > 0
 
+def get_html(command):
+  from getpass import getuser
+  return """
+  <style>
+  body {
+    background-color: #222;
+    font-family: monospace;
+    color: white;
+    padding: 10px;
+    font-size: large;
+  }
+  #hint {
+    font-size: small;
+    opacity: 0.7;
+  }
+  </style>
+  <body>
+  %s$ %s
+  
+  <div id='hint'>
+  Will be run in the directory currently open in Finder.
+  </div>
+  </body>
+  """%(getuser(), command)
+
 def results(parsed, original_query):
     command = parsed['command'] if parsed else original_query
     if command[0] not in '~/.' and not is_valid_command(command.split(' ')[0]):
         return None
     dict = {
         "title": "$ {0}".format(command),
-        "run_args": [command]
+        "run_args": [command],
+        "html": get_html(command)
     }
     if parsed==None:
         dict['dont_force_top_hit'] = True
