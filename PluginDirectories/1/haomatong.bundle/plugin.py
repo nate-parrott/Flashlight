@@ -7,7 +7,7 @@ import json
 def results(parsed, original_query):
     number = parsed.get('number', '')
     number = re.sub(r'[^0-9]', '', number)
-    html = open("haomatong.html").read().replace("<!--NUMBER-->", number)
+    html = open("haomatong.html").read().decode('utf-8').replace("<!--NUMBER-->", number)
     return {
         "title": u'号码通搜索 "%s" 结果' % (number.decode('utf-8')),
         "html": html,
