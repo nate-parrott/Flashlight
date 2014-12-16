@@ -612,11 +612,27 @@
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",
-                "translate bonjour from french to arabic"
+                "translate the copied text from french to arabic"
             ],
             "name": "Instranslator",
             "version": 2,
             "zip_url": "Instranslator.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "See if a site is available/",
+            "displayName": "Is it up?",
+            "examples": [
+                "up google.com",
+                "is google.com up?",
+                "down duckduckgo.com",
+                "is wikipedia.org down?"
+            ],
+            "name": "isitup",
+            "search_keywords": "network availability url offline",
+            "zip_url": "isitup.zip"
         },
         {
             "categories": [
@@ -661,8 +677,7 @@
         },
         {
             "categories": [
-                "Developer",
-                "Featured"
+                "Developer"
             ],
             "description": "Search man pages and open in a specific window",
             "description_de": "Durchsuche Man Seiten \u00f6ffne sie in einem extra Fenster",
@@ -786,8 +801,7 @@
         },
         {
             "categories": [
-                "Search",
-                "Featured"
+                "Search"
             ],
             "description": "Search Reddit (rdt).",
             "description_de": "Durchsucht Reddit (rdt).",
@@ -1058,7 +1072,8 @@
         },
         {
             "categories": [
-                "Weather"
+                "Weather",
+                "Utilities"
             ],
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",

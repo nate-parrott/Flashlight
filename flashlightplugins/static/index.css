@@ -1,0 +1,90 @@
+/* index */
+#splash h2 {
+    font-size: 1.2em;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    font-weight: normal;
+    text-shadow: 0px 0px 5px black;
+}
+body, html, #splash {
+    height: 100%;
+}
+#splash {
+    display: table;
+    width: 100%;
+    background-image: url(/static/images/yosemite-small2.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-top: -1.5em;
+    margin-bottom: -1.5em;
+    border-bottom: 2px solid gray;
+}
+h1 {
+    margin: 0;
+}
+#splash > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+}
+@media screen and (max-width: 540px) {
+    #splash h2 {
+        font-size: 0.9em;
+        width: 100%;
+    }
+}
+
+#images {
+    margin-top: 2em;
+}
+#images img {
+    width: 385px;
+}
+@media screen and (max-width: 768px) {
+    #images img {
+        width: 300px;
+    }
+}
+#footer-links a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+}
+a:hover {
+    text-decoration: underline;
+}
+.small {
+    font-size: small;
+    opacity: 0.7;
+}
+#top {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    width: 100%;
+}
+#whatif {
+    width: 90%;
+    max-width: 776px;
+}
+#download {
+    display: inline-block;
+    font-size: 1.0em;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgba(255,255,255,1);
+    color: black;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#download .fa {
+    display: none;
+}
+#images {
+    margin-top: -3em;
+    text-align: center;
+}
+

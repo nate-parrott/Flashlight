@@ -30,7 +30,7 @@ class Plugin(ndb.Model):
     @classmethod
     def by_name(cls, name):
         plugins = Plugin.query(Plugin.name == name,
-                               Plugin.approved is True).fetch()
+                               Plugin.approved == True).fetch()
         if len(plugins) > 0:
             return plugins[0]
         else:
