@@ -1,0 +1,8 @@
+{
+	"name": "isitup",
+	"displayName": "Is it up?",
+	"description": "See if a site is available",
+	"examples": ["up google.com", "is google.com up?", "down duckduckgo.com", "is wikipedia.org down?"],
+	"categories": ["Utilities"],
+   "search_keywords": "network availability"
+}
