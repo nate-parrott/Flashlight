@@ -327,7 +327,7 @@
         {
             "categories": [
                 "Information",
-                "Search"
+                "Media"
             ],
             "description": "Look for movie info on douban",
             "description_zh": "\u5feb\u901f\u641c\u7d22\u8c46\u74e3\u7535\u5f71",
@@ -376,9 +376,13 @@
                 "Art"
             ],
             "description": "Search Flickr",
+            "description_de": "Flickr Suche",
             "displayName": "Flickr",
             "examples": [
                 "flickr sunset"
+            ],
+            "examples_de": [
+                "flickr Sonnenuntergang"
             ],
             "name": "flickr",
             "zip_url": "flickr.zip"
@@ -413,16 +417,28 @@
         },
         {
             "categories": [
-                "Developer",
-                "Search"
+                "Media"
+            ],
+            "description": "Search for GIFs with Giphy",
+            "displayName": "Giphy",
+            "examples": [
+                "giphy basketball",
+                "slam dunk gifs"
+            ],
+            "name": "giphy",
+            "zip_url": "giphy.zip"
+        },
+        {
+            "categories": [
+                "Developer"
             ],
             "description": "Search GitHub (gh).",
             "description_de": "Durchsucht GitHub (gh).",
             "displayName": "GitHub Search",
             "displayName_de": "GitHub Suche",
             "examples": [
-                "gh bootstrap",
-                "github bootstrap"
+                "gh flashlight",
+                "github flashlight"
             ],
             "name": "github",
             "zip_url": "github.zip"
@@ -502,9 +518,16 @@
             "creator_name": "Alex Zavrazhniy",
             "creator_url": "http://themengzor.com",
             "description": "Translate words and phrases with Google (gtr).",
+            "description_de": "\u00dcbersetzte W\u00f6rter und S\u00e4tze mit Google (gtr).",
             "displayName": "Google Translate",
+            "displayName_de": "Google \u00dcbersetzer",
             "examples": [
                 "gtr enru This text will be translated from English to Russian",
+                "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
+                "gtr esen Te amo, Espa\u00f1a!"
+            ],
+            "examples_de": [
+                "gtr deru Dieser Text wird von Deutsch in Russisch \u00fcbersetzt",
                 "gtr ruen \u0420\u043e\u0441\u0441\u0438\u044f \u0432\u043f\u0435\u0440\u0435\u0434!",
                 "gtr esen Te amo, Espa\u00f1a!"
             ],
@@ -529,20 +552,6 @@
         },
         {
             "categories": [
-                "Developer"
-            ],
-            "description": "Konvertiert eine Hex-Farbe in eine UIColor",
-            "displayName": "Hex To UIColor",
-            "displayName_de": "Hex zu UIColor",
-            "examples": [
-                "UIColor #3083D6",
-                "UIColor swift #3083D6"
-            ],
-            "name": "hexToUIColor",
-            "zip_url": "hexToUIColor.zip"
-        },
-        {
-            "categories": [
                 "Search",
                 "Featured"
             ],
@@ -558,7 +567,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Media"
             ],
             "displayName": "IMDB",
             "displayName_fr": "IMDB",
@@ -603,10 +612,27 @@
             "displayName": "Instranslator",
             "examples": [
                 "translate rain to spanish",
-                "translate bonjour from french to arabic"
+                "translate the copied text from french to arabic"
             ],
             "name": "Instranslator",
+            "version": 2,
             "zip_url": "Instranslator.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "See if a site is available/",
+            "displayName": "Is it up?",
+            "examples": [
+                "up google.com",
+                "is google.com up?",
+                "down duckduckgo.com",
+                "is wikipedia.org down?"
+            ],
+            "name": "isitup",
+            "search_keywords": "network availability url offline",
+            "zip_url": "isitup.zip"
         },
         {
             "categories": [
@@ -651,8 +677,7 @@
         },
         {
             "categories": [
-                "Developer",
-                "Featured"
+                "Developer"
             ],
             "description": "Search man pages and open in a specific window",
             "description_de": "Durchsuche Man Seiten \u00f6ffne sie in einem extra Fenster",
@@ -776,8 +801,7 @@
         },
         {
             "categories": [
-                "Search",
-                "Featured"
+                "Search"
             ],
             "description": "Search Reddit (rdt).",
             "description_de": "Durchsucht Reddit (rdt).",
@@ -792,25 +816,24 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Utilities",
+                "Featured"
             ],
             "description": "Creates a new reminder.",
             "description_de": "Erstellt eine neue Erinnerung.",
             "displayName": "Remind Me",
             "displayName_de": "Erinner Mich",
             "examples": [
-                "remind me to take out the trash",
-                "new reminder saying do homework",
-                "create a reminder pick up eggs",
-                "remind walk the dog"
+                "remind me to read a book",
+                "new reminder Walk dog due tomorrow at 1:30 PM"
             ],
             "examples_de": [
                 "Erinner mich M\u00fcll rausbringen",
                 "Neue Erinnerung f\u00fcr Hausaufgaben erledigen",
                 "Erstelle eine neue Erinnerung Eier mitnehmen",
-                "Erinnerung Mit dem Hund spazieren gehen"
+                "Erinnerung Mit dem Hund spazieren gehen",
+                ""
             ],
-            "isAutomatorWorkflow": true,
             "name": "remind-me",
             "zip_url": "remind-me.zip"
         },
@@ -871,6 +894,20 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Opens a path in Finder",
+            "description_de": "Zeigt einen Pfad im Finder an",
+            "displayName": "Show in Finder",
+            "displayName_de": "Im Finder zeigen",
+            "examples": [
+                "finder /Applications/iTunes.app"
+            ],
+            "name": "showinfinder",
+            "zip_url": "showinfinder.zip"
+        },
+        {
+            "categories": [
                 "System",
                 "Featured"
             ],
@@ -924,7 +961,7 @@
         },
         {
             "categories": [
-                "Search"
+                "Developer"
             ],
             "displayName": "Search Stackoverflow",
             "displayName_de": "Stackoverflow Suche",
@@ -1021,9 +1058,7 @@
             "displayName": "Timestamp",
             "displayName_fr": "Timestamp",
             "examples": [
-                "timestamp",
-                "timestamp 1400000000",
-                "ts",
+                "timestamp for today at 9:30 PM",
                 "ts 1400000000"
             ],
             "examples_fr": [
@@ -1038,7 +1073,7 @@
         {
             "categories": [
                 "Weather",
-                "Featured"
+                "Utilities"
             ],
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
@@ -1048,7 +1083,7 @@
             "displayName_fr": "Fuseaux horaire",
             "examples": [
                 "time Munich",
-                "timezone Tokio"
+                "what time is it in Shanghai?"
             ],
             "examples_de": [
                 "Zeit M\u00fcnchen",
@@ -1165,7 +1200,7 @@
                 "date next thursday"
             ],
             "name": "whenis",
-            "zip_url": "whenis.disabled-bundle.zip"
+            "zip_url": "whenis.zip"
         },
         {
             "categories": [
@@ -1218,6 +1253,23 @@
             ],
             "name": "wikipedia",
             "zip_url": "wikipedia.zip"
+        },
+        {
+            "categories": [
+                "Information",
+                "Language"
+            ],
+            "description": "Search the Wiktionary.",
+            "description_de": "Durchsuche Wiktionary",
+            "displayName": "Wiktionary (EN)",
+            "displayName_de": "Wiktionary (DE)",
+            "examples": [
+                "wiktionary COB",
+                "wiktionary ASAP",
+                "wiktionary Taschenlampe"
+            ],
+            "name": "wiktionary",
+            "zip_url": "wiktionary.zip"
         },
         {
             "categories": [
@@ -1321,6 +1373,20 @@
             ],
             "name": "youtube",
             "zip_url": "youtube.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "Display Zhi Hu Daily to users based on youzhihu, you can get the latest questions or hot topics with it, even the news of specific date.",
+            "displayName": "Zhihu Daily",
+            "examples": [
+                "zhihu daily(show latest news)",
+                "zhihu hot(show hot topics)",
+                "zhihu 20140822(show the topics On August 22, 2014)"
+            ],
+            "name": "zhihuDaily",
+            "zip_url": "Zhihu.zip"
         }
     ]
 }

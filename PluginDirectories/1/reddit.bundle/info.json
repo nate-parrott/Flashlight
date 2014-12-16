@@ -5,5 +5,5 @@
 	"description": "Search Reddit (rdt).",
 	"description_de": "Durchsucht Reddit (rdt).",
 	"examples": ["reddit cats", "rdt cats"],
-	"categories": ["Search", "Featured"]
+	"categories": ["Search"]
 }

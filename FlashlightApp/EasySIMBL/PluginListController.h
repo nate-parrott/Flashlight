@@ -32,4 +32,6 @@
 
 @property (nonatomic) IBOutlet NSOutlineView *sourceList;
 
+- (void)showPluginWithName:(NSString *)name;
+
 @end

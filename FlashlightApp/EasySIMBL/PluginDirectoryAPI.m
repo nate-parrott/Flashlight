@@ -54,6 +54,14 @@
                          ];
     return [comps URL];
 }
+- (NSURL *)URLForPluginNamed:(NSString *)name {
+    NSURLComponents *comps = [NSURLComponents componentsWithString:[NSString stringWithFormat:@"%@/directory", [[self class] APIRoot]]];
+    comps.queryItems = @[
+                         [NSURLQueryItem queryItemWithName:@"name" value:name],
+                         [NSURLQueryItem queryItemWithName:@"languages" value:[[NSLocale preferredLanguages] componentsJoinedByString:@","]]
+                         ];
+    return [comps URL];
+}
 - (void)logPluginInstall:(NSString *)name {
     NSString *endpoint = [NSString stringWithFormat:@"%@/log_install", [[self class] APIRoot]];
     NSURLComponents *comps = [NSURLComponents componentsWithString:endpoint];

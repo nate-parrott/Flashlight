@@ -1,0 +1,7 @@
+{
+    "name": "giphy",
+    "displayName": "Giphy",
+    "categories": ["Media"],
+    "examples": ["giphy basketball", "slam dunk gifs"],
+    "description": "Search for GIFs with Giphy"
+}

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>
+"{{ plugin.displayName}}" for Spotlight — Flashlight
+</title>
+{% endblock %}
+
+{% block head %}
+<style>
+#hint {
+   font-weight: 200;
+   font-size: 0.7em;
+}
+#social {
+   margin-left: 0 !important;
+}
+#examples {
+   padding: 0;
+}
+#examples > li {
+   list-style-type: none;
+   margin-top: 8px;
+   margin-bottom: 8px;
+}
+#examples > li:before {
+   content: "“";
+}
+#examples > li:after {
+   content: "”";
+}
+h6 {
+   text-transform: uppercase;
+   font-size: small;
+   font-weight: bold;
+   margin-bottom: 4px;
+}
+#controls > a {
+   background-color: white;
+   padding: 10px;
+   display: inline-block;
+   margin-right: 10px;
+   color: black;
+   text-decoration: none;
+   font-weight: bold;
+}
+#social > *:first-child {
+   padding-left: 0;
+}
+#screenshot {
+   max-width: 70%;  
+}
+#icon {
+   max-height: 1em;
+   vertical-align: bottom;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div id='plugin'>
+   <h1>
+      {% if plugin.model.icon_url %}
+         <img id='icon' src='{{ plugin.model.icon_url }}'/>
+      {% endif %}
+      {{ plugin.displayName }} <span id='hint'>plugin for Spotlight</span>
+   </h1>
+   {% if plugin.model.screenshot_url %}
+   <p>
+      <img id='screenshot' src='{{ plugin.model.screenshot_url }}'/>
+   </p>
+   {% endif %}
+   <h6>Examples</h6>
+   <ul id='examples'>
+      {% for example in plugin.examples %}
+      <li>{{ example }}</li>
+      {% endfor %}
+   </ul>
+   <p id='description'>
+      {{ plugin.description }}
+   </p>
+      
+   <p id='controls'>
+      <a href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
+   </p>
+   
+   <p>
+      <em><a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.</em>
+   </p>
+   
+   <div id='social'>
+      <div>{{plugin.model.downloads}} downloads.</div>
+      
+      <div>
+         <div id="fb-root"></div>
+         <script>(function(d, s, id) {
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) return;
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=385205984962960&version=v2.0";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));</script>
+         <div class="fb-like" data-href="http://flashlight.nateparrott.com/plugin/{{ plugin.name }}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+      </div>
+      
+      <div>
+         <a href="https://twitter.com/share" class="twitter-share-button" data-related="nateparrott">Tweet</a>
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

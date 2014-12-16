@@ -1,3 +1,2 @@
-shorten *url(http://google.com)
-sh *url(http://google.com)
-!regex *url http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+
+shorten ~url(http://google.com)
+short url ~url(http://google.com)

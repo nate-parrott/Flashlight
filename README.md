@@ -31,7 +31,7 @@ The Spotlight plugin is gated to run only on versions `911-916` (Yosemite GM thr
 
 Huge thanks to everyone who's contributed translations:
 
- - [xremix](http://github.com/xremix) for German
+ - [xremix](http://github.com/xremix) and [DanielBocksteger](http://github.com/DanielBocksteger) for German
  - [matth96](http://github.com/matth96) for Dutch
  - [tiphedor](http://github.com/tiphedor) for French
  - [lipe1966](http://github.com/lipe1966) for Portugese
