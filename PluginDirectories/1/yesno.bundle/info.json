@@ -1,0 +1,10 @@
+{
+    "name": "yesno",
+    "displayName": "Yes or No",
+    "displayName_de": "Ja oder Nein",
+    "categories": ["Utilities"],
+    "examples": ["yes no", "decide for me", "should I eat pizza"],
+    "examples_de": ["Ja oder Nein", "Soll ich Pizza essen", "entscheide für mich"],
+    "description": "Decides for you, so you don't have to spend energy in that",
+    "description_de": "Entscheidet für dich, so dass du das nicht auch noch selbst machen musst"
+}
