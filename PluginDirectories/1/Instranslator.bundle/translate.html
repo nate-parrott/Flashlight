@@ -4,6 +4,7 @@
 body {
    padding: 0px;
    font-family: sans-serif;
+   color: ----color----;
 }
  .content-wrapper {
     width: 100%;
@@ -70,9 +71,16 @@ body {
         translation.replace(".", ".\n");
         return translation;
     }
-
+    
+    var resultText = null;
+    
     function plotDiv(text) {
+       resultText = text;
       document.getElementById("translation").innerText = text;
+    }
+    
+    function output() {
+       return resultText;
     }
 
 	 setTimeout(function() {

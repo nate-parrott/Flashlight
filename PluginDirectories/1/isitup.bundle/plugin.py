@@ -13,7 +13,8 @@ def use_metric():
 
 def results(parsed, original_query):
     location = parsed['~site']
-    title = i18n.localstr("Availability of '{0}'").format(location)
+    location = location.split('://')[-1] # strip protocol
+    title = i18n.localstr("Is '{0}' up?").format(location)
     
     html = open(i18n.find_localized_path("wrapper.html")).read().replace("[PLACEHOLDER]", location).replace("light-mode", "dark-mode" if dark_mode() else "light-mode")
     return {
