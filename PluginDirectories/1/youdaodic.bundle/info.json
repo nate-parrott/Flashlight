@@ -2,6 +2,6 @@
 	"name": "youdaodic",
 	"displayName": "YouDao Dictionary",
 	"description": "Translation between English and Chinese based on dic.youdao.com",
-	"examples": ["yd why", "youdao why"],
+	"examples": ["yd why", "youdao why", "有道 why"],
     "categories": ["Language"]
 }
