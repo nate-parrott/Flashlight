@@ -1,0 +1,2 @@
+bild ~query(random image)
+zufallsbild ~query(random image)

@@ -2,6 +2,6 @@
 	"name": "stackoverflow",
 	"displayName": "Search Stackoverflow",
 	"displayName_de": "Stackoverflow Suche",
-	"examples": ["stackoverflow/so python"],
+	"examples": ["stackoverflow python", "so python"],
 	"categories": ["Developer"]
 }
