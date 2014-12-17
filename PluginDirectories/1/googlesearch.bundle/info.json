@@ -1,5 +1,5 @@
 {
-	"name": "googleserach",
+	"name": "googlesearch",
 	"displayName": "Google Search",
 	"displayName_de": "Google Suche",
 	"examples": ["google Apple stock", "search the web for OSX Yosemite", "g Flashlight"],
