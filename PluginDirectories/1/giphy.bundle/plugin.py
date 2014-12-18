@@ -67,7 +67,7 @@ def results(parsed, original):
   var query = <!--QUERY-->;
   setTimeout(function() {
     $.ajax({
-      url: "http://api.giphy.com/v1/gifs/translate?api_key=dc6zaTOxFJmzC&rating=pg-13&s=" + encodeURIComponent(query),
+      url: "http://api.giphy.com/v1/gifs/translate?api_key=5xaOcLLcLRDc8fQDACk&rating=pg-13&s=" + encodeURIComponent(query),
       success: function(response) {
         var data = response.data;
         if (data.length == 0) {
