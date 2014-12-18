@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sharkobot</title>
+<style>
+body{
+	text-align: center;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+	line-height: 1.2;
+}
+.dark-mode{
+	color:#fff;
+}
+#resultImage{
+	margin:auto;
+}
+#resultImage img{
+	max-width:100%;
+}
+#url, #url:focus{
+	width:90%;
+	border:0px;
+	background: none;
+}
+#reload{
+	position:fixed;
+	top:10px;
+	right:10px;
+}
+
+
+/* Fancy UI */
+
+#description{
+	width:100% !important;
+	z-index: 999;
+	margin-bottom:10px;
+}
+
+#urlcontainer{
+	position: fixed;
+	bottom:0px;
+	height:20px;
+	width:100%;
+	z-index: 999;
+}
+
+/* Dark Mode */ 
+
+.light-mode #url{
+	color:black;
+}
+.dark-mode #url{
+	color:white;
+}
+.dark-mode #urlcontainer{
+	background: rgba(0,0,0,0.5);
+}
+
+/* Debug */
+
+#debug, #reload{
+	display:none;
+}
+
+
+/* Spinner - does not work properly in Spotlight */ 
+#reload:hover {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 500ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 500ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+</style>
+<script>
+function sendRequest(url, callback){
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+	    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+	        callback(JSON.parse(xmlhttp.responseText));
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+}
+function getSampleImage(array){
+	return array[Math.floor((Math.random() * array.length ) + 0)];
+}
+
+function displayImage(img){
+	console.log(img);
+	document.querySelector("#resultImage").innerHTML = '<img src="'+img.url+'"/>';
+	document.querySelector("#description").innerHTML = img.title;
+	document.querySelector("#url").value = img.url;
+	//Select URL after 1 second
+	setTimeout(function(){
+		document.querySelector("#url").focus();
+		document.querySelector("#url").select();
+	}, 800);
+}
+
+function getAnchor() {  
+	var nullValue = null;
+    return nullValue || ((document.URL.split('#').length > 1) ? document.URL.split('#')[1] : "404");
+}
+
+function buildUrl(){
+	var apiVersion = "1.0";
+	var imagesPerPage = 8;
+	var ret = "https://ajax.googleapis.com/ajax/services/search/images?v="+apiVersion+"&rsz="+imagesPerPage+"&q=" + getAnchor();
+	document.querySelector("#debug").innerHTML = ret;
+	return ret;
+};
+</script>
+
+</head>
+<body class="light-mode">
+	<div id="debug"></div>
+	<div id="description"></div>
+	<div id="resultImage"></div>
+	<div id="urlcontainer"><input type="text" id="url" readonly /></div>
+	<img src="http://fa2png.io/static/images/circle-o-notch_6e6e6e_64.png" id="reload" onclick="location.reload()"/>
+	<script>
+	setTimeout(function(){
+		sendRequest(buildUrl(), function(jsonResponse){
+			if(jsonResponse && jsonResponse.responseData && jsonResponse.responseData.results && jsonResponse.responseData.results.length){
+				var images = jsonResponse.responseData.results;
+				var imageToDisplay = getSampleImage(images);
+				displayImage(imageToDisplay);
+			}else{
+				alert("Doh!")
+			}
+		});
+
+	}, 300);
+	
+
+	</script>
+</body>
+</html>

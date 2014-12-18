@@ -8,5 +8,5 @@
 	"description_de": "Durchsuche Man Seiten öffne sie in einem extra Fenster",
 	"examples": ["man ls", "man ifconfig"],
 	"examples_fr": ["man ls", "man ifconfig"],
-	"categories": ["Developer", "Featured"]
+	"categories": ["Developer"]
 }
