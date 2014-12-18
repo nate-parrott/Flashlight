@@ -419,6 +419,26 @@
             "categories": [
                 "Media"
             ],
+            "description": "Search Google for gifs and allows to copy the url",
+            "description_de": "Durchsucht Google nach gifs und erlaubt es die URL zu kopieren",
+            "displayName": "Google gifs",
+            "examples": [
+                "gif grumpy cat",
+                "animate me speed boat",
+                "flashlight animation"
+            ],
+            "examples_de": [
+                "gif grumpy cat",
+                "animiere mir speed boat",
+                "flashlight animation"
+            ],
+            "name": "gif",
+            "zip_url": "gif.zip"
+        },
+        {
+            "categories": [
+                "Media"
+            ],
             "description": "Search for GIFs with Giphy",
             "displayName": "Giphy",
             "examples": [
@@ -507,7 +527,7 @@
                 "Suche im Internet nach OSX Yosemite",
                 "g Flashlight"
             ],
-            "name": "googleserach",
+            "name": "googlesearch",
             "zip_url": "googlesearch.zip"
         },
         {
@@ -620,9 +640,31 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "description": "Shows Useragent and external IP Address",
+            "description_de": "Zeigt Useragent und externe IP Adresse an",
+            "displayName": "External IP / Useragent",
+            "displayName_de": "Externe IP / Useragent",
+            "examples": [
+                "what is my ip",
+                "useragent",
+                "ip"
+            ],
+            "examples_de": [
+                "was ist meine ip",
+                "useragent",
+                "ip"
+            ],
+            "name": "ipuseragent",
+            "zip_url": "ipuseragent.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
-            "description": "See if a site is available/",
+            "description": "See if a site is available",
+            "description_de": "Zeigt an ob eine Seite verf\u00fcrgbar ist",
             "displayName": "Is it up?",
             "examples": [
                 "up google.com",
@@ -701,8 +743,9 @@
                 "Developer"
             ],
             "description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+            "description_de": "\u00d6ffnet Textmate. Falls der Finder gestartet ist, \u00f6ffnet es den aktuellen Ordner / Datei in Textmate.",
             "displayName": "Open with Text mate",
-            "displayName_de": "Textmate",
+            "displayName_de": "Mit Textmate \u00f6ffnen",
             "examples": [
                 "mate"
             ],
@@ -798,6 +841,26 @@
             ],
             "name": "thepiratebay",
             "zip_url": "piratebay.zip"
+        },
+        {
+            "categories": [
+                "Media"
+            ],
+            "description": "Returns a random Google image and allows to copy the url",
+            "description_de": "Gibt ein zuf\u00e4lliges Google Bild zur\u00fcck und erlaubt es die URL zu kopieren",
+            "displayName": "Random Google image",
+            "displayName_de": "Zuf\u00e4lliges Google Bild",
+            "examples": [
+                "image grumpy cat",
+                "random image flashlight",
+                "image me spotlight"
+            ],
+            "examples_de": [
+                "bild grumpy cat",
+                "zufallsbild flashlight"
+            ],
+            "name": "randomimage",
+            "zip_url": "randomimage.zip"
         },
         {
             "categories": [
@@ -966,7 +1029,8 @@
             "displayName": "Search Stackoverflow",
             "displayName_de": "Stackoverflow Suche",
             "examples": [
-                "stackoverflow/so python"
+                "stackoverflow python",
+                "so python"
             ],
             "name": "stackoverflow",
             "zip_url": "stackoverflow.zip"
@@ -1325,6 +1389,27 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Decides for you, so you don't have to spend energy in that",
+            "description_de": "Entscheidet f\u00fcr dich, so dass du das nicht auch noch selbst machen musst",
+            "displayName": "Yes or No",
+            "displayName_de": "Ja oder Nein",
+            "examples": [
+                "yes no",
+                "decide for me",
+                "should I eat pizza"
+            ],
+            "examples_de": [
+                "Ja oder Nein",
+                "Soll ich Pizza essen",
+                "entscheide f\u00fcr mich"
+            ],
+            "name": "yesno",
+            "zip_url": "yesno.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search YHD.com (y) from Spotlight.",
@@ -1357,7 +1442,8 @@
             "displayName": "YouDao Dictionary",
             "examples": [
                 "yd why",
-                "youdao why"
+                "youdao why",
+                "\u6709\u9053 why"
             ],
             "name": "youdaodic",
             "zip_url": "youdaodic.zip"
