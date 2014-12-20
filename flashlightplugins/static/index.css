@@ -88,4 +88,13 @@ a:hover {
     margin-top: -3em;
     text-align: center;
 }
-
+#images img {
+    margin-bottom: -1.5em;
+}
+#images > p {
+    margin: 6px;
+    font-weight: 200;
+}
+cite:before {
+    content: "– ";
+}
