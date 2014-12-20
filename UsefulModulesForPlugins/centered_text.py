@@ -4,7 +4,7 @@ def dark_mode():
 
 def centered_text(html, hint_text=""):
 	text_color = "white" if dark_mode() else "black"
-	base = """
+	base = u"""
 		<style>
 		html, body {
 			margin: 0px;
