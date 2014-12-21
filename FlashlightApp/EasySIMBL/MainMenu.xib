@@ -75,7 +75,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Новый плагин" id="BA6-O3-mGg">
                         <items>
-                            <menuItem title="Выполнить как процесс Automator" id="ate-NX-h2e">
+                            <menuItem title="Выполнить как поток работ Automator" id="ate-NX-h2e">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="newPlugin:" target="715" id="hOo-0M-TPz"/>
@@ -104,12 +104,12 @@
                 <menuItem title="Правка" id="217">
                     <menu key="submenu" title="Правка" id="205">
                         <items>
-                            <menuItem title="Отменить" keyEquivalent="z" id="207">
+                            <menuItem title="Undo" keyEquivalent="z" id="207">
                                 <connections>
                                     <action selector="undo:" target="-1" id="223"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Повторить" keyEquivalent="Z" id="215">
+                            <menuItem title="Redo" keyEquivalent="Z" id="215">
                                 <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                 <connections>
                                     <action selector="redo:" target="-1" id="231"/>
@@ -118,33 +118,33 @@
                             <menuItem isSeparatorItem="YES" id="206">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Вырезать" keyEquivalent="x" id="199">
+                            <menuItem title="Cut" keyEquivalent="x" id="199">
                                 <connections>
                                     <action selector="cut:" target="-1" id="228"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Копировать" keyEquivalent="c" id="197">
+                            <menuItem title="Copy" keyEquivalent="c" id="197">
                                 <connections>
                                     <action selector="copy:" target="-1" id="224"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Вставить" keyEquivalent="v" id="203">
+                            <menuItem title="Paste" keyEquivalent="v" id="203">
                                 <connections>
                                     <action selector="paste:" target="-1" id="226"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Вставить и подобрать стиль" keyEquivalent="V" id="485">
+                            <menuItem title="Paste and Match Style" keyEquivalent="V" id="485">
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="pasteAsPlainText:" target="-1" id="486"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Удалить" id="202">
+                            <menuItem title="Delete" id="202">
                                 <connections>
                                     <action selector="delete:" target="-1" id="235"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Выделить всё" keyEquivalent="a" id="198">
+                            <menuItem title="Select All" keyEquivalent="a" id="198">
                                 <connections>
                                     <action selector="selectAll:" target="-1" id="232"/>
                                 </connections>
@@ -152,37 +152,37 @@
                             <menuItem isSeparatorItem="YES" id="214">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Найти" id="218">
-                                <menu key="submenu" title="Найти" id="220">
+                            <menuItem title="Find" id="218">
+                                <menu key="submenu" title="Find" id="220">
                                     <items>
-                                        <menuItem title="Найти…" tag="1" keyEquivalent="f" id="209">
+                                        <menuItem title="Find…" tag="1" keyEquivalent="f" id="209">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="241"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Найти и заменить…" tag="12" keyEquivalent="f" id="534">
+                                        <menuItem title="Find and Replace…" tag="12" keyEquivalent="f" id="534">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="535"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Найти ещё" tag="2" keyEquivalent="g" id="208">
+                                        <menuItem title="Find Next" tag="2" keyEquivalent="g" id="208">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="487"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Найти ранее" tag="3" keyEquivalent="G" id="213">
+                                        <menuItem title="Find Previous" tag="3" keyEquivalent="G" id="213">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="488"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Искать выделенное" tag="7" keyEquivalent="e" id="221">
+                                        <menuItem title="Use Selection for Find" tag="7" keyEquivalent="e" id="221">
                                             <connections>
                                                 <action selector="performFindPanelAction:" target="-1" id="489"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Перейти к выделенному" keyEquivalent="j" id="210">
+                                        <menuItem title="Jump to Selection" keyEquivalent="j" id="210">
                                             <connections>
                                                 <action selector="centerSelectionInVisibleArea:" target="-1" id="245"/>
                                             </connections>
@@ -190,32 +190,31 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Орфография и грамматика" id="216">
-                                <menu key="submenu" title="Орфография и грамматика" id="200">
+                            <menuItem title="Spelling and Grammar" id="216">
+                                <menu key="submenu" title="Spelling and Grammar" id="200">
                                     <items>
-                                        <menuItem title="Показать правописание и грамматику" keyEquivalent=":" id="204">
+                                        <menuItem title="Show Spelling and Grammar" keyEquivalent=":" id="204">
                                             <connections>
                                                 <action selector="showGuessPanel:" target="-1" id="230"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Проверить документ" keyEquivalent="П" id="201">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Check Document Now" keyEquivalent=";" id="201">
                                             <connections>
                                                 <action selector="checkSpelling:" target="-1" id="225"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="453"/>
-                                        <menuItem title="Проверять правописание при наборе текста" id="219">
+                                        <menuItem title="Check Spelling While Typing" id="219">
                                             <connections>
                                                 <action selector="toggleContinuousSpellChecking:" target="-1" id="222"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Проверять грамматику и правописание" id="346">
+                                        <menuItem title="Check Grammar With Spelling" id="346">
                                             <connections>
                                                 <action selector="toggleGrammarChecking:" target="-1" id="347"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Автоматически исправлять ошибки правописания" id="454">
+                                        <menuItem title="Correct Spelling Automatically" id="454">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticSpellingCorrection:" target="-1" id="456"/>
@@ -224,39 +223,39 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Замены" id="348">
-                                <menu key="submenu" title="Замены" id="349">
+                            <menuItem title="Substitutions" id="348">
+                                <menu key="submenu" title="Substitutions" id="349">
                                     <items>
-                                        <menuItem title="Показать замены" id="457">
+                                        <menuItem title="Show Substitutions" id="457">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontSubstitutionsPanel:" target="-1" id="458"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="459"/>
-                                        <menuItem title="Умное копирование/вставка" tag="1" keyEquivalent="f" id="350">
+                                        <menuItem title="Smart Copy/Paste" tag="1" keyEquivalent="f" id="350">
                                             <connections>
                                                 <action selector="toggleSmartInsertDelete:" target="-1" id="355"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Умные цитаты" tag="2" keyEquivalent="g" id="351">
+                                        <menuItem title="Smart Quotes" tag="2" keyEquivalent="g" id="351">
                                             <connections>
                                                 <action selector="toggleAutomaticQuoteSubstitution:" target="-1" id="356"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Автоперенос" id="460">
+                                        <menuItem title="Smart Dashes" id="460">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticDashSubstitution:" target="-1" id="461"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Умные ссылки" tag="3" keyEquivalent="G" id="354">
+                                        <menuItem title="Smart Links" tag="3" keyEquivalent="G" id="354">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="toggleAutomaticLinkDetection:" target="-1" id="357"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Замена текста" id="462">
+                                        <menuItem title="Text Replacement" id="462">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="toggleAutomaticTextReplacement:" target="-1" id="463"/>
@@ -265,23 +264,23 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Преобразования" id="450">
+                            <menuItem title="Transformations" id="450">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Преобразования" id="451">
+                                <menu key="submenu" title="Transformations" id="451">
                                     <items>
-                                        <menuItem title="Перевести в верхний регистр" id="452">
+                                        <menuItem title="Make Upper Case" id="452">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="uppercaseWord:" target="-1" id="464"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Перевести в нижний регистр" id="465">
+                                        <menuItem title="Make Lower Case" id="465">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="lowercaseWord:" target="-1" id="468"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Печатать прописныеми буквами" id="466">
+                                        <menuItem title="Capitalize" id="466">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="capitalizeWord:" target="-1" id="467"/>
@@ -290,16 +289,15 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Речь" id="211">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Речь" id="212">
+                            <menuItem title="Speech" id="211">
+                                <menu key="submenu" title="Speech" id="212">
                                     <items>
-                                        <menuItem title="Начать разговор" id="196">
+                                        <menuItem title="Start Speaking" id="196">
                                             <connections>
                                                 <action selector="startSpeaking:" target="-1" id="233"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Прекратить разговор" id="195">
+                                        <menuItem title="Stop Speaking" id="195">
                                             <connections>
                                                 <action selector="stopSpeaking:" target="-1" id="227"/>
                                             </connections>
@@ -318,7 +316,7 @@
                                     <action selector="performMiniaturize:" target="-1" id="37"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Изменить масштаб" id="239">
+                            <menuItem title="Изменить мастштаб" id="239">
                                 <connections>
                                     <action selector="performZoom:" target="-1" id="240"/>
                                 </connections>
