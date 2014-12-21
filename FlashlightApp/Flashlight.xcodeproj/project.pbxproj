@@ -48,7 +48,6 @@
 		5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */; };
 		5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD3EA801A2035AB005A312E /* WebKit.framework */; };
 		5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */; };
-		653963C61A2766CD00D8F6E9 /* libPods-Flashlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 653963C51A2766CD00D8F6E9 /* libPods-Flashlight.a */; };
 		6C3A4C44159EADF900985CCD /* FlashlightSIMBLAgent.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6C3A4C35159E7E7000985CCD /* FlashlightSIMBLAgent.app */; };
 		6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C564484159E7C0800215467 /* Cocoa.framework */; };
 		6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C56448D159E7C0800215467 /* InfoPlist.strings */; };
@@ -203,6 +202,9 @@
 		6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SIMBL.h; path = ../src/SIMBL.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SIMBL.m; path = ../src/SIMBL.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		80D11BB01A261AE400BB9DA4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95C8E06A1A47026100C9FB0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		95C8E06B1A47026100C9FB0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95C8E06C1A47026100C9FB0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E28AC1DF1A23D21D00673B7C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,7 +213,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653963C61A2766CD00D8F6E9 /* libPods-Flashlight.a in Frameworks */,
 				5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */,
 				5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */,
 				5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */,
@@ -440,6 +441,7 @@
 				tr,
 				es,
 				ko,
+				ru,
 			);
 			mainGroup = 6C564475159E7C0800215467;
 			productRefGroup = 6C564481159E7C0800215467 /* Products */;
@@ -592,6 +594,7 @@
 				5FC65E181A290B20006187EB /* tr */,
 				5F11C2FD1A2B0834005A1731 /* es */,
 				5FC34AE81A314C4E007CCE4E /* ko */,
+				95C8E06B1A47026100C9FB0A /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C56448E159E7C0800215467 /* en */,
+				95C8E06C1A47026100C9FB0A /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -608,6 +612,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6C56449A159E7C0900215467 /* en */,
+				95C8E06A1A47026100C9FB0A /* ru */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
