@@ -37,7 +37,8 @@ def results(parsed, original_query):
             to_lang = key.split('/')[1]
     from dark_mode import dark_mode
     color = "white" if dark_mode() else "black"
-    html = open("translate.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang]).replace("light-mode", "dark-mode" if dark_mode() else "light-mode")
+    html = open("translate.html").read().replace("----text----", text).replace("----fromlang----", lang_codes[from_lang]).replace("----tolang----", lang_codes[to_lang]).replace("----color----", color)
+
 
     if from_lang == 'auto':
         title = "Translate \"{0}\" to {1}".format(text, to_lang)
