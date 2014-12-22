@@ -29,6 +29,22 @@
         },
         {
             "categories": [
+                "Search",
+                "Media"
+            ],
+            "description": "Search AcFun or Bilibili",
+            "displayName": "AcFun&Bilibili",
+            "examples": [
+                "ac Madoka",
+                "acfun Madoka",
+                "bili Madoka",
+                "bilibili Madoka"
+            ],
+            "name": "AcFun&Bilibili",
+            "zip_url": "AcFun&Bilibili.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Alibaba (ab) from Spotlight.",
@@ -71,6 +87,23 @@
             ],
             "name": "amazon",
             "zip_url": "amazon.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search Apps in AppAnnie.",
+            "description_de": "Durchsucht Apps in AppAnnie.",
+            "displayName": "AppAnnie Search",
+            "displayName_de": "AppAnnie Suche",
+            "examples": [
+                "aa facebook",
+                "annie twitter",
+                "appannie instagram"
+            ],
+            "name": "appanniesearch",
+            "zip_url": "appanniesearch.zip"
         },
         {
             "categories": [
@@ -162,6 +195,19 @@
             "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
             "name": "Brackets",
             "zip_url": "Brackets.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "displayName": "Search CocoaPods",
+            "examples": [
+                "search cocoapods for Core Data",
+                "pod ReactiveCocoa"
+            ],
+            "name": "cocoapods",
+            "zip_url": "cocoapods.zip"
         },
         {
             "categories": [
