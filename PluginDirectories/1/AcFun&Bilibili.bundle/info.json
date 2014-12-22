@@ -3,5 +3,5 @@
     "displayName": "AcFun&Bilibili",
     "description": "Search AcFun or Bilibili",
     "examples": ["ac Madoka", "acfun Madoka", "bili Madoka", "bilibili Madoka"],
-    "catagories": ["Search", "Media"],
+    "categories": ["Search", "Media"]
 }

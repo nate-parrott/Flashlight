@@ -7,6 +7,12 @@
 {% endblock %}
 
 {% block head %}
+<meta property="og:title" content="{{ plugin.displayName }}" />
+<meta property="og:description" content="{{ plugin.description }}" />
+{% if plugin.model.screenshot_url %}
+   <meta property="og:image" content="{{ plugin.model.screenshot_url }}" />
+{% endif %}
+
 <style>
 #plugin {
    background-color: #eee;
