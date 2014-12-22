@@ -86,6 +86,8 @@
 		6CF6D4B3159DD14100916EA5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		8D5B49B6048680CD000E48DA /* Flashlight.osax */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Flashlight.osax; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C8E0681A47022400C9FB0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		95C8E0691A47022500C9FB0A /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E043030209B300D6000FD3C5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0AF789309B3031900F50FE7 /* NSAlert_SIMBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSAlert_SIMBL.h; sourceTree = "<group>"; };
 		E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAlert_SIMBL.m; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				German,
 				en,
 				it,
+				ru,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* SIMBL */;
 			projectDirPath = "";
@@ -353,6 +356,7 @@
 			children = (
 				276144CE105F523C00F906F6 /* English */,
 				658988FE1A270ACF00ABE5E9 /* it */,
+				95C8E0681A47022400C9FB0A /* ru */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 			children = (
 				276144D0105F523C00F906F6 /* English */,
 				658988FF1A270ACF00ABE5E9 /* it */,
+				95C8E0691A47022500C9FB0A /* ru */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
