@@ -151,7 +151,7 @@
 				if (status == google.maps.GeocoderStatus.OK) {
 					var coorinates = results[0].geometry.location;
 					var addressTitle = results[0].formatted_address;
-					getTimeZoneFromCoordinates(coorinates.k, coorinates.B, addressTitle);
+					getTimeZoneFromCoordinates(coorinates.lat(), coorinates.lng(), addressTitle);
 				} else {
 					showError();
 				}
