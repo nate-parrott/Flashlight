@@ -2,14 +2,7 @@ import urllib, json
 
 def results(parsed, original_query):
     search_specs = [
-          ["Search The Pirate Bay", "~thePirateBay", "http://thepiratebay.se/search/", "http://thepiratebay.se/search/"],
- #        ["Duck Duck Go", "~duckduckgoquery", "https://duckduckgo.com/?q="],
- #        ["Google Images", "~googleimagequery", "https://www.google.com/search?tbm=isch&q="],
- #        ["Baidu", "~baiduquery", "http://www.baidu.com/s?wd="],
- #        ["Bing", "~bingquery", "http://www.bing.com/search?q="],
- #        ["Yahoo", "~yahooquery", "https://sg.search.yahoo.com/search?p="],
- #        ["Twitter", "~twitterquery", "https://mobile.twitter.com/search?q="],
- #        ["Reddit", "~redditquery", "https://www.reddit.com/search?q="]
+          ["Search The Pirate Bay", "~thePirateBay", "http://thepiratebay.ee/search/", "http://thepiratebay.ee/s/?q="],
     ]
     for name, key, mobile_url, url in search_specs:
         if key in parsed:
