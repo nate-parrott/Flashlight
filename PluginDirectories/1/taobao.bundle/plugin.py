@@ -2,15 +2,16 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-        ["Taobao", "~taobaoquery", "http://s.m.taobao.com/h5?q="]
+        ["Taobao", "~taobaoquery", "http://s.m.taobao.com/h5?q=", "http://s.taobao.com/search?q="]
     ]
-    for name, key, url in search_specs:
+    for name, key, h5url, weburl in search_specs:
         if key in parsed:
-            url = i18n.localstr(url)
-            search_url = url + urllib.quote_plus(parsed[key])
+            msg = parsed[key].encode('utf-8')
+            search_url = i18n.localstr(h5url) + urllib.quote_plus(msg)
+            web_url = i18n.localstr(weburl) + urllib.quote_plus(msg)
             return {
-                "title": i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]),
-                "run_args": [search_url],
+                "title": i18n.localstr("Search {0} for '{1}'").format(name, msg),
+                "run_args": [web_url],
                 "html": """
                 <script>
                 setTimeout(function() {
