@@ -3,5 +3,6 @@
     "displayName": "Diki.pl",
     "description": "Multimedialny słownik angielskiego",
     "examples": ["diki apple"],
-    "categories": ["Language"]
+    "categories": ["Language"],
+	"preferred_locales": ["pl"]
 }

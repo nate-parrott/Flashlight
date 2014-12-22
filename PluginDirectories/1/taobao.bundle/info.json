@@ -3,5 +3,6 @@
 	"displayName": "Taobao Search",
 	"description": "Search Taobao (t) from Spotlight.",
 	"examples": ["taobao flashlight", "t flashlight"],
-	"categories": ["Search"]
+	"categories": ["Search"],
+	"preferred_locales": ["zh"]
 }
