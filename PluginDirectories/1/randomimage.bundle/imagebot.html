@@ -139,10 +139,8 @@ function getAnchor() {
 
 function buildUrl(){
 	var apiVersion = "1.0";
-	var imageType = "animated";
-	var fileType ="gif";
 	var imagesPerPage = 8;
-	var ret = "https://ajax.googleapis.com/ajax/services/search/images?v="+apiVersion+"&as_filetype="+fileType+"&imgtype="+imageType+"&rsz="+imagesPerPage+"&q=" + getAnchor();
+	var ret = "https://ajax.googleapis.com/ajax/services/search/images?v="+apiVersion+"&rsz="+imagesPerPage+"&q=" + getAnchor();
 	document.querySelector("#debug").innerHTML = ret;
 	return ret;
 };
@@ -168,6 +166,7 @@ function buildUrl(){
 		});
 
 	}, 300);
+	
 
 	</script>
 </body>
