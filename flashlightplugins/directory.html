@@ -15,13 +15,13 @@
        -ms-user-select: none;
        user-select: none;
    }
-   #plugins {
+   .plugins {
       padding: 0;
       -webkit-column-width: 200px;
       -webkit-column-gap: 1em;
       width: 100%;
    }
-   #plugins > li {
+   .plugins > li {
       list-style-type: none;
       padding-top: 1em;
       -webkit-column-break-inside: avoid;
@@ -29,7 +29,7 @@
       break-inside: avoid;
       position: relative;
    }
-   #plugins .pod {
+   .plugins .pod {
       background-color: rgba(100,100,100,0.1);
       padding: 14px;
       border-radius: 10px;
@@ -40,7 +40,7 @@
       top: 0px;
       right: 15px;
    }
-   #plugins h4, p.description {
+   .plugins h4, p.description {
       margin: 0px;
       font-size: small;
    }
@@ -136,6 +136,14 @@
       text-decoration: none;
       color: inherit;
    }
+   .plugins.other_locales {
+      font-size: 0.9em;
+      opacity: 0.9;
+   }
+   .group_header {
+      opacity: 0.7;
+      font-weight: 200;
+   }
    </style>
 </head>
 <body>
@@ -150,8 +158,14 @@
       <h3>{{ plugins|length }} results</h3>
    </div>
    {% endif %}
-   <ul id='plugins'>
-      {% for plugin in plugins %}
+   
+   {% for group in groups %}
+   
+   {% if group.header %}
+   <h4 class='group_header'>{{ group.header }}</h4>
+   {% endif %}
+   <ul class='plugins {% if group.class %} {{ group.class }} {% endif %}'>
+      {% for plugin in group.plugins %}
       <li class='{{ plugin.name }}' status='uninstalled'>
          <div class='pod'>
             {% if plugin.model.icon_url %}
@@ -190,6 +204,7 @@
       </li>
       {% endfor %}
    </ul>
+   {% endfor %}
    {% if browse %}
    <script>
    function reveal(name) {

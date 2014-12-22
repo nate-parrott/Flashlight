@@ -8,10 +8,16 @@
    {% block head %}
    
    {% endblock %}
+   {% block opengraph %}
+   <meta property="og:image" content="http://flashlight.nateparrott.com/static/images/simple-screenshot.png" />
+   <meta property="og:description" content="Extend Spotlight with a catalog of plugins. Check weather, search Google, set reminders or write your own features." />
+   <meta property="og:title" content="Flashlight — do anything with Spotlight" />
+   <meta property="og:type" content="website" />
+   {% endblock %}
    <meta name="Description" content="The missing plugin system for Spotlight."/>
    <meta name="viewport" content="width=device-width, initial-scale=1"/>
    <link rel='stylesheet' href='/static/base.css'/>
-   <link rel="shortcut icon" href="/static/images/Icon-inverted-red.png"/>
+   <link rel="shortcut icon" href="/static/images/favicon.png"/>
    <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

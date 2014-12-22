@@ -1,0 +1,6 @@
+{
+    "name": "cocoapods",
+    "displayName": "Search CocoaPods",
+    "examples": ["search cocoapods for Core Data", "pod ReactiveCocoa"],
+    "categories": ["Search", "Developer"]
+}

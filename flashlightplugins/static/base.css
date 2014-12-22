@@ -95,7 +95,7 @@ img {
 }
 #categories > li:hover {
     background-color: white;
-    color: #D92A00;
+    color: #0cf;
 }
 #category {
     text-align: left;
@@ -129,10 +129,4 @@ img {
     #social > div {
         display: inline-block;
     }
-}
-#plugin h1 {
-    background-color: white;
-    color: #222;
-    padding: 10px;
-    margin-left: -10px;
 }
