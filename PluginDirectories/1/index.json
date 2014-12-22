@@ -614,6 +614,9 @@
                 "haomatong 10086"
             ],
             "name": "haomatong",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "haomatong.zip"
         },
         {

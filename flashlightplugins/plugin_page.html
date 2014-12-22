@@ -6,12 +6,26 @@
 </title>
 {% endblock %}
 
-{% block head %}
+{% block opengraph %}
+
 <meta property="og:title" content="{{ plugin.displayName }}" />
 <meta property="og:description" content="{{ plugin.description }}" />
 {% if plugin.model.screenshot_url %}
    <meta property="og:image" content="{{ plugin.model.screenshot_url }}" />
+{% else %}
+   <meta property="og:image" content="http://flashlight.nateparrott.com/static/images/simple-screenshot.png" />
 {% endif %}
+
+   <meta property="og:site_name" content="Flashlight" />
+   <meta property="og:type" content="website" />
+
+{% endblock %}
+
+{% block meta_description %}
+   <meta name="Description" content="{{ plugin.description }}"/>
+{% endblock %}
+
+{% block head %}
 
 <style>
 #plugin {
@@ -139,7 +153,7 @@ h6 {
    
    <div id='social'>
       <div id='downloads'>{{plugin.model.downloads}} downloads</div>
-      
+            
       <div>
          <div id="fb-root"></div>
          <script>(function(d, s, id) {
