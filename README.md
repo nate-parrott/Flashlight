@@ -41,6 +41,7 @@ Huge thanks to everyone who's contributed translations:
  - [iltercengiz](http://github.com/iltercengiz) for Turkish
  - [AlAdler](http://github.com/AlAdler) for Spanish
  - [readingsnail](http://github.com/readingsnail) for Korean
+ - [davochka](http://github.com/davochka) for Russian
  
 
 If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)

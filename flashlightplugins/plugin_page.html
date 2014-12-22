@@ -6,8 +6,33 @@
 </title>
 {% endblock %}
 
+{% block opengraph %}
+
+<meta property="og:title" content="{{ plugin.displayName }}" />
+<meta property="og:description" content="{{ plugin.description }}" />
+{% if plugin.model.screenshot_url %}
+   <meta property="og:image" content="{{ plugin.model.screenshot_url }}" />
+{% else %}
+   <meta property="og:image" content="http://flashlight.nateparrott.com/static/images/simple-screenshot.png" />
+{% endif %}
+
+   <meta property="og:site_name" content="Flashlight" />
+   <meta property="og:type" content="website" />
+
+{% endblock %}
+
+{% block meta_description %}
+   <meta name="Description" content="{{ plugin.description }}"/>
+{% endblock %}
+
 {% block head %}
+
 <style>
+#plugin {
+   background-color: #eee;
+   color: black;
+   padding: 30px;
+}
 #hint {
    font-weight: 200;
    font-size: 0.7em;
@@ -35,24 +60,66 @@ h6 {
    font-weight: bold;
    margin-bottom: 4px;
 }
-#controls > a {
-   background-color: white;
-   padding: 10px;
-   display: inline-block;
-   margin-right: 10px;
-   color: black;
-   text-decoration: none;
-   font-weight: bold;
-}
 #social > *:first-child {
    padding-left: 0;
 }
+#description {
+   font-size: 1.25em;
+   font-weight: 200;
+}
 #screenshot {
-   max-width: 70%;  
+   max-width: 50%;
+   float: right;
+}
+@media screen and (max-width: 500px) {
+   #screenshot {
+      max-width: 90%;
+      float: none;
+   }
+}
+#downloads {
+   display: inline-block;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: small;
+   color: #222;
+   vertical-align: bottom;
+   position: relative;
+   top: 2px;
 }
 #icon {
-   max-height: 1em;
-   vertical-align: bottom;
+   height: 1em;
+   position: relative;
+   top: 4px;
+}
+#plugin h1 {
+    color: #222;
+    margin-top: 0;
+}
+#show {
+   float: right;
+   padding: 10px;
+   margin-top: -10px;
+   margin-right: -10px;
+}
+#show > a {
+   background-color: #333;
+   padding: 10px;
+   display: inline-block;
+   color: #eee;
+   text-decoration: none;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: small;
+}
+#info {
+   margin-left: 1em;
+   margin-right: 1em;
+   text-align: center;
+}
+#plugin #social {
+   margin-top: 4em;
 }
 </style>
 {% endblock %}
@@ -60,6 +127,9 @@ h6 {
 {% block body %}
 
 <div id='plugin'>
+   <div id='show'>
+      <a href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
+   </div>
    <h1>
       {% if plugin.model.icon_url %}
          <img id='icon' src='{{ plugin.model.icon_url }}'/>
@@ -71,27 +141,19 @@ h6 {
       <img id='screenshot' src='{{ plugin.model.screenshot_url }}'/>
    </p>
    {% endif %}
-   <h6>Examples</h6>
+   <p id='description'>
+      {{ plugin.description }}
+   </p>
+   <h6>Example Searches</h6>
    <ul id='examples'>
       {% for example in plugin.examples %}
       <li>{{ example }}</li>
       {% endfor %}
    </ul>
-   <p id='description'>
-      {{ plugin.description }}
-   </p>
-      
-   <p id='controls'>
-      <a href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
-   </p>
-   
-   <p>
-      <em><a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.</em>
-   </p>
    
    <div id='social'>
-      <div>{{plugin.model.downloads}} downloads.</div>
-      
+      <div id='downloads'>{{plugin.model.downloads}} downloads</div>
+            
       <div>
          <div id="fb-root"></div>
          <script>(function(d, s, id) {
@@ -110,5 +172,9 @@ h6 {
       </div>
    </div>
 </div>
+
+<p id='info'>
+   <a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.
+</p>
 
 {% endblock %}

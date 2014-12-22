@@ -28,6 +28,7 @@ h1 {
     vertical-align: middle;
     text-align: center;
     padding: 10px;
+    padding-top: 30px;
 }
 @media screen and (max-width: 540px) {
     #splash h2 {
@@ -87,4 +88,13 @@ a:hover {
     margin-top: -3em;
     text-align: center;
 }
-
+#images img {
+    margin-bottom: -1.5em;
+}
+#images > p {
+    margin: 6px;
+    font-weight: 200;
+}
+cite:before {
+    content: "– ";
+}

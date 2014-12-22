@@ -77,7 +77,7 @@ def read_plugin_info(plugin, zip_data):
             plugin.icon_url = resize_and_store(data, 128)
         elif name.endswith('/Screenshot.png'):
             screenshot = archive.open(name).read()
-            plugin.screenshot_url = resize_and_store(screenshot, 600)
+            plugin.screenshot_url = resize_and_store(screenshot, 800)
     return has_info
 
 def language_suffixes(languages):
@@ -154,8 +154,31 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
                                                            "plugin": plugin}))
 
 
-def directory_html(category=None, search=None, languages=['en'], browse=False,
+def arrays_overlap(a1, a2):
+  return sum([1 for a in a1 if a in a2]) > 0
+
+def locales_overlap(l1, l2):
+  normalize_locale = lambda locale: locale.split('-')[0]
+  return arrays_overlap(map(normalize_locale, l1), map(normalize_locale, l2))
+
+def group_plugins(plugin_dicts, languages, languages_were_specified):
+  if languages_were_specified:
+    plugins_for_other_locales = [p for p in plugin_dicts if ('preferred_locales' in p and not locales_overlap(p['preferred_locales'], languages))]
+    plugins_for_other_locales_names = set([p['name'] for p in plugins_for_other_locales])
+    native_plugins = [p for p in plugin_dicts if p['name'] not in plugins_for_other_locales_names]
+    groups = [
+      {"plugins": native_plugins},
+      {"plugins": plugins_for_other_locales, "header": "Plugins for other regions", "class": "other_locales"}
+    ]
+  else:
+    groups = [{"plugins": plugin_dicts}]
+  return [g for g in groups if len(g['plugins'])]
+
+def directory_html(category=None, search=None, languages=None, browse=False,
                    name=None):
+    languages_specified = languages != None
+    if not languages_specified:
+      languages = ['en']
     if category:
         plugins = list(Plugin.query(Plugin.categories == category,
                                     Plugin.approved == True))
@@ -171,8 +194,9 @@ def directory_html(category=None, search=None, languages=['en'], browse=False,
     for p in plugins:
         plugin = info_dict_for_plugin(p, languages)
         plugin_dicts.append(plugin)
+    groups = group_plugins(plugin_dicts, languages, languages_specified)
     return template("directory.html",
-                    {"plugins": plugin_dicts, "browse": browse,
+                    {"groups": groups, "browse": browse,
                      "search": search})
 
 
@@ -192,7 +216,7 @@ def info_dict_for_plugin(p, languages=['en']):
 
 class Directory(webapp2.RequestHandler):
     def get(self):
-        languages = self.request.get('languages', '').split(',') + ['en']
+        languages = self.request.get('languages', '').split(',') + ['en'] if self.request.get('languages') else None
         category = self.request.get('category', None)
         search = self.request.get('search', None)
         browse = self.request.get('browse', '') != ''

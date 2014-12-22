@@ -1,0 +1,9 @@
+{
+	"name": "appanniesearch",
+	"displayName": "AppAnnie Search",
+	"displayName_de": "AppAnnie Suche",
+	"description": "Search Apps in AppAnnie.",
+	"description_de": "Durchsucht Apps in AppAnnie.",
+	"examples": ["aa facebook", "annie twitter", "appannie instagram"],
+	"categories": ["Search", "Developer"]
+}
