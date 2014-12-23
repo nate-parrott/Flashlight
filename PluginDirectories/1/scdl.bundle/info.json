@@ -1,0 +1,9 @@
+{
+   "name": "scdl",
+   "displayName": "Soundcloud Downloader",
+   "description": "Downloads tracks or playlists from Soundcloud",
+   "examples": ["scdl https://soundcloud.com/joeengelman/egg-white-delight", "download https://soundcloud.com/joeengelman/egg-white-delight from Soundcloud"],
+   "categories": ["Media"],
+   "creator_name": "Joe Engelman",
+   "creator_url": "joengelm.github.io"
+}
