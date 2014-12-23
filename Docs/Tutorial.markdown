@@ -117,6 +117,8 @@ There are two more fields you can return in your `results` json that may be rele
 
 **Your results function should return fast.** There's no time to perform HTTP requests. If you need to fetch data from the web (like the Weather plugin), you should _return HTML and Javascipt_ that make the request. This way, users can see your result while it's loading. The JS you return from `results` is not subject to the same-origin policy.
 
+**Your run function should also return fast.** Results functions get killed after a couple seconds. If you're doing something long-running, spin up another process and [fire a notification](https://github.com/nate-parrott/Flashlight/blob/master/UsefulModulesForPlugins/post_notification.py) when you're done.
+
 ## Adding icons
 
 Add a 512x512 (or smaller) icon to your bundle, and call it `Icon.png`. Circular icons are preferred.
