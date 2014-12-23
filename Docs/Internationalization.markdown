@@ -3,7 +3,7 @@
 
 ## Translating Flashlight.app
 
-`Flashlight.app` is currently translated into English, German, Spanish, Dutch, Chinese, French, Portuguese, Japanese, Italian, Turkish and Korean. If you're fluent in another language, it'd be awesome if you could translate it.
+`Flashlight.app` is currently translated into English, German, Spanish, Dutch, Chinese, French, Portuguese, Japanese, Italian, Turkish, Korean and Russian. If you're fluent in another language, it'd be awesome if you could translate it.
 
 Flashlight is translated via the usual OS X app localization methods. You'll want to copy [en.lproj](https://github.com/nate-parrott/Flashlight/tree/master/FlashlightApp/EasySIMBL/en.lproj), replace `en` with your language code, and translate the strings in `Localizable.strings`. See [the German translation](https://github.com/nate-parrott/Flashlight/blob/master/FlashlightApp/EasySIMBL/de.lproj/Localizable.strings) for an example.
 
