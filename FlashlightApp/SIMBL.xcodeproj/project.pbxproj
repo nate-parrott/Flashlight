@@ -74,10 +74,10 @@
 /* Begin PBXFileReference section */
 		276144C1105F51CA00F906F6 /* FlashlightSIMBLAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashlightSIMBLAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		276144CE105F523C00F906F6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		276144D0105F523C00F906F6 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		276144D8105F523C00F906F6 /* SIMBLAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBLAgent.h; sourceTree = "<group>"; };
 		276144D9105F523C00F906F6 /* SIMBLAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SIMBLAgent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpotlightSIMBL.xcodeproj; path = SpotlightSIMBL/SpotlightSIMBL.xcodeproj; sourceTree = "<group>"; };
+		5FC13C171A4906FC008A0FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		658988FE1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		658988FF1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6CDFDC6C159DBB8C002E8E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -266,6 +266,7 @@
 				en,
 				it,
 				ru,
+				Base,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* SIMBL */;
 			projectDirPath = "";
@@ -364,9 +365,9 @@
 		276144CF105F523C00F906F6 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				276144D0105F523C00F906F6 /* English */,
 				658988FF1A270ACF00ABE5E9 /* it */,
 				95C8E0691A47022500C9FB0A /* ru */,
+				5FC13C171A4906FC008A0FE3 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
