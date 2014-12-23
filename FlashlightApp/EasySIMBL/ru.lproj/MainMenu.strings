@@ -1,0 +1,258 @@
+
+/* Class = "NSMenuItem"; title = "Все окна – на передний план"; ObjectID = "5"; */
+"5.title" = "Все окна – на передний план";
+
+/* Class = "NSMenuItem"; title = "Окно"; ObjectID = "19"; */
+"19.title" = "Окно";
+
+/* Class = "NSMenuItem"; title = "Свернуть"; ObjectID = "23"; */
+"23.title" = "Свернуть";
+
+/* Class = "NSMenu"; title = "Окно"; ObjectID = "24"; */
+"24.title" = "Окно";
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "Flashlight"; ObjectID = "56"; */
+"56.title" = "Flashlight";
+
+/* Class = "NSMenu"; title = "Flashlight"; ObjectID = "57"; */
+"57.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "О программе Flashlight"; ObjectID = "58"; */
+"58.title" = "О программе Flashlight";
+
+/* Class = "NSMenuItem"; title = "Файл"; ObjectID = "83"; */
+"83.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Настройки…"; ObjectID = "129"; */
+"129.title" = "Настройки…";
+
+/* Class = "NSMenu"; title = "Службы"; ObjectID = "130"; */
+"130.title" = "Службы";
+
+/* Class = "NSMenuItem"; title = "Службы"; ObjectID = "131"; */
+"131.title" = "Службы";
+
+/* Class = "NSMenuItem"; title = "Скрыть Flashlight"; ObjectID = "134"; */
+"134.title" = "Скрыть Flashlight";
+
+/* Class = "NSMenuItem"; title = "Завершить Flashlight"; ObjectID = "136"; */
+"136.title" = "Завершить Flashlight";
+
+/* Class = "NSMenuItem"; title = "Скрыть прочее"; ObjectID = "145"; */
+"145.title" = "Скрыть прочее";
+
+/* Class = "NSMenuItem"; title = "Показать все"; ObjectID = "150"; */
+"150.title" = "Показать все";
+
+/* Class = "NSMenuItem"; title = "Прекратить разговор"; ObjectID = "195"; */
+"195.title" = "Прекратить разговор";
+
+/* Class = "NSMenuItem"; title = "Начать разговор"; ObjectID = "196"; */
+"196.title" = "Начать разговор";
+
+/* Class = "NSMenuItem"; title = "Копировать"; ObjectID = "197"; */
+"197.title" = "Копировать";
+
+/* Class = "NSMenuItem"; title = "Выделить всё"; ObjectID = "198"; */
+"198.title" = "Выделить всё";
+
+/* Class = "NSMenuItem"; title = "Вырезать"; ObjectID = "199"; */
+"199.title" = "Вырезать";
+
+/* Class = "NSMenu"; title = "Орфография и грамматика"; ObjectID = "200"; */
+"200.title" = "Орфография и грамматика";
+
+/* Class = "NSMenuItem"; title = "Проверить документ"; ObjectID = "201"; */
+"201.title" = "Проверить документ";
+
+/* Class = "NSMenuItem"; title = "Удалить"; ObjectID = "202"; */
+"202.title" = "Удалить";
+
+/* Class = "NSMenuItem"; title = "Вставить"; ObjectID = "203"; */
+"203.title" = "Вставить";
+
+/* Class = "NSMenuItem"; title = "Показать правописание и грамматику"; ObjectID = "204"; */
+"204.title" = "Показать правописание и грамматику";
+
+/* Class = "NSMenu"; title = "Правка"; ObjectID = "205"; */
+"205.title" = "Правка";
+
+/* Class = "NSMenuItem"; title = "Отменить"; ObjectID = "207"; */
+"207.title" = "Отменить";
+
+/* Class = "NSMenuItem"; title = "Найти ещё"; ObjectID = "208"; */
+"208.title" = "Найти ещё";
+
+/* Class = "NSMenuItem"; title = "Найти…"; ObjectID = "209"; */
+"209.title" = "Найти…";
+
+/* Class = "NSMenuItem"; title = "Перейти к выделенному"; ObjectID = "210"; */
+"210.title" = "Перейти к выделенному";
+
+/* Class = "NSMenuItem"; title = "Речь"; ObjectID = "211"; */
+"211.title" = "Речь";
+
+/* Class = "NSMenu"; title = "Речь"; ObjectID = "212"; */
+"212.title" = "Речь";
+
+/* Class = "NSMenuItem"; title = "Найти ранее"; ObjectID = "213"; */
+"213.title" = "Найти ранее";
+
+/* Class = "NSMenuItem"; title = "Повторить"; ObjectID = "215"; */
+"215.title" = "Повторить";
+
+/* Class = "NSMenuItem"; title = "Орфография и грамматика"; ObjectID = "216"; */
+"216.title" = "Орфография и грамматика";
+
+/* Class = "NSMenuItem"; title = "Правка"; ObjectID = "217"; */
+"217.title" = "Правка";
+
+/* Class = "NSMenuItem"; title = "Найти"; ObjectID = "218"; */
+"218.title" = "Найти";
+
+/* Class = "NSMenuItem"; title = "Проверять правописание при наборе текста"; ObjectID = "219"; */
+"219.title" = "Проверять правописание при наборе текста";
+
+/* Class = "NSMenu"; title = "Найти"; ObjectID = "220"; */
+"220.title" = "Найти";
+
+/* Class = "NSMenuItem"; title = "Искать выделенное"; ObjectID = "221"; */
+"221.title" = "Искать выделенное";
+
+/* Class = "NSMenuItem"; title = "Изменить масштаб"; ObjectID = "239"; */
+"239.title" = "Изменить масштаб";
+
+/* Class = "NSMenuItem"; title = "Проверять грамматику и правописание"; ObjectID = "346"; */
+"346.title" = "Проверять грамматику и правописание";
+
+/* Class = "NSMenuItem"; title = "Замены"; ObjectID = "348"; */
+"348.title" = "Замены";
+
+/* Class = "NSMenu"; title = "Замены"; ObjectID = "349"; */
+"349.title" = "Замены";
+
+/* Class = "NSMenuItem"; title = "Умное копирование/вставка"; ObjectID = "350"; */
+"350.title" = "Умное копирование/вставка";
+
+/* Class = "NSMenuItem"; title = "Умные цитаты"; ObjectID = "351"; */
+"351.title" = "Умные цитаты";
+
+/* Class = "NSMenuItem"; title = "Умные ссылки"; ObjectID = "354"; */
+"354.title" = "Умные ссылки";
+
+/* Class = "NSMenuItem"; title = "Преобразования"; ObjectID = "450"; */
+"450.title" = "Преобразования";
+
+/* Class = "NSMenu"; title = "Преобразования"; ObjectID = "451"; */
+"451.title" = "Преобразования";
+
+/* Class = "NSMenuItem"; title = "Перевести в верхний регистр"; ObjectID = "452"; */
+"452.title" = "Перевести в верхний регистр";
+
+/* Class = "NSMenuItem"; title = "Автоматически исправлять ошибки правописания"; ObjectID = "454"; */
+"454.title" = "Автоматически исправлять ошибки правописания";
+
+/* Class = "NSMenuItem"; title = "Показать замены"; ObjectID = "457"; */
+"457.title" = "Показать замены";
+
+/* Class = "NSMenuItem"; title = "Автоперенос"; ObjectID = "460"; */
+"460.title" = "Автоперенос";
+
+/* Class = "NSMenuItem"; title = "Замена текста"; ObjectID = "462"; */
+"462.title" = "Замена текста";
+
+/* Class = "NSMenuItem"; title = "Перевести в нижний регистр"; ObjectID = "465"; */
+"465.title" = "Перевести в нижний регистр";
+
+/* Class = "NSMenuItem"; title = "Печатать прописныеми буквами"; ObjectID = "466"; */
+"466.title" = "Печатать прописныеми буквами";
+
+/* Class = "NSMenuItem"; title = "Вставить и подобрать стиль"; ObjectID = "485"; */
+"485.title" = "Вставить и подобрать стиль";
+
+/* Class = "NSMenuItem"; title = "Справка"; ObjectID = "490"; */
+"490.title" = "Справка";
+
+/* Class = "NSMenu"; title = "Справка"; ObjectID = "491"; */
+"491.title" = "Справка";
+
+/* Class = "NSMenuItem"; title = "Справка Flashlight"; ObjectID = "492"; */
+"492.title" = "Справка Flashlight";
+
+/* Class = "NSMenuItem"; title = "Найти и заменить…"; ObjectID = "534"; */
+"534.title" = "Найти и заменить…";
+
+/* Class = "NSWindow"; title = "Flashlight"; ObjectID = "651"; */
+"651.title" = "Flashlight";
+
+/* Class = "NSTextFieldCell"; title = "Enable Spotlight plugins"; ObjectID = "1Mz-sE-pRt"; */
+"1Mz-sE-pRt.title" = "Enable Spotlight plugins";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.label" = "Custom View";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.paletteLabel" = "Custom View";
+
+/* Class = "NSTextFieldCell"; title = "Couldn't load online plugins directory."; ObjectID = "6Rm-1o-2sX"; */
+"6Rm-1o-2sX.title" = "Couldn't load online plugins directory.";
+
+/* Class = "NSMenu"; title = "Новый плагин"; ObjectID = "BA6-O3-mGg"; */
+"BA6-O3-mGg.title" = "Новый плагин";
+
+/* Class = "NSTextFieldCell"; title = "Flashlight"; ObjectID = "CKY-mr-H4g"; */
+"CKY-mr-H4g.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "Закрыть"; ObjectID = "KSp-5B-nrs"; */
+"KSp-5B-nrs.title" = "Закрыть";
+
+/* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
+"NO4-GD-LyW.title" = "Leave Feedback";
+
+/* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
+"P0e-Mj-nLE.title" = "Contribute on GitHub";
+
+/* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
+"R1V-Ae-nee.title" = "Try again";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "SB9-T0-COT"; */
+"SB9-T0-COT.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XWZ-Ty-qkr"; */
+"XWZ-Ty-qkr.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ZUK-gW-ec2"; */
+"ZUK-gW-ec2.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Search anything."; ObjectID = "Zut-6I-UVj"; */
+"Zut-6I-UVj.title" = "Search anything.";
+
+/* Class = "NSMenuItem"; title = "Выполнить как процесс Automator"; ObjectID = "ate-NX-h2e"; */
+"ate-NX-h2e.title" = "Выполнить как процесс Automator";
+
+/* Class = "NSMenuItem"; title = "Новый плагин"; ObjectID = "e7p-Pf-F9W"; */
+"e7p-Pf-F9W.title" = "Новый плагин";
+
+/* Class = "NSMenuItem"; title = "Проверить обновления..."; ObjectID = "i36-Vw-g23"; */
+"i36-Vw-g23.title" = "Проверить обновления...";
+
+/* Class = "NSTextFieldCell"; title = "HEADER CELL"; ObjectID = "qwG-5n-TVO"; */
+"qwG-5n-TVO.title" = "HEADER CELL";
+
+/* Class = "NSTextFieldCell"; title = "This plugin does some crazy stuff like change the word and everything."; ObjectID = "rtk-em-P81"; */
+"rtk-em-P81.title" = "This plugin does some crazy stuff like change the word and everything.";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.label" = "Custom View";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.paletteLabel" = "Custom View";
+
+/* Class = "NSMenu"; title = "Файл"; ObjectID = "wJP-7d-WaF"; */
+"wJP-7d-WaF.title" = "Файл";
+
+/* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
+"xYz-ja-uoP.title" = "Python API...";
