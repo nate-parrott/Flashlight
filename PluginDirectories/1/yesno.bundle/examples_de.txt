@@ -3,8 +3,17 @@ ja oder nein
 ja
 nein
 eintscheide für mich
-sollte ~query(ich das machen)
 soll ~query(ich das machen)
+sollte ~query(ich das machen)
+sollen ~query(ich das machen)
 will ~query(ich das machen)
+wollte ~query(ich das machen)
+wollen ~query(ich das machen)
 darf ~query(ich das machen)
+dürfte ~query(ich das machen)
+dürfen ~query(ich das machen)
+muss ~query(ich das machen)
+müsste ~query(ich das machen)
+müssen ~query(ich das machen)
 mag ~query(ich das machen)
+mögen ~query(ich das machen)
