@@ -19,15 +19,15 @@ All plugins live in `~/Library/FlashlightPlugins`. To begin, create a folder and
 
 The first thing we need is an `info.json` file. Here's what to put in it:
 
-```
+```javascript
 {
-   "name": "say", (this must be the same as your folder name)
-   "displayName": "Say Something",
-   "description": "Speaks your input text",
-   "examples": ["say hello world", "say good morning"], (these appear by your plugin's description),
-   "categories": ["Utilities"],
-   "creator_name": "Your name",
-   "creator_url": "A link of your choosing"
+    "name": "say", // this must be the same as your folder name
+    "displayName": "Say Something",
+    "description": "Speaks your input text",
+    "examples": ["say hello world", "say good morning"], // these appear by your plugin's description
+    "categories": ["Utilities"],
+    "creator_name": "Your name",
+    "creator_url": "A link of your choosing"
 }
 ```
 
@@ -55,15 +55,14 @@ When someone types a command like _speak good morning_ (but before they press en
 
 All we need to do is return a dictionary containing information about what should appear in Spotlight.
 
-```
+```python
 def results(fields, original_query):
-  message = fields['~message']
-  return {
-    "title": "Say '{0}'".format(message),
-    "run_args": [message] # ignore for now
-  }
-
-```
+    message = fields['~message']
+    return {
+        "title": "Say '{0}'".format(message),
+        "run_args": [message] # ignore for now
+    }
+```        
 
 There. Now, if we type "speak hello spotlight" into Spotlight, we'll see the title our plugin returned.
 
@@ -76,10 +75,10 @@ Of course, the plugin doesn't actually _do_ anything yet — ideally, we want it
 
 Now, we need some way of passing the message that we're supposed to speak to `run`. That's why we returned an array containing the message in the `run_args` fild of our `results` dictionary. `run` is invoked with the arguments from the `run_args` list (in fact, you _need_ a run_args list for `run` to even be called, although it can be empty.)
 
-```
+```python
 def run(message):
-  import os
-  os.system('say "{0}"'.format(message)) # TODO: proper escaping via pipes.quote
+    import os
+    os.system('say "{0}"'.format(message)) # TODO: proper escaping via pipes.quote
 ```
 
 There. **Now our plugin should work.** Type "say hello" into Spotlight, hit enter, watch it go.
@@ -88,28 +87,27 @@ There. **Now our plugin should work.** Type "say hello" into Spotlight, hit ente
 
 Many plugins, like Weather and Google, return HTML and JavaScript to show content inline in the Spotlight window. You can do this by returning an HTML string from your `results` function:
 
-```
+```python
 def results(fields, original_query):
-  message = fields['~message']
-  html = "<h1>{0}</h1>".format(message)
-  return {
-    "title": "Say '{0}'".format(message),
-    "run_args": [message] # ignore for now,
-    "html": html
-  }
-
+    message = fields['~message']
+    html = "<h1>{0}</h1>".format(message)
+    return {
+        "title": "Say '{0}'".format(message),
+        "run_args": [message] # ignore for now,
+        "html": html
+    }
 ```
 
 If you'd like to load a web URL, you should return a `delayed Javascript redirect`, which looks like this:
 
-```
+```javascript
 <script>
-setTimeout(function() {
-  window.location = 'http://google.com'
-}, 500); // delay so we don't get rate-limited by doing a request after every keystroke
+    setTimeout(function() {
+      window.location = 'http://google.com'
+    }, 500); // delay so we don't get rate-limited by doing a request after every keystroke
 </script>
 ```
-
+    
 There are two more fields you can return in your `results` json that may be relevant if you're using webviews:
 
  - `webview_links_open_in_browser`: _optional_ when the user clicks links in the webview, they'll close Spotlight and open in a browser
