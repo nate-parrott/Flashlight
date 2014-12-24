@@ -135,6 +135,9 @@
                 "baidu 'search term', bd 'search term'"
             ],
             "name": "baidu",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "baidu.zip"
         },
         {
@@ -341,6 +344,9 @@
                 "dict Suchmaschine"
             ],
             "name": "dictcc",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "dictcc.zip"
         },
         {
@@ -353,6 +359,9 @@
                 "diki apple"
             ],
             "name": "diki",
+            "preferred_locales": [
+                "pl"
+            ],
             "zip_url": "diki.zip"
         },
         {
@@ -445,6 +454,9 @@
                 "Benzin Munich"
             ],
             "name": "gasprice",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "gasprice.zip"
         },
         {
@@ -749,6 +761,9 @@
                 "\u8f9e\u66f8 hello"
             ],
             "name": "jisho",
+            "preferred_locales": [
+                "ja"
+            ],
             "zip_url": "jisho.zip"
         },
         {
@@ -764,6 +779,9 @@
                 "kuaidi 100033892580"
             ],
             "name": "kuaidi",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "kuaidi.zip"
         },
         {
@@ -975,6 +993,21 @@
         },
         {
             "categories": [
+                "Media"
+            ],
+            "creator_name": "Joe Engelman",
+            "creator_url": "joengelm.github.io",
+            "description": "Downloads tracks or playlists from Soundcloud",
+            "displayName": "Soundcloud Downloader",
+            "examples": [
+                "scdl https://soundcloud.com/joeengelman/egg-white-delight",
+                "download https://soundcloud.com/joeengelman/egg-white-delight from Soundcloud"
+            ],
+            "name": "scdl",
+            "zip_url": "scdl.disabled-bundle.zip"
+        },
+        {
+            "categories": [
                 "Utilities",
                 "Featured"
             ],
@@ -1135,6 +1168,9 @@
                 "t flashlight"
             ],
             "name": "taobao",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "taobao.zip"
         },
         {
@@ -1281,6 +1317,9 @@
                 "vertaal car naar Nederlands"
             ],
             "name": "Vertaal",
+            "preferred_locales": [
+                "nl"
+            ],
             "zip_url": "vertaal.zip"
         },
         {
@@ -1481,6 +1520,9 @@
                 "yx flashlight"
             ],
             "name": "YiXun",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "yixun.zip"
         },
         {
@@ -1495,6 +1537,9 @@
                 "\u6709\u9053 why"
             ],
             "name": "youdaodic",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "youdaodic.zip"
         },
         {
@@ -1521,6 +1566,9 @@
                 "zhihu 20140822(show the topics On August 22, 2014)"
             ],
             "name": "zhihuDaily",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "Zhihu.zip"
         }
     ]
