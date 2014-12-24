@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<script src='crel.js'></script>
+	<script>
+	function xhr(url, callback) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", url, true);
+		xhr.onload = function (e) {
+		  if (xhr.readyState === 4) {
+		    if (xhr.status === 200) {
+		      callback(xhr.responseText);
+		    } else {
+		      callback(null);
+		    }
+		  }
+		};
+		xhr.onerror = function (e) {
+		  callback(null)
+		};
+		xhr.send(null);
+	}
+
+	var ip = "<!--IP-->";
+
+	function load() {
+        var url = "http://ipinfo.io/" + encodeURIComponent(ip) + "/json";
+		xhr(url, function(response) {
+			document.getElementById("loading").style.display = 'none';
+            var parsed;
+			if (response && (parsed = JSON.parse(response))) {
+				document.getElementById("results").style.display = 'block';
+                document.getElementById("results").appendChild(createHTMLForJson(parsed));
+			} else {
+				document.getElementById("error").style.display = 'block';
+			}
+		})
+	}
+
+	// MARK: rendering
+
+	function createHTMLForJson(json) {
+        ip = json.ip || ip;
+        var hostname = json.hostname || "--";
+        var city = json.city || "--";
+        var region = json.region || "--";
+        var country = json.country || "--";
+        var loc = json.loc || "--";
+        var org = json.org || "--";
+        var postal = json.postal || "--";
+        if (region.length > 0) {
+            city = city + ", " + region;
+        }
+        var tableCrel = crel("table",
+            crel("tbody",
+                crel("tr",
+                    crel("th", {"valign": "top"}, "Hostname"),
+                    crel("td", {"valign": "top"}, hostname)
+                ),
+                crel("tr",
+                    crel("th", {"valign": "top"}, "Network"),
+                    crel("td", {"valign": "top"}, org)
+                ),
+                crel("tr",
+                    crel("th", {"valign": "top"}, "City"),
+                    crel("td", {"valign": "top"}, city)
+                ),
+                crel("tr",
+                    crel("th", {"valign": "top"}, "Latlong"),
+                    crel("td", {"valign": "top"}, loc)
+                ),
+                crel("tr",
+                    crel("th", {"valign": "top"}, "Postal Code"),
+                    crel("td", {"valign": "top"}, postal)
+                )
+            )
+        );
+        if (loc.length > 1) {
+            return crel("div", crel("h1", ip), tableCrel, crel("img", {"class": "map", "src": "https://maps.googleapis.com/maps/api/staticmap?center=" + loc + "&zoom=12&size=480x160&sensor=false", "alt": city, "title": city}));
+        } else {
+            return crel("div", crel("h1", ip), tableCrel);
+        }
+	}
+
+	load();
+	</script>
+	<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+	html, body, body > div {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "HiraginoSansGB-W3", "Hiragino Sans GB W3";
+		line-height: 1.2;
+	}
+    h1, h2, h3, h4, h5 {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "HiraginoSansGB-W6", "Hiragino Sans GB W6";
+    }
+	#loading, #error {
+		text-align: center;
+	}
+	#error, #results {
+		display: none;
+	}
+    #results {
+        text-align: left;
+    }
+    h1 {
+        font-size: 32px;
+        border-bottom: #ddd 1px solid;
+        padding: 0px 0px 5px 0px;
+        margin: 0px 0px 5px 0px;
+        color: #444;
+        text-align: center;
+    }
+    h3 {
+        font-size: 15px;
+        color: #888;
+    }
+    div.content {
+        padding: 15px;
+    }
+    td, th {
+        padding: 3px 3px;
+    }
+    th {
+        width: 100px;
+        font-weight: normal;
+        color: #aaa;
+        text-align: right;
+    }
+    img.map {
+        margin-top: 5px;
+        width: 100%;
+        border: #ddd 1px solid;
+    }
+	</style>
+</head>
+<body>
+    <div>
+        <div class="content">
+            <div id='loading'>
+                Loading...
+            </div>
+            <div id='results'>
+            </div>
+            <div id='error'>
+                Oops, failed to load result.
+            </div>
+            </div>
+        </div>
+	</div>
+</body>
+</html>
