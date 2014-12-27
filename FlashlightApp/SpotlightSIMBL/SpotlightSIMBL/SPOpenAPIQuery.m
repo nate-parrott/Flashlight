@@ -20,9 +20,6 @@
 #import "_Flashlight_Bootstrap.h"
 
 // define initWithDisplayName: as selector so that we can call it on `id`
-@interface DummyInterface : NSObject
-- (id)initWithQuery:(NSString *)query json:(id)json sourcePlugin:(NSString *)sourcePlugin;
-@end
 @implementation DummyInterface
 - (id)initWithQuery:(NSString *)query json:(id)json sourcePlugin:(NSString *)sourcePlugin {
     return nil;
