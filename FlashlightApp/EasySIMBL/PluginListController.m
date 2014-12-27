@@ -507,7 +507,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 - (void)updatePluginStatuses {
     NSMutableString *script = [NSMutableString new];
-    [script appendFormat:@"var elements = document.querySelectorAll('#plugins > li');\n"];
+    [script appendFormat:@"var elements = document.querySelectorAll('.plugins > li');\n"];
     [script appendFormat:@"for (var i=0; i<elements.length; i++) elements[i].setAttribute('status', 'uninstalled')\n"];
     for (PluginModel *plugin in self.installedPlugins) {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
