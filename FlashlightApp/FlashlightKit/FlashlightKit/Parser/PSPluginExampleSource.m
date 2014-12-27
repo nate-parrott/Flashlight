@@ -71,6 +71,7 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
 
 - (void)didChange {
     NSMutableArray *parserInfoOutput = [NSMutableArray new];
+    NSMutableSet *pathsForPluginsToAlwaysInvoke = [NSMutableArray new];
     
     NSArray *pluginBundles = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self localPluginsPath] error:nil] mapFilter:^id(id obj) {
         NSString *fullPath = [[self localPluginsPath] stringByAppendingPathComponent:obj];
@@ -87,12 +88,16 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
         for (NSString *line in [[[NSString alloc] initWithContentsOfFile:examplesFilePath usedEncoding:nil error:nil] componentsSeparatedByString:@"\n"]) {
             NSString *trimmed = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             if (trimmed.length) {
-                PSTaggedText *example = [PSTaggedText withExampleString:trimmed rootTag:intentTag];
-                if (example) {
-                    [examples addObject:example];
+                if ([trimmed.lowercaseString isEqualToString:@"!always_invoke"]) {
+                    [pathsForPluginsToAlwaysInvoke addObject:pluginPath];
                 } else {
-                    // parse failed:
-                    [parserInfoOutput addObject:[NSString stringWithFormat:@"%@.bundle/examples.txt error:\nExample '%@' is invalid.", name, line]];
+                    PSTaggedText *example = [PSTaggedText withExampleString:trimmed rootTag:intentTag];
+                    if (example) {
+                        [examples addObject:example];
+                    } else {
+                        // parse failed:
+                        [parserInfoOutput addObject:[NSString stringWithFormat:@"%@.bundle/examples.txt error:\nExample '%@' is invalid.", name, line]];
+                    }
                 }
             }
         }
@@ -123,6 +128,7 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
     
     self.parserInfoOutput = [parserInfoOutput componentsJoinedByString:@"\n\n"];
     if (self.parserOutputChangedBlock) self.parserOutputChangedBlock();
+    self.pathsOfPluginsToAlwaysInvoke = pathsForPluginsToAlwaysInvoke;
 }
 
 - (void)dealloc {

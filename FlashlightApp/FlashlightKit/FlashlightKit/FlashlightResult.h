@@ -18,4 +18,6 @@
 - (void)configureWebview:(WebView *)webView;
 - (BOOL)pressEnter;
 
+- (id)initWithJson:(id)json;
+
 @end

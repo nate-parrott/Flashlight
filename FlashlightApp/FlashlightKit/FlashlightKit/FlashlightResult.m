@@ -10,4 +10,10 @@
 
 @implementation FlashlightResult
 
+- (id)initWithJson:(id)json {
+    self = [super init];
+    self.json = json;
+    return self;
+}
+
 @end
