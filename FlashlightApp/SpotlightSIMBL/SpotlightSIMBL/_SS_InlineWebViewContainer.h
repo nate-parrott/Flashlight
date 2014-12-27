@@ -7,7 +7,7 @@
 //
 
 #import <WebKit/WebKit.h>
-#import "SPResult.h"
+@class SPResult;
 
 @interface _SS_InlineWebViewContainer : NSView
 

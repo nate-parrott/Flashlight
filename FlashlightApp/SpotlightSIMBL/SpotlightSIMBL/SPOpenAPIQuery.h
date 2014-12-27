@@ -8,4 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@interface DummyInterface : NSObject
+- (id)initWithQuery:(NSString *)query json:(id)json sourcePlugin:(NSString *)sourcePlugin;
+@end
+
 Class __SS_SPOpenAPIQueryClass();
