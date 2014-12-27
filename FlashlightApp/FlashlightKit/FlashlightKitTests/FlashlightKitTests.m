@@ -1,19 +1,19 @@
 //
-//  ParsnipTests.m
-//  ParsnipTests
+//  FlashlightKitTests.m
+//  FlashlightKitTests
 //
-//  Created by Nate Parrott on 12/25/14.
+//  Created by Nate Parrott on 12/26/14.
 //  Copyright (c) 2014 Nate Parrott. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 
-@interface ParsnipTests : XCTestCase
+@interface FlashlightKitTests : XCTestCase
 
 @end
 
-@implementation ParsnipTests
+@implementation FlashlightKitTests
 
 - (void)setUp {
     [super setUp];

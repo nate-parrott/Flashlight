@@ -14,7 +14,7 @@
     static NSRegularExpression *openOrCloseRegex = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        openOrCloseRegex = [NSRegularExpression regularExpressionWithPattern:@"(([a-zA-Z_~@\\*]+)\\(+|\\))" options:0 error:nil];
+        openOrCloseRegex = [NSRegularExpression regularExpressionWithPattern:@"(([a-zA-Z_~@\\*\\/]+)\\(+|\\))" options:0 error:nil];
     });
     
     NSMutableArray *rootContents = [NSMutableArray new];
