@@ -12,8 +12,8 @@
 		5FC13D481A4CD847008A0FE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D471A4CD847008A0FE3 /* Images.xcassets */; };
 		5FC13D4B1A4CD847008A0FE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D491A4CD847008A0FE3 /* MainMenu.xib */; };
 		5FC13D571A4CD847008A0FE3 /* FlashlightToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D561A4CD847008A0FE3 /* FlashlightToolTests.m */; };
-		5FC13DD71A4D1FB6008A0FE3 /* Parsnip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DD61A4D1FB6008A0FE3 /* Parsnip.framework */; };
 		5FC13DE31A4E0705008A0FE3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DE21A4E0705008A0FE3 /* WebKit.framework */; };
+		5FC13E5E1A4E13B8008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,8 @@
 		5FC13D501A4CD847008A0FE3 /* FlashlightToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashlightToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13D551A4CD847008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13D561A4CD847008A0FE3 /* FlashlightToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashlightToolTests.m; sourceTree = "<group>"; };
-		5FC13DD61A4D1FB6008A0FE3 /* Parsnip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parsnip.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug/Parsnip.framework"; sourceTree = "<group>"; };
 		5FC13DE21A4E0705008A0FE3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlashlightKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug/FlashlightKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FC13E5E1A4E13B8008A0FE3 /* FlashlightKit.framework in Frameworks */,
 				5FC13DE31A4E0705008A0FE3 /* WebKit.framework in Frameworks */,
-				5FC13DD71A4D1FB6008A0FE3 /* Parsnip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +64,8 @@
 		5FC13D341A4CD847008A0FE3 = {
 			isa = PBXGroup;
 			children = (
+				5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */,
 				5FC13DE21A4E0705008A0FE3 /* WebKit.framework */,
-				5FC13DD61A4D1FB6008A0FE3 /* Parsnip.framework */,
 				5FC13D3F1A4CD847008A0FE3 /* FlashlightTool */,
 				5FC13D531A4CD847008A0FE3 /* FlashlightToolTests */,
 				5FC13D3E1A4CD847008A0FE3 /* Products */,
@@ -341,7 +341,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../Parsnip/Parsnip\"",
+					"\"$(SRCROOT)/../FlashlightKit/FlashlightKit\"/**",
 				);
 				INFOPLIST_FILE = FlashlightTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -361,7 +361,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../Parsnip/Parsnip\"",
+					"\"$(SRCROOT)/../FlashlightKit/FlashlightKit\"/**",
 				);
 				INFOPLIST_FILE = FlashlightTool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

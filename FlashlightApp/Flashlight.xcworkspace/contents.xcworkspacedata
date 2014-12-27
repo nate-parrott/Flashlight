@@ -5,7 +5,7 @@
       location = "group:Flashlight.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Parsnip/Parsnip.xcodeproj">
+      location = "group:FlashlightKit/FlashlightKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:FlashlightTool/FlashlightTool.xcodeproj">

@@ -7,10 +7,10 @@
 //
 
 #import "FlashlightToolAppDelegate.h"
-#import "PSPluginDispatcher.h"
 #import "PSBackgroundProcessor.h"
 #import "PSHelpers.h"
 #import "PSPluginExampleSource.h"
+#import "PSPluginDispatcher.h"
 
 @import WebKit;
 
