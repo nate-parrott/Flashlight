@@ -14,6 +14,7 @@
 #import "NSObject+LogProperties.h"
 #import "SPParsecSimpleResult.h"
 #import "_SS_MetadataResponseDelayer.h"
+#import "_FlashlightPluginEngine.h"
 
 BOOL _Flashlight_Is_10_10_2_Spotlight() {
     return NSClassFromString(@"SPQuery") == nil;
@@ -91,15 +92,24 @@ BOOL _Flashlight_Is_10_10_2_Spotlight() {
     }), 0, NULL);
      */
     
-    RSSwizzleClassMethod(NSClassFromString(@"SPSpotQuery"), NSSelectorFromString(@"queryClasses"), id, RSSWArguments(), {
+    /*RSSwizzleClassMethod(NSClassFromString(@"SPSpotQuery"), NSSelectorFromString(@"queryClasses"), id, RSSWArguments(), {
         if (__SS_SPOpenAPIQueryClass()) {
             return [RSSWCallOriginal() arrayByAddingObject:__SS_SPOpenAPIQueryClass()];
         } else {
             return RSSWCallOriginal();
         }
-    });
+    });*/
     
-    [[_SS_MetadataResponseDelayer shared] setup];
+    RSSwizzleInstanceMethod(NSClassFromString(@"SPAppDelegate"), NSSelectorFromString(@"setQuery:"), RSSWReturnType(void), RSSWArguments(SPSpotQuery* query), RSSWReplacement({
+        [[_FlashlightPluginEngine shared] setQuery:query.userQueryString];
+        RSSWCallOriginal(query);
+    }), 0, NULL);
+    
+    RSSwizzleInstanceMethod(NSClassFromString(@"SPResultViewController"), NSSelectorFromString(@"setResults:"), RSSWReturnType(void), RSSWArguments(NSArray* results), RSSWReplacement({
+        RSSWCallOriginal([[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:results]);
+    }), 0, NULL);
+    
+    // [[_SS_MetadataResponseDelayer shared] setup];
 }
 
 @end

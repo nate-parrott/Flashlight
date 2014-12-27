@@ -26,6 +26,7 @@
 		5F97AD401A0AC51B00838C7C /* _SS_PluginRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD3F1A0AC51B00838C7C /* _SS_PluginRunner.m */; };
 		5F97AD461A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */; };
 		5FB199031A105BD10048DC46 /* _SS_InlineWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */; };
+		5FC13E711A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */; };
 		5FC65E1B1A298BE6006187EB /* _SS_WebScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC65E1A1A298BE6006187EB /* _SS_WebScriptObject.m */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +259,8 @@
 		5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+_FlashlightExtensions.m"; sourceTree = "<group>"; };
 		5FB199011A105BD10048DC46 /* _SS_InlineWebViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_InlineWebViewContainer.h; sourceTree = "<group>"; };
 		5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_InlineWebViewContainer.m; sourceTree = "<group>"; };
+		5FC13E6F1A4E4AA8008A0FE3 /* _FlashlightPluginEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FlashlightPluginEngine.h; sourceTree = "<group>"; };
+		5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FlashlightPluginEngine.m; sourceTree = "<group>"; };
 		5FC65E191A298BE6006187EB /* _SS_WebScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_WebScriptObject.h; sourceTree = "<group>"; };
 		5FC65E1A1A298BE6006187EB /* _SS_WebScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_WebScriptObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -297,6 +300,8 @@
 				5F5B174C1A05758800809207 /* _Flashlight_Bootstrap.m */,
 				5F5B18421A06EDBE00809207 /* MethodOverride.h */,
 				5F5B18401A06EDB600809207 /* MethodOverride.m */,
+				5FC13E6F1A4E4AA8008A0FE3 /* _FlashlightPluginEngine.h */,
+				5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */,
 				5F5B18201A059DB100809207 /* SPOpenAPIQuery.h */,
 				5F5B18211A059DB100809207 /* SPOpenAPIQuery.m */,
 				5F5B183D1A06CB0000809207 /* SPOpenAPIResult.h */,
@@ -650,6 +655,7 @@
 				5F97AD461A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m in Sources */,
 				5F5B18191A05821700809207 /* RSSwizzle.m in Sources */,
 				5F10F4B81A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m in Sources */,
+				5FC13E711A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m in Sources */,
 				5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
