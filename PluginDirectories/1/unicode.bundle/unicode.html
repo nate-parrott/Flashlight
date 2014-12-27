@@ -37,6 +37,9 @@
             var div = document.createElement("div");
             div.setAttribute('class', 'char center');
             div.innerHTML = '&#' + parseInt(val['_source'].cp, 16);
+            div.addEventListener("click", function() {
+               flashlight.bash("echo '" + div.innerText + "' | LANG=en_US.UTF-8 pbcopy && osascript -e 'display notification \"Copied character!\" with title \"Flashligt\"'")
+            });
             document.body.appendChild(div);
           });
           if (data.length === 0) {
