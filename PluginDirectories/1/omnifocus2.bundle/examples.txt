@@ -1,0 +1,2 @@
+sof ~omniFocusMemo(query here) ~omniFocusNote(query here)
+~omniFocusMemo(query here) ~omniFocusNote(query here) sof
