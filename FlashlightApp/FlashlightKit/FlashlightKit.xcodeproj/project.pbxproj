@@ -59,6 +59,8 @@
 		5FC13E6A1A4E2D40008A0FE3 /* FlashlightWebScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */; };
 		5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */; };
 		5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */; };
+		5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */; };
+		5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightWebScriptObject.m; sourceTree = "<group>"; };
 		5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashlightQueryEngine.h; sourceTree = "<group>"; };
 		5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightQueryEngine.m; sourceTree = "<group>"; };
+		5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+FlashlightExtensions.h"; sourceTree = "<group>"; };
+		5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+FlashlightExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */,
 				5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */,
 				5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */,
+				5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */,
+				5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
@@ -279,6 +285,7 @@
 				5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */,
 				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
 				5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */,
+				5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */,
 				5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */,
 				5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */,
 				5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */,
@@ -391,6 +398,7 @@
 			files = (
 				5FC13E481A4E12FB008A0FE3 /* PSPluginDispatcher.m in Sources */,
 				5FC13E441A4E12FB008A0FE3 /* PSParseCandidate.m in Sources */,
+				5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */,
 				5FC13E3D1A4E12FB008A0FE3 /* PSHelpers.m in Sources */,
 				5FC13E421A4E12FB008A0FE3 /* PSNonterminalNode.m in Sources */,
 				5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */,

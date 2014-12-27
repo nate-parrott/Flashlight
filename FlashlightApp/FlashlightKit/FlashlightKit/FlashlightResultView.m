@@ -90,7 +90,7 @@
     id json = objc_getAssociatedObject(result, @selector(jsonAssociatedObject));
     NSString *sourcePlugin = objc_getAssociatedObject(result, @selector(sourcePluginAssociatedObject));
     
-    if (json[@"html"]) {
+    /*if (json[@"html"]) {
         [self ensureWebview];
         NSString *pluginPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"index.html"];
         [_webView.mainFrame loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
@@ -107,7 +107,7 @@
         for (NSView *v in self.subviews) {
             v.hidden = YES;
         }
-    }
+    }*/
 }
 
 - (void)ensureWebview {

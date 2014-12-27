@@ -18,4 +18,6 @@ extern NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey;
 
 - (void)reload;
 
+@property (nonatomic) NSSet *pathsOfPluginsToAlwaysInvoke;
+
 @end

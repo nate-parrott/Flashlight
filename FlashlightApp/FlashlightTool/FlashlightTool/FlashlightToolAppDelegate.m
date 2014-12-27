@@ -10,11 +10,15 @@
 #import "PSBackgroundProcessor.h"
 #import "PSHelpers.h"
 #import "PSPluginExampleSource.h"
+#import "FlashlightQueryEngine.h"
 #import "PSPluginDispatcher.h"
+#import "FlashlightResult.h"
 
 @import WebKit;
 
 @interface FlashlightToolAppDelegate () <NSWindowDelegate>
+
+@property (nonatomic) FlashlightQueryEngine *queryEngine;
 
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *matchingPlugin, *pluginInput;
@@ -25,40 +29,43 @@
 @property (weak) IBOutlet WebView *resultWebView;
 @property (weak) IBOutlet NSTextField *resultTitle;
 
-@property PSPluginDispatcher *ps;
-@property (nonatomic) PSBackgroundProcessor *querier;
-
 @end
 
 @implementation FlashlightToolAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    self.ps = [PSPluginDispatcher new];
     __weak FlashlightToolAppDelegate *weakSelf = self;
-    self.querier = [[PSBackgroundProcessor alloc] initWithProcessingBlock:^(id data, PSBackgroundProcessorResultBlock callback) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *matchingPlugin;
-            NSDictionary *pluginArgs;
-            [self.ps parseCommand:data pluginPath:&matchingPlugin arguments:&pluginArgs];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.matchingPlugin.stringValue = matchingPlugin.lastPathComponent.stringByDeletingPathExtension ? : @"None";
-                weakSelf.pluginInput.stringValue = pluginArgs ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:pluginArgs options:0 error:nil] encoding:NSUTF8StringEncoding] : @"";
-                callback(nil);
-            });
-        });
-    }];
+    
+    self.queryEngine = [FlashlightQueryEngine new];
     
     self.errorSections = @{};
     
-    self.ps.exampleSource.parserOutputChangedBlock = ^{
+    self.queryEngine.dispatcher.exampleSource.parserOutputChangedBlock = ^{
         dispatch_async(dispatch_get_main_queue(), ^{
             NSMutableDictionary *d = self.errorSections.mutableCopy;
-            d[@"Examples.txt Errors"] = weakSelf.ps.exampleSource.parserInfoOutput;
+            d[@"Examples.txt Errors"] = weakSelf.queryEngine.dispatcher.exampleSource.parserInfoOutput;
             weakSelf.errorSections = d;
         });
     };
-    self.ps.exampleSource.parserOutputChangedBlock();
+    self.queryEngine.dispatcher.exampleSource.parserOutputChangedBlock();
+    
+    self.queryEngine.debugDataChangeBlock = ^{
+        weakSelf.matchingPlugin.stringValue = weakSelf.queryEngine.matchedPlugin ? : @"None";
+        weakSelf.pluginInput.stringValue = weakSelf.queryEngine.pluginArgs ? [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:weakSelf.queryEngine.pluginArgs options:0 error:nil] encoding:NSUTF8StringEncoding] : @"None";
+    };
+    self.queryEngine.debugDataChangeBlock();
+    
+    self.queryEngine.resultsDidChangeBlock = ^{
+        weakSelf.resultTitle.stringValue = [weakSelf.queryEngine.results.firstObject json][@"title"] ? : @"None";
+        NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
+        if (weakSelf.queryEngine.errorString) {
+            d[@"Plugin.py Errors"] = weakSelf.queryEngine.errorString;
+        } else {
+            [d removeObjectForKey:@"Plugin.py Errors"];
+        }
+        weakSelf.errorSections = d;
+    };
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -66,7 +73,7 @@
 }
 
 - (IBAction)search:(NSSearchField *)sender {
-    [self.querier gotNewData:sender.stringValue];
+    [self.queryEngine updateQuery:sender.stringValue];
 }
 
 - (void)setErrorSections:(NSDictionary *)errorSections {
@@ -82,6 +89,7 @@
     }] reduce:^id(NSAttributedString* obj1, NSAttributedString* obj2) {
         NSMutableAttributedString *str = [NSMutableAttributedString new];
         [str appendAttributedString:obj1];
+        [str appendAttributedString:[[NSAttributedString alloc] initWithString:@"\n" attributes:nil]];
         [str appendAttributedString:obj2];
         return str;
     } initialVal:[NSAttributedString new]];
@@ -89,7 +97,7 @@
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
-    [self.ps.exampleSource reload];
+    [self.queryEngine.dispatcher.exampleSource reload];
 }
 
 - (void)windowWillClose:(NSNotification *)notification {

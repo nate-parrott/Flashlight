@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 //! Project version number for FlashlightKit.
 FOUNDATION_EXPORT double FlashlightKitVersionNumber;
 
