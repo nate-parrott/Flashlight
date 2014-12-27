@@ -1,0 +1,7 @@
+{
+    "name": "CanIuse",
+    "displayName": "Can I use",
+    "displayName_de": "Kann ich",
+    "examples": ["CIU div", "Can I use transforms "],
+    "categories": ["Search", "Developer", "Featured"]
+}
