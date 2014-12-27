@@ -3,5 +3,5 @@
 	"displayName": "IP Info",
 	"description": "Lookup IP info",
 	"examples": ["ipinfo 8.8.8.8"],
-    "categories": ["Search", "Information", "Utilities"],
+    "categories": ["Search", "Information", "Utilities"]
 }

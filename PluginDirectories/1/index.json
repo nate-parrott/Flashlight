@@ -202,6 +202,21 @@
         {
             "categories": [
                 "Search",
+                "Developer",
+                "Featured"
+            ],
+            "displayName": "Can I use",
+            "displayName_de": "Kann ich",
+            "examples": [
+                "CIU div",
+                "Can I use transforms "
+            ],
+            "name": "CanIUse",
+            "zip_url": "CanIUse.zip"
+        },
+        {
+            "categories": [
+                "Search",
                 "Developer"
             ],
             "displayName": "Search CocoaPods",
@@ -425,6 +440,21 @@
             ],
             "name": "ebay",
             "zip_url": "ebay.zip"
+        },
+        {
+            "categories": [
+                "Information",
+                "Developer"
+            ],
+            "description": "Do you need a excuse? Done something wrong? Here is the solution",
+            "displayName": "Programmer Excuses",
+            "examples": [
+                "excuse",
+                "help me out of this",
+                "give me an excuse"
+            ],
+            "name": "excuse",
+            "zip_url": "excuse.zip"
         },
         {
             "categories": [
@@ -701,6 +731,20 @@
         },
         {
             "categories": [
+                "Search",
+                "Information",
+                "Utilities"
+            ],
+            "description": "Lookup IP info",
+            "displayName": "IP Info",
+            "examples": [
+                "ipinfo 8.8.8.8"
+            ],
+            "name": "ipinfo",
+            "zip_url": "ipinfo.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Shows Useragent and external IP Address",
@@ -908,6 +952,18 @@
             ],
             "name": "thepiratebay",
             "zip_url": "piratebay.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search at PyPI - the Python Package Index",
+            "displayName": "Search at PyPI",
+            "examples": [
+                "pypi setuptools"
+            ],
+            "name": "pypi",
+            "zip_url": "pypi.zip"
         },
         {
             "categories": [
@@ -1280,6 +1336,26 @@
         },
         {
             "categories": [
+                "Media",
+                "Featured"
+            ],
+            "creator_name": "Thomas Eschemann",
+            "creator_url": "http://eschemann.fr",
+            "description": "Search Unicode characters and emoji. Click to copy.",
+            "displayName": "Unicode Character Search",
+            "examples": [
+                "unicode: tree",
+                "banana emoji"
+            ],
+            "name": "unicode",
+            "search_keywords": [
+                "character map",
+                "special characters"
+            ],
+            "zip_url": "unicode.zip"
+        },
+        {
+            "categories": [
                 "Language"
             ],
             "displayName": "Search Urbandictionary",
@@ -1384,8 +1460,8 @@
             "displayName_it": "Wikipedia (IT)",
             "displayName_nl": "Wikipedia (NL)",
             "examples": [
-                "wiki hond",
-                "Zoek op wikipedia voor St. Louis, MO",
+                "wiki Dogs",
+                "search wikipedia for St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "examples_de": [
@@ -1401,6 +1477,11 @@
             "examples_it": [
                 "wiki cani",
                 "cerca wikipedia Ponza",
+                "wikipedia Flashlight"
+            ],
+            "examples_nl": [
+                "wiki hond",
+                "Zoek op wikipedia voor St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "name": "wikipedia",

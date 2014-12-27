@@ -34,7 +34,7 @@ from google.appengine.api import users
 import bs4
 import model
 from model import Plugin
-from directory import directory_html
+from directory import directory_html, info_dict_for_plugin
 from util import get_localized_key
 
 
