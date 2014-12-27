@@ -164,7 +164,7 @@
    {% if group.header %}
    <h4 class='group_header'>{{ group.header }}</h4>
    {% endif %}
-   <ul class='plugins {% if group.class %} {{ group.class }} {% endif %}'>
+   <ul id='plugins' class='plugins {% if group.class %} {{ group.class }} {% endif %}'>
       {% for plugin in group.plugins %}
       <li class='{{ plugin.name }}' status='uninstalled'>
          <div class='pod'>
