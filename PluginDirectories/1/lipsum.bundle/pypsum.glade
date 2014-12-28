@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
+<!--Generated with glade3 3.4.5 on Sun Nov 16 01:20:51 2008 -->
+<glade-interface>
+  <widget class="GtkWindow" id="main">
+    <property name="width_request">450</property>
+    <property name="visible">True</property>
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Lorem ipsum</property>
+    <property name="icon">pypsum.svg</property>
+    <signal name="activate_focus" handler="generate"/>
+    <signal name="delete_event" handler="main-delete"/>
+    <child>
+      <widget class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <widget class="GtkHBox" id="hbox1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Generate:</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="howmany">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="activates_default">True</property>
+                <property name="width_chars">5</property>
+                <property name="text" translatable="yes">5</property>
+                <property name="xalign">1</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">5</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkComboBox" id="what">
+                <property name="visible">True</property>
+                <property name="items" translatable="yes">Paragraphs
+Words
+Bytes
+Lists</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">5</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="button1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">Generate</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="generate"/>
+              </widget>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkHBox" id="hbox3">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkCheckButton" id="start_with">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="label" translatable="yes">Start with 'Lorem ipsum dolor sit amet...'</property>
+                <property name="response_id">0</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="padding">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="button2">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="label" translatable="yes">gtk-copy</property>
+                <property name="use_stock">True</property>
+                <property name="response_id">0</property>
+                <signal name="clicked" handler="copy"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="pack_type">GTK_PACK_END</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="padding">5</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="height_request">200</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="shadow_type">GTK_SHADOW_IN</property>
+            <child>
+              <widget class="GtkTextView" id="lipsum">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="pixels_above_lines">5</property>
+                <property name="pixels_below_lines">5</property>
+                <property name="editable">False</property>
+                <property name="wrap_mode">GTK_WRAP_WORD</property>
+                <property name="left_margin">5</property>
+                <property name="right_margin">5</property>
+                <property name="indent">20</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="padding">5</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="GtkLabel" id="generated">
+            <property name="visible">True</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">Nothing generated yet.</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>
