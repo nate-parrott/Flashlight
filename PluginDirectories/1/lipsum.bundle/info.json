@@ -1,0 +1,9 @@
+{
+    "name": "lipsum",
+    "displayName": "Lorem Ipsum",
+    "description": "Generates text",
+    "examples": ["lipsum 5 words", "lipsum 2 paras", "lipsum 16 bytes", "lipsum 3 lists"],
+    "categories": ["Utilities"],
+    "creator_name": "Anton Vakhmin",
+    "creator_url": "https://github.com/LastDanmer"
+}
