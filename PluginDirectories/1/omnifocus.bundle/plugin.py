@@ -10,7 +10,7 @@
 import urllib
 import json
 def results(fields, original_query): 
-    param1 = urllib.quote_plus(fields['~omniFocusMemo'].encode('UTF-8'))
+    param1 = urllib.quote_plus(fields.get('~omniFocusMemo', '').encode('UTF-8'))
     param2 = urllib.quote_plus(fields['~omniFocusNote'].encode('UTF-8'))
     omni_url = "omnifocus:///add?name="+param1+"&note="+param2
     return {
