@@ -14,10 +14,13 @@
 #import "SPResult.h"
 #import "SPOpenAPIQuery.h"
 #import "SPGroupHeadingResult.h"
+#import "SPSearchPanel.h"
+#import "SPAppDelegate.h"
 
 @interface _FlashlightPluginEngine ()
 
 @property (nonatomic) NSArray *results;
+@property (nonatomic) NSString *mostRecentQueryWithResults;
 
 @end
 
@@ -35,8 +38,15 @@
 - (void)setQuery:(NSString *)query {
     _query = query;
     self.results = nil;
-    
-    if (!query) return;
+    if (!query) {
+        self.mostRecentQueryWithResults = nil;
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateWindowCollapsed];
+    });
+    if (!query) {
+        return;
+    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSDictionary *resultsByPlugin = [_SS_PluginRunner resultDictionariesFromPluginsForQuery:query];
@@ -54,6 +64,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             if ([query isEqualToString:self.query]) {
                 self.results = resultItems;
+                self.mostRecentQueryWithResults = query;
                 [self reloadResultsViews];
             }
         });
@@ -65,6 +76,7 @@
     SPResultViewController *resultVC = [appDelegate performSelector:NSSelectorFromString(@"currentViewController")];
     [resultVC setResults:resultVC.results];
     [resultVC reloadResultsSelectingTopResult:YES animate:NO];
+    [self updateWindowCollapsed];
 }
 
 - (NSArray *)mergeFlashlightResultsWithSpotlightResults:(NSArray *)spotlightResults {
@@ -116,6 +128,33 @@
     [mainResults insertObjects:toPrepend atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, toPrepend.count)]];
     [mainResults addObjectsFromArray:showAllInFinderResults];
     return mainResults;
+}
+
+- (void)updateWindowCollapsed {
+    SPAppDelegate *delegate = (id)[[NSApplication sharedApplication] delegate];
+    SPSearchPanel *panel = delegate.window;
+    
+    if ([self shouldBeCollapsed] != [panel collapsedState]) {
+        if ([self shouldBeCollapsed]) {
+            [panel collapse];
+        } else {
+            [panel expand];
+        }
+    }
+}
+
+- (BOOL)shouldBeCollapsed {
+    SPAppDelegate *delegate = (id)[[NSApplication sharedApplication] delegate];
+    SPSearchPanel *panel = delegate.window;
+    
+    BOOL queryEmpty = self.query.length == 0;
+    BOOL queryFinished = self.query == self.mostRecentQueryWithResults || [self.query isEqualToString:self.mostRecentQueryWithResults];
+    BOOL noResults = self.results.count == 0;
+    BOOL isCollapsedNow = [panel collapsedState];
+    
+    BOOL canCollapse = queryEmpty || (queryFinished && noResults) || (!queryFinished && noResults && isCollapsedNow);
+    
+    return self.spotlightWantsCollapsed && canCollapse;
 }
 
 @end

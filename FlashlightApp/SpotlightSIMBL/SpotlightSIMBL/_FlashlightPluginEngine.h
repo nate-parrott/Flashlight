@@ -17,4 +17,7 @@
 
 - (NSArray *)mergeFlashlightResultsWithSpotlightResults:(NSArray *)spotlightResults;
 
+@property (nonatomic) BOOL spotlightWantsCollapsed;
+- (BOOL)shouldBeCollapsed;
+
 @end

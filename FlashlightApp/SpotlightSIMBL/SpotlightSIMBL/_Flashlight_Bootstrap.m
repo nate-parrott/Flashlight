@@ -109,6 +109,20 @@ BOOL _Flashlight_Is_10_10_2_Spotlight() {
         RSSWCallOriginal([[_FlashlightPluginEngine shared] mergeFlashlightResultsWithSpotlightResults:results]);
     }), 0, NULL);
     
+    RSSwizzleInstanceMethod(NSClassFromString(@"SPSearchPanel"), NSSelectorFromString(@"collapse"), RSSWReturnType(void), RSSWArguments(), RSSWReplacement({
+        [_FlashlightPluginEngine shared].spotlightWantsCollapsed = YES;
+        if ([[_FlashlightPluginEngine shared] shouldBeCollapsed]) {
+            RSSWCallOriginal();
+        }
+    }), 0, NULL);
+    
+    RSSwizzleInstanceMethod(NSClassFromString(@"SPSearchPanel"), NSSelectorFromString(@"expand"), RSSWReturnType(void), RSSWArguments(), RSSWReplacement({
+        [_FlashlightPluginEngine shared].spotlightWantsCollapsed = NO;
+        if (![[_FlashlightPluginEngine shared] shouldBeCollapsed]) {
+            RSSWCallOriginal();
+        }
+    }), 0, NULL);
+    
     // [[_SS_MetadataResponseDelayer shared] setup];
 }
 
