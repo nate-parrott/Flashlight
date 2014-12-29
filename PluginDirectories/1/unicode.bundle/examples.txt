@@ -1,0 +1,4 @@
+unicode ~query(a)
+unicode: ~query(a b)
+unicode characters for ~query(tree)
+~query(santa) emoji

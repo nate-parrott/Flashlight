@@ -29,6 +29,22 @@
         },
         {
             "categories": [
+                "Search",
+                "Media"
+            ],
+            "description": "Search AcFun or Bilibili",
+            "displayName": "AcFun&Bilibili",
+            "examples": [
+                "ac Madoka",
+                "acfun Madoka",
+                "bili Madoka",
+                "bilibili Madoka"
+            ],
+            "name": "AcFun&Bilibili",
+            "zip_url": "AcFun&Bilibili.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Alibaba (ab) from Spotlight.",
@@ -74,6 +90,23 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search Apps in AppAnnie.",
+            "description_de": "Durchsucht Apps in AppAnnie.",
+            "displayName": "AppAnnie Search",
+            "displayName_de": "AppAnnie Suche",
+            "examples": [
+                "aa facebook",
+                "annie twitter",
+                "appannie instagram"
+            ],
+            "name": "appanniesearch",
+            "zip_url": "appanniesearch.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
@@ -102,6 +135,9 @@
                 "baidu 'search term', bd 'search term'"
             ],
             "name": "baidu",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "baidu.zip"
         },
         {
@@ -162,6 +198,33 @@
             "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
             "name": "Brackets",
             "zip_url": "Brackets.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "displayName": "Can I use",
+            "displayName_de": "Kann ich",
+            "examples": [
+                "CIU div",
+                "Can I use transforms "
+            ],
+            "name": "CanIUse",
+            "zip_url": "CanIUse.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "displayName": "Search CocoaPods",
+            "examples": [
+                "search cocoapods for Core Data",
+                "pod ReactiveCocoa"
+            ],
+            "name": "cocoapods",
+            "zip_url": "cocoapods.zip"
         },
         {
             "categories": [
@@ -295,6 +358,9 @@
                 "dict Suchmaschine"
             ],
             "name": "dictcc",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "dictcc.zip"
         },
         {
@@ -307,6 +373,9 @@
                 "diki apple"
             ],
             "name": "diki",
+            "preferred_locales": [
+                "pl"
+            ],
             "zip_url": "diki.zip"
         },
         {
@@ -373,6 +442,21 @@
         },
         {
             "categories": [
+                "Information",
+                "Developer"
+            ],
+            "description": "Do you need a excuse? Done something wrong? Here is the solution",
+            "displayName": "Programmer Excuses",
+            "examples": [
+                "excuse",
+                "help me out of this",
+                "give me an excuse"
+            ],
+            "name": "excuse",
+            "zip_url": "excuse.zip"
+        },
+        {
+            "categories": [
                 "Art"
             ],
             "description": "Search Flickr",
@@ -399,6 +483,9 @@
                 "Benzin Munich"
             ],
             "name": "gasprice",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "gasprice.zip"
         },
         {
@@ -568,6 +655,9 @@
                 "haomatong 10086"
             ],
             "name": "haomatong",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "haomatong.zip"
         },
         {
@@ -640,6 +730,20 @@
         },
         {
             "categories": [
+                "Search",
+                "Information",
+                "Utilities"
+            ],
+            "description": "Lookup IP info",
+            "displayName": "IP Info",
+            "examples": [
+                "ipinfo 8.8.8.8"
+            ],
+            "name": "ipinfo",
+            "zip_url": "ipinfo.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Shows Useragent and external IP Address",
@@ -700,6 +804,9 @@
                 "\u8f9e\u66f8 hello"
             ],
             "name": "jisho",
+            "preferred_locales": [
+                "ja"
+            ],
             "zip_url": "jisho.zip"
         },
         {
@@ -715,6 +822,9 @@
                 "kuaidi 100033892580"
             ],
             "name": "kuaidi",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "kuaidi.zip"
         },
         {
@@ -844,6 +954,18 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "description": "Search at PyPI - the Python Package Index",
+            "displayName": "Search at PyPI",
+            "examples": [
+                "pypi setuptools"
+            ],
+            "name": "pypi",
+            "zip_url": "pypi.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "description": "Returns a random Google image and allows to copy the url",
@@ -923,6 +1045,21 @@
             ],
             "name": "say",
             "zip_url": "say.zip"
+        },
+        {
+            "categories": [
+                "Media"
+            ],
+            "creator_name": "Joe Engelman",
+            "creator_url": "joengelm.github.io",
+            "description": "Downloads tracks or playlists from Soundcloud",
+            "displayName": "Soundcloud Downloader",
+            "examples": [
+                "scdl https://soundcloud.com/joeengelman/egg-white-delight",
+                "download https://soundcloud.com/joeengelman/egg-white-delight from Soundcloud"
+            ],
+            "name": "scdl",
+            "zip_url": "scdl.disabled-bundle.zip"
         },
         {
             "categories": [
@@ -1086,6 +1223,9 @@
                 "t flashlight"
             ],
             "name": "taobao",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "taobao.zip"
         },
         {
@@ -1195,6 +1335,26 @@
         },
         {
             "categories": [
+                "Media",
+                "Featured"
+            ],
+            "creator_name": "Thomas Eschemann",
+            "creator_url": "http://eschemann.fr",
+            "description": "Search Unicode characters and emoji. Click to copy.",
+            "displayName": "Unicode Character Search",
+            "examples": [
+                "unicode: tree",
+                "banana emoji"
+            ],
+            "name": "unicode",
+            "search_keywords": [
+                "character map",
+                "special characters"
+            ],
+            "zip_url": "unicode.zip"
+        },
+        {
+            "categories": [
                 "Language"
             ],
             "displayName": "Search Urbandictionary",
@@ -1232,6 +1392,9 @@
                 "vertaal car naar Nederlands"
             ],
             "name": "Vertaal",
+            "preferred_locales": [
+                "nl"
+            ],
             "zip_url": "vertaal.zip"
         },
         {
@@ -1296,8 +1459,8 @@
             "displayName_it": "Wikipedia (IT)",
             "displayName_nl": "Wikipedia (NL)",
             "examples": [
-                "wiki hond",
-                "Zoek op wikipedia voor St. Louis, MO",
+                "wiki Dogs",
+                "search wikipedia for St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "examples_de": [
@@ -1313,6 +1476,11 @@
             "examples_it": [
                 "wiki cani",
                 "cerca wikipedia Ponza",
+                "wikipedia Flashlight"
+            ],
+            "examples_nl": [
+                "wiki hond",
+                "Zoek op wikipedia voor St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "name": "wikipedia",
@@ -1432,6 +1600,9 @@
                 "yx flashlight"
             ],
             "name": "YiXun",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "yixun.zip"
         },
         {
@@ -1446,6 +1617,9 @@
                 "\u6709\u9053 why"
             ],
             "name": "youdaodic",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "youdaodic.zip"
         },
         {
@@ -1472,6 +1646,9 @@
                 "zhihu 20140822(show the topics On August 22, 2014)"
             ],
             "name": "zhihuDaily",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "Zhihu.zip"
         }
     ]

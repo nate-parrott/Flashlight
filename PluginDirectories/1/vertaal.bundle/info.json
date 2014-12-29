@@ -3,5 +3,8 @@
     "displayName": "vertaal",
     "description": "Vertaald woord van Engels naar nederlands",
     "examples": ["Vertaal car", "vertaal car naar Nederlands"],
-    "categories": ["Language"]
+    "categories": ["Language"],
+    "preferred_locales": ["nl"],
+    "creator_name": "Matthias Dolstra",
+    "creator_url": "http://mdolstra.me"
 }

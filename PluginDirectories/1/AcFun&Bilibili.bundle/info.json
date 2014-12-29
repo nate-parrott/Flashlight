@@ -1,0 +1,7 @@
+{
+    "name": "AcFun&Bilibili",
+    "displayName": "AcFun&Bilibili",
+    "description": "Search AcFun or Bilibili",
+    "examples": ["ac Madoka", "acfun Madoka", "bili Madoka", "bilibili Madoka"],
+    "categories": ["Search", "Media"]
+}

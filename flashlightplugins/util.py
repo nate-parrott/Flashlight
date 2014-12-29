@@ -23,3 +23,21 @@ def stable_daily_shuffle(items):
     items = items[:]
     r.shuffle(items)
     return items
+
+def language_suffixes(languages):
+    for lang in languages:
+        while True:
+            yield "_" + lang if lang != 'en' else ''
+            if '-' in lang:
+                lang = lang[:lang.rfind('-')]
+            else:
+                break
+    yield ''
+
+
+def get_localized_key(dict, name, languages, default=None):
+    for suffix in language_suffixes(languages):
+        key = name + suffix
+        if key in dict:
+            return dict[key]
+    return default

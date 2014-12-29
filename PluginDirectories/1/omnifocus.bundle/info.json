@@ -1,0 +1,9 @@
+{
+	"name": "omnifocus",
+	"displayName": "OmniFocus",
+	"description": "Send OmniFocus task to inbox",
+	"examples": ["omni https://twitter.com","send note buy cake named -"],
+	"categories": ["Utilities"],
+	"creator_url": "http://vicugna.github.io",
+	"creator": "vicugna"
+}

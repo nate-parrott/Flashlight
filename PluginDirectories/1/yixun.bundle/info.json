@@ -3,5 +3,6 @@
 	"displayName": "YiXun Search",
 	"description": "Search Yixun (yx) from Spotlight.",
 	"examples": ["yixun flashlight", "yx flashlight"],
-	"categories": ["Search"]
+	"categories": ["Search"],
+	"preferred_locales": ["zh"]
 }
