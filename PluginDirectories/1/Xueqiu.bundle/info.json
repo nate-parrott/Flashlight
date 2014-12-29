@@ -1,0 +1,7 @@
+{
+    "name": "Xueqiu",
+    "displayName": "Xueqiu",
+    "description": "Shortcuts for xueqiu.com",
+    "examples": ["xq S/AAPL", "zh 888"],
+    "categories": ["Utilities"]
+}

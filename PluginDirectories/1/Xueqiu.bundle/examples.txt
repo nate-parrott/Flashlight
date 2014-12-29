@@ -1,0 +1,2 @@
+xq ~path(S/AAPL)
+zh ~symbol(8888)
