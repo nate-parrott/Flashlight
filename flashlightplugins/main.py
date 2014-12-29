@@ -34,7 +34,8 @@ from google.appengine.api import users
 import bs4
 import model
 from model import Plugin
-from search import search_plugins
+from directory import directory_html, info_dict_for_plugin
+from util import get_localized_key
 
 
 def send_upload_form(request, message=None):
@@ -79,24 +80,6 @@ def read_plugin_info(plugin, zip_data):
             screenshot = archive.open(name).read()
             plugin.screenshot_url = resize_and_store(screenshot, 800)
     return has_info
-
-def language_suffixes(languages):
-    for lang in languages:
-        while True:
-            yield "_" + lang if lang != 'en' else ''
-            if '-' in lang:
-                lang = lang[:lang.rfind('-')]
-            else:
-                break
-    yield ''
-
-
-def get_localized_key(dict, name, languages, default=None):
-    for suffix in language_suffixes(languages):
-        key = name + suffix
-        if key in dict:
-            return dict[key]
-    return default
 
 
 class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
@@ -154,45 +137,9 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
                                                            "plugin": plugin}))
 
 
-def directory_html(category=None, search=None, languages=['en'], browse=False,
-                   name=None):
-    if category:
-        plugins = list(Plugin.query(Plugin.categories == category,
-                                    Plugin.approved == True))
-        plugins = stable_daily_shuffle(plugins)
-    elif search:
-        plugins = search_plugins(search)
-    elif name:
-        plugin = Plugin.by_name(name)
-        plugins = [plugin] if plugin else []
-    else:
-        plugins = []
-    plugin_dicts = []
-    for p in plugins:
-        plugin = info_dict_for_plugin(p, languages)
-        plugin_dicts.append(plugin)
-    return template("directory.html",
-                    {"plugins": plugin_dicts, "browse": browse,
-                     "search": search})
-
-
-def info_dict_for_plugin(p, languages=['en']):
-    plugin = json.loads(p.info_json)
-    plugin['displayName'] = get_localized_key(plugin, "displayName", languages,
-                                              "")
-    plugin['description'] = get_localized_key(plugin, "description", languages,
-                                              "")
-    plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
-    plugin['model'] = p
-    plugin['install_url'] = 'install://_?' + \
-                            urllib.urlencode([("zip_url", p.zip_url),
-                                              ("name", p.name.encode('utf8'))])
-    return plugin
-
-
 class Directory(webapp2.RequestHandler):
     def get(self):
-        languages = self.request.get('languages', '').split(',') + ['en']
+        languages = self.request.get('languages', '').split(',') + ['en'] if self.request.get('languages') else None
         category = self.request.get('category', None)
         search = self.request.get('search', None)
         browse = self.request.get('browse', '') != ''

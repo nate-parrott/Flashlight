@@ -6,7 +6,27 @@
 </title>
 {% endblock %}
 
+{% block opengraph %}
+
+<meta property="og:title" content="{{ plugin.displayName }}" />
+<meta property="og:description" content="{{ plugin.description }}" />
+{% if plugin.model.screenshot_url %}
+   <meta property="og:image" content="{{ plugin.model.screenshot_url }}" />
+{% else %}
+   <meta property="og:image" content="http://flashlight.nateparrott.com/static/images/simple-screenshot.png" />
+{% endif %}
+
+   <meta property="og:site_name" content="Flashlight" />
+   <meta property="og:type" content="website" />
+
+{% endblock %}
+
+{% block meta_description %}
+   <meta name="Description" content="{{ plugin.description }}"/>
+{% endblock %}
+
 {% block head %}
+
 <style>
 #plugin {
    background-color: #eee;
@@ -72,6 +92,9 @@ h6 {
    position: relative;
    top: 4px;
 }
+#creator a:link, #creator a:visited {
+   color: #222;
+}
 #plugin h1 {
     color: #222;
     margin-top: 0;
@@ -131,9 +154,24 @@ h6 {
       {% endfor %}
    </ul>
    
+   {% if plugin.creator_url or plugin.creator_name %}
+   <div id='creator'>
+      <h6>Created by</h6>
+      <p>
+      {% if plugin.creator_name and plugin.creator_url %}
+      <a href='{{ plugin.creator_url }}'>{{ plugin.creator_name }}</a>
+      {% elif plugin.creator_name %}
+      {{ plugin.creator_name }}
+      {% else %}
+      <a href='{{ plugin.creator_url }}'>{{ plugin.creator_url }}</a>
+      {% endif %}
+      </p>
+   </div>
+   {% endif %}
+   
    <div id='social'>
       <div id='downloads'>{{plugin.model.downloads}} downloads</div>
-      
+            
       <div>
          <div id="fb-root"></div>
          <script>(function(d, s, id) {
