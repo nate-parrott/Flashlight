@@ -1,10 +1,14 @@
 {
-    "name": "mdn",
+    "name": "MDN",
     "displayName": "Search at MDN",
     "displayName_de": "Suche auf MDN",
+    "displayName_nl": "Zoek op MDN",
     "description": "Search at Mozilla developer Network",
     "description_de": "Durchsuche das Mozilla developer Network",
+    "description_nl": "Doorzoek Mozilla developer Network",
     "examples": ["mdn body", "Mozilla developer Network URL"],
     "categories": ["Developer"],
-     "iconPath": "./Icon.png"
+     "iconPath": "./Icon.png",
+    "creator_name": "Matthias Dolstra",
+    "creator_url": "http://mdolstra.me"
 }

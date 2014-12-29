@@ -3,5 +3,7 @@
     "displayName": "Can I use",
     "displayName_de": "Kann ich",
     "examples": ["CIU div", "Can I use transforms "],
-    "categories": ["Search", "Developer"]
+    "categories": ["Search", "Developer"],
+    "creator_name": "Matthias Dolstra",
+    "creator_url": "http://mdolstra.me"
 }
