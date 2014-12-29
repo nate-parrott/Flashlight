@@ -1,0 +1,6 @@
+{
+	"name": "SendOmniFocus",
+	"displayName": "Send Omni Focus task to inbox",
+	"examples": ["remind https://twitter.com sof","sof buy_cake -"],
+	"categories": ["Featured"]
+}
