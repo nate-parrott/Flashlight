@@ -368,14 +368,18 @@
                 <rect key="frame" x="0.0" y="-2" width="602" height="447"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="67" horizontalPageScroll="10" verticalLineScroll="67" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
+                    <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="zD3-4J-zT5">
+                        <rect key="frame" x="149" y="0.0" width="453" height="448"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </visualEffectView>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
                         <rect key="frame" x="149" y="0.0" width="454" height="448"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <clipView key="contentView" id="puk-vq-Kg7">
+                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="puk-vq-Kg7">
                             <rect key="frame" x="1" y="0.0" width="238" height="134"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="65" rowSizeStyle="automatic" viewBased="YES" id="2Bw-eW-td2">
+                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="94" rowSizeStyle="automatic" viewBased="YES" id="2Bw-eW-td2">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -395,11 +399,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="FQb-yf-BXy" customClass="PluginCellView">
-                                                    <rect key="frame" x="1" y="1" width="449" height="65"/>
+                                                    <rect key="frame" x="1" y="1" width="449" height="94"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="6mi-ds-L3P">
-                                                            <rect key="frame" x="7" y="7" width="377" height="51"/>
+                                                            <rect key="frame" x="3" y="31" width="443" height="56"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This plugin does some crazy stuff like change the word and everything." id="rtk-em-P81">
                                                                 <font key="font" metaFont="system"/>
@@ -410,23 +414,28 @@
                                                                 </connections>
                                                             </textFieldCell>
                                                         </textField>
-                                                        <customView id="GuL-dQ-r0u" customClass="ITSwitch">
-                                                            <rect key="frame" x="390" y="19" width="52" height="26"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                            <connections>
-                                                                <action selector="toggleInstalled:" target="FQb-yf-BXy" id="chV-NU-b19"/>
-                                                            </connections>
-                                                        </customView>
                                                         <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Agl-8K-jT3">
-                                                            <rect key="frame" x="366" y="25" width="16" height="16"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                            <rect key="frame" x="428" y="7" width="16" height="16"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <binding destination="FQb-yf-BXy" name="animate" keyPath="objectValue.installing" id="PM8-oS-CTm"/>
                                                             </connections>
                                                         </progressIndicator>
+                                                        <button verticalHuggingPriority="750" id="XCq-UX-7Ic">
+                                                            <rect key="frame" x="6" y="8" width="97" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonCell key="cell" type="inline" title="Remove" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YVv-RQ-efJ">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystemBold"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="remove:" target="FQb-yf-BXy" id="Ax6-vV-v2w"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <connections>
-                                                        <outlet property="switchControl" destination="GuL-dQ-r0u" id="zsF-5Z-Xsv"/>
+                                                        <outlet property="loader" destination="Agl-8K-jT3" id="Ewm-F1-sNa"/>
+                                                        <outlet property="removeButton" destination="XCq-UX-7Ic" id="6Ja-6I-Mga"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
@@ -451,10 +460,6 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="zD3-4J-zT5">
-                        <rect key="frame" x="149" y="0.0" width="453" height="448"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </visualEffectView>
                     <webView id="DEt-An-xUj">
                         <rect key="frame" x="149" y="0.0" width="453" height="447"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

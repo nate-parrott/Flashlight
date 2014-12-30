@@ -127,8 +127,8 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    CGFloat xInset = 72 + 6;
-    CGFloat yInset = 14;
+    CGFloat xInset = 449 - 443;
+    CGFloat yInset = 94 - 56;
     return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
 }
 

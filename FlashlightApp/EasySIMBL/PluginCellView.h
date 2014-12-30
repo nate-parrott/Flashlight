@@ -12,8 +12,9 @@
 
 @interface PluginCellView : NSTableCellView
 
-@property (nonatomic,weak) IBOutlet ITSwitch *switchControl;
 @property (nonatomic,weak) IBOutlet PluginListController *listController;
+@property (nonatomic,weak) IBOutlet NSProgressIndicator *loader;
+@property (nonatomic,weak) IBOutlet NSButton *removeButton;
 
 - (PluginModel *)plugin;
 
