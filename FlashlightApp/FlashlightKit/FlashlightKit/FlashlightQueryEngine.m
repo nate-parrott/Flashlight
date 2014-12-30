@@ -12,6 +12,7 @@
 #import "PSPluginExampleSource.h"
 #import "NSTask+FlashlightExtensions.h"
 #import "FlashlightResult.h"
+#import "PSHelpers.h"
 
 @interface FlashlightQueryEngine ()
 
@@ -50,7 +51,9 @@
                     pluginsToLaunchMappedToArgumentsDictionaries[path] = args;
                 }
                 for (NSString *path in weakSelf.dispatcher.exampleSource.pathsOfPluginsToAlwaysInvoke) {
-                    pluginsToLaunchMappedToArgumentsDictionaries[path] = [NSNull null];
+                    if (!pluginsToLaunchMappedToArgumentsDictionaries[path]) {
+                        pluginsToLaunchMappedToArgumentsDictionaries[path] = [NSNull null];
+                    }
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf runPluginsWithArguments:pluginsToLaunchMappedToArgumentsDictionaries ifQueryIsStill:data];
@@ -81,16 +84,25 @@
     if ([query isEqualToString:self.query]) {
         for (NSString *pluginPath in pathsToArgumentsMap) {
             id args = pathsToArgumentsMap[pluginPath];
-            NSString *argsJson = [args isEqual:[NSNull null]] ? @"null" : [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:args options:0 error:nil] encoding:NSUTF8StringEncoding];
             NSTask *task = [[NSTask alloc] init];
             task.currentDirectoryPath = pluginPath;
             task.launchPath = @"/usr/bin/python";
-            NSString *command = @"import sys, json, plugin\n"
-            @"results = plugin.results(json.loads(sys.argv[1]), sys.argv[2])\n"
+            NSString *builtinModulesPath = [[NSBundle bundleWithIdentifier:@"com.nateparrott.FlashlightKit"] pathForResource:@"BuiltinModules" ofType:@""];
+            NSString *command = @"import sys, json\n"
+            @"input = json.loads(sys.argv[1])\n"
+            @"sys.path.append(input['builtinModulesPath'])\n"
+            @"import plugin\n"
+            @"results = plugin.results(input['args'], input['query'])\n"
             @"if not results: quit()\n"
             @"if type(results) != list: results = [results]\n"
             @"print json.dumps(results)\n";
-            task.arguments = @[@"-c", command, argsJson, query];
+            command = [NSString stringWithFormat:command, [@[builtinModulesPath] toJson]];
+            NSDictionary *input = @{
+                                    @"args": args,
+                                    @"query": query,
+                                    @"builtinModulesPath": builtinModulesPath
+                                    };
+            task.arguments = @[@"-c", command, input.toJson];
             [weakSelf.tasksInProgress addObject:task];
             [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
                 // only act on the result data if we're still part of the tasksInProgress
@@ -109,7 +121,10 @@
                     if (stdoutData) {
                         NSArray *results = [NSJSONSerialization JSONObjectWithData:stdoutData options:0 error:nil];
                         NSArray *resultsObjs = [results mapFilter:^id(id obj) {
-                            return [[FlashlightResult alloc] initWithJson:obj];
+                            FlashlightResult *res = [FlashlightResult new];
+                            res.json = obj;
+                            res.pluginPath = pluginPath;
+                            return res;
                         }];
                         dispatch_async(dispatch_get_main_queue(), ^{
                             if ([weakSelf.query isEqualToString:query]) {

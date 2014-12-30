@@ -10,10 +10,10 @@
 #import <WebKit/WebKit.h>
 #import "FlashlightWebScriptObject.h"
 #import <objc/runtime.h>
+#import "FlashlightResult.h"
 
 @interface FlashlightResultView ()
 
-@property (nonatomic) BOOL linksOpenInBrowser;
 @property (nonatomic) NSProgressIndicator *loader;
 @property (nonatomic) WebView *webView;
 
@@ -49,7 +49,7 @@
 #pragma mark Navigation interception
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-    if (self.linksOpenInBrowser && [actionInformation[WebActionNavigationTypeKey] integerValue] == WebNavigationTypeLinkClicked) {
+    if (self.result.linksOpenInBrowser && [actionInformation[WebActionNavigationTypeKey] integerValue] == WebNavigationTypeLinkClicked) {
         [listener ignore];
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSWorkspace sharedWorkspace] openURL:request.URL];
@@ -87,27 +87,14 @@
 - (void)setResult:(FlashlightResult *)result {
     _result = result;
     
-    id json = objc_getAssociatedObject(result, @selector(jsonAssociatedObject));
-    NSString *sourcePlugin = objc_getAssociatedObject(result, @selector(sourcePluginAssociatedObject));
-    
-    /*if (json[@"html"]) {
+    if ([result supportsWebview]) {
         [self ensureWebview];
-        NSString *pluginPath = [[_SS_PluginRunner pathForPlugin:sourcePlugin] stringByAppendingPathComponent:@"index.html"];
-        [_webView.mainFrame loadHTMLString:json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
-        if (json[@"webview_user_agent"]) {
-            [_webView setCustomUserAgent:json[@"webview_user_agent"]];
-        }
-        if ([json[@"webview_links_open_in_browser"] boolValue]) {
-            self.linksOpenInBrowser = YES;
-        }
-        if ([json[@"webview_transparent_background"] boolValue]) {
-            _webView.drawsBackground = NO;
-        }
+        [self.result configureWebview:self.webView];
     } else {
         for (NSView *v in self.subviews) {
             v.hidden = YES;
         }
-    }*/
+    }
 }
 
 - (void)ensureWebview {

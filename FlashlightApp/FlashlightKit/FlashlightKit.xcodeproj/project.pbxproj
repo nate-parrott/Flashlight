@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlashlightKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13DF21A4E12DB008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightKit.h; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
 				5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */,
+				5F870A171A52D43600161E2F /* BuiltinModules */,
 				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13DF11A4E12DB008A0FE3 /* Supporting Files */,
 			);
@@ -379,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F870A181A52D43600161E2F /* BuiltinModules in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +612,7 @@
 				5FC13E061A4E12DB008A0FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FC13E071A4E12DB008A0FE3 /* Build configuration list for PBXNativeTarget "FlashlightKitTests" */ = {
 			isa = XCConfigurationList;
@@ -616,6 +621,7 @@
 				5FC13E091A4E12DB008A0FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

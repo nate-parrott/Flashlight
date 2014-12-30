@@ -71,7 +71,7 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
 
 - (void)didChange {
     NSMutableArray *parserInfoOutput = [NSMutableArray new];
-    NSMutableSet *pathsForPluginsToAlwaysInvoke = [NSMutableArray new];
+    NSMutableSet *pathsForPluginsToAlwaysInvoke = [NSMutableSet new];
     
     NSArray *pluginBundles = [[[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self localPluginsPath] error:nil] mapFilter:^id(id obj) {
         NSString *fullPath = [[self localPluginsPath] stringByAppendingPathComponent:obj];

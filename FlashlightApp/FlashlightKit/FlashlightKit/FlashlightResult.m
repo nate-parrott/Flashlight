@@ -10,10 +10,29 @@
 
 @implementation FlashlightResult
 
-- (id)initWithJson:(id)json {
-    self = [super init];
-    self.json = json;
-    return self;
+- (NSString *)title {
+    return self.json[@"title"];
+}
+
+- (BOOL)supportsWebview {
+    return !!self.json[@"html"];
+}
+
+- (BOOL)linksOpenInBrowser {
+    return [self.json[@"webview_links_open_in_browser"] boolValue];
+}
+
+- (void)configureWebview:(WebView *)webView {
+    NSString *pluginPath = [self.pluginPath stringByAppendingPathComponent:@"index.html"];
+    [webView.mainFrame loadHTMLString:self.json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
+    if (self.json[@"webview_user_agent"]) {
+        [webView setCustomUserAgent:self.json[@"webview_user_agent"]];
+    }
+    webView.drawsBackground = ![self.json[@"webview_transparent_background"] boolValue];
+}
+
+- (BOOL)pressEnter {
+    return NO; // TODO
 }
 
 @end
