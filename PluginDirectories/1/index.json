@@ -204,6 +204,8 @@
                 "Search",
                 "Developer"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "displayName": "Can I use",
             "displayName_de": "Kann ich",
             "examples": [
@@ -829,6 +831,35 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Show a snippet of text full-screen",
+            "displayName": "Large Text",
+            "examples": [
+                "large text: P Sherman, 42 Wallaby Way, Sydney",
+                "show 718 123 4567 in large text"
+            ],
+            "name": "largetext",
+            "zip_url": "largetext.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Developer"
+            ],
+            "creator_name": "Anton Vakhmin",
+            "creator_url": "https://github.com/LastDanmer",
+            "description": "Generates Lorem Ipsum placeholder text.",
+            "displayName": "Lorem Ipsum",
+            "examples": [
+                "1 paragraph of lorem ipsum",
+                "lipsum 5 words"
+            ],
+            "name": "lipsum",
+            "zip_url": "lipsum.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search man pages and open in a specific window",
@@ -867,16 +898,20 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "description": "Search at Mozilla developer Network",
             "description_de": "Durchsuche das Mozilla developer Network",
+            "description_nl": "Doorzoek Mozilla developer Network",
             "displayName": "Search at MDN",
             "displayName_de": "Suche auf MDN",
+            "displayName_nl": "Zoek op MDN",
             "examples": [
                 "mdn body",
                 "Mozilla developer Network URL"
             ],
             "iconPath": "./Icon.png",
-            "name": "mdn",
+            "name": "MDN",
             "zip_url": "mdn.zip"
         },
         {
@@ -906,6 +941,21 @@
             ],
             "name": "ninetan",
             "zip_url": "ninetan.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator": "vicugna",
+            "creator_url": "http://vicugna.github.io",
+            "description": "Send OmniFocus task to inbox",
+            "displayName": "OmniFocus",
+            "examples": [
+                "omni https://twitter.com",
+                "send note buy cake named -"
+            ],
+            "name": "omnifocus",
+            "zip_url": "omnifocus.zip"
         },
         {
             "categories": [
@@ -1385,6 +1435,8 @@
             "categories": [
                 "Language"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "description": "Vertaald woord van Engels naar nederlands",
             "displayName": "vertaal",
             "examples": [
@@ -1528,6 +1580,19 @@
             ],
             "name": "wolfram-alpha",
             "zip_url": "wolfram-alpha.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Shortcuts for xueqiu.com",
+            "displayName": "Xueqiu",
+            "examples": [
+                "xq S/AAPL",
+                "zh 888"
+            ],
+            "name": "Xueqiu",
+            "zip_url": "Xueqiu.zip"
         },
         {
             "categories": [
