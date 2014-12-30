@@ -239,8 +239,10 @@ class PluginPageHandler(webapp2.RequestHandler):
         if not plugin:
             self.error(404)
             return
+        localhost = 'Development' in os.environ['SERVER_SOFTWARE']
         self.response.write(template("plugin_page.html",
-                                     {"plugin": info_dict_for_plugin(plugin)}))
+                                     {"plugin": info_dict_for_plugin(plugin),
+                                      "localhost": localhost}))
 
 
 app = webapp2.WSGIApplication([('/', MainHandler),

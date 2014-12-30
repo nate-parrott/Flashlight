@@ -100,12 +100,9 @@ h6 {
     margin-top: 0;
 }
 #show {
-   float: right;
-   padding: 10px;
-   margin-top: -10px;
-   margin-right: -10px;
+   margin-top: 4em;
 }
-#show > a {
+#show-button {
    background-color: #333;
    padding: 10px;
    display: inline-block;
@@ -116,13 +113,20 @@ h6 {
    letter-spacing: 2px;
    font-size: small;
 }
+#reqs-flashlight {
+	font-size: small;
+	margin-top: 0.5em;
+}
+#reqs-flashlight a {
+	color: #222;
+}
 #info {
    margin-left: 1em;
    margin-right: 1em;
    text-align: center;
 }
 #plugin #social {
-   margin-top: 4em;
+	margin-top: 1.5em;
 }
 </style>
 {% endblock %}
@@ -130,18 +134,21 @@ h6 {
 {% block body %}
 
 <div id='plugin'>
-   <div id='show'>
-      <a href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
-   </div>
    <h1>
       {% if plugin.model.icon_url %}
          <img id='icon' src='{{ plugin.model.icon_url }}'/>
+		{% elif localhost %}
+			<img id='icon' src='https://storage.googleapis.com/flashlightplugins.appspot.com/dd247777295147bba0e12446281300ee'/>
       {% endif %}
       {{ plugin.displayName }} <span id='hint'>plugin for Spotlight</span>
    </h1>
    {% if plugin.model.screenshot_url %}
    <p>
       <img id='screenshot' src='{{ plugin.model.screenshot_url }}'/>
+   </p>
+	{% elif localhost %}
+   <p>
+      <img id='screenshot' src='https://storage.googleapis.com/flashlightplugins.appspot.com/86bccdc7b821467c8b2b8b3118933e52'/>
    </p>
    {% endif %}
    <p id='description'>
@@ -168,6 +175,13 @@ h6 {
       </p>
    </div>
    {% endif %}
+	
+   <div id='show'>
+      <a id='show-button' href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
+		<div id='reqs-flashlight'>
+			<a href='/latest_download'>Download Flashlight</a> first to run this plugin inside Spotlight.
+		</div>
+   </div>
    
    <div id='social'>
       <div id='downloads'>{{plugin.model.downloads}} downloads</div>
