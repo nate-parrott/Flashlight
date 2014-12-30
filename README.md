@@ -44,9 +44,10 @@ Huge thanks to everyone who's contributed translations:
  - [AlAdler](http://github.com/AlAdler) for Spanish
  - [readingsnail](http://github.com/readingsnail) for Korean
  - [davochka](http://github.com/davochka) for Russian
+ - [dougian](http://github.com/dougian) for Greek
  
 
-If it's not translated to your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
+If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
 
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
@@ -54,7 +55,8 @@ The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIM
 
 The [ZipZap library by Glen Low](https://github.com/pixelglow/zipzap) is used internally.
 
-Licensed under the GPL.
+Licensed under the GPL and MIT licenses (see LICENSE).
 
 **Helping out**
+
 You can help out by [writing a plugin you want](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown), taking a look at [the Github issues](https://github.com/nate-parrott/Flashlight/issues), or sharing the app with friends on Twitter or Facebook.
