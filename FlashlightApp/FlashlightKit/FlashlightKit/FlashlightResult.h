@@ -12,12 +12,12 @@
 @interface FlashlightResult : NSObject
 
 @property (nonatomic) NSDictionary *json;
+@property (nonatomic) NSString *pluginPath;
 
 - (NSString *)title;
 - (BOOL)supportsWebview;
 - (void)configureWebview:(WebView *)webView;
+- (BOOL)linksOpenInBrowser;
 - (BOOL)pressEnter;
-
-- (id)initWithJson:(id)json;
 
 @end

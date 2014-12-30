@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C81f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -18,7 +17,7 @@
                 <outlet property="matchingPlugin" destination="OnB-fZ-ns4" id="SuN-me-WE9"/>
                 <outlet property="pluginInput" destination="ZJ8-0o-PEI" id="LGR-jf-AhX"/>
                 <outlet property="resultTitle" destination="JwT-dt-410" id="QQU-gR-mG8"/>
-                <outlet property="resultWebView" destination="yVE-64-3r8" id="CFP-kv-MEA"/>
+                <outlet property="resultView" destination="G0E-Qn-lAA" id="6k6-ze-XJY"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -738,23 +737,22 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <webView translatesAutoresizingMaskIntoConstraints="NO" id="yVE-64-3r8">
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="G0E-Qn-lAA" customClass="FlashlightResultView">
                                     <rect key="frame" x="108" y="29" width="390" height="375"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="390" id="Coi-tV-hTe"/>
-                                        <constraint firstAttribute="height" constant="375" id="Wad-uu-idO"/>
+                                        <constraint firstAttribute="width" constant="390" id="9I1-Gx-qxI"/>
+                                        <constraint firstAttribute="height" constant="375" id="l6D-Ir-iWF"/>
                                     </constraints>
-                                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO"/>
-                                </webView>
+                                </customView>
                             </subviews>
                         </view>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="G0E-Qn-lAA" secondAttribute="centerX" id="64k-ak-9Nn"/>
                             <constraint firstAttribute="width" constant="602" id="LHI-ik-3sE"/>
                             <constraint firstAttribute="trailing" secondItem="JwT-dt-410" secondAttribute="trailing" constant="16" id="PNn-eB-3DT"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="leading" secondItem="fhf-BP-A4U" secondAttribute="leading" constant="16" id="RMc-Sc-vXi"/>
-                            <constraint firstAttribute="centerX" secondItem="yVE-64-3r8" secondAttribute="centerX" id="XhT-uo-oYI"/>
-                            <constraint firstAttribute="bottom" secondItem="yVE-64-3r8" secondAttribute="bottom" constant="26" id="f8v-C1-9Jc"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="top" secondItem="fhf-BP-A4U" secondAttribute="top" constant="29" id="nr4-jP-bv4"/>
+                            <constraint firstAttribute="centerY" secondItem="G0E-Qn-lAA" secondAttribute="centerY" constant="-17.5" id="sME-qN-qoD"/>
                             <constraint firstAttribute="height" constant="462" id="tQA-4k-1j7"/>
                         </constraints>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -801,7 +799,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Y8y-p1-Ffr">
-                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="378"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="minSize" width="276" height="378"/>

@@ -21,6 +21,10 @@
     return mapped;
 }
 
+- (NSString *)toJson {
+    return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:0 error:nil] encoding:NSUTF8StringEncoding];
+}
+
 - (NSArray *)flatMap:(NSArray*(^)(id obj))mapper {
     NSMutableArray *mapped = [NSMutableArray new];
     for (id obj in self) {
@@ -81,3 +85,13 @@ double PSSmoothLogProb(double logProb) {
 }
 
 @end
+
+@implementation NSDictionary (PS)
+
+- (NSString *)toJson {
+    return [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:self options:0 error:nil] encoding:NSUTF8StringEncoding];
+}
+
+@end
+
+

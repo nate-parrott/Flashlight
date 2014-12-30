@@ -13,6 +13,7 @@
 #import "FlashlightQueryEngine.h"
 #import "PSPluginDispatcher.h"
 #import "FlashlightResult.h"
+#import "FlashlightResultView.h"
 
 @import WebKit;
 
@@ -26,7 +27,7 @@
 @property (nonatomic) IBOutlet NSTextView *errors;
 @property (nonatomic) NSDictionary *errorSections;
 
-@property (weak) IBOutlet WebView *resultWebView;
+@property (weak) IBOutlet FlashlightResultView *resultView;
 @property (weak) IBOutlet NSTextField *resultTitle;
 
 @end
@@ -58,6 +59,7 @@
     
     self.queryEngine.resultsDidChangeBlock = ^{
         weakSelf.resultTitle.stringValue = [weakSelf.queryEngine.results.firstObject json][@"title"] ? : @"None";
+        weakSelf.resultView.result = weakSelf.queryEngine.results.firstObject;
         NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
         if (weakSelf.queryEngine.errorString) {
             d[@"Plugin.py Errors"] = weakSelf.queryEngine.errorString;

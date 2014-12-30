@@ -21,6 +21,8 @@ extern const double PSFreeTextProbability;
 
 - (id)smartIndex:(NSInteger)i; // python-style indexing
 
+- (NSString *)toJson;
+
 @end
 
 double PSLogProb(double prob);
@@ -35,5 +37,11 @@ double PSSmoothLogProb(double logProb);
 @interface NSString (PS)
 
 - (BOOL)startsWith:(NSString *)string;
+
+@end
+
+@interface NSDictionary (PS)
+
+- (NSString *)toJson;
 
 @end
