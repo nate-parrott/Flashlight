@@ -191,7 +191,7 @@
                <div class='control-container'>
                   <div class='control'>
                      {% if browse %}
-                     <a class='install' href='javascript:reveal("{{ plugin.name }}")'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      {% else %}
                      <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      {% endif %}

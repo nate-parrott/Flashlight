@@ -27,139 +27,67 @@
 
 {% block head %}
 
-<style>
-#plugin {
-   background-color: #eee;
-   color: black;
-   padding: 30px;
-}
-#hint {
-   font-weight: 200;
-   font-size: 0.7em;
-}
-#social {
-   margin-left: 0 !important;
-}
-#examples {
-   padding: 0;
-}
-#examples > li {
-   list-style-type: none;
-   margin-top: 8px;
-   margin-bottom: 8px;
-}
-#examples > li:before {
-   content: "“";
-}
-#examples > li:after {
-   content: "”";
-}
-h6 {
-   text-transform: uppercase;
-   font-size: small;
-   font-weight: bold;
-   margin-bottom: 4px;
-}
-#social > *:first-child {
-   padding-left: 0;
-}
-#description {
-   font-size: 1.25em;
-   font-weight: 200;
-}
-#screenshot {
-   max-width: 50%;
-   float: right;
-}
-@media screen and (max-width: 500px) {
-   #screenshot {
-      max-width: 90%;
-      float: none;
-   }
-}
-#downloads {
-   display: inline-block;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   font-size: small;
-   color: #222;
-   vertical-align: bottom;
-   position: relative;
-   top: 2px;
-}
-#icon {
-   height: 1em;
-   position: relative;
-   top: 4px;
-}
-#creator a:link, #creator a:visited {
-   color: #222;
-}
-#plugin h1 {
-    color: #222;
-    margin-top: 0;
-}
-#show {
-   margin-top: 4em;
-}
-#show-button {
-   background-color: #333;
-   padding: 10px;
-   display: inline-block;
-   color: #eee;
-   text-decoration: none;
-   font-weight: bold;
-   text-transform: uppercase;
-   letter-spacing: 2px;
-   font-size: small;
-}
-#reqs-flashlight {
-	font-size: small;
-	margin-top: 0.5em;
-}
-#reqs-flashlight a {
-	color: #222;
-}
-#info {
-   margin-left: 1em;
-   margin-right: 1em;
-   text-align: center;
-}
-#plugin #social {
-	margin-top: 1.5em;
-}
-</style>
+<link rel='stylesheet' href='/static/plugin_page.css' />
+{{ super() }}
+
+{% endblock %}
+
+{% block outside_content %}
+
+<div id='splash'>
+	<div>
+	    <h1>
+	       {% if plugin.model.icon_url %}
+	          <img id='icon' src='{{ plugin.model.icon_url }}'/>
+	 		{% elif localhost %}
+	 			<img id='icon' src='https://storage.googleapis.com/flashlightplugins.appspot.com/dd247777295147bba0e12446281300ee'/>
+	       {% endif %}
+	       {{ plugin.displayName }} <span id='hint'>plugin for Spotlight</span>
+	    </h1>
+	    {% if plugin.model.screenshot_url %}
+	    <p>
+	       <img id='screenshot' src='{{ plugin.model.screenshot_url }}'/>
+	    </p>
+	 	{% elif localhost %}
+	    <p id='screenshot-p'>
+	       <img id='screenshot' src='https://storage.googleapis.com/flashlightplugins.appspot.com/86bccdc7b821467c8b2b8b3118933e52'/>
+	    </p>
+	    {% endif %}
+	    <p id='description'>
+	       {{ plugin.description }}
+		   <span id='creator'>
+		       {% if plugin.creator_name and plugin.creator_url %}
+		       By <a href='{{ plugin.creator_url }}'>{{ plugin.creator_name }}</a>.
+		       {% elif plugin.creator_name %}
+		       By {{ plugin.creator_name }}.
+		       {% elif plugin.creator_url %}
+		       By <a href='{{ plugin.creator_url }}'>{{ plugin.creator_url }}</a>.
+		       {% endif %}
+		   </span>
+	    </p>
+		
+	    <ul id='examples'>
+			<li><h6>Example Searches</h6></li>
+	       {% for example in plugin.examples %}
+	       <li class='example'>{{ example }}</li>
+	       {% endfor %}
+	    </ul>
+		
+	    <div id='show'>
+	       <a id='show-button' href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
+	 		<div id='reqs-flashlight'>
+	 			<a href='/latest_download'>Download Flashlight</a> first to run this plugin inside Spotlight.
+	 		</div>
+	    </div>
+		
+	</div>
+</div>
+
 {% endblock %}
 
 {% block body %}
 
-<div id='plugin'>
-   <h1>
-      {% if plugin.model.icon_url %}
-         <img id='icon' src='{{ plugin.model.icon_url }}'/>
-		{% elif localhost %}
-			<img id='icon' src='https://storage.googleapis.com/flashlightplugins.appspot.com/dd247777295147bba0e12446281300ee'/>
-      {% endif %}
-      {{ plugin.displayName }} <span id='hint'>plugin for Spotlight</span>
-   </h1>
-   {% if plugin.model.screenshot_url %}
-   <p>
-      <img id='screenshot' src='{{ plugin.model.screenshot_url }}'/>
-   </p>
-	{% elif localhost %}
-   <p>
-      <img id='screenshot' src='https://storage.googleapis.com/flashlightplugins.appspot.com/86bccdc7b821467c8b2b8b3118933e52'/>
-   </p>
-   {% endif %}
-   <p id='description'>
-      {{ plugin.description }}
-   </p>
-   <h6>Example Searches</h6>
-   <ul id='examples'>
-      {% for example in plugin.examples %}
-      <li>{{ example }}</li>
-      {% endfor %}
-   </ul>
+<div id='bottom'>
    
    {% if plugin.creator_url or plugin.creator_name %}
    <div id='creator'>
@@ -175,13 +103,6 @@ h6 {
       </p>
    </div>
    {% endif %}
-	
-   <div id='show'>
-      <a id='show-button' href='flashlight-show://{{ plugin.name }}'>Show in Flashlight</a>
-		<div id='reqs-flashlight'>
-			<a href='/latest_download'>Download Flashlight</a> first to run this plugin inside Spotlight.
-		</div>
-   </div>
    
    <div id='social'>
       <div id='downloads'>{{plugin.model.downloads}} downloads</div>
@@ -203,10 +124,10 @@ h6 {
          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </div>
    </div>
+   
+   <p id='info'>
+      <a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.
+   </p>
 </div>
-
-<p id='info'>
-   <a href='/'>Flashlight</a> is an app that lets you install plugins like this, which let you do all sorts of things with OS X's Spotlight search feature. To install "{{ plugin.displayName }}", you'll need to <a href='/latest_download'>download Flashlight</a> first.
-</p>
 
 {% endblock %}

@@ -1,0 +1,133 @@
+#hint {
+   font-weight: 200;
+   font-size: 0.7em;
+}
+#examples {
+   padding: 0;
+}
+#examples h6 {
+	margin: 0;
+}
+#examples > li {
+   list-style-type: none;
+   margin: 4px;
+   display: inline-block;
+}
+#examples > li.example:before {
+   content: "“";
+}
+#examples > li.example:after {
+   content: "”";
+}
+h6 {
+   text-transform: uppercase;
+   font-size: small;
+   font-weight: bold;
+   margin-bottom: 4px;
+}
+#social > *:first-child {
+   padding-left: 0;
+}
+#description {
+   font-size: 1.1em;
+   font-weight: 200;
+}
+#screenshot {
+   max-width: 400px;
+   width: 70%;
+}
+#screenshot-p {
+	margin: 0;
+	margin-bottom: -30px;
+}
+#downloads {
+   display: inline-block;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: small;
+   color: #eee;
+   vertical-align: bottom;
+   position: relative;
+   top: 2px;
+}
+#icon {
+   height: 1em;
+   position: relative;
+   top: 4px;
+}
+#creator {
+	opacity: 0.8;
+}
+#plugin h1 {
+    color: #222;
+    margin-top: 0;
+}
+#show-button {
+   background-color: #eee;
+   padding: 10px;
+   display: inline-block;
+   color: #333;
+   text-decoration: none;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+   font-size: small;
+}
+#reqs-flashlight {
+	font-size: small;
+	margin-top: 1em;
+}
+#reqs-flashlight a {
+	color: #eee;
+}
+#info {
+   margin-left: 1em;
+   margin-right: 1em;
+   text-align: center;
+}
+#social {
+	color: #eee;
+}
+
+
+#splash h2 {
+    font-size: 1.2em;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    font-weight: normal;
+    text-shadow: 0px 0px 5px black;
+}
+body, html, #splash {
+    height: 100%;
+}
+#splash {
+    display: table;
+    width: 100%;
+    background-image: url(/static/images/yosemite-small2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid gray;
+}
+h1 {
+    margin: 0;
+}
+#splash > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px;
+    padding-top: 73px;
+	padding-bottom: 73px;
+}
+#top {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    width: 100%;
+}
+
+#bottom {
+	padding: 1em;
+	text-align: center;
+}
