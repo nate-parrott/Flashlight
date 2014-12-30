@@ -1,5 +1,6 @@
 {
     "name": "largetext",
+    "displayName": "Large Text",
     "description": "Show a snippet of text full-screen",
     "examples": ["large text: P Sherman, 42 Wallaby Way, Sydney", "show 718 123 4567 in large text"],
     "categories": ["Utilities"]

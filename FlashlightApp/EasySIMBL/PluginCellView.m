@@ -20,16 +20,16 @@
 
 - (void)setObjectValue:(id)objectValue {
     [super setObjectValue:objectValue];
-    [self.switchControl setOnWithoutAnimation:[self plugin].installed];
-    [self.switchControl setEnabled:![self plugin].installing];
+    self.removeButton.enabled = ![self plugin].installing;
+    if ([[self plugin] installing]) {
+        [self.loader startAnimation:nil];
+    } else {
+        [self.loader stopAnimation:nil];
+    }
 }
 
-- (IBAction)toggleInstalled:(id)sender {
-    if ([self plugin].installed) {
-        [self.listController uninstallPlugin:[self plugin]];
-    } else {
-        [self.listController installPlugin:[self plugin]];
-    }
+- (IBAction)remove:(id)sender {
+    [self.listController uninstallPlugin:[self plugin]];
 }
 
 @end
