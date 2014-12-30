@@ -245,6 +245,12 @@ class PluginPageHandler(webapp2.RequestHandler):
                                       "localhost": localhost}))
 
 
+def Redirect(url):
+  class Redir(webapp2.RequestHandler):
+    def get(self):
+      self.redirect(url)
+  return Redir
+
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/browse', BrowseHandler),
                                ('/plugin/(.+)', PluginPageHandler),
@@ -256,6 +262,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/log_install', LogInstall),
                                ('/login', Login),
                                ('/latest_download', LatestDownload),
+                               ('/feedback', Redirect("http://flashlight.42pag.es/feedback")),
                                ('/generate_console_key', GenerateConsoleKey),
                                ('/console_upload/(.+)', ConsoleUpload)],
                               debug=True)
