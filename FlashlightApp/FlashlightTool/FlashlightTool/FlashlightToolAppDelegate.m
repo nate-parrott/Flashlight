@@ -17,7 +17,7 @@
 
 @import WebKit;
 
-@interface FlashlightToolAppDelegate () <NSWindowDelegate>
+@interface FlashlightToolAppDelegate () <NSWindowDelegate, NSTextFieldDelegate>
 
 @property (nonatomic) FlashlightQueryEngine *queryEngine;
 
@@ -29,6 +29,8 @@
 
 @property (weak) IBOutlet FlashlightResultView *resultView;
 @property (weak) IBOutlet NSTextField *resultTitle;
+
+@property (nonatomic) NSString *lastQuery;
 
 @end
 
@@ -66,6 +68,7 @@
         } else {
             [d removeObjectForKey:@"Plugin.py Errors"];
         }
+        [d removeObjectForKey:@"Plugin.py run() Errors"];
         weakSelf.errorSections = d;
     };
 }
@@ -75,7 +78,10 @@
 }
 
 - (IBAction)search:(NSSearchField *)sender {
-    [self.queryEngine updateQuery:sender.stringValue];
+    if (![sender.stringValue isEqualToString:self.lastQuery]) {
+        self.lastQuery = sender.stringValue;
+        [self.queryEngine updateQuery:sender.stringValue];
+    }
 }
 
 - (void)setErrorSections:(NSDictionary *)errorSections {
@@ -104,6 +110,16 @@
 
 - (void)windowWillClose:(NSNotification *)notification {
     [[NSApplication sharedApplication] terminate:nil];
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)obj {
+    __weak FlashlightToolAppDelegate *weakSelf = self;
+    [self.resultView.result pressEnter:self.resultView errorCallback:^(NSString *error) {
+        NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
+        [d removeObjectForKey:@"Plugin.py run() Errors"];
+        if (error) d[@"Plugin.py run() Errors"] = error;
+        weakSelf.errorSections = d;
+    }];
 }
 
 @end
