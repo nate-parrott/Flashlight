@@ -1,0 +1,3 @@
+emoji ~emoji(grinn)
+gemoji ~gemoji(grinn)
+:~gemoji(grinn):?

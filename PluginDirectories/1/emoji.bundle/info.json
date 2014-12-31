@@ -1,0 +1,9 @@
+{
+    "name": "emoji",
+    "displayName": "Emoji",
+    "description": "Shows emojicons",
+    "examples": ["emoji grin", "emoji heart", ":rocket:"],
+    "categories": ["Utilities"],
+    "creator_name": "Marc Bachmann",
+    "creator_url": "https://github.com/marcbachmann/flashlight-emoji"
+}
