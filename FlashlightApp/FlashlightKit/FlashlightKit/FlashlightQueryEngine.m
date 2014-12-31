@@ -13,6 +13,8 @@
 #import "NSTask+FlashlightExtensions.h"
 #import "FlashlightResult.h"
 #import "PSHelpers.h"
+#import "PSTaggedText+ToJSON.h"
+#import "PSTaggedText+ToNestedDictionaries.h"
 
 @interface FlashlightQueryEngine ()
 
@@ -35,11 +37,12 @@
             callback(nil);
         } else {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSMutableDictionary *pluginsToLaunchMappedToArgumentsDictionaries = [NSMutableDictionary new];
+                NSMutableDictionary *pluginsToLaunchMappedToParseTrees = [NSMutableDictionary new];
                 // pluginPath -> @{} | NSNull
                 NSString *path = nil;
                 NSDictionary *args = nil;
-                [weakSelf.dispatcher parseCommand:data pluginPath:&path arguments:&args];
+                PSTaggedText *parseTree = nil;
+                [weakSelf.dispatcher parseCommand:data pluginPath:&path arguments:&args parseTree:&parseTree];
                 if (path && args) {
                     if (weakSelf.debugDataChangeBlock) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -48,15 +51,15 @@
                             weakSelf.debugDataChangeBlock();
                         });
                     }
-                    pluginsToLaunchMappedToArgumentsDictionaries[path] = args;
+                    pluginsToLaunchMappedToParseTrees[path] = parseTree;
                 }
                 for (NSString *path in weakSelf.dispatcher.exampleSource.pathsOfPluginsToAlwaysInvoke) {
-                    if (!pluginsToLaunchMappedToArgumentsDictionaries[path]) {
-                        pluginsToLaunchMappedToArgumentsDictionaries[path] = [NSNull null];
+                    if (!pluginsToLaunchMappedToParseTrees[path]) {
+                        pluginsToLaunchMappedToParseTrees[path] = [NSNull null];
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf runPluginsWithArguments:pluginsToLaunchMappedToArgumentsDictionaries ifQueryIsStill:data];
+                    [weakSelf runPluginsWithParseTrees:pluginsToLaunchMappedToParseTrees ifQueryIsStill:data];
                 });
                 callback(nil);
             });
@@ -79,28 +82,26 @@
     [self.parserRunner gotNewData:query];
 }
 
-- (void)runPluginsWithArguments:(NSDictionary *)pathsToArgumentsMap ifQueryIsStill:(NSString *)query {
+- (void)runPluginsWithParseTrees:(NSDictionary *)pluginPathsToParseTreesMap ifQueryIsStill:(NSString *)query {
     __weak FlashlightQueryEngine *weakSelf = self;
     if ([query isEqualToString:self.query]) {
-        for (NSString *pluginPath in pathsToArgumentsMap) {
-            id args = pathsToArgumentsMap[pluginPath];
+        for (NSString *pluginPath in pluginPathsToParseTreesMap) {
+            PSTaggedText *parseTree = pluginPathsToParseTreesMap[pluginPath];
+            if ([parseTree isEqual:[NSNull null]]) parseTree = nil;
             NSTask *task = [[NSTask alloc] init];
             task.currentDirectoryPath = pluginPath;
             task.launchPath = @"/usr/bin/python";
             NSString *builtinModulesPath = [[NSBundle bundleWithIdentifier:@"com.nateparrott.FlashlightKit"] pathForResource:@"BuiltinModules" ofType:@""];
-            NSString *command = @"import sys, json\n"
-            @"input = json.loads(sys.argv[1])\n"
-            @"sys.path.append(input['builtinModulesPath'])\n"
-            @"import plugin\n"
-            @"results = plugin.results(input['args'], input['query'])\n"
-            @"if not results: quit()\n"
-            @"if type(results) != list: results = [results]\n"
-            @"print json.dumps(results)\n";
-            command = [NSString stringWithFormat:command, [@[builtinModulesPath] toJson]];
+            static NSString *command = nil;
+            static dispatch_once_t onceToken;
+            dispatch_once(&onceToken, ^{
+                command = [NSString stringWithContentsOfFile:[[NSBundle bundleWithIdentifier:@"com.nateparrott.FlashlightKit"] pathForResource:@"invoke_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
+            });
             NSDictionary *input = @{
-                                    @"args": args,
+                                    @"args": [parseTree toNestedDictionary] ? : [NSNull null],
                                     @"query": query,
-                                    @"builtinModulesPath": builtinModulesPath
+                                    @"builtinModulesPath": builtinModulesPath,
+                                    @"parseTree": [parseTree toJsonObject] ? : [NSNull null]
                                     };
             task.arguments = @[@"-c", command, input.toJson];
             [weakSelf.tasksInProgress addObject:task];
