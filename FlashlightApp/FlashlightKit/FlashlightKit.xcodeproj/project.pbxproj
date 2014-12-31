@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
+		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
+		5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */; };
+		5F870A5E1A546C0700161E2F /* PSTaggedText+ToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */; };
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
@@ -76,6 +79,9 @@
 
 /* Begin PBXFileReference section */
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
+		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
+		5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToJSON.h"; sourceTree = "<group>"; };
+		5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToJSON.m"; sourceTree = "<group>"; };
 		5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlashlightKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13DF21A4E12DB008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightKit.h; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
 				5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */,
+				5F870A591A5468F700161E2F /* invoke_plugin.py */,
 				5F870A171A52D43600161E2F /* BuiltinModules */,
 				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13DF11A4E12DB008A0FE3 /* Supporting Files */,
@@ -258,6 +265,8 @@
 				5FC13E2D1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m */,
 				5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */,
 				5FC13E2F1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m */,
+				5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */,
+				5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */,
 				5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */,
 				5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */,
 				5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */,
@@ -276,6 +285,7 @@
 				5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */,
 				5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
+				5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */,
 				5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */,
 				5FC13E691A4E2D40008A0FE3 /* FlashlightWebScriptObject.h in Headers */,
 				5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */,
@@ -383,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F870A181A52D43600161E2F /* BuiltinModules in Resources */,
+				5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +433,7 @@
 				5FC13E461A4E12FB008A0FE3 /* PSParsnipSource.m in Sources */,
 				5FC13E561A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m in Sources */,
 				5FC13E5A1A4E12FB008A0FE3 /* PSTaggedText.m in Sources */,
+				5F870A5E1A546C0700161E2F /* PSTaggedText+ToJSON.m in Sources */,
 				5FC13E581A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m in Sources */,
 				5FC13E4A1A4E12FB008A0FE3 /* PSPluginExampleSource.m in Sources */,
 				5FC13E371A4E12FB008A0FE3 /* Parsnip.m in Sources */,

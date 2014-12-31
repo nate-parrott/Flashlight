@@ -10,9 +10,7 @@
  BEHAVIORS TO REPLICATE:
  
  run()
- i18n.py auto-import
  3-arg results() functions
- unicode dictionary args
  @date
  (regex examples?)
  

@@ -87,13 +87,10 @@
 - (void)setResult:(FlashlightResult *)result {
     _result = result;
     
+    self.webView.hidden = ![result supportsWebview];
     if ([result supportsWebview]) {
         [self ensureWebview];
         [self.result configureWebview:self.webView];
-    } else {
-        for (NSView *v in self.subviews) {
-            v.hidden = YES;
-        }
     }
 }
 

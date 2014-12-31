@@ -57,7 +57,7 @@
     [self.sources addObject:source];
 }
 
-- (void)parseCommand:(NSString *)command pluginPath:(NSString **)pluginPath arguments:(NSDictionary **)arguments {
+- (void)parseCommand:(NSString *)command pluginPath:(NSString **)pluginPath arguments:(NSDictionary **)arguments parseTree:(PSTaggedText **)tree {
     Parsnip *mainParsnip;
     NSDictionary *pluginPathsForIntents;
     @synchronized(self) {
@@ -68,10 +68,12 @@
     if (result) {
         *pluginPath = pluginPathsForIntents[result.node.tag];
         *arguments = [[PSTaggedText withNode:result.node] toNestedDictionary];
+        *tree = [PSTaggedText withNode:result.node];
     } else {
         // no match:
         *pluginPath = nil;
         *arguments = nil;
+        *tree = nil;
     }
 }
 

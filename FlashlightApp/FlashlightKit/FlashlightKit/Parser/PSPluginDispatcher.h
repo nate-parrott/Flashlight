@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSPluginExampleSource;
+@class PSPluginExampleSource, PSTaggedText;
 
 @interface PSPluginDispatcher : NSObject
 
 // can be called on a background thread
-- (void)parseCommand:(NSString *)command pluginPath:(NSString **)pluginPath arguments:(NSDictionary **)arguments;
+- (void)parseCommand:(NSString *)command pluginPath:(NSString **)pluginPath arguments:(NSDictionary **)arguments parseTree:(PSTaggedText **)tree;
 
 - (PSPluginExampleSource *)exampleSource;
 
