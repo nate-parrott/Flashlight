@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SPOpenAPIQuery.h"
 #import "MARTNSObject.h"
 #import "RTMethod.h"
 #import "SPQuery.h"

@@ -9,18 +9,18 @@
 #import "_FlashlightPluginEngine.h"
 #import <AppKit/AppKit.h>
 #import "SPResultViewController.h"
-#import "_SS_PluginRunner.h"
 #import "SPOpenAPIResult.h"
 #import "SPResult.h"
-#import "SPOpenAPIQuery.h"
 #import "SPGroupHeadingResult.h"
 #import "SPSearchPanel.h"
 #import "SPAppDelegate.h"
+#import <FlashlightKit/FlashlightKit.h>
 
 @interface _FlashlightPluginEngine ()
 
 @property (nonatomic) NSArray *results;
 @property (nonatomic) NSString *mostRecentQueryWithResults;
+@property (nonatomic) FlashlightQueryEngine *queryEngine;
 
 @end
 
@@ -33,6 +33,28 @@
         shared = [_FlashlightPluginEngine new];
     });
     return shared;
+}
+
+- (id)init {
+    self = [super init];
+    
+    self.queryEngine = [FlashlightQueryEngine new];
+    __weak _FlashlightPluginEngine *weakSelf = self;
+    self.queryEngine.resultsDidChangeBlock = ^(NSString *query, NSArray *results){
+        NSMutableArray *resultItems = [NSMutableArray new];
+        for (FlashlightResult *result in weakSelf.queryEngine.results) {
+            id spResult = [[__SS_SPOpenAPIResultClass() alloc] initWithQuery:query result:result];
+            [resultItems addObject:spResult];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([query isEqualToString:weakSelf.query]) {
+                weakSelf.results = resultItems;
+                weakSelf.mostRecentQueryWithResults = query;
+                [weakSelf reloadResultsViews];
+            }
+        });
+    };
+    return self;
 }
 
 - (void)setQuery:(NSString *)query {
@@ -48,27 +70,7 @@
         return;
     }
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSDictionary *resultsByPlugin = [_SS_PluginRunner resultDictionariesFromPluginsForQuery:query];
-        NSMutableArray *resultItems = [NSMutableArray new];
-        for (NSString *pluginName in resultsByPlugin) {
-            for (NSDictionary *resultInfo in resultsByPlugin[pluginName]) {
-                id result = [[__SS_SPOpenAPIResultClass() alloc] initWithQuery:query json:resultInfo sourcePlugin:pluginName];
-                if (result) {
-                    [resultItems addObject:result];
-                }
-            }
-        }
-        BOOL sortAscending = !_Flashlight_Is_10_10_2_Spotlight();
-        [resultItems sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"rank" ascending:sortAscending]]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if ([query isEqualToString:self.query]) {
-                self.results = resultItems;
-                self.mostRecentQueryWithResults = query;
-                [self reloadResultsViews];
-            }
-        });
-    });
+    [self.queryEngine updateQuery:query];
 }
 
 - (void)reloadResultsViews {

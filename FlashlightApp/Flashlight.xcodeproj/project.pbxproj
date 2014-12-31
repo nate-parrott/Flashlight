@@ -39,7 +39,6 @@
 		5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326F81A0933E800CE241E /* ZZStandardDecryptInputStream.mm */; };
 		5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */; };
 		5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63270D1A0939A900CE241E /* libz.dylib */; };
-		5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */ = {isa = PBXBuildFile; fileRef = 5F97AD411A0ACA0100838C7C /* NaturalCommands */; };
 		5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */; };
 		5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */; };
 		5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */; };
@@ -496,7 +495,6 @@
 				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
 				5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */,
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
-				5F97AD421A0ACA0100838C7C /* NaturalCommands in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,

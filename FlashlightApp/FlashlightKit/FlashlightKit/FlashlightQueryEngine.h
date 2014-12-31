@@ -16,14 +16,16 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "PSHelpers.h"
+#import <FlashlightKit/PSHelpers.h>
 @class PSPluginDispatcher;
+
+typedef void (^PSResultsChangedCallback)(NSString *query, NSArray *results);
 
 @interface FlashlightQueryEngine : NSObject
 
 - (void)updateQuery:(NSString *)query;
 @property (nonatomic, readonly) NSArray *results;
-@property (nonatomic, copy) PSVoidBlock resultsDidChangeBlock;
+@property (nonatomic, copy) PSResultsChangedCallback resultsDidChangeBlock;
 
 // for debugging:
 @property (nonatomic) NSString *matchedPlugin;

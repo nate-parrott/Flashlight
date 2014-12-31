@@ -9,11 +9,9 @@
 #import "_Flashlight_Bootstrap.h"
 #import "RSSwizzle.h"
 #import "CTBlockDescription.h"
-#import "SPOpenAPIQuery.h"
 #import "SPSpotQuery.h"
 #import "NSObject+LogProperties.h"
 #import "SPParsecSimpleResult.h"
-#import "_SS_MetadataResponseDelayer.h"
 #import "_FlashlightPluginEngine.h"
 
 BOOL _Flashlight_Is_10_10_2_Spotlight() {
@@ -25,11 +23,7 @@ BOOL _Flashlight_Is_10_10_2_Spotlight() {
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
-    if (__SS_SPOpenAPIQueryClass()) {
-        NSLog(@"Hello from Flashlight!");
-    } else {
-        NSLog(@"Failed to initialize Flashlight");
-    }
+    NSLog(@"Hello from Flashlight!");
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();

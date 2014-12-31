@@ -15,54 +15,54 @@
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
-		5FC13E341A4E12FB008A0FE3 /* NSString+PSTokenize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0B1A4E12FB008A0FE3 /* NSString+PSTokenize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E341A4E12FB008A0FE3 /* NSString+PSTokenize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0B1A4E12FB008A0FE3 /* NSString+PSTokenize.h */; };
 		5FC13E351A4E12FB008A0FE3 /* NSString+PSTokenize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E0C1A4E12FB008A0FE3 /* NSString+PSTokenize.m */; };
-		5FC13E361A4E12FB008A0FE3 /* Parsnip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0D1A4E12FB008A0FE3 /* Parsnip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E361A4E12FB008A0FE3 /* Parsnip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0D1A4E12FB008A0FE3 /* Parsnip.h */; };
 		5FC13E371A4E12FB008A0FE3 /* Parsnip.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E0E1A4E12FB008A0FE3 /* Parsnip.m */; };
-		5FC13E381A4E12FB008A0FE3 /* PSBackgroundProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0F1A4E12FB008A0FE3 /* PSBackgroundProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E381A4E12FB008A0FE3 /* PSBackgroundProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0F1A4E12FB008A0FE3 /* PSBackgroundProcessor.h */; };
 		5FC13E391A4E12FB008A0FE3 /* PSBackgroundProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E101A4E12FB008A0FE3 /* PSBackgroundProcessor.m */; };
-		5FC13E3A1A4E12FB008A0FE3 /* PSEndNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E111A4E12FB008A0FE3 /* PSEndNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E3A1A4E12FB008A0FE3 /* PSEndNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E111A4E12FB008A0FE3 /* PSEndNode.h */; };
 		5FC13E3B1A4E12FB008A0FE3 /* PSEndNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E121A4E12FB008A0FE3 /* PSEndNode.m */; };
 		5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E131A4E12FB008A0FE3 /* PSHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13E3D1A4E12FB008A0FE3 /* PSHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E141A4E12FB008A0FE3 /* PSHelpers.m */; };
-		5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E151A4E12FB008A0FE3 /* PSMerging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E151A4E12FB008A0FE3 /* PSMerging.h */; };
 		5FC13E3F1A4E12FB008A0FE3 /* PSMerging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E161A4E12FB008A0FE3 /* PSMerging.m */; };
-		5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E171A4E12FB008A0FE3 /* PSNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E181A4E12FB008A0FE3 /* PSNonterminalNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E171A4E12FB008A0FE3 /* PSNode.h */; };
+		5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E181A4E12FB008A0FE3 /* PSNonterminalNode.h */; };
 		5FC13E421A4E12FB008A0FE3 /* PSNonterminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E191A4E12FB008A0FE3 /* PSNonterminalNode.m */; };
-		5FC13E431A4E12FB008A0FE3 /* PSParseCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1A1A4E12FB008A0FE3 /* PSParseCandidate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E431A4E12FB008A0FE3 /* PSParseCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1A1A4E12FB008A0FE3 /* PSParseCandidate.h */; };
 		5FC13E441A4E12FB008A0FE3 /* PSParseCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1B1A4E12FB008A0FE3 /* PSParseCandidate.m */; };
-		5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1C1A4E12FB008A0FE3 /* PSParsnipSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1C1A4E12FB008A0FE3 /* PSParsnipSource.h */; };
 		5FC13E461A4E12FB008A0FE3 /* PSParsnipSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1D1A4E12FB008A0FE3 /* PSParsnipSource.m */; };
-		5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1E1A4E12FB008A0FE3 /* PSPluginDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1E1A4E12FB008A0FE3 /* PSPluginDispatcher.h */; };
 		5FC13E481A4E12FB008A0FE3 /* PSPluginDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1F1A4E12FB008A0FE3 /* PSPluginDispatcher.m */; };
-		5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */; };
 		5FC13E4A1A4E12FB008A0FE3 /* PSPluginExampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E211A4E12FB008A0FE3 /* PSPluginExampleSource.m */; };
-		5FC13E4B1A4E12FB008A0FE3 /* PSProbabilityCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E4B1A4E12FB008A0FE3 /* PSProbabilityCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */; };
 		5FC13E4C1A4E12FB008A0FE3 /* PSProbabilityCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E231A4E12FB008A0FE3 /* PSProbabilityCounter.m */; };
-		5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */; };
 		5FC13E4E1A4E12FB008A0FE3 /* PSSpecialNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E251A4E12FB008A0FE3 /* PSSpecialNode.m */; };
-		5FC13E4F1A4E12FB008A0FE3 /* PSStartNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E261A4E12FB008A0FE3 /* PSStartNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E4F1A4E12FB008A0FE3 /* PSStartNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E261A4E12FB008A0FE3 /* PSStartNode.h */; };
 		5FC13E501A4E12FB008A0FE3 /* PSStartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E271A4E12FB008A0FE3 /* PSStartNode.m */; };
-		5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E281A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E281A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h */; };
 		5FC13E521A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E291A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m */; };
-		5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2A1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2A1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h */; };
 		5FC13E541A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2B1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m */; };
-		5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2C1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2C1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h */; };
 		5FC13E561A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2D1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m */; };
-		5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */; };
 		5FC13E581A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2F1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m */; };
-		5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */; };
 		5FC13E5A1A4E12FB008A0FE3 /* PSTaggedText.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */; };
-		5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */; };
 		5FC13E5C1A4E12FB008A0FE3 /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */; };
-		5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */; };
+		5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */; };
-		5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */; };
+		5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13E661A4E1722008A0FE3 /* FlashlightResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */; };
 		5FC13E691A4E2D40008A0FE3 /* FlashlightWebScriptObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */; };
 		5FC13E6A1A4E2D40008A0FE3 /* FlashlightWebScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */; };
-		5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */; };
+		5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */; };
 		5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */; };
 		5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */; };
@@ -286,22 +286,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */,
-				5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
+				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
+				5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */,
+				5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */,
 				5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */,
-				5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */,
 				5FC13E691A4E2D40008A0FE3 /* FlashlightWebScriptObject.h in Headers */,
+				5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */,
+				5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */,
+				5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */,
 				5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */,
 				5FC13E4B1A4E12FB008A0FE3 /* PSProbabilityCounter.h in Headers */,
 				5FC13E3A1A4E12FB008A0FE3 /* PSEndNode.h in Headers */,
 				5FC13E431A4E12FB008A0FE3 /* PSParseCandidate.h in Headers */,
 				5FC13E381A4E12FB008A0FE3 /* PSBackgroundProcessor.h in Headers */,
 				5FC13E361A4E12FB008A0FE3 /* Parsnip.h in Headers */,
-				5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */,
 				5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */,
-				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
 				5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */,
-				5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */,
 				5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */,
 				5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */,
 				5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */,
@@ -310,7 +311,6 @@
 				5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */,
 				5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */,
 				5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */,
-				5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */,
 				5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */,
 				5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */,
 			);
