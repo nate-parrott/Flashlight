@@ -10,7 +10,6 @@
  BEHAVIORS TO REPLICATE:
  
  run()
- 3-arg results() functions
  @date
  (regex examples?)
  
@@ -32,5 +31,8 @@
 @property (nonatomic, copy) PSVoidBlock debugDataChangeBlock;
 - (PSPluginDispatcher *)dispatcher;
 @property (nonatomic) NSString *errorString;
+
++ (NSString *)builtinModulesPath;
++ (NSString *)pythonPath;
 
 @end

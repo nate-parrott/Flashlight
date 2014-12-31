@@ -12,5 +12,6 @@
 @interface FlashlightResultView : NSView
 
 @property (nonatomic) FlashlightResult *result;
+- (id)resultOfOutputFunction;
 
 @end

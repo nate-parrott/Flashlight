@@ -7,6 +7,14 @@
 //
 
 #import "FlashlightResult.h"
+#import "NSTask+FlashlightExtensions.h"
+#import "PSHelpers.h"
+#import "FlashlightResultView.h"
+#import "FlashlightQueryEngine.h"
+
+@interface FlashlightResult ()
+
+@end
 
 @implementation FlashlightResult
 
@@ -22,6 +30,10 @@
     return [self.json[@"webview_links_open_in_browser"] boolValue];
 }
 
+- (BOOL)canBeTopHit {
+    return ![self.json[@"dont_force_top_hit"] boolValue];
+}
+
 - (void)configureWebview:(WebView *)webView {
     NSString *pluginPath = [self.pluginPath stringByAppendingPathComponent:@"index.html"];
     [webView.mainFrame loadHTMLString:self.json[@"html"] baseURL:[NSURL fileURLWithPath:pluginPath]];
@@ -31,8 +43,37 @@
     webView.drawsBackground = ![self.json[@"webview_transparent_background"] boolValue];
 }
 
-- (BOOL)pressEnter {
-    return NO; // TODO
+- (BOOL)pressEnter:(FlashlightResultView *)resultView errorCallback:(void(^)(NSString *error))errorCallback {
+    NSMutableArray *runArgs = [self.json[@"run_args"] mutableCopy];
+    if (runArgs) {
+        if ([self.json[@"pass_result_of_output_function_as_first_run_arg"] boolValue]) {
+            [runArgs insertObject:[resultView resultOfOutputFunction] atIndex:0];
+        }
+        
+        NSTask* task = [NSTask new];
+        task.launchPath = [FlashlightQueryEngine pythonPath];
+        task.currentDirectoryPath = self.pluginPath;
+        static NSString *command = nil;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            command = [NSString stringWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
+        });
+        NSDictionary *input = @{
+                                @"runArgs": runArgs,
+                                @"builtinModulesPath": [FlashlightQueryEngine builtinModulesPath]
+                                };
+        task.arguments = @[@"-c", command, input.toJson];
+        [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
+            NSString *error = nil;
+            if (stderrData) {
+                error = [[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding];
+            }
+            errorCallback(error);
+        }];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end

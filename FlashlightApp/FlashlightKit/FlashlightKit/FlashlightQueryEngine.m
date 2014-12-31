@@ -90,17 +90,16 @@
             if ([parseTree isEqual:[NSNull null]]) parseTree = nil;
             NSTask *task = [[NSTask alloc] init];
             task.currentDirectoryPath = pluginPath;
-            task.launchPath = @"/usr/bin/python";
-            NSString *builtinModulesPath = [[NSBundle bundleWithIdentifier:@"com.nateparrott.FlashlightKit"] pathForResource:@"BuiltinModules" ofType:@""];
+            task.launchPath = [[self class] pythonPath];
             static NSString *command = nil;
             static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
-                command = [NSString stringWithContentsOfFile:[[NSBundle bundleWithIdentifier:@"com.nateparrott.FlashlightKit"] pathForResource:@"invoke_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
+                command = [NSString stringWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
             });
             NSDictionary *input = @{
                                     @"args": [parseTree toNestedDictionary] ? : [NSNull null],
                                     @"query": query,
-                                    @"builtinModulesPath": builtinModulesPath,
+                                    @"builtinModulesPath": [[self class] builtinModulesPath],
                                     @"parseTree": [parseTree toJsonObject] ? : [NSNull null]
                                     };
             task.arguments = @[@"-c", command, input.toJson];
@@ -129,7 +128,7 @@
                         }];
                         dispatch_async(dispatch_get_main_queue(), ^{
                             if ([weakSelf.query isEqualToString:query]) {
-                                weakSelf.results = [weakSelf.results arrayByAddingObjectsFromArray:resultsObjs];
+                                weakSelf.results = [[weakSelf.results arrayByAddingObjectsFromArray:resultsObjs] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"canBeTopHit" ascending:NO]]];
                                 weakSelf.resultsDidChangeBlock();
                             }
                         });
@@ -145,6 +144,14 @@
         [task safeTerminate];
     }
     [self.tasksInProgress removeAllObjects];
+}
+
++ (NSString *)pythonPath {
+    return @"/usr/bin/python";
+}
+
++ (NSString *)builtinModulesPath {
+    return [[NSBundle bundleForClass:[self class]] pathForResource:@"BuiltinModules" ofType:@""];
 }
 
 @end

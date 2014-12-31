@@ -689,6 +689,7 @@
                         </searchFieldCell>
                         <connections>
                             <action selector="search:" target="Voe-Tx-rLC" id="qMQ-Uc-l8b"/>
+                            <outlet property="delegate" destination="Voe-Tx-rLC" id="zc0-FT-Bf1"/>
                         </connections>
                     </searchField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N68-ww-wMf">
