@@ -18,4 +18,6 @@ FOUNDATION_EXPORT const unsigned char FlashlightKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <FlashlightKit/PublicHeader.h>
 
 
-#import "PSPluginDispatcher.h"
+#import <FlashlightKit/FlashlightQueryEngine.h>
+#import <FlashlightKit/FlashlightResult.h>
+#import <FlashlightKit/FlashlightResultView.h>

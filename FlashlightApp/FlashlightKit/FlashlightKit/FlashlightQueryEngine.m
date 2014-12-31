@@ -129,7 +129,7 @@
                         dispatch_async(dispatch_get_main_queue(), ^{
                             if ([weakSelf.query isEqualToString:query]) {
                                 weakSelf.results = [[weakSelf.results arrayByAddingObjectsFromArray:resultsObjs] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"canBeTopHit" ascending:NO]]];
-                                weakSelf.resultsDidChangeBlock();
+                                weakSelf.resultsDidChangeBlock(query, weakSelf.results);
                             }
                         });
                     }
