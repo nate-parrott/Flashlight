@@ -28,7 +28,7 @@
   <body>
     <script>
       request = new XMLHttpRequest();
-      request.open('GET', 'http://ucdsearch.com/characters/%query%', true);
+      request.open('GET', 'http://ucdsearch.com/%type%/%query%', true);
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
