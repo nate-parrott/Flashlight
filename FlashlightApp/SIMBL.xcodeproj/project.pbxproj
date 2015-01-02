@@ -20,6 +20,7 @@
 		6CF6D4CE159DD16000916EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4B3159DD14100916EA5 /* Cocoa.framework */; };
 		6CF6D4CF159DD16600916EA5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4B3159DD14100916EA5 /* Cocoa.framework */; };
 		6CF6D4D3159DD18600916EA5 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */; };
+		C737078D1A3874CB0081CBDE /* SpotlightFinder.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = C737078C1A3874CB0081CBDE /* SpotlightFinder.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E0C2C2FE104F376500553034 /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
 		E0C2C2FF104F376600553034 /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789609B3031900F50FE7 /* SIMBL.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,13 @@
 			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = SIMBL;
 		};
+		C737078B1A3874CB0081CBDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C73707801A3874250081CBDE;
+			remoteInfo = SpotlightFinder;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +63,7 @@
 			dstPath = SIMBLPlugins;
 			dstSubfolderSpec = 7;
 			files = (
+				C737078D1A3874CB0081CBDE /* SpotlightFinder.bundle in CopyFiles */,
 				5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */,
+				C737078C1A3874CB0081CBDE /* SpotlightFinder.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +300,13 @@
 			fileType = wrapper.cfbundle;
 			path = SpotlightSIMBL.bundle;
 			remoteRef = 5F86D4A61A07E48800D4A777 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C737078C1A3874CB0081CBDE /* SpotlightFinder.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SpotlightFinder.bundle;
+			remoteRef = C737078B1A3874CB0081CBDE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

@@ -27,6 +27,7 @@
 		5F97AD461A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F97AD451A0B0A2E00838C7C /* NSTask+_FlashlightExtensions.m */; };
 		5FB199031A105BD10048DC46 /* _SS_InlineWebViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */; };
 		5FC65E1B1A298BE6006187EB /* _SS_WebScriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC65E1A1A298BE6006187EB /* _SS_WebScriptObject.m */; };
+		C73707891A3874810081CBDE /* SPOTFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = C73707881A3874810081CBDE /* SPOTFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -260,10 +261,21 @@
 		5FB199021A105BD10048DC46 /* _SS_InlineWebViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_InlineWebViewContainer.m; sourceTree = "<group>"; };
 		5FC65E191A298BE6006187EB /* _SS_WebScriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _SS_WebScriptObject.h; sourceTree = "<group>"; };
 		5FC65E1A1A298BE6006187EB /* _SS_WebScriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _SS_WebScriptObject.m; sourceTree = "<group>"; };
+		C73707801A3874250081CBDE /* SpotlightFinder.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotlightFinder.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		C73707831A3874250081CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C73707871A3874810081CBDE /* SPOTFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOTFinder.h; sourceTree = "<group>"; };
+		C73707881A3874810081CBDE /* SPOTFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOTFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5F5B173E1A05757400809207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C737077D1A3874250081CBDE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5B17431A05757500809207 /* SpotlightSIMBL */,
+				C73707811A3874250081CBDE /* SpotlightFinder */,
 				5F5B17421A05757500809207 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -285,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */,
+				C73707801A3874250081CBDE /* SpotlightFinder.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,6 +579,24 @@
 			name = CTObjectiveCRuntimeAdditions;
 			sourceTree = "<group>";
 		};
+		C73707811A3874250081CBDE /* SpotlightFinder */ = {
+			isa = PBXGroup;
+			children = (
+				C73707871A3874810081CBDE /* SPOTFinder.h */,
+				C73707881A3874810081CBDE /* SPOTFinder.m */,
+				C73707821A3874250081CBDE /* Supporting Files */,
+			);
+			path = SpotlightFinder;
+			sourceTree = "<group>";
+		};
+		C73707821A3874250081CBDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C73707831A3874250081CBDE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -585,6 +617,23 @@
 			productReference = 5F5B17411A05757500809207 /* SpotlightSIMBL.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		C737077F1A3874250081CBDE /* SpotlightFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C73707861A3874250081CBDE /* Build configuration list for PBXNativeTarget "SpotlightFinder" */;
+			buildPhases = (
+				C737077C1A3874250081CBDE /* Sources */,
+				C737077D1A3874250081CBDE /* Frameworks */,
+				C737077E1A3874250081CBDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpotlightFinder;
+			productName = SpotlightFinder;
+			productReference = C73707801A3874250081CBDE /* SpotlightFinder.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -596,6 +645,9 @@
 				TargetAttributes = {
 					5F5B17401A05757400809207 = {
 						CreatedOnToolsVersion = 6.1;
+					};
+					C737077F1A3874250081CBDE = {
+						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
@@ -612,6 +664,7 @@
 			projectRoot = "";
 			targets = (
 				5F5B17401A05757400809207 /* SpotlightSIMBL */,
+				C737077F1A3874250081CBDE /* SpotlightFinder */,
 			);
 		};
 /* End PBXProject section */
@@ -622,6 +675,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C737077E1A3874250081CBDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +711,14 @@
 				5F5B18191A05821700809207 /* RSSwizzle.m in Sources */,
 				5F10F4B81A3288DC00D0F51D /* _SS_MetadataResponseDelayer.m in Sources */,
 				5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C737077C1A3874250081CBDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C73707891A3874810081CBDE /* SPOTFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +829,34 @@
 			};
 			name = Release;
 		};
+		C73707841A3874250081CBDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SpotlightFinder/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		C73707851A3874250081CBDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpotlightFinder/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -781,6 +877,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C73707861A3874250081CBDE /* Build configuration list for PBXNativeTarget "SpotlightFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C73707841A3874250081CBDE /* Debug */,
+				C73707851A3874250081CBDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

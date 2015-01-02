@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Flashlight.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C737077F1A3874250081CBDE"
+               BuildableName = "SpotlightFinder.bundle"
+               BlueprintName = "SpotlightFinder"
+               ReferencedContainer = "container:SpotlightSIMBL/SpotlightSIMBL.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
