@@ -14,6 +14,7 @@
             <enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.4/Flashlight.zip" sparkle:version="27" sparkle:shortVersionString="0.95.4" type="application/octet-stream" sparkle:dsaSignature="MC0CFGdj7QWagWvCmv4a6qt5wTT5EK0zAhUAta6KpCColKVla5LlbezeVak6goY=" />
             <sparkle:minimumSystemVersion>10.10</sparkle:minimumSystemVersion>
         </item>
+        <item>
             <title>Version 0.95.3</title>
             <sparkle:releaseNotesLink>
                 http://flashlightupdates.42pag.es/0.95.3
