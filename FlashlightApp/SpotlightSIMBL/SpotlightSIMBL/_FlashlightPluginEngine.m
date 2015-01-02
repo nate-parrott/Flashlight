@@ -103,7 +103,9 @@
         if ([item isKindOfClass:NSClassFromString(@"SPOpenAPIResult")]) {
             // do nothing
         } else if ([item isGroupHeading]) {
-            if (topHitHeaders.count == 0) {
+            if ([[item displayName] isEqualToString:@"FLASHLIGHT"]) {
+                // do nothing
+            } else if (topHitHeaders.count == 0) {
                 // this is the top-hit header:
                 lastHeaderWasTopHit = YES;
                 [topHitHeaders addObject:item];

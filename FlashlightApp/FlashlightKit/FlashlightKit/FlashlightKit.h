@@ -21,3 +21,5 @@ FOUNDATION_EXPORT const unsigned char FlashlightKitVersionString[];
 #import <FlashlightKit/FlashlightQueryEngine.h>
 #import <FlashlightKit/FlashlightResult.h>
 #import <FlashlightKit/FlashlightResultView.h>
+#import <FlashlightKit/PSPluginExampleSource.h>
+#import <FlashlightKit/PSPluginDispatcher.h>
