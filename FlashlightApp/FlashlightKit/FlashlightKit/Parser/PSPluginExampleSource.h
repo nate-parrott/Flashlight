@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Nate Parrott. All rights reserved.
 //
 
-#import "PSParsnipSource.h"
-#import "PSHelpers.h"
+#import <FlashlightKit/PSParsnipSource.h>
+#import <FlashlightKit/PSHelpers.h>
 
 extern NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey;
 

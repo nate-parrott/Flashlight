@@ -50,6 +50,7 @@
             self.latestResult = result;
             if (self.needsWorkAfterwards) {
                 workNowOnData = self.latestData;
+                self.needsWorkAfterwards = NO;
             } else {
                 self.workInProgress = NO;
             }

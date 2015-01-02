@@ -7,13 +7,7 @@
 //
 
 #import "FlashlightToolAppDelegate.h"
-#import "PSBackgroundProcessor.h"
-#import "PSHelpers.h"
-#import "PSPluginExampleSource.h"
-#import "FlashlightQueryEngine.h"
-#import "PSPluginDispatcher.h"
-#import "FlashlightResult.h"
-#import "FlashlightResultView.h"
+#import <FlashlightKit/FlashlightKit.h>
 
 @import WebKit;
 
@@ -59,7 +53,7 @@
     };
     self.queryEngine.debugDataChangeBlock();
     
-    self.queryEngine.resultsDidChangeBlock = ^{
+    self.queryEngine.resultsDidChangeBlock = ^(NSString *query, NSArray *results){
         weakSelf.resultTitle.stringValue = [weakSelf.queryEngine.results.firstObject json][@"title"] ? : @"None";
         weakSelf.resultView.result = weakSelf.queryEngine.results.firstObject;
         NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
