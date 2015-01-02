@@ -99,7 +99,7 @@
 "212.title" = "발음";
 
 /* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "213"; */
-"213.title" = "이전 검색i";
+"213.title" = "이전 검색";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */
 "215.title" = "다시돌리기";
@@ -210,10 +210,10 @@
 "KSp-5B-nrs.title" = "닫기";
 
 /* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
-"NO4-GD-LyW.title" = "피드백 나가기";
+"NO4-GD-LyW.title" = "피드백";
 
 /* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
-"P0e-Mj-nLE.title" = "Flashlight Github에 기여";
+"P0e-Mj-nLE.title" = "Github에 기여";
 
 /* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
 "R1V-Ae-nee.title" = "다시 해보세요";
