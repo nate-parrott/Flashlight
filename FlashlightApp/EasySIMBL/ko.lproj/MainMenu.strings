@@ -210,10 +210,10 @@
 "KSp-5B-nrs.title" = "닫기";
 
 /* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
-"NO4-GD-LyW.title" = "피드백";
+"NO4-GD-LyW.title" = "피드백 보내기";
 
 /* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
-"P0e-Mj-nLE.title" = "Github에 기여";
+"P0e-Mj-nLE.title" = "Github에 기여하기";
 
 /* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
 "R1V-Ae-nee.title" = "다시 해보세요";
@@ -255,4 +255,4 @@
 "wJP-7d-WaF.title" = "파일";
 
 /* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
-"xYz-ja-uoP.title" = "Python API...";
+"xYz-ja-uoP.title" = "파이썬 API...";
