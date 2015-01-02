@@ -103,7 +103,9 @@
                                     @"parseTree": [parseTree toJsonObject] ? : [NSNull null]
                                     };
             task.arguments = @[@"-c", command, input.toJson];
-            [weakSelf.tasksInProgress addObject:task];
+            @synchronized(weakSelf.tasksInProgress) {
+                [weakSelf.tasksInProgress addObject:task];
+            }
             [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
                 // only act on the result data if we're still part of the tasksInProgress
                 if ([weakSelf.tasksInProgress containsObject:task]) {
@@ -140,10 +142,12 @@
 }
 
 - (void)cancelAllTasks {
-    for (NSTask *task in self.tasksInProgress) {
-        [task safeTerminate];
+    @synchronized(self.tasksInProgress) {
+        for (NSTask *task in self.tasksInProgress) {
+            [task safeTerminate];
+        }
+        [self.tasksInProgress removeAllObjects];
     }
-    [self.tasksInProgress removeAllObjects];
 }
 
 + (NSString *)pythonPath {
