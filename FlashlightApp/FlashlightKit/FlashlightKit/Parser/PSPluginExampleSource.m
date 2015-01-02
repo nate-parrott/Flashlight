@@ -111,6 +111,9 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
                               @"this is gibberish 98rhgpeogierg",
                               @"rhger rehgoerh grghegoi?",
                               @"what righei gheriogjerigp eeroguhegio",
+                              @"a the it",
+                              @"where who ?",
+                              @"the : to",
                               @""
                               ];
     NSInteger i = 0;

@@ -73,7 +73,6 @@
     // TODO: make this better
     if ([self isRunning]) {
         [self terminate];
-        self.terminationHandler(self);
     }
 }
 
