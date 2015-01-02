@@ -444,6 +444,23 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-emoji",
+            "description": "Search and copy emoji.",
+            "displayName": "Emoji",
+            "examples": [
+                "emoji grin",
+                "heart emoji",
+                ":rocket:"
+            ],
+            "name": "emoji",
+            "zip_url": "emoji.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Developer"
             ],
