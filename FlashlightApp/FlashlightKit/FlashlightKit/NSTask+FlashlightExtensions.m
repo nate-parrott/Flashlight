@@ -8,16 +8,52 @@
 
 #import "NSTask+FlashlightExtensions.h"
 
+@interface FlashlightFileReader : NSObject
+
+@property (nonatomic) NSFileHandle *fileHandle;
+@property (nonatomic) NSMutableData *data;
+
+@end
+
+@implementation FlashlightFileReader
+
+- (id)initWithFileHandle:(NSFileHandle *)handle {
+    self = [super init];
+    self.fileHandle = handle;
+    self.data = [NSMutableData new];
+    __weak FlashlightFileReader *weakSelf = self;
+    self.fileHandle.readabilityHandler = ^(NSFileHandle *_) {
+        [weakSelf.data appendData:weakSelf.fileHandle.availableData];
+    };
+    return self;
+}
+
+- (NSData *)allData {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self.data appendData:[self.fileHandle readDataToEndOfFile]];
+        self.fileHandle.readabilityHandler = nil;
+    });
+    return self.data;
+}
+
+@end
+
+
+
 @implementation NSTask (FlashlightExtensions)
 
 - (void)launchWithTimeout:(NSTimeInterval)timeout callback:(FlashlightNSTaskCallback)callback {
     NSPipe *errorPipe = [NSPipe pipe];
     self.standardError = errorPipe;
+    FlashlightFileReader *errorReader = [[FlashlightFileReader alloc] initWithFileHandle:errorPipe.fileHandleForReading];
+    
     NSPipe *stdoutPipe = [NSPipe pipe];
     self.standardOutput = stdoutPipe;
+    FlashlightFileReader *outputReader = [[FlashlightFileReader alloc] initWithFileHandle:stdoutPipe.fileHandleForReading];
+    
     void (^onDone)() = ^{
-        NSData *errorData = [[errorPipe fileHandleForReading] availableData];
-        NSData *data = [[stdoutPipe fileHandleForReading] readDataToEndOfFile];
+        NSData *errorData = [errorReader allData];
+        NSData *data = [outputReader allData];
         callback(data, errorData);
     };
     
@@ -37,6 +73,7 @@
     // TODO: make this better
     if ([self isRunning]) {
         [self terminate];
+        self.terminationHandler(self);
     }
 }
 
