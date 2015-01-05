@@ -7,6 +7,7 @@
 //#import "NSViewController.h"
 
 @class SPResult;
+#import <AppKit/AppKit.h>
 
 @interface SPPreviewController : NSViewController
 {
