@@ -88,21 +88,15 @@
         for (NSString *pluginPath in pluginPathsToParseTreesMap) {
             PSTaggedText *parseTree = pluginPathsToParseTreesMap[pluginPath];
             if ([parseTree isEqual:[NSNull null]]) parseTree = nil;
-            NSTask *task = [[NSTask alloc] init];
-            task.currentDirectoryPath = pluginPath;
-            task.launchPath = [[self class] pythonPath];
-            static NSString *command = nil;
-            static dispatch_once_t onceToken;
-            dispatch_once(&onceToken, ^{
-                command = [NSString stringWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
-            });
+            NSTask *task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"]];
             NSDictionary *input = @{
                                     @"args": [parseTree toNestedDictionary] ? : [NSNull null],
                                     @"query": query,
                                     @"builtinModulesPath": [[self class] builtinModulesPath],
-                                    @"parseTree": [parseTree toJsonObject] ? : [NSNull null]
+                                    @"parseTree": [parseTree toJsonObject] ? : [NSNull null],
+                                    @"pluginPath": pluginPath
                                     };
-            task.arguments = @[@"-c", command, input.toJson];
+            task.arguments = @[input.toJson];
             @synchronized(weakSelf.tasksInProgress) {
                 [weakSelf.tasksInProgress addObject:task];
             }

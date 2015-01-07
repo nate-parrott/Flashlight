@@ -50,19 +50,13 @@
             [runArgs insertObject:[resultView resultOfOutputFunction] atIndex:0];
         }
         
-        NSTask* task = [NSTask new];
-        task.launchPath = [FlashlightQueryEngine pythonPath];
-        task.currentDirectoryPath = self.pluginPath;
-        static NSString *command = nil;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            command = [NSString stringWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"py"] encoding:NSUTF8StringEncoding error:nil];
-        });
+        NSTask* task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"py"]];
         NSDictionary *input = @{
                                 @"runArgs": runArgs,
-                                @"builtinModulesPath": [FlashlightQueryEngine builtinModulesPath]
+                                @"builtinModulesPath": [FlashlightQueryEngine builtinModulesPath],
+                                @"pluginPath": self.pluginPath
                                 };
-        task.arguments = @[@"-c", command, input.toJson];
+        task.arguments = @[input.toJson];
         [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
             NSString *error = nil;
             if (stderrData) {

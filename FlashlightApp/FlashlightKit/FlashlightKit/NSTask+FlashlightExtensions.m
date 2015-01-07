@@ -7,6 +7,21 @@
 //
 
 #import "NSTask+FlashlightExtensions.h"
+#import <sys/stat.h>
+
+void _flashlight_markPathExecutable(NSString *path) {
+    // make launch path executable:
+    struct stat buf;
+    int error = stat([path fileSystemRepresentation], &buf);
+    /* check and handle error */
+    
+    /* Make the file user-executable. */
+    mode_t mode = buf.st_mode;
+    if (!(mode & S_IXUSR)) {
+        mode |= S_IXUSR;
+        error = chmod([path fileSystemRepresentation], mode);
+    }
+}
 
 @interface FlashlightFileReader : NSObject
 
@@ -41,6 +56,13 @@
 
 
 @implementation NSTask (FlashlightExtensions)
+
++ (NSTask *)withPathMarkedAsExecutableIfNecessary:(NSString *)path {
+    _flashlight_markPathExecutable(path);
+    NSTask *task = [NSTask new];
+    task.launchPath = path;
+    return task;
+}
 
 - (void)launchWithTimeout:(NSTimeInterval)timeout callback:(FlashlightNSTaskCallback)callback {
     NSPipe *errorPipe = [NSPipe pipe];
