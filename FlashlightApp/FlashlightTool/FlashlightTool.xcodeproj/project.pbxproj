@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F249B291A5CFCA3001FEF8F /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FC13D441A4CD847008A0FE3 /* FlashlightToolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */; };
 		5FC13D461A4CD847008A0FE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D451A4CD847008A0FE3 /* main.m */; };
 		5FC13D481A4CD847008A0FE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D471A4CD847008A0FE3 /* Images.xcassets */; };
@@ -25,6 +26,19 @@
 			remoteInfo = FlashlightTool;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F249B281A5CFC9C001FEF8F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F249B291A5CFCA3001FEF8F /* FlashlightKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5FC13D3D1A4CD847008A0FE3 /* FlashlightTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashlightTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +143,7 @@
 				5FC13D391A4CD847008A0FE3 /* Sources */,
 				5FC13D3A1A4CD847008A0FE3 /* Frameworks */,
 				5FC13D3B1A4CD847008A0FE3 /* Resources */,
+				5F249B281A5CFC9C001FEF8F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -424,6 +439,7 @@
 				5FC13D5C1A4CD847008A0FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5FC13D5D1A4CD847008A0FE3 /* Build configuration list for PBXNativeTarget "FlashlightToolTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +448,7 @@
 				5FC13D5F1A4CD847008A0FE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

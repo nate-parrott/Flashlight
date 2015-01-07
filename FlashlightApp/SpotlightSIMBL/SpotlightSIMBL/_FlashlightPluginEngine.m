@@ -50,7 +50,9 @@
             if ([query isEqualToString:weakSelf.query]) {
                 weakSelf.results = resultItems;
                 weakSelf.mostRecentQueryWithResults = query;
-                [weakSelf reloadResultsViews];
+                if (weakSelf.results.count > 0) {
+                    [weakSelf reloadResultsViews];
+                }
             }
         });
     };

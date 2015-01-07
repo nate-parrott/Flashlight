@@ -23,7 +23,7 @@ BOOL _Flashlight_Is_10_10_2_Spotlight() {
 @implementation _Flashlight_Bootstrap
 
 + (void)load {
-    NSLog(@"Hello from Flashlight!");
+    NSLog(@"Hello from Flashlight! (%@)", [[NSBundle bundleWithIdentifier:@"com.nateparrott.SpotlightSIMBL"] bundlePath]);
     
     /*RSSwizzleClassMethod(NSClassFromString(@"SPDictionaryQuery"), @selector(alloc), RSSWReturnType(id), RSSWArguments(), {
         RSSWCallOriginal();

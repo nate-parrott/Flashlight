@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F249B161A5CDA57001FEF8F /* parseIt.ym in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B121A5CDA57001FEF8F /* parseIt.ym */; };
+		5F249B171A5CDA57001FEF8F /* TimeParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B131A5CDA57001FEF8F /* TimeParser.c */; };
+		5F249B181A5CDA57001FEF8F /* TimeParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B141A5CDA57001FEF8F /* TimeParser.h */; };
+		5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B151A5CDA57001FEF8F /* tokeIt.l */; };
+		5F249B1D1A5CDDBD001FEF8F /* PSSpecialField.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B1B1A5CDDBD001FEF8F /* PSSpecialField.h */; };
+		5F249B1E1A5CDDBD001FEF8F /* PSSpecialField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B1C1A5CDDBD001FEF8F /* PSSpecialField.m */; };
+		5F249B211A5CDED7001FEF8F /* PSSpecialDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B1F1A5CDED7001FEF8F /* PSSpecialDateField.h */; };
+		5F249B221A5CDED7001FEF8F /* PSSpecialDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */; };
+		5F249B251A5CE153001FEF8F /* PSSpecialFieldExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B231A5CE153001FEF8F /* PSSpecialFieldExampleSource.h */; };
+		5F249B261A5CE153001FEF8F /* PSSpecialFieldExampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B241A5CE153001FEF8F /* PSSpecialFieldExampleSource.m */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
 		5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */; };
@@ -79,6 +89,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F249B121A5CDA57001FEF8F /* parseIt.ym */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = parseIt.ym; sourceTree = "<group>"; };
+		5F249B131A5CDA57001FEF8F /* TimeParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimeParser.c; sourceTree = "<group>"; };
+		5F249B141A5CDA57001FEF8F /* TimeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeParser.h; sourceTree = "<group>"; };
+		5F249B151A5CDA57001FEF8F /* tokeIt.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = tokeIt.l; sourceTree = "<group>"; };
+		5F249B1B1A5CDDBD001FEF8F /* PSSpecialField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialField.h; sourceTree = "<group>"; };
+		5F249B1C1A5CDDBD001FEF8F /* PSSpecialField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialField.m; sourceTree = "<group>"; };
+		5F249B1F1A5CDED7001FEF8F /* PSSpecialDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialDateField.h; sourceTree = "<group>"; };
+		5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialDateField.m; sourceTree = "<group>"; };
+		5F249B231A5CE153001FEF8F /* PSSpecialFieldExampleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialFieldExampleSource.h; sourceTree = "<group>"; };
+		5F249B241A5CE153001FEF8F /* PSSpecialFieldExampleSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialFieldExampleSource.m; sourceTree = "<group>"; };
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
 		5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToJSON.h"; sourceTree = "<group>"; };
@@ -162,6 +182,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F249B1A1A5CDA71001FEF8F /* TimeParser */ = {
+			isa = PBXGroup;
+			children = (
+				5F249B121A5CDA57001FEF8F /* parseIt.ym */,
+				5F249B131A5CDA57001FEF8F /* TimeParser.c */,
+				5F249B141A5CDA57001FEF8F /* TimeParser.h */,
+				5F249B151A5CDA57001FEF8F /* tokeIt.l */,
+			);
+			name = TimeParser;
+			sourceTree = "<group>";
+		};
 		5FC13DE41A4E12DB008A0FE3 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +217,7 @@
 				5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */,
 				5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */,
 				5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */,
+				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */,
 				5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
@@ -194,10 +226,10 @@
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
 				5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */,
+				5F249B1A1A5CDA71001FEF8F /* TimeParser */,
 				5F870A591A5468F700161E2F /* invoke_plugin.py */,
 				5F870A5F1A5478DB00161E2F /* run_plugin.py */,
 				5F870A171A52D43600161E2F /* BuiltinModules */,
-				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13DF11A4E12DB008A0FE3 /* Supporting Files */,
 			);
 			path = FlashlightKit;
@@ -254,6 +286,8 @@
 				5FC13E1F1A4E12FB008A0FE3 /* PSPluginDispatcher.m */,
 				5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */,
 				5FC13E211A4E12FB008A0FE3 /* PSPluginExampleSource.m */,
+				5F249B231A5CE153001FEF8F /* PSSpecialFieldExampleSource.h */,
+				5F249B241A5CE153001FEF8F /* PSSpecialFieldExampleSource.m */,
 				5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */,
 				5FC13E231A4E12FB008A0FE3 /* PSProbabilityCounter.m */,
 				5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */,
@@ -274,6 +308,10 @@
 				5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */,
 				5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */,
 				5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */,
+				5F249B1B1A5CDDBD001FEF8F /* PSSpecialField.h */,
+				5F249B1C1A5CDDBD001FEF8F /* PSSpecialField.m */,
+				5F249B1F1A5CDED7001FEF8F /* PSSpecialDateField.h */,
+				5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -287,6 +325,7 @@
 			files = (
 				5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
+				5F249B211A5CDED7001FEF8F /* PSSpecialDateField.h in Headers */,
 				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
 				5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */,
 				5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */,
@@ -305,11 +344,14 @@
 				5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */,
 				5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */,
 				5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */,
+				5F249B181A5CDA57001FEF8F /* TimeParser.h in Headers */,
 				5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */,
 				5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */,
+				5F249B251A5CE153001FEF8F /* PSSpecialFieldExampleSource.h in Headers */,
 				5FC13E341A4E12FB008A0FE3 /* NSString+PSTokenize.h in Headers */,
 				5FC13E4F1A4E12FB008A0FE3 /* PSStartNode.h in Headers */,
 				5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */,
+				5F249B1D1A5CDDBD001FEF8F /* PSSpecialField.h in Headers */,
 				5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */,
 				5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */,
 				5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */,
@@ -424,8 +466,10 @@
 				5FC13E5C1A4E12FB008A0FE3 /* PSTerminalNode.m in Sources */,
 				5FC13E351A4E12FB008A0FE3 /* NSString+PSTokenize.m in Sources */,
 				5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */,
+				5F249B161A5CDA57001FEF8F /* parseIt.ym in Sources */,
 				5FC13E6A1A4E2D40008A0FE3 /* FlashlightWebScriptObject.m in Sources */,
 				5FC13E521A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m in Sources */,
+				5F249B221A5CDED7001FEF8F /* PSSpecialDateField.m in Sources */,
 				5FC13E501A4E12FB008A0FE3 /* PSStartNode.m in Sources */,
 				5FC13E661A4E1722008A0FE3 /* FlashlightResultView.m in Sources */,
 				5FC13E4C1A4E12FB008A0FE3 /* PSProbabilityCounter.m in Sources */,
@@ -435,10 +479,14 @@
 				5FC13E3F1A4E12FB008A0FE3 /* PSMerging.m in Sources */,
 				5FC13E541A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m in Sources */,
 				5FC13E461A4E12FB008A0FE3 /* PSParsnipSource.m in Sources */,
+				5F249B1E1A5CDDBD001FEF8F /* PSSpecialField.m in Sources */,
+				5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */,
+				5F249B171A5CDA57001FEF8F /* TimeParser.c in Sources */,
 				5FC13E561A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m in Sources */,
 				5FC13E5A1A4E12FB008A0FE3 /* PSTaggedText.m in Sources */,
 				5F870A5E1A546C0700161E2F /* PSTaggedText+ToJSON.m in Sources */,
 				5FC13E581A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m in Sources */,
+				5F249B261A5CE153001FEF8F /* PSSpecialFieldExampleSource.m in Sources */,
 				5FC13E4A1A4E12FB008A0FE3 /* PSPluginExampleSource.m in Sources */,
 				5FC13E371A4E12FB008A0FE3 /* Parsnip.m in Sources */,
 			);
