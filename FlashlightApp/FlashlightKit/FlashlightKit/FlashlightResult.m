@@ -57,7 +57,7 @@
                                 @"pluginPath": self.pluginPath
                                 };
         task.arguments = @[input.toJson];
-        [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
+        [task launchWithTimeout:20 callback:^(NSData *stdoutData, NSData *stderrData) {
             NSString *error = nil;
             if (stderrData) {
                 error = [[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding];
