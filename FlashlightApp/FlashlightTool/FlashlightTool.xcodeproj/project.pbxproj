@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F249B291A5CFCA3001FEF8F /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F7BBDB71A5E490F00377A9F /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BBDB61A5E490F00377A9F /* Icon.icns */; };
+		5F7BBDB91A5E503E00377A9F /* bundle.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BBDB81A5E503E00377A9F /* bundle.icns */; };
+		5F7BBDBB1A5E515800377A9F /* say.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BBDBA1A5E515800377A9F /* say.bundle */; };
 		5FC13D441A4CD847008A0FE3 /* FlashlightToolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */; };
 		5FC13D461A4CD847008A0FE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D451A4CD847008A0FE3 /* main.m */; };
 		5FC13D4B1A4CD847008A0FE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D491A4CD847008A0FE3 /* MainMenu.xib */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		5F7BBDB61A5E490F00377A9F /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		5F7BBDB81A5E503E00377A9F /* bundle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = bundle.icns; sourceTree = "<group>"; };
+		5F7BBDBA1A5E515800377A9F /* say.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = say.bundle; sourceTree = "<group>"; };
 		5FC13D3D1A4CD847008A0FE3 /* FlashlightTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashlightTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13D411A4CD847008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13D421A4CD847008A0FE3 /* FlashlightToolAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightToolAppDelegate.h; sourceTree = "<group>"; };
@@ -100,7 +104,9 @@
 			children = (
 				5FC13D421A4CD847008A0FE3 /* FlashlightToolAppDelegate.h */,
 				5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */,
+				5F7BBDBA1A5E515800377A9F /* say.bundle */,
 				5F7BBDB61A5E490F00377A9F /* Icon.icns */,
+				5F7BBDB81A5E503E00377A9F /* bundle.icns */,
 				5FC13D491A4CD847008A0FE3 /* MainMenu.xib */,
 				5FC13D401A4CD847008A0FE3 /* Supporting Files */,
 			);
@@ -216,6 +222,8 @@
 			files = (
 				5FC13D4B1A4CD847008A0FE3 /* MainMenu.xib in Resources */,
 				5F7BBDB71A5E490F00377A9F /* Icon.icns in Resources */,
+				5F7BBDB91A5E503E00377A9F /* bundle.icns in Resources */,
+				5F7BBDBB1A5E515800377A9F /* say.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
