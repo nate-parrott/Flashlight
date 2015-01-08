@@ -675,7 +675,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="726" height="613"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="726" height="613"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -745,13 +745,23 @@
                                         <constraint firstAttribute="height" constant="375" id="l6D-Ir-iWF"/>
                                     </constraints>
                                 </customView>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6se-MU-VPP">
+                                    <rect key="frame" x="106" y="14" width="302" height="11"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Right-click ► Inspect Element to debug your HTML and Javascript." id="0ac-ku-kmU">
+                                        <font key="font" metaFont="miniSystem"/>
+                                        <color key="textColor" white="0.23445721158274901" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                         </view>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="G0E-Qn-lAA" secondAttribute="centerX" id="64k-ak-9Nn"/>
                             <constraint firstAttribute="width" constant="602" id="LHI-ik-3sE"/>
                             <constraint firstAttribute="trailing" secondItem="JwT-dt-410" secondAttribute="trailing" constant="16" id="PNn-eB-3DT"/>
+                            <constraint firstItem="6se-MU-VPP" firstAttribute="leading" secondItem="G0E-Qn-lAA" secondAttribute="leading" id="QbJ-VT-G4G"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="leading" secondItem="fhf-BP-A4U" secondAttribute="leading" constant="16" id="RMc-Sc-vXi"/>
+                            <constraint firstItem="6se-MU-VPP" firstAttribute="top" secondItem="G0E-Qn-lAA" secondAttribute="bottom" constant="4" id="dca-zb-gG7"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="top" secondItem="fhf-BP-A4U" secondAttribute="top" constant="29" id="nr4-jP-bv4"/>
                             <constraint firstAttribute="centerY" secondItem="G0E-Qn-lAA" secondAttribute="centerY" constant="-17.5" id="sME-qN-qoD"/>
                             <constraint firstAttribute="height" constant="462" id="tQA-4k-1j7"/>
@@ -762,16 +772,22 @@
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VZX-B6-12O">
                         <rect key="frame" x="509" y="19" width="155" height="19"/>
                         <buttonCell key="cell" type="recessed" title="Open Plugins Directory" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5Pj-S8-hQv">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="systemBold" size="12"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="openPluginsDirectory:" target="Voe-Tx-rLC" id="uvi-aT-h1E"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="R8c-zd-aef">
                         <rect key="frame" x="62" y="19" width="70" height="19"/>
                         <buttonCell key="cell" type="recessed" title="API Docs" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pu8-6n-NHQ">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="systemBold" size="12"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="openAPIDocs:" target="Voe-Tx-rLC" id="HoL-gq-QYZ"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -807,7 +823,7 @@
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="120" y="68" width="276" height="378"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="MLV-iy-Rcw">
                 <rect key="frame" x="0.0" y="0.0" width="276" height="378"/>
                 <autoresizingMask key="autoresizingMask"/>

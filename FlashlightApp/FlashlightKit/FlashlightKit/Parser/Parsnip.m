@@ -30,6 +30,8 @@ const NSInteger PSMaxCandidatesPerRound = 50;
 // transitionProbsForStates: [tag: [previous external tag: <probability counter>]]
 // emissionProbs: [terminalTagName: [feature: <probability counter>]]
 
+@property (nonatomic) NSArray *boostsForEarlyTokens;
+
 @end
 
 @implementation Parsnip
@@ -40,6 +42,7 @@ const NSInteger PSMaxCandidatesPerRound = 50;
     self.emissionProbs = [NSMutableDictionary new];
     self.transitionProbsForTags = [NSMutableDictionary new];
     self.probBoosts = [NSMutableDictionary new];
+    self.boostsForEarlyTokens = @[@1.25, @1.125];
     return self;
 }
 
@@ -93,12 +96,15 @@ const NSInteger PSMaxCandidatesPerRound = 50;
 #pragma mark Parsing
 - (PSParseCandidate *)parseText:(NSString *)text intoTag:(NSString *)rootTag {
     NSArray *candidates = [self initialCandidatesForRootTag:rootTag];
+    NSInteger i = 0;
     for (PSToken *token in [text ps_tokenize]) {
+        double tokenBoostBasedOnIndex = i < self.boostsForEarlyTokens.count ? [self.boostsForEarlyTokens[i] doubleValue] : 1;
         NSMutableDictionary *newCandidates = [NSMutableDictionary new];
         for (PSParseCandidate *candidate in candidates) {
-            [self addNewCandidatesToDictionary:newCandidates withCandidate:candidate addingToken:token remainingRecursions:PSMaxRecursion];
+            [self addNewCandidatesToDictionary:newCandidates withCandidate:candidate addingToken:token remainingRecursions:PSMaxRecursion boost:tokenBoostBasedOnIndex];
         }
         candidates = [self trimCandidateSet:newCandidates.allValues];
+        i++;
     }
     for (PSParseCandidate *candidate in candidates) {
         candidate.logProb += [self probabilityOfCandidateEnding:candidate];
@@ -110,7 +116,7 @@ const NSInteger PSMaxCandidatesPerRound = 50;
     return candidates.firstObject;
 }
 
-- (void)addNewCandidatesToDictionary:(NSMutableDictionary *)dict withCandidate:(PSParseCandidate *)candidate addingToken:(PSToken *)token remainingRecursions:(NSInteger)recursions {
+- (void)addNewCandidatesToDictionary:(NSMutableDictionary *)dict withCandidate:(PSParseCandidate *)candidate addingToken:(PSToken *)token remainingRecursions:(NSInteger)recursions boost:(double)boostFactor {
     if (recursions == 0) return;
     PSNonterminalNode *curNode = [candidate.node currentNonterminal];
     if (!curNode) {
@@ -122,7 +128,7 @@ const NSInteger PSMaxCandidatesPerRound = 50;
         for (NSString *nextTag in self.tagsForExternalTags[externalNextTag]) {
             if ([PSTerminalNode isNameOfTerminalNode:nextTag]) {
                 // okay, consume this token and finish:
-                double emissionProb = [self logProbOfEmissionOfToken:token fromTerminalNodeNamed:nextTag];
+                double emissionProb = [self logProbOfEmissionOfToken:token fromTerminalNodeNamed:nextTag] * boostFactor;
                 PSTerminalNode *newTerminal = [PSTerminalNode new];
                 newTerminal.tag = nextTag;
                 newTerminal.token = token;
@@ -146,7 +152,7 @@ const NSInteger PSMaxCandidatesPerRound = 50;
                 }
                 newCandidate.node.currentNonterminal.children = [newCandidate.node.currentNonterminal.children arrayByAddingObject:nodeToAdd];
                 // recur:
-                [self addNewCandidatesToDictionary:dict withCandidate:newCandidate addingToken:token remainingRecursions:recursions-1];
+                [self addNewCandidatesToDictionary:dict withCandidate:newCandidate addingToken:token remainingRecursions:recursions-1 boost:boostFactor];
             }
         }
     }
