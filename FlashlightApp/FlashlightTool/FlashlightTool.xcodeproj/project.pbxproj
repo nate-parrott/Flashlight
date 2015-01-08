@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5F249B291A5CFCA3001FEF8F /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FC13E5D1A4E13B8008A0FE3 /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F7BBDB71A5E490F00377A9F /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F7BBDB61A5E490F00377A9F /* Icon.icns */; };
 		5FC13D441A4CD847008A0FE3 /* FlashlightToolAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */; };
 		5FC13D461A4CD847008A0FE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D451A4CD847008A0FE3 /* main.m */; };
-		5FC13D481A4CD847008A0FE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D471A4CD847008A0FE3 /* Images.xcassets */; };
 		5FC13D4B1A4CD847008A0FE3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC13D491A4CD847008A0FE3 /* MainMenu.xib */; };
 		5FC13D571A4CD847008A0FE3 /* FlashlightToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13D561A4CD847008A0FE3 /* FlashlightToolTests.m */; };
 		5FC13DE31A4E0705008A0FE3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DE21A4E0705008A0FE3 /* WebKit.framework */; };
@@ -41,12 +41,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F7BBDB61A5E490F00377A9F /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		5FC13D3D1A4CD847008A0FE3 /* FlashlightTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashlightTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13D411A4CD847008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13D421A4CD847008A0FE3 /* FlashlightToolAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightToolAppDelegate.h; sourceTree = "<group>"; };
 		5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashlightToolAppDelegate.m; sourceTree = "<group>"; };
 		5FC13D451A4CD847008A0FE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5FC13D471A4CD847008A0FE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5FC13D4A1A4CD847008A0FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		5FC13D501A4CD847008A0FE3 /* FlashlightToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashlightToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13D551A4CD847008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			children = (
 				5FC13D421A4CD847008A0FE3 /* FlashlightToolAppDelegate.h */,
 				5FC13D431A4CD847008A0FE3 /* FlashlightToolAppDelegate.m */,
-				5FC13D471A4CD847008A0FE3 /* Images.xcassets */,
+				5F7BBDB61A5E490F00377A9F /* Icon.icns */,
 				5FC13D491A4CD847008A0FE3 /* MainMenu.xib */,
 				5FC13D401A4CD847008A0FE3 /* Supporting Files */,
 			);
@@ -214,8 +214,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC13D481A4CD847008A0FE3 /* Images.xcassets in Resources */,
 				5FC13D4B1A4CD847008A0FE3 /* MainMenu.xib in Resources */,
+				5F7BBDB71A5E490F00377A9F /* Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +347,6 @@
 		5FC13D5B1A4CD847008A0FE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +366,6 @@
 		5FC13D5C1A4CD847008A0FE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

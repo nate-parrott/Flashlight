@@ -30,8 +30,7 @@
 
 @implementation FlashlightToolAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {    
     __weak FlashlightToolAppDelegate *weakSelf = self;
     
     self.queryEngine = [FlashlightQueryEngine new];
@@ -118,7 +117,7 @@
 
 #pragma mark Actions
 - (IBAction)openPluginsDirectory:(id)sender {
-    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, 0, YES) firstObject] stringByAppendingPathComponent:@"FlashlightPlugins"];
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"FlashlightPlugins"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     }
@@ -126,7 +125,7 @@
 }
 
 - (IBAction)openAPIDocs:(id)sender {
-    
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/wiki/API-Reference"]];
 }
 
 @end
