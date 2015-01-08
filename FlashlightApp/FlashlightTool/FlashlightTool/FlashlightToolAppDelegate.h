@@ -10,6 +10,5 @@
 
 @interface FlashlightToolAppDelegate : NSObject <NSApplicationDelegate>
 
-
 @end
 
