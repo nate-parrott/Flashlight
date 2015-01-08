@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSPanel.h"
+#import <Foundation/Foundation.h>
 
 @class NSArray, NSView, SPFTEController, SPSearchField;
 
@@ -29,7 +29,7 @@
 @property __weak NSView *resultsView; // @synthesize resultsView=_resultsView;
 @property __weak SPSearchField *searchField; // @synthesize searchField=_searchField;
 @property __weak NSView *topView; // @synthesize topView=_topView;
-- (void).cxx_destruct;
+// - (void).cxx_destruct;
 @property(readonly) NSArray *accessibilitySharedFocusElementsForSearchFieldCell;
 - (void)accessibilityResultsViewDidChange;
 - (id)_cornerMask;

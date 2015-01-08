@@ -8,4 +8,10 @@
 
 #import "SPParsecSimpleResult.h"
 
+@class FlashlightResult;
+
+@interface DummyInterface : NSObject
+- (id)initWithQuery:(NSString *)query result:(FlashlightResult *)result;
+@end
+
 Class __SS_SPOpenAPIResultClass();
