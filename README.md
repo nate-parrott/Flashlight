@@ -17,7 +17,7 @@ Clone and build using Xcode, or [download Flashlight.app from _releases_](https:
 
 ## Writing Plugins
 
-**Start with the [tutorial on writing plugins](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown).**
+**Start with the [tutorial on writing plugins](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin).**
 
 ## How it works
 
@@ -47,7 +47,7 @@ Huge thanks to everyone who's contributed translations:
  - [dougian](http://github.com/dougian) for Greek
  
 
-If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Internationalization.markdown)
+If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization.markdown)
 
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
@@ -59,4 +59,4 @@ Licensed under the GPL and MIT licenses (see LICENSE).
 
 **Helping out**
 
-You can help out by [writing a plugin you want](https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown), taking a look at [the Github issues](https://github.com/nate-parrott/Flashlight/issues), or sharing the app with friends on Twitter or Facebook.
+You can help out by [writing a plugin you want](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin), taking a look at [the Github issues](https://github.com/nate-parrott/Flashlight/issues), or sharing the app with friends on Twitter or Facebook.
