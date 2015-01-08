@@ -116,4 +116,17 @@
     }];
 }
 
+#pragma mark Actions
+- (IBAction)openPluginsDirectory:(id)sender {
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, 0, YES) firstObject] stringByAppendingPathComponent:@"FlashlightPlugins"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:path]];
+}
+
+- (IBAction)openAPIDocs:(id)sender {
+    
+}
+
 @end
