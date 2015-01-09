@@ -674,14 +674,14 @@
         <window title="FlashlightTool" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="726" height="583"/>
+            <rect key="contentRect" x="335" y="390" width="726" height="582"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="726" height="583"/>
+                <rect key="frame" x="0.0" y="0.0" width="726" height="582"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Ai-dN-Dw0">
-                        <rect key="frame" x="95" y="541" width="536" height="22"/>
+                        <rect key="frame" x="95" y="540" width="536" height="22"/>
                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="Test Spotlight Search" usesSingleLineMode="YES" bezelStyle="round" id="nFQ-t2-CXQ">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -693,7 +693,7 @@
                         </connections>
                     </searchField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N68-ww-wMf">
-                        <rect key="frame" x="93" y="516" width="108" height="17"/>
+                        <rect key="frame" x="93" y="515" width="108" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Matching Plugin:" id="KZC-yB-HTe">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -701,7 +701,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ULm-yi-Tk4">
-                        <rect key="frame" x="93" y="491" width="108" height="17"/>
+                        <rect key="frame" x="93" y="490" width="108" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Plugin Input:" id="2mg-kw-B9j">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -709,7 +709,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OnB-fZ-ns4">
-                        <rect key="frame" x="205" y="516" width="428" height="17"/>
+                        <rect key="frame" x="205" y="515" width="428" height="17"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="None" id="Yxq-pu-dC9">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -717,7 +717,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ8-0o-PEI">
-                        <rect key="frame" x="205" y="491" width="428" height="17"/>
+                        <rect key="frame" x="205" y="490" width="428" height="17"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="None" id="uvR-oW-vF3">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -725,7 +725,7 @@
                         </textFieldCell>
                     </textField>
                     <box autoresizesSubviews="NO" title="Result" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="fhf-BP-A4U">
-                        <rect key="frame" x="59" y="17" width="608" height="466"/>
+                        <rect key="frame" x="59" y="16" width="608" height="466"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="606" height="450"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -745,13 +745,23 @@
                                         <constraint firstAttribute="height" constant="375" id="l6D-Ir-iWF"/>
                                     </constraints>
                                 </customView>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6se-MU-VPP">
+                                    <rect key="frame" x="106" y="14" width="302" height="11"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Right-click ► Inspect Element to debug your HTML and Javascript." id="0ac-ku-kmU">
+                                        <font key="font" metaFont="miniSystem"/>
+                                        <color key="textColor" white="0.23445721158274901" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                         </view>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="G0E-Qn-lAA" secondAttribute="centerX" id="64k-ak-9Nn"/>
                             <constraint firstAttribute="width" constant="602" id="LHI-ik-3sE"/>
                             <constraint firstAttribute="trailing" secondItem="JwT-dt-410" secondAttribute="trailing" constant="16" id="PNn-eB-3DT"/>
+                            <constraint firstItem="6se-MU-VPP" firstAttribute="leading" secondItem="G0E-Qn-lAA" secondAttribute="leading" id="QbJ-VT-G4G"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="leading" secondItem="fhf-BP-A4U" secondAttribute="leading" constant="16" id="RMc-Sc-vXi"/>
+                            <constraint firstItem="6se-MU-VPP" firstAttribute="top" secondItem="G0E-Qn-lAA" secondAttribute="bottom" constant="4" id="dca-zb-gG7"/>
                             <constraint firstItem="JwT-dt-410" firstAttribute="top" secondItem="fhf-BP-A4U" secondAttribute="top" constant="29" id="nr4-jP-bv4"/>
                             <constraint firstAttribute="centerY" secondItem="G0E-Qn-lAA" secondAttribute="centerY" constant="-17.5" id="sME-qN-qoD"/>
                             <constraint firstAttribute="height" constant="462" id="tQA-4k-1j7"/>
@@ -779,13 +789,46 @@
                     <constraint firstItem="ULm-yi-Tk4" firstAttribute="top" secondItem="N68-ww-wMf" secondAttribute="bottom" constant="8" id="zOO-ML-iPM"/>
                 </constraints>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="BCCFED94-6936-4DCD-A7F9-17AB646D1B53" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="hKW-4r-reI">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="E04B04BC-2C8A-4AE5-9C9D-FB20E6DB0ECC" label="Errors and Warnings" paletteLabel="Errors and Warnings" tag="-1" image="NSCaution" id="F6d-zF-9p6">
+                        <connections>
+                            <action selector="makeKeyAndOrderFront:" target="Z2a-g4-U1B" id="FJq-pe-eJu"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="LS2-XI-zCi"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="U86-v1-Zb9"/>
+                    <toolbarItem implicitItemIdentifier="D7A59698-0192-49DF-B8F6-0B78E44BB3DE" label="API Docs" paletteLabel="API Docs" tag="-1" image="NSInfo" id="K5C-Pk-0rC">
+                        <connections>
+                            <action selector="openAPIDocs:" target="Voe-Tx-rLC" id="tmU-0F-BlM"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="7090EF87-92E6-4409-A4E8-8AE5A75AC25E" label="Open Plugins Folder" paletteLabel="Open Plugins Folder" tag="-1" image="NSFolder" id="d77-hY-PoW">
+                        <connections>
+                            <action selector="openPluginsDirectory:" target="Voe-Tx-rLC" id="mQ8-rz-QoM"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="E8FE8582-21A8-4DEF-90A9-08CC908099C3" label="Create New Plugin" paletteLabel="Create New Plugin" tag="-1" image="bundle" id="T0Y-ZJ-I7e">
+                        <connections>
+                            <action selector="newPlugin:" target="Voe-Tx-rLC" id="nlF-QT-L6t"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="T0Y-ZJ-I7e"/>
+                    <toolbarItem reference="K5C-Pk-0rC"/>
+                    <toolbarItem reference="d77-hY-PoW"/>
+                    <toolbarItem reference="U86-v1-Zb9"/>
+                    <toolbarItem reference="F6d-zF-9p6"/>
+                </defaultToolbarItems>
+            </toolbar>
             <connections>
                 <outlet property="delegate" destination="Voe-Tx-rLC" id="DnR-6U-eeh"/>
             </connections>
-            <point key="canvasLocation" x="317" y="472.5"/>
+            <point key="canvasLocation" x="317" y="472"/>
         </window>
         <window title="Errors and Warnings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hidesOnDeactivate="YES" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="Z2a-g4-U1B" customClass="NSPanel">
-            <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="120" y="68" width="276" height="378"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
@@ -832,4 +875,10 @@
             <point key="canvasLocation" x="901" y="529"/>
         </window>
     </objects>
+    <resources>
+        <image name="NSCaution" width="32" height="32"/>
+        <image name="NSFolder" width="32" height="32"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="bundle" width="512" height="512"/>
+    </resources>
 </document>

@@ -16,6 +16,8 @@
 #import "PSTaggedText+ToNestedDictionaries.h"
 #import "PSParseCandidate.h"
 #import "PSParsnipSource.h"
+#import "PSSpecialDateField.h"
+#import "PSSpecialFieldExampleSource.h"
 
 @interface PSPluginDispatcher ()
 
@@ -30,6 +32,8 @@
 - (instancetype)init {
     self = [super init];
     
+    [self initializeSpecialFieldClasses];
+    
     self.parsnipCreator = [[PSBackgroundProcessor alloc] initWithProcessingBlock:^(NSDictionary *latestResultsDictionariesForSourceIdentifiers, PSBackgroundProcessorResultBlock callback) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             NSArray *parsnips = [latestResultsDictionariesForSourceIdentifiers.allValues mapFilter:^id(NSDictionary *data) {
@@ -42,8 +46,13 @@
     self.latestResultsDictionariesForSourceIdentifiers = [NSMutableDictionary new];
     self.sources = [NSMutableArray new];
     [self addSourceWithClass:[PSPluginExampleSource class] identifier:@"plugins"];
+    [self addSourceWithClass:[PSSpecialFieldExampleSource class] identifier:@"specialFields"];
     
     return self;
+}
+
+- (void)initializeSpecialFieldClasses {
+    [[PSSpecialDateField class] new];
 }
 
 - (void)addSourceWithClass:(Class)class identifier:(NSString *)identifier {

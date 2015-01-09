@@ -30,8 +30,7 @@
 
 @implementation FlashlightToolAppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {    
     __weak FlashlightToolAppDelegate *weakSelf = self;
     
     self.queryEngine = [FlashlightQueryEngine new];
@@ -114,6 +113,58 @@
         if (error) d[@"Plugin.py run() Errors"] = error;
         weakSelf.errorSections = d;
     }];
+}
+
+#pragma mark Actions
+- (IBAction)openPluginsDirectory:(id)sender {
+    NSString *path = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"FlashlightPlugins"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL fileURLWithPath:path]];
+}
+
+- (IBAction)openAPIDocs:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/wiki/API-Reference"]];
+}
+
+- (IBAction)newPlugin:(id)sender {
+    NSString *name = [self input:NSLocalizedString(@"Choose an internal name for your plugin: (no spaces or special characters, please)", nil) defaultValue:@"my-plugin"];
+    if (name.length) {
+        NSString *skeleton = [[NSBundle mainBundle] pathForResource:@"say" ofType:@"bundle"];
+        NSString *pluginsDir = [[NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"FlashlightPlugins"];
+        NSString *destination = [[pluginsDir stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+        [[NSFileManager defaultManager] copyItemAtPath:skeleton toPath:destination error:nil];
+        NSString *infoJsonPath = [destination stringByAppendingPathComponent:@"info.json"];
+        NSMutableDictionary *dict = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:infoJsonPath] options:0 error:nil] mutableCopy];
+        dict[@"name"] = name;
+        [[NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil] writeToFile:infoJsonPath atomically:YES];
+        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[[NSURL fileURLWithPath:destination]]];
+        [[NSWorkspace sharedWorkspace] selectFile:infoJsonPath inFileViewerRootedAtPath:destination];
+    }
+}
+
+/* TODO: actually invest time in building a reasonable UI
+ rather than copying the simplest possible example of a modal
+ prompt dialog from StackOverflow */
+- (NSString *)input:(NSString *)prompt defaultValue: (NSString *)defaultValue {
+    NSAlert *alert = [NSAlert alertWithMessageText: prompt
+                                     defaultButton:@"OK"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@""];
+    
+    NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+    [input setStringValue:defaultValue];
+    [alert setAccessoryView:input];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertDefaultReturn) {
+        return [input stringValue];
+    } else if (button == NSAlertAlternateReturn) {
+        return nil;
+    } else {
+        return nil;
+    }
 }
 
 @end

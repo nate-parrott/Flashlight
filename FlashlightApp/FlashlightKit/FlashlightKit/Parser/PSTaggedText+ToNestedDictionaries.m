@@ -8,6 +8,7 @@
 
 #import "PSTaggedText+ToNestedDictionaries.h"
 #import "PSHelpers.h"
+#import "PSSpecialField.h"
 
 @implementation PSTaggedText (ToNestedDictionaries)
 
@@ -15,9 +16,16 @@
     NSMutableDictionary *d = [NSMutableDictionary new];
     for (id child in self.contents) {
         if ([child isKindOfClass:[PSTaggedText class]]) {
-            id tag = [child tag];
-            NSDictionary *nestedDict = [child toNestedDictionary];
-            d[tag] = nestedDict.count > 0 ? nestedDict : [child _getText];
+            NSString *tag = [child tag];
+            if ([tag characterAtIndex:0] == '@') {
+                // it's a special field:
+                Class fieldClass = [PSSpecialField specialFieldClassesForNames][tag];
+                id result = [fieldClass performSelector:@selector(getJsonObjectFromText:) withObject:[child _getText]];
+                d[tag] = result ? : [NSNull null];
+            } else {
+                NSDictionary *nestedDict = [child toNestedDictionary];
+                d[tag] = nestedDict.count > 0 ? nestedDict : [child _getText];
+            }
         }
     }
     return d;
