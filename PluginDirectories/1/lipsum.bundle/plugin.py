@@ -1,5 +1,9 @@
 import pypsum
 
+def dark_mode():
+    import Foundation
+    return Foundation.NSUserDefaults.standardUserDefaults().persistentDomainForName_(Foundation.NSGlobalDomain).objectForKey_("AppleInterfaceStyle") == "Dark"
+
 def results(fields, original_query):
     how_what = fields['~how_what']
     hw = how_what.split(' ')
@@ -11,6 +15,7 @@ def results(fields, original_query):
     what = hw[1]
     lipsum = pypsum.get_lipsum(how, what, "no")
     output = lipsum[0].replace('\n', '<br /><br />')
+    color = "white" if dark_mode() else "black"
     
     html = """
     <style>
@@ -18,6 +23,7 @@ def results(fields, original_query):
       font-family: "HelveticaNeue";
       line-height: 1.3;
       padding: 10px;
+      color: """ + color + """;
     }
     #info {
       font-style: italic;
