@@ -1,9 +1,10 @@
+import i18n
 
 def results(parsed, query):
   from centered_text import centered_text
   return {
-    "title": "Large Text",
-    "html": centered_text(parsed['~text'], hint_text="Press enter to show full-screen"),
+    "title": i18n.localstr("Large Text"),
+    "html": centered_text(parsed['~text'], hint_text=i18n.localstr("Press enter to show full-screen")),
     "webview_transparent_background": True,
     "run_args": [parsed['~text']]
   }
