@@ -382,6 +382,24 @@
         },
         {
             "categories": [
+                "Search",
+                "Media"
+            ],
+            "creator_name": "Frank Schmitt",
+            "creator_url": "https://github.com/franqus",
+            "description": "Looks up your query on discogs.com",
+            "displayName": "Search discogs.com",
+            "examples": [
+                "discogs The Beatles",
+                "search discogs The Rolling Stones",
+                "find 2Pac on discogs",
+                "search Marvin Gaye on discogs"
+            ],
+            "name": "discogs",
+            "zip_url": "discogs.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Open Documentations",
@@ -1294,6 +1312,21 @@
                 "zh"
             ],
             "zip_url": "taobao.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-teamviewer",
+            "description": "Connect to a TeamViewer session",
+            "displayName": "TeamViewer",
+            "examples": [
+                "teamviewer partnerId, password",
+                "teamviewer 160 581 821, 1925"
+            ],
+            "name": "teamviewer",
+            "zip_url": "teamviewer.zip"
         },
         {
             "categories": [

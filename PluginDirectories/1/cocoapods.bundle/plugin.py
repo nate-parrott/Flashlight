@@ -2,7 +2,7 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-          ["CocoaPods", "~query", "http://cocoapods.org/?q=", "http://cocoapods.org/?q=edcolor"],
+          ["CocoaPods", "~query", "http://cocoapods.org/?q=", "http://cocoapods.org/?q="],
     ]
     for name, key, mobile_url, url in search_specs:
         if key in parsed:

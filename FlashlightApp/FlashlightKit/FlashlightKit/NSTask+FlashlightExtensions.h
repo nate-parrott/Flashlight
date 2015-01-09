@@ -16,4 +16,6 @@ typedef void (^FlashlightNSTaskCallback)(NSData *stdoutData, NSData *stderrData)
 
 - (void)safeTerminate;
 
++ (NSTask *)withPathMarkedAsExecutableIfNecessary:(NSString *)path;
+
 @end

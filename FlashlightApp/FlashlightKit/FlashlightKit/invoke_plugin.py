@@ -1,5 +1,9 @@
-import sys, json, inspect
+#!/usr/bin/python
+
+import sys, json, inspect, os
 input = json.loads(sys.argv[1])
+sys.path.insert(0, input['pluginPath'])
+os.chdir(input['pluginPath'])
 sys.path.append(input['builtinModulesPath'])
 import plugin
 
