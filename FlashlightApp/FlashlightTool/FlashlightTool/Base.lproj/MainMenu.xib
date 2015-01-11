@@ -675,7 +675,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="726" height="582"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="726" height="582"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -808,7 +808,7 @@
                             <action selector="openPluginsDirectory:" target="Voe-Tx-rLC" id="mQ8-rz-QoM"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="E8FE8582-21A8-4DEF-90A9-08CC908099C3" label="Create New Plugin" paletteLabel="Create New Plugin" tag="-1" image="bundle" id="T0Y-ZJ-I7e">
+                    <toolbarItem implicitItemIdentifier="E8FE8582-21A8-4DEF-90A9-08CC908099C3" label="New Plugin" paletteLabel="New Plugin" tag="-1" image="bundle" id="T0Y-ZJ-I7e">
                         <connections>
                             <action selector="newPlugin:" target="Voe-Tx-rLC" id="nlF-QT-L6t"/>
                         </connections>
@@ -831,7 +831,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="120" y="68" width="276" height="378"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
             <view key="contentView" id="MLV-iy-Rcw">
                 <rect key="frame" x="0.0" y="0.0" width="276" height="378"/>
                 <autoresizingMask key="autoresizingMask"/>

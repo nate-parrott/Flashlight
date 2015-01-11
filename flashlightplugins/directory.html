@@ -144,6 +144,13 @@
       opacity: 0.7;
       font-weight: 200;
    }
+	 #ideas {
+		 text-align: center;
+		 font-size: small;
+	 }
+	 #ideas a:link, #ideas a:visited {
+		 color: inherit;
+	 }
    </style>
 </head>
 <body>
@@ -205,6 +212,16 @@
       {% endfor %}
    </ul>
    {% endfor %}
+	 
+	 <p id='ideas'>
+		 Have an idea for a plugin you'd want?
+		 {% if browse %}
+		 <a href='/ideas'>Request a plugin</a>
+		 {% else %}
+		 <a href='open://flashlight.nateparrott.com/ideas'>Request a plugin</a>
+		 {% endif %}
+	 </p>
+	 
    {% if browse %}
    <script>
    function reveal(name) {
