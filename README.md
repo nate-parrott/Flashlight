@@ -11,7 +11,7 @@ _Das fehlende Plugin-System für Spotlight._
 
 Flashlight is an **unofficial Spotlight API** that allows you to programmatically process queries and add additional results. It's *very rough right now,* and a *horrendous hack*, but a fun proof of concept.
 
-_Have an idea for a plugin? _ [Suggest it](http://flashlight.nateparrott.com/ideas)
+_Have an idea for a plugin?_ [Suggest it](http://flashlight.nateparrott.com/ideas)
 
 **Installation**
 
