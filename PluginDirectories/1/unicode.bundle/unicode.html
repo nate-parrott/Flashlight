@@ -54,8 +54,10 @@
       request.onerror = function () {
         showMessage("&#9888;");
       };
-
-      request.send();
+			
+			setTimeout(function() {
+	      request.send();
+			}, 400);
 
       function showMessage (msg) {
         document.body.setAttribute('class', 'center');

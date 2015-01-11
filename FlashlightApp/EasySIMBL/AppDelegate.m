@@ -14,6 +14,7 @@
 
 @property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
+@property (nonatomic,weak) IBOutlet NSTextField *versionLabel;
 
 @end
 
@@ -42,6 +43,8 @@
     [self checkSpotlightVersion];
     
     [self setupURLHandling];
+    
+    self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
@@ -217,6 +220,9 @@
 }
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
+}
+- (IBAction)requestAPlugin:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/ideas"]];
 }
 #pragma mark Links
 - (IBAction)showPythonAPI:(id)sender {
