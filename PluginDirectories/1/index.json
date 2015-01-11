@@ -271,6 +271,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Philip Trauner",
+            "creator_url": "http://philip-trauner.me",
+            "description": "Show Cowsay output in spotlight.",
+            "displayName": "Cowsay",
+            "examples": [
+                "cowsay Test",
+                "cs Test"
+            ],
+            "name": "cowsay",
+            "zip_url": "cowsay.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Get the latest company activity in an instant",
@@ -880,6 +895,24 @@
         {
             "categories": [
                 "Utilities",
+                "Language"
+            ],
+            "creator_name": "patternoia",
+            "description": "Look up words and phrases in Leo Dictionary",
+            "description_de": "Sucht nach den W\u00f6rtern und Phrasen bei den Leo W\u00f6rterb\u00fcchern",
+            "displayName": "Leo.org Dictionary",
+            "displayName_de": "Leo W\u00f6rterbuch",
+            "examples": [
+                "leo Taschenlampe",
+                "leo en Flashlight",
+                "leo es Taschenlampe"
+            ],
+            "name": "leo",
+            "zip_url": "leo.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
                 "Developer"
             ],
             "creator_name": "Anton Vakhmin",
@@ -1133,21 +1166,6 @@
         },
         {
             "categories": [
-                "Media"
-            ],
-            "creator_name": "Joe Engelman",
-            "creator_url": "joengelm.github.io",
-            "description": "Downloads tracks or playlists from Soundcloud",
-            "displayName": "Soundcloud Downloader",
-            "examples": [
-                "scdl https://soundcloud.com/joeengelman/egg-white-delight",
-                "download https://soundcloud.com/joeengelman/egg-white-delight from Soundcloud"
-            ],
-            "name": "scdl",
-            "zip_url": "scdl.disabled-bundle.zip"
-        },
-        {
-            "categories": [
                 "Utilities",
                 "Featured"
             ],
@@ -1296,6 +1314,21 @@
             "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
             "name": "sublime",
             "zip_url": "sublime.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Will Stamper",
+            "creator_url": "http://willstamper.name",
+            "description": "Opens a subreddit",
+            "displayName": "Subreddit",
+            "examples": [
+                "subr cfb",
+                "subreddit askreddit"
+            ],
+            "name": "subreddit",
+            "zip_url": "subreddit.zip"
         },
         {
             "categories": [
