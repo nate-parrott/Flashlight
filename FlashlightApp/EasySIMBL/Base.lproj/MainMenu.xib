@@ -349,7 +349,11 @@
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="enablePluginsLabel" destination="fPh-3V-djF" id="GQh-mz-yUH"/>
+                <outlet property="leaveFeedback" destination="YyB-xf-RjT" id="MGc-ch-NJm"/>
+                <outlet property="openGithub" destination="no0-HV-O9k" id="12n-tY-kFy"/>
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
+                <outlet property="requestPlugin" destination="QeJ-hd-3A1" id="AK4-6B-Nzq"/>
+                <outlet property="searchAnything" destination="gNj-56-AoU" id="aX9-YH-2Hx"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="2My-Fx-DJv"/>
                 <outlet property="useSIMBLSwitch" destination="cgt-Ry-pUm" id="m6y-V0-Lqj"/>
                 <outlet property="versionLabel" destination="v99-pH-dRh" id="UQq-qN-W0r"/>

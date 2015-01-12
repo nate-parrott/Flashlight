@@ -446,7 +446,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"News": NSLocalizedString(@"News", @""),
                  @"Art": NSLocalizedString(@"Art", @""),
                  @"Developer": NSLocalizedString(@"Developer", @""),
-                 @"Unknown": NSLocalizedString(@"Unknown", @"")
+                 @"Unknown": NSLocalizedString(@"Unknown", @""),
+                 @"Media": NSLocalizedString(@"Media", @"")
                  };
     });
     return dict[category] ? : category;
