@@ -30,7 +30,7 @@
                             <constraint firstAttribute="height" constant="22" id="49x-dd-uNi"/>
                             <constraint firstAttribute="width" secondItem="hoN-9i-Rs7" secondAttribute="height" multiplier="1:1" id="7sg-Q0-nNp"/>
                         </constraints>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Flashlight" id="iAs-Vm-o7V"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="iAs-Vm-o7V"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ct-xW-pjG">
                         <rect key="frame" x="48" y="231" width="163" height="17"/>
@@ -73,6 +73,6 @@
         </window>
     </objects>
     <resources>
-        <image name="Flashlight" width="512" height="512"/>
+        <image name="Icon" width="512" height="512"/>
     </resources>
 </document>

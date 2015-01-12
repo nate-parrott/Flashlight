@@ -6,6 +6,12 @@
 // project.
 
 
+// LetsMove
+#define COCOAPODS_POD_AVAILABLE_LetsMove
+#define COCOAPODS_VERSION_MAJOR_LetsMove 1
+#define COCOAPODS_VERSION_MINOR_LetsMove 16
+#define COCOAPODS_VERSION_PATCH_LetsMove 0
+
 // Sparkle
 #define COCOAPODS_POD_AVAILABLE_Sparkle
 #define COCOAPODS_VERSION_MAJOR_Sparkle 1

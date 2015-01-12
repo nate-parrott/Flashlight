@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+
 RESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy-${TARGETNAME}.txt
 > "$RESOURCES_TO_COPY"
 
@@ -29,6 +31,10 @@ install_resource()
       echo "xcrun momc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd\""
       xcrun momc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd"
       ;;
+    *.xcmappingmodel)
+      echo "xcrun mapc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcmappingmodel`.cdm\""
+      xcrun mapc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcmappingmodel`.cdm"
+      ;;
     *.xcassets)
       ;;
     /*)
@@ -41,17 +47,38 @@ install_resource()
       ;;
   esac
 }
-install_resource "Sparkle/Sparkle.framework"
-
+          install_resource "LetsMove/cs.lproj"
+                    install_resource "LetsMove/da.lproj"
+                    install_resource "LetsMove/de.lproj"
+                    install_resource "LetsMove/en.lproj"
+                    install_resource "LetsMove/es.lproj"
+                    install_resource "LetsMove/fr.lproj"
+                    install_resource "LetsMove/hu.lproj"
+                    install_resource "LetsMove/it.lproj"
+                    install_resource "LetsMove/ja.lproj"
+                    install_resource "LetsMove/ko.lproj"
+                    install_resource "LetsMove/mk.lproj"
+                    install_resource "LetsMove/nb.lproj"
+                    install_resource "LetsMove/nl.lproj"
+                    install_resource "LetsMove/pl.lproj"
+                    install_resource "LetsMove/pt.lproj"
+                    install_resource "LetsMove/pt_BR.lproj"
+                    install_resource "LetsMove/ru.lproj"
+                    install_resource "LetsMove/sr.lproj"
+                    install_resource "LetsMove/sv.lproj"
+                    install_resource "LetsMove/tr.lproj"
+                    install_resource "LetsMove/zh_CN.lproj"
+                    install_resource "Sparkle/Sparkle.framework"
+          
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
   rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi
 rm -f "$RESOURCES_TO_COPY"
 
-if [[ -n "${WRAPPER_EXTENSION}" ]] && [ `xcrun --find actool` ] && [ `find . -name '*.xcassets' | wc -l` -ne 0 ]
+if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ `find . -name '*.xcassets' | wc -l` -ne 0 ]
 then
-  case "${TARGETED_DEVICE_FAMILY}" in 
+  case "${TARGETED_DEVICE_FAMILY}" in
     1,2)
       TARGET_DEVICE_ARGS="--target-device ipad --target-device iphone"
       ;;
@@ -63,7 +90,7 @@ then
       ;;
     *)
       TARGET_DEVICE_ARGS="--target-device mac"
-      ;;  
-  esac 
+      ;;
+  esac
   find "${PWD}" -name "*.xcassets" -print0 | xargs -0 actool --output-format human-readable-text --notices --warnings --platform "${PLATFORM_NAME}" --minimum-deployment-target "${IPHONEOS_DEPLOYMENT_TARGET}" ${TARGET_DEVICE_ARGS} --compress-pngs --compile "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi
