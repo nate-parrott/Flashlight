@@ -1,4 +1,7 @@
 ﻿/* No comment provided by engineer. */
+"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "선택된 플러그인들은 스폿라이트에서 검색하실때 예시중 하나로 등장합니다.";
+
+/* No comment provided by engineer. */
 "Art" = "예술";
 
 /* No comment provided by engineer. */
@@ -8,7 +11,7 @@
 "Automator workflow:" = "오토메이터 워크플로:";
 
 /* No comment provided by engineer. */
-"Couldn't install plugin." = "플러그인을 추가할수 없습니다.";
+"Couldn't install plugin." = "플러그인을 설치할 수 없습니다.";
 
 /* No comment provided by engineer. */
 "Couldn't load the online plugin directory." = "온라인 플러그인 디렉터리를 불러올수 없습니다.";
@@ -29,10 +32,10 @@
 "Edit Workflow" = "워크플로 편집";
 
 /* No comment provided by engineer. */
-"Enable Spotlight Plugins" = "스폿라이트 플러그인 추가 허용";
+"Enable Spotlight Plugins" = "스폿라이트 플러그인 허용";
 
 /* No comment provided by engineer. */
-"Featured" = "기능";
+"Featured" = "여러 플러그인들";
 
 /* No comment provided by engineer. */
 "Flashlight: the missing plugin system for Spotlight." = "Flashlight: 스폿라이트에서 잊혀진 플러그인 시스템.";
@@ -71,10 +74,10 @@
 "Try again" = "다시 해보세요";
 
 /* No comment provided by engineer. */
-"Unknown" = "알려지지 않음";
+"Unknown" = "불분명한 주제";
 
 /* No comment provided by engineer. */
-"Usage examples:" = "사용 예:";
+"Usage examples:" = "사용 예시:";
 
 /* No comment provided by engineer. */
 "Utilities" = "유틸리티";
@@ -84,4 +87,3 @@
 
 /* No comment provided by engineer. */
 "Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "선택된 플러그인들은 스폿라이트에서 검색하실때 예시중 하나로 등장합니다.";
-
