@@ -3,6 +3,7 @@ from util import template, stable_daily_shuffle, get_localized_key
 import json
 import urllib
 from search import search_plugins
+import random
 
 def arrays_overlap(a1, a2):
   return sum([1 for a in a1 if a in a2]) > 0

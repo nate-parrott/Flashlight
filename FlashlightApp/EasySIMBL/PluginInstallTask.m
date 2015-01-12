@@ -10,6 +10,7 @@
 #import "PluginModel.h"
 #import "zipzap.h"
 #import "PluginDirectoryAPI.h"
+#import "AppDelegate.h"
 
 @implementation PluginInstallTask
 
@@ -44,6 +45,13 @@
                                 callback(NO, zipError);
                                 return;
                             }
+                        }
+                        // done:
+                        if (self.plugin.openPreferencesOnInstall) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                AppDelegate *d = (id)[NSApp delegate];
+                                [self.plugin presentOptionsInWindow:d.window];
+                            });
                         }
                         callback(YES, nil);
                     } else {

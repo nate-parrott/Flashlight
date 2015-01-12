@@ -278,7 +278,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (NSString *)localPluginsPath {
-    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"FlashlightPlugins"];
+    return [PluginModel pluginsDir];
 }
 
 #pragma mark (Un)?installation

@@ -9,11 +9,14 @@
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
 #import "PluginListController.h"
+#import "PluginModel.h"
+#import <LetsMove/PFMoveApplication.h>
 
 @interface AppDelegate ()
 
 @property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
+@property (nonatomic,weak) IBOutlet NSTextField *versionLabel;
 
 @end
 
@@ -42,6 +45,10 @@
     [self checkSpotlightVersion];
     
     [self setupURLHandling];
+    
+    self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    
+    PFMoveToApplicationsFolderIfNecessary();
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
@@ -218,6 +225,9 @@
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
 }
+- (IBAction)requestAPlugin:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/ideas"]];
+}
 #pragma mark Links
 - (IBAction)showPythonAPI:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
@@ -234,6 +244,18 @@
     NSURL *url = [NSURL URLWithString:urlStr];
     if ([url.scheme isEqualToString:@"flashlight-show"]) {
         [self.pluginListController showPluginWithName:url.host];
+    } else if ([url.scheme isEqualToString:@"flashlight"]) {
+        NSArray *parts = [[NSArray arrayWithObject:url.host] arrayByAddingObjectsFromArray:[url.pathComponents subarrayWithRange:NSMakeRange(1, url.pathComponents.count - 1)]];
+        if (parts.count >= 2 && [parts[0] isEqualToString:@"plugin"]) {
+            NSString *pluginName = parts[1];
+            if (parts.count == 2) {
+                [self.pluginListController showPluginWithName:pluginName];
+            } else {
+                if (parts.count == 3 && [parts[2] isEqualToString:@"preferences"]) {
+                    [[PluginModel installedPluginNamed:parts[1]] presentOptionsInWindow:self.window];
+                }
+            }
+        }
     }
 }
 

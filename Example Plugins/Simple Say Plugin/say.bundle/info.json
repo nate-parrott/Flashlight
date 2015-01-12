@@ -1,0 +1,13 @@
+{
+   "name": "say",
+   "displayName": "Say Something",
+   "displayName_de": "Sage etwas",
+   "displayName_fr": "Dire quelque-chose",
+   "description": "Speaks your input text",
+   "description": "Spricht deinen eingegebenen Text",
+   "description_fr":"Pronnonce le texte voulu",
+   "examples": ["say hello world", "say good morning"],
+   "examples_de": ["Sage Hallo Welt", "Spreche Guten Morgen"],
+   "examples_fr": ["dire Bonjour", "dire Comment ça va ?"],
+   "categories": ["Utilities"]
+}

@@ -808,7 +808,7 @@
                             <action selector="openPluginsDirectory:" target="Voe-Tx-rLC" id="mQ8-rz-QoM"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="E8FE8582-21A8-4DEF-90A9-08CC908099C3" label="Create New Plugin" paletteLabel="Create New Plugin" tag="-1" image="bundle" id="T0Y-ZJ-I7e">
+                    <toolbarItem implicitItemIdentifier="E8FE8582-21A8-4DEF-90A9-08CC908099C3" label="New Plugin" paletteLabel="New Plugin" tag="-1" image="bundle" id="T0Y-ZJ-I7e">
                         <connections>
                             <action selector="newPlugin:" target="Voe-Tx-rLC" id="nlF-QT-L6t"/>
                         </connections>
