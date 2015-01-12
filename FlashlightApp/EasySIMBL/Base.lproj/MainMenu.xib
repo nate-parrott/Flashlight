@@ -433,10 +433,22 @@
                                                                 <action selector="remove:" target="FQb-yf-BXy" id="Ax6-vV-v2w"/>
                                                             </connections>
                                                         </button>
+                                                        <button verticalHuggingPriority="750" id="4lu-N2-9Kf">
+                                                            <rect key="frame" x="111" y="8" width="97" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <buttonCell key="cell" type="inline" title="Settings" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lXb-U2-Vam">
+                                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                <font key="font" metaFont="smallSystemBold"/>
+                                                            </buttonCell>
+                                                            <connections>
+                                                                <action selector="openSettings:" target="FQb-yf-BXy" id="Mpy-la-wLc"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <connections>
                                                         <outlet property="loader" destination="Agl-8K-jT3" id="Ewm-F1-sNa"/>
                                                         <outlet property="removeButton" destination="XCq-UX-7Ic" id="6Ja-6I-Mga"/>
+                                                        <outlet property="settingsButton" destination="4lu-N2-9Kf" id="mxP-Y2-S4V"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>

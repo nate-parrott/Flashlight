@@ -39,6 +39,9 @@
 		5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326F81A0933E800CE241E /* ZZStandardDecryptInputStream.mm */; };
 		5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */; };
 		5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63270D1A0939A900CE241E /* libz.dylib */; };
+		5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */; };
+		5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */; };
+		5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */; };
 		5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */; };
 		5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */; };
 		5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */; };
@@ -163,6 +166,11 @@
 		5F6326F91A0933E800CE241E /* ZZStoreOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStoreOutputStream.h; sourceTree = "<group>"; };
 		5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZStoreOutputStream.m; sourceTree = "<group>"; };
 		5F63270D1A0939A900CE241E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorWindow.h; sourceTree = "<group>"; };
+		5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefEditorWindow.m; sourceTree = "<group>"; };
+		5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorTableView.h; sourceTree = "<group>"; };
+		5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefEditorTableView.m; sourceTree = "<group>"; };
+		5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefEditorWindow.xib; sourceTree = "<group>"; };
 		5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvenienceCategories.h; sourceTree = "<group>"; };
 		5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvenienceCategories.m; sourceTree = "<group>"; };
 		5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -376,6 +384,11 @@
 				5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */,
 				5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */,
 				5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */,
+				5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */,
+				5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */,
+				5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */,
+				5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */,
+				5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */,
 				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
 				5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */,
 				5F6326CE1A0933E800CE241E /* zipzap */,
@@ -495,6 +508,7 @@
 				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
+				5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,
 				6C56449B159E7C0900215467 /* MainMenu.xib in Resources */,
 			);
@@ -553,9 +567,11 @@
 				5FBEC9B01A1539C0007FEC54 /* ConvenienceCategories.m in Sources */,
 				5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */,
 				5F6326FE1A0933E800CE241E /* ZZConstants.m in Sources */,
+				5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */,
 				5F6326FC1A0933E800CE241E /* ZZArchive.mm in Sources */,
 				5F6327071A0933E800CE241E /* ZZNewArchiveEntryWriter.mm in Sources */,
 				5F6327061A0933E800CE241E /* ZZNewArchiveEntry.mm in Sources */,
+				5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */,
 				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
 				5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */,
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
