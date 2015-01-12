@@ -119,7 +119,7 @@ def build_html(appearance, content):
     </head>
     <script>
         function copyToClipboard(emoji) {
-            command = 'echo "'+emoji+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \\'display notification "Copied!" with title "Flashlight"\\'';
+            command = 'printf "'+emoji+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \\'display notification "Copied!" with title "Flashlight"\\'';
             flashlight.bash(command);
         }
     </script>
@@ -163,10 +163,7 @@ def results(params, original_query):
     title = 'No emoji is matching your search'
 
     if len(emojis['matches']):
-        if is_gemoji:
-            output = ':%s:' % (emojis['matches'][0]['aliases'][0])
-        else:
-            output = emojis['matches'][0].get('emoji')
+        output = emojis['matches'][0].get('emoji')
 
         title = 'Copy the emoji %s to the clipboard' % (output)
         content = '<h1>Emojis maching your search <small>%s results</small></h1><div class="emojis">' % (len(emojis['matches']))
@@ -190,7 +187,7 @@ def results(params, original_query):
 
 def run(output):
     import subprocess
-    subprocess.call(['echo "'+output+'" | LANG=en_US.UTF-8  pbcopy && osascript -e \'display notification "Copied!" with title "Flashlight"\''], shell=True)
+    subprocess.call(['printf "'+output+'" | LANG=en_US.UTF-8  pbcopy && osascript -e \'display notification "Copied!" with title "Flashlight"\''], shell=True)
 
 
 # print results({'~emoji': 'grin'}, 'emoji grinn')

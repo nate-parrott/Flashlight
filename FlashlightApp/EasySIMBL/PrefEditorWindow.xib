@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14C81f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PrefEditorWindow">
+            <connections>
+                <outlet property="iconView" destination="hoN-9i-Rs7" id="33p-Bx-HZ1"/>
+                <outlet property="pluginName" destination="5ct-xW-pjG" id="m1N-6x-Ym8"/>
+                <outlet property="settingsContainer" destination="DpA-q9-2aa" id="fws-SR-hW0"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="oLq-Zc-XDp"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hoN-9i-Rs7">
+                        <rect key="frame" x="20" y="228" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="49x-dd-uNi"/>
+                            <constraint firstAttribute="width" secondItem="hoN-9i-Rs7" secondAttribute="height" multiplier="1:1" id="7sg-Q0-nNp"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="iAs-Vm-o7V"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5ct-xW-pjG">
+                        <rect key="frame" x="48" y="231" width="163" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Terminal Plugin Settings" id="8lW-UU-LEd">
+                            <font key="font" metaFont="systemBold"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="krb-k6-xnH">
+                        <rect key="frame" x="370" y="13" width="96" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="iAO-ub-a6n"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DaB-zF-YDp">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="done:" target="-2" id="Wd7-6M-iWm"/>
+                        </connections>
+                    </button>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="DpA-q9-2aa">
+                        <rect key="frame" x="0.0" y="41" width="480" height="188"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="krb-k6-xnH" secondAttribute="trailing" constant="20" id="1kO-Cw-DHF"/>
+                    <constraint firstItem="DpA-q9-2aa" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="BvA-3e-cfh"/>
+                    <constraint firstAttribute="trailing" secondItem="DpA-q9-2aa" secondAttribute="trailing" id="K70-FD-8zM"/>
+                    <constraint firstItem="hoN-9i-Rs7" firstAttribute="centerY" secondItem="5ct-xW-pjG" secondAttribute="centerY" constant="0.5" id="Mks-yy-Ren"/>
+                    <constraint firstAttribute="bottom" secondItem="krb-k6-xnH" secondAttribute="bottom" constant="20" id="cD3-YY-Qqn"/>
+                    <constraint firstItem="5ct-xW-pjG" firstAttribute="leading" secondItem="hoN-9i-Rs7" secondAttribute="trailing" constant="8" id="l4E-I9-SOT"/>
+                    <constraint firstItem="DpA-q9-2aa" firstAttribute="top" secondItem="5ct-xW-pjG" secondAttribute="bottom" constant="2" id="mJg-i3-OMv"/>
+                    <constraint firstItem="hoN-9i-Rs7" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="pFV-0j-pG5"/>
+                    <constraint firstItem="krb-k6-xnH" firstAttribute="top" secondItem="DpA-q9-2aa" secondAttribute="bottom" id="pbp-6q-OAb"/>
+                    <constraint firstItem="hoN-9i-Rs7" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="rVF-F2-5mU"/>
+                </constraints>
+            </view>
+        </window>
+    </objects>
+    <resources>
+        <image name="Icon" width="512" height="512"/>
+    </resources>
+</document>

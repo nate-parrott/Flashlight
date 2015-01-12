@@ -12,6 +12,12 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ITSwitch+Additions.h"
 
+@interface PluginCellView ()
+
+@property (nonatomic) IBOutlet NSButton *settingsButton;
+
+@end
+
 @implementation PluginCellView
 
 - (PluginModel *)plugin {
@@ -26,10 +32,15 @@
     } else {
         [self.loader stopAnimation:nil];
     }
+    self.settingsButton.hidden = [self.plugin installing] || ![self.plugin hasOptions];
 }
 
 - (IBAction)remove:(id)sender {
     [self.listController uninstallPlugin:[self plugin]];
+}
+
+- (IBAction)openSettings:(id)sender {
+    [self.plugin presentOptionsInWindow:self.window];
 }
 
 @end

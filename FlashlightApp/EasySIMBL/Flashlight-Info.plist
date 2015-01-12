@@ -34,12 +34,16 @@
 	<key>CFBundleShortVersionString</key>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<string>0.95.4</string>
 =======
 	<string>0.96</string>
 >>>>>>> 8b96a731dfa82344adeb1ad4b962f8141f2f70e1
 =======
 	<string>0.96.1</string>
+>>>>>>> upstream/master
+=======
+	<string>0.96.3</string>
 >>>>>>> upstream/master
 	<key>CFBundleSignature</key>
 	<string>????</string>
@@ -55,8 +59,19 @@
 				<string>flashlight-show</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>com.nateparrott.Flashlight.Action</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>flashlight</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	<string>27</string>
@@ -65,6 +80,9 @@
 >>>>>>> 8b96a731dfa82344adeb1ad4b962f8141f2f70e1
 =======
 	<string>31</string>
+>>>>>>> upstream/master
+=======
+	<string>33</string>
 >>>>>>> upstream/master
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>

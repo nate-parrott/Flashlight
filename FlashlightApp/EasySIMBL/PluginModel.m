@@ -9,6 +9,7 @@
 #import "PluginModel.h"
 #import "ConvenienceCategories.h"
 #import "NSObject+InternationalizedValueForKey.h"
+#import "PrefEditorWindow.h"
 
 @implementation PluginModel
 
@@ -23,6 +24,7 @@
     p.categories = self.categories;
     p.isAutomatorWorkflow = self.isAutomatorWorkflow;
     p.isSearchPlugin = self.isSearchPlugin;
+    p.openPreferencesOnInstall = self.openPreferencesOnInstall;
     return p;
 }
 
@@ -37,6 +39,7 @@
     model.categories = json[@"categories"] ? : @[@"Unknown"];
     model.isAutomatorWorkflow = [json[@"isAutomatorWorkflow"] boolValue];
     model.isSearchPlugin = [json[@"isSearchPlugin"] boolValue];
+    model.openPreferencesOnInstall = [json[@"openPreferencesOnInstall"] boolValue];
     return model;
 }
 
@@ -76,6 +79,36 @@
         [cats addObject:@"Installed"];
     }
     return cats;
+}
+
++ (NSString *)pluginsDir {
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"FlashlightPlugins"];
+}
+
+- (NSString *)path {
+    return [[[[self class] pluginsDir] stringByAppendingPathComponent:self.name] stringByAppendingPathExtension:@"bundle"];
+}
+
+- (BOOL)hasOptions {
+    return [[NSFileManager defaultManager] fileExistsAtPath:[[self path] stringByAppendingPathComponent:@"options.json"]];
+}
+
+- (void)presentOptionsInWindow:(NSWindow *)window {
+    PrefEditorWindow *win = [[PrefEditorWindow alloc] initWithWindowNibName:@"PrefEditorWindow"];
+    win.plugin = self;
+    [window beginSheet:win.window completionHandler:^(NSModalResponse returnCode) {
+        [win save]; // it's important that we hold a reference to win
+    }];
+}
+
++ (PluginModel *)installedPluginNamed:(NSString *)name {
+    NSString *infoPath = [[[[[self class] pluginsDir] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"] stringByAppendingPathComponent:@"info.json"];
+    NSData *infoData = [NSData dataWithContentsOfFile:infoPath];
+    if (infoPath) {
+        return [PluginModel fromJson:[NSJSONSerialization JSONObjectWithData:infoData options:0 error:nil] baseURL:nil];
+    } else {
+        return nil;
+    }
 }
 
 @end

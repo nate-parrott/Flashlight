@@ -1,0 +1,13 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Say Something (with settings)",
+  "name" : "say-with-settings",
+  "description" : "An example plugin with an options file.",
+  "examples" : [
+    "say hello world",
+    "say good morning"
+  ],
+	"openPreferencesOnInstall": true
+}
