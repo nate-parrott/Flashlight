@@ -16,12 +16,21 @@
 @property (nonatomic) BOOL installing;
 @property (nonatomic) NSURL *zipURL;
 @property (nonatomic) NSArray *categories;
-@property (nonatomic) BOOL isAutomatorWorkflow, isSearchPlugin;
+@property (nonatomic) BOOL isAutomatorWorkflow, isSearchPlugin, openPreferencesOnInstall;
 
 + (PluginModel *)fromJson:(NSDictionary *)json baseURL:(NSURL *)url;
 
 @property (nonatomic,readonly) NSAttributedString *attributedString;
 
 - (NSArray *)allCategories;
+
+- (BOOL)hasOptions;
+- (void)presentOptionsInWindow:(NSWindow *)window;
+
++ (NSString *)pluginsDir;
+
++ (PluginModel *)installedPluginNamed:(NSString *)name;
+
+- (NSString *)path;
 
 @end

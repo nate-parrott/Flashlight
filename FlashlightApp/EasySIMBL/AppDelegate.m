@@ -9,6 +9,7 @@
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
 #import "PluginListController.h"
+#import "PluginModel.h"
 
 @interface AppDelegate ()
 
@@ -240,6 +241,18 @@
     NSURL *url = [NSURL URLWithString:urlStr];
     if ([url.scheme isEqualToString:@"flashlight-show"]) {
         [self.pluginListController showPluginWithName:url.host];
+    } else if ([url.scheme isEqualToString:@"flashlight"]) {
+        NSArray *parts = [[NSArray arrayWithObject:url.host] arrayByAddingObjectsFromArray:[url.pathComponents subarrayWithRange:NSMakeRange(1, url.pathComponents.count - 1)]];
+        if (parts.count >= 2 && [parts[0] isEqualToString:@"plugin"]) {
+            NSString *pluginName = parts[1];
+            if (parts.count == 2) {
+                [self.pluginListController showPluginWithName:pluginName];
+            } else {
+                if (parts.count == 3 && [parts[2] isEqualToString:@"preferences"]) {
+                    [[PluginModel installedPluginNamed:parts[1]] presentOptionsInWindow:self.window];
+                }
+            }
+        }
     }
 }
 

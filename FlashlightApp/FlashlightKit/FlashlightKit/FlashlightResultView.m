@@ -49,13 +49,15 @@
 #pragma mark Navigation interception
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
-    if (self.result.linksOpenInBrowser && [actionInformation[WebActionNavigationTypeKey] integerValue] == WebNavigationTypeLinkClicked) {
+    BOOL shouldOpenExternally = [actionInformation[WebActionNavigationTypeKey] integerValue] == WebNavigationTypeLinkClicked && (self.result.linksOpenInBrowser || ![@[@"http", @"https"] containsObject:request.URL.scheme]);
+    if (shouldOpenExternally) {
         [listener ignore];
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSWorkspace sharedWorkspace] openURL:request.URL];
         });
+    } else {
+        [listener use];
     }
-    [listener use];
 }
 
 #pragma mark Loading indicator

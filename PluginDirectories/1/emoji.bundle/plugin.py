@@ -119,7 +119,7 @@ def build_html(appearance, content):
     </head>
     <script>
         function copyToClipboard(emoji) {
-            command = 'echo "'+emoji+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \\'display notification "Copied!" with title "Flashlight"\\'';
+            command = 'printf "'+emoji+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \\'display notification "Copied!" with title "Flashlight"\\'';
             flashlight.bash(command);
         }
     </script>
