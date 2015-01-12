@@ -42,7 +42,7 @@
 "136.title" = "Flashlight 종료";
 
 /* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
-"145.title" = "다른 것들 숨기기";
+"145.title" = "다른 창들 숨기기";
 
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
 "150.title" = "모두 보이기";
@@ -90,7 +90,7 @@
 "209.title" = "찾기…";
 
 /* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "210"; */
-"210.title" = "선택점으로 넘어가기";
+"210.title" = "선택된 곳으로 넘어가기";
 
 /* Class = "NSMenuItem"; title = "Speech"; ObjectID = "211"; */
 "211.title" = "발음";
@@ -99,7 +99,7 @@
 "212.title" = "발음";
 
 /* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "213"; */
-"213.title" = "이전 검색i";
+"213.title" = "이전 검색";
 
 /* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */
 "215.title" = "다시돌리기";
@@ -114,7 +114,7 @@
 "218.title" = "검색";
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */
-"219.title" = "타자치는 중 철자수정 찾기";
+"219.title" = "타자치는 중 수정할 철자 찾기";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "220"; */
 "220.title" = "찾기";
@@ -123,7 +123,7 @@
 "221.title" = "선택 영역으로 검색";
 
 /* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */
-"239.title" = "줌";
+"239.title" = "최대화";
 
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */
 "346.title" = "문법과 철자 검사";
@@ -135,13 +135,13 @@
 "349.title" = "대체";
 
 /* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "350"; */
-"350.title" = "스마트 복사/붙여넣기";
+"350.title" = "똑똑한 복사/붙여넣기";
 
 /* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "351"; */
-"351.title" = "스마트 어구";
+"351.title" = "똑똑한 어구";
 
 /* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "354"; */
-"354.title" = "스마트 링크";
+"354.title" = "똑똑한 링크";
 
 /* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "450"; */
 "450.title" = "변환";
@@ -156,10 +156,10 @@
 "454.title" = "자동 철자수정";
 
 /* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "457"; */
-"457.title" = "대체보기";
+"457.title" = "대체 보기";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "460"; */
-"460.title" = "스마트 대시";
+"460.title" = "똑똑한 대시";
 
 /* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "462"; */
 "462.title" = "텍스트 대체";
@@ -171,7 +171,7 @@
 "466.title" = "대문자";
 
 /* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "485"; */
-"485.title" = "붙이고 스타일 맞추기";
+"485.title" = "붙여넣고 스타일 맞추기";
 
 /* Class = "NSMenuItem"; title = "Help"; ObjectID = "490"; */
 "490.title" = "도움말";
@@ -210,10 +210,10 @@
 "KSp-5B-nrs.title" = "닫기";
 
 /* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
-"NO4-GD-LyW.title" = "피드백 나가기";
+"NO4-GD-LyW.title" = "피드백 남기기";
 
 /* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
-"P0e-Mj-nLE.title" = "Flashlight Github에 기여";
+"P0e-Mj-nLE.title" = "Flashlight에 기여";
 
 /* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
 "R1V-Ae-nee.title" = "다시 해보세요";
@@ -228,7 +228,7 @@
 "ZUK-gW-ec2.title" = "텍스트 셀";
 
 /* Class = "NSTextFieldCell"; title = "Search anything."; ObjectID = "Zut-6I-UVj"; */
-"Zut-6I-UVj.title" = "아무거나 검색해보세요.";
+"Zut-6I-UVj.title" = "아무거나 검색해보세요";
 
 /* Class = "NSMenuItem"; title = "Run an Automator Workflow"; ObjectID = "ate-NX-h2e"; */
 "ate-NX-h2e.title" = "오토메이터 워크플로 실행하기";
@@ -243,7 +243,7 @@
 "qwG-5n-TVO.title" = "헤더 셀";
 
 /* Class = "NSTextFieldCell"; title = "This plugin does some crazy stuff like change the word and everything."; ObjectID = "rtk-em-P81"; */
-"rtk-em-P81.title" = "이 플러그인은 여러 굉장한 일들, 예를들어 단어와 모든걸 변화 시킵니다.";
+"rtk-em-P81.title" = "이 플러그인은 여러 굉장한 일들, 예를 들어 단어 그리고 모든걸 변화 시킵니다.";
 
 /* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
 "sSL-rY-WNy.label" = "커스텀 뷰";
@@ -255,4 +255,4 @@
 "wJP-7d-WaF.title" = "파일";
 
 /* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
-"xYz-ja-uoP.title" = "Python API...";
+"xYz-ja-uoP.title" = "파이썬 API...";
