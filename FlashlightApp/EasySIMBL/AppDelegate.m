@@ -10,6 +10,7 @@
 #import "ITSwitch+Additions.h"
 #import "PluginListController.h"
 #import "PluginModel.h"
+#import <LetsMove/PFMoveApplication.h>
 
 @interface AppDelegate ()
 
@@ -46,6 +47,8 @@
     [self setupURLHandling];
     
     self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    
+    PFMoveToApplicationsFolderIfNecessary();
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
