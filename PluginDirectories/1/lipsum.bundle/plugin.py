@@ -40,4 +40,3 @@ def run(output):
     import os
     #os.system('echo "'+lipsum[0]+'" | pbcopy')
     os.system('echo "'+output+'" | pbcopy')
-
