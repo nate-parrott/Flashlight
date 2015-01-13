@@ -4,17 +4,18 @@ import i18n
 def results(parsed, original_query):
 
     search_specs = [
-         ["Baidu", "~baiduquery", "http://www.baidu.com/s?wd="]
+         ["Baidu", "~baiduquery", u"http://www.baidu.com/s?wd="]
     ]
     for name, key, url in search_specs:
         if key in parsed:
+            query = parsed[key].encode('utf-8')
             localizedurl = i18n.localstr(url)
-            search_url = localizedurl + urllib.quote_plus(parsed[key])
-            title = i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]);
+            search_url = localizedurl + urllib.quote_plus(query)
+            title = i18n.localstr("Search {0} for '{1}'").format(name, query);
             return {
                 "title": title,
                 "run_args": [search_url],
-                "html": """
+                "html": u"""
                 <script>
                 setTimeout(function() {
                     window.location = %s
