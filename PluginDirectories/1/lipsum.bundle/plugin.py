@@ -1,7 +1,6 @@
 import loremipsum
 import re
 
-
 def appearance():
     import Foundation
     dark_mode = Foundation.NSUserDefaults.standardUserDefaults().persistentDomainForName_(Foundation.NSGlobalDomain).objectForKey_("AppleInterfaceStyle") == "Dark"
