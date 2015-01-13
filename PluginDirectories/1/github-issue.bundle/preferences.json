@@ -1,0 +1,17 @@
+{
+  "colors": [{
+      "color": "white",
+      "border": "transparent",
+      "name": "bug",
+      "background": "red"
+  }, {
+      "color": "rgb(51, 41, 0)",
+      "border": "transparent",
+      "name": "feature",
+      "background": "rgb(251, 202, 4)"
+  }],
+  "aliases": [{
+      "src": "flashlight",
+      "dst": "nate-parrott\/Flashlight"
+  }]
+}

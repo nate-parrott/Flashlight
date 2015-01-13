@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <style>
+            html, body {
+                font: 15px/1.5 'Helvetica Neue';
+                font-weight: 300;
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                -webkit-user-select: none;
+                background: rgb(250, 250, 250);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            a, a:link, a:focus, a:visited, b {
+                color: rgb(0, 146, 232);
+                font-weight: 500;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .navbar {
+                position: relative;
+                height: 44px;
+                border-bottom: 1px solid rgb(221, 221, 221);
+                background-image: linear-gradient(rgb(255, 255, 255), rgb(245, 245, 245));
+            }
+
+            .navbar-icon {
+                position: absolute;
+                height: 100%;
+                width: 50px;
+                left: 8px;
+                background: url('Icon.png') no-repeat left center;
+                background-size: 38px 38px;
+            }
+
+            .navbar-user {
+                position: absolute;
+                height: 100%;
+                width: 50px;
+                right: 12px;
+                background-repeat: no-repeat;
+                background-position: right center;
+                background-size: 30px 30px;
+            }
+
+            .navbar-user[data-user-id=''] {
+                display: none;
+            }
+
+            .navbar-inner {
+                margin: 0 auto;
+                width: 80vh;
+                overflow: hidden;
+                font-size: 15px;
+                height: 44px;
+                line-height: 44px;
+                text-overflow: ellipsis;
+                text-align: center;
+                white-space: nowrap;
+                color: rgb(153, 153, 153);
+            }
+
+            .navbar a {
+                color: rgb(65, 131, 196);
+                text-decoration: none;
+                line-height: 44px;
+            }
+
+            .body {
+                padding: 14px 12px 0;
+            }
+
+            main {
+                display: -webkit-flex;
+                -webkit-flex-direction: column;
+                height: 225px;
+            }
+
+            .field {
+                color: rgb(51, 51, 51);
+                vertical-align: middle;
+                background-color: rgb(255, 255, 255);
+                background-repeat: no-repeat;
+                background-position: right center;
+                border: 1px solid rgb(204, 204, 204);
+                border-radius: 3px;
+                outline: none;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+                background-color: rgb(250, 250, 250);
+                padding: 6px 10px;
+                width: 100%;
+                word-wrap:break-word;
+                overflow: scroll;
+            }
+
+            .title {
+                -webkit-flex: 1 auto;
+                min-height: 36px;
+                line-height: 1.4em;
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+
+            .content {
+                -webkit-flex: 100 auto;
+            }
+
+            .inner {
+                white-space: pre-wrap;
+            }
+
+            .labels {
+                margin: 0 0 10px;
+                padding: 0;
+            }
+
+
+            .labels:empty {
+                display: none;
+            }
+
+            .label {
+                display: inline-block;
+                padding: 4px 7px 5px;
+                margin-right: 5px;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1em;
+                text-align: center;
+                border: 1px solid rgba(0, 0, 0, 0);
+                border-radius: 3px;
+                -webkit-transition: all 0.2s linear;
+                transition: all 0.2s linear;
+                box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+                color: rgb(51, 51, 51);
+            }
+
+            a.button {
+                position: absolute;
+                left: 12px;
+                right: 12px;
+                bottom: 14px;
+                text-align: center;
+                padding: 9px 15px;
+                border-radius: 3px;
+                border: 1px solid rgb(221, 221, 221);
+                border-bottom-color: rgb(206, 206, 206);
+                background-image: -webkit-linear-gradient(rgb(250, 250, 250), rgb(234, 234, 234));
+                background-repeat: repeat-x;
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 1.5;
+                color: rgb(51, 51, 51);
+                text-align: center;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+                white-space: nowrap;
+                vertical-align: middle;
+                -webkit-appearance: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="http://github.com" class="navbar-icon"></a>
+            <a href="http://github.com/{{user_name}}" class="navbar-user" style="background-image: url(https://avatars2.githubusercontent.com/u/{{user_id}}?v=3&s=60)" data-user-id="{{user_id}}"></a>
+            <div class="navbar-inner"><div class="repository">
+                <a href="https://github.com/{{organisation}}">{{organisation}}</a>
+                /
+                <a href="https://github.com/{{organisation}}/{{repository}}">{{repository}}</a>
+            </div></div>
+        </div>
+        <main class="body">
+            <div class="title field">{{title}}</div>
+            <div class="content field">
+                <div class="inner">{{content}}</div>
+            </div>
+        </main>
+        <div class="body">
+            <ul class="labels">{{labels}}</ul>
+            <a href="{{url}}" class="button">Submit new issue</a>
+        </div>
+    </body>
+</html>
