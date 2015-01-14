@@ -47,6 +47,7 @@ Huge thanks to everyone who's contributed translations:
  - [readingsnail](http://github.com/readingsnail) for Korean
  - [davochka](http://github.com/davochka) for Russian
  - [dougian](http://github.com/dougian) for Greek
+ - [Kejk](http://github.com/kejk) for Swedish
  
 
 If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization.markdown)
