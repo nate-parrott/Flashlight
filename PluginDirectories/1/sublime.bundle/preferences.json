@@ -1,0 +1,6 @@
+{
+  "aliases": [{
+      "name": "home",
+      "path": "~\/"
+  }]
+}

@@ -1,0 +1,17 @@
+{
+    "options": [
+        {
+            "type": "table",
+            "text": "Aliases:",
+            "key": "aliases",
+            "columns": [
+                {"text": "Name", "key": "name"},
+                {"text": "Path", "key": "path"}
+            ]
+        },
+        {
+            "type": "hint",
+            "text": "When you type the name of an alias, the custom path will be used instead."
+        }
+    ]
+}
