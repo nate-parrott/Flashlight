@@ -1,2 +1,2 @@
-sublime
-open with sublime
+sublime ~query(path)
+open with sublime ~query(path)
