@@ -206,8 +206,9 @@
             ],
             "creator_name": "Matthias Dolstra",
             "creator_url": "http://mdolstra.me",
+            "description": "Checking CSS, HTML and Javascript for Browser Compatibility using caniuse.com",
+            "description_de": "\u00dcberpr\u00fcft CSS, HTML und Javascript nach Browserkompatiblit\u00e4t mittels caniuse.com",
             "displayName": "Can I use",
-            "displayName_de": "Kann ich",
             "examples": [
                 "CIU div",
                 "Can I use transforms "
@@ -221,6 +222,7 @@
                 "Developer"
             ],
             "displayName": "Search CocoaPods",
+            "displayName_de": "CocoaPods Suche",
             "examples": [
                 "search cocoapods for Core Data",
                 "pod ReactiveCocoa"
@@ -367,6 +369,8 @@
             "categories": [
                 "Language"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Translate English to German using dict.cc",
             "description_de": "\u00dcbersetze von Englisch nach Deutsch mit dict.cc",
             "displayName": "dict.cc Translate",
@@ -483,6 +487,7 @@
             "creator_name": "Marc Bachmann",
             "creator_url": "https://github.com/marcbachmann/flashlight-emoji",
             "description": "Search and copy emoji.",
+            "description_de": "Durchsuche und kopiere emoji.",
             "displayName": "Emoji",
             "examples": [
                 "emoji grin",
@@ -497,6 +502,8 @@
                 "Information",
                 "Developer"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Do you need a excuse? Done something wrong? Here is the solution",
             "displayName": "Programmer Excuses",
             "examples": [
@@ -511,6 +518,8 @@
             "categories": [
                 "Art"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Search Flickr",
             "description_de": "Flickr Suche",
             "displayName": "Flickr",
@@ -527,6 +536,8 @@
             "categories": [
                 "Information"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "German Gas Price using mehr-tanken.de",
             "description_de": "Benzinpreise von mehr-tanken.de",
             "displayName": "German Gas Price",
@@ -558,6 +569,8 @@
             "categories": [
                 "Media"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Search Google for gifs and allows to copy the url",
             "description_de": "Durchsucht Google nach gifs und erlaubt es die URL zu kopieren",
             "displayName": "Google gifs",
@@ -586,6 +599,21 @@
             ],
             "name": "giphy",
             "zip_url": "giphy.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-github-issue",
+            "description": "Create an Issue on Github using Spotlight",
+            "displayName": "Github Issue",
+            "examples": [
+                "ghi organisation/repo awesome issue title labels=bug"
+            ],
+            "name": "github-issue",
+            "openPreferencesOnInstall": true,
+            "zip_url": "github-issue.zip"
         },
         {
             "categories": [
@@ -648,6 +676,18 @@
             ],
             "name": "googlemaps",
             "zip_url": "googlemaps.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search at Google Scholar",
+            "displayName": "Search at Google Scholar",
+            "examples": [
+                "gs body"
+            ],
+            "name": "Search at Google Scholar",
+            "zip_url": "googlescholar.zip"
         },
         {
             "categories": [
@@ -787,6 +827,7 @@
                 "Utilities"
             ],
             "description": "Lookup IP info",
+            "description_de": "IP infos Abfragen",
             "displayName": "IP Info",
             "examples": [
                 "ipinfo 8.8.8.8"
@@ -798,6 +839,8 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Shows Useragent and external IP Address",
             "description_de": "Zeigt Useragent und externe IP Adresse an",
             "displayName": "External IP / Useragent",
@@ -884,10 +927,16 @@
                 "Utilities"
             ],
             "description": "Show a snippet of text full-screen",
+            "description_De": "Zeigt einen Text im Vollbild an",
             "displayName": "Large Text",
+            "displayName_de": "Gro\u00dfer Text",
             "examples": [
                 "large text: P Sherman, 42 Wallaby Way, Sydney",
                 "show 718 123 4567 in large text"
+            ],
+            "examples_de": [
+                "gro\u00dfer text: P Sherman, 42 Wallaby Way, Sydney",
+                "zeige 718 123 4567 in gro\u00df"
             ],
             "name": "largetext",
             "zip_url": "largetext.zip"
@@ -918,6 +967,7 @@
             "creator_name": "Anton Vakhmin",
             "creator_url": "https://github.com/LastDanmer",
             "description": "Generates Lorem Ipsum placeholder text.",
+            "description_de": "Erstellt Lorem Ipsum Platzhalter.",
             "displayName": "Lorem Ipsum",
             "examples": [
                 "1 paragraph of lorem ipsum",
@@ -1008,6 +1058,9 @@
                 "ninetan osaka"
             ],
             "name": "ninetan",
+            "preferred_locales": [
+                "jp"
+            ],
             "zip_url": "ninetan.zip"
         },
         {
@@ -1075,7 +1128,9 @@
                 "Developer"
             ],
             "description": "Search at PyPI - the Python Package Index",
+            "description_de": "Suche auf PyPI - dem Python Package Index",
             "displayName": "Search at PyPI",
+            "displayName_de": "Suche auf PyPI",
             "examples": [
                 "pypi setuptools"
             ],
@@ -1199,6 +1254,8 @@
             "categories": [
                 "Utilities"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Opens a path in Finder",
             "description_de": "Zeigt einen Pfad im Finder an",
             "displayName": "Show in Finder",
@@ -1353,9 +1410,14 @@
             "creator_name": "Marc Bachmann",
             "creator_url": "https://github.com/marcbachmann/flashlight-teamviewer",
             "description": "Connect to a TeamViewer session",
+            "description_de": "Verbinde dich zu einer TeamViewer Session",
             "displayName": "TeamViewer",
             "examples": [
                 "teamviewer partnerId, password",
+                "teamviewer 160 581 821, 1925"
+            ],
+            "examples_de": [
+                "teamviewer PartnerID, Passwort",
                 "teamviewer 160 581 821, 1925"
             ],
             "name": "teamviewer",
@@ -1412,6 +1474,8 @@
                 "Weather",
                 "Utilities"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
             "description_fr": "Consulter et interagir avec le temps",
@@ -1626,11 +1690,18 @@
                 "Information",
                 "Language"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Search the Wiktionary.",
             "description_de": "Durchsuche Wiktionary",
             "displayName": "Wiktionary (EN)",
             "displayName_de": "Wiktionary (DE)",
             "examples": [
+                "wiktionary COB",
+                "wiktionary ASAP",
+                "wiktionary Flashlight"
+            ],
+            "examples_de": [
                 "wiktionary COB",
                 "wiktionary ASAP",
                 "wiktionary Taschenlampe"
@@ -1707,6 +1778,8 @@
             "categories": [
                 "Utilities"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Decides for you, so you don't have to spend energy in that",
             "description_de": "Entscheidet f\u00fcr dich, so dass du das nicht auch noch selbst machen musst",
             "displayName": "Yes or No",
