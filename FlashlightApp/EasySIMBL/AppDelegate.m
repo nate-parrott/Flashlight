@@ -11,6 +11,7 @@
 #import "PluginListController.h"
 #import "PluginModel.h"
 #import <LetsMove/PFMoveApplication.h>
+#import "UpdateChecker.h"
 
 @interface AppDelegate ()
 
@@ -78,12 +79,12 @@
             [defaults addSuiteNamed:self.loginItemBundleIdentifier];
             
             if ([[defaults objectForKey:self.loginItemBundleIdentifier] isEqualToString:loginItemBundleVersion]) {
-                SIMBLLogInfo(@"Already my 'SIMBL Agent' is running.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running.");
                 
                 state = NSOnState;
             } else {
                 // if running agent's bundle is different from my bundle, need restart agent from my bundle.
-                SIMBLLogInfo(@"Already 'SIMBL Agent' is running, but version is different.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
                 
                 CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
                 [self.useSIMBLSwitch setEnabled:NO];
@@ -114,6 +115,8 @@
     self.openGithub.stringValue = NSLocalizedString(@"Contribute on GitHub", @"");
     self.requestPlugin.stringValue = NSLocalizedString(@"Request a Plugin", @"");
     self.searchAnything.stringValue = NSLocalizedString(@"Search anything.", @"");
+    
+    [UpdateChecker shared]; // begin fetch
 }
 
 - (void)restartSIMBLIfUpdated {

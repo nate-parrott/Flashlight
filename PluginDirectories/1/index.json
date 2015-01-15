@@ -682,11 +682,12 @@
                 "Search"
             ],
             "description": "Search at Google Scholar",
-            "displayName": "Search at Google Scholar",
+            "displayName": "Google Scholar Search",
             "examples": [
-                "gs body"
+                "gs body",
+                "search google scholar for fitness articles"
             ],
-            "name": "Search at Google Scholar",
+            "name": "googlescholar",
             "zip_url": "googlescholar.zip"
         },
         {
@@ -1382,7 +1383,8 @@
             "displayName": "Subreddit",
             "examples": [
                 "subr cfb",
-                "subreddit askreddit"
+                "subreddit askreddit",
+                "r/funny"
             ],
             "name": "subreddit",
             "zip_url": "subreddit.zip"

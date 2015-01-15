@@ -111,4 +111,13 @@
     }
 }
 
++ (NSInteger)versionForPluginAtPath:(NSString *)path {
+    for (NSString *file in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil]) {
+        if ([file.pathExtension isEqualToString:@"version"]) {
+            return file.stringByDeletingPathExtension.integerValue;
+        }
+    }
+    return 0;
+}
+
 @end

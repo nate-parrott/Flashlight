@@ -8,7 +8,6 @@ import json
 import os
 import base64
 import hashlib
-
 import webapp2
 from google.appengine.ext import blobstore
 from util import *
@@ -22,7 +21,7 @@ import model
 from model import Plugin
 from directory import directory_html, info_dict_for_plugin
 from util import get_localized_key
-
+import query_updates
 
 def send_upload_form(request, message=None):
     request.response.write(template("upload.html",
@@ -249,6 +248,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/log_install', LogInstall),
                                ('/login', Login),
                                ('/latest_download', LatestDownload),
+                               ('/query_updates', query_updates.QueryUpdatesHandler),
                                ('/feedback', Redirect("http://flashlight.42pag.es/feedback")),
 							   ('/ideas', Redirect("http://ideaboardapp.appspot.com/flashlight-plugin-ideas")),
                                ('/generate_console_key', GenerateConsoleKey),

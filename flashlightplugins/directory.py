@@ -27,6 +27,10 @@ def group_plugins(plugin_dicts, languages, languages_were_specified):
 
 def directory_html(category=None, search=None, languages=None, browse=False,
                    name=None):
+    
+    new = category == 'New'
+    if new: category = None
+    
     languages_specified = languages != None
     if not languages_specified:
       languages = ['en']
@@ -39,6 +43,8 @@ def directory_html(category=None, search=None, languages=None, browse=False,
     elif name:
         plugin = Plugin.by_name(name)
         plugins = [plugin] if plugin else []
+    elif new:
+        plugins = Plugin.query(Plugin.approved == True).order(-Plugin.added).fetch(limit=10)
     else:
         plugins = []
     count = len(plugins)
@@ -52,7 +58,8 @@ def directory_html(category=None, search=None, languages=None, browse=False,
                       "groups": groups,
                       "browse": browse,
                       "count": count,
-                      "search": search})
+                      "search": search,
+                      "new": new})
 
 
 def info_dict_for_plugin(p, languages=['en']):

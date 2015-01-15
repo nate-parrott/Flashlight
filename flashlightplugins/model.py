@@ -1,7 +1,6 @@
 from google.appengine.ext import ndb
 import search
 
-
 class Plugin(ndb.Model):
     info_json = ndb.TextProperty()
     categories = ndb.StringProperty(repeated=True)
