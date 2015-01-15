@@ -44,6 +44,8 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @property (nonatomic) IBOutlet NSSearchField *searchField;
 
+@property (nonatomic) NSView *rightPaneView;
+
 @end
 
 @implementation PluginListController
@@ -98,9 +100,12 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
     [self updateControllers];
     
     BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
-    self.webView.hidden = showingInstalled;
-    self.tableView.hidden = !showingInstalled;
-    self.effectView.hidden = self.webView.hidden;
+    
+    if (showingInstalled) {
+        self.rightPaneView = self.tableContainer;
+    } else {
+        self.rightPaneView = self.webViewEffectView;
+    }
     
     NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
     if (i != NSNotFound) {
@@ -108,6 +113,14 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
     }
     
     [self updatePluginStatuses];
+}
+
+- (void)setRightPaneView:(NSView *)rightPaneView {
+    if (rightPaneView == _rightPaneView) return;
+    [_rightPaneView removeFromSuperview];
+    [self.rightPaneContainer addSubview:rightPaneView];
+    rightPaneView.frame = self.rightPaneContainer.bounds;
+    rightPaneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 }
 
 - (IBAction)errorButtonAction:(id)sender {
