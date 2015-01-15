@@ -65,6 +65,8 @@ def read_plugin_info(plugin, zip_data):
         elif name.endswith('/Screenshot.png'):
             screenshot = archive.open(name).read()
             plugin.screenshot_url = resize_and_store(screenshot, 800)
+        elif name.endswith('.version'):
+            plugin.version = int(name.split('/')[-1].split('.')[0])
     return has_info
 
 
@@ -97,8 +99,6 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
 
         plugin.secret = base64.b64encode(os.urandom(128))
         plugin.notes = self.request.get('notes', '')
-
-        plugin.zip_md5 = hashlib.md5(zip_data).hexdigest()
 
         admin = users.is_current_user_admin() or \
             (console_key and console_key_is_valid(console_key))
@@ -201,9 +201,10 @@ def console_key_is_valid(key):
 class ConsoleUpload(webapp2.RequestHandler):
     def get(self, name):
         plugin = Plugin.by_name(name)
-        existing_md5 = plugin.zip_md5 if plugin else None
+        version = plugin.version if plugin else None
+        if not version: version = 0
         url = blobstore.create_upload_url('/post_upload')
-        self.response.write(json.dumps({"md5": existing_md5,
+        self.response.write(json.dumps({"version": version,
                                         "upload_url": url}))
 
 
