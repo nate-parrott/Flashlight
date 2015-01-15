@@ -1,0 +1,53 @@
+{
+    "options": [
+        {
+            "text": "GitHub Organisation:",
+            "key": "organisation",
+            "type": "text"
+        },
+        {
+            "text": "GitHub Username:",
+            "key": "user_name",
+            "type": "text"
+        },
+        {
+            "text": "GitHub User ID:",
+            "key": "user_id",
+            "type": "text"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "table",
+            "text": "Aliases:",
+            "key": "aliases",
+            "columns": [
+                {"text": "Name", "key": "src"},
+                {"text": "Repository", "key": "dst"}
+            ]
+        },
+        {
+            "type": "hint",
+            "text": "When you type the name of an alias, the repository will be used instead."
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "table",
+            "text": "Colors:",
+            "key": "colors",
+            "columns": [
+                {"text": "Issue Label", "key": "name"},
+                {"text": "Font", "key": "color"},
+                {"text": "Background", "key": "background"},
+                {"text": "Border", "key": "border"}
+            ]
+        },
+        {
+            "type": "hint",
+            "text": "You can set a custom color for a label."
+        }
+    ]
+}

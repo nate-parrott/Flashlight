@@ -1,7 +1,9 @@
 {
     "name": "pypi",
     "displayName": "Search at PyPI",
+    "displayName_de": "Suche auf PyPI",
     "description": "Search at PyPI - the Python Package Index",
+    "description_de": "Suche auf PyPI - dem Python Package Index",
     "examples": ["pypi setuptools"],
     "categories": ["Developer"]
 }
