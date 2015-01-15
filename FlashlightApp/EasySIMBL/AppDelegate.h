@@ -16,7 +16,7 @@
 @property (nonatomic) NSString *loginItemPath;
 
 @property (assign) IBOutlet NSWindow *window;
-@property (nonatomic) IBOutlet ITSwitch *useSIMBLSwitch;
+@property (nonatomic) IBOutlet NSButton *useSIMBLSwitch;
 @property (nonatomic) IBOutlet NSTableView *tableView;
 @property (nonatomic) IBOutlet WebView *webView;
 - (IBAction)toggleUseSIMBL:(id)sender;

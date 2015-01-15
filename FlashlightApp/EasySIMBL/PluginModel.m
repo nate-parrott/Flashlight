@@ -117,7 +117,7 @@
             return file.stringByDeletingPathExtension.integerValue;
         }
     }
-    return 0;
+    return 1; // fallback to version 1
 }
 
 @end

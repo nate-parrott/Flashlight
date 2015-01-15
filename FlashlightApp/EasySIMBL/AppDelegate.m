@@ -185,11 +185,7 @@
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
-    if (animated) {
-        self.useSIMBLSwitch.on = SIMBLOn;
-    } else {
-        [self.useSIMBLSwitch setOnWithoutAnimation:SIMBLOn];
-    }
+    self.useSIMBLSwitch.state = SIMBLOn ? NSOnState : NSOffState;
     self.tableView.enabled = SIMBLOn;
     [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
     [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];

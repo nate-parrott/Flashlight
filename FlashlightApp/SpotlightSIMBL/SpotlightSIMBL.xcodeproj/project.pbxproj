@@ -23,6 +23,7 @@
 		5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */; };
 		5FC13E711A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */; };
 		5FF5D40E1A675B7D00641D7A /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF5D4091A675B5300641D7A /* FlashlightKit.framework */; };
+		5FF5D4181A677D9B00641D7A /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FF5D4091A675B5300641D7A /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5FF5D4181A677D9B00641D7A /* FlashlightKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

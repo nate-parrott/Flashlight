@@ -317,6 +317,69 @@
 			path = zipzap;
 			sourceTree = "<group>";
 		};
+		5FF5D4131A67777400641D7A /* SIMBL */ = {
+			isa = PBXGroup;
+			children = (
+				6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */,
+				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
+			);
+			name = SIMBL;
+			sourceTree = "<group>";
+		};
+		5FF5D4141A67778000641D7A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */,
+				5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */,
+				5FF5D40F1A675F0800641D7A /* UpdateChecker.h */,
+				5FF5D4101A675F0800641D7A /* UpdateChecker.m */,
+				5F6326BE1A08313E00CE241E /* PluginModel.h */,
+				5F6326BF1A08313E00CE241E /* PluginModel.m */,
+				5F6326CB1A09310F00CE241E /* PluginInstallTask.h */,
+				5F6326CC1A09310F00CE241E /* PluginInstallTask.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5FF5D4151A67778C00641D7A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */,
+				5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */,
+				5FC016671A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.h */,
+				5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */,
+				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
+				5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		5FF5D4161A6777A000641D7A /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */,
+				5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */,
+				5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */,
+				5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */,
+				5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */,
+				5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */,
+				5FF5D4171A6777AA00641D7A /* Pref Editor */,
+			);
+			name = Windows;
+			sourceTree = "<group>";
+		};
+		5FF5D4171A6777AA00641D7A /* Pref Editor */ = {
+			isa = PBXGroup;
+			children = (
+				5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */,
+				5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */,
+				5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */,
+				5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */,
+				5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */,
+			);
+			name = "Pref Editor";
+			sourceTree = "<group>";
+		};
 		6C3A4C2C159E7E6F00985CCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,40 +437,17 @@
 		6C56448A159E7C0800215467 /* FlashlightApp */ = {
 			isa = PBXGroup;
 			children = (
-				6CCA2AEE15AAB8670085ABB4 /* SIMBL.h */,
-				6CCA2AEF15AAB8670085ABB4 /* SIMBL.m */,
-				5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */,
-				5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */,
+				5FF5D4131A67777400641D7A /* SIMBL */,
+				5FF5D4141A67778000641D7A /* Models */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
-				5FF5D40F1A675F0800641D7A /* UpdateChecker.h */,
-				5FF5D4101A675F0800641D7A /* UpdateChecker.m */,
-				5FD3EA821A204CA1005A312E /* NSURLComponents+ValueForQueryKey.h */,
-				5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */,
-				5FC016671A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.h */,
-				5FC016681A1DBBE500F8E4E7 /* NSObject+InternationalizedValueForKey.m */,
-				5FBEC9AE1A1539BF007FEC54 /* ConvenienceCategories.h */,
-				5FBEC9AF1A1539C0007FEC54 /* ConvenienceCategories.m */,
-				5F6326BE1A08313E00CE241E /* PluginModel.h */,
-				5F6326BF1A08313E00CE241E /* PluginModel.m */,
-				5F6326CB1A09310F00CE241E /* PluginInstallTask.h */,
-				5F6326CC1A09310F00CE241E /* PluginInstallTask.m */,
+				5FF5D4151A67778C00641D7A /* Categories */,
 				5F6326C71A08538B00CE241E /* PluginCellView.h */,
 				5F6326C81A08538B00CE241E /* PluginCellView.m */,
 				6C564499159E7C0900215467 /* MainMenu.xib */,
-				5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */,
-				5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */,
-				5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */,
-				5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */,
-				5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */,
-				5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */,
-				5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */,
-				5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */,
-				5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */,
-				5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */,
-				5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */,
+				5FF5D4161A6777A000641D7A /* Windows */,
 				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
 				5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */,
 				5F6326CE1A0933E800CE241E /* zipzap */,

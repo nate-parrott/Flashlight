@@ -13,11 +13,15 @@
 
 @interface PluginListController : NSObject
 
+@property (nonatomic) IBOutlet NSView *rightPaneContainer;
 @property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic) IBOutlet NSView *view;
+
+@property (nonatomic) IBOutlet NSView *tableContainer;
 @property (nonatomic) IBOutlet NSTableView *tableView;
+
+@property (nonatomic) IBOutlet NSVisualEffectView *webViewEffectView;
 @property (nonatomic) IBOutlet WebView *webView;
-@property (nonatomic) IBOutlet NSVisualEffectView *effectView;
 
 - (void)installPlugin:(PluginModel *)plugin;
 - (void)uninstallPlugin:(PluginModel *)plugin;
