@@ -1,6 +1,7 @@
 import urllib
 import json
 import i18n
+import json
 
 def results(parsed, original_query):
     url = 'http://pda.leo.org/<LANG>de/index_de.html#/search=<TEXT>&searchLoc=0&resultOrder=basic&multiwordShowSingle=on'
@@ -11,7 +12,7 @@ def results(parsed, original_query):
         lang = text[0:2]
         text = text[3:]
     else:
-        lang = 'en'
+        lang = json.load(open('preferences.json'))['lang']
 
     url = url.replace('<LANG>', lang)
     url = url.replace('<TEXT>', urllib.quote(text))
