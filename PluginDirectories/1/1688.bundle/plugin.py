@@ -13,7 +13,7 @@ def results(parsed, original_query):
                 "run_args": [search_url],
                 "html": """
                 <script>
-                setTimeout(function() {
+                setTimeout(function() { 
                     window.location = %s
                 }, 500);
                 </script>
