@@ -33,4 +33,6 @@
 
 - (NSString *)path;
 
++ (NSInteger)versionForPluginAtPath:(NSString *)path;
+
 @end

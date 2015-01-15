@@ -21,10 +21,33 @@
 		5F5B183F1A06CB0000809207 /* SPOpenAPIResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B183E1A06CB0000809207 /* SPOpenAPIResult.m */; };
 		5F5B18411A06EDB600809207 /* MethodOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5B18401A06EDB600809207 /* MethodOverride.m */; };
 		5F5B18441A07197500809207 /* SPOpenAPIPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */; };
-		5F870A621A5489E200161E2F /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F870A611A5489E200161E2F /* FlashlightKit.framework */; };
-		5F870A6E1A54978900161E2F /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F870A611A5489E200161E2F /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FC13E711A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */; };
+		5FF5D40E1A675B7D00641D7A /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF5D4091A675B5300641D7A /* FlashlightKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5FF5D4081A675B5300641D7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FC13DEE1A4E12DB008A0FE3;
+			remoteInfo = FlashlightKit;
+		};
+		5FF5D40A1A675B5300641D7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5FC13DF91A4E12DB008A0FE3;
+			remoteInfo = FlashlightKitTests;
+		};
+		5FF5D40C1A675B6F00641D7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FC13DED1A4E12DB008A0FE3;
+			remoteInfo = FlashlightKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5F870A6D1A54977F00161E2F /* CopyFiles */ = {
@@ -33,7 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5F870A6E1A54978900161E2F /* FlashlightKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +280,9 @@
 		5F5B18401A06EDB600809207 /* MethodOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodOverride.m; sourceTree = "<group>"; };
 		5F5B18421A06EDBE00809207 /* MethodOverride.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodOverride.h; sourceTree = "<group>"; };
 		5F5B18431A07197500809207 /* SPOpenAPIPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SPOpenAPIPreviewViewController.xib; sourceTree = "<group>"; };
-		5F870A611A5489E200161E2F /* FlashlightKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlashlightKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug/FlashlightKit.framework"; sourceTree = "<group>"; };
 		5FC13E6F1A4E4AA8008A0FE3 /* _FlashlightPluginEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FlashlightPluginEngine.h; sourceTree = "<group>"; };
 		5FC13E701A4E4AA8008A0FE3 /* _FlashlightPluginEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FlashlightPluginEngine.m; sourceTree = "<group>"; };
+		5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlashlightKit.xcodeproj; path = ../FlashlightKit/FlashlightKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,7 +290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F870A621A5489E200161E2F /* FlashlightKit.framework in Frameworks */,
+				5FF5D40E1A675B7D00641D7A /* FlashlightKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +300,7 @@
 		5F5B17381A05757400809207 = {
 			isa = PBXGroup;
 			children = (
-				5F870A611A5489E200161E2F /* FlashlightKit.framework */,
+				5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */,
 				5F5B17431A05757500809207 /* SpotlightSIMBL */,
 				5F5B17421A05757500809207 /* Products */,
 			);
@@ -558,6 +580,15 @@
 			name = CTObjectiveCRuntimeAdditions;
 			sourceTree = "<group>";
 		};
+		5FF5D4041A675B5300641D7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5FF5D4091A675B5300641D7A /* FlashlightKit.framework */,
+				5FF5D40B1A675B5300641D7A /* FlashlightKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -573,6 +604,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5FF5D40D1A675B6F00641D7A /* PBXTargetDependency */,
 			);
 			name = SpotlightSIMBL;
 			productName = SpotlightSIMBL;
@@ -603,12 +635,35 @@
 			mainGroup = 5F5B17381A05757400809207;
 			productRefGroup = 5F5B17421A05757500809207 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5FF5D4041A675B5300641D7A /* Products */;
+					ProjectRef = 5FF5D4031A675B5300641D7A /* FlashlightKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				5F5B17401A05757400809207 /* SpotlightSIMBL */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5FF5D4091A675B5300641D7A /* FlashlightKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FlashlightKit.framework;
+			remoteRef = 5FF5D4081A675B5300641D7A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5FF5D40B1A675B5300641D7A /* FlashlightKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FlashlightKitTests.xctest;
+			remoteRef = 5FF5D40A1A675B5300641D7A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5F5B173F1A05757400809207 /* Resources */ = {
@@ -644,6 +699,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5FF5D40D1A675B6F00641D7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlashlightKit;
+			targetProxy = 5FF5D40C1A675B6F00641D7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5F5B17461A05757500809207 /* Debug */ = {

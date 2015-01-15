@@ -23,6 +23,7 @@
     return shared;
 }
 + (NSString *)APIRoot {
+    // return @"http://localhost:24080";
     return @"https://flashlightplugins.appspot.com";
 }
 - (void)loadCategoriesWithCallback:(void (^)(NSArray *categories, NSError *error))callback {
@@ -68,6 +69,22 @@
     comps.queryItems = @[[NSURLQueryItem queryItemWithName:@"name" value:name]];
     [[[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:comps.URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // disregard result
+    }] resume];
+}
+
+- (void)getPluginsNeedingUpdatesWithExistingVersions:(NSDictionary *)pluginsByVersion callback:(void(^)(NSArray *pluginsNeedingUpdate))callback {
+    NSURL *url = [NSURL URLWithString:[[self.class APIRoot] stringByAppendingString:@"/query_updates"]];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+    req.HTTPMethod = @"POST";
+    [req setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    req.HTTPBody = [NSJSONSerialization dataWithJSONObject:pluginsByVersion options:0 error:nil];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray *plugins = nil;
+        if (data) {
+            NSDictionary *info = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            plugins = info[@"plugins"];
+        }
+        callback(plugins);
     }] resume];
 }
 

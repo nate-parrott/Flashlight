@@ -17,5 +17,6 @@
 - (NSURL *)URLForSearchQuery:(NSString *)query;
 - (NSURL *)URLForPluginNamed:(NSString *)name;
 - (void)logPluginInstall:(NSString *)name;
+- (void)getPluginsNeedingUpdatesWithExistingVersions:(NSDictionary *)pluginsByVersion callback:(void(^)(NSArray *pluginsNeedingUpdate))callback;
 
 @end

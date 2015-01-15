@@ -11,6 +11,7 @@
 #import "zipzap.h"
 #import "PluginDirectoryAPI.h"
 #import "AppDelegate.h"
+#import "UpdateChecker.h"
 
 @implementation PluginInstallTask
 
@@ -53,6 +54,7 @@
                                 [self.plugin presentOptionsInWindow:d.window];
                             });
                         }
+                        [[UpdateChecker shared] justInstalledPlugin:self.plugin.name];
                         callback(YES, nil);
                     } else {
                         callback(NO, zipError);

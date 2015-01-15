@@ -15,6 +15,7 @@
 #import "PluginDirectoryAPI.h"
 #import "NSURLComponents+ValueForQueryKey.h"
 #import "SearchPluginEditorWindowController.h"
+#import "UpdateChecker.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
@@ -71,9 +72,9 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
         [self.view setPostsFrameChangedNotifications:YES];
         
         [self.webView setDrawsBackground:NO];
-        self.webView.preferences.suppressesIncrementalRendering = YES;
         
         [self updateUI];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePluginStatuses) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:self];
     }
 }
 - (void)dealloc {
@@ -348,7 +349,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [ordered insertObject:[NSNull null] atIndex:2];
     [ordered insertObject:kCategoryFeatured atIndex:3];
     [ordered insertObject:[NSNull null] atIndex:4];
-    [ordered addObject:@"Unknown"];
+    [ordered addObject:[NSNull null]];
+    [ordered addObject:@"New"];
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
@@ -364,7 +366,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"News": @"newspaper",
                             @"Unknown": @"plugin",
                             @"Art": @"palette",
-                            @"Developer": @"console"
+                            @"Developer": @"console",
+                            @"New": @"asterisk"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
     NSImage *image = [NSImage imageNamed:imageName];
@@ -447,7 +450,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"Art": NSLocalizedString(@"Art", @""),
                  @"Developer": NSLocalizedString(@"Developer", @""),
                  @"Unknown": NSLocalizedString(@"Unknown", @""),
-                 @"Media": NSLocalizedString(@"Media", @"")
+                 @"Media": NSLocalizedString(@"Media", @""),
+                 @"New": NSLocalizedString(@"New", @"new plugins")
                  };
     });
     return dict[category] ? : category;
@@ -518,6 +522,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
     }
+    for (NSString *name in [UpdateChecker shared].pluginsNeedingUpdates) {
+        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
+        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
+    }
     [self.webView stringByEvaluatingJavaScriptFromString:script];
 }
 
@@ -525,7 +533,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     if ([request.URL.scheme isEqualToString:@"domready"]) {
         [self updatePluginStatuses];
         [listener ignore];
-    } else if ([request.URL.scheme isEqualToString:@"install"]) {
+    } else if ([request.URL.scheme isEqualToString:@"install"] || [request.URL.scheme isEqualToString:@"update"]) {
         NSURLComponents *comps = [NSURLComponents componentsWithURL:request.URL resolvingAgainstBaseURL:NO];
         PluginModel *model = [PluginModel new];
         model.name = [comps valueForQueryKey:@"name"];

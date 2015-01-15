@@ -84,6 +84,9 @@
    li[status=uninstalled] .control a.install {
       display: block;
    }
+	 li[status=needsUpdate] .control a.needsUpdate {
+		 display: block;
+	 }
    .examples {
       padding: 0;
    }
@@ -165,6 +168,11 @@
       <h3>{{ count }} results</h3>
    </div>
    {% endif %}
+	 {% if new %}
+   <div id='search_summary'>
+      <h2>New &amp; recently updated</h2>
+   </div>
+	 {% endif %}
    
    {% for group in groups %}
    
@@ -204,6 +212,7 @@
                      {% endif %}
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
+                     <a class='needsUpdate' href='update://{{ plugin.name }}'>Update</a>
                   </div>
                </div>
             </div>
