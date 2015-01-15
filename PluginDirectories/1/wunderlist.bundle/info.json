@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Task to Wunderlist",
+  "name" : "Wunderlist",
+  "description" : "Create a new task in Wunderlist",
+  "examples" : [
+    "wunderlist do the dishes",
+    "wunderlist call mom"
+  ]
+}
