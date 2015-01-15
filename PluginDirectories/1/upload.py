@@ -1,4 +1,4 @@
-import sys, requests, hashlib, zipfile, urllib2, StringIO, json
+import sys, requests, hashlib, zipfile, urllib2, StringIO, json, compute_version, os
 
 def get_plugin_name(data):
   file = StringIO.StringIO(data)
@@ -11,6 +11,8 @@ def get_plugin_name(data):
 
 zip_file = sys.argv[1]
 console_key = sys.argv[2]
+bundle_path = os.path.splitext(zip_file)[0] + '.bundle'
+
 data = open(zip_file, 'rb').read()
 name = get_plugin_name(data)
 print "Uploading plugin:", name
@@ -19,9 +21,10 @@ host = 'flashlightplugins.appspot.com'
 # host = 'localhost:24080'
 
 info = requests.get('http://{0}/console_upload/{1}'.format(host, name.encode('utf-8'))).json()
-print info['md5']
-print hashlib.md5(data).hexdigest()
-if info['md5'] == hashlib.md5(data).hexdigest():
+print info['version']
+disk_version, _ = compute_version.get_version(bundle_path)
+print disk_version
+if info['version'] == disk_version:
 	print "Same version of plugin already on server."
 	quit()
 
