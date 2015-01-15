@@ -1,6 +1,6 @@
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
-"5.title" = "모두 전면으로 가져오기";
+"5.title" = "모두 앞으로 가져오기";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
 "19.title" = "윈도우";
