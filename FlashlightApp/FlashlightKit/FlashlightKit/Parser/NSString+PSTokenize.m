@@ -35,6 +35,7 @@
     NSMutableArray *tokens = [NSMutableArray new];
     NSLinguisticTagger *tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:@[NSLinguisticTagSchemeTokenType] options:0];
     tagger.string = self;
+    __block NSString *prevText = nil;
     [tagger enumerateTagsInRange:NSMakeRange(0, self.length) scheme:NSLinguisticTagSchemeTokenType options:0 usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
         NSString *text = [self substringWithRange:tokenRange];
         if ([tag isEqualToString:NSLinguisticTagWhitespace]) {
@@ -43,7 +44,9 @@
         } else {
             PSToken *token = [PSToken new];
             token.original = text;
-            token.features = @[token.original];
+            NSString *bigram = [NSString stringWithFormat:@"%@-%@", prevText, text];
+            prevText = text;
+            token.features = @[token.original, bigram];
             [tokens addObject:token];
         }
     }];

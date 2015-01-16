@@ -14,5 +14,6 @@
 - (void)addItem:(id)item;
 - (NSEnumerator *)allItems;
 - (double)smoothedLogProbForItem:(id)item;
+- (double)specialTextProbabilityForItem:(id)item;
 
 @end
