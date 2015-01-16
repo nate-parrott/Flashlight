@@ -51,4 +51,10 @@
     }
 }
 
+- (double)specialTextProbabilityForItem:(id)item {
+    double count = [self.countsForItems[item] doubleValue];
+    double p = 1 - 1.0 / (count + 1);
+    return PSLogProb(PSMinimalProbability + p * (1 - PSMinimalProbability));
+}
+
 @end
