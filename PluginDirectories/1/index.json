@@ -1741,6 +1741,19 @@
             "categories": [
                 "Utilities"
             ],
+            "description": "Create a new task in Wunderlist",
+            "displayName": "Task to Wunderlist",
+            "examples": [
+                "wunderlist do the dishes",
+                "wunderlist call mom"
+            ],
+            "name": "Wunderlist",
+            "zip_url": "wunderlist.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
             "description": "Shortcuts for xueqiu.com",
             "displayName": "Xueqiu",
             "examples": [
