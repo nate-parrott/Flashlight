@@ -160,7 +160,7 @@ const NSInteger PSMaxCandidatesPerRound = 50;
 
 - (double)logProbOfEmissionOfToken:(PSToken *)token fromTerminalNodeNamed:(NSString *)tagName {
     if ([PSTerminalNode isNameOfFreeTextNode:tagName]) {
-        return PSSmoothLogProb(PSLogProb(PSFreeTextProbability));
+        return PSSmoothLogProb(PSLogProb(PSFreeTextProbability)) * token.features.count;
     } else {
         PSProbabilityCounter *counter = self.emissionProbs[tagName];
         double logProb = 0;
