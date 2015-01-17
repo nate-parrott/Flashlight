@@ -1,0 +1,14 @@
+{
+    "options": [
+        {
+            "text": "Slack Username:",
+            "key": "user",
+            "type": "text"
+        },
+        {
+            "text": "Webhook URL",
+            "key": "url",
+            "type": "text"
+        }
+    ]
+}
