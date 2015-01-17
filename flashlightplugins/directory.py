@@ -26,7 +26,10 @@ def group_plugins(plugin_dicts, languages, languages_were_specified):
   return [g for g in groups if len(g['plugins'])]
 
 def directory_html(category=None, search=None, languages=None, browse=False,
-                   name=None):
+                   name=None, gae=None):
+    
+    if gae == None:
+      gae = not browse
     
     new = category == 'New'
     if new: category = None
@@ -59,7 +62,8 @@ def directory_html(category=None, search=None, languages=None, browse=False,
                       "browse": browse,
                       "count": count,
                       "search": search,
-                      "new": new})
+                      "new": new,
+                      "gae": gae})
 
 
 def info_dict_for_plugin(p, languages=['en']):

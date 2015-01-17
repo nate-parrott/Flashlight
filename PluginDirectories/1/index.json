@@ -1081,6 +1081,18 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Open URLs by typing or pasting them in Spotlight.",
+            "displayName": "Open URL",
+            "examples": [
+                "twitter.com/itsflashlight"
+            ],
+            "name": "open-url",
+            "zip_url": "open-url.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search php.net manual.",
@@ -1535,7 +1547,7 @@
         {
             "categories": [
                 "Media",
-                "Featured"
+                "Utilities"
             ],
             "creator_name": "Thomas Eschemann",
             "creator_url": "http://eschemann.fr",
@@ -1748,7 +1760,7 @@
                 "wunderlist call mom"
             ],
             "name": "Wunderlist",
-            "zip_url": "wunderlist.zip"
+            "zip_url": "Wunderlist.zip"
         },
         {
             "categories": [

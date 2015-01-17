@@ -53,7 +53,7 @@
                 http://flashlightupdates.42pag.es/0.95.3
             </sparkle:releasenoteslink>
 <pubdate>Mon, 22 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.3/Flashlight.zip" sparkle:version="26" sparkle:shortversionstring="0.95.3" type="application/octet-stream" sparkle:dsasignature="MC0CFQCUbQSJEezC5VsNcm2UjgSC3wdYGwIUXgNgGr5LeHt8UU1mBW6u+IbTUVk=">
+<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.3/Flashlight.zip" sparkle:version="26" sparkle:shortversionstring="0.95.3" type="application/octet-stream" sparkle:dsasignature="MCwCFCMAX1SibYUjS5eRbDpCdOSyrYOzAhRtmxE+XYaABWTRi/4xJ/CaxHEPKA==">
 <sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
 </enclosure></item>
 <item>

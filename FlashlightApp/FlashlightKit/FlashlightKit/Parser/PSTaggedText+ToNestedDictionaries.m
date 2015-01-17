@@ -17,14 +17,23 @@
     for (id child in self.contents) {
         if ([child isKindOfClass:[PSTaggedText class]]) {
             NSString *tag = [child tag];
+            id val = nil;
             if ([tag characterAtIndex:0] == '@') {
                 // it's a special field:
                 Class fieldClass = [PSSpecialField specialFieldClassesForNames][tag];
-                id result = [fieldClass performSelector:@selector(getJsonObjectFromText:) withObject:[child _getText]];
-                d[tag] = result ? : [NSNull null];
+                val = [fieldClass performSelector:@selector(getJsonObjectFromText:) withObject:[child _getText]];
             } else {
                 NSDictionary *nestedDict = [child toNestedDictionary];
-                d[tag] = nestedDict.count > 0 ? nestedDict : [child _getText];
+                val = nestedDict.count > 0 ? nestedDict : [child _getText];
+            }
+            if (val) {
+                BOOL alreadyHadItemWithSameTag = !!d[tag];
+                if (alreadyHadItemWithSameTag) {
+                    NSString *tagAll = [NSString stringWithFormat:@"%@_all", tag];
+                    NSArray *array = d[tagAll] ? : @[d[tag]];
+                    d[tagAll] = [array arrayByAddingObject:val];
+                }
+                d[tag] = val;
             }
         }
     }
