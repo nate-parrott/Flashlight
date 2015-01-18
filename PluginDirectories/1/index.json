@@ -944,6 +944,25 @@
         },
         {
             "categories": [
+                "Information",
+                "Utilities"
+            ],
+            "description": "Displays variants of the Lenny face to copy. Also a good HTML plugin bootstrapper.",
+            "displayName": "Lenny",
+            "examples": [
+                "lenny"
+            ],
+            "examples_de": [
+                "lenny"
+            ],
+            "examples_fr": [
+                "lenny"
+            ],
+            "name": "lenny",
+            "zip_url": "lenny.zip"
+        },
+        {
+            "categories": [
                 "Utilities",
                 "Language"
             ],
@@ -1320,6 +1339,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Send a message to Slack channel or direct message a user",
+            "displayName": "Slack message",
+            "examples": [
+                "slack #random Good Morning",
+                "slack @aladler thanks for this great plugin"
+            ],
+            "name": "slack",
+            "zip_url": "slack.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
@@ -1511,6 +1543,19 @@
             "name": "timezone",
             "search_keywords": "world clock",
             "zip_url": "timezone.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Create a new task in Todoist",
+            "displayName": "Task to Todoist",
+            "examples": [
+                "todoist do the dishes",
+                "todoist call mom"
+            ],
+            "name": "todoist",
+            "zip_url": "todoist.zip"
         },
         {
             "categories": [
