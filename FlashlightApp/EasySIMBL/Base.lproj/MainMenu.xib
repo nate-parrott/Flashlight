@@ -353,9 +353,8 @@
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="requestPlugin" destination="QeJ-hd-3A1" id="AK4-6B-Nzq"/>
                 <outlet property="searchAnything" destination="gNj-56-AoU" id="aX9-YH-2Hx"/>
-                <outlet property="tableView" destination="2Bw-eW-td2" id="2My-Fx-DJv"/>
+                <outlet property="useSIMBLSwitch" destination="KeZ-dH-ema" id="iab-e1-bce"/>
                 <outlet property="versionLabel" destination="v99-pH-dRh" id="UQq-qN-W0r"/>
-                <outlet property="webView" destination="DEt-An-xUj" id="I1w-Qg-DeT"/>
                 <outlet property="window" destination="651" id="653"/>
             </connections>
         </customObject>
@@ -546,6 +545,7 @@
         <customObject id="715" customClass="PluginListController">
             <connections>
                 <outlet property="arrayController" destination="714" id="716"/>
+                <outlet property="disabledPane" destination="Lha-km-r1j" id="fAj-eE-tXv"/>
                 <outlet property="errorBanner" destination="eIK-Jf-OGb" id="bJL-om-cww"/>
                 <outlet property="errorButton" destination="9nN-QT-MfC" id="Jom-wc-gLW"/>
                 <outlet property="errorText" destination="4I6-zG-9ut" id="bIG-CJ-HIx"/>
@@ -789,6 +789,57 @@
             </subviews>
             <point key="canvasLocation" x="948" y="477"/>
         </visualEffectView>
+        <customView id="Lha-km-r1j" userLabel="Disabled">
+            <rect key="frame" x="0.0" y="-2" width="432" height="320"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView id="Axn-vX-vMo">
+                    <rect key="frame" x="39" y="41" width="354" height="238"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0tI-TF-qi3">
+                            <rect key="frame" x="57" y="189" width="241" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Flashlight" id="Zod-zv-N0s">
+                                <font key="font" size="25" name="HelveticaNeue-Light"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <button verticalHuggingPriority="750" id="5wA-nL-5qD">
+                            <rect key="frame" x="82" y="101" width="191" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <buttonCell key="cell" type="push" title="Enable Spotlight Plugins" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yJF-Sa-Pss">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="toggleUseSIMBL:" target="494" id="xDb-GT-v9x"/>
+                            </connections>
+                        </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="QsG-zx-iR5">
+                            <rect key="frame" x="59" y="41" width="237" height="51"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Once plugins are enabled, they'll still work if you quit the Flashlight app." id="RcK-sq-KTs">
+                                <font key="font" metaFont="smallSystem"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="u2p-Jf-SRA">
+                            <rect key="frame" x="26" y="146" width="302" height="34"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Flashlight lets you install plugins into OS X's Spotlight search." id="CZC-94-ae9">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                </customView>
+            </subviews>
+            <point key="canvasLocation" x="1488" y="475"/>
+        </customView>
     </objects>
     <resources>
         <image name="Icon" width="512" height="512"/>

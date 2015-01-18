@@ -133,6 +133,11 @@
     }
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.SIMBLOn = self.SIMBLOn;
+}
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
     return YES;
@@ -186,9 +191,7 @@
 - (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
     self.useSIMBLSwitch.state = SIMBLOn ? NSOnState : NSOffState;
-    self.tableView.enabled = SIMBLOn;
-    [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
-    [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];
+    self.pluginListController.enabled = SIMBLOn;
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {

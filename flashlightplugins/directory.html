@@ -261,7 +261,7 @@
 					 var pluginName = pluginNode.className;
 					 var link = pluginNode.querySelector("." + className);
 					 link.addEventListener('click', function() {
-						 ga('send', 'event', { eventAction: className, eventValue: pluginName});
+						 ga('send', 'event', 'app', className, pluginName);
 					 });
 				 }
 			 }

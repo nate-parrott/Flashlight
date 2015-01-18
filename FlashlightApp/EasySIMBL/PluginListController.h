@@ -38,4 +38,6 @@
 
 - (void)showPluginWithName:(NSString *)name;
 
+@property (nonatomic) BOOL enabled;
+
 @end
