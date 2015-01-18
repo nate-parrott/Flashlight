@@ -1,4 +1,4 @@
-﻿/* No comment provided by engineer. */
+/* No comment provided by engineer. */
 "Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "선택된 플러그인들은 스폿라이트에서 검색하실때 예시중 하나로 등장합니다.";
 
 /* No comment provided by engineer. */
@@ -38,7 +38,7 @@
 "Featured" = "여러 플러그인들";
 
 /* No comment provided by engineer. */
-"Flashlight: the missing plugin system for Spotlight." = "Flashlight: 스폿라이트에서 잊혀진 플러그인 시스템.";
+"Flashlight: the missing plugin system for Spotlight." = "Flashlight: 스폿라이트에서 놓친 플러그인 시스템.";
 
 /* No comment provided by engineer. */
 "Information" = "정보";
@@ -71,7 +71,7 @@
 "Title:" = "제목:";
 
 /* No comment provided by engineer. */
-"Try again" = "다시 해보세요";
+"Try again" = "다시 시도하기";
 
 /* No comment provided by engineer. */
 "Unknown" = "불분명한 주제";
@@ -84,6 +84,9 @@
 
 /* No comment provided by engineer. */
 "Weather" = "날씨";
+
+/* No comment provided by engineer. */
+"Media" = "미디어";
 
 /* No comment provided by engineer. */
 "Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "선택된 플러그인들은 스폿라이트에서 검색하실때 예시중 하나로 등장합니다.";
