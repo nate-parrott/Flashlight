@@ -944,6 +944,7 @@
         },
         {
             "categories": [
+<<<<<<< HEAD
                 "Utilities"
             ],
             "description": "Displays variants of the Lenny face to copy. Also a good HTML plugin bootstrapper.",
@@ -962,6 +963,8 @@
         },
         {
             "categories": [
+=======
+>>>>>>> c5d04b84368a2443eb41e24af5706503157318fe
                 "Utilities",
                 "Language"
             ],
@@ -1338,6 +1341,7 @@
         },
         {
             "categories": [
+<<<<<<< HEAD
                 "Utilities"
             ],
             "description": "Send a message to Slack channel or direct message a user",
@@ -1351,6 +1355,8 @@
         },
         {
             "categories": [
+=======
+>>>>>>> c5d04b84368a2443eb41e24af5706503157318fe
                 "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
@@ -1545,6 +1551,7 @@
         },
         {
             "categories": [
+<<<<<<< HEAD
                 "Utilities"
             ],
             "description": "Create a new task in Todoist",
@@ -1558,6 +1565,8 @@
         },
         {
             "categories": [
+=======
+>>>>>>> c5d04b84368a2443eb41e24af5706503157318fe
                 "Search"
             ],
             "description": "Search Torrentz (t), Kickass (k)",
