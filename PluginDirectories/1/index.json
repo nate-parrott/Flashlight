@@ -944,7 +944,6 @@
         },
         {
             "categories": [
-                "Information",
                 "Utilities"
             ],
             "description": "Displays variants of the Lenny face to copy. Also a good HTML plugin bootstrapper.",
