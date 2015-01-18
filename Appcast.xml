@@ -1,159 +1,153 @@
-<?xml version='1.0' encoding='utf-8'?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
-<channel>
-<title>Flashlight Changelog</title>
-<link />https://raw.githubusercontent.com/nate-parrott/flashlight/master/Appcast.xml
-<description>Most recent changes with links to updates.</description>
-<language>en</language>
-<item>
-<title>Version 0.96.4.1</title>
-<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.4.1</sparkle:releasenoteslink>
-<pubdate>Thu, 15 Jan 2015 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.4.1/Flashlight.zip" sparkle:version="35" sparkle:shortversionstring="0.96.4.1" type="application/octet-stream" sparkle:dsasignature="MC0CFCqyf5o+B116wT158+HLcP8nNyoLAhUApz9ksxFqcThMUkShePYDgVFaVmI=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item><item>
-<title>Version 0.96.4</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.96.4
-            </sparkle:releasenoteslink>
-<pubdate>Thu, 15 Jan 2015 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.4/Flashlight.zip" sparkle:version="34" sparkle:shortversionstring="0.96.4" type="application/octet-stream" sparkle:dsasignature="MC4CFQCOgZpYD8s9qtKcV6AZoOQxNopkxwIVALzeZeKkVxD/dwd/4/7RZfY4Xohb">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.96.3</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.96.3
-            </sparkle:releasenoteslink>
-<pubdate>Thu, 11 Jan 2015 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.3/Flashlight.zip" sparkle:version="33" sparkle:shortversionstring="0.96.3" type="application/octet-stream" sparkle:dsasignature="MC0CFAcOWB/rHSHKOWfSb8Ct5Ojkii9rAhUApdrx/nuh9q/2G34PdlTLq8JPxxs=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.96.2</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.96.2
-            </sparkle:releasenoteslink>
-<pubdate>Thu, 10 Jan 2015 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.2/Flashlight.zip" sparkle:version="32" sparkle:shortversionstring="0.96.2" type="application/octet-stream" sparkle:dsasignature="MCwCFFxMe7U/NDBuMlF2ov/pM9DXsD8PAhRZF0XNgKm6VJRuCrEOD8RhDHAV7A==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.95.4</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.95.4
-            </sparkle:releasenoteslink>
-<pubdate>Thu, 1 Jan 2015 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.4/Flashlight.zip" sparkle:version="27" sparkle:shortversionstring="0.95.4" type="application/octet-stream" sparkle:dsasignature="MC0CFGdj7QWagWvCmv4a6qt5wTT5EK0zAhUAta6KpCColKVla5LlbezeVak6goY=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.95.3</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.95.3
-            </sparkle:releasenoteslink>
-<pubdate>Mon, 22 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.3/Flashlight.zip" sparkle:version="26" sparkle:shortversionstring="0.95.3" type="application/octet-stream" sparkle:dsasignature="MCwCFCMAX1SibYUjS5eRbDpCdOSyrYOzAhRtmxE+XYaABWTRi/4xJ/CaxHEPKA==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.95.2</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.95.2
-            </sparkle:releasenoteslink>
-<pubdate>Sun, 21 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.2/Flashlight.zip" sparkle:version="23" sparkle:shortversionstring="0.95.2" type="application/octet-stream" sparkle:dsasignature="MCwCFEw3TaUaDL9aZlk+9rdskx8m87ERAhQ00pjAJTQDDxePKGfivnbN11bVsA==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.95</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.95
-            </sparkle:releasenoteslink>
-<pubdate>Wed, 13 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95/Flashlight.zip" sparkle:version="23" sparkle:shortversionstring="0.95" type="application/octet-stream" sparkle:dsasignature="MC4CFQCvtL4CIexL6Nc/uB0+e3SeDEWslgIVAMcvqfz9fp5l79eUUbJtlLvowO/g">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.94</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.94
-            </sparkle:releasenoteslink>
-<pubdate>Wed, 10 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.94/Flashlight.zip" sparkle:version="22" sparkle:shortversionstring="0.94" type="application/octet-stream" sparkle:dsasignature="MC0CFQDKV66bgE6RoMRwlXyYRH5rRktGZAIUG8SZRYOcSgHqG+DjhwkDMF7KNfg=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.93</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.93
-            </sparkle:releasenoteslink>
-<pubdate>Sun, 7 Dec 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.93/Flashlight.zip" sparkle:version="21" sparkle:shortversionstring="0.93" type="application/octet-stream" sparkle:dsasignature="MCwCFDhQR92AHEMNXDQIyAbSTHzch9d0AhQp9Lz1Uvg2vno/WdDCOmq0cX/WLg==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.91</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.91
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 30 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.91/Flashlight.zip" sparkle:version="19" sparkle:shortversionstring="0.91" type="application/octet-stream" sparkle:dsasignature="MCwCFFHThcz6+ukOfl/qTr9+StGX9rjMAhRQXsSRyGCuMFH+xS8ppdDD0UlrDw==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.9</title>
-<sparkle:releasenoteslink>
-                http://flashlightupdates.42pag.es/0.9
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 27 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.9/Flashlight.zip" sparkle:version="18" sparkle:shortversionstring="0.9" type="application/octet-stream" sparkle:dsasignature="MCwCFEhvBdFczrpJUcU8oTRT/3O1bJbqAhQjFEIYISKUDiUzryiQZ/p1Gs3QaA==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.8</title>
-<sparkle:releasenoteslink>
-                http://flashlight.nateparrott.com/updates/0.8
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 22 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.8-alpha/Flashlight.zip" sparkle:version="17" sparkle:shortversionstring="0.8" type="application/octet-stream" sparkle:dsasignature="MCwCFCbauR0ix2y3eqs2CXpTsjRQIiywAhRjNesH4Y1bXFEoYfz8g0PivF2yVw==">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.17</title>
-<sparkle:releasenoteslink>
-                http://flashlight.nateparrott.com/updates/0.71
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 17 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.71-alpha/Flashlight.zip" sparkle:version="15" sparkle:shortversionstring="0.71" type="application/octet-stream" sparkle:dsasignature="MC0CFFdPrrLKfSZyM7VKhxBWsUioC94iAhUAhNtVRuj3V4BGkhL+9/gnYuWCNk8=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.7</title>
-<sparkle:releasenoteslink>
-                http://flashlight.nateparrott.com/updates/0.7
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 17 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.7-alpha/Flashlight.zip" sparkle:version="14" sparkle:shortversionstring="0.7" type="application/octet-stream" sparkle:dsasignature="MC0CFFQFM0N//ULQ21O9mQa/GkLMZzibAhUAoqlolOMELqx9uXnVDFSi+PoW6FQ=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.61</title>
-<sparkle:releasenoteslink>
-                http://flashlight.nateparrott.com/updates/0.6
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 14 Nov 2014 19:27:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.61-alpha/Flashlight.zip" sparkle:version="12" sparkle:shortversionstring="0.61" type="application/octet-stream" sparkle:dsasignature="MC4CFQCCtEWMVts2o5zn0YpvYwTp7jpmRQIVALe7y9Nwn5Mjm5sPtWs7RkEY5Czc">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-<item>
-<title>Version 0.6</title>
-<sparkle:releasenoteslink>
-                http://flashlight.nateparrott.com/updates/0.6
-            </sparkle:releasenoteslink>
-<pubdate>Fri, 14 Jan 2014 19:20:11 +0000</pubdate>
-<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.6-alpha/Flashlight.zip" sparkle:version="11" sparkle:shortversionstring="0.6" type="application/octet-stream" sparkle:dsasignature="MC0CFCn3ZGaIeXBn8raODcaP2ksssSsnAhUAkjUT32ITt93h9lrA2/YNBt7oBYs=">
-<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
-</enclosure></item>
-</channel>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+	<channel>
+		<title>Flashlight Changelog</title>
+		<link>https://raw.githubusercontent.com/nate-parrott/flashlight/master/Appcast.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Version 0.96.5</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.5</sparkle:releasenoteslink>
+			<pubdate>Sun, 18 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.5/Flashlight.zip" sparkle:version="36" sparkle:shortversionstring="0.96.5" type="application/octet-stream" sparkle:dsasignature="MCwCFCfJqLTSddwXqCRhowxXkM7KvSqtAhQfVv/HMj6IJ3DfF/Kg5ADXzvIscA==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.96.4.1</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.4.1</sparkle:releasenoteslink>
+			<pubdate>Thu, 15 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.4.1/Flashlight.zip" sparkle:version="35" sparkle:shortversionstring="0.96.4.1" type="application/octet-stream" sparkle:dsasignature="MC0CFCqyf5o+B116wT158+HLcP8nNyoLAhUApz9ksxFqcThMUkShePYDgVFaVmI=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.96.4</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.4</sparkle:releasenoteslink>
+			<pubdate>Thu, 15 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.4/Flashlight.zip" sparkle:version="34" sparkle:shortversionstring="0.96.4" type="application/octet-stream" sparkle:dsasignature="MC4CFQCOgZpYD8s9qtKcV6AZoOQxNopkxwIVALzeZeKkVxD/dwd/4/7RZfY4Xohb">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.96.3</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.3</sparkle:releasenoteslink>
+			<pubdate>Thu, 11 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.3/Flashlight.zip" sparkle:version="33" sparkle:shortversionstring="0.96.3" type="application/octet-stream" sparkle:dsasignature="MC0CFAcOWB/rHSHKOWfSb8Ct5Ojkii9rAhUApdrx/nuh9q/2G34PdlTLq8JPxxs=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.96.2</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.2</sparkle:releasenoteslink>
+			<pubdate>Thu, 10 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.2/Flashlight.zip" sparkle:version="32" sparkle:shortversionstring="0.96.2" type="application/octet-stream" sparkle:dsasignature="MCwCFFxMe7U/NDBuMlF2ov/pM9DXsD8PAhRZF0XNgKm6VJRuCrEOD8RhDHAV7A==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.95.4</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.95.4</sparkle:releasenoteslink>
+			<pubdate>Thu, 1 Jan 2015 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.4/Flashlight.zip" sparkle:version="27" sparkle:shortversionstring="0.95.4" type="application/octet-stream" sparkle:dsasignature="MC0CFGdj7QWagWvCmv4a6qt5wTT5EK0zAhUAta6KpCColKVla5LlbezeVak6goY=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.95.3</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.95.3</sparkle:releasenoteslink>
+			<pubdate>Mon, 22 Dec 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.3/Flashlight.zip" sparkle:version="26" sparkle:shortversionstring="0.95.3" type="application/octet-stream" sparkle:dsasignature="MCwCFCMAX1SibYUjS5eRbDpCdOSyrYOzAhRtmxE+XYaABWTRi/4xJ/CaxHEPKA==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.95.2</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.95.2</sparkle:releasenoteslink>
+			<pubdate>Sun, 21 Dec 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95.2/Flashlight.zip" sparkle:version="23" sparkle:shortversionstring="0.95.2" type="application/octet-stream" sparkle:dsasignature="MCwCFEw3TaUaDL9aZlk+9rdskx8m87ERAhQ00pjAJTQDDxePKGfivnbN11bVsA==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.95</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.95</sparkle:releasenoteslink>
+			<pubdate>Wed, 13 Dec 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.95/Flashlight.zip" sparkle:version="23" sparkle:shortversionstring="0.95" type="application/octet-stream" sparkle:dsasignature="MC4CFQCvtL4CIexL6Nc/uB0+e3SeDEWslgIVAMcvqfz9fp5l79eUUbJtlLvowO/g">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.94</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.94</sparkle:releasenoteslink>
+			<pubdate>Wed, 10 Dec 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.94/Flashlight.zip" sparkle:version="22" sparkle:shortversionstring="0.94" type="application/octet-stream" sparkle:dsasignature="MC0CFQDKV66bgE6RoMRwlXyYRH5rRktGZAIUG8SZRYOcSgHqG+DjhwkDMF7KNfg=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.93</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.93</sparkle:releasenoteslink>
+			<pubdate>Sun, 7 Dec 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.93/Flashlight.zip" sparkle:version="21" sparkle:shortversionstring="0.93" type="application/octet-stream" sparkle:dsasignature="MCwCFDhQR92AHEMNXDQIyAbSTHzch9d0AhQp9Lz1Uvg2vno/WdDCOmq0cX/WLg==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.91</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.91</sparkle:releasenoteslink>
+			<pubdate>Fri, 30 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.91/Flashlight.zip" sparkle:version="19" sparkle:shortversionstring="0.91" type="application/octet-stream" sparkle:dsasignature="MCwCFFHThcz6+ukOfl/qTr9+StGX9rjMAhRQXsSRyGCuMFH+xS8ppdDD0UlrDw==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.9</title>
+			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.9</sparkle:releasenoteslink>
+			<pubdate>Fri, 27 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.9/Flashlight.zip" sparkle:version="18" sparkle:shortversionstring="0.9" type="application/octet-stream" sparkle:dsasignature="MCwCFEhvBdFczrpJUcU8oTRT/3O1bJbqAhQjFEIYISKUDiUzryiQZ/p1Gs3QaA==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.8</title>
+			<sparkle:releasenoteslink>http://flashlight.nateparrott.com/updates/0.8</sparkle:releasenoteslink>
+			<pubdate>Fri, 22 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.8-alpha/Flashlight.zip" sparkle:version="17" sparkle:shortversionstring="0.8" type="application/octet-stream" sparkle:dsasignature="MCwCFCbauR0ix2y3eqs2CXpTsjRQIiywAhRjNesH4Y1bXFEoYfz8g0PivF2yVw==">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.17</title>
+			<sparkle:releasenoteslink>http://flashlight.nateparrott.com/updates/0.71</sparkle:releasenoteslink>
+			<pubdate>Fri, 17 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.71-alpha/Flashlight.zip" sparkle:version="15" sparkle:shortversionstring="0.71" type="application/octet-stream" sparkle:dsasignature="MC0CFFdPrrLKfSZyM7VKhxBWsUioC94iAhUAhNtVRuj3V4BGkhL+9/gnYuWCNk8=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.7</title>
+			<sparkle:releasenoteslink>http://flashlight.nateparrott.com/updates/0.7</sparkle:releasenoteslink>
+			<pubdate>Fri, 17 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.7-alpha/Flashlight.zip" sparkle:version="14" sparkle:shortversionstring="0.7" type="application/octet-stream" sparkle:dsasignature="MC0CFFQFM0N//ULQ21O9mQa/GkLMZzibAhUAoqlolOMELqx9uXnVDFSi+PoW6FQ=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.61</title>
+			<sparkle:releasenoteslink>http://flashlight.nateparrott.com/updates/0.6</sparkle:releasenoteslink>
+			<pubdate>Fri, 14 Nov 2014 19:27:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.61-alpha/Flashlight.zip" sparkle:version="12" sparkle:shortversionstring="0.61" type="application/octet-stream" sparkle:dsasignature="MC4CFQCCtEWMVts2o5zn0YpvYwTp7jpmRQIVALe7y9Nwn5Mjm5sPtWs7RkEY5Czc">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+		<item>
+			<title>Version 0.6</title>
+			<sparkle:releasenoteslink>http://flashlight.nateparrott.com/updates/0.6</sparkle:releasenoteslink>
+			<pubdate>Fri, 14 Jan 2014 19:20:11 +0000</pubdate>
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.6-alpha/Flashlight.zip" sparkle:version="11" sparkle:shortversionstring="0.6" type="application/octet-stream" sparkle:dsasignature="MC0CFCn3ZGaIeXBn8raODcaP2ksssSsnAhUAkjUT32ITt93h9lrA2/YNBt7oBYs=">
+				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
+			</enclosure>
+		</item>
+	</channel>
 </rss>
