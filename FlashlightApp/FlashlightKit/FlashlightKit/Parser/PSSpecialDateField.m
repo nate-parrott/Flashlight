@@ -16,8 +16,14 @@
 }
 
 + (id)getJsonObjectFromText:(NSString *)text {
-    time_t t = parseDateTimeString([text UTF8String]);
-    return @{@"timestamp": @(t), @"resolution": @1, @"text": text};
+    double timestamp;
+    if ([text rangeOfString:@"/"].location != NSNotFound) {
+        // HACK: parseDateTimeString doesn't seem to work for dates like 12/30/15, so use NSDate instead:
+        timestamp = [[NSDate dateWithNaturalLanguageString:text] timeIntervalSince1970];
+    } else {
+        timestamp = parseDateTimeString([text UTF8String]);
+    }
+    return @{@"timestamp": @(timestamp), @"resolution": @1, @"text": text};
 }
 
 + (NSArray *)getExamples {
@@ -48,6 +54,9 @@
                 @"monday january 21st",
                 @"tuesday february 23rd at 8:30",
                 @"tomorrow at 9:15 PM",
+                @"1/2",
+                @"2/3",
+                @"4/5",
                 @"yesterday at 4 AM" ];
 }
 

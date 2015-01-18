@@ -46,7 +46,10 @@
             token.original = text;
             NSString *bigram = [NSString stringWithFormat:@"%@-%@", prevText, text];
             prevText = text;
-            token.features = @[token.original, bigram];
+            NSArray *features = @[token.original, bigram];
+            token.features = [features mapFilter:^id(id obj) {
+                return [obj lowercaseString];
+            }];
             [tokens addObject:token];
         }
     }];

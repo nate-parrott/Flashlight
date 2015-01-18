@@ -17,8 +17,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (nonatomic) IBOutlet NSButton *useSIMBLSwitch;
-@property (nonatomic) IBOutlet NSTableView *tableView;
-@property (nonatomic) IBOutlet WebView *webView;
 - (IBAction)toggleUseSIMBL:(id)sender;
 
 @property (nonatomic) BOOL SIMBLOn;

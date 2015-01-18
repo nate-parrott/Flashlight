@@ -46,6 +46,9 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @property (nonatomic) NSView *rightPaneView;
 
+@property (nonatomic) IBOutlet NSView *disabledPane;
+@property (nonatomic) IBOutlet NSView *postEnabledPane;
+
 @end
 
 @implementation PluginListController
@@ -84,6 +87,11 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
     [self stopWatchingPluginsDir];
 }
 
+- (void)setEnabled:(BOOL)enabled {
+    _enabled = enabled;
+    [self updateUI];
+}
+
 #pragma mark UI
 - (void)updateUI {
     __weak PluginListController* weakSelf = self;
@@ -101,15 +109,20 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
     
     BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
     
-    if (showingInstalled) {
-        self.rightPaneView = self.tableContainer;
+    if (self.enabled) {
+        if (showingInstalled) {
+            self.rightPaneView = self.tableContainer;
+        } else {
+            self.rightPaneView = self.webViewEffectView;
+        }
+        NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
+        if (i != NSNotFound) {
+            [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+        }
+        
     } else {
-        self.rightPaneView = self.webViewEffectView;
-    }
-    
-    NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
-    if (i != NSNotFound) {
-        [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+        self.rightPaneView = self.disabledPane;
+        [self.sourceList selectRowIndexes:[NSIndexSet indexSet] byExtendingSelection:NO];
     }
     
     [self updatePluginStatuses];
@@ -118,6 +131,7 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 - (void)setRightPaneView:(NSView *)rightPaneView {
     if (rightPaneView == _rightPaneView) return;
     [_rightPaneView removeFromSuperview];
+    _rightPaneView = rightPaneView;
     [self.rightPaneContainer addSubview:rightPaneView];
     rightPaneView.frame = self.rightPaneContainer.bounds;
     rightPaneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
