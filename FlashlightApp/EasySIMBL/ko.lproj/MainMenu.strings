@@ -192,10 +192,10 @@
 "1Mz-sE-pRt.title" = "Spotlight 플러그인 추가";
 
 /* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
-"6NI-Ay-AA6.label" = "커스텀 뷰";
+"6NI-Ay-AA6.label" = "Flashlight 허용";
 
 /* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
-"6NI-Ay-AA6.paletteLabel" = "커스텀 뷰";
+"6NI-Ay-AA6.paletteLabel" = "Flashlight 허용";
 
 /* Class = "NSTextFieldCell"; title = "Couldn't load online plugins directory."; ObjectID = "6Rm-1o-2sX"; */
 "6Rm-1o-2sX.title" = "온라인 플러그인 디렉터리를 불러오지 못했습니다";
@@ -246,10 +246,10 @@
 "rtk-em-P81.title" = "이 플러그인은 여러 굉장한 일들, 예를 들어 단어 그리고 모든걸 변화 시킵니다.";
 
 /* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
-"sSL-rY-WNy.label" = "커스텀 뷰";
+"sSL-rY-WNy.label" = "플러그인 검색";
 
 /* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "sSL-rY-WNy"; */
-"sSL-rY-WNy.paletteLabel" = "커스텀 뷰";
+"sSL-rY-WNy.paletteLabel" = "플러그인 검색";
 
 /* Class = "NSMenu"; title = "File"; ObjectID = "wJP-7d-WaF"; */
 "wJP-7d-WaF.title" = "파일";
