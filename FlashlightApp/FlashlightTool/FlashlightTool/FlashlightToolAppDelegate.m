@@ -26,6 +26,8 @@
 
 @property (nonatomic) NSString *lastQuery;
 
+@property (nonatomic) IBOutlet NSTextField *updateInfoLabel;
+
 @end
 
 @implementation FlashlightToolAppDelegate
@@ -64,6 +66,8 @@
         [d removeObjectForKey:@"Plugin.py run() Errors"];
         weakSelf.errorSections = d;
     };
+    
+    self.updateInfoLabel.stringValue = [NSString stringWithFormat:@"FlashlightTool %@", [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"]];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -165,6 +169,10 @@
     } else {
         return nil;
     }
+}
+
+- (IBAction)checkForUpdate:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlighttool.42pag.es"]];
 }
 
 @end
