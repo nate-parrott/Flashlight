@@ -76,6 +76,8 @@
 		5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */; };
 		5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */; };
 		5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */; };
+		5FF873121A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,8 @@
 		5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightQueryEngine.m; sourceTree = "<group>"; };
 		5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+FlashlightExtensions.h"; sourceTree = "<group>"; };
 		5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+FlashlightExtensions.m"; sourceTree = "<group>"; };
+		5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+InternationalizedValueForKey.h"; sourceTree = "<group>"; };
+		5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */,
 				5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */,
+				5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */,
+				5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
@@ -330,6 +336,7 @@
 				5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */,
 				5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */,
 				5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */,
+				5FF873121A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h in Headers */,
 				5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */,
 				5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */,
 				5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */,
@@ -475,6 +482,7 @@
 				5FC13E4C1A4E12FB008A0FE3 /* PSProbabilityCounter.m in Sources */,
 				5FC13E391A4E12FB008A0FE3 /* PSBackgroundProcessor.m in Sources */,
 				5FC13E3B1A4E12FB008A0FE3 /* PSEndNode.m in Sources */,
+				5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */,
 				5FC13E4E1A4E12FB008A0FE3 /* PSSpecialNode.m in Sources */,
 				5FC13E3F1A4E12FB008A0FE3 /* PSMerging.m in Sources */,
 				5FC13E541A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m in Sources */,

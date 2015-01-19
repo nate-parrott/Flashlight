@@ -13,3 +13,10 @@
 - (id)internationalizedValueForKey:(NSString *)key;
 
 @end
+
+
+@interface NSObject (Internationalization)
+
++ (void)enumerateLocalizedVariantsOfKey:(NSString *)key block:(void(^)(NSString *key, BOOL *stop))block;
+
+@end

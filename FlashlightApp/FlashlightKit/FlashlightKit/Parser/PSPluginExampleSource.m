@@ -10,6 +10,7 @@
 #import "PSHelpers.h"
 #import "PSTaggedText+ParseExample.h"
 #import "Parsnip.h"
+#import "NSObject+InternationalizedValueForKey.h"
 
 NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsnipSourceDataPluginPathForIntentDictionaryKey";
 
@@ -84,8 +85,7 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
         NSString *intentTag = [@"plugin_intent/" stringByAppendingString:name];
         pluginPathsForIntents[intentTag] = pluginPath;
         
-        NSString *examplesFilePath = [pluginPath stringByAppendingPathComponent:@"examples.txt"];
-        for (NSString *line in [[[NSString alloc] initWithContentsOfFile:examplesFilePath usedEncoding:nil error:nil] componentsSeparatedByString:@"\n"]) {
+        for (NSString *line in [self exampleLinesForPluginAtPath:pluginPath]) {
             NSString *trimmed = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             if (trimmed.length) {
                 if ([trimmed.lowercaseString isEqualToString:@"!always_invoke"]) {
@@ -132,6 +132,26 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
     self.parserInfoOutput = [parserInfoOutput componentsJoinedByString:@"\n\n"];
     if (self.parserOutputChangedBlock) self.parserOutputChangedBlock();
     self.pathsOfPluginsToAlwaysInvoke = pathsForPluginsToAlwaysInvoke;
+}
+
+- (NSArray *)exampleLinesForPluginAtPath:(NSString *)pluginPath {
+    // load examples for first supported user-preferred language, plus english
+    NSMutableSet *filePathsToRead = [NSMutableSet new];
+    [[self class] enumerateLocalizedVariantsOfKey:@"examples" block:^(NSString *key, BOOL *stop) {
+        NSString *filename = [key stringByAppendingPathExtension:@"txt"];
+        NSString *fullPath = [pluginPath stringByAppendingPathComponent:filename];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:fullPath]) {
+            [filePathsToRead addObject:fullPath];
+            *stop = YES;
+        }
+    }];
+    [filePathsToRead addObject:[pluginPath stringByAppendingPathComponent:@"examples.txt"]];
+    return [filePathsToRead.allObjects flatMap:^NSArray *(id obj) {
+        return [[[[NSString alloc] initWithContentsOfFile:obj encoding:NSUTF8StringEncoding error:nil] componentsSeparatedByString:@"\n"] mapFilter:^id(id obj) {
+            NSString *line = [obj stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            return line.length ? line : nil;
+        }];
+    }];
 }
 
 - (void)dealloc {
