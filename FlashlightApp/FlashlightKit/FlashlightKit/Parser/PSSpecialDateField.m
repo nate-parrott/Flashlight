@@ -54,9 +54,12 @@
                 @"monday january 21st",
                 @"tuesday february 23rd at 8:30",
                 @"tomorrow at 9:15 PM",
+                @"four months ago",
                 @"1/2",
                 @"2/3",
                 @"4/5",
+                @"a week from now",
+                @"three days from now",
                 @"yesterday at 4 AM" ];
 }
 

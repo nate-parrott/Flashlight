@@ -1,6 +1,6 @@
 {
    "name": "whenis",
    "displayName": "When Is",
-   "examples": ["day of week january 21", "date next thursday"],
+   "examples": ["day of week january 21", "date next thursday", "what's 2 weeks from today"],
    "categories": ["Utilities"]
 }
