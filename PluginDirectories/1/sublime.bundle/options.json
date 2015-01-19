@@ -11,7 +11,7 @@
         },
         {
             "type": "hint",
-            "text": "When you type the name of an alias, the custom path will be used instead."
+            "text": "When searching you can enter an alias to open it using Sublime Text."
         }
     ]
 }
