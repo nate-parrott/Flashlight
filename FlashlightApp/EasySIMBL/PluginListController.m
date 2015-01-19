@@ -601,4 +601,16 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     self.selectedCategory = kCategoryShowIndividualPlugin;
 }
 
+- (void)showInstalledPluginWithName:(NSString *)name {
+    self.selectedCategory = @"Installed";
+    self.selectedPluginName = name;
+    PluginModel *model = [self.installedPlugins map:^id(id obj) {
+        return [[obj name] isEqualToString:name] ? obj : nil;
+    }].firstObject;
+    NSUInteger index = model ? [self.installedPlugins indexOfObject:model] : NSNotFound;
+    if (index != NSNotFound) {
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
+    }
+}
+
 @end

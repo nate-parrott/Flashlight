@@ -37,6 +37,7 @@
 @property (nonatomic) IBOutlet NSOutlineView *sourceList;
 
 - (void)showPluginWithName:(NSString *)name;
+- (void)showInstalledPluginWithName:(NSString *)name;
 
 @property (nonatomic) BOOL enabled;
 

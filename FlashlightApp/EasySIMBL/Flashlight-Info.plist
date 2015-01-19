@@ -11,12 +11,18 @@
 			<array>
 				<string>flashlightplugin</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>GenericPluginIcon</string>
 			<key>CFBundleTypeName</key>
 			<string>Flashlight Spotlight Plugin</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.nateparrott.Flashlight.Plugin</string>
+			</array>
 			<key>LSTypeIsPackage</key>
-			<true/>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>

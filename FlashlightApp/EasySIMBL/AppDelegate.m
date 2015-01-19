@@ -12,6 +12,7 @@
 #import "PluginModel.h"
 #import <LetsMove/PFMoveApplication.h>
 #import "UpdateChecker.h"
+#import "PluginInstallTask.h"
 
 @interface AppDelegate ()
 
@@ -145,8 +146,33 @@
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-    // TODO: install the plugin
-    [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    BOOL anyFilesMatch = NO;
+    for (NSString *filename in filenames) {
+        if ([filename.pathExtension isEqualToString:@"flashlightplugin"]) {
+            PluginInstallTask *task = [PluginInstallTask new];
+            [task installPluginData:[NSData dataWithContentsOfFile:filename] intoPluginsDirectory:[PluginModel pluginsDir] callback:^(BOOL success, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.pluginListController showInstalledPluginWithName:task.installedPluginName];
+                        });
+                    } else {
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        [alert setMessageText:NSLocalizedString(@"Couldn't Install Plugin", @"")];
+                        [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")]; // FirstButton, rightmost button
+                        [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"This file doesn't appear to be a valid plugin.", @"")]];
+                        alert.alertStyle = NSCriticalAlertStyle;
+                        [alert runModal];
+                    }
+                });
+            }];
+        }
+    }
+    if (anyFilesMatch) {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    } else {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplyFailure];
+    }
 }
 
 #pragma mark NSKeyValueObserving Protocol
@@ -265,5 +291,4 @@
         }
     }
 }
-
 @end
