@@ -1,0 +1,11 @@
+{
+    "categories": ["Utilities", "Featured"],
+    "description": "Add events to your calendar.",
+    "displayName": "Calendar Event",
+    "examples": [
+			"add an event \"team meeting\" at 5 PM tomorrow",
+			"calendar event: fly to San Francisco, 2/20 - 2/22",
+			"on 1/27 i have a meeting at the bank"
+    ],
+    "name": "calendar"
+}

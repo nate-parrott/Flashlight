@@ -5,9 +5,5 @@
 	"examples": ["lenny"],
 	"examples_de": ["lenny"],
 	"examples_fr" : ["lenny"],
-<<<<<<< HEAD
 	"categories": ["Utilities"]
-=======
-	"categories": ["Information", "Utilities"]
->>>>>>> c5d04b84368a2443eb41e24af5706503157318fe
 }
