@@ -47,6 +47,7 @@ typedef void (^PrefEditorWindowChangeFunction)(id sender);
         NSView *labelView = [self labelViewForOption:option];
         
         optionView.translatesAutoresizingMaskIntoConstraints = NO;
+        [optionView setContentCompressionResistancePriority:NSLayoutPriorityDefaultHigh forOrientation:NSLayoutConstraintOrientationHorizontal];
         [view addSubview:optionView];
         if (labelView) {
             labelView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -78,8 +79,8 @@ typedef void (^PrefEditorWindowChangeFunction)(id sender);
         lastControl = optionView;
     }
     if (lastControl) {
-        NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:lastControl attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
-        center.priority = NSLayoutPriorityDefaultLow;
+        NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:lastControl attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeCenterX multiplier:0.5 constant:0];
+        // center.priority = NSLayoutPriorityDefaultLow;
         [view addConstraint:center];
         [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastControl]->=20-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(lastControl)]];
     } else {

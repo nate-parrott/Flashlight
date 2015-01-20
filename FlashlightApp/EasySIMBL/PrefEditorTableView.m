@@ -24,6 +24,7 @@
     
     self.scrollView = [[NSScrollView alloc] initWithFrame:self.bounds];
     self.scrollView.borderType = NSBezelBorder;
+    self.scrollView.hasVerticalScroller = YES;
     [self addSubview:self.scrollView];
     
     self.tableView = [[NSTableView alloc] init];
