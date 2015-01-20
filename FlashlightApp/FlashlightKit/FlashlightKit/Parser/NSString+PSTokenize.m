@@ -27,6 +27,14 @@
     return [NSString stringWithFormat:@"<%@>", self.original];
 }
 
++ (void)initialize {
+    [super initialize];
+    NSLog(@"testing stemming");
+    for (NSString *word in @[@"test", @"testing", @"tested", @"untested"]) {
+        NSLog(@"Stem of %@: %@", word, [word stem]);
+    }
+}
+
 @end
 
 @implementation NSString (PSTokenize)
@@ -54,6 +62,26 @@
         }
     }];
     return tokens;
+}
+
+- (NSString *)stem {
+    // TODO: use a thread-local tagger
+    static NSLinguisticTagger *tagger = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:@[NSLinguisticTagSchemeLemma] options:NSLinguisticTaggerOmitPunctuation | NSLinguisticTaggerOmitWhitespace];
+    });
+    __block NSString *stem = self;
+    @synchronized(tagger) {
+        tagger.string = self;
+        [tagger enumerateTagsInRange:NSMakeRange(0, self.length) scheme:NSLinguisticTagSchemeLemma options:NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerOmitPunctuation usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
+            if (tag) {
+                stem = tag;
+                // *stop = YES;
+            }
+        }];
+    }
+    return stem;
 }
 
 @end

@@ -20,5 +20,6 @@
 @interface NSString (PSTokenize)
 
 - (NSArray *)ps_tokenize;
+- (NSString *)stem;
 
 @end
