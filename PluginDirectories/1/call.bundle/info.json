@@ -1,7 +1,7 @@
 {
     "name": "call",
     "displayName": "Call",
-    "description": "Call anyone using from the ease of Spotlight",
+    "description": "Place calls right from Spotlight",
     "examples": ["call 2610333366", "call 6945239034"],
     "categories": ["Utilities"],
     "creator_name": "George Lydakis",
