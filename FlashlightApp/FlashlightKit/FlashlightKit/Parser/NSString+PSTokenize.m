@@ -27,14 +27,6 @@
     return [NSString stringWithFormat:@"<%@>", self.original];
 }
 
-+ (void)initialize {
-    [super initialize];
-    NSLog(@"testing stemming");
-    for (NSString *word in @[@"test", @"testing", @"tested", @"untested"]) {
-        NSLog(@"Stem of %@: %@", word, [word stem]);
-    }
-}
-
 @end
 
 @implementation NSString (PSTokenize)
@@ -54,7 +46,10 @@
             token.original = text;
             NSString *bigram = [NSString stringWithFormat:@"%@-%@", prevText, text];
             prevText = text;
-            NSArray *features = @[token.original, bigram];
+            NSMutableArray *features = [NSMutableArray arrayWithObjects:token.original, bigram, nil];
+            if ([[self class] isStemmingSupported]) {
+                [features addObject:[text stem] ? : text];
+            }
             token.features = [features mapFilter:^id(id obj) {
                 return [obj lowercaseString];
             }];
@@ -64,20 +59,33 @@
     return tokens;
 }
 
++ (BOOL)isStemmingSupported {
+    static BOOL shouldStem = NO;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shouldStem = [[NSLocale preferredLanguages].firstObject isEqualToString:@"en"];
+    });
+    return shouldStem;
+}
+
 - (NSString *)stem {
     // TODO: use a thread-local tagger
+    // TODO: support languages other than english
     static NSLinguisticTagger *tagger = nil;
+    static NSOrthography *orthography = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         tagger = [[NSLinguisticTagger alloc] initWithTagSchemes:@[NSLinguisticTagSchemeLemma] options:NSLinguisticTaggerOmitPunctuation | NSLinguisticTaggerOmitWhitespace];
+        orthography = [NSOrthography orthographyWithDominantScript:@"Latn" languageMap:@{@"Latn": @[@"en"]}];
     });
     __block NSString *stem = self;
     @synchronized(tagger) {
         tagger.string = self;
+        [tagger setOrthography:orthography range:NSMakeRange(0, self.length)];
         [tagger enumerateTagsInRange:NSMakeRange(0, self.length) scheme:NSLinguisticTagSchemeLemma options:NSLinguisticTaggerOmitWhitespace | NSLinguisticTaggerOmitPunctuation usingBlock:^(NSString *tag, NSRange tokenRange, NSRange sentenceRange, BOOL *stop) {
-            if (tag) {
+            if (tokenRange.location != NSNotFound && tokenRange.length > 0) {
                 stem = tag;
-                // *stop = YES;
+                *stop = YES;
             }
         }];
     }
