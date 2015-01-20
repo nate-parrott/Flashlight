@@ -387,7 +387,7 @@
 				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PRODUCT_VERSION = 5;
+				PRODUCT_VERSION = 6;
 			};
 			name = Debug;
 		};
@@ -401,7 +401,7 @@
 				INSTALL_PATH = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PRODUCT_VERSION = 5;
+				PRODUCT_VERSION = 6;
 			};
 			name = Release;
 		};

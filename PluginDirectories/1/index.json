@@ -216,6 +216,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "George Lydakis",
+            "creator_url": "www.ldkge.com",
+            "description": "Place calls right from Spotlight",
+            "displayName": "Call",
+            "examples": [
+                "call 2610333366",
+                "facetime 6945239034"
+            ],
+            "name": "call",
+            "zip_url": "call.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
@@ -230,6 +245,21 @@
             ],
             "name": "CanIUse",
             "zip_url": "CanIUse.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Open Chocolat Finder is open, opens the current folder/file in Chocolat.",
+            "description_de": "\u00d6ffnet Chocolat. Falls der Finder gestartet ist, \u00f6ffnet es den aktuellen Ordner / Datei in Chocolat.",
+            "displayName": "Open with Chocolat",
+            "displayName_de": "Mit Chocolat \u00f6ffnen",
+            "examples": [
+                "choc"
+            ],
+            "iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
+            "name": "choc",
+            "zip_url": "chocolat.zip"
         },
         {
             "categories": [
@@ -528,6 +558,23 @@
             ],
             "name": "excuse",
             "zip_url": "excuse.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Open websites just by typing your own specified shortcuts",
+            "description_de": "\u00d6ffne Webseiten indem du eigene Shortcuts in Spotlight eingibst",
+            "displayName": "Favorites",
+            "displayName_de": "Favoriten",
+            "examples": [
+                "google"
+            ],
+            "name": "favorites",
+            "openPreferencesOnInstall": true,
+            "zip_url": "favorites.zip"
         },
         {
             "categories": [
@@ -1187,6 +1234,8 @@
             "categories": [
                 "Media"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Returns a random Google image and allows to copy the url",
             "description_de": "Gibt ein zuf\u00e4lliges Google Bild zur\u00fcck und erlaubt es die URL zu kopieren",
             "displayName": "Random Google image",
@@ -1425,9 +1474,10 @@
             "displayName": "Open with Sublime Text",
             "displayName_de": "Sublime Text",
             "examples": [
-                "sublime"
+                "sublime",
+                "sublime desktop",
+                "subl desktop"
             ],
-            "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
             "name": "sublime",
             "zip_url": "sublime.zip"
         },
@@ -1696,7 +1746,8 @@
             "displayName": "When Is",
             "examples": [
                 "day of week january 21",
-                "date next thursday"
+                "date next thursday",
+                "what's 2 weeks from today"
             ],
             "name": "whenis",
             "zip_url": "whenis.zip"
