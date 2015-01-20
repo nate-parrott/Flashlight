@@ -74,7 +74,8 @@ def info_dict_for_plugin(p, languages=['en']):
                                               "")
     plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
     plugin['model'] = p
-    plugin['install_url'] = 'install://_?' + \
-                            urllib.urlencode([("zip_url", p.zip_url),
-                                              ("name", p.name.encode('utf8'))])
+    for (scheme, key) in [('install', 'install_url'), ('update', 'update_url')]:
+      plugin[key] = scheme + '://_?' + \
+                              urllib.urlencode([("zip_url", p.zip_url),
+                                                ("name", p.name.encode('utf8'))])
     return plugin

@@ -359,7 +359,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)clearNLPModelCache {
-    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.pickle"] error:nil];
+    // TODO: get FlashlightKit to clear its cache somehow
 }
 
 #pragma mark Categorization
@@ -417,7 +417,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
-        // view.imageView.alphaValue = 0.47;
         return view;
     }
 }
@@ -545,13 +544,13 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installed');\n"];
     }
-    for (PluginInstallTask *installation in self.installTasksInProgress) {
-        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
-        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
-    }
     for (NSString *name in [UpdateChecker shared].pluginsNeedingUpdates) {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
+    }
+    for (PluginInstallTask *installation in self.installTasksInProgress) {
+        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
+        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
     }
     [self.webView stringByEvaluatingJavaScriptFromString:script];
 }

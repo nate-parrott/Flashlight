@@ -31,6 +31,8 @@
                 callback(NO, error);
             }
         }] resume];
+    } else {
+        NSLog(@"Can't install plugin with unknown zip url: %@", self.plugin.name);
     }
 }
 
