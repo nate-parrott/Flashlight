@@ -1,0 +1,12 @@
+{
+	"name": "favorites",
+	"displayName": "Favorites",
+	"displayName_de": "Favoriten",
+	"description": "Open websites just by typing your own specified shortcuts",
+	"description_de": "Öffne Webseiten indem du eigene Shortcuts in Spotlight eingibst",
+	"examples": ["google"],
+	"categories": ["Utilities"],
+	"openPreferencesOnInstall": true,
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
+}
