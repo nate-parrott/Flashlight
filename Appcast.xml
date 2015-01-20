@@ -9,7 +9,7 @@
 			<title>Version 0.96.6</title>
 			<sparkle:releasenoteslink>http://flashlightupdates.42pag.es/0.96.6</sparkle:releasenoteslink>
 			<pubdate>Mon, 19 Jan 2015 19:27:11 +0000</pubdate>
-			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.6/Flashlight.zip" sparkle:version="37" sparkle:shortversionstring="0.96.6" type="application/octet-stream" sparkle:dsasignature="MC4CFQCYLTD1vWfu+EOFOD94i8dShv9ZFgIVAL19ELVenunNfpSmetE5Tyt2LWCZ">
+			<enclosure url="https://github.com/nate-parrott/Flashlight/releases/download/v0.96.6/Flashlight.zip" sparkle:version="37" sparkle:shortversionstring="0.96.6" type="application/octet-stream" sparkle:dsasignature="MC0CFQDHceuhaL6xSu+9RFZzVH2Bw/5QYAIUeHPV4MGvAkfT/NjaaYmP5I+MtPk=">
 				<sparkle:minimumsystemversion>10.10</sparkle:minimumsystemversion>
 			</enclosure>
 		</item>
