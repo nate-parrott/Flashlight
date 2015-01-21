@@ -15,7 +15,7 @@
     return @"@date";
 }
 
-+ (id)getJsonObjectFromText:(NSString *)text {
++ (id)getJsonObjectFromText:(NSString *)text tag:(NSString *)tag {
     double timestamp;
     if ([text rangeOfString:@"/"].location != NSNotFound) {
         // HACK: parseDateTimeString doesn't seem to work for dates like 12/30/15, so use NSDate instead:

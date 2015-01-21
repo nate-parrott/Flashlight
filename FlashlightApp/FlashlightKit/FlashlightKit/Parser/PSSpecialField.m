@@ -7,6 +7,8 @@
 //
 
 #import "PSSpecialField.h"
+#import "PSTaggedText+ParseExample.h"
+#import "PSHelpers.h"
 
 @implementation PSSpecialField
 
@@ -32,6 +34,12 @@
 
 + (NSArray *)getExamples {
     return @[];
+}
+
++ (NSArray *)getParsedExamples {
+    return [[self getExamples] mapFilter:^id(id obj) {
+        return [PSTaggedText withExampleString:obj rootTag:[self name]];
+    }];
 }
 
 + (NSString *)name {

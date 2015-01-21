@@ -17,6 +17,9 @@
 		5F249B221A5CDED7001FEF8F /* PSSpecialDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */; };
 		5F249B251A5CE153001FEF8F /* PSSpecialFieldExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B231A5CE153001FEF8F /* PSSpecialFieldExampleSource.h */; };
 		5F249B261A5CE153001FEF8F /* PSSpecialFieldExampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B241A5CE153001FEF8F /* PSSpecialFieldExampleSource.m */; };
+		5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F35F61A7040700027AF00 /* AddressBook.framework */; };
+		5F5F35FB1A7042B00027AF00 /* PSSpecialContactsField.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5F35F91A7042B00027AF00 /* PSSpecialContactsField.h */; };
+		5F5F35FC1A7042B00027AF00 /* PSSpecialContactsField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5F35FA1A7042B00027AF00 /* PSSpecialContactsField.m */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
 		5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */; };
@@ -101,6 +104,9 @@
 		5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialDateField.m; sourceTree = "<group>"; };
 		5F249B231A5CE153001FEF8F /* PSSpecialFieldExampleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialFieldExampleSource.h; sourceTree = "<group>"; };
 		5F249B241A5CE153001FEF8F /* PSSpecialFieldExampleSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialFieldExampleSource.m; sourceTree = "<group>"; };
+		5F5F35F61A7040700027AF00 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		5F5F35F91A7042B00027AF00 /* PSSpecialContactsField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialContactsField.h; sourceTree = "<group>"; };
+		5F5F35FA1A7042B00027AF00 /* PSSpecialContactsField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialContactsField.m; sourceTree = "<group>"; };
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
 		5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToJSON.h"; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +202,19 @@
 				5F249B151A5CDA57001FEF8F /* tokeIt.l */,
 			);
 			name = TimeParser;
+			sourceTree = "<group>";
+		};
+		5F5F35F81A70429D0027AF00 /* Special fields */ = {
+			isa = PBXGroup;
+			children = (
+				5F249B1B1A5CDDBD001FEF8F /* PSSpecialField.h */,
+				5F249B1C1A5CDDBD001FEF8F /* PSSpecialField.m */,
+				5F249B1F1A5CDED7001FEF8F /* PSSpecialDateField.h */,
+				5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */,
+				5F5F35F91A7042B00027AF00 /* PSSpecialContactsField.h */,
+				5F5F35FA1A7042B00027AF00 /* PSSpecialContactsField.m */,
+			);
+			name = "Special fields";
 			sourceTree = "<group>";
 		};
 		5FC13DE41A4E12DB008A0FE3 = {
@@ -244,6 +264,7 @@
 		5FC13DF11A4E12DB008A0FE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F5F35F61A7040700027AF00 /* AddressBook.framework */,
 				5FC13DF21A4E12DB008A0FE3 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -314,10 +335,7 @@
 				5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */,
 				5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */,
 				5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */,
-				5F249B1B1A5CDDBD001FEF8F /* PSSpecialField.h */,
-				5F249B1C1A5CDDBD001FEF8F /* PSSpecialField.m */,
-				5F249B1F1A5CDED7001FEF8F /* PSSpecialDateField.h */,
-				5F249B201A5CDED7001FEF8F /* PSSpecialDateField.m */,
+				5F5F35F81A70429D0027AF00 /* Special fields */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -360,6 +378,7 @@
 				5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */,
 				5F249B1D1A5CDDBD001FEF8F /* PSSpecialField.h in Headers */,
 				5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */,
+				5F5F35FB1A7042B00027AF00 /* PSSpecialContactsField.h in Headers */,
 				5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */,
 				5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */,
 			);
@@ -471,6 +490,7 @@
 				5FC13E421A4E12FB008A0FE3 /* PSNonterminalNode.m in Sources */,
 				5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */,
 				5FC13E5C1A4E12FB008A0FE3 /* PSTerminalNode.m in Sources */,
+				5F5F35FC1A7042B00027AF00 /* PSSpecialContactsField.m in Sources */,
 				5FC13E351A4E12FB008A0FE3 /* NSString+PSTokenize.m in Sources */,
 				5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */,
 				5F249B161A5CDA57001FEF8F /* parseIt.ym in Sources */,
@@ -602,6 +622,7 @@
 		5FC13E051A4E12DB008A0FE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -613,12 +634,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5FC13E061A4E12DB008A0FE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

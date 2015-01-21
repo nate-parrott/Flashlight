@@ -16,8 +16,10 @@
 #import "PSTaggedText+ToNestedDictionaries.h"
 #import "PSParseCandidate.h"
 #import "PSParsnipSource.h"
-#import "PSSpecialDateField.h"
+
 #import "PSSpecialFieldExampleSource.h"
+#import "PSSpecialDateField.h"
+#import "PSSpecialContactsField.h"
 
 @interface PSPluginDispatcher ()
 
@@ -53,6 +55,7 @@
 
 - (void)initializeSpecialFieldClasses {
     [[PSSpecialDateField class] new];
+    [[PSSpecialContactsField class] new];
 }
 
 - (void)addSourceWithClass:(Class)class identifier:(NSString *)identifier {

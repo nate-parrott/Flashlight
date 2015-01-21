@@ -9,6 +9,7 @@
 #import "PSTaggedText+ToNestedDictionaries.h"
 #import "PSHelpers.h"
 #import "PSSpecialField.h"
+#import "PSNonterminalNode.h"
 
 @implementation PSTaggedText (ToNestedDictionaries)
 
@@ -21,7 +22,12 @@
             if ([tag characterAtIndex:0] == '@') {
                 // it's a special field:
                 Class fieldClass = [PSSpecialField specialFieldClassesForNames][tag];
-                val = [fieldClass performSelector:@selector(getJsonObjectFromText:) withObject:[child _getText]];
+                if (fieldClass == nil) {
+                    // if the specific field tag (tag/more-specific) doesn't match,
+                    // try lopping off the stuff after the slash
+                    fieldClass = [PSSpecialField specialFieldClassesForNames][[PSNonterminalNode convertTagToExternal:tag]];
+                }
+                val = [(id)fieldClass getJsonObjectFromText:[child _getText] tag:tag];
             } else {
                 NSDictionary *nestedDict = [child toNestedDictionary];
                 val = nestedDict.count > 0 ? nestedDict : [child _getText];

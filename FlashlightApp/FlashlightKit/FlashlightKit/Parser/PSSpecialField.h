@@ -11,8 +11,9 @@
 @interface PSSpecialField : NSObject
 
 + (NSMutableDictionary *)specialFieldClassesForNames;
-+ (id)getJsonObjectFromText:(NSString *)text;
++ (id)getJsonObjectFromText:(NSString *)text tag:(NSString *)tag;
 + (NSArray *)getExamples;
++ (NSArray *)getParsedExamples; // by default, calls -getExamples and parses them
 + (NSString *)name;
 
 @end

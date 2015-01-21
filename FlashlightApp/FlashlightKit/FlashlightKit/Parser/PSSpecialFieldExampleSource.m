@@ -19,9 +19,7 @@
     Parsnip *parsnip = [Parsnip new];
     NSArray *examples = [[[PSSpecialField specialFieldClassesForNames] allKeys] flatMap:^NSArray *(NSString *fieldName) {
         Class cls = [PSSpecialField specialFieldClassesForNames][fieldName];
-        return [[cls performSelector:@selector(getExamples)] mapFilter:^id(NSString *example) {
-            return [PSTaggedText withExampleString:example rootTag:fieldName];
-        }];
+        return [cls performSelector:@selector(getParsedExamples)];
     }];
     [parsnip learnExamples:examples];
     callback(identifier, @{PSParsnipSourceDataParsnipKey: parsnip});
