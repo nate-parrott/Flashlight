@@ -17,6 +17,8 @@
 
 - (PSNonterminalNode *)toNode;
 
+- (NSString *)getText;
+
 @end
 
 PSTaggedText *Tagged(NSString *tag, NSArray *contents);

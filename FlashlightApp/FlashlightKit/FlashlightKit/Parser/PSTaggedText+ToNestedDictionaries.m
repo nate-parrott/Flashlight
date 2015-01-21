@@ -27,10 +27,10 @@
                     // try lopping off the stuff after the slash
                     fieldClass = [PSSpecialField specialFieldClassesForNames][[PSNonterminalNode convertTagToExternal:tag]];
                 }
-                val = [(id)fieldClass getJsonObjectFromText:[child _getText] tag:tag];
+                val = [(id)fieldClass getJsonObjectFromTaggedText:child];
             } else {
                 NSDictionary *nestedDict = [child toNestedDictionary];
-                val = nestedDict.count > 0 ? nestedDict : [child _getText];
+                val = nestedDict.count > 0 ? nestedDict : [child getText];
             }
             if (val) {
                 BOOL alreadyHadItemWithSameTag = !!d[tag];
@@ -44,12 +44,6 @@
         }
     }
     return d;
-}
-
-- (NSString *)_getText {
-    return [[self.contents mapFilter:^id(id obj) {
-        return [obj isKindOfClass:[NSString class]] ? obj : nil;
-    }] componentsJoinedByString:@" "];
 }
 
 @end

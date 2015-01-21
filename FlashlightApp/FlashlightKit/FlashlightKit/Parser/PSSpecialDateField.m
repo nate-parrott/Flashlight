@@ -8,6 +8,7 @@
 
 #import "PSSpecialDateField.h"
 #import "TimeParser.h"
+#import "PSTaggedText.h"
 
 @implementation PSSpecialDateField
 
@@ -15,7 +16,8 @@
     return @"@date";
 }
 
-+ (id)getJsonObjectFromText:(NSString *)text tag:(NSString *)tag {
++ (id)getJsonObjectFromTaggedText:(PSTaggedText *)taggedText {
+    NSString *text = [taggedText getText];
     double timestamp;
     if ([text rangeOfString:@"/"].location != NSNotFound) {
         // HACK: parseDateTimeString doesn't seem to work for dates like 12/30/15, so use NSDate instead:

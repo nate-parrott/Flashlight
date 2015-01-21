@@ -63,6 +63,12 @@
     }] componentsJoinedByString:@" "]];
 }
 
+- (NSString *)getText {
+    return [[self.contents mapFilter:^id(id obj) {
+        return [obj isKindOfClass:[NSString class]] ? obj : nil;
+    }] componentsJoinedByString:@" "];
+}
+
 @end
 
 PSTaggedText *Tagged(NSString *tag, NSArray *contents) {

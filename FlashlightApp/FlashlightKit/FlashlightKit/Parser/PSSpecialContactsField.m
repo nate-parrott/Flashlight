@@ -35,7 +35,8 @@
     return @"@contact";
 }
 
-+ (id)getJsonObjectFromText:(NSString *)text tag:(NSString *)tag {
++ (id)getJsonObjectFromTaggedText:(PSTaggedText *)taggedText {
+    NSString *tag = taggedText.tag;
     if ([tag rangeOfString:@"/"].location == NSNotFound) return @{};
     NSString *uniqueId = [tag substringFromIndex:[tag rangeOfString:@"/"].location + 1];
     NSMutableDictionary *dict = [NSMutableDictionary new];

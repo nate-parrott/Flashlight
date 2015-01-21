@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+@class PSTaggedText;
 
 @interface PSSpecialField : NSObject
 
 + (NSMutableDictionary *)specialFieldClassesForNames;
-+ (id)getJsonObjectFromText:(NSString *)text tag:(NSString *)tag;
++ (id)getJsonObjectFromTaggedText:(PSTaggedText *)taggedText;
 + (NSArray *)getExamples;
 + (NSArray *)getParsedExamples; // by default, calls -getExamples and parses them
 + (NSString *)name;
