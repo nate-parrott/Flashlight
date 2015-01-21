@@ -30,7 +30,7 @@
 			<key>BundleIdentifier</key>
 			<string>com.apple.Spotlight</string>
 			<key>MaxBundleVersion</key>
-			<string>916</string>
+			<string>917</string>
 			<key>MinBundleVersion</key>
 			<string>911</string>
 		</dict>
