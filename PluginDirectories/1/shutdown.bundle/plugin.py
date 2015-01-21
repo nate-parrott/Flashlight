@@ -49,3 +49,13 @@ def results(parsed, original_query):
             "title": i18n.localstr('Turn on Screen Saver'),
             "run_args": ["open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"]
         }
+    if('show_hiddenFolders' in parsed):
+        return {
+            "title": i18n.localstr('Show hidden folders'),
+            "run_args": ["defaults write com.apple.finder AppleShowAllFiles TRUE"]
+        }
+    if('hide_hiddenFolders' in parsed):
+        return {
+            "title": i18n.localstr('Hide hidden folders'),
+            "run_args": ["defaults write com.apple.finder AppleShowAllFiles FALSE"]
+    }
