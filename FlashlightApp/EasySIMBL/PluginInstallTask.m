@@ -45,11 +45,15 @@
     return nil;
 }
 
-- (void)installPluginData:(NSData *)data intoPluginsDirectory:(NSString *)directory callback:(void(^)(BOOL success, NSError *error))callback {
+- (void)installPluginData:(NSData *)data intoPluginsDirectory:(NSString *)pluginsDirectory callback:(void(^)(BOOL success, NSError *error))callback {
     if (!data) {
         callback(NO, nil);
         return;
     }
+    
+    NSURL *tempDirectory = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSProcessInfo processInfo] globallyUniqueString]] isDirectory:YES];
+    [[NSFileManager defaultManager] createDirectoryAtURL:tempDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         NSString *pluginName = nil;
         NSError *zipError = nil;
@@ -59,7 +63,7 @@
                 zipError = nil;
                 NSData *entryData = [entry newDataWithError:&zipError];
                 if (entryData && !zipError) {
-                    NSString *writeToPath = [directory stringByAppendingPathComponent:entry.fileName];
+                    NSString *writeToPath = [tempDirectory.path stringByAppendingPathComponent:entry.fileName];
                     if (![[NSFileManager defaultManager] fileExistsAtPath:[writeToPath stringByDeletingLastPathComponent]]) {
                         [[NSFileManager defaultManager] createDirectoryAtPath:[writeToPath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:NO];
                     }
@@ -79,6 +83,11 @@
                 callback(NO, nil);
                 return;
             }
+            
+            // once we're done zipping, move from the temporary directory to the main directory (triggering a reload of the `examples.txt` index)
+            NSString *bundleFilename = [pluginName stringByAppendingPathExtension:@"bundle"];
+            [[NSFileManager defaultManager] moveItemAtPath:[tempDirectory.path stringByAppendingPathComponent:bundleFilename] toPath:[pluginsDirectory stringByAppendingPathComponent:bundleFilename] error:nil];
+            
             _installedPluginName = pluginName;
             PluginModel *pluginModel = [PluginModel installedPluginNamed:pluginName];
             // done:

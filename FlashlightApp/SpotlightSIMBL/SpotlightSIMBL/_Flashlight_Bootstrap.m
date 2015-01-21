@@ -117,6 +117,8 @@ BOOL _Flashlight_Is_10_10_2_Spotlight() {
         }
     }), 0, NULL);
     
+    [_FlashlightPluginEngine shared]; // initialize the engine, including creating the plugins directory
+    
     // [[_SS_MetadataResponseDelayer shared] setup];
 }
 
