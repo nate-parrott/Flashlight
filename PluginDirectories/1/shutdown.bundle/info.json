@@ -8,9 +8,9 @@
 	"description_nl":"Verschaft bijkomende commando's zoals aflsuiten, herstart en uitloggen",
 	"description": "Provides additional commands such as shutdown, restart and logout.",
 	"description_de": "Bietet zusätzliche Funktionen wie Herunterfahren, Neustarten und Abmelden.",
-	"examples": ["shutdown", "restart", "logout", "sleep", "lock","screen saver"],
+	"examples": ["shutdown", "restart", "logout", "sleep", "lock","screen saver", "show hidden folders"],
 	"examples_de": ["Herunterfahren", "Neustart", "Abmelden", "Schlafen", "Sperren","Bildschirmschoner", "Papierkorb leeren"],
 	"examples_fr" :["éteindre", "redémarrer", "déconnection", "veille", "verouiller", "écran de veille"],
-	"examples_nl" :["afsluiten", "herstart", "uitloggen", "slaap", "op slot", "schermbeveiliging"],
+	"examples_nl" :["afsluiten", "herstart", "uitloggen", "slaap", "op slot", "schermbeveiliging","toon verborgen mappen"],
 	"categories": ["System", "Featured"]
 }
