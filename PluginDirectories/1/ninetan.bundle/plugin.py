@@ -28,10 +28,15 @@ locations = {
 
 
 def results(parsed, original_query):
-    if '~location' not in parsed:
-        return
+    if '~location' in parsed:
+        location = parsed['~location'].lower()
+    else:
+        import json
+        settings = json.load(open('preferences.json'))
+        if 'default_location' not in settings:
+            return
+        location = settings['default_location']
 
-    location = parsed['~location'].lower()
     keys = list(filter(lambda l: l.startswith(location), locations.keys()))
 
     if len(keys) == 1:
