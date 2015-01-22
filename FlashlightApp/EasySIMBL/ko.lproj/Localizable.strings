@@ -5,7 +5,7 @@
 "Art" = "예술";
 
 /* No comment provided by engineer. */
-"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)" = "미리 주의를 드리자면, 현재 Flashlight 플러그인을 허용하시더라도 플러그인이 동작 안할수 있습니다. (지금 스폿라이트 v%@ 을 사용중입다)";
+"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)" = "미리 주의를 드리자면, 현재 Flashlight 플러그인을 허용하시더라도 플러그인이 동작 안할수 있습니다. (지금 스폿라이트 v%@ 을 사용하고 있습니다)";
 
 /* No comment provided by engineer. */
 "Automator workflow:" = "오토메이터 워크플로:";
