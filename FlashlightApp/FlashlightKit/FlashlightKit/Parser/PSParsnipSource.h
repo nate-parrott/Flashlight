@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+@class PSTaggedText;
 
 extern NSString * const PSParsnipSourceDataParsnipKey; // contains the source's standalone parsnip
+extern NSString * const PSParsnipSourceFieldProcessorsDictionaryKey;
 
 typedef void (^PSParsnipDataCallback)(NSString *identifier, NSDictionary *data);
+typedef id (^PSParsnipFieldProcessor)(PSTaggedText *field);
 
 @interface PSParsnipSource : NSObject
 

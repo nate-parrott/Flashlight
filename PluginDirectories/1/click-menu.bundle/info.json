@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Search Menu Items",
+  "name" : "click-menu",
+  "description" : "Search and click the running app's menu items.",
+  "examples" : [
+    "click Gaussian Blur",
+    "- paste and match style"
+  ]
+}

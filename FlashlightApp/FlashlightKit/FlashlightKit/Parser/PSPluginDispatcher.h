@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PSPluginExampleSource.h"
 
 @class PSPluginExampleSource, PSTaggedText;
 
@@ -16,5 +17,7 @@
 - (void)parseCommand:(NSString *)command pluginPath:(NSString **)pluginPath arguments:(NSDictionary **)arguments parseTree:(PSTaggedText **)tree;
 
 - (PSPluginExampleSource *)exampleSource;
+
++ (PSParsnipFieldProcessor)fieldProcessorForTag:(NSString *)tag;
 
 @end

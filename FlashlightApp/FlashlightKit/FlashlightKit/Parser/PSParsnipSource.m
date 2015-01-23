@@ -9,6 +9,7 @@
 #import "PSParsnipSource.h"
 
 NSString * const PSParsnipSourceDataParsnipKey = @"PSParsnipSourceDataParsnipKey";
+NSString * const PSParsnipSourceFieldProcessorsDictionaryKey = @"PSParsnipSourceFieldProcessorsDictionaryKey";
 
 @interface PSParsnipSource ()
 

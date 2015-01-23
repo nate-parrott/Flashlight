@@ -15,11 +15,10 @@
 #import "PSTaggedText+FromNodes.h"
 #import "PSTaggedText+ToNestedDictionaries.h"
 #import "PSParseCandidate.h"
-#import "PSParsnipSource.h"
 
-#import "PSSpecialFieldExampleSource.h"
-#import "PSSpecialDateField.h"
-#import "PSSpecialContactsField.h"
+#import "PSParsnipSource.h"
+#import "PSDateSource.h"
+#import "PSContactSource.h"
 
 @interface PSPluginDispatcher ()
 
@@ -34,8 +33,6 @@
 - (instancetype)init {
     self = [super init];
     
-    [self initializeSpecialFieldClasses];
-    
     self.parsnipCreator = [[PSBackgroundProcessor alloc] initWithProcessingBlock:^(NSDictionary *latestResultsDictionariesForSourceIdentifiers, PSBackgroundProcessorResultBlock callback) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
             NSArray *parsnips = [latestResultsDictionariesForSourceIdentifiers.allValues mapFilter:^id(NSDictionary *data) {
@@ -48,14 +45,10 @@
     self.latestResultsDictionariesForSourceIdentifiers = [NSMutableDictionary new];
     self.sources = [NSMutableArray new];
     [self addSourceWithClass:[PSPluginExampleSource class] identifier:@"plugins"];
-    [self addSourceWithClass:[PSSpecialFieldExampleSource class] identifier:@"specialFields"];
+    [self addSourceWithClass:[PSDateSource class] identifier:@"date"];
+    [self addSourceWithClass:[PSContactSource class] identifier:@"contact"];
     
     return self;
-}
-
-- (void)initializeSpecialFieldClasses {
-    [[PSSpecialDateField class] new];
-    [[PSSpecialContactsField class] new];
 }
 
 - (void)addSourceWithClass:(Class)class identifier:(NSString *)identifier {
@@ -64,6 +57,11 @@
         @synchronized(weakSelf) {
             weakSelf.latestResultsDictionariesForSourceIdentifiers[identifier] = data;
             [weakSelf.parsnipCreator gotNewData:weakSelf.latestResultsDictionariesForSourceIdentifiers.copy];
+            
+            NSDictionary *fieldProcessors = data[PSParsnipSourceFieldProcessorsDictionaryKey];
+            if (fieldProcessors) {
+                [[weakSelf class] updateFieldProcessorsDict:fieldProcessors];
+            }
         }
     }];
     [self.sources addObject:source];
@@ -96,6 +94,33 @@
         }
     }
     return nil;
+}
+
+#pragma mark Field Processors
++ (PSParsnipFieldProcessor)fieldProcessorForTag:(NSString *)tag {
+    NSMutableDictionary *d = [self fieldProcessors];
+    @synchronized(d) {
+        PSParsnipFieldProcessor p = d[tag];
+        if (p) return p;
+        p = d[[PSNonterminalNode convertTagToExternal:tag]];
+        return p;
+    }
+}
+
++ (void)updateFieldProcessorsDict:(NSDictionary *)procs {
+    NSMutableDictionary *d = [self fieldProcessors];
+    @synchronized(d) {
+        [d addEntriesFromDictionary:procs];
+    }
+}
+
++ (NSMutableDictionary *)fieldProcessors {
+    static NSMutableDictionary *fieldProcs = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fieldProcs = [NSMutableDictionary new];
+    });
+    return fieldProcs;
 }
 
 @end
