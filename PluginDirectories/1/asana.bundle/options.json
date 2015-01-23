@@ -1,0 +1,31 @@
+{
+	"options" : [
+        {
+            "text": "Workspace:",
+            "type": "dropdown",
+            "key": "workspace",
+            "options": [
+                {"text": "Personal Projects", "value": "personal"},
+                {"text": "Organization", "value": "organization"}
+            ]
+        },
+        {
+        	"type":"hint",
+        	"text":"If you chose 'Organization', enter its name"
+        },
+        {
+        	"text": "Organization Name",
+        	"type": "text",
+        	"key": "orgainzation_name"
+        },
+        {
+        	"type":"hint",
+        	"text":"Your API key is in Asana => Account Settings => Apps"
+        },
+        {
+        	"text":"API Key",
+        	"type":"text",
+        	"key":"api_key"
+        }
+    ]
+}
