@@ -69,6 +69,21 @@
     }] componentsJoinedByString:@" "];
 }
 
+- (PSTaggedText *)findChild:(NSString *)childTag {
+    for (id item in self.contents) {
+        if ([item isKindOfClass:[PSTaggedText class]]) {
+            if ([[item tag] isEqualToString:childTag] || [[item externalTag] isEqualToString:childTag]) {
+                return item;
+            }
+            id found = [item findChild:childTag];
+            if (found) {
+                return found;
+            }
+        }
+    }
+    return nil;
+}
+
 @end
 
 PSTaggedText *Tagged(NSString *tag, NSArray *contents) {

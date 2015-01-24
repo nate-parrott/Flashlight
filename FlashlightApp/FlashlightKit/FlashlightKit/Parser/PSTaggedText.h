@@ -18,6 +18,7 @@
 - (PSNonterminalNode *)toNode;
 
 - (NSString *)getText;
+- (PSTaggedText *)findChild:(NSString *)childTag;
 
 @end
 

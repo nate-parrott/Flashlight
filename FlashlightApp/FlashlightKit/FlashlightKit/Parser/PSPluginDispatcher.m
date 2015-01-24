@@ -19,6 +19,7 @@
 #import "PSParsnipSource.h"
 #import "PSDateSource.h"
 #import "PSContactSource.h"
+#import "PSFileSource.h"
 
 @interface PSPluginDispatcher ()
 
@@ -47,6 +48,7 @@
     [self addSourceWithClass:[PSPluginExampleSource class] identifier:@"plugins"];
     [self addSourceWithClass:[PSDateSource class] identifier:@"date"];
     [self addSourceWithClass:[PSContactSource class] identifier:@"contact"];
+    [self addSourceWithClass:[PSFileSource class] identifier:@"file"];
     
     return self;
 }
