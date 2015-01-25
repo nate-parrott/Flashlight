@@ -1,0 +1,2 @@
+yandex ~yxquery(query here)
+yx ~yxquery(query here)
