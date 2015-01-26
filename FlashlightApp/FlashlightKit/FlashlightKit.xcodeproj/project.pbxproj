@@ -11,62 +11,63 @@
 		5F249B171A5CDA57001FEF8F /* TimeParser.c in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B131A5CDA57001FEF8F /* TimeParser.c */; };
 		5F249B181A5CDA57001FEF8F /* TimeParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F249B141A5CDA57001FEF8F /* TimeParser.h */; };
 		5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */ = {isa = PBXBuildFile; fileRef = 5F249B151A5CDA57001FEF8F /* tokeIt.l */; };
+		5F25EED11A7615380030693F /* Finder.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EE9F1A7615380030693F /* Finder.h */; };
+		5F25EED21A7615380030693F /* NSString+PSTokenize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEA01A7615380030693F /* NSString+PSTokenize.h */; };
+		5F25EED31A7615380030693F /* NSString+PSTokenize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEA11A7615380030693F /* NSString+PSTokenize.m */; };
+		5F25EED41A7615380030693F /* Parsnip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEA21A7615380030693F /* Parsnip.h */; };
+		5F25EED51A7615380030693F /* Parsnip.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEA31A7615380030693F /* Parsnip.m */; };
+		5F25EED61A7615380030693F /* PSBackgroundProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEA41A7615380030693F /* PSBackgroundProcessor.h */; };
+		5F25EED71A7615380030693F /* PSBackgroundProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEA51A7615380030693F /* PSBackgroundProcessor.m */; };
+		5F25EED81A7615380030693F /* PSContactSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEA61A7615380030693F /* PSContactSource.h */; };
+		5F25EED91A7615380030693F /* PSContactSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEA71A7615380030693F /* PSContactSource.m */; };
+		5F25EEDA1A7615380030693F /* PSDateSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEA81A7615380030693F /* PSDateSource.h */; };
+		5F25EEDB1A7615380030693F /* PSDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEA91A7615380030693F /* PSDateSource.m */; };
+		5F25EEDC1A7615380030693F /* PSEndNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEAA1A7615380030693F /* PSEndNode.h */; };
+		5F25EEDD1A7615380030693F /* PSEndNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEAB1A7615380030693F /* PSEndNode.m */; };
+		5F25EEDE1A7615380030693F /* PSFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEAC1A7615380030693F /* PSFileSource.h */; };
+		5F25EEDF1A7615380030693F /* PSFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEAD1A7615380030693F /* PSFileSource.m */; };
+		5F25EEE01A7615380030693F /* PSHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEAE1A7615380030693F /* PSHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F25EEE11A7615380030693F /* PSHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEAF1A7615380030693F /* PSHelpers.m */; };
+		5F25EEE21A7615380030693F /* PSMerging.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB01A7615380030693F /* PSMerging.h */; };
+		5F25EEE31A7615380030693F /* PSMerging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEB11A7615380030693F /* PSMerging.m */; };
+		5F25EEE41A7615380030693F /* PSNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB21A7615380030693F /* PSNode.h */; };
+		5F25EEE51A7615380030693F /* PSNonterminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB31A7615380030693F /* PSNonterminalNode.h */; };
+		5F25EEE61A7615380030693F /* PSNonterminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEB41A7615380030693F /* PSNonterminalNode.m */; };
+		5F25EEE71A7615380030693F /* PSParseCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB51A7615380030693F /* PSParseCandidate.h */; };
+		5F25EEE81A7615380030693F /* PSParseCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEB61A7615380030693F /* PSParseCandidate.m */; };
+		5F25EEE91A7615380030693F /* PSParsnipSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB71A7615380030693F /* PSParsnipSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F25EEEA1A7615380030693F /* PSParsnipSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEB81A7615380030693F /* PSParsnipSource.m */; };
+		5F25EEEB1A7615380030693F /* PSPluginDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEB91A7615380030693F /* PSPluginDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F25EEEC1A7615380030693F /* PSPluginDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEBA1A7615380030693F /* PSPluginDispatcher.m */; };
+		5F25EEED1A7615380030693F /* PSPluginExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEBB1A7615380030693F /* PSPluginExampleSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F25EEEE1A7615380030693F /* PSPluginExampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEBC1A7615380030693F /* PSPluginExampleSource.m */; };
+		5F25EEEF1A7615380030693F /* PSProbabilityCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEBD1A7615380030693F /* PSProbabilityCounter.h */; };
+		5F25EEF01A7615380030693F /* PSProbabilityCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEBE1A7615380030693F /* PSProbabilityCounter.m */; };
+		5F25EEF11A7615380030693F /* PSSpecialNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEBF1A7615380030693F /* PSSpecialNode.h */; };
+		5F25EEF21A7615380030693F /* PSSpecialNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEC01A7615380030693F /* PSSpecialNode.m */; };
+		5F25EEF31A7615380030693F /* PSStartNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEC11A7615380030693F /* PSStartNode.h */; };
+		5F25EEF41A7615380030693F /* PSStartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEC21A7615380030693F /* PSStartNode.m */; };
+		5F25EEF51A7615380030693F /* PSTaggedText.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEC31A7615380030693F /* PSTaggedText.h */; };
+		5F25EEF61A7615380030693F /* PSTaggedText.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEC41A7615380030693F /* PSTaggedText.m */; };
+		5F25EEF71A7615380030693F /* PSTaggedText+FromNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEC51A7615380030693F /* PSTaggedText+FromNodes.h */; };
+		5F25EEF81A7615380030693F /* PSTaggedText+FromNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEC61A7615380030693F /* PSTaggedText+FromNodes.m */; };
+		5F25EEF91A7615380030693F /* PSTaggedText+ParseExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEC71A7615380030693F /* PSTaggedText+ParseExample.h */; };
+		5F25EEFA1A7615380030693F /* PSTaggedText+ParseExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EEC81A7615380030693F /* PSTaggedText+ParseExample.m */; };
+		5F25EEFB1A7615380030693F /* PSTaggedText+PreprocessedForLearning.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EEC91A7615380030693F /* PSTaggedText+PreprocessedForLearning.h */; };
+		5F25EEFC1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EECA1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m */; };
+		5F25EEFD1A7615380030693F /* PSTaggedText+ToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECB1A7615380030693F /* PSTaggedText+ToJSON.h */; };
+		5F25EEFE1A7615380030693F /* PSTaggedText+ToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EECC1A7615380030693F /* PSTaggedText+ToJSON.m */; };
+		5F25EEFF1A7615380030693F /* PSTaggedText+ToNestedDictionaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECD1A7615380030693F /* PSTaggedText+ToNestedDictionaries.h */; };
+		5F25EF001A7615380030693F /* PSTaggedText+ToNestedDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */; };
+		5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECF1A7615380030693F /* PSTerminalNode.h */; };
+		5F25EF021A7615380030693F /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EED01A7615380030693F /* PSTerminalNode.m */; };
 		5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F35F61A7040700027AF00 /* AddressBook.framework */; };
-		5F6AC74E1A72E45200FCEC5C /* PSDateSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F6AC74C1A72E45200FCEC5C /* PSDateSource.h */; };
-		5F6AC74F1A72E45200FCEC5C /* PSDateSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AC74D1A72E45200FCEC5C /* PSDateSource.m */; };
-		5F6AC7521A72E82400FCEC5C /* PSContactSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F6AC7501A72E82400FCEC5C /* PSContactSource.h */; };
-		5F6AC7531A72E82400FCEC5C /* PSContactSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AC7511A72E82400FCEC5C /* PSContactSource.m */; };
-		5F6AC7561A72EC3B00FCEC5C /* PSFileSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F6AC7541A72EC3B00FCEC5C /* PSFileSource.h */; };
-		5F6AC7571A72EC3B00FCEC5C /* PSFileSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AC7551A72EC3B00FCEC5C /* PSFileSource.m */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
-		5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */; };
-		5F870A5E1A546C0700161E2F /* PSTaggedText+ToJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */; };
 		5F870A601A5478DB00161E2F /* run_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A5F1A5478DB00161E2F /* run_plugin.py */; };
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
-		5FC13E341A4E12FB008A0FE3 /* NSString+PSTokenize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0B1A4E12FB008A0FE3 /* NSString+PSTokenize.h */; };
-		5FC13E351A4E12FB008A0FE3 /* NSString+PSTokenize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E0C1A4E12FB008A0FE3 /* NSString+PSTokenize.m */; };
-		5FC13E361A4E12FB008A0FE3 /* Parsnip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0D1A4E12FB008A0FE3 /* Parsnip.h */; };
-		5FC13E371A4E12FB008A0FE3 /* Parsnip.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E0E1A4E12FB008A0FE3 /* Parsnip.m */; };
-		5FC13E381A4E12FB008A0FE3 /* PSBackgroundProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E0F1A4E12FB008A0FE3 /* PSBackgroundProcessor.h */; };
-		5FC13E391A4E12FB008A0FE3 /* PSBackgroundProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E101A4E12FB008A0FE3 /* PSBackgroundProcessor.m */; };
-		5FC13E3A1A4E12FB008A0FE3 /* PSEndNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E111A4E12FB008A0FE3 /* PSEndNode.h */; };
-		5FC13E3B1A4E12FB008A0FE3 /* PSEndNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E121A4E12FB008A0FE3 /* PSEndNode.m */; };
-		5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E131A4E12FB008A0FE3 /* PSHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FC13E3D1A4E12FB008A0FE3 /* PSHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E141A4E12FB008A0FE3 /* PSHelpers.m */; };
-		5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E151A4E12FB008A0FE3 /* PSMerging.h */; };
-		5FC13E3F1A4E12FB008A0FE3 /* PSMerging.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E161A4E12FB008A0FE3 /* PSMerging.m */; };
-		5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E171A4E12FB008A0FE3 /* PSNode.h */; };
-		5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E181A4E12FB008A0FE3 /* PSNonterminalNode.h */; };
-		5FC13E421A4E12FB008A0FE3 /* PSNonterminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E191A4E12FB008A0FE3 /* PSNonterminalNode.m */; };
-		5FC13E431A4E12FB008A0FE3 /* PSParseCandidate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1A1A4E12FB008A0FE3 /* PSParseCandidate.h */; };
-		5FC13E441A4E12FB008A0FE3 /* PSParseCandidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1B1A4E12FB008A0FE3 /* PSParseCandidate.m */; };
-		5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1C1A4E12FB008A0FE3 /* PSParsnipSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FC13E461A4E12FB008A0FE3 /* PSParsnipSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1D1A4E12FB008A0FE3 /* PSParsnipSource.m */; };
-		5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E1E1A4E12FB008A0FE3 /* PSPluginDispatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FC13E481A4E12FB008A0FE3 /* PSPluginDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E1F1A4E12FB008A0FE3 /* PSPluginDispatcher.m */; };
-		5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FC13E4A1A4E12FB008A0FE3 /* PSPluginExampleSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E211A4E12FB008A0FE3 /* PSPluginExampleSource.m */; };
-		5FC13E4B1A4E12FB008A0FE3 /* PSProbabilityCounter.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */; };
-		5FC13E4C1A4E12FB008A0FE3 /* PSProbabilityCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E231A4E12FB008A0FE3 /* PSProbabilityCounter.m */; };
-		5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */; };
-		5FC13E4E1A4E12FB008A0FE3 /* PSSpecialNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E251A4E12FB008A0FE3 /* PSSpecialNode.m */; };
-		5FC13E4F1A4E12FB008A0FE3 /* PSStartNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E261A4E12FB008A0FE3 /* PSStartNode.h */; };
-		5FC13E501A4E12FB008A0FE3 /* PSStartNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E271A4E12FB008A0FE3 /* PSStartNode.m */; };
-		5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E281A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h */; };
-		5FC13E521A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E291A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m */; };
-		5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2A1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h */; };
-		5FC13E541A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2B1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m */; };
-		5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2C1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h */; };
-		5FC13E561A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2D1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m */; };
-		5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */; };
-		5FC13E581A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E2F1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m */; };
-		5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */; };
-		5FC13E5A1A4E12FB008A0FE3 /* PSTaggedText.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */; };
-		5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */; };
-		5FC13E5C1A4E12FB008A0FE3 /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */; };
 		5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */; };
 		5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,17 +97,59 @@
 		5F249B131A5CDA57001FEF8F /* TimeParser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TimeParser.c; sourceTree = "<group>"; };
 		5F249B141A5CDA57001FEF8F /* TimeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeParser.h; sourceTree = "<group>"; };
 		5F249B151A5CDA57001FEF8F /* tokeIt.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = tokeIt.l; sourceTree = "<group>"; };
+		5F25EE9F1A7615380030693F /* Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Finder.h; sourceTree = "<group>"; };
+		5F25EEA01A7615380030693F /* NSString+PSTokenize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PSTokenize.h"; sourceTree = "<group>"; };
+		5F25EEA11A7615380030693F /* NSString+PSTokenize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PSTokenize.m"; sourceTree = "<group>"; };
+		5F25EEA21A7615380030693F /* Parsnip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parsnip.h; sourceTree = "<group>"; };
+		5F25EEA31A7615380030693F /* Parsnip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parsnip.m; sourceTree = "<group>"; };
+		5F25EEA41A7615380030693F /* PSBackgroundProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBackgroundProcessor.h; sourceTree = "<group>"; };
+		5F25EEA51A7615380030693F /* PSBackgroundProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBackgroundProcessor.m; sourceTree = "<group>"; };
+		5F25EEA61A7615380030693F /* PSContactSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSContactSource.h; sourceTree = "<group>"; };
+		5F25EEA71A7615380030693F /* PSContactSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSContactSource.m; sourceTree = "<group>"; };
+		5F25EEA81A7615380030693F /* PSDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDateSource.h; sourceTree = "<group>"; };
+		5F25EEA91A7615380030693F /* PSDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDateSource.m; sourceTree = "<group>"; };
+		5F25EEAA1A7615380030693F /* PSEndNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSEndNode.h; sourceTree = "<group>"; };
+		5F25EEAB1A7615380030693F /* PSEndNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSEndNode.m; sourceTree = "<group>"; };
+		5F25EEAC1A7615380030693F /* PSFileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFileSource.h; sourceTree = "<group>"; };
+		5F25EEAD1A7615380030693F /* PSFileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFileSource.m; sourceTree = "<group>"; };
+		5F25EEAE1A7615380030693F /* PSHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHelpers.h; sourceTree = "<group>"; };
+		5F25EEAF1A7615380030693F /* PSHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHelpers.m; sourceTree = "<group>"; };
+		5F25EEB01A7615380030693F /* PSMerging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMerging.h; sourceTree = "<group>"; };
+		5F25EEB11A7615380030693F /* PSMerging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMerging.m; sourceTree = "<group>"; };
+		5F25EEB21A7615380030693F /* PSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNode.h; sourceTree = "<group>"; };
+		5F25EEB31A7615380030693F /* PSNonterminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNonterminalNode.h; sourceTree = "<group>"; };
+		5F25EEB41A7615380030693F /* PSNonterminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNonterminalNode.m; sourceTree = "<group>"; };
+		5F25EEB51A7615380030693F /* PSParseCandidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSParseCandidate.h; sourceTree = "<group>"; };
+		5F25EEB61A7615380030693F /* PSParseCandidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSParseCandidate.m; sourceTree = "<group>"; };
+		5F25EEB71A7615380030693F /* PSParsnipSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSParsnipSource.h; sourceTree = "<group>"; };
+		5F25EEB81A7615380030693F /* PSParsnipSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSParsnipSource.m; sourceTree = "<group>"; };
+		5F25EEB91A7615380030693F /* PSPluginDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPluginDispatcher.h; sourceTree = "<group>"; };
+		5F25EEBA1A7615380030693F /* PSPluginDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPluginDispatcher.m; sourceTree = "<group>"; };
+		5F25EEBB1A7615380030693F /* PSPluginExampleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPluginExampleSource.h; sourceTree = "<group>"; };
+		5F25EEBC1A7615380030693F /* PSPluginExampleSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPluginExampleSource.m; sourceTree = "<group>"; };
+		5F25EEBD1A7615380030693F /* PSProbabilityCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSProbabilityCounter.h; sourceTree = "<group>"; };
+		5F25EEBE1A7615380030693F /* PSProbabilityCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProbabilityCounter.m; sourceTree = "<group>"; };
+		5F25EEBF1A7615380030693F /* PSSpecialNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialNode.h; sourceTree = "<group>"; };
+		5F25EEC01A7615380030693F /* PSSpecialNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialNode.m; sourceTree = "<group>"; };
+		5F25EEC11A7615380030693F /* PSStartNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStartNode.h; sourceTree = "<group>"; };
+		5F25EEC21A7615380030693F /* PSStartNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStartNode.m; sourceTree = "<group>"; };
+		5F25EEC31A7615380030693F /* PSTaggedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTaggedText.h; sourceTree = "<group>"; };
+		5F25EEC41A7615380030693F /* PSTaggedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTaggedText.m; sourceTree = "<group>"; };
+		5F25EEC51A7615380030693F /* PSTaggedText+FromNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+FromNodes.h"; sourceTree = "<group>"; };
+		5F25EEC61A7615380030693F /* PSTaggedText+FromNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+FromNodes.m"; sourceTree = "<group>"; };
+		5F25EEC71A7615380030693F /* PSTaggedText+ParseExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ParseExample.h"; sourceTree = "<group>"; };
+		5F25EEC81A7615380030693F /* PSTaggedText+ParseExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ParseExample.m"; sourceTree = "<group>"; };
+		5F25EEC91A7615380030693F /* PSTaggedText+PreprocessedForLearning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+PreprocessedForLearning.h"; sourceTree = "<group>"; };
+		5F25EECA1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+PreprocessedForLearning.m"; sourceTree = "<group>"; };
+		5F25EECB1A7615380030693F /* PSTaggedText+ToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToJSON.h"; sourceTree = "<group>"; };
+		5F25EECC1A7615380030693F /* PSTaggedText+ToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToJSON.m"; sourceTree = "<group>"; };
+		5F25EECD1A7615380030693F /* PSTaggedText+ToNestedDictionaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToNestedDictionaries.h"; sourceTree = "<group>"; };
+		5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToNestedDictionaries.m"; sourceTree = "<group>"; };
+		5F25EECF1A7615380030693F /* PSTerminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTerminalNode.h; sourceTree = "<group>"; };
+		5F25EED01A7615380030693F /* PSTerminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTerminalNode.m; sourceTree = "<group>"; };
 		5F5F35F61A7040700027AF00 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		5F6AC74C1A72E45200FCEC5C /* PSDateSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDateSource.h; sourceTree = "<group>"; };
-		5F6AC74D1A72E45200FCEC5C /* PSDateSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDateSource.m; sourceTree = "<group>"; };
-		5F6AC7501A72E82400FCEC5C /* PSContactSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSContactSource.h; sourceTree = "<group>"; };
-		5F6AC7511A72E82400FCEC5C /* PSContactSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSContactSource.m; sourceTree = "<group>"; };
-		5F6AC7541A72EC3B00FCEC5C /* PSFileSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFileSource.h; sourceTree = "<group>"; };
-		5F6AC7551A72EC3B00FCEC5C /* PSFileSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFileSource.m; sourceTree = "<group>"; };
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
-		5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToJSON.h"; sourceTree = "<group>"; };
-		5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToJSON.m"; sourceTree = "<group>"; };
 		5F870A5F1A5478DB00161E2F /* run_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = run_plugin.py; sourceTree = "<group>"; };
 		5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlashlightKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13DF21A4E12DB008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,47 +157,6 @@
 		5FC13DF91A4E12DB008A0FE3 /* FlashlightKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashlightKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13DFF1A4E12DB008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashlightKitTests.m; sourceTree = "<group>"; };
-		5FC13E0B1A4E12FB008A0FE3 /* NSString+PSTokenize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PSTokenize.h"; sourceTree = "<group>"; };
-		5FC13E0C1A4E12FB008A0FE3 /* NSString+PSTokenize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PSTokenize.m"; sourceTree = "<group>"; };
-		5FC13E0D1A4E12FB008A0FE3 /* Parsnip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parsnip.h; sourceTree = "<group>"; };
-		5FC13E0E1A4E12FB008A0FE3 /* Parsnip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parsnip.m; sourceTree = "<group>"; };
-		5FC13E0F1A4E12FB008A0FE3 /* PSBackgroundProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBackgroundProcessor.h; sourceTree = "<group>"; };
-		5FC13E101A4E12FB008A0FE3 /* PSBackgroundProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBackgroundProcessor.m; sourceTree = "<group>"; };
-		5FC13E111A4E12FB008A0FE3 /* PSEndNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSEndNode.h; sourceTree = "<group>"; };
-		5FC13E121A4E12FB008A0FE3 /* PSEndNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSEndNode.m; sourceTree = "<group>"; };
-		5FC13E131A4E12FB008A0FE3 /* PSHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSHelpers.h; sourceTree = "<group>"; };
-		5FC13E141A4E12FB008A0FE3 /* PSHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSHelpers.m; sourceTree = "<group>"; };
-		5FC13E151A4E12FB008A0FE3 /* PSMerging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSMerging.h; sourceTree = "<group>"; };
-		5FC13E161A4E12FB008A0FE3 /* PSMerging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSMerging.m; sourceTree = "<group>"; };
-		5FC13E171A4E12FB008A0FE3 /* PSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNode.h; sourceTree = "<group>"; };
-		5FC13E181A4E12FB008A0FE3 /* PSNonterminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSNonterminalNode.h; sourceTree = "<group>"; };
-		5FC13E191A4E12FB008A0FE3 /* PSNonterminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSNonterminalNode.m; sourceTree = "<group>"; };
-		5FC13E1A1A4E12FB008A0FE3 /* PSParseCandidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSParseCandidate.h; sourceTree = "<group>"; };
-		5FC13E1B1A4E12FB008A0FE3 /* PSParseCandidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSParseCandidate.m; sourceTree = "<group>"; };
-		5FC13E1C1A4E12FB008A0FE3 /* PSParsnipSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSParsnipSource.h; sourceTree = "<group>"; };
-		5FC13E1D1A4E12FB008A0FE3 /* PSParsnipSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSParsnipSource.m; sourceTree = "<group>"; };
-		5FC13E1E1A4E12FB008A0FE3 /* PSPluginDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPluginDispatcher.h; sourceTree = "<group>"; };
-		5FC13E1F1A4E12FB008A0FE3 /* PSPluginDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPluginDispatcher.m; sourceTree = "<group>"; };
-		5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPluginExampleSource.h; sourceTree = "<group>"; };
-		5FC13E211A4E12FB008A0FE3 /* PSPluginExampleSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPluginExampleSource.m; sourceTree = "<group>"; };
-		5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSProbabilityCounter.h; sourceTree = "<group>"; };
-		5FC13E231A4E12FB008A0FE3 /* PSProbabilityCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProbabilityCounter.m; sourceTree = "<group>"; };
-		5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSpecialNode.h; sourceTree = "<group>"; };
-		5FC13E251A4E12FB008A0FE3 /* PSSpecialNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSpecialNode.m; sourceTree = "<group>"; };
-		5FC13E261A4E12FB008A0FE3 /* PSStartNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStartNode.h; sourceTree = "<group>"; };
-		5FC13E271A4E12FB008A0FE3 /* PSStartNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStartNode.m; sourceTree = "<group>"; };
-		5FC13E281A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+FromNodes.h"; sourceTree = "<group>"; };
-		5FC13E291A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+FromNodes.m"; sourceTree = "<group>"; };
-		5FC13E2A1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ParseExample.h"; sourceTree = "<group>"; };
-		5FC13E2B1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ParseExample.m"; sourceTree = "<group>"; };
-		5FC13E2C1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+PreprocessedForLearning.h"; sourceTree = "<group>"; };
-		5FC13E2D1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+PreprocessedForLearning.m"; sourceTree = "<group>"; };
-		5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PSTaggedText+ToNestedDictionaries.h"; sourceTree = "<group>"; };
-		5FC13E2F1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToNestedDictionaries.m"; sourceTree = "<group>"; };
-		5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTaggedText.h; sourceTree = "<group>"; };
-		5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTaggedText.m; sourceTree = "<group>"; };
-		5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTerminalNode.h; sourceTree = "<group>"; };
-		5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTerminalNode.m; sourceTree = "<group>"; };
 		5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashlightResult.h; sourceTree = "<group>"; };
 		5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightResult.m; sourceTree = "<group>"; };
 		5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashlightResultView.h; sourceTree = "<group>"; };
@@ -200,6 +202,63 @@
 			name = TimeParser;
 			sourceTree = "<group>";
 		};
+		5F25EF031A76153F0030693F /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5F25EE9F1A7615380030693F /* Finder.h */,
+				5F25EEA01A7615380030693F /* NSString+PSTokenize.h */,
+				5F25EEA11A7615380030693F /* NSString+PSTokenize.m */,
+				5F25EEA21A7615380030693F /* Parsnip.h */,
+				5F25EEA31A7615380030693F /* Parsnip.m */,
+				5F25EEA41A7615380030693F /* PSBackgroundProcessor.h */,
+				5F25EEA51A7615380030693F /* PSBackgroundProcessor.m */,
+				5F25EEA61A7615380030693F /* PSContactSource.h */,
+				5F25EEA71A7615380030693F /* PSContactSource.m */,
+				5F25EEA81A7615380030693F /* PSDateSource.h */,
+				5F25EEA91A7615380030693F /* PSDateSource.m */,
+				5F25EEAA1A7615380030693F /* PSEndNode.h */,
+				5F25EEAB1A7615380030693F /* PSEndNode.m */,
+				5F25EEAC1A7615380030693F /* PSFileSource.h */,
+				5F25EEAD1A7615380030693F /* PSFileSource.m */,
+				5F25EEAE1A7615380030693F /* PSHelpers.h */,
+				5F25EEAF1A7615380030693F /* PSHelpers.m */,
+				5F25EEB01A7615380030693F /* PSMerging.h */,
+				5F25EEB11A7615380030693F /* PSMerging.m */,
+				5F25EEB21A7615380030693F /* PSNode.h */,
+				5F25EEB31A7615380030693F /* PSNonterminalNode.h */,
+				5F25EEB41A7615380030693F /* PSNonterminalNode.m */,
+				5F25EEB51A7615380030693F /* PSParseCandidate.h */,
+				5F25EEB61A7615380030693F /* PSParseCandidate.m */,
+				5F25EEB71A7615380030693F /* PSParsnipSource.h */,
+				5F25EEB81A7615380030693F /* PSParsnipSource.m */,
+				5F25EEB91A7615380030693F /* PSPluginDispatcher.h */,
+				5F25EEBA1A7615380030693F /* PSPluginDispatcher.m */,
+				5F25EEBB1A7615380030693F /* PSPluginExampleSource.h */,
+				5F25EEBC1A7615380030693F /* PSPluginExampleSource.m */,
+				5F25EEBD1A7615380030693F /* PSProbabilityCounter.h */,
+				5F25EEBE1A7615380030693F /* PSProbabilityCounter.m */,
+				5F25EEBF1A7615380030693F /* PSSpecialNode.h */,
+				5F25EEC01A7615380030693F /* PSSpecialNode.m */,
+				5F25EEC11A7615380030693F /* PSStartNode.h */,
+				5F25EEC21A7615380030693F /* PSStartNode.m */,
+				5F25EEC31A7615380030693F /* PSTaggedText.h */,
+				5F25EEC41A7615380030693F /* PSTaggedText.m */,
+				5F25EEC51A7615380030693F /* PSTaggedText+FromNodes.h */,
+				5F25EEC61A7615380030693F /* PSTaggedText+FromNodes.m */,
+				5F25EEC71A7615380030693F /* PSTaggedText+ParseExample.h */,
+				5F25EEC81A7615380030693F /* PSTaggedText+ParseExample.m */,
+				5F25EEC91A7615380030693F /* PSTaggedText+PreprocessedForLearning.h */,
+				5F25EECA1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m */,
+				5F25EECB1A7615380030693F /* PSTaggedText+ToJSON.h */,
+				5F25EECC1A7615380030693F /* PSTaggedText+ToJSON.m */,
+				5F25EECD1A7615380030693F /* PSTaggedText+ToNestedDictionaries.h */,
+				5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */,
+				5F25EECF1A7615380030693F /* PSTerminalNode.h */,
+				5F25EED01A7615380030693F /* PSTerminalNode.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		5FC13DE41A4E12DB008A0FE3 = {
 			isa = PBXGroup;
 			children = (
@@ -224,11 +283,11 @@
 				5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */,
 				5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */,
 				5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */,
-				5FC13E0A1A4E12FB008A0FE3 /* Parser */,
 				5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */,
 				5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */,
 				5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */,
 				5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */,
+				5F25EF031A76153F0030693F /* Parser */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
@@ -270,62 +329,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FC13E0A1A4E12FB008A0FE3 /* Parser */ = {
-			isa = PBXGroup;
-			children = (
-				5FC13E0B1A4E12FB008A0FE3 /* NSString+PSTokenize.h */,
-				5FC13E0C1A4E12FB008A0FE3 /* NSString+PSTokenize.m */,
-				5FC13E0D1A4E12FB008A0FE3 /* Parsnip.h */,
-				5FC13E0E1A4E12FB008A0FE3 /* Parsnip.m */,
-				5FC13E0F1A4E12FB008A0FE3 /* PSBackgroundProcessor.h */,
-				5FC13E101A4E12FB008A0FE3 /* PSBackgroundProcessor.m */,
-				5FC13E111A4E12FB008A0FE3 /* PSEndNode.h */,
-				5FC13E121A4E12FB008A0FE3 /* PSEndNode.m */,
-				5FC13E131A4E12FB008A0FE3 /* PSHelpers.h */,
-				5FC13E141A4E12FB008A0FE3 /* PSHelpers.m */,
-				5FC13E151A4E12FB008A0FE3 /* PSMerging.h */,
-				5FC13E161A4E12FB008A0FE3 /* PSMerging.m */,
-				5FC13E171A4E12FB008A0FE3 /* PSNode.h */,
-				5FC13E181A4E12FB008A0FE3 /* PSNonterminalNode.h */,
-				5FC13E191A4E12FB008A0FE3 /* PSNonterminalNode.m */,
-				5FC13E1A1A4E12FB008A0FE3 /* PSParseCandidate.h */,
-				5FC13E1B1A4E12FB008A0FE3 /* PSParseCandidate.m */,
-				5FC13E1C1A4E12FB008A0FE3 /* PSParsnipSource.h */,
-				5FC13E1D1A4E12FB008A0FE3 /* PSParsnipSource.m */,
-				5FC13E1E1A4E12FB008A0FE3 /* PSPluginDispatcher.h */,
-				5FC13E1F1A4E12FB008A0FE3 /* PSPluginDispatcher.m */,
-				5FC13E201A4E12FB008A0FE3 /* PSPluginExampleSource.h */,
-				5FC13E211A4E12FB008A0FE3 /* PSPluginExampleSource.m */,
-				5F6AC74C1A72E45200FCEC5C /* PSDateSource.h */,
-				5F6AC74D1A72E45200FCEC5C /* PSDateSource.m */,
-				5F6AC7501A72E82400FCEC5C /* PSContactSource.h */,
-				5F6AC7511A72E82400FCEC5C /* PSContactSource.m */,
-				5FC13E221A4E12FB008A0FE3 /* PSProbabilityCounter.h */,
-				5FC13E231A4E12FB008A0FE3 /* PSProbabilityCounter.m */,
-				5FC13E241A4E12FB008A0FE3 /* PSSpecialNode.h */,
-				5FC13E251A4E12FB008A0FE3 /* PSSpecialNode.m */,
-				5FC13E261A4E12FB008A0FE3 /* PSStartNode.h */,
-				5FC13E271A4E12FB008A0FE3 /* PSStartNode.m */,
-				5FC13E281A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h */,
-				5FC13E291A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m */,
-				5FC13E2A1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h */,
-				5FC13E2B1A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m */,
-				5FC13E2C1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h */,
-				5FC13E2D1A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m */,
-				5FC13E2E1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h */,
-				5FC13E2F1A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m */,
-				5F870A5B1A546C0600161E2F /* PSTaggedText+ToJSON.h */,
-				5F870A5C1A546C0700161E2F /* PSTaggedText+ToJSON.m */,
-				5FC13E301A4E12FB008A0FE3 /* PSTaggedText.h */,
-				5FC13E311A4E12FB008A0FE3 /* PSTaggedText.m */,
-				5FC13E321A4E12FB008A0FE3 /* PSTerminalNode.h */,
-				5FC13E331A4E12FB008A0FE3 /* PSTerminalNode.m */,
-				5F6AC7541A72EC3B00FCEC5C /* PSFileSource.h */,
-				5F6AC7551A72EC3B00FCEC5C /* PSFileSource.m */,
-			);
-			path = Parser;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -333,39 +336,40 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F25EEEF1A7615380030693F /* PSProbabilityCounter.h in Headers */,
+				5F25EEF91A7615380030693F /* PSTaggedText+ParseExample.h in Headers */,
+				5F25EEE91A7615380030693F /* PSParsnipSource.h in Headers */,
+				5F25EED11A7615380030693F /* Finder.h in Headers */,
+				5F25EEED1A7615380030693F /* PSPluginExampleSource.h in Headers */,
+				5F25EEEB1A7615380030693F /* PSPluginDispatcher.h in Headers */,
+				5F25EEE01A7615380030693F /* PSHelpers.h in Headers */,
+				5F25EEE51A7615380030693F /* PSNonterminalNode.h in Headers */,
+				5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */,
+				5F25EEE21A7615380030693F /* PSMerging.h in Headers */,
 				5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */,
+				5F25EEFD1A7615380030693F /* PSTaggedText+ToJSON.h in Headers */,
+				5F25EEF31A7615380030693F /* PSStartNode.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
 				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
-				5FC13E3C1A4E12FB008A0FE3 /* PSHelpers.h in Headers */,
+				5F25EEDA1A7615380030693F /* PSDateSource.h in Headers */,
+				5F25EEE71A7615380030693F /* PSParseCandidate.h in Headers */,
+				5F25EEE41A7615380030693F /* PSNode.h in Headers */,
+				5F25EEF71A7615380030693F /* PSTaggedText+FromNodes.h in Headers */,
+				5F25EED61A7615380030693F /* PSBackgroundProcessor.h in Headers */,
+				5F25EED21A7615380030693F /* NSString+PSTokenize.h in Headers */,
 				5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */,
-				5FC13E451A4E12FB008A0FE3 /* PSParsnipSource.h in Headers */,
+				5F25EEF11A7615380030693F /* PSSpecialNode.h in Headers */,
+				5F25EEDE1A7615380030693F /* PSFileSource.h in Headers */,
+				5F25EED81A7615380030693F /* PSContactSource.h in Headers */,
 				5FF873121A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h in Headers */,
-				5FC13E471A4E12FB008A0FE3 /* PSPluginDispatcher.h in Headers */,
-				5FC13E491A4E12FB008A0FE3 /* PSPluginExampleSource.h in Headers */,
-				5F6AC7521A72E82400FCEC5C /* PSContactSource.h in Headers */,
-				5F870A5D1A546C0700161E2F /* PSTaggedText+ToJSON.h in Headers */,
+				5F25EEDC1A7615380030693F /* PSEndNode.h in Headers */,
+				5F25EEFF1A7615380030693F /* PSTaggedText+ToNestedDictionaries.h in Headers */,
 				5FC13E691A4E2D40008A0FE3 /* FlashlightWebScriptObject.h in Headers */,
+				5F25EEF51A7615380030693F /* PSTaggedText.h in Headers */,
 				5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */,
-				5FC13E531A4E12FB008A0FE3 /* PSTaggedText+ParseExample.h in Headers */,
-				5FC13E4B1A4E12FB008A0FE3 /* PSProbabilityCounter.h in Headers */,
-				5FC13E3A1A4E12FB008A0FE3 /* PSEndNode.h in Headers */,
-				5FC13E431A4E12FB008A0FE3 /* PSParseCandidate.h in Headers */,
-				5FC13E381A4E12FB008A0FE3 /* PSBackgroundProcessor.h in Headers */,
-				5FC13E361A4E12FB008A0FE3 /* Parsnip.h in Headers */,
-				5FC13E551A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.h in Headers */,
-				5FC13E591A4E12FB008A0FE3 /* PSTaggedText.h in Headers */,
-				5FC13E511A4E12FB008A0FE3 /* PSTaggedText+FromNodes.h in Headers */,
 				5F249B181A5CDA57001FEF8F /* TimeParser.h in Headers */,
-				5FC13E4D1A4E12FB008A0FE3 /* PSSpecialNode.h in Headers */,
-				5F6AC7561A72EC3B00FCEC5C /* PSFileSource.h in Headers */,
-				5FC13E571A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.h in Headers */,
-				5FC13E341A4E12FB008A0FE3 /* NSString+PSTokenize.h in Headers */,
-				5FC13E4F1A4E12FB008A0FE3 /* PSStartNode.h in Headers */,
-				5FC13E411A4E12FB008A0FE3 /* PSNonterminalNode.h in Headers */,
-				5FC13E5B1A4E12FB008A0FE3 /* PSTerminalNode.h in Headers */,
-				5F6AC74E1A72E45200FCEC5C /* PSDateSource.h in Headers */,
-				5FC13E3E1A4E12FB008A0FE3 /* PSMerging.h in Headers */,
-				5FC13E401A4E12FB008A0FE3 /* PSNode.h in Headers */,
+				5F25EED41A7615380030693F /* Parsnip.h in Headers */,
+				5F25EEFB1A7615380030693F /* PSTaggedText+PreprocessedForLearning.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,39 +472,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FC13E481A4E12FB008A0FE3 /* PSPluginDispatcher.m in Sources */,
-				5FC13E441A4E12FB008A0FE3 /* PSParseCandidate.m in Sources */,
 				5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */,
-				5FC13E3D1A4E12FB008A0FE3 /* PSHelpers.m in Sources */,
-				5FC13E421A4E12FB008A0FE3 /* PSNonterminalNode.m in Sources */,
+				5F25EF021A7615380030693F /* PSTerminalNode.m in Sources */,
+				5F25EEDB1A7615380030693F /* PSDateSource.m in Sources */,
+				5F25EEFA1A7615380030693F /* PSTaggedText+ParseExample.m in Sources */,
+				5F25EED71A7615380030693F /* PSBackgroundProcessor.m in Sources */,
+				5F25EEF81A7615380030693F /* PSTaggedText+FromNodes.m in Sources */,
+				5F25EED51A7615380030693F /* Parsnip.m in Sources */,
+				5F25EEEA1A7615380030693F /* PSParsnipSource.m in Sources */,
+				5F25EEF01A7615380030693F /* PSProbabilityCounter.m in Sources */,
+				5F25EEE31A7615380030693F /* PSMerging.m in Sources */,
+				5F25EF001A7615380030693F /* PSTaggedText+ToNestedDictionaries.m in Sources */,
+				5F25EEEC1A7615380030693F /* PSPluginDispatcher.m in Sources */,
+				5F25EED91A7615380030693F /* PSContactSource.m in Sources */,
 				5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */,
-				5FC13E5C1A4E12FB008A0FE3 /* PSTerminalNode.m in Sources */,
-				5FC13E351A4E12FB008A0FE3 /* NSString+PSTokenize.m in Sources */,
+				5F25EEE11A7615380030693F /* PSHelpers.m in Sources */,
+				5F25EEF41A7615380030693F /* PSStartNode.m in Sources */,
+				5F25EEFC1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m in Sources */,
+				5F25EEE61A7615380030693F /* PSNonterminalNode.m in Sources */,
 				5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */,
+				5F25EEF21A7615380030693F /* PSSpecialNode.m in Sources */,
+				5F25EEFE1A7615380030693F /* PSTaggedText+ToJSON.m in Sources */,
 				5F249B161A5CDA57001FEF8F /* parseIt.ym in Sources */,
-				5F6AC7571A72EC3B00FCEC5C /* PSFileSource.m in Sources */,
 				5FC13E6A1A4E2D40008A0FE3 /* FlashlightWebScriptObject.m in Sources */,
-				5FC13E521A4E12FB008A0FE3 /* PSTaggedText+FromNodes.m in Sources */,
-				5FC13E501A4E12FB008A0FE3 /* PSStartNode.m in Sources */,
+				5F25EEF61A7615380030693F /* PSTaggedText.m in Sources */,
 				5FC13E661A4E1722008A0FE3 /* FlashlightResultView.m in Sources */,
-				5FC13E4C1A4E12FB008A0FE3 /* PSProbabilityCounter.m in Sources */,
-				5FC13E391A4E12FB008A0FE3 /* PSBackgroundProcessor.m in Sources */,
-				5FC13E3B1A4E12FB008A0FE3 /* PSEndNode.m in Sources */,
+				5F25EEEE1A7615380030693F /* PSPluginExampleSource.m in Sources */,
+				5F25EEDD1A7615380030693F /* PSEndNode.m in Sources */,
 				5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */,
-				5FC13E4E1A4E12FB008A0FE3 /* PSSpecialNode.m in Sources */,
-				5FC13E3F1A4E12FB008A0FE3 /* PSMerging.m in Sources */,
-				5F6AC74F1A72E45200FCEC5C /* PSDateSource.m in Sources */,
-				5FC13E541A4E12FB008A0FE3 /* PSTaggedText+ParseExample.m in Sources */,
-				5FC13E461A4E12FB008A0FE3 /* PSParsnipSource.m in Sources */,
 				5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */,
+				5F25EEE81A7615380030693F /* PSParseCandidate.m in Sources */,
+				5F25EEDF1A7615380030693F /* PSFileSource.m in Sources */,
 				5F249B171A5CDA57001FEF8F /* TimeParser.c in Sources */,
-				5FC13E561A4E12FB008A0FE3 /* PSTaggedText+PreprocessedForLearning.m in Sources */,
-				5FC13E5A1A4E12FB008A0FE3 /* PSTaggedText.m in Sources */,
-				5F870A5E1A546C0700161E2F /* PSTaggedText+ToJSON.m in Sources */,
-				5FC13E581A4E12FB008A0FE3 /* PSTaggedText+ToNestedDictionaries.m in Sources */,
-				5FC13E4A1A4E12FB008A0FE3 /* PSPluginExampleSource.m in Sources */,
-				5FC13E371A4E12FB008A0FE3 /* Parsnip.m in Sources */,
-				5F6AC7531A72E82400FCEC5C /* PSContactSource.m in Sources */,
+				5F25EED31A7615380030693F /* NSString+PSTokenize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -72,7 +72,8 @@
 - (PSTaggedText *)findChild:(NSString *)childTag {
     for (id item in self.contents) {
         if ([item isKindOfClass:[PSTaggedText class]]) {
-            if ([[item tag] isEqualToString:childTag] || [[item externalTag] isEqualToString:childTag]) {
+            NSString *externalTag = [PSNonterminalNode convertTagToExternal:[item tag]];
+            if ([[item tag] isEqualToString:childTag] || [externalTag isEqualToString:childTag]) {
                 return item;
             }
             id found = [item findChild:childTag];
