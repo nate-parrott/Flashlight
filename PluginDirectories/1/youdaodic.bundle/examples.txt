@@ -1,2 +1,3 @@
 yd ~string(hello world)
 youdao ~string(call me why)
+有道 ~string(why)

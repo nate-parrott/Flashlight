@@ -5,5 +5,8 @@
 	"description": "Translate English to German using dict.cc",
 	"description_de": "Übersetze von Englisch nach Deutsch mit dict.cc",
 	"examples": ["dict Suchmaschine"],
-	"categories": ["Language"]
+	"categories": ["Language"],
+	"preferred_locales": ["de"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

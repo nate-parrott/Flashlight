@@ -1,0 +1,258 @@
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
+"5.title" = "すべてを手前に移動";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
+"19.title" = "ウインドウ";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "23"; */
+"23.title" = "しまう";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */
+"24.title" = "ウインドウ";
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "AMainMenu";
+
+/* Class = "NSMenuItem"; title = "Flashlight"; ObjectID = "56"; */
+"56.title" = "Flashlight";
+
+/* Class = "NSMenu"; title = "Flashlight"; ObjectID = "57"; */
+"57.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "About Flashlight"; ObjectID = "58"; */
+"58.title" = "Flashlight について";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "83"; */
+"83.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "環境設定…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "Hide Flashlight"; ObjectID = "134"; */
+"134.title" = "Flashlight を隠す";
+
+/* Class = "NSMenuItem"; title = "Quit Flashlight"; ObjectID = "136"; */
+"136.title" = "Flashlight を終了";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "ほかを隠す";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "すべてを表示";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "195"; */
+"195.title" = "読み上げを開始";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "196"; */
+"196.title" = "読み上げを停止";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "197"; */
+"197.title" = "コピー";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "198"; */
+"198.title" = "すべて選択";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "199"; */
+"199.title" = "カット";
+
+/* Class = "NSMenu"; title = "Spelling and Grammar"; ObjectID = "200"; */
+"200.title" = "スペルと文法";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "201"; */
+"201.title" = "書類を今すぐチェック";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "202"; */
+"202.title" = "削除";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "203"; */
+"203.title" = "ペースト";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "204"; */
+"204.title" = "スペルと文法を表示";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "205"; */
+"205.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "207"; */
+"207.title" = "取り消す";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "208"; */
+"208.title" = "次を検索";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "209"; */
+"209.title" = "検索…";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "210"; */
+"210.title" = "選択部分へジャンプ";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "211"; */
+"211.title" = "スピーチ";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "212"; */
+"212.title" = "スピーチ";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "213"; */
+"213.title" = "前を検索";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */
+"215.title" = "やり直す";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "216"; */
+"216.title" = "スペルと文法";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "217"; */
+"217.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "218"; */
+"218.title" = "検索";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */
+"219.title" = "入力中にスペルチェック";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "220"; */
+"220.title" = "検索";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "221"; */
+"221.title" = "選択部分を検索に使用";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */
+"239.title" = "拡大／縮小";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */
+"346.title" = "スペルと一緒に文法をチェック";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "348"; */
+"348.title" = "自動置換";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "349"; */
+"349.title" = "自動置換";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "350"; */
+"350.title" = "スマートコピー／ペースト";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "351"; */
+"351.title" = "スマート引用符";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "354"; */
+"354.title" = "スマートリンク";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "450"; */
+"450.title" = "変換";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "451"; */
+"451.title" = "変換";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "452"; */
+"452.title" = "大文字にする";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "454"; */
+"454.title" = "スペルを自動的に修正";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "457"; */
+"457.title" = "自動置換を表示";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "460"; */
+"460.title" = "スマートダッシュ記号";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "462"; */
+"462.title" = "テキストの置き換え";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "465"; */
+"465.title" = "小文字にする";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "466"; */
+"466.title" = "語頭を大文字にする";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "485"; */
+"485.title" = "ペーストしてスタイルを合わせる";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "490"; */
+"490.title" = "ヘルプ";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "491"; */
+"491.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Flashlight Help"; ObjectID = "492"; */
+"492.title" = "Flashlight ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "534"; */
+"534.title" = "検索と置換…";
+
+/* Class = "NSWindow"; title = "Flashlight"; ObjectID = "651"; */
+"651.title" = "Flashlight";
+
+/* Class = "NSTextFieldCell"; title = "Enable Spotlight plugins"; ObjectID = "1Mz-sE-pRt"; */
+"1Mz-sE-pRt.title" = "Spotlight プラグインを有効にする";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.label" = "Custom View";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.paletteLabel" = "Custom View";
+
+/* Class = "NSTextFieldCell"; title = "Couldn't load online plugins directory."; ObjectID = "6Rm-1o-2sX"; */
+"6Rm-1o-2sX.title" = "オンラインのプラグインディレクトリを読み込めませんでした.";
+
+/* Class = "NSMenu"; title = "New Plugin"; ObjectID = "BA6-O3-mGg"; */
+"BA6-O3-mGg.title" = "新規プラグイン";
+
+/* Class = "NSTextFieldCell"; title = "Flashlight"; ObjectID = "CKY-mr-H4g"; */
+"CKY-mr-H4g.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "KSp-5B-nrs"; */
+"KSp-5B-nrs.title" = "閉じる";
+
+/* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
+"NO4-GD-LyW.title" = "Leave Feedback";
+
+/* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
+"P0e-Mj-nLE.title" = "Contribute on GitHub";
+
+/* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
+"R1V-Ae-nee.title" = "Try again";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "SB9-T0-COT"; */
+"SB9-T0-COT.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XWZ-Ty-qkr"; */
+"XWZ-Ty-qkr.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ZUK-gW-ec2"; */
+"ZUK-gW-ec2.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Search anything."; ObjectID = "Zut-6I-UVj"; */
+"Zut-6I-UVj.title" = "Search anything.";
+
+/* Class = "NSMenuItem"; title = "Run an Automator Workflow"; ObjectID = "ate-NX-h2e"; */
+"ate-NX-h2e.title" = "Automator ワークフローを実行";
+
+/* Class = "NSMenuItem"; title = "New Plugin"; ObjectID = "e7p-Pf-F9W"; */
+"e7p-Pf-F9W.title" = "新規プラグイン";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "i36-Vw-g23"; */
+"i36-Vw-g23.title" = "アップデートの確認...";
+
+/* Class = "NSTextFieldCell"; title = "HEADER CELL"; ObjectID = "qwG-5n-TVO"; */
+"qwG-5n-TVO.title" = "HEADER CELL";
+
+/* Class = "NSTextFieldCell"; title = "This plugin does some crazy stuff like change the word and everything."; ObjectID = "rtk-em-P81"; */
+"rtk-em-P81.title" = "This plugin does some crazy stuff like change the word and everything.";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.label" = "Custom View";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.paletteLabel" = "Custom View";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "wJP-7d-WaF"; */
+"wJP-7d-WaF.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
+"xYz-ja-uoP.title" = "Python API...";

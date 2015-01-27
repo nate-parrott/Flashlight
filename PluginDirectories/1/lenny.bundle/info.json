@@ -1,0 +1,9 @@
+{
+	"name": "lenny",
+	"displayName": "Lenny",
+	"description": "Displays variants of the Lenny face to copy. Also a good HTML plugin bootstrapper.",
+	"examples": ["lenny"],
+	"examples_de": ["lenny"],
+	"examples_fr" : ["lenny"],
+	"categories": ["Utilities"]
+}

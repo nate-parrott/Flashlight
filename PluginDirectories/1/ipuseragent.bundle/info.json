@@ -1,0 +1,12 @@
+{
+    "name": "ipuseragent",
+    "displayName": "External IP / Useragent",
+    "displayName_de": "Externe IP / Useragent",
+    "categories": ["Developer"],
+    "examples": ["what is my ip", "useragent", "ip"],
+    "examples_de": ["was ist meine ip", "useragent", "ip"],
+    "description": "Shows Useragent and external IP Address",
+    "description_de": "Zeigt Useragent und externe IP Adresse an",
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
+}

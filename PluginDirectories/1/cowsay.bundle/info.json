@@ -1,0 +1,9 @@
+{
+	"name": "cowsay",
+	"displayName": "Cowsay",
+	"description": "Show Cowsay output in spotlight.",
+	"examples": ["cowsay Test", "cs Test"],
+	"categories": ["Utilities"],
+	"creator_name": "Philip Trauner",
+    "creator_url": "http://philip-trauner.me"
+}

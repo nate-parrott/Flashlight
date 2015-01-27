@@ -1,0 +1,5 @@
+send note ~omniFocusNote(query here) named ~omniFocusMemo(query here) to omnifocus
+omnifocus ~omniFocusMemo(query here) note: ~omniFocusNote(query here)
+sof ~omniFocusMemo(query here) note: ~omniFocusNote(query here)
+send ~omniFocusNote(query) to omnifocus
+omni ~omniFocusNote(query)

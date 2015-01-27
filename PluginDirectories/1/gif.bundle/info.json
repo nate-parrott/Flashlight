@@ -1,0 +1,11 @@
+{
+    "name": "gif",
+    "displayName": "Google gifs",
+    "categories": ["Media"],
+    "examples": ["gif grumpy cat", "animate me speed boat", "flashlight animation"],
+    "examples_de": ["gif grumpy cat", "animiere mir speed boat", "flashlight animation"],
+    "description": "Search Google for gifs and allows to copy the url",
+    "description_de": "Durchsucht Google nach gifs und erlaubt es die URL zu kopieren",
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
+}

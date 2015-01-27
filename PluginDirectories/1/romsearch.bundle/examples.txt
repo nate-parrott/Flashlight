@@ -1,0 +1,5 @@
+rom search ~romtitle(query here)
+rs ~romtitle(query here)
+search roms for ~romtitle(query here)
+search for ~romtitle(query here) rom
+search for ~romtitle(query here) roms

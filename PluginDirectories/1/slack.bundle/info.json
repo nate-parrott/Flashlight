@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Slack message",
+  "name" : "slack",
+  "description" : "Send a message to Slack channel or direct message a user",
+  "examples" : [
+    "slack #random Good Morning",
+    "slack @aladler thanks for this great plugin"
+  ]
+}

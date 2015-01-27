@@ -15,13 +15,13 @@
        -ms-user-select: none;
        user-select: none;
    }
-   #plugins {
+   .plugins {
       padding: 0;
       -webkit-column-width: 200px;
       -webkit-column-gap: 1em;
       width: 100%;
    }
-   #plugins > li {
+   .plugins > li {
       list-style-type: none;
       padding-top: 1em;
       -webkit-column-break-inside: avoid;
@@ -29,7 +29,7 @@
       break-inside: avoid;
       position: relative;
    }
-   #plugins .pod {
+   .plugins .pod {
       background-color: rgba(100,100,100,0.1);
       padding: 14px;
       border-radius: 10px;
@@ -40,7 +40,7 @@
       top: 0px;
       right: 15px;
    }
-   #plugins h4, p.description {
+   .plugins h4, p.description {
       margin: 0px;
       font-size: small;
    }
@@ -84,6 +84,9 @@
    li[status=uninstalled] .control a.install {
       display: block;
    }
+	 li[status=needsUpdate] .control a.needsUpdate {
+		 display: block;
+	 }
    .examples {
       padding: 0;
    }
@@ -136,6 +139,21 @@
       text-decoration: none;
       color: inherit;
    }
+   .plugins.other_locales {
+      font-size: 0.9em;
+      opacity: 0.9;
+   }
+   .group_header {
+      opacity: 0.7;
+      font-weight: 200;
+   }
+	 #ideas {
+		 text-align: center;
+		 font-size: small;
+	 }
+	 #ideas a:link, #ideas a:visited {
+		 color: inherit;
+	 }
    </style>
 </head>
 <body>
@@ -147,11 +165,22 @@
    {% if search %}
    <div id='search_summary'>
       <h2>{{ search }}</h2>
-      <h3>{{ plugins|length }} results</h3>
+      <h3>{{ count }} results</h3>
    </div>
    {% endif %}
-   <ul id='plugins'>
-      {% for plugin in plugins %}
+	 {% if new %}
+   <div id='search_summary'>
+      <h2>New &amp; recently updated</h2>
+   </div>
+	 {% endif %}
+   
+   {% for group in groups %}
+   
+   {% if group.header %}
+   <h4 class='group_header'>{{ group.header }}</h4>
+   {% endif %}
+   <ul id='plugins' class='plugins {% if group.class %} {{ group.class }} {% endif %}'>
+      {% for plugin in group.plugins %}
       <li class='{{ plugin.name }}' status='uninstalled'>
          <div class='pod'>
             {% if plugin.model.icon_url %}
@@ -177,12 +206,13 @@
                <div class='control-container'>
                   <div class='control'>
                      {% if browse %}
-                     <a class='install' href='javascript:reveal("{{ plugin.name }}")'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      {% else %}
                      <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      {% endif %}
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>
+                     <a class='needsUpdate' href='{{ plugin.update_url }}'>Update</a>
                   </div>
                </div>
             </div>
@@ -190,6 +220,17 @@
       </li>
       {% endfor %}
    </ul>
+   {% endfor %}
+	 
+	 <p id='ideas'>
+		 Have an idea for a plugin you'd want?
+		 {% if browse %}
+		 <a href='/ideas'>Request a plugin</a>
+		 {% else %}
+		 <a href='open://flashlight.nateparrott.com/ideas'>Request a plugin</a>
+		 {% endif %}
+	 </p>
+	 
    {% if browse %}
    <script>
    function reveal(name) {
@@ -201,5 +242,33 @@
    window.location = "domready://_";
    </script>
    {% endif %}
+	 
+	 {% if gae %}
+   <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-37604830-8', 'auto');
+     ga('send', 'pageview');
+		 
+		 (function() {
+			 var markPluginLinksWithEvents = function(className) {
+				 var plugins = document.querySelectorAll("#plugins > li");
+				 for (var i=0; i<plugins.length; i++) {
+					 var pluginNode = plugins[i];
+					 var pluginName = pluginNode.className;
+					 var link = pluginNode.querySelector("." + className);
+					 link.addEventListener('click', function() {
+						 ga('send', 'event', 'app', className, pluginName);
+					 });
+				 }
+			 }
+			 markPluginLinksWithEvents("uninstall");
+			 markPluginLinksWithEvents("install");
+		 })();
+   </script>
+	 {% endif %}
 </body>
 </html>

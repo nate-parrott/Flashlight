@@ -1,7 +1,5 @@
 #!/usr/bin/python
-
 # via http://www.leancrew.com/all-this/2013/03/combining-python-and-applescript/
-
 import subprocess
 
 def asrun(ascript):
@@ -14,6 +12,6 @@ def asrun(ascript):
 
 def asquote(astr):
   "Return the AppleScript equivalent of the given string."
-  
+
   astr = astr.replace('"', '" & quote & "')
   return '"{}"'.format(astr)

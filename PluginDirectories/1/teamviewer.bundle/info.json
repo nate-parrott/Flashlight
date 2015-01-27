@@ -1,0 +1,11 @@
+{
+    "name": "teamviewer",
+    "displayName": "TeamViewer",
+    "description": "Connect to a TeamViewer session",
+    "description_de": "Verbinde dich zu einer TeamViewer Session",
+    "examples": ["teamviewer partnerId, password", "teamviewer 160 581 821, 1925"],
+    "examples_de": ["teamviewer PartnerID, Passwort", "teamviewer 160 581 821, 1925"],
+    "categories": ["Utilities"],
+    "creator_name": "Marc Bachmann",
+    "creator_url": "https://github.com/marcbachmann/flashlight-teamviewer"
+}

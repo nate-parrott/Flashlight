@@ -4,7 +4,6 @@ body {
   line-height: 1.25;
   color: white;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
-  background-image: url(/static/images/bg.png);
   background-color: #333334;
   margin: 0 !important;
   margin-bottom: 2em;
@@ -95,7 +94,7 @@ img {
 }
 #categories > li:hover {
     background-color: white;
-    color: #D92A00;
+    color: #0cf;
 }
 #category {
     text-align: left;
@@ -129,10 +128,4 @@ img {
     #social > div {
         display: inline-block;
     }
-}
-#plugin h1 {
-    background-color: white;
-    color: #222;
-    padding: 10px;
-    margin-left: -10px;
 }

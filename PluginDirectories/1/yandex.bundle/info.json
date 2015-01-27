@@ -1,0 +1,9 @@
+{
+	"name": "yandex",
+	"displayName": "Search Yandex",
+	"displayName_rs": "ЯНДЕКС ПЕРЕВЕСТИ",
+	"examples": ["yandex what is a search engine", "yx weather now"],
+	"categories": ["Search"],
+	"creator_name": "Aziz Alto",
+    "creator_url": "http://github.com/iamaziz/flashlight-plugins"
+}

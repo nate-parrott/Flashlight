@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSViewController.h"
+@class NSViewController;
+// #import "NSViewController.h"
+#import "SPResultViewControllerDelegate-Protocol.h"
 
 @class NSArray, NSButton, NSString;
 
@@ -22,7 +24,6 @@
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSArray *results; // @synthesize results=_results;
 @property __weak id <SPResultViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)doCommand:(unsigned long long)arg1;
 - (void)removePreview;
 - (void)hideNoResults;

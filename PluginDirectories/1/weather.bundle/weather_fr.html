@@ -36,7 +36,7 @@
 	var appearance = "<!--APPEARANCE-->";
 	
 	function load() {
-		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units="+units+"&q=" + encodeURIComponent(locationName);
+		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&lang=fr&units="+units+"&q=" + encodeURIComponent(locationName);
 		xhr(url, function(response) {
 			document.getElementById("loading").style.display = 'none';
 			var parsed;

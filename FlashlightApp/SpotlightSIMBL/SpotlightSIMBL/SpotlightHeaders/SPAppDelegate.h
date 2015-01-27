@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2013 by Steve Nygard.
 //
 
-#import "NSObject.h"
+#import <Foundation/Foundation.h>
 
-#import "NSApplicationDelegate.h"
+/*#import "NSApplicationDelegate.h"
 #import "NSWindowDelegate.h"
-#import "SPResultViewControllerDelegate.h"
+#import "SPResultViewControllerDelegate.h"*/
 
-@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSString, NSTimer, NSView, NSViewController<SPMainViewController>, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView;
+@class NSArray, NSDictionary, NSImageView, NSMutableArray, NSString, NSTimer, NSView, NSXPCConnection, NSXPCListener, SPListenerDelegate, SPQuery, SPResponse, SPResult, SPResultViewController, SPSearchField, SPSearchFieldEditor, SPSearchPanel, SPStatistics, SPStatusItemView;
 
 @interface SPAppDelegate : NSObject <SPResultViewControllerDelegate, NSApplicationDelegate, NSWindowDelegate>
 {
@@ -46,7 +46,7 @@
     NSImageView *_topHitImageView;
     NSImageView *_magnifierView;
     SPResult *_topHitResult;
-    NSViewController<SPMainViewController> *_mainViewController;
+    // NSViewController<SPMainViewController> *_mainViewController;
     NSXPCListener *_listener;
     SPListenerDelegate *_listenerDelegate;
     NSXPCConnection *_listenerConnection;
@@ -75,7 +75,7 @@
 @property(retain) NSXPCConnection *listenerConnection; // @synthesize listenerConnection=_listenerConnection;
 @property(retain) SPListenerDelegate *listenerDelegate; // @synthesize listenerDelegate=_listenerDelegate;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-@property(retain) NSViewController<SPMainViewController> *mainViewController; // @synthesize mainViewController=_mainViewController;
+@property(retain) NSViewController *mainViewController; // @synthesize mainViewController=_mainViewController;
 @property(retain) SPResult *topHitResult; // @synthesize topHitResult=_topHitResult;
 @property __weak NSImageView *magnifierView; // @synthesize magnifierView=_magnifierView;
 @property __weak NSImageView *topHitImageView; // @synthesize topHitImageView=_topHitImageView;
@@ -102,7 +102,7 @@
 @property BOOL amInSubView; // @synthesize amInSubView=_amInSubView;
 @property BOOL disableReloadOfPreview; // @synthesize disableReloadOfPreview=_disableReloadOfPreview;
 @property(retain) SPResultViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
-- (void).cxx_destruct;
+// - (void).cxx_destruct;
 - (void)reloadPreviewForCurrentSelection;
 - (void)removePreview;
 - (void)doCommand:(unsigned long long)arg1;

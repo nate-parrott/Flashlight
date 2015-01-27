@@ -1,0 +1,258 @@
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
+"5.title" = "모두 앞으로 가져오기";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
+"19.title" = "윈도우";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "23"; */
+"23.title" = "최소화";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */
+"24.title" = "윈도우";
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "메인메뉴";
+
+/* Class = "NSMenuItem"; title = "Flashlight"; ObjectID = "56"; */
+"56.title" = "Flashlight";
+
+/* Class = "NSMenu"; title = "Flashlight"; ObjectID = "57"; */
+"57.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "About Flashlight"; ObjectID = "58"; */
+"58.title" = "Flashlight에 대하여";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "83"; */
+"83.title" = "파일";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "설정…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "서비스";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "서비스";
+
+/* Class = "NSMenuItem"; title = "Hide Flashlight"; ObjectID = "134"; */
+"134.title" = "Flashlight 숨기기";
+
+/* Class = "NSMenuItem"; title = "Quit Flashlight"; ObjectID = "136"; */
+"136.title" = "Flashlight 종료";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "다른 창들 숨기기";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "모두 보이기";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "195"; */
+"195.title" = "그만 말하기";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "196"; */
+"196.title" = "말하기";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "197"; */
+"197.title" = "복사";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "198"; */
+"198.title" = "전체 선택";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "199"; */
+"199.title" = "자르기";
+
+/* Class = "NSMenu"; title = "Spelling and Grammar"; ObjectID = "200"; */
+"200.title" = "문법 및 철자";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "201"; */
+"201.title" = "지금 문서 확인";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "202"; */
+"202.title" = "삭제";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "203"; */
+"203.title" = "붙여넣기";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "204"; */
+"204.title" = "문법과 철자 보기";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "205"; */
+"205.title" = "편집";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "207"; */
+"207.title" = "되돌리기";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "208"; */
+"208.title" = "다음 찾기";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "209"; */
+"209.title" = "찾기…";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "210"; */
+"210.title" = "선택된 곳으로 넘어가기";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "211"; */
+"211.title" = "발음";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "212"; */
+"212.title" = "발음";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "213"; */
+"213.title" = "이전 검색";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */
+"215.title" = "다시돌리기";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "216"; */
+"216.title" = "문법과 철자";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "217"; */
+"217.title" = "편집";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "218"; */
+"218.title" = "검색";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */
+"219.title" = "타자치는 중 수정할 철자 찾기";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "220"; */
+"220.title" = "찾기";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "221"; */
+"221.title" = "선택 영역으로 검색";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */
+"239.title" = "최대화";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */
+"346.title" = "문법과 철자 검사";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "348"; */
+"348.title" = "대체";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "349"; */
+"349.title" = "대체";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "350"; */
+"350.title" = "똑똑한 복사/붙여넣기";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "351"; */
+"351.title" = "똑똑한 어구";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "354"; */
+"354.title" = "똑똑한 링크";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "450"; */
+"450.title" = "변환";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "451"; */
+"451.title" = "변환";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "452"; */
+"452.title" = "대문자로 변환";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "454"; */
+"454.title" = "자동 철자수정";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "457"; */
+"457.title" = "대체 보기";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "460"; */
+"460.title" = "똑똑한 대시";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "462"; */
+"462.title" = "텍스트 대체";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "465"; */
+"465.title" = "소문자로 변환";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "466"; */
+"466.title" = "대문자";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "485"; */
+"485.title" = "붙여넣고 스타일 맞추기";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "490"; */
+"490.title" = "도움말";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "491"; */
+"491.title" = "도움말";
+
+/* Class = "NSMenuItem"; title = "Flashlight Help"; ObjectID = "492"; */
+"492.title" = "Flashlight 도움말";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "534"; */
+"534.title" = "치환하기…";
+
+/* Class = "NSWindow"; title = "Flashlight"; ObjectID = "651"; */
+"651.title" = "Flashlight";
+
+/* Class = "NSTextFieldCell"; title = "Enable Spotlight plugins"; ObjectID = "1Mz-sE-pRt"; */
+"1Mz-sE-pRt.title" = "Spotlight 플러그인 추가";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.label" = "Flashlight 허용";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.paletteLabel" = "Flashlight 허용";
+
+/* Class = "NSTextFieldCell"; title = "Couldn't load online plugins directory."; ObjectID = "6Rm-1o-2sX"; */
+"6Rm-1o-2sX.title" = "온라인 플러그인 디렉터리를 불러오지 못했습니다";
+
+/* Class = "NSMenu"; title = "New Plugin"; ObjectID = "BA6-O3-mGg"; */
+"BA6-O3-mGg.title" = "새 플러그인";
+
+/* Class = "NSTextFieldCell"; title = "Flashlight"; ObjectID = "CKY-mr-H4g"; */
+"CKY-mr-H4g.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "KSp-5B-nrs"; */
+"KSp-5B-nrs.title" = "닫기";
+
+/* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
+"NO4-GD-LyW.title" = "피드백 남기기";
+
+/* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
+"P0e-Mj-nLE.title" = "Flashlight에 기여";
+
+/* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
+"R1V-Ae-nee.title" = "다시 해보세요";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "SB9-T0-COT"; */
+"SB9-T0-COT.title" = "테이블 보기 셀";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XWZ-Ty-qkr"; */
+"XWZ-Ty-qkr.title" = "텍스트 셀";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ZUK-gW-ec2"; */
+"ZUK-gW-ec2.title" = "텍스트 셀";
+
+/* Class = "NSTextFieldCell"; title = "Search anything."; ObjectID = "Zut-6I-UVj"; */
+"Zut-6I-UVj.title" = "아무거나 검색해보세요";
+
+/* Class = "NSMenuItem"; title = "Run an Automator Workflow"; ObjectID = "ate-NX-h2e"; */
+"ate-NX-h2e.title" = "오토메이터 워크플로 실행하기";
+
+/* Class = "NSMenuItem"; title = "New Plugin"; ObjectID = "e7p-Pf-F9W"; */
+"e7p-Pf-F9W.title" = "새 플러그인";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "i36-Vw-g23"; */
+"i36-Vw-g23.title" = "업데이트 확인하기...";
+
+/* Class = "NSTextFieldCell"; title = "HEADER CELL"; ObjectID = "qwG-5n-TVO"; */
+"qwG-5n-TVO.title" = "헤더 셀";
+
+/* Class = "NSTextFieldCell"; title = "This plugin does some crazy stuff like change the word and everything."; ObjectID = "rtk-em-P81"; */
+"rtk-em-P81.title" = "이 플러그인은 여러 굉장한 일들, 예를 들어 단어 그리고 모든걸 변화 시킵니다.";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.label" = "플러그인 검색";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.paletteLabel" = "플러그인 검색";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "wJP-7d-WaF"; */
+"wJP-7d-WaF.title" = "파일";
+
+/* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
+"xYz-ja-uoP.title" = "파이썬 API...";

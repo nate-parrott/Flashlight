@@ -1,8 +1,9 @@
 {
 	"name": "mate",
 	"displayName": "Open with Text mate",
-	"displayName_de": "Textmate",
+	"displayName_de": "Mit Textmate öffnen",
 	"description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+	"description_de": "Öffnet Textmate. Falls der Finder gestartet ist, öffnet es den aktuellen Ordner / Datei in Textmate.",
 	"examples": ["mate"],
 	"iconPath": "/Applications/TextMate.app/Contents/Resources/TextMate.icns",
 	"categories": ["Developer"]

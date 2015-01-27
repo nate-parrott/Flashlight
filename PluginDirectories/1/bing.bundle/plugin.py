@@ -9,8 +9,8 @@ def results(parsed, original_query):
     for name, key, url in search_specs:
         if key in parsed:
             localizedurl = i18n.localstr(url)
-            search_url = localizedurl + urllib.quote_plus(parsed[key])
-            title = i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]);
+            search_url = localizedurl + urllib.quote_plus(parsed[key].encode('utf-8'))
+            title = i18n.localstr("Search {0} for '{1}'").format(name, parsed[key].encode('utf-8'))
             return {
                 "title": title,
                 "run_args": [search_url],

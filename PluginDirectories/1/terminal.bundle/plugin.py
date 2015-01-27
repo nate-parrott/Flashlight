@@ -31,7 +31,7 @@ def get_html(command):
   """%(getuser(), command)
 
 def results(parsed, original_query):
-    command = parsed['command'] if parsed else original_query
+    command = parsed['~command'] if parsed else original_query
     if command[0] not in '~/.' and not is_valid_command(command.split(' ')[0]):
         return None
     dict = {

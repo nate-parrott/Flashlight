@@ -1,0 +1,9 @@
+{
+    "name": "subreddit",
+    "displayName": "Subreddit",
+    "description": "Opens a subreddit",
+    "examples": ["subr cfb", "subreddit askreddit", "r/funny"],
+    "categories": ["Search"],
+    "creator_name": "Will Stamper",
+    "creator_url": "http://willstamper.name"
+}

@@ -1,19 +1,5 @@
 #!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+
 import urllib
 import urllib2
 import zipfile
@@ -22,7 +8,6 @@ import json
 import os
 import base64
 import hashlib
-
 import webapp2
 from google.appengine.ext import blobstore
 from util import *
@@ -34,8 +19,9 @@ from google.appengine.api import users
 import bs4
 import model
 from model import Plugin
-from search import search_plugins
-
+from directory import directory_html, info_dict_for_plugin
+from util import get_localized_key
+import query_updates
 
 def send_upload_form(request, message=None):
     request.response.write(template("upload.html",
@@ -77,26 +63,10 @@ def read_plugin_info(plugin, zip_data):
             plugin.icon_url = resize_and_store(data, 128)
         elif name.endswith('/Screenshot.png'):
             screenshot = archive.open(name).read()
-            plugin.screenshot_url = resize_and_store(screenshot, 600)
+            plugin.screenshot_url = resize_and_store(screenshot, 800)
+        elif name.endswith('.version'):
+            plugin.version = int(name.split('/')[-1].split('.')[0])
     return has_info
-
-def language_suffixes(languages):
-    for lang in languages:
-        while True:
-            yield "_" + lang if lang != 'en' else ''
-            if '-' in lang:
-                lang = lang[:lang.rfind('-')]
-            else:
-                break
-    yield ''
-
-
-def get_localized_key(dict, name, languages, default=None):
-    for suffix in language_suffixes(languages):
-        key = name + suffix
-        if key in dict:
-            return dict[key]
-    return default
 
 
 class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
@@ -129,8 +99,6 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
         plugin.secret = base64.b64encode(os.urandom(128))
         plugin.notes = self.request.get('notes', '')
 
-        plugin.zip_md5 = hashlib.md5(zip_data).hexdigest()
-
         admin = users.is_current_user_admin() or \
             (console_key and console_key_is_valid(console_key))
         if admin:
@@ -154,45 +122,9 @@ class PostUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
                                                            "plugin": plugin}))
 
 
-def directory_html(category=None, search=None, languages=['en'], browse=False,
-                   name=None):
-    if category:
-        plugins = list(Plugin.query(Plugin.categories == category,
-                                    Plugin.approved == True))
-        plugins = stable_daily_shuffle(plugins)
-    elif search:
-        plugins = search_plugins(search)
-    elif name:
-        plugin = Plugin.by_name(name)
-        plugins = [plugin] if plugin else []
-    else:
-        plugins = []
-    plugin_dicts = []
-    for p in plugins:
-        plugin = info_dict_for_plugin(p, languages)
-        plugin_dicts.append(plugin)
-    return template("directory.html",
-                    {"plugins": plugin_dicts, "browse": browse,
-                     "search": search})
-
-
-def info_dict_for_plugin(p, languages=['en']):
-    plugin = json.loads(p.info_json)
-    plugin['displayName'] = get_localized_key(plugin, "displayName", languages,
-                                              "")
-    plugin['description'] = get_localized_key(plugin, "description", languages,
-                                              "")
-    plugin['examples'] = get_localized_key(plugin, "examples", languages, [])
-    plugin['model'] = p
-    plugin['install_url'] = 'install://_?' + \
-                            urllib.urlencode([("zip_url", p.zip_url),
-                                              ("name", p.name.encode('utf8'))])
-    return plugin
-
-
 class Directory(webapp2.RequestHandler):
     def get(self):
-        languages = self.request.get('languages', '').split(',') + ['en']
+        languages = self.request.get('languages', '').split(',') + ['en'] if self.request.get('languages') else None
         category = self.request.get('category', None)
         search = self.request.get('search', None)
         browse = self.request.get('browse', '') != ''
@@ -210,7 +142,7 @@ class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
 
 def compute_categories():
     categories = set()
-    for p in Plugin.query(Plugin.approved == True):
+    for p in Plugin.query(Plugin.approved == True, projection=[Plugin.categories]):
         for c in p.categories:
             categories.add(c)
     return categories
@@ -268,9 +200,10 @@ def console_key_is_valid(key):
 class ConsoleUpload(webapp2.RequestHandler):
     def get(self, name):
         plugin = Plugin.by_name(name)
-        existing_md5 = plugin.zip_md5 if plugin else None
+        version = plugin.version if plugin else None
+        if not version: version = 0
         url = blobstore.create_upload_url('/post_upload')
-        self.response.write(json.dumps({"md5": existing_md5,
+        self.response.write(json.dumps({"version": version,
                                         "upload_url": url}))
 
 
@@ -292,9 +225,17 @@ class PluginPageHandler(webapp2.RequestHandler):
         if not plugin:
             self.error(404)
             return
+        localhost = 'Development' in os.environ['SERVER_SOFTWARE']
         self.response.write(template("plugin_page.html",
-                                     {"plugin": info_dict_for_plugin(plugin)}))
+                                     {"plugin": info_dict_for_plugin(plugin),
+                                      "localhost": localhost}))
 
+
+def Redirect(url):
+  class Redir(webapp2.RequestHandler):
+    def get(self):
+      self.redirect(url)
+  return Redir
 
 app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/browse', BrowseHandler),
@@ -307,6 +248,9 @@ app = webapp2.WSGIApplication([('/', MainHandler),
                                ('/log_install', LogInstall),
                                ('/login', Login),
                                ('/latest_download', LatestDownload),
+                               ('/query_updates', query_updates.QueryUpdatesHandler),
+                               ('/feedback', Redirect("http://flashlight.42pag.es/feedback")),
+							   ('/ideas', Redirect("http://ideaboardapp.appspot.com/flashlight-plugin-ideas")),
                                ('/generate_console_key', GenerateConsoleKey),
                                ('/console_upload/(.+)', ConsoleUpload)],
                               debug=True)

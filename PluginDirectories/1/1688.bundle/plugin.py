@@ -7,13 +7,13 @@ def results(parsed, original_query):
     for name, key, url in search_specs:
         if key in parsed:
             url = i18n.localstr(url)
-            search_url = url + urllib.quote_plus(parsed[key])
+            search_url = url + urllib.quote_plus(parsed[key].encode('utf-8'))
             return {
-                "title": i18n.localstr("Search {0} for '{1}'").format(name, parsed[key]),
+                "title": i18n.localstr("Search {0} for '{1}'").format(name, parsed[key].encode('utf-8')),
                 "run_args": [search_url],
                 "html": """
                 <script>
-                setTimeout(function() {
+                setTimeout(function() { 
                     window.location = %s
                 }, 500);
                 </script>

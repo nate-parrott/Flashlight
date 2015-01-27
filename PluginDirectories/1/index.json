@@ -29,6 +29,22 @@
         },
         {
             "categories": [
+                "Search",
+                "Media"
+            ],
+            "description": "Search AcFun or Bilibili",
+            "displayName": "AcFun&Bilibili",
+            "examples": [
+                "ac Madoka",
+                "acfun Madoka",
+                "bili Madoka",
+                "bilibili Madoka"
+            ],
+            "name": "AcFun&Bilibili",
+            "zip_url": "AcFun&Bilibili.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Alibaba (ab) from Spotlight.",
@@ -74,6 +90,23 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "description": "Search Apps in AppAnnie.",
+            "description_de": "Durchsucht Apps in AppAnnie.",
+            "displayName": "AppAnnie Search",
+            "displayName_de": "AppAnnie Suche",
+            "examples": [
+                "aa facebook",
+                "annie twitter",
+                "appannie instagram"
+            ],
+            "name": "appanniesearch",
+            "zip_url": "appanniesearch.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
@@ -102,6 +135,9 @@
                 "baidu 'search term', bd 'search term'"
             ],
             "name": "baidu",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "baidu.zip"
         },
         {
@@ -165,6 +201,82 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "description": "Add events to your calendar.",
+            "displayName": "Calendar Event",
+            "examples": [
+                "add an event \"team meeting\" at 5 PM tomorrow",
+                "calendar event: fly to San Francisco, 2/20 - 2/22",
+                "on 1/27 i have a meeting at the bank"
+            ],
+            "name": "calendar",
+            "zip_url": "calendar.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "George Lydakis",
+            "creator_url": "www.ldkge.com",
+            "description": "Place calls right from Spotlight",
+            "displayName": "Call",
+            "examples": [
+                "call 2610333366",
+                "facetime 6945239034"
+            ],
+            "name": "call",
+            "zip_url": "call.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
+            "description": "Checking CSS, HTML and Javascript for Browser Compatibility using caniuse.com",
+            "description_de": "\u00dcberpr\u00fcft CSS, HTML und Javascript nach Browserkompatiblit\u00e4t mittels caniuse.com",
+            "displayName": "Can I use",
+            "examples": [
+                "CIU div",
+                "Can I use transforms "
+            ],
+            "name": "CanIUse",
+            "zip_url": "CanIUse.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Open Chocolat Finder is open, opens the current folder/file in Chocolat.",
+            "description_de": "\u00d6ffnet Chocolat. Falls der Finder gestartet ist, \u00f6ffnet es den aktuellen Ordner / Datei in Chocolat.",
+            "displayName": "Open with Chocolat",
+            "displayName_de": "Mit Chocolat \u00f6ffnen",
+            "examples": [
+                "choc"
+            ],
+            "iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
+            "name": "choc",
+            "zip_url": "chocolat.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Developer"
+            ],
+            "displayName": "Search CocoaPods",
+            "displayName_de": "CocoaPods Suche",
+            "examples": [
+                "search cocoapods for Core Data",
+                "pod ReactiveCocoa"
+            ],
+            "name": "cocoapods",
+            "zip_url": "cocoapods.zip"
+        },
+        {
+            "categories": [
                 "Art",
                 "Developer"
             ],
@@ -203,6 +315,21 @@
             ],
             "name": "Copy Path",
             "zip_url": "CopyPath.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Philip Trauner",
+            "creator_url": "http://philip-trauner.me",
+            "description": "Show Cowsay output in spotlight.",
+            "displayName": "Cowsay",
+            "examples": [
+                "cowsay Test",
+                "cs Test"
+            ],
+            "name": "cowsay",
+            "zip_url": "cowsay.zip"
         },
         {
             "categories": [
@@ -287,6 +414,8 @@
             "categories": [
                 "Language"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Translate English to German using dict.cc",
             "description_de": "\u00dcbersetze von Englisch nach Deutsch mit dict.cc",
             "displayName": "dict.cc Translate",
@@ -295,6 +424,9 @@
                 "dict Suchmaschine"
             ],
             "name": "dictcc",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "dictcc.zip"
         },
         {
@@ -307,7 +439,28 @@
                 "diki apple"
             ],
             "name": "diki",
+            "preferred_locales": [
+                "pl"
+            ],
             "zip_url": "diki.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Media"
+            ],
+            "creator_name": "Frank Schmitt",
+            "creator_url": "https://github.com/franqus",
+            "description": "Looks up your query on discogs.com",
+            "displayName": "Search discogs.com",
+            "examples": [
+                "discogs The Beatles",
+                "search discogs The Rolling Stones",
+                "find 2Pac on discogs",
+                "search Marvin Gaye on discogs"
+            ],
+            "name": "discogs",
+            "zip_url": "discogs.zip"
         },
         {
             "categories": [
@@ -373,8 +526,62 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Featured"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-emoji",
+            "description": "Search and copy emoji.",
+            "description_de": "Durchsuche und kopiere emoji.",
+            "displayName": "Emoji",
+            "examples": [
+                "emoji grin",
+                "heart emoji",
+                ":rocket:"
+            ],
+            "name": "emoji",
+            "zip_url": "emoji.zip"
+        },
+        {
+            "categories": [
+                "Information",
+                "Developer"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Do you need a excuse? Done something wrong? Here is the solution",
+            "displayName": "Programmer Excuses",
+            "examples": [
+                "excuse",
+                "help me out of this",
+                "give me an excuse"
+            ],
+            "name": "excuse",
+            "zip_url": "excuse.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Open websites just by typing your own specified shortcuts",
+            "description_de": "\u00d6ffne Webseiten indem du eigene Shortcuts in Spotlight eingibst",
+            "displayName": "Favorites",
+            "displayName_de": "Favoriten",
+            "examples": [
+                "google"
+            ],
+            "name": "favorites",
+            "openPreferencesOnInstall": true,
+            "zip_url": "favorites.zip"
+        },
+        {
+            "categories": [
                 "Art"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Search Flickr",
             "description_de": "Flickr Suche",
             "displayName": "Flickr",
@@ -391,6 +598,8 @@
             "categories": [
                 "Information"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "German Gas Price using mehr-tanken.de",
             "description_de": "Benzinpreise von mehr-tanken.de",
             "displayName": "German Gas Price",
@@ -399,6 +608,9 @@
                 "Benzin Munich"
             ],
             "name": "gasprice",
+            "preferred_locales": [
+                "de"
+            ],
             "zip_url": "gasprice.zip"
         },
         {
@@ -419,6 +631,28 @@
             "categories": [
                 "Media"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Search Google for gifs and allows to copy the url",
+            "description_de": "Durchsucht Google nach gifs und erlaubt es die URL zu kopieren",
+            "displayName": "Google gifs",
+            "examples": [
+                "gif grumpy cat",
+                "animate me speed boat",
+                "flashlight animation"
+            ],
+            "examples_de": [
+                "gif grumpy cat",
+                "animiere mir speed boat",
+                "flashlight animation"
+            ],
+            "name": "gif",
+            "zip_url": "gif.zip"
+        },
+        {
+            "categories": [
+                "Media"
+            ],
             "description": "Search for GIFs with Giphy",
             "displayName": "Giphy",
             "examples": [
@@ -427,6 +661,21 @@
             ],
             "name": "giphy",
             "zip_url": "giphy.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-github-issue",
+            "description": "Create an Issue on Github using Spotlight",
+            "displayName": "Github Issue",
+            "examples": [
+                "ghi organisation/repo awesome issue title labels=bug"
+            ],
+            "name": "github-issue",
+            "openPreferencesOnInstall": true,
+            "zip_url": "github-issue.zip"
         },
         {
             "categories": [
@@ -492,6 +741,19 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search at Google Scholar",
+            "displayName": "Google Scholar Search",
+            "examples": [
+                "gs body",
+                "search google scholar for fitness articles"
+            ],
+            "name": "googlescholar",
+            "zip_url": "googlescholar.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Featured"
             ],
@@ -507,7 +769,7 @@
                 "Suche im Internet nach OSX Yosemite",
                 "g Flashlight"
             ],
-            "name": "googleserach",
+            "name": "googlesearch",
             "zip_url": "googlesearch.zip"
         },
         {
@@ -548,6 +810,9 @@
                 "haomatong 10086"
             ],
             "name": "haomatong",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "haomatong.zip"
         },
         {
@@ -620,9 +885,48 @@
         },
         {
             "categories": [
+                "Search",
+                "Information",
                 "Utilities"
             ],
-            "description": "See if a site is available/",
+            "description": "Lookup IP info",
+            "description_de": "IP infos Abfragen",
+            "displayName": "IP Info",
+            "examples": [
+                "ipinfo 8.8.8.8"
+            ],
+            "name": "ipinfo",
+            "zip_url": "ipinfo.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Shows Useragent and external IP Address",
+            "description_de": "Zeigt Useragent und externe IP Adresse an",
+            "displayName": "External IP / Useragent",
+            "displayName_de": "Externe IP / Useragent",
+            "examples": [
+                "what is my ip",
+                "useragent",
+                "ip"
+            ],
+            "examples_de": [
+                "was ist meine ip",
+                "useragent",
+                "ip"
+            ],
+            "name": "ipuseragent",
+            "zip_url": "ipuseragent.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "See if a site is available",
+            "description_de": "Zeigt an ob eine Seite verf\u00fcrgbar ist",
             "displayName": "Is it up?",
             "examples": [
                 "up google.com",
@@ -658,6 +962,9 @@
                 "\u8f9e\u66f8 hello"
             ],
             "name": "jisho",
+            "preferred_locales": [
+                "ja"
+            ],
             "zip_url": "jisho.zip"
         },
         {
@@ -673,7 +980,82 @@
                 "kuaidi 100033892580"
             ],
             "name": "kuaidi",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "kuaidi.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Show a snippet of text full-screen",
+            "description_De": "Zeigt einen Text im Vollbild an",
+            "displayName": "Large Text",
+            "displayName_de": "Gro\u00dfer Text",
+            "examples": [
+                "large text: P Sherman, 42 Wallaby Way, Sydney",
+                "show 718 123 4567 in large text"
+            ],
+            "examples_de": [
+                "gro\u00dfer text: P Sherman, 42 Wallaby Way, Sydney",
+                "zeige 718 123 4567 in gro\u00df"
+            ],
+            "name": "largetext",
+            "zip_url": "largetext.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Displays variants of the Lenny face to copy. Also a good HTML plugin bootstrapper.",
+            "displayName": "Lenny",
+            "examples": [
+                "lenny"
+            ],
+            "examples_de": [
+                "lenny"
+            ],
+            "examples_fr": [
+                "lenny"
+            ],
+            "name": "lenny",
+            "zip_url": "lenny.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Language"
+            ],
+            "creator_name": "patternoia",
+            "description": "Look up words and phrases in Leo Dictionary",
+            "description_de": "Sucht nach den W\u00f6rtern und Phrasen bei den Leo W\u00f6rterb\u00fcchern",
+            "displayName": "Leo.org Dictionary",
+            "displayName_de": "Leo W\u00f6rterbuch",
+            "examples": [
+                "leo Taschenlampe",
+                "leo en Flashlight",
+                "leo es Taschenlampe"
+            ],
+            "name": "leo",
+            "zip_url": "leo.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Developer"
+            ],
+            "creator_name": "Anton Vakhmin",
+            "creator_url": "https://github.com/LastDanmer",
+            "description": "Generates Lorem Ipsum placeholder text.",
+            "description_de": "Erstellt Lorem Ipsum Platzhalter.",
+            "displayName": "Lorem Ipsum",
+            "examples": [
+                "1 paragraph of lorem ipsum",
+                "lipsum 5 words"
+            ],
+            "name": "lipsum",
+            "zip_url": "lipsum.zip"
         },
         {
             "categories": [
@@ -701,8 +1083,9 @@
                 "Developer"
             ],
             "description": "Open Textmate Finder is open, opens the current folder/file in Textmate.",
+            "description_de": "\u00d6ffnet Textmate. Falls der Finder gestartet ist, \u00f6ffnet es den aktuellen Ordner / Datei in Textmate.",
             "displayName": "Open with Text mate",
-            "displayName_de": "Textmate",
+            "displayName_de": "Mit Textmate \u00f6ffnen",
             "examples": [
                 "mate"
             ],
@@ -714,16 +1097,20 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "description": "Search at Mozilla developer Network",
             "description_de": "Durchsuche das Mozilla developer Network",
+            "description_nl": "Doorzoek Mozilla developer Network",
             "displayName": "Search at MDN",
             "displayName_de": "Suche auf MDN",
+            "displayName_nl": "Zoek op MDN",
             "examples": [
                 "mdn body",
                 "Mozilla developer Network URL"
             ],
             "iconPath": "./Icon.png",
-            "name": "mdn",
+            "name": "MDN",
             "zip_url": "mdn.zip"
         },
         {
@@ -752,7 +1139,37 @@
                 "ninetan osaka"
             ],
             "name": "ninetan",
+            "preferred_locales": [
+                "jp"
+            ],
             "zip_url": "ninetan.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator": "vicugna",
+            "creator_url": "http://vicugna.github.io",
+            "description": "Send OmniFocus task to inbox",
+            "displayName": "OmniFocus",
+            "examples": [
+                "omni https://twitter.com",
+                "send note buy cake named -"
+            ],
+            "name": "omnifocus",
+            "zip_url": "omnifocus.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Open URLs by typing or pasting them in Spotlight.",
+            "displayName": "Open URL",
+            "examples": [
+                "twitter.com/itsflashlight"
+            ],
+            "name": "open-url",
+            "zip_url": "open-url.zip"
         },
         {
             "categories": [
@@ -798,6 +1215,42 @@
             ],
             "name": "thepiratebay",
             "zip_url": "piratebay.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search at PyPI - the Python Package Index",
+            "description_de": "Suche auf PyPI - dem Python Package Index",
+            "displayName": "Search at PyPI",
+            "displayName_de": "Suche auf PyPI",
+            "examples": [
+                "pypi setuptools"
+            ],
+            "name": "pypi",
+            "zip_url": "pypi.zip"
+        },
+        {
+            "categories": [
+                "Media"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Returns a random Google image and allows to copy the url",
+            "description_de": "Gibt ein zuf\u00e4lliges Google Bild zur\u00fcck und erlaubt es die URL zu kopieren",
+            "displayName": "Random Google image",
+            "displayName_de": "Zuf\u00e4lliges Google Bild",
+            "examples": [
+                "image grumpy cat",
+                "random image flashlight",
+                "image me spotlight"
+            ],
+            "examples_de": [
+                "bild grumpy cat",
+                "zufallsbild flashlight"
+            ],
+            "name": "randomimage",
+            "zip_url": "randomimage.zip"
         },
         {
             "categories": [
@@ -896,6 +1349,8 @@
             "categories": [
                 "Utilities"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Opens a path in Finder",
             "description_de": "Zeigt einen Pfad im Finder an",
             "displayName": "Show in Finder",
@@ -947,6 +1402,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Send a message to Slack channel or direct message a user",
+            "displayName": "Slack message",
+            "examples": [
+                "slack #random Good Morning",
+                "slack @aladler thanks for this great plugin"
+            ],
+            "name": "slack",
+            "zip_url": "slack.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
@@ -966,7 +1434,8 @@
             "displayName": "Search Stackoverflow",
             "displayName_de": "Stackoverflow Suche",
             "examples": [
-                "stackoverflow/so python"
+                "stackoverflow python",
+                "so python"
             ],
             "name": "stackoverflow",
             "zip_url": "stackoverflow.zip"
@@ -1005,11 +1474,28 @@
             "displayName": "Open with Sublime Text",
             "displayName_de": "Sublime Text",
             "examples": [
-                "sublime"
+                "sublime",
+                "sublime desktop",
+                "subl desktop"
             ],
-            "iconPath": "/Applications/Sublime Text.app/Contents/Resources/Sublime Text.icns",
             "name": "sublime",
             "zip_url": "sublime.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Will Stamper",
+            "creator_url": "http://willstamper.name",
+            "description": "Opens a subreddit",
+            "displayName": "Subreddit",
+            "examples": [
+                "subr cfb",
+                "subreddit askreddit",
+                "r/funny"
+            ],
+            "name": "subreddit",
+            "zip_url": "subreddit.zip"
         },
         {
             "categories": [
@@ -1022,7 +1508,30 @@
                 "t flashlight"
             ],
             "name": "taobao",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "taobao.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Marc Bachmann",
+            "creator_url": "https://github.com/marcbachmann/flashlight-teamviewer",
+            "description": "Connect to a TeamViewer session",
+            "description_de": "Verbinde dich zu einer TeamViewer Session",
+            "displayName": "TeamViewer",
+            "examples": [
+                "teamviewer partnerId, password",
+                "teamviewer 160 581 821, 1925"
+            ],
+            "examples_de": [
+                "teamviewer PartnerID, Passwort",
+                "teamviewer 160 581 821, 1925"
+            ],
+            "name": "teamviewer",
+            "zip_url": "teamviewer.zip"
         },
         {
             "categories": [
@@ -1075,6 +1584,8 @@
                 "Weather",
                 "Utilities"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "View the time in any city.",
             "description_de": "Suche die Uhrzeit \u00fcber die Spotlight.",
             "description_fr": "Consulter et interagir avec le temps",
@@ -1096,6 +1607,19 @@
             "name": "timezone",
             "search_keywords": "world clock",
             "zip_url": "timezone.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Create a new task in Todoist",
+            "displayName": "Task to Todoist",
+            "examples": [
+                "todoist do the dishes",
+                "todoist call mom"
+            ],
+            "name": "todoist",
+            "zip_url": "todoist.zip"
         },
         {
             "categories": [
@@ -1131,6 +1655,26 @@
         },
         {
             "categories": [
+                "Media",
+                "Utilities"
+            ],
+            "creator_name": "Thomas Eschemann",
+            "creator_url": "http://eschemann.fr",
+            "description": "Search Unicode characters and emoji. Click to copy.",
+            "displayName": "Unicode Character Search",
+            "examples": [
+                "unicode: tree",
+                "banana emoji"
+            ],
+            "name": "unicode",
+            "search_keywords": [
+                "character map",
+                "special characters"
+            ],
+            "zip_url": "unicode.zip"
+        },
+        {
+            "categories": [
                 "Language"
             ],
             "displayName": "Search Urbandictionary",
@@ -1161,6 +1705,8 @@
             "categories": [
                 "Language"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "description": "Vertaald woord van Engels naar nederlands",
             "displayName": "vertaal",
             "examples": [
@@ -1168,6 +1714,9 @@
                 "vertaal car naar Nederlands"
             ],
             "name": "Vertaal",
+            "preferred_locales": [
+                "nl"
+            ],
             "zip_url": "vertaal.zip"
         },
         {
@@ -1197,7 +1746,8 @@
             "displayName": "When Is",
             "examples": [
                 "day of week january 21",
-                "date next thursday"
+                "date next thursday",
+                "what's 2 weeks from today"
             ],
             "name": "whenis",
             "zip_url": "whenis.zip"
@@ -1232,8 +1782,8 @@
             "displayName_it": "Wikipedia (IT)",
             "displayName_nl": "Wikipedia (NL)",
             "examples": [
-                "wiki hond",
-                "Zoek op wikipedia voor St. Louis, MO",
+                "wiki Dogs",
+                "search wikipedia for St. Louis, MO",
                 "wikipedia Flashlight"
             ],
             "examples_de": [
@@ -1251,6 +1801,11 @@
                 "cerca wikipedia Ponza",
                 "wikipedia Flashlight"
             ],
+            "examples_nl": [
+                "wiki hond",
+                "Zoek op wikipedia voor St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
             "name": "wikipedia",
             "zip_url": "wikipedia.zip"
         },
@@ -1259,11 +1814,18 @@
                 "Information",
                 "Language"
             ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
             "description": "Search the Wiktionary.",
             "description_de": "Durchsuche Wiktionary",
             "displayName": "Wiktionary (EN)",
             "displayName_de": "Wiktionary (DE)",
             "examples": [
+                "wiktionary COB",
+                "wiktionary ASAP",
+                "wiktionary Flashlight"
+            ],
+            "examples_de": [
                 "wiktionary COB",
                 "wiktionary ASAP",
                 "wiktionary Taschenlampe"
@@ -1299,6 +1861,32 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Create a new task in Wunderlist",
+            "displayName": "Task to Wunderlist",
+            "examples": [
+                "wunderlist do the dishes",
+                "wunderlist call mom"
+            ],
+            "name": "Wunderlist",
+            "zip_url": "Wunderlist.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Shortcuts for xueqiu.com",
+            "displayName": "Xueqiu",
+            "examples": [
+                "xq S/AAPL",
+                "zh 888"
+            ],
+            "name": "Xueqiu",
+            "zip_url": "Xueqiu.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Yahoo (yh).",
@@ -1325,6 +1913,29 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Toni Hoffmann (xremix)",
+            "creator_url": "http://xremix.de",
+            "description": "Decides for you, so you don't have to spend energy in that",
+            "description_de": "Entscheidet f\u00fcr dich, so dass du das nicht auch noch selbst machen musst",
+            "displayName": "Yes or No",
+            "displayName_de": "Ja oder Nein",
+            "examples": [
+                "yes no",
+                "decide for me",
+                "should I eat pizza"
+            ],
+            "examples_de": [
+                "Ja oder Nein",
+                "Soll ich Pizza essen",
+                "entscheide f\u00fcr mich"
+            ],
+            "name": "yesno",
+            "zip_url": "yesno.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search YHD.com (y) from Spotlight.",
@@ -1347,6 +1958,9 @@
                 "yx flashlight"
             ],
             "name": "YiXun",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "yixun.zip"
         },
         {
@@ -1357,9 +1971,13 @@
             "displayName": "YouDao Dictionary",
             "examples": [
                 "yd why",
-                "youdao why"
+                "youdao why",
+                "\u6709\u9053 why"
             ],
             "name": "youdaodic",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "youdaodic.zip"
         },
         {
@@ -1386,6 +2004,9 @@
                 "zhihu 20140822(show the topics On August 22, 2014)"
             ],
             "name": "zhihuDaily",
+            "preferred_locales": [
+                "zh"
+            ],
             "zip_url": "Zhihu.zip"
         }
     ]

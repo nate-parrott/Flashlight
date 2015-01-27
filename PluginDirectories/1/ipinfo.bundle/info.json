@@ -1,0 +1,8 @@
+{
+	"name": "ipinfo",
+	"displayName": "IP Info",
+	"description": "Lookup IP info",
+	"description_de": "IP infos Abfragen",
+	"examples": ["ipinfo 8.8.8.8"],
+    "categories": ["Search", "Information", "Utilities"]
+}

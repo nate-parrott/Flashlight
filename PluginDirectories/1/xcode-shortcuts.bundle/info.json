@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Xcode Shortcuts",
+  "name" : "xcode-shortcuts",
+  "description" : "Quick access to a couple common commands.",
+  "examples" : [
+    "delete derived data",
+    "open iOS simulator"
+  ]
+}

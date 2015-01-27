@@ -9,11 +9,17 @@
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
 #import "PluginListController.h"
+#import "PluginModel.h"
+#import <LetsMove/PFMoveApplication.h>
+#import "UpdateChecker.h"
+#import "PluginInstallTask.h"
 
 @interface AppDelegate ()
 
 @property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
+@property (nonatomic,weak) IBOutlet NSTextField *versionLabel, *searchAnything;
+@property (nonatomic,weak) IBOutlet NSButton *openGithub, *requestPlugin, *leaveFeedback;
 
 @end
 
@@ -43,6 +49,10 @@
     
     [self setupURLHandling];
     
+    self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    
+    PFMoveToApplicationsFolderIfNecessary();
+    
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
     NSString *loginItemBundleVersion = nil;
@@ -70,12 +80,12 @@
             [defaults addSuiteNamed:self.loginItemBundleIdentifier];
             
             if ([[defaults objectForKey:self.loginItemBundleIdentifier] isEqualToString:loginItemBundleVersion]) {
-                SIMBLLogInfo(@"Already my 'SIMBL Agent' is running.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running.");
                 
                 state = NSOnState;
             } else {
                 // if running agent's bundle is different from my bundle, need restart agent from my bundle.
-                SIMBLLogInfo(@"Already 'SIMBL Agent' is running, but version is different.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
                 
                 CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
                 [self.useSIMBLSwitch setEnabled:NO];
@@ -102,6 +112,12 @@
     // i18n:
     self.enablePluginsLabel.stringValue = NSLocalizedString(@"Enable Spotlight Plugins", @"");
     self.createNewAutomatorPluginMenuItem.title = NSLocalizedString(@"New Automator Plugin...", @"");
+    self.leaveFeedback.stringValue = NSLocalizedString(@"Leave Feedback", @"");
+    self.openGithub.stringValue = NSLocalizedString(@"Contribute on GitHub", @"");
+    self.requestPlugin.stringValue = NSLocalizedString(@"Request a Plugin", @"");
+    self.searchAnything.stringValue = NSLocalizedString(@"Search anything.", @"");
+    
+    [UpdateChecker shared]; // begin fetch
 }
 
 - (void)restartSIMBLIfUpdated {
@@ -118,6 +134,11 @@
     }
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.SIMBLOn = self.SIMBLOn;
+}
+
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
 {
     return YES;
@@ -125,8 +146,33 @@
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-    // TODO: install the plugin
-    [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    BOOL anyFilesMatch = NO;
+    for (NSString *filename in filenames) {
+        if ([filename.pathExtension isEqualToString:@"flashlightplugin"]) {
+            PluginInstallTask *task = [PluginInstallTask new];
+            [task installPluginData:[NSData dataWithContentsOfFile:filename] intoPluginsDirectory:[PluginModel pluginsDir] callback:^(BOOL success, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.pluginListController showInstalledPluginWithName:task.installedPluginName];
+                        });
+                    } else {
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        [alert setMessageText:NSLocalizedString(@"Couldn't Install Plugin", @"")];
+                        [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")]; // FirstButton, rightmost button
+                        [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"This file doesn't appear to be a valid plugin.", @"")]];
+                        alert.alertStyle = NSCriticalAlertStyle;
+                        [alert runModal];
+                    }
+                });
+            }];
+        }
+    }
+    if (anyFilesMatch) {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    } else {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplyFailure];
+    }
 }
 
 #pragma mark NSKeyValueObserving Protocol
@@ -170,14 +216,8 @@
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
-    if (animated) {
-        self.useSIMBLSwitch.on = SIMBLOn;
-    } else {
-        [self.useSIMBLSwitch setOnWithoutAnimation:SIMBLOn];
-    }
-    self.tableView.enabled = SIMBLOn;
-    [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
-    [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];
+    self.useSIMBLSwitch.state = SIMBLOn ? NSOnState : NSOffState;
+    self.pluginListController.enabled = SIMBLOn;
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {
@@ -193,7 +233,7 @@
     NSString *fullSpotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
     NSString *spotlightVersion = [fullSpotlightVersion componentsSeparatedByString:@"."][0];
     NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
-    if (![@[@"911", @"916"] containsObject:spotlightVersion]) {
+    if (![@[@"911", @"916", @"917"] containsObject:spotlightVersion]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             NSAlert *alert = [[NSAlert alloc] init];
@@ -218,6 +258,9 @@
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
 }
+- (IBAction)requestAPlugin:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/ideas"]];
+}
 #pragma mark Links
 - (IBAction)showPythonAPI:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
@@ -234,7 +277,18 @@
     NSURL *url = [NSURL URLWithString:urlStr];
     if ([url.scheme isEqualToString:@"flashlight-show"]) {
         [self.pluginListController showPluginWithName:url.host];
+    } else if ([url.scheme isEqualToString:@"flashlight"]) {
+        NSArray *parts = [[NSArray arrayWithObject:url.host] arrayByAddingObjectsFromArray:[url.pathComponents subarrayWithRange:NSMakeRange(1, url.pathComponents.count - 1)]];
+        if (parts.count >= 2 && [parts[0] isEqualToString:@"plugin"]) {
+            NSString *pluginName = parts[1];
+            if (parts.count == 2) {
+                [self.pluginListController showPluginWithName:pluginName];
+            } else {
+                if (parts.count == 3 && [parts[2] isEqualToString:@"preferences"]) {
+                    [[PluginModel installedPluginNamed:parts[1]] presentOptionsInWindow:self.window];
+                }
+            }
+        }
     }
 }
-
 @end

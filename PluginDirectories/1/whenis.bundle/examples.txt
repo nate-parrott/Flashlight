@@ -6,3 +6,4 @@ whats the date @date(tomorrow)?
 date @date(next wednesday)
 day of week @date(december 21)
 @date(october 19) day of week
+what is @date(one week from today)?

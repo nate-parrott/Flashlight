@@ -5,5 +5,8 @@
 	"description": "German Gas Price using mehr-tanken.de",
 	"description_de": "Benzinpreise von mehr-tanken.de",
 	"examples": ["Benzin Munich"],
-	"categories": ["Information"]
+	"categories": ["Information"],
+	"preferred_locales": ["de"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

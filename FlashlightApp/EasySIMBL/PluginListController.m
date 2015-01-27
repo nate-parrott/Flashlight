@@ -15,6 +15,7 @@
 #import "PluginDirectoryAPI.h"
 #import "NSURLComponents+ValueForQueryKey.h"
 #import "SearchPluginEditorWindowController.h"
+#import "UpdateChecker.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
@@ -42,6 +43,11 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 @property (nonatomic) NSString *selectedPluginName;
 
 @property (nonatomic) IBOutlet NSSearchField *searchField;
+
+@property (nonatomic) NSView *rightPaneView;
+
+@property (nonatomic) IBOutlet NSView *disabledPane;
+@property (nonatomic) IBOutlet NSView *postEnabledPane;
 
 @end
 
@@ -71,14 +77,19 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
         [self.view setPostsFrameChangedNotifications:YES];
         
         [self.webView setDrawsBackground:NO];
-        self.webView.preferences.suppressesIncrementalRendering = YES;
         
         [self updateUI];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePluginStatuses) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:self];
     }
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self stopWatchingPluginsDir];
+}
+
+- (void)setEnabled:(BOOL)enabled {
+    _enabled = enabled;
+    [self updateUI];
 }
 
 #pragma mark UI
@@ -97,16 +108,33 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
     [self updateControllers];
     
     BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
-    self.webView.hidden = showingInstalled;
-    self.tableView.hidden = !showingInstalled;
-    self.effectView.hidden = self.webView.hidden;
     
-    NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
-    if (i != NSNotFound) {
-        [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+    if (self.enabled) {
+        if (showingInstalled) {
+            self.rightPaneView = self.tableContainer;
+        } else {
+            self.rightPaneView = self.webViewEffectView;
+        }
+        NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
+        if (i != NSNotFound) {
+            [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
+        }
+        
+    } else {
+        self.rightPaneView = self.disabledPane;
+        [self.sourceList selectRowIndexes:[NSIndexSet indexSet] byExtendingSelection:NO];
     }
     
     [self updatePluginStatuses];
+}
+
+- (void)setRightPaneView:(NSView *)rightPaneView {
+    if (rightPaneView == _rightPaneView) return;
+    [_rightPaneView removeFromSuperview];
+    _rightPaneView = rightPaneView;
+    [self.rightPaneContainer addSubview:rightPaneView];
+    rightPaneView.frame = self.rightPaneContainer.bounds;
+    rightPaneView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
 }
 
 - (IBAction)errorButtonAction:(id)sender {
@@ -127,8 +155,8 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 }
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    CGFloat xInset = 72 + 6;
-    CGFloat yInset = 14;
+    CGFloat xInset = 449 - 443;
+    CGFloat yInset = 94 - 56;
     return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
 }
 
@@ -278,7 +306,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (NSString *)localPluginsPath {
-    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"FlashlightPlugins"];
+    return [PluginModel pluginsDir];
 }
 
 #pragma mark (Un)?installation
@@ -331,7 +359,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)clearNLPModelCache {
-    [[NSFileManager defaultManager] removeItemAtPath:[[self localPluginsPath] stringByAppendingPathComponent:@"NLPModel.pickle"] error:nil];
+    // TODO: get FlashlightKit to clear its cache somehow
 }
 
 #pragma mark Categorization
@@ -348,7 +376,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [ordered insertObject:[NSNull null] atIndex:2];
     [ordered insertObject:kCategoryFeatured atIndex:3];
     [ordered insertObject:[NSNull null] atIndex:4];
-    [ordered addObject:@"Unknown"];
+    [ordered addObject:[NSNull null]];
+    [ordered addObject:@"New"];
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
@@ -364,7 +393,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"News": @"newspaper",
                             @"Unknown": @"plugin",
                             @"Art": @"palette",
-                            @"Developer": @"console"
+                            @"Developer": @"console",
+                            @"New": @"asterisk"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
     NSImage *image = [NSImage imageNamed:imageName];
@@ -387,7 +417,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
-        // view.imageView.alphaValue = 0.47;
         return view;
     }
 }
@@ -446,7 +475,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"News": NSLocalizedString(@"News", @""),
                  @"Art": NSLocalizedString(@"Art", @""),
                  @"Developer": NSLocalizedString(@"Developer", @""),
-                 @"Unknown": NSLocalizedString(@"Unknown", @"")
+                 @"Unknown": NSLocalizedString(@"Unknown", @""),
+                 @"Media": NSLocalizedString(@"Media", @""),
+                 @"New": NSLocalizedString(@"New", @"new plugins")
                  };
     });
     return dict[category] ? : category;
@@ -513,6 +544,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installed');\n"];
     }
+    for (NSString *name in [UpdateChecker shared].pluginsNeedingUpdates) {
+        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
+        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
+    }
     for (PluginInstallTask *installation in self.installTasksInProgress) {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
@@ -524,7 +559,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     if ([request.URL.scheme isEqualToString:@"domready"]) {
         [self updatePluginStatuses];
         [listener ignore];
-    } else if ([request.URL.scheme isEqualToString:@"install"]) {
+    } else if ([request.URL.scheme isEqualToString:@"install"] || [request.URL.scheme isEqualToString:@"update"]) {
         NSURLComponents *comps = [NSURLComponents componentsWithURL:request.URL resolvingAgainstBaseURL:NO];
         PluginModel *model = [PluginModel new];
         model.name = [comps valueForQueryKey:@"name"];
@@ -563,6 +598,18 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)showPluginWithName:(NSString *)name {
     self.selectedPluginName = name;
     self.selectedCategory = kCategoryShowIndividualPlugin;
+}
+
+- (void)showInstalledPluginWithName:(NSString *)name {
+    self.selectedCategory = @"Installed";
+    self.selectedPluginName = name;
+    PluginModel *model = [self.installedPlugins map:^id(id obj) {
+        return [[obj name] isEqualToString:name] ? obj : nil;
+    }].firstObject;
+    NSUInteger index = model ? [self.installedPlugins indexOfObject:model] : NSNotFound;
+    if (index != NSNotFound) {
+        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
+    }
 }
 
 @end
