@@ -12,6 +12,12 @@ def results(parsed, original_query):
     if text[0:4] == '%s%s' % (lang_from, lang_to):
         text = text[5:]
 
+    # Shortcuts for non-2-characters language codes
+    lang_mapping = { 'cn':'zh-CN', 'tw':'zh-TW' }
+    for k, v in lang_mapping.iteritems():
+        lang_from = lang_from.replace(k, v)
+        lang_to = lang_to.replace(k, v)
+
     url = url.replace('<LANG_FROM>', lang_from)
     url = url.replace('<LANG_TO>', lang_to)
     url = url.replace('<TEXT>', urllib.quote_plus(text))
