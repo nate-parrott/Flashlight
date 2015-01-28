@@ -45,6 +45,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Yusuke Miyazaki",
+            "creator_url": "http://www.ymyzk.com",
+            "description": "Open AirDrop in Finder",
+            "description_ja": "Finder \u3067 AirDrop \u3092\u958b\u304f",
+            "displayName": "AirDrop",
+            "examples": [
+                "airdrop"
+            ],
+            "name": "airdrop",
+            "zip_url": "airdrop.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Alibaba (ab) from Spotlight.",
@@ -104,6 +119,18 @@
             ],
             "name": "appanniesearch",
             "zip_url": "appanniesearch.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Create a new task in Asana",
+            "displayName": "Asana - Create a New Task",
+            "examples": [
+                "asana do the dishes"
+            ],
+            "name": "asana",
+            "zip_url": "asana.zip"
         },
         {
             "categories": [
@@ -219,7 +246,7 @@
                 "Utilities"
             ],
             "creator_name": "George Lydakis",
-            "creator_url": "www.ldkge.com",
+            "creator_url": "http://www.ldkge.com",
             "description": "Place calls right from Spotlight",
             "displayName": "Call",
             "examples": [
@@ -260,6 +287,19 @@
             "iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
             "name": "choc",
             "zip_url": "chocolat.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Search and click the running app's menu items.",
+            "displayName": "Search Menu Items",
+            "examples": [
+                "click Gaussian Blur",
+                "- paste and match style"
+            ],
+            "name": "click-menu",
+            "zip_url": "click-menu.zip"
         },
         {
             "categories": [
@@ -1130,6 +1170,8 @@
             "categories": [
                 "Weather"
             ],
+            "creator_name": "Yusuke Miyazaki",
+            "creator_url": "http://www.ymyzk.com",
             "description": "Ninetan's forecasting system",
             "description_ja": "\u306a\u3044\u3093\u305f\u3093\u5929\u6c17\u4e88\u5831",
             "displayName": "Ninetan",
@@ -1138,9 +1180,14 @@
                 "sx9 kyoto",
                 "ninetan osaka"
             ],
+            "examples_ja": [
+                "sx9 kyoto",
+                "ninetan osaka",
+                "\u306a\u3044\u3093\u305f\u3093 \u4eac\u90fd"
+            ],
             "name": "ninetan",
             "preferred_locales": [
-                "jp"
+                "ja"
             ],
             "zip_url": "ninetan.zip"
         },
@@ -1289,6 +1336,34 @@
             ],
             "name": "remind-me",
             "zip_url": "remind-me.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Justin Brower",
+            "creator_url": "http://github.com/jbrower95",
+            "displayName": "Rom Search",
+            "examples": [
+                "search for supersmash bros roms",
+                "search roms for super smash bros",
+                "rs golden eye"
+            ],
+            "name": "romsearch",
+            "zip_url": "romsearch.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search for gems",
+            "displayName": "Rubygems search",
+            "examples": [
+                "gem sinatra",
+                "gem volt"
+            ],
+            "name": "rubygems",
+            "zip_url": "rubygems.zip"
         },
         {
             "categories": [
@@ -1707,7 +1782,7 @@
             ],
             "creator_name": "Matthias Dolstra",
             "creator_url": "http://mdolstra.me",
-            "description": "Vertaald woord van Engels naar nederlands",
+            "description": "Vertaalt woord van Engels naar Nederlands",
             "displayName": "vertaal",
             "examples": [
                 "Vertaal car",
@@ -1874,6 +1949,19 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "description": "Quick access to a couple common commands.",
+            "displayName": "Xcode Shortcuts",
+            "examples": [
+                "delete derived data",
+                "open iOS simulator"
+            ],
+            "name": "xcode-shortcuts",
+            "zip_url": "xcode-shortcuts.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "description": "Shortcuts for xueqiu.com",
@@ -1899,6 +1987,21 @@
             ],
             "name": "yahoo",
             "zip_url": "yahoo.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Aziz Alto",
+            "creator_url": "http://github.com/iamaziz/flashlight-plugins",
+            "displayName": "Search Yandex",
+            "displayName_rs": "\u042f\u041d\u0414\u0415\u041a\u0421 \u041f\u0415\u0420\u0415\u0412\u0415\u0421\u0422\u0418",
+            "examples": [
+                "yandex what is a search engine",
+                "yx weather now"
+            ],
+            "name": "yandex",
+            "zip_url": "yandex.zip"
         },
         {
             "categories": [
