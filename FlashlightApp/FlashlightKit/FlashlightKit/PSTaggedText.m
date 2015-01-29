@@ -65,7 +65,13 @@
 
 - (NSString *)getText {
     return [[self.contents mapFilter:^id(id obj) {
-        return [obj isKindOfClass:[NSString class]] ? obj : nil;
+        if ([obj isKindOfClass:[NSString class]]) {
+            return obj;
+        } else if ([obj isKindOfClass:[PSTaggedText class]]) {
+            return [obj getText];
+        } else {
+            return nil;
+        }
     }] componentsJoinedByString:@" "];
 }
 

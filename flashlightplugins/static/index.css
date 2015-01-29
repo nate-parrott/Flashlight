@@ -80,9 +80,13 @@ a:hover {
     font-weight: 200;
     letter-spacing: 2px;
     text-transform: uppercase;
+		position: relative;
 }
 #download .fa {
     display: none;
+}
+#download .beta {
+	display: inline-block;
 }
 #images {
     margin-top: -3em;

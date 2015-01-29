@@ -44,6 +44,8 @@
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"thisFolder(this folder)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"thisFolder(this directory)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"thisFolder(here)" rootTag:@"@file"]]];
+    [parsnip learnExamples:@[[PSTaggedText withExampleString:@"filePath(/Users/ioehngoe/Library/eipgnio4ge.pdf)" rootTag:@"@file"]]];
+    [parsnip learnExamples:@[[PSTaggedText withExampleString:@"at path filePath(~/Library/iehrgorheo.txt)" rootTag:@"@file"]]];
     
     self.callback(self.identifier, @{PSParsnipSourceDataParsnipKey: parsnip, PSParsnipSourceFieldProcessorsDictionaryKey: @{@"@file": fieldProcessor}});
 }
@@ -55,6 +57,15 @@
         for (NSString *tag in directoryNameToPathMap) {
             if ([tagged findChild:tag]) {
                 NSString *path = [directoryNameToPathMap[tag] stringByExpandingTildeInPath];
+                return @{@"query": [tagged getText], @"path": path};
+            }
+        }
+        
+        if ([tagged findChild:@"filePath"]) {
+            NSString *path = [[tagged findChild:@"filePath"] getText];
+            // determine if this is a valid path (HACK)
+            BOOL isValid = !![NSURL URLWithString:[NSString stringWithFormat:@"file://%@", path]].path;
+            if (isValid) {
                 return @{@"query": [tagged getText], @"path": path};
             }
         }

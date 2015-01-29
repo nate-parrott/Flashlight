@@ -50,6 +50,7 @@
             if ([[self class] isStemmingSupported]) {
                 [features addObject:[text stem] ? : text];
             }
+            if ([self isDigits]) [features addObject:@"$DIGIT"];
             token.features = [features mapFilter:^id(id obj) {
                 return [obj lowercaseString];
             }];
@@ -90,6 +91,21 @@
         }];
     }
     return stem;
+}
+
+- (BOOL)isDigits {
+    if (self.length == 0) return NO;
+    static NSCharacterSet *digits = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        digits = [NSCharacterSet decimalDigitCharacterSet];
+    });
+    for (NSInteger i=0; i<self.length; i++) {
+        if (![digits characterIsMember:[self characterAtIndex:i]]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 @end

@@ -80,8 +80,11 @@ const NSInteger PSMaxCandidatesPerRound = 50;
         PSProbabilityCounter *probCounter = [self.emissionProbs objectForKey:terminal.tag settingDefaultToValue:^id{
             return [PSProbabilityCounter new];
         }];
-        for (id feature in terminal.token.features) {
-            [probCounter addItem:feature];
+        if (![terminal.token.original isEqualToString:@"___"]) {
+            // ignore examples that are just ___ (three _'s)
+            for (id feature in terminal.token.features) {
+                [probCounter addItem:feature];
+            }
         }
     }
 }
