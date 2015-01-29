@@ -26,7 +26,7 @@ def group_plugins(plugin_dicts, languages, languages_were_specified):
   return [g for g in groups if len(g['plugins'])]
 
 def directory_html(category=None, search=None, languages=None, browse=False,
-                   name=None, gae=None):
+                   name=None, gae=None, deep_links=False):
     
     if gae == None:
       gae = not browse
@@ -62,6 +62,7 @@ def directory_html(category=None, search=None, languages=None, browse=False,
                       "browse": browse,
                       "count": count,
                       "search": search,
+											"deep_links": deep_links,
                       "new": new,
                       "gae": gae})
 

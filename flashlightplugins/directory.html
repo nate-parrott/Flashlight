@@ -206,7 +206,11 @@
                <div class='control-container'>
                   <div class='control'>
                      {% if browse %}
-                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads}}</span></a>
+											 {% if deep_links %}
+                     		<a class='install' href='flashlight://plugin/{{ plugin.name }}'>Show <span class='download_count'>{{plugin.model.downloads}}</span></a>
+											 {% else %}
+	                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads}}</span></a>
+											 {% endif %}
                      {% else %}
                      <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
                      {% endif %}

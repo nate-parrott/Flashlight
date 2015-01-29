@@ -129,8 +129,8 @@ class Directory(webapp2.RequestHandler):
         search = self.request.get('search', None)
         browse = self.request.get('browse', '') != ''
         name = self.request.get('name', None)
-        self.response.write(directory_html(category, search, languages,
-                                           browse, name))
+        deep_links = self.request.get('deep_links', None) != None
+        self.response.write(directory_html(category, search, languages, browse, name, deep_links=deep_links))
 
 
 class ServeHandler(blobstore_handlers.BlobstoreDownloadHandler):
