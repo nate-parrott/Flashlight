@@ -27,21 +27,31 @@
   </head>
   <body>
     <script>
+		FIRST_CHAR = null;
+		
+		function output() {
+			return FIRST_CHAR;
+		}
+		
       request = new XMLHttpRequest();
       request.open('GET', 'http://ucdsearch.com/%type%/%query%', true);
 
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           var data = JSON.parse(request.responseText);
-          data.forEach(function (val) {
-            var div = document.createElement("div");
-            div.setAttribute('class', 'char center');
-            div.innerHTML = '&#' + parseInt(val['_source'].cp, 16);
-            div.addEventListener("click", function() {
-               flashlight.bash("echo '" + div.innerText + "' | LANG=en_US.UTF-8 pbcopy && osascript -e 'display notification \"Copied character!\" with title \"Flashligt\"'")
-            });
-            document.body.appendChild(div);
-          });
+					for (var i=0; i<data.length && i<100; i++) {
+						var val = data[i];
+            (function() {
+	            var div = document.createElement("div");
+	            div.setAttribute('class', 'char center');
+	            div.innerHTML = '&#' + parseInt(val['_source'].cp, 16);
+	            div.addEventListener("click", function() {
+								copyToClipboard(div.innerText);
+	            });
+							if (!FIRST_CHAR) FIRST_CHAR = div.innerText;
+	            document.body.appendChild(div);
+            })();
+					}
           if (data.length === 0) {
             showMessage('&#8709;');
           }
@@ -54,6 +64,11 @@
       request.onerror = function () {
         showMessage("&#9888;");
       };
+			
+      function copyToClipboard(char) {
+          command = 'printf "'+char+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \'display notification "Copied!" with title "Flashlight"\'';
+          flashlight.bash(command);
+      }
 			
 			setTimeout(function() {
 	      request.send();

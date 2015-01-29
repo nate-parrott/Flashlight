@@ -15,5 +15,12 @@ def results(fields, original_query):
     return {
         "title": title,
         "html": html,
-        "webview_transparent_background": True
+        "webview_transparent_background": True,
+				"run_args": [],
+				"pass_result_of_output_function_as_first_run_arg": True
     }
+
+def run(character):
+	if character:
+		import subprocess
+		subprocess.call(['printf "'+character+'" | LANG=en_US.UTF-8  pbcopy && osascript -e \'display notification "Copied!" with title "Flashlight"\''], shell=True)

@@ -720,7 +720,7 @@
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ8-0o-PEI">
                         <rect key="frame" x="205" y="553" width="428" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="0tq-Dc-Igz"/>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="0tq-Dc-Igz"/>
                         </constraints>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="None" id="uvR-oW-vF3">
                             <font key="font" metaFont="system"/>
@@ -736,7 +736,7 @@
                             <subviews>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JwT-dt-410">
                                     <rect key="frame" x="16" y="412" width="574" height="24"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="zM5-Hc-o1q">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" title="Label" id="zM5-Hc-o1q">
                                         <font key="font" metaFont="system" size="20"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

@@ -2,8 +2,8 @@
     "name": "call",
     "displayName": "Call",
     "description": "Place calls right from Spotlight",
-    "examples": ["call 2610333366", "facetime 6945239034"],
-    "categories": ["Utilities"],
+    "examples": ["call 2610333366", "facetime Nate", "call James work"],
+    "categories": ["Utilities", "Featured"],
     "creator_name": "George Lydakis",
     "creator_url": "http://www.ldkge.com"
 }
