@@ -86,7 +86,11 @@
             
             // once we're done zipping, move from the temporary directory to the main directory (triggering a reload of the `examples.txt` index)
             NSString *bundleFilename = [pluginName stringByAppendingPathExtension:@"bundle"];
-            [[NSFileManager defaultManager] moveItemAtPath:[tempDirectory.path stringByAppendingPathComponent:bundleFilename] toPath:[pluginsDirectory stringByAppendingPathComponent:bundleFilename] error:nil];
+            NSString *destPath = [pluginsDirectory stringByAppendingPathComponent:bundleFilename];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:destPath]) {
+                [[NSFileManager defaultManager] removeItemAtPath:destPath error:nil];
+            }
+            [[NSFileManager defaultManager] moveItemAtPath:[tempDirectory.path stringByAppendingPathComponent:bundleFilename] toPath:destPath error:nil];
             
             _installedPluginName = pluginName;
             PluginModel *pluginModel = [PluginModel installedPluginNamed:pluginName];

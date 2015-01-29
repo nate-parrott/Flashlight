@@ -10,6 +10,8 @@
 #import "PluginModel.h"
 #import "PluginDirectoryAPI.h"
 
+NSString * UpdateCheckerPluginsNeedingUpdatesDidChangeNotification = @"UpdateCheckerPluginsNeedingUpdatesDidChangeNotification";
+
 @implementation UpdateChecker
 
 + (UpdateChecker *)shared {

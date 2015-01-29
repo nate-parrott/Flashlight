@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-NSString * const UpdateCheckerPluginsNeedingUpdatesDidChangeNotification;
+extern NSString * UpdateCheckerPluginsNeedingUpdatesDidChangeNotification;
 
 @interface UpdateChecker : NSObject
 
