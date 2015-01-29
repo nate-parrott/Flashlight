@@ -40,6 +40,7 @@
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"musicDir(music)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"desktopDir(the desktop)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"theseFiles(this file)" rootTag:@"@file"]]];
+    [parsnip learnExamples:@[[PSTaggedText withExampleString:@"theseFiles(this)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"theseFiles(these files)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"thisFolder(this folder)" rootTag:@"@file"]]];
     [parsnip learnExamples:@[[PSTaggedText withExampleString:@"thisFolder(this directory)" rootTag:@"@file"]]];
@@ -101,7 +102,7 @@
                 MDItemRef item = (MDItemRef)MDQueryGetResultAtIndex(query, i);
                 [mdItems addObject:(__bridge id)item];
             }
-            [mdItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            [mdItems sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
                 NSNumber *r1 = CFBridgingRelease(MDItemCopyAttribute((MDItemRef)obj1, kMDQueryResultContentRelevance));
                 NSNumber *r2 = CFBridgingRelease(MDItemCopyAttribute((MDItemRef)obj2, kMDQueryResultContentRelevance));
                 return [r2 compare:r1];
