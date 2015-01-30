@@ -243,7 +243,8 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Utilities",
+                "Featured"
             ],
             "creator_name": "George Lydakis",
             "creator_url": "http://www.ldkge.com",
@@ -251,7 +252,8 @@
             "displayName": "Call",
             "examples": [
                 "call 2610333366",
-                "facetime 6945239034"
+                "facetime Nate",
+                "call James work"
             ],
             "name": "call",
             "zip_url": "call.zip"
@@ -615,6 +617,19 @@
             "name": "favorites",
             "openPreferencesOnInstall": true,
             "zip_url": "favorites.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search the Flashlight plugin directory, right inside Spotlight. It's very meta.",
+            "displayName": "Flashlight Plugin Search",
+            "examples": [
+                "Bitcoin Flashlight plugins",
+                "flashlight: call"
+            ],
+            "name": "flashlight",
+            "zip_url": "flashlight.zip"
         },
         {
             "categories": [
@@ -1155,6 +1170,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Copy, move and delete files, just by typing.",
+            "displayName": "File Mover",
+            "examples": [
+                "move this file to Documents",
+                "copy receipt.pdf to Receipts"
+            ],
+            "name": "move-file",
+            "zip_url": "move-file.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "displayName": "Search Netflix",
@@ -1267,6 +1295,8 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Yusuke Miyazaki",
+            "creator_url": "http://www.ymyzk.com",
             "description": "Search at PyPI - the Python Package Index",
             "description_de": "Suche auf PyPI - dem Python Package Index",
             "displayName": "Search at PyPI",
