@@ -1,0 +1,3 @@
+search wwdc for ~query(reactivecocoa)
+wwdc: ~query(apaddressbook)
+wwdc ~query(core data)

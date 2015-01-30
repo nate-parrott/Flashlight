@@ -1,0 +1,7 @@
+{
+    "name": "asciiWWDC",
+    "displayName": "Search asciiWWDC",
+    "displayName_fr": "Recherche sur asciiWWDC",
+    "examples": ["search wwdc for Core Data", "wwdc QuartzCore"],
+    "categories": ["Search", "Developer"]
+}
