@@ -40,7 +40,7 @@ Huge thanks to everyone who's contributed translations:
  - [tiphedor](http://github.com/tiphedor) for French
  - [lipe1966](http://github.com/lipe1966) for Portugese
  - [chuyik](http://github.com/chuyik) for Chinese
- - [suer](http://github.com/suer) for Japanese
+ - [suer](http://github.com/suer) and [ymyzk](http://github.com/ymyzk) for Japanese
  - [andreaponza](http://github.com/andreaponza) for Italian
  - [iltercengiz](http://github.com/iltercengiz) for Turkish
  - [AlAdler](http://github.com/AlAdler) for Spanish
