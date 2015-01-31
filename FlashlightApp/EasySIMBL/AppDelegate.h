@@ -5,7 +5,6 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "ITSwitch.h"
 #import <WebKit/WebKit.h>
 
 @class PluginListController;

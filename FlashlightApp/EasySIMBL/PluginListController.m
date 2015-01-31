@@ -53,6 +53,12 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @implementation PluginListController
 
+- (instancetype)init {
+    self = [super init];
+    _enabled = YES;
+    return self;
+}
+
 #pragma mark Lifecycle
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -610,6 +616,15 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     if (index != NSNotFound) {
         [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
     }
+}
+
+- (void)showCategory:(NSString *)category {
+    self.selectedCategory = category;
+}
+
+- (void)showSearch:(NSString *)search {
+    self.searchField.stringValue = search;
+    [self search:nil];
 }
 
 @end

@@ -43,7 +43,7 @@
 {
     NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
     
-    self.SIMBLOn = NO;
+    self.SIMBLOn = YES;
     
     [self checkSpotlightVersion];
     
@@ -132,11 +132,6 @@
             });
         }
     }
-}
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.SIMBLOn = self.SIMBLOn;
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
@@ -275,10 +270,19 @@
     NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject]
                         stringValue];
     NSURL *url = [NSURL URLWithString:urlStr];
+    
+    NSMutableDictionary *query = [NSMutableDictionary new];
+    for (NSURLQueryItem *queryItem in [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO].queryItems) {
+        query[queryItem.name] = queryItem.value ? : @"";
+    }
+    
     if ([url.scheme isEqualToString:@"flashlight-show"]) {
         [self.pluginListController showPluginWithName:url.host];
     } else if ([url.scheme isEqualToString:@"flashlight"]) {
-        NSArray *parts = [[NSArray arrayWithObject:url.host] arrayByAddingObjectsFromArray:[url.pathComponents subarrayWithRange:NSMakeRange(1, url.pathComponents.count - 1)]];
+        NSMutableArray *parts = [@[url.host] arrayByAddingObjectsFromArray:url.pathComponents].mutableCopy;
+        if (parts.count >= 2) {
+            [parts removeObjectAtIndex:1];
+        }
         if (parts.count >= 2 && [parts[0] isEqualToString:@"plugin"]) {
             NSString *pluginName = parts[1];
             if (parts.count == 2) {
@@ -288,6 +292,10 @@
                     [[PluginModel installedPluginNamed:parts[1]] presentOptionsInWindow:self.window];
                 }
             }
+        } else if (parts.count == 2 && [parts[0] isEqualToString:@"category"]) {
+            [self.pluginListController showCategory:parts[1]];
+        } else if (parts.count == 1 && [parts[0] isEqualToString:@"search"]) {
+            [self.pluginListController showSearch:query[@"q"]];
         }
     }
 }

@@ -12,6 +12,10 @@
 		2761463C105F985500F906F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276144CF105F523C00F906F6 /* MainMenu.xib */; };
 		276156DC1060C08C00FEF11C /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789609B3031900F50FE7 /* SIMBL.m */; };
 		27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
+		5F4BFF531A7C243E00A64664 /* UIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BFF521A7C243E00A64664 /* UIManager.m */; };
+		5F4BFF5A1A7C2A2200A64664 /* StatusItemOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F4BFF581A7C2A2200A64664 /* StatusItemOn.png */; };
+		5F4BFF5B1A7C2A2200A64664 /* StatusItemOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F4BFF591A7C2A2200A64664 /* StatusItemOn@2x.png */; };
+		5F4BFF5D1A7C2C1700A64664 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */; };
 		5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276144CD105F523C00F906F6 /* InfoPlist.strings */; };
 		6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* Flashlight.osax */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -76,6 +80,11 @@
 		276144CE105F523C00F906F6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		276144D8105F523C00F906F6 /* SIMBLAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBLAgent.h; sourceTree = "<group>"; };
 		276144D9105F523C00F906F6 /* SIMBLAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SIMBLAgent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5F4BFF511A7C243E00A64664 /* UIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIManager.h; sourceTree = "<group>"; };
+		5F4BFF521A7C243E00A64664 /* UIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIManager.m; sourceTree = "<group>"; };
+		5F4BFF581A7C2A2200A64664 /* StatusItemOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusItemOn.png; sourceTree = "<group>"; };
+		5F4BFF591A7C2A2200A64664 /* StatusItemOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusItemOn@2x.png"; sourceTree = "<group>"; };
+		5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpotlightSIMBL.xcodeproj; path = SpotlightSIMBL/SpotlightSIMBL.xcodeproj; sourceTree = "<group>"; };
 		5F870A641A54958D00161E2F /* FlashlightKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlashlightKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug/FlashlightKit.framework"; sourceTree = "<group>"; };
 		5FC13C171A4906FC008A0FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -102,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4BFF5D1A7C2C1700A64664 /* ServiceManagement.framework in Frameworks */,
 				6CF6D4CE159DD16000916EA5 /* Cocoa.framework in Frameworks */,
 				6CF6D4D3159DD18600916EA5 /* ScriptingBridge.framework in Frameworks */,
 			);
@@ -147,6 +157,10 @@
 				276144EB105F529100F906F6 /* Resources */,
 				276144D8105F523C00F906F6 /* SIMBLAgent.h */,
 				276144D9105F523C00F906F6 /* SIMBLAgent.m */,
+				5F4BFF511A7C243E00A64664 /* UIManager.h */,
+				5F4BFF521A7C243E00A64664 /* UIManager.m */,
+				5F4BFF581A7C2A2200A64664 /* StatusItemOn.png */,
+				5F4BFF591A7C2A2200A64664 /* StatusItemOn@2x.png */,
 			);
 			path = "SIMBL Agent";
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 		6CF6D4B2159DD14100916EA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */,
 				5F870A641A54958D00161E2F /* FlashlightKit.framework */,
 				6CF6D4B3159DD14100916EA5 /* Cocoa.framework */,
 				6CF6D4D2159DD18600916EA5 /* ScriptingBridge.framework */,
@@ -301,7 +316,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F4BFF5B1A7C2A2200A64664 /* StatusItemOn@2x.png in Resources */,
 				2761463C105F985500F906F6 /* MainMenu.xib in Resources */,
+				5F4BFF5A1A7C2A2200A64664 /* StatusItemOn.png in Resources */,
 				6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276144F6105F531D00F906F6 /* SIMBLAgent.m in Sources */,
+				5F4BFF531A7C243E00A64664 /* UIManager.m in Sources */,
 				276156DC1060C08C00FEF11C /* SIMBL.m in Sources */,
 				27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */,
 				6CDFDC75159DBC7C002E8E63 /* main.m in Sources */,
