@@ -1,6 +1,7 @@
 {
   "categories" : [
-    "Utilities"
+    "Utilities",
+		"Featured"
   ],
   "displayName" : "Open URL",
   "name" : "open-url",

@@ -134,6 +134,20 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "displayName": "Search asciiWWDC",
+            "displayName_fr": "Recherche sur asciiWWDC",
+            "examples": [
+                "search wwdc for Core Data",
+                "wwdc QuartzCore"
+            ],
+            "name": "asciiWWDC",
+            "zip_url": "asciiWWDC.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Open Atom. If Finder is open, opens the current folder/file in Atom.",
@@ -1236,7 +1250,8 @@
         },
         {
             "categories": [
-                "Utilities"
+                "Utilities",
+                "Featured"
             ],
             "description": "Open URLs by typing or pasting them in Spotlight.",
             "displayName": "Open URL",
@@ -1880,11 +1895,13 @@
             "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
             "description_fr": "Recherche sur Wikipedia.",
             "description_it": "Cerca su Wikipedia.",
+            "description_ja": "Wikipedia \u691c\u7d22",
             "description_nl": "Zoek op de Nederlandse Wikipedia (wiki).",
             "displayName": "Wikipedia (EN)",
             "displayName_de": "Wikipedia (DE)",
             "displayName_fr": "Wikipedia (FR)",
             "displayName_it": "Wikipedia (IT)",
+            "displayName_ja": "Wikipedia (JA)",
             "displayName_nl": "Wikipedia (NL)",
             "examples": [
                 "wiki Dogs",
@@ -1904,6 +1921,11 @@
             "examples_it": [
                 "wiki cani",
                 "cerca wikipedia Ponza",
+                "wikipedia Flashlight"
+            ],
+            "examples_ja": [
+                "wiki \u65e5\u672c\u8a9e",
+                "wiki OS X",
                 "wikipedia Flashlight"
             ],
             "examples_nl": [
