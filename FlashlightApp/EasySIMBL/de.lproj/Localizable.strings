@@ -5,7 +5,7 @@
 "Automator workflow:" = "Automator Arbeitsablauf:";
 
 /* No comment provided by engineer. */
-"Couldn't install plugin." = "Konnte Plugin nicht installieren.";
+"Couldn't install plugin." = "Das Plugin konnte nicht installiert werden.";
 
 /* No comment provided by engineer. */
 "Couldn't load the list of available online plugins." = "Konnte die Liste der verfügbaren Online-Plugins nicht laden.";
@@ -74,13 +74,13 @@
 "Weather" = "Wetter";
 
 /* No comment provided by engineer. */
-"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "Dein Plugin wird ausgewählt wenn du in Spotlight etwas Suchst, dass den Bespielen ähnelt.";
+"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "Dein Plugin wird ausgewählt wenn du in Spotlight etwas suchst, dass den Bespielen ähnelt.";
 
 /* No comment provided by engineer. */
 "Art" = "Grafik & Design";
 
 /* No comment provided by engineer. */
-"Couldn't load the online plugin directory." = "Das online Pluginverzeichnis kontne nicht geladen werden.";
+"Couldn't load the online plugin directory." = "Das online Pluginverzeichnis konnte nicht geladen werden.";
 
 /* No comment provided by engineer. */
 "Developer" = "Entwickler";
