@@ -1128,6 +1128,20 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "MacUpdate search",
+            "displayName": "Search MacUpdate",
+            "displayName_de": "MacUpdate Suche",
+            "examples": [
+                "macupdate flashlight",
+                "mu flashlight"
+            ],
+            "name": "macupdate",
+            "zip_url": "macupdate.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search man pages and open in a specific window",

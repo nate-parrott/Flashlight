@@ -1,0 +1,2 @@
+macupdate ~macupdatequery(query here)
+mu ~macupdatequery(query here)

@@ -17,6 +17,7 @@
 		5F4BFF5B1A7C2A2200A64664 /* StatusItemOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F4BFF591A7C2A2200A64664 /* StatusItemOn@2x.png */; };
 		5F4BFF5D1A7C2C1700A64664 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */; };
 		5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5FD3504B1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3504A1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m */; };
 		6C5154DE159DC6E500DA87F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 276144CD105F523C00F906F6 /* InfoPlist.strings */; };
 		6CBB25FE159ECD63002C455C /* Flashlight.osax in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D5B49B6048680CD000E48DA /* Flashlight.osax */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6CDFDC73159DBC65002E8E63 /* osax.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDFDC72159DBC65002E8E63 /* osax.m */; };
@@ -88,6 +89,8 @@
 		5F86D4A21A07E48800D4A777 /* SpotlightSIMBL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SpotlightSIMBL.xcodeproj; path = SpotlightSIMBL/SpotlightSIMBL.xcodeproj; sourceTree = "<group>"; };
 		5F870A641A54958D00161E2F /* FlashlightKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlashlightKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Flashlight-ecbbmgoifutwxzgzjgruzjyizltl/Build/Products/Debug/FlashlightKit.framework"; sourceTree = "<group>"; };
 		5FC13C171A4906FC008A0FE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		5FD350491A8407BD001E0380 /* NSObject+InternationalizedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+InternationalizedValueForKey.h"; path = "EasySIMBL/../FlashlightKit/FlashlightKit/NSObject+InternationalizedValueForKey.h"; sourceTree = SOURCE_ROOT; };
+		5FD3504A1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+InternationalizedValueForKey.m"; path = "EasySIMBL/../FlashlightKit/FlashlightKit/NSObject+InternationalizedValueForKey.m"; sourceTree = SOURCE_ROOT; };
 		658988FE1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		658988FF1A270ACF00ABE5E9 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = it; path = it.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		6CDFDC6C159DBB8C002E8E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				276144D9105F523C00F906F6 /* SIMBLAgent.m */,
 				5F4BFF511A7C243E00A64664 /* UIManager.h */,
 				5F4BFF521A7C243E00A64664 /* UIManager.m */,
+				5FD350491A8407BD001E0380 /* NSObject+InternationalizedValueForKey.h */,
+				5FD3504A1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m */,
 				5F4BFF581A7C2A2200A64664 /* StatusItemOn.png */,
 				5F4BFF591A7C2A2200A64664 /* StatusItemOn@2x.png */,
 			);
@@ -338,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD3504B1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m in Sources */,
 				276144F6105F531D00F906F6 /* SIMBLAgent.m in Sources */,
 				5F4BFF531A7C243E00A64664 /* UIManager.m in Sources */,
 				276156DC1060C08C00FEF11C /* SIMBL.m in Sources */,
