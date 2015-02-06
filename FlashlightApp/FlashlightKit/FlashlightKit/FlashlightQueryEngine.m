@@ -103,7 +103,7 @@
             [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
                 // only act on the result data if we're still part of the tasksInProgress
                 if ([weakSelf.tasksInProgress containsObject:task]) {
-                    [weakSelf.tasksInProgress removeObject:self];
+                    [weakSelf.tasksInProgress removeObject:task];
                     
                     if (weakSelf.debugDataChangeBlock) {
                         // report the error:

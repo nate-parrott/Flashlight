@@ -17,7 +17,6 @@
 		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
 		5F6326C01A08313E00CE241E /* PluginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BF1A08313E00CE241E /* PluginModel.m */; };
 		5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6326C11A083A1300CE241E /* QuartzCore.framework */; };
-		5F6326C41A083E1F00CE241E /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5F6326C31A083E1F00CE241E /* Icon.icns */; };
 		5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326C81A08538B00CE241E /* PluginCellView.m */; };
 		5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326CC1A09310F00CE241E /* PluginInstallTask.m */; };
 		5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326D21A0933E800CE241E /* ZZAESDecryptInputStream.mm */; };
@@ -46,6 +45,7 @@
 		5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */; };
 		5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5FBEC9C31A166C00007FEC54 /* dsa_pub.pem */; };
 		5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */; };
+		5FD3504E1A840EF2001E0380 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5FD3504D1A840EF2001E0380 /* Icon.icns */; };
 		5FD3EA7E1A202777005A312E /* PluginDirectoryAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */; };
 		5FD3EA811A2035AB005A312E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD3EA801A2035AB005A312E /* WebKit.framework */; };
 		5FD3EA841A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD3EA831A204CA1005A312E /* NSURLComponents+ValueForQueryKey.m */; };
@@ -121,7 +121,6 @@
 		5F6326BE1A08313E00CE241E /* PluginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginModel.h; sourceTree = "<group>"; };
 		5F6326BF1A08313E00CE241E /* PluginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginModel.m; sourceTree = "<group>"; };
 		5F6326C11A083A1300CE241E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5F6326C31A083E1F00CE241E /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		5F6326C71A08538B00CE241E /* PluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCellView.h; sourceTree = "<group>"; };
 		5F6326C81A08538B00CE241E /* PluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCellView.m; sourceTree = "<group>"; };
 		5F6326CB1A09310F00CE241E /* PluginInstallTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginInstallTask.h; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		5FC34AE81A314C4E007CCE4E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E171A290B11006187EB /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5FC65E181A290B20006187EB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5FD3504D1A840EF2001E0380 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		5FD3EA7C1A202777005A312E /* PluginDirectoryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginDirectoryAPI.h; sourceTree = "<group>"; };
 		5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginDirectoryAPI.m; sourceTree = "<group>"; };
 		5FD3EA801A2035AB005A312E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -452,6 +452,7 @@
 				5FF5D4161A6777A000641D7A /* Windows */,
 				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
 				5FBEC9B51A154DEA007FEC54 /* Icons.xcassets */,
+				5FD3504D1A840EF2001E0380 /* Icon.icns */,
 				5F6326CE1A0933E800CE241E /* zipzap */,
 				5F6326B61A082FA900CE241E /* ITSwitch */,
 				6C56448B159E7C0800215467 /* Supporting Files */,
@@ -465,7 +466,6 @@
 			children = (
 				5FF8731C1A6D977500EAD72F /* GenericPluginIcon.icns */,
 				5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */,
-				5F6326C31A083E1F00CE241E /* Icon.icns */,
 				6C56448C159E7C0800215467 /* Flashlight-Info.plist */,
 				6C56448D159E7C0800215467 /* InfoPlist.strings */,
 				6C564490159E7C0800215467 /* main.m */,
@@ -567,8 +567,8 @@
 				6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */,
 				5FF8731D1A6D977500EAD72F /* GenericPluginIcon.icns in Resources */,
 				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
+				5FD3504E1A840EF2001E0380 /* Icon.icns in Resources */,
 				5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */,
-				5F6326C41A083E1F00CE241E /* Icon.icns in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */,
