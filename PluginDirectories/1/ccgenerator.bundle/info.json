@@ -1,0 +1,9 @@
+{
+    "name": "ccgenerator",
+    "displayName": "Credit Card Generator",
+    "description": "Generates a valid credit card number",
+    "examples": ["visa", "mastercard", "amex", "diners", "jcb", "discover", "hipercard"],
+    "categories": ["Developer"],
+    "creator_name": "Guilherme Araújo",
+    "creator_url": "http://www.github.com/guilhermearaujo"
+}
