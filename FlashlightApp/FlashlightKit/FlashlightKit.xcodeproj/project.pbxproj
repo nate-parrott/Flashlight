@@ -78,6 +78,8 @@
 		5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */; };
 		5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */; };
 		5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */; };
+		5FD350551A85327C001E0380 /* SearchPluginState.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD350531A85327C001E0380 /* SearchPluginState.h */; };
+		5FD350561A85327C001E0380 /* SearchPluginState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD350541A85327C001E0380 /* SearchPluginState.m */; };
 		5FF873121A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */; };
 /* End PBXBuildFile section */
@@ -167,6 +169,8 @@
 		5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightQueryEngine.m; sourceTree = "<group>"; };
 		5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+FlashlightExtensions.h"; sourceTree = "<group>"; };
 		5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+FlashlightExtensions.m"; sourceTree = "<group>"; };
+		5FD350531A85327C001E0380 /* SearchPluginState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginState.h; sourceTree = "<group>"; };
+		5FD350541A85327C001E0380 /* SearchPluginState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginState.m; sourceTree = "<group>"; };
 		5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+InternationalizedValueForKey.h"; sourceTree = "<group>"; };
 		5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,6 +294,8 @@
 				5F25EF031A76153F0030693F /* Parser */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
+				5FD350531A85327C001E0380 /* SearchPluginState.h */,
+				5FD350541A85327C001E0380 /* SearchPluginState.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
@@ -350,6 +356,7 @@
 				5F25EEFD1A7615380030693F /* PSTaggedText+ToJSON.h in Headers */,
 				5F25EEF31A7615380030693F /* PSStartNode.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
+				5FD350551A85327C001E0380 /* SearchPluginState.h in Headers */,
 				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
 				5F25EEDA1A7615380030693F /* PSDateSource.h in Headers */,
 				5F25EEE71A7615380030693F /* PSParseCandidate.h in Headers */,
@@ -500,6 +507,7 @@
 				5F25EEEE1A7615380030693F /* PSPluginExampleSource.m in Sources */,
 				5F25EEDD1A7615380030693F /* PSEndNode.m in Sources */,
 				5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */,
+				5FD350561A85327C001E0380 /* SearchPluginState.m in Sources */,
 				5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */,
 				5F25EEE81A7615380030693F /* PSParseCandidate.m in Sources */,
 				5F25EEDF1A7615380030693F /* PSFileSource.m in Sources */,
@@ -616,6 +624,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = FlashlightKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -635,6 +644,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = FlashlightKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

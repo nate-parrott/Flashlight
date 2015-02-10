@@ -68,6 +68,8 @@
     };
     
     self.updateInfoLabel.stringValue = [NSString stringWithFormat:@"FlashlightTool %@", [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"]];
+    
+    [self.window makeKeyAndOrderFront:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

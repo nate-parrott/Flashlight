@@ -22,4 +22,6 @@
 - (BOOL)linksOpenInBrowser;
 - (BOOL)pressEnter:(FlashlightResultView *)resultView errorCallback:(void(^)(NSString *error))errorCallback;
 
+@property (nonatomic) NSString *uniqueIdentifier;
+
 @end

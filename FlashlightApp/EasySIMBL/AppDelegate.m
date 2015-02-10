@@ -120,6 +120,10 @@
     [UpdateChecker shared]; // begin fetch
 }
 
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    [self.window makeKeyAndOrderFront:nil];
+}
+
 - (void)restartSIMBLIfUpdated {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"LastVersion"] isEqualToString:currentVersion]) {

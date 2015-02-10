@@ -18,5 +18,6 @@ typedef void (^PSBackgroundProcessorBlock)(id data, PSBackgroundProcessorResultB
 // API is thread-safe:
 - (void)gotNewData:(id)data;
 @property (atomic) id latestResult;
+@property (nonatomic, readonly) id latestData;
 
 @end

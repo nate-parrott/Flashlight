@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Nate Parrott. All rights reserved.
 //
 
-#import <FlashlightKit/FlashlightKit.h>
+#import <FlashlightKit.h>
 
 @interface PSDateSource : PSParsnipSource
 
