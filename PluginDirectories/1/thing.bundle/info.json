@@ -1,0 +1,6 @@
+{
+	"name": "Thingiverse",
+	"displayName": "Thingiverse",
+	"description": "Search Thingiverse for 3D printable models",
+	"examples": ["thing extruder upgrade", "t wall plate customizer"]
+}
