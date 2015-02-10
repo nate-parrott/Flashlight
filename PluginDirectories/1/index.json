@@ -339,6 +339,19 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "description": "Upload a file to CloudApp, and copy a shareable URL to it. (Install the app from getcloudapp.com)",
+            "displayName": "Share File with CloudApp",
+            "examples": [
+                "upload this file to cloudapp",
+                "cloud homework1.pdf"
+            ],
+            "name": "cloudapp",
+            "zip_url": "cloudapp.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
