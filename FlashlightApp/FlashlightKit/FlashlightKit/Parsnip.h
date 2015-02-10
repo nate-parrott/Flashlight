@@ -14,6 +14,7 @@
 
 - (void)learnExamples:(NSArray *)examples;
 - (PSParseCandidate *)parseText:(NSString *)text intoTag:(NSString *)rootTag;
+- (NSArray *)parseText:(NSString *)text intoCandidatesForTag:(NSString *)rootTag;
 
 - (void)printData;
 

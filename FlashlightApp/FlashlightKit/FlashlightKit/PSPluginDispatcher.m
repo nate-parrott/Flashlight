@@ -76,7 +76,8 @@
         mainParsnip = self.parsnipCreator.latestResult;
         pluginPathsForIntents = self.latestResultsDictionariesForSourceIdentifiers[@"plugins"][PSParsnipSourceDataPluginPathForIntentDictionaryKey];
     }
-    PSParseCandidate *result = [mainParsnip parseText:command intoTag:@"plugin_intent"];
+    NSArray *results = [mainParsnip parseText:command intoCandidatesForTag:@"plugin_intent"];
+    PSParseCandidate *result = [self outstandingResultFromResults:results];
     if (result) {
         *pluginPath = pluginPathsForIntents[result.node.tag];
         *arguments = [[PSTaggedText withNode:result.node] toNestedDictionary];
@@ -87,6 +88,42 @@
         *arguments = nil;
         *tree = nil;
     }
+}
+
+- (PSParseCandidate *)outstandingResultFromResults:(NSArray *)results {
+    /*
+     The parser returns an array of candidates ordered by probability DESC.
+     There are 3 types: 
+     plugin_intent/plugin_name, (we've parsed the command as a plugin invocation)
+     plugin_intent/<NOT>plugin_name, (we've parsed this as a counter example — if the counter-example's prob is greater than the plugin intent's prob, don't invoke the plugin)
+     plugin_intent/<NULL> : the null example. don't match ANY plugin.
+     */
+    // plugin_intent/<NULL>
+    // plugin_intent/<NOT>
+    NSString * const nullIntent = @"plugin_intent/<NULL>";
+    NSString * const counterexampleIntentPrefix = @"plugin_intent/<NOT>";
+    NSString * const exampleIntentPrefix = @"plugin_intent/";
+    NSMutableSet *intentsWhereCounterexamplesAlreadyMatched = [NSMutableSet new];
+    for (PSParseCandidate *c in results) {
+        NSLog(@"%@", c.node.tag);
+    }
+    NSLog(@"\n");
+    for (PSParseCandidate *candidate in results) {
+        NSString *tag = candidate.node.tag;
+        if ([tag isEqualToString:nullIntent]) {
+            return nil;
+        } else if ([tag startsWith:counterexampleIntentPrefix]) {
+            NSString *intent = [tag substringFromIndex:counterexampleIntentPrefix.length];
+            [intentsWhereCounterexamplesAlreadyMatched addObject:intent];
+        } else {
+            NSAssert(tag.length > exampleIntentPrefix.length, @"Found result tag '%@' which doesn't start with 'exampleIntentPrefix'", tag);
+            NSString *intent = [tag substringFromIndex:exampleIntentPrefix.length];
+            if (![intentsWhereCounterexamplesAlreadyMatched containsObject:intent]) {
+                return candidate; // this candidate is a plugin invocation, and we haven't already matched its counterexamples.
+            }
+        }
+    }
+    return nil;
 }
 
 - (PSPluginExampleSource *)exampleSource {
