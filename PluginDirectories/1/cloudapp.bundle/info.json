@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Share File with CloudApp",
+  "name" : "cloudapp",
+  "description" : "Upload a file to CloudApp, and copy a shareable URL to it. (Install the app from getcloudapp.com)",
+  "examples" : [
+    "upload this file to cloudapp",
+		"cloud homework1.pdf"
+  ]
+}
