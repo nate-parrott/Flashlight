@@ -293,6 +293,26 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Guilherme Ara\u00fajo",
+            "creator_url": "http://www.github.com/guilhermearaujo",
+            "description": "Generates a valid credit card number",
+            "displayName": "Credit Card Generator",
+            "examples": [
+                "visa",
+                "mastercard",
+                "amex",
+                "diners",
+                "jcb",
+                "discover",
+                "hipercard"
+            ],
+            "name": "ccgenerator",
+            "zip_url": "ccgenerator.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
             "description": "Open Chocolat Finder is open, opens the current folder/file in Chocolat.",
             "description_de": "\u00d6ffnet Chocolat. Falls der Finder gestartet ist, \u00f6ffnet es den aktuellen Ordner / Datei in Chocolat.",
             "displayName": "Open with Chocolat",
@@ -1692,6 +1712,16 @@
             "zip_url": "terminal.zip"
         },
         {
+            "description": "Search Thingiverse for 3D printable models",
+            "displayName": "Thingiverse",
+            "examples": [
+                "thing extruder upgrade",
+                "t wall plate customizer"
+            ],
+            "name": "thing",
+            "zip_url": "thing.zip"
+        },
+        {
             "categories": [
                 "Developer"
             ],
@@ -1999,19 +2029,6 @@
             ],
             "name": "wolfram-alpha",
             "zip_url": "wolfram-alpha.zip"
-        },
-        {
-            "categories": [
-                "Utilities"
-            ],
-            "description": "Create a new task in Wunderlist",
-            "displayName": "Task to Wunderlist",
-            "examples": [
-                "wunderlist do the dishes",
-                "wunderlist call mom"
-            ],
-            "name": "Wunderlist",
-            "zip_url": "Wunderlist.zip"
         },
         {
             "categories": [
