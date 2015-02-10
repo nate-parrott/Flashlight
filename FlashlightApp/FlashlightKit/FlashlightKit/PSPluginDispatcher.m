@@ -104,10 +104,6 @@
     NSString * const counterexampleIntentPrefix = @"plugin_intent/<NOT>";
     NSString * const exampleIntentPrefix = @"plugin_intent/";
     NSMutableSet *intentsWhereCounterexamplesAlreadyMatched = [NSMutableSet new];
-    for (PSParseCandidate *c in results) {
-        NSLog(@"%@", c.node.tag);
-    }
-    NSLog(@"\n");
     for (PSParseCandidate *candidate in results) {
         NSString *tag = candidate.node.tag;
         if ([tag isEqualToString:nullIntent]) {

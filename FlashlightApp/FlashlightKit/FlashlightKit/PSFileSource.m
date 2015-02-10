@@ -92,6 +92,8 @@
             MDQueryRef query = MDQueryCreate(kCFAllocatorDefault, (CFStringRef)[self MDQueryStringForSearch:searchQuery], nil, nil);
             MDQuerySetMaxCount(query, 10);
             MDQuerySetSearchScope(query, (CFArrayRef)@[(id)kMDQueryScopeComputerIndexed], 0);
+            MDQuerySetSortOrder(query, (CFArrayRef)@[(id)kMDItemFSContentChangeDate]);
+            MDQuerySetSortOptionFlagsForAttribute(query, kMDItemFSContentChangeDate, kMDQueryReverseSortOrderFlag);
             if (!MDQueryExecute(query, kMDQuerySynchronous)) {
                 NSLog(@"Search failed.");
                 return nil;
@@ -102,14 +104,15 @@
                 MDItemRef item = (MDItemRef)MDQueryGetResultAtIndex(query, i);
                 [mdItems addObject:(__bridge id)item];
             }
-            [mdItems sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            /*[mdItems sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
                 NSNumber *r1 = CFBridgingRelease(MDItemCopyAttribute((MDItemRef)obj1, kMDQueryResultContentRelevance));
                 NSNumber *r2 = CFBridgingRelease(MDItemCopyAttribute((MDItemRef)obj2, kMDQueryResultContentRelevance));
                 return [r2 compare:r1];
-            }];
+            }];*/
             NSArray *paths = [mdItems mapFilter:^id(id obj) {
                 return CFBridgingRelease(MDItemCopyAttribute((MDItemRef)obj, kMDItemPath));
             }];
+            paths = [[self class] sortPaths:paths];
             return @{
                      @"query": searchQuery,
                      @"path": paths.firstObject ? : [NSNull null],
@@ -141,7 +144,7 @@
 
 - (NSString *)MDQueryStringForSearch:(NSString *)search {
     NSString *escaped = [[[search stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"] stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"] stringByReplacingOccurrencesOfString:@"*" withString:@"\\*"];
-    return [NSString stringWithFormat:@"kMDItemDisplayName == '%@'cd", escaped];
+    return [NSString stringWithFormat:@"kMDItemFSName == '%@*'cd ", escaped];
 }
 
 + (NSArray *)selectedFinderItems:(BOOL)justFolders {
@@ -182,6 +185,28 @@
         } else {
             return nil;
         }
+    }];
+}
+
++ (NSArray *)sortPaths:(NSArray *)paths {
+    NSDictionary *modDates = [paths mapToDict:^id(__autoreleasing id *key) {
+        NSString *path = (*key);
+        *key = path;
+        return [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil][NSFileModificationDate];
+    }];
+    NSString *homeDir = NSHomeDirectory();
+    return [paths sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        BOOL homeDir1 = [obj1 startsWith:homeDir];
+        BOOL homeDir2 = [obj2 startsWith:homeDir];
+        if (homeDir1 != homeDir2) {
+            return homeDir1 ? NSOrderedAscending : NSOrderedDescending;
+        }
+        NSDate *mod1 = modDates[obj1];
+        NSDate *mod2 = modDates[obj2];
+        if (![mod1 isEqualToDate:mod2]) {
+            return -[mod1 compare:mod2];
+        }
+        return NSOrderedSame;
     }];
 }
 

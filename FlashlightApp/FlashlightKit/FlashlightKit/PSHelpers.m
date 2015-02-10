@@ -51,6 +51,16 @@
     return val;
 }
 
+- (NSDictionary *)mapToDict:(id(^)(id *key))mapper {
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithCapacity:self.count];
+    for (id obj in self) {
+        id key = obj;
+        id val = mapper(&key);
+        d[key] = val;
+    }
+    return d;
+}
+
 @end
 
 double PSLogProb(double prob) {

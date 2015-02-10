@@ -23,6 +23,8 @@ extern const double PSFreeTextProbability;
 
 - (NSString *)toJson;
 
+- (NSDictionary *)mapToDict:(id(^)(id *key))mapper;
+
 @end
 
 double PSLogProb(double prob);
