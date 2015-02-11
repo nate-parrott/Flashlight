@@ -45,7 +45,7 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
     
     self.fileEventQueue = dispatch_queue_create("-[PSPluginExampleSource fileEventQueue]", dispatch_queue_attr_make_with_qos_class(0, QOS_CLASS_BACKGROUND, 0));
     // watch the file descriptor for writes
-    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE, self.fileEventQueue);
+    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE | DISPATCH_VNODE_ATTRIB, self.fileEventQueue);
     
     __weak PSPluginExampleSource *weak_self = self;
     // call the passed block if the source is modified

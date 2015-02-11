@@ -14,7 +14,7 @@
 
 @interface PluginCellView ()
 
-@property (nonatomic) IBOutlet NSButton *settingsButton;
+@property (nonatomic) IBOutlet NSButton *settingsButton, *editButton;
 
 @end
 
@@ -33,6 +33,11 @@
         [self.loader stopAnimation:nil];
     }
     self.settingsButton.hidden = [self.plugin installing] || ![self.plugin hasOptions];
+    self.editButton.hidden = !self.plugin.isAutomatorWorkflow;
+}
+
+- (IBAction)edit:(id)sender {
+    [self.listController editAutomatorPluginNamed:self.plugin.name];
 }
 
 - (IBAction)remove:(id)sender {

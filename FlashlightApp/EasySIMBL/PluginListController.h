@@ -43,4 +43,6 @@
 
 @property (nonatomic) BOOL enabled;
 
+- (void)editAutomatorPluginNamed:(NSString *)name;
+
 @end

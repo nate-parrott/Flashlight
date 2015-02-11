@@ -260,7 +260,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     self.fileDesc = open([[self localPluginsPath] fileSystemRepresentation], O_EVTONLY);
     
     // watch the file descriptor for writes
-    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, self.fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
+    self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, self.fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE | DISPATCH_VNODE_ATTRIB, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
     
     // call the passed block if the source is modified
     __weak PluginListController *weakSelf = self;
@@ -283,13 +283,10 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     
     // at this point the dispatch source is paused, so start watching
     dispatch_resume(self.dispatchSource);
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFromDisk) name:PluginDidChangeOnDiskNotification object:nil];
 }
 
 - (void)stopWatchingPluginsDir {
     dispatch_cancel(self.dispatchSource);
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:PluginDidChangeOnDiskNotification object:nil];
 }
 
 - (void)reloadFromDisk {

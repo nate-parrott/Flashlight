@@ -7,8 +7,7 @@
 //
 
 #import "PluginEditorWindowController.h"
-
-NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNotification";
+#import <utime.h>
 
 @interface PluginEditorWindowController () <NSTextViewDelegate, NSTextFieldDelegate>
 
@@ -38,11 +37,10 @@ NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNoti
     json[@"examples"] = [self.examples.string componentsSeparatedByString:@"\n"];
     [[NSJSONSerialization dataWithJSONObject:json options:0 error:nil] writeToFile:[self.pluginPath stringByAppendingPathComponent:@"info.json"] atomically:YES];
     [self.examples.string writeToFile:[self.pluginPath stringByAppendingPathComponent:@"examples.txt"] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    utime(self.pluginPath.stringByDeletingLastPathComponent.UTF8String, NULL);
     
     self.saveTimer = nil;
     self.pendingSave = NO;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
 }
 #pragma mark Actions
 - (IBAction)edited:(id)sender {
@@ -61,7 +59,6 @@ NSString * const PluginDidChangeOnDiskNotification = @"PluginDidChangeOnDiskNoti
     self.pendingSave = NO;
     [self.saveTimer invalidate];
     self.saveTimer = nil;
-    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
     [self close];
 }
 #pragma mark NSTextViewDelegate
