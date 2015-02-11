@@ -2,7 +2,7 @@ import urllib
 import contacts
 from applescript import asrun, asquote
 
-def send_mail(recipients, subject, body, attach_selected_files):
+def send_mail(recipients, subject, body, attach_file_path):
     emails = []
     address_book = contacts.address_book_to_list()
     for recip in recipients:
@@ -16,15 +16,9 @@ def send_mail(recipients, subject, body, attach_selected_files):
     for email in emails:
         recipient_lines.append("make new to recipient with properties {address:%s}"%(asquote(email)))
     
-    file_command = """repeat with aFile in selectedFiles
-            make new attachment with properties {file name: (aFile as alias)} at after last paragraph of content
-        end repeat""" if attach_selected_files else ""
+    file_command = u"make new attachment with properties {file name: (POSIX file %s as alias)} at after last paragraph of content"%(asquote(attach_file_path)) if attach_file_path else ""
     
-    script = """
-    tell application "Finder"
-      set selectedFiles to selection
-    end tell
-    
+    script = u"""
     tell application "Mail"
       activate
       set mgMessage to make new outgoing message with properties {subject:%s, content:%s, visible:true}
