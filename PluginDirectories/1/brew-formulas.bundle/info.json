@@ -1,0 +1,15 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Search brewformulas.org",
+  "name" : "brew-formulas",
+  "description" : "Search brewformulas.org for Homebrew Formulas.",
+  "examples" : [
+    "brew formulas python",
+    "brew gcc",
+	"bf ruby"
+  ],
+  "creator_name": "Adrian Lanzafame",
+  "creator_url": "https://github.com/Lanzafame"
+}
