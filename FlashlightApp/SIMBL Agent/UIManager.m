@@ -15,6 +15,7 @@
 @property (nonatomic) NSStatusItem *statusItem;
 @property (nonatomic) IBOutlet NSMenu *statusMenu;
 @property (nonatomic) IBOutlet NSMenu *pluginExamples;
+@property (nonatomic) BOOL statusItemShown;
 
 @end
 
@@ -23,12 +24,33 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
-    [self.statusItem setHighlightMode:YES];
-    NSImage *image = [NSImage imageNamed:@"StatusItemOn"];
-    [image setTemplate:YES];
-    self.statusItem.image = image;
-    self.statusItem.menu = self.statusMenu;
+    [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(settingsChanged:) name:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight"];
+    [self settingsChanged:nil];
+}
+
+- (void)settingsChanged:(id)notif {
+    NSLog(@"SETTINGS CHANGED");
+    CFPreferencesAppSynchronize(CFSTR("com.nateparrott.Flashlight"));
+    Boolean exists;
+    Boolean showMenuItem = CFPreferencesGetAppBooleanValue(CFSTR("ShowMenuItem"), CFSTR("com.nateparrott.Flashlight"), &exists);
+    self.statusItemShown = showMenuItem || !exists;
+}
+
+- (void)setStatusItemShown:(BOOL)statusItemShown {
+    if (statusItemShown != _statusItemShown) {
+        _statusItemShown = statusItemShown;
+        if (statusItemShown) {
+            self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+            [self.statusItem setHighlightMode:YES];
+            NSImage *image = [NSImage imageNamed:@"StatusItemOn"];
+            [image setTemplate:YES];
+            self.statusItem.image = image;
+            self.statusItem.menu = self.statusMenu;
+        } else {
+            [[NSStatusBar systemStatusBar] removeStatusItem:self.statusItem];
+            self.statusItem = nil;
+        }
+    }
 }
 
 - (IBAction)managePlugins:(id)sender {
@@ -77,6 +99,10 @@
 
 - (void)openExample:(NSMenuItem *)sender {
     
+}
+
+- (IBAction)hideThisMenu:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"flashlight://preferences/menuBarItem"]];
 }
 
 @end

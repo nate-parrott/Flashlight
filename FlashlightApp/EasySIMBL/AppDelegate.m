@@ -20,6 +20,8 @@
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
 @property (nonatomic,weak) IBOutlet NSTextField *versionLabel, *searchAnything;
 @property (nonatomic,weak) IBOutlet NSButton *openGithub, *requestPlugin, *leaveFeedback;
+@property (nonatomic,weak) IBOutlet NSWindow *aboutWindow;
+@property (nonatomic,weak) IBOutlet NSButton *menuBarItemPreferenceButton;
 
 @end
 
@@ -47,7 +49,7 @@
     
     [self checkSpotlightVersion];
     
-    [self setupURLHandling];
+    [self setupDefaults];
     
     self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     
@@ -116,8 +118,13 @@
     self.openGithub.stringValue = NSLocalizedString(@"Contribute on GitHub", @"");
     self.requestPlugin.stringValue = NSLocalizedString(@"Request a Plugin", @"");
     self.searchAnything.stringValue = NSLocalizedString(@"Search anything.", @"");
+    self.menuBarItemPreferenceButton.stringValue = NSLocalizedString(@"Show menu bar item", @"");
+    [self.menuBarItemPreferenceButton sizeToFit];
+    self.menuBarItemPreferenceButton.frame = NSMakeRect(self.menuBarItemPreferenceButton.superview.bounds.size.width/2 - self.menuBarItemPreferenceButton.frame.size.width/2, self.menuBarItemPreferenceButton.frame.origin.y, self.menuBarItemPreferenceButton.frame.size.width, self.menuBarItemPreferenceButton.frame.size.height);
     
     [UpdateChecker shared]; // begin fetch
+    
+    [self setupURLHandling];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -300,7 +307,34 @@
             [self.pluginListController showCategory:parts[1]];
         } else if (parts.count == 1 && [parts[0] isEqualToString:@"search"]) {
             [self.pluginListController showSearch:query[@"q"]];
+        } else if (parts.count >= 1 && [parts[0] isEqualToString:@"preferences"]) {
+            if (parts.count == 2 && [parts[1] isEqualToString:@"menuBarItem"]) {
+                [self.aboutWindow makeKeyAndOrderFront:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    // in case we're mid-launch — we don't want the main window to be made key above this window
+                    [self.aboutWindow makeKeyAndOrderFront:nil];
+                });
+            }
         }
     }
 }
+#pragma mark Preferences
+- (void)setupDefaults {
+    NSDictionary *defaults = @{
+                               @"ShowMenuItem": @YES
+                               };
+    for (NSString *key in defaults) {
+        if (![[NSUserDefaults standardUserDefaults] valueForKey:key]) {
+            [[NSUserDefaults standardUserDefaults] setValue:defaults[key] forKey:key];
+        }
+    }
+}
+
+- (IBAction)showMenuBarItemPressed:(id)sender {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight" userInfo:nil options:NSNotificationPostToAllSessions | NSNotificationDeliverImmediately];
+    });
+}
+
 @end

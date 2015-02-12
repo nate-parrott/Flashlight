@@ -348,7 +348,9 @@
         </menu>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <outlet property="aboutWindow" destination="Nbs-13-Twb" id="JQi-Kg-U2G"/>
                 <outlet property="leaveFeedback" destination="YyB-xf-RjT" id="MGc-ch-NJm"/>
+                <outlet property="menuBarItemPreferenceButton" destination="Llk-bz-SPb" id="grz-AH-VkL"/>
                 <outlet property="openGithub" destination="no0-HV-O9k" id="12n-tY-kFy"/>
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="requestPlugin" destination="QeJ-hd-3A1" id="AK4-6B-Nzq"/>
@@ -591,23 +593,23 @@
             <point key="canvasLocation" x="202.5" y="588"/>
         </customView>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="109" y="138" width="242" height="333"/>
+            <rect key="contentRect" x="109" y="138" width="242" height="361"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="242" height="260"/>
             <value key="maxSize" type="size" width="242" height="260"/>
             <view key="contentView" id="ML2-hK-xgc">
-                <rect key="frame" x="0.0" y="-1" width="242" height="333"/>
+                <rect key="frame" x="0.0" y="-5" width="242" height="361"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bs8-1N-RgN">
-                        <rect key="frame" x="75" y="221" width="92" height="92"/>
+                        <rect key="frame" x="75" y="249" width="92" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="QLY-QW-30e"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="b4m-8B-Vhn">
-                        <rect key="frame" x="18" y="161" width="206" height="30"/>
+                        <rect key="frame" x="18" y="189" width="206" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Flashlight" id="CKY-mr-H4g">
                             <font key="font" size="25" name="HelveticaNeue-Light"/>
@@ -616,7 +618,7 @@
                         </textFieldCell>
                     </textField>
                     <button id="no0-HV-O9k">
-                        <rect key="frame" x="38" y="82" width="166" height="29"/>
+                        <rect key="frame" x="38" y="110" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Contribute on GitHub" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="P0e-Mj-nLE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -627,7 +629,7 @@
                         </connections>
                     </button>
                     <button id="YyB-xf-RjT">
-                        <rect key="frame" x="38" y="50" width="166" height="29"/>
+                        <rect key="frame" x="38" y="78" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Leave Feedback" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="NO4-GD-LyW">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -638,7 +640,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gNj-56-AoU">
-                        <rect key="frame" x="18" y="123" width="206" height="17"/>
+                        <rect key="frame" x="18" y="151" width="206" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Search anything." id="Zut-6I-UVj">
                             <font key="font" metaFont="system"/>
@@ -647,7 +649,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="v99-pH-dRh">
-                        <rect key="frame" x="18" y="145" width="206" height="11"/>
+                        <rect key="frame" x="18" y="173" width="206" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version ?.??" id="kFB-vx-lDm">
                             <font key="font" metaFont="miniSystem"/>
@@ -656,7 +658,7 @@
                         </textFieldCell>
                     </textField>
                     <button id="QeJ-hd-3A1">
-                        <rect key="frame" x="38" y="17" width="166" height="29"/>
+                        <rect key="frame" x="38" y="45" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Request a Plugin" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="b4y-N1-H7G">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -666,9 +668,21 @@
                             <action selector="requestAPlugin:" target="494" id="zBI-z8-sAl"/>
                         </connections>
                     </button>
+                    <button id="Llk-bz-SPb">
+                        <rect key="frame" x="38" y="18" width="166" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="check" title="Show menu bar icon" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="AtZ-Rw-Wyh">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showMenuBarItemPressed:" target="494" id="ykO-0C-Nv9"/>
+                            <binding destination="702" name="value" keyPath="values.ShowMenuItem" id="PE1-lx-tPa"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-242" y="521.5"/>
+            <point key="canvasLocation" x="-242" y="535.5"/>
         </window>
         <scrollView autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
             <rect key="frame" x="0.0" y="0.0" width="454" height="448"/>

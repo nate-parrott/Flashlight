@@ -1163,11 +1163,29 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 						<string key="NSAction">submenuAction:</string>
-						<reference key="NSTarget"/>
+						<reference key="NSTarget" ref="701433788"/>
 						<object class="NSMenu" key="NSSubmenu" id="701433788">
 							<string key="NSTitle"/>
 							<array class="NSMutableArray" key="NSMenuItems"/>
 						</object>
+					</object>
+					<object class="NSMenuItem" id="191023024">
+						<reference key="NSMenu" ref="1043790343"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="1004967477">
+						<reference key="NSMenu" ref="1043790343"/>
+						<string key="NSTitle">Hide this menu...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
 				</array>
 			</object>
@@ -1701,6 +1719,14 @@
 						<reference key="destination" ref="701433788"/>
 					</object>
 					<int key="connectionID">475</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">hideThisMenu:</string>
+						<reference key="source" ref="319322392"/>
+						<reference key="destination" ref="1004967477"/>
+					</object>
+					<int key="connectionID">480</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -2568,6 +2594,8 @@
 							<reference ref="847989738"/>
 							<reference ref="706656518"/>
 							<reference ref="412134391"/>
+							<reference ref="1004967477"/>
+							<reference ref="191023024"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -2609,6 +2637,16 @@
 						<reference key="object" ref="701433788"/>
 						<array class="NSMutableArray" key="children"/>
 						<reference key="parent" ref="412134391"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">478</int>
+						<reference key="object" ref="1004967477"/>
+						<reference key="parent" ref="1043790343"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">479</int>
+						<reference key="object" ref="191023024"/>
+						<reference key="parent" ref="1043790343"/>
 					</object>
 				</array>
 			</object>
@@ -2732,6 +2770,8 @@
 				<string key="463.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="468.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="471.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="478.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="479.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2753,7 +2793,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">477</int>
+			<int key="maxID">480</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2777,11 +2817,16 @@
 					<string key="className">UIManager</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="getNewPlugins:">id</string>
+						<string key="hideThisMenu:">id</string>
 						<string key="managePlugins:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="getNewPlugins:">
 							<string key="name">getNewPlugins:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hideThisMenu:">
+							<string key="name">hideThisMenu:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="managePlugins:">
