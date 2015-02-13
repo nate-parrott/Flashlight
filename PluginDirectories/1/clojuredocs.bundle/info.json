@@ -1,0 +1,13 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Search ClojureDocs.org",
+  "name" : "clojuredocs",
+  "description" : "Search ClojureDocs.org for Clojure documentation.",
+  "examples" : [
+    "clojure docs map",
+    "clj docs zip",
+	"cljdocs partial"
+  ]
+}
