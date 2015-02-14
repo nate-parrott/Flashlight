@@ -1,11 +1,12 @@
 {
   "categories" : [
-    "Search"
+    "Language"
   ],
   "displayName" : "Alc 英辞郎",
   "name" : "alc",
   "description" : "This is an example plugin",
   "examples" : [
-    "alc hello world",
+    "alc false memory",
+    "eow motor skill"
   ]
 }
