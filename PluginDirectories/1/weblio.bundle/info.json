@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Language"
+  ],
+  "displayName" : "weblio dictionary",
+  "name" : "weblio",
+  "description" : "Search definition in Weblio dictionary",
+  "examples" : [
+    "weblio perception",
+    "woblio cerebral cortex"
+  ]
+}
