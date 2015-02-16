@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities",
+    "Developer",
+    "Javascript"
+  ],
+  "displayName" : "Evaluate JS",
+  "name" : "js",
+  "description" : "This is an example plugin",
+  "examples" : [
+    "js [3, 2, 1].sort(function(a, b){return a - b;})",
+    "eval /foo/.test('foobar')"
+  ]
+}

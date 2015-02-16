@@ -1,0 +1,3 @@
+js ~js(a)
+eval ~js(a)
+e ~js(a)
