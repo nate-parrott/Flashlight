@@ -1,0 +1,3 @@
+npm ~npmquery(a)
+search npm for ~npmquery(a)
+~npmquery(a) on npm
