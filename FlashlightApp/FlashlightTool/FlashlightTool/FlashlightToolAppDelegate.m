@@ -69,7 +69,9 @@
     
     self.updateInfoLabel.stringValue = [NSString stringWithFormat:@"FlashlightTool %@", [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"]];
     
-    [self.window makeKeyAndOrderFront:nil];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.window makeKeyAndOrderFront:nil];
+    });
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -80,6 +82,15 @@
     if (![sender.stringValue isEqualToString:self.lastQuery]) {
         self.lastQuery = sender.stringValue;
         [self.queryEngine updateQuery:sender.stringValue];
+    }
+}
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
+    if (commandSelector == @selector(insertNewline:)) {
+        [self openTargetResultWithOptions:0];
+        return YES;
+    } else {
+        return NO;
     }
 }
 
@@ -109,16 +120,6 @@
 
 - (void)windowWillClose:(NSNotification *)notification {
     [[NSApplication sharedApplication] terminate:nil];
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)obj {
-    __weak FlashlightToolAppDelegate *weakSelf = self;
-    [self.resultView.result pressEnter:self.resultView errorCallback:^(NSString *error) {
-        NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
-        [d removeObjectForKey:@"Plugin.py run() Errors"];
-        if (error) d[@"Plugin.py run() Errors"] = error;
-        weakSelf.errorSections = d;
-    }];
 }
 
 #pragma mark Actions
@@ -175,6 +176,16 @@
 
 - (IBAction)checkForUpdate:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlighttool.42pag.es"]];
+}
+
+- (void)openTargetResultWithOptions:(unsigned long long)options {
+    __weak FlashlightToolAppDelegate *weakSelf = self;
+    [self.resultView.result pressEnter:self.resultView errorCallback:^(NSString *error) {
+        NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
+        [d removeObjectForKey:@"Plugin.py run() Errors"];
+        if (error) d[@"Plugin.py run() Errors"] = error;
+        weakSelf.errorSections = d;
+    }];
 }
 
 @end

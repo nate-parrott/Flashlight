@@ -7,6 +7,20 @@
 //
 
 #import "FlashlightWebScriptObject.h"
+#import <AppKit/AppKit.h>
+
+@interface _Flashlight_DummyClass : NSObject
+
+@end
+
+@implementation _Flashlight_DummyClass
+
+- (void)openTargetResultWithOptions:(unsigned long long)ops {
+    
+}
+
+@end
+
 
 @implementation FlashlightWebScriptObject
 
@@ -31,8 +45,17 @@
     return grepOutput;
 }
 
+- (void)invoke {
+    NSObject *appDelegate = [NSApplication sharedApplication].delegate;
+    if ([appDelegate respondsToSelector:@selector(openTargetResultWithOptions:)]) {
+        [(id)appDelegate openTargetResultWithOptions:0];
+    }
+}
+
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)sel {
     if(sel == @selector(bash:))
+        return NO;
+    if(sel == @selector(invoke))
         return NO;
     return YES;
 }

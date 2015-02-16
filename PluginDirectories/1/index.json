@@ -60,6 +60,19 @@
         },
         {
             "categories": [
+                "Language"
+            ],
+            "description": "This is an example plugin",
+            "displayName": "Alc \u82f1\u8f9e\u90ce",
+            "examples": [
+                "alc false memory",
+                "eow motor skill"
+            ],
+            "name": "alc",
+            "zip_url": "alc.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Alibaba (ab) from Spotlight.",
@@ -242,6 +255,22 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "creator_name": "Adrian Lanzafame",
+            "creator_url": "https://github.com/Lanzafame",
+            "description": "Search brewformulas.org for Homebrew Formulas.",
+            "displayName": "Search brewformulas.org",
+            "examples": [
+                "brew formulas python",
+                "brew gcc",
+                "bf ruby"
+            ],
+            "name": "brew-formulas",
+            "zip_url": "brew-formulas.zip"
+        },
+        {
+            "categories": [
                 "Utilities",
                 "Featured"
             ],
@@ -336,6 +365,20 @@
             ],
             "name": "click-menu",
             "zip_url": "click-menu.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Search ClojureDocs.org for Clojure documentation.",
+            "displayName": "Search ClojureDocs.org",
+            "examples": [
+                "clojure docs map",
+                "clj docs zip",
+                "cljdocs partial"
+            ],
+            "name": "clojuredocs",
+            "zip_url": "clojuredocs.zip"
         },
         {
             "categories": [
@@ -1915,6 +1958,19 @@
             ],
             "name": "weather",
             "zip_url": "weather.zip"
+        },
+        {
+            "categories": [
+                "Language"
+            ],
+            "description": "Search definition in Weblio dictionary",
+            "displayName": "weblio dictionary",
+            "examples": [
+                "weblio perception",
+                "woblio cerebral cortex"
+            ],
+            "name": "weblio",
+            "zip_url": "weblio.zip"
         },
         {
             "categories": [
