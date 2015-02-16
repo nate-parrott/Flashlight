@@ -62,7 +62,7 @@
             "categories": [
                 "Language"
             ],
-            "description": "This is an example plugin",
+            "description": "\u82f1\u8f9e\u90ce on the WEB\u691c\u7d22\u30d7\u30e9\u30b0\u30a4\u30f3",
             "displayName": "Alc \u82f1\u8f9e\u90ce",
             "examples": [
                 "alc false memory",
@@ -412,13 +412,14 @@
                 "Art",
                 "Developer"
             ],
-            "description": "Opens the OS X color picker, then copies the result as hex or UIColor.",
+            "description": "Opens the OS X color picker, then copies the result as hex, RGB, RGBA or UIColor. Plus, preview any hex color.",
             "description_de": "\u00d6ffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
             "displayName": "Developer color copier",
             "displayName_de": "Entwickler Farbauswahl",
             "examples": [
-                "copy color",
-                "copy color as UIColor"
+                "pick color",
+                "copy color as UIColor",
+                "#00caa2"
             ],
             "examples_de": [
                 "Kopiere Farbe",
@@ -1327,6 +1328,33 @@
             "categories": [
                 "Utilities"
             ],
+            "displayName": "Create a Note",
+            "examples": [
+                "note from clipboard",
+                "new note: 718 788 1234"
+            ],
+            "name": "notes",
+            "zip_url": "notes.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Node.js",
+                "NPM"
+            ],
+            "displayName": "NPM Search",
+            "examples": [
+                "npm file-dependencies",
+                "search npm for keychain",
+                "smc on npm"
+            ],
+            "name": "npm",
+            "zip_url": "npm.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
             "creator": "vicugna",
             "creator_url": "http://vicugna.github.io",
             "description": "Send OmniFocus task to inbox",
@@ -1471,6 +1499,19 @@
             ],
             "name": "remind-me",
             "zip_url": "remind-me.zip"
+        },
+        {
+            "categories": [
+                "System"
+            ],
+            "description": "Search for files and reveal them in Finder, instead of opening them.",
+            "displayName": "Reveal in Finder",
+            "examples": [
+                "reveal homework1.pdf",
+                "show Keynote in finder"
+            ],
+            "name": "reveal-in-finder",
+            "zip_url": "reveal-in-finder.zip"
         },
         {
             "categories": [
@@ -1964,7 +2005,7 @@
                 "Language"
             ],
             "description": "Search definition in Weblio dictionary",
-            "displayName": "weblio dictionary",
+            "displayName": "Weblio dictionary",
             "examples": [
                 "weblio perception",
                 "woblio cerebral cortex"
@@ -2101,7 +2142,7 @@
         },
         {
             "categories": [
-                "Developer"
+                "Utilities"
             ],
             "description": "Quick access to a couple common commands.",
             "displayName": "Xcode Shortcuts",
