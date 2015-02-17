@@ -15,8 +15,7 @@ def run(js):
     ascript = '''
     tell application "Terminal"
         activate
-        delay 1
-        do script {0} in front window
+        do script {0}
     end tell
     '''.format(asquote('$(which node) -e "{0}" -p'.format(quote(js.encode('utf8')))))
 
