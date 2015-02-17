@@ -1,3 +1,5 @@
+import os
+
 def results(fields, original_query):
   js = fields['~js']
   html = open("node.html").read().replace("<!--JS-->", js)
@@ -8,5 +10,17 @@ def results(fields, original_query):
   }
 
 def run(js):
-    return
+    from applescript import asrun, asquote
+    from pipes import quote
+    ascript = '''
+    tell application "Terminal"
+        activate
+        delay 1
+        do script {0} in front window
+    end tell
+    '''.format(asquote('$(which node) -e "{0}" -p'.format(quote(js.encode('utf8')))))
 
+    asrun(ascript)
+
+if __name__=='__main__':
+  run("3+2")
