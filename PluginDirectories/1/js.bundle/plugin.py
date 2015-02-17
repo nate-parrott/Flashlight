@@ -17,7 +17,7 @@ def run(js):
         activate
         do script {0}
     end tell
-    '''.format(asquote('$(which node) -e "{0}" -p'.format(quote(js.encode('utf8')))))
+    '''.format(asquote('$(which node) -e "{0}" -p || echo "node.js is not installed."'.format(quote(js.encode('utf8')))))
 
     asrun(ascript)
 
