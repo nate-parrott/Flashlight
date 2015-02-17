@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities",
+    "Language"
+  ],
+  "displayName" : "Speller",
+  "name" : "speller",
+  "description" : "Spell check for english",
+  "examples" : [
+    "spell throuh",
+    "check spelling for wieght",
+    "please spell carosle"
+  ]
+}
