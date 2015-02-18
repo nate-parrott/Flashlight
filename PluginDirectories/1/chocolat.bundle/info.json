@@ -4,7 +4,7 @@
 	"displayName_de": "Mit Chocolat öffnen",
 	"description": "Open Chocolat Finder is open, opens the current folder/file in Chocolat.",
 	"description_de": "Öffnet Chocolat. Falls der Finder gestartet ist, öffnet es den aktuellen Ordner / Datei in Chocolat.",
-	"examples": ["choc"],
+	"examples": ["choc", "choc desktop"],
 	"iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
 	"categories": ["Developer"]
 }
