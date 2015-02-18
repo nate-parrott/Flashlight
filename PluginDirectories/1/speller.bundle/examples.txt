@@ -1,0 +1,3 @@
+spell ~word(throuh)
+check spelling for ~word(wieght)
+please spell ~word(carosle)
