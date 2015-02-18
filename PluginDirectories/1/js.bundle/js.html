@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="highlight/styles/<!--THEME-->.css">
+        <style>
+            pre {
+                white-space: pre-wrap;
+            }
+            hr {
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <pre id="expression"><code class="js"><!--JS--></code></pre>
+        <hr>
+        <pre id="result"></pre>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script>
+            window.onerror = function error(message) {
+                var resultElement = document.querySelector('#result');
+                resultElement.style.color = '#e74c3c';
+                resultElement.innerHTML = message;
+
+            }
+        </script>
+        <script>
+            var expression = "<!--JSEVAL-->";
+            var result = JSON.stringify(eval(expression));
+            document.querySelector('#result').innerHTML = result;
+        </script>
+    </body>
+</html>
