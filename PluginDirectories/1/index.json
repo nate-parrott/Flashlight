@@ -347,7 +347,8 @@
             "displayName": "Open with Chocolat",
             "displayName_de": "Mit Chocolat \u00f6ffnen",
             "examples": [
-                "choc"
+                "choc",
+                "choc desktop"
             ],
             "iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
             "name": "choc",
@@ -1115,6 +1116,21 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Developer",
+                "Javascript"
+            ],
+            "description": "Evaluates javascript snippets in Spotligh",
+            "displayName": "Evaluate JS",
+            "examples": [
+                "js [3, 2, 1].sort(function(a, b){return a - b;})",
+                "eval /foo/.test('foobar')"
+            ],
+            "name": "js",
+            "zip_url": "js.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Search"
             ],
@@ -1663,6 +1679,21 @@
             ],
             "name": "slack",
             "zip_url": "slack.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Language"
+            ],
+            "description": "Spell check for english",
+            "displayName": "Speller",
+            "examples": [
+                "spell throuh",
+                "check spelling for wieght",
+                "please spell carosle"
+            ],
+            "name": "speller",
+            "zip_url": "speller.zip"
         },
         {
             "categories": [
