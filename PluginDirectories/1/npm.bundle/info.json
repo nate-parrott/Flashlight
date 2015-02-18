@@ -2,5 +2,5 @@
 	"name": "npm",
 	"displayName": "NPM Search",
 	"examples": ["npm file-dependencies", "search npm for keychain", "smc on npm"],
-	"categories": ["Search", "Node.js", "NPM"]
+	"categories": ["Search", "Developer"]
 }

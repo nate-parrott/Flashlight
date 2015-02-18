@@ -1,10 +1,11 @@
 import urllib, json, i18n
 
 def results(parsed, original_query):
-    search_url = "http://pocket.dict.cc/?s=" + urllib.quote_plus(parsed["~query"])
+    param = parsed["~query"].encode('UTF-8');
+    search_url = "http://pocket.dict.cc/?s=" + urllib.quote_plus(param)
     
     return {
-        "title": i18n.localstr("Translate '{0}' using dict.cc").encode("utf-8").format(parsed["~query"]),
+        "title": i18n.localstr("Translate '{0}' using dict.cc").encode("utf-8").format(param),
         "run_args": [search_url],
         "html": """
         <script>
