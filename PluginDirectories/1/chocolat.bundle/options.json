@@ -1,0 +1,17 @@
+{
+    "options": [
+        {
+            "type": "table",
+            "text": "Aliases:",
+            "key": "aliases",
+            "columns": [
+                {"text": "Name", "key": "name"},
+                {"text": "Path", "key": "path"}
+            ]
+        },
+        {
+            "type": "hint",
+            "text": "When searching you can enter an alias to open it using Chocolat."
+        }
+    ]
+}

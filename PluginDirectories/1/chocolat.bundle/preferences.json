@@ -1,0 +1,12 @@
+{
+  "aliases" : [
+    {
+      "name" : "documents",
+      "path" : "~\/Documents"
+    },
+    {
+      "name" : "desktop",
+      "path" : "~\/Desktop"
+    }
+  ]
+}
