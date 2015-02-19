@@ -2,7 +2,7 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-        ["Amazon", "~amazonquery", "http://www.amazon.com/s/ref=nb_sb_noss?field-keywords="]
+        ["Amazon", "~amazonquery", "http://www.amazon.com/s/?field-keywords="]
     ]
     for name, key, url in search_specs:
         if key in parsed:
