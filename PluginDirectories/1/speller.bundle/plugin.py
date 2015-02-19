@@ -64,6 +64,7 @@ def results(fields, original_query):
     return {
         "title": "'{0}'".format(term),
         "run_args": [suggestions[0]] if len(suggestions)>0 else [term],
+        "webview_transparent_background": True,
         "html": to_html(ok, term, n, suggestions)
     }
 
