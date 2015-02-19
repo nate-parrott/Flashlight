@@ -1,0 +1,2 @@
+fpm ~id(a)
+flashpm ~id(a)

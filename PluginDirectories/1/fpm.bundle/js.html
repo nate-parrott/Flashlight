@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+            }
+            pre {
+                white-space: pre-wrap;
+            }
+            hr {
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            h1 {
+                font-size: 18px;
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+            .description {
+                font-size: 14px;
+                font-weight: normal;
+            }
+            .owner-pic {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: inline-block;
+            }
+            .info {
+                font-size: 14px;
+                font-weight: 200;
+            }
+            .owner-pic, .owner-info {
+                float: left;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{USER}/{REPO}</h1>
+        <p class="description"></p>
+        <div class="owner-pic"></div>
+        <div class="owner-info">
+            <div class="info owner-name"></div>
+            <div class="info owner-email"></div>
+            <div class="info owner-location"></div>
+        </div>
+        <pre id="result"></pre>
+        <script>
+            window.onerror = function error(message) {
+                var resultElement = document.querySelector('#result');
+                resultElement.style.color = '#e74c3c';
+                resultElement.innerHTML = message;
+
+            }
+        </script>
+        <script>
+            window.isFunction = function(fn) {
+                return typeof fn === 'function';
+            };
+            window.ajax = function(options){
+                var req = new window.XMLHttpRequest();
+                if(options.auth && options.auth.user && options.auth.password) {
+                    req.setRequestHeader("Authorization", "Basic " + btoa(options.auth.user + ':' + options.auth.password));
+                }
+                req.open((options.method || 'GET').toUpperCase(), options.url, true);
+                req.onreadystatechange = function (aEvt) {
+                    var data, contentType;
+                    if (req.readyState === 4 && req.status === 200) {
+                        //Success
+                        if(isFunction(options.success)) {
+                            data = req.responseText;
+                            contentType = req.getResponseHeader('Content-Type');
+                            if(contentType && /json/i.test(contentType)) {
+                                data = JSON.parse(data);
+                            }
+                            options.success.call(req, data);
+                        }
+                    }
+                    else {
+                        //Failure
+                        if(isFunction(options.error)) {
+                            options.error.call(req);
+                        }
+                    }
+                };
+                req.send(null);
+            };
+
+            ajax({
+                url: 'https://api.github.com/repos/{USER}/{REPO}',
+                auth: {
+                    user: !!+'{USERNAME}',
+                    password: !!+'{PASSWORD}'
+                },
+                success: function(data){
+                    document.querySelector('.description').innerHTML = data && data.description;
+                }
+            });
+            ajax({
+                url: 'https://api.github.com/users/{USER}',
+                auth: {
+                    user: !!+'{USERNAME}',
+                    password: !!+'{PASSWORD}'
+                },
+                success: function(data){
+                    document.querySelector('.owner-name').innerHTML = data && data.name;
+                    document.querySelector('.owner-email').innerHTML = data && data.email;
+                    document.querySelector('.owner-location').innerHTML = data && data.location;
+                    document.querySelector('.owner-pic').style.backgroundImage = data && data.avatar_url && 'url(' + data.avatar_url + ')';
+                }
+            })
+        </script>
+    </body>
+</html>

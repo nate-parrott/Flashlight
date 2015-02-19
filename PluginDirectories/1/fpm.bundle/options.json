@@ -1,0 +1,27 @@
+{
+    "options": [
+        {
+            "text": "Github Username",
+            "key": "username",
+            "type": "text"
+        },
+        {
+            "text": "Github Password",
+            "key": "password",
+            "type": "text"
+        },
+        {
+            "type": "hint",
+            "text": "Set your github credentials"
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "buttons",
+            "buttons": [
+                {"text": "Contact the author", "url": "http://marcon.me"}
+            ]
+        }
+    ]
+}
