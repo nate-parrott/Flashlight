@@ -30,6 +30,7 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 display: inline-block;
+                background-image: url(mark-github.svg);
             }
             .info {
                 font-size: 14px;
@@ -43,7 +44,7 @@
     </head>
     <body>
         <h1>{USER}/{REPO}</h1>
-        <p class="description"></p>
+        <p class="description">Loading information...</p>
         <div class="owner-pic"></div>
         <div class="owner-info">
             <div class="info owner-name"></div>
@@ -65,10 +66,10 @@
             };
             window.ajax = function(options){
                 var req = new window.XMLHttpRequest();
+                req.open((options.method || 'GET').toUpperCase(), options.url, true);
                 if(options.auth && options.auth.user && options.auth.password) {
                     req.setRequestHeader("Authorization", "Basic " + btoa(options.auth.user + ':' + options.auth.password));
                 }
-                req.open((options.method || 'GET').toUpperCase(), options.url, true);
                 req.onreadystatechange = function (aEvt) {
                     var data, contentType;
                     if (req.readyState === 4 && req.status === 200) {
@@ -92,27 +93,49 @@
                 req.send(null);
             };
 
+            function reportError(){
+
+            }
+
             ajax({
-                url: 'https://api.github.com/repos/{USER}/{REPO}',
+                url: 'https://api.github.com/repos/{USER}/{REPO}/contents/info.json',
                 auth: {
-                    user: !!+'{USERNAME}',
-                    password: !!+'{PASSWORD}'
+                    user: '{USERNAME}',
+                    password: '{PASSWORD}'
                 },
                 success: function(data){
-                    document.querySelector('.description').innerHTML = data && data.description;
+                    //info.json is there
+                    var info = data.content && atob(data.content.replace(/\n/g, ''));
+                    try {
+                        info = JSON.parse(info);
+                        document.querySelector('.description').innerHTML = info.description;
+                    } catch(e) {
+                        reportError();
+                    }
+                },
+                error: function(e){
+                    if(this.status === 404) {
+                        document.querySelector('.description').innerHTML = 'The repository does not exist or is not a Flashlight plugin.';
+                    }
                 }
             });
             ajax({
                 url: 'https://api.github.com/users/{USER}',
                 auth: {
-                    user: !!+'{USERNAME}',
-                    password: !!+'{PASSWORD}'
+                    user: '{USERNAME}',
+                    password: '{PASSWORD}'
                 },
                 success: function(data){
                     document.querySelector('.owner-name').innerHTML = data && data.name;
                     document.querySelector('.owner-email').innerHTML = data && data.email;
                     document.querySelector('.owner-location').innerHTML = data && data.location;
                     document.querySelector('.owner-pic').style.backgroundImage = data && data.avatar_url && 'url(' + data.avatar_url + ')';
+                },
+                error: function(e){
+                    if(this.status === 404) {
+                        document.querySelector('.owner-name').innerHTML = 'This Github user does not exist.';
+
+                    }
                 }
             })
         </script>
