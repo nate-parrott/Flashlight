@@ -1,11 +1,7 @@
 def results(fields, original_query):
-  import json
   id = fields['~id']
-  settings = json.load(open('preferences.json'))
-  username = settings['username']
-  password = settings['password']
   parsed = id.split('/')
-  html = open("js.html").read().replace("{USER}", parsed[0]).replace("{REPO}", parsed[1]).replace('{USERNAME}', username).replace('{PASSWORD}', password)
+  html = open("js.html").read().replace("{USER}", parsed[0]).replace("{REPO}", parsed[1])
   return {
     "title": "Flashpm '{0}'".format(id),
     "run_args": [id],
