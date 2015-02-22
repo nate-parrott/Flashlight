@@ -59,10 +59,15 @@
             d.querySelector('.description').innerHTML = info.description;
             d.querySelector('.version').innerHTML = 'Version: ' + (info.version || 'unknown');
             d.querySelector('.categories').innerHTML = 'Categories: ' + ((info.categories && info.categories.join(', ')) || 'unknown');
+            if(info.examples) {
+                d.querySelector('.examples-title').style.display = 'block';
+                d.querySelector('.examples').innerHTML = info.examples.join('\n');
+            }
         },
         error: function(e){
             if(this.status === 404) {
                 d.querySelector('.description').innerHTML = 'The repository does not exist or is not a Flashlight plugin.';
+                d.querySelector('.description').classList.add('error');
             }
         }
     });

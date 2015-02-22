@@ -9,6 +9,13 @@
             pre {
                 white-space: pre-wrap;
             }
+            pre.examples {
+                white-space: pre-wrap;
+                margin:0;
+                padding: 3px;
+                background: #ecf0f1;
+                border-radius: 3px;
+            }
             hr {
                 border: 0;
                 height: 0;
@@ -19,6 +26,9 @@
                 font-size: 18px;
                 font-weight: 200;
                 text-transform: uppercase;
+            }
+            .error {
+                color: #e74c3c;
             }
             .fpm-info p {
                 font-size: 14px;
@@ -48,6 +58,9 @@
                 float: left;
                 margin-right: 10px;
             }
+            .examples-title {
+                display: none;
+            }
 
             a {
                 color: #3498db;
@@ -68,6 +81,8 @@
             <p class="description">Loading information...</p>
             <p class="version"> </p>
             <p class="categories"> </p>
+            <p class="examples-title">Examples</p>
+            <pre class="examples"></pre>
         </div>
         <pre id="result"></pre>
         <script>
@@ -80,7 +95,7 @@
             //global error handler
             window.onerror = function error(message) {
                 var resultElement = document.querySelector('#result');
-                resultElement.style.color = '#e74c3c';
+                resultElement.classList.add('error');
                 resultElement.innerHTML = message;
 
             };

@@ -9,9 +9,9 @@ def results(fields, original_query):
   }
 
 def run(id):
-    import post_notification, pasteboard
-    pasteboard.set_text(id)
-    post_notification.post_notification("Javascript snippet copied to clipboard", "Flashlight JS")
+    parsed = id.split('/')
+    from subprocess import Popen
+    Popen(['./download.sh', 'https://github.com/{0}/{1}/archive/master.zip'.format(parsed[0], parsed[1]), parsed[1]])
 
 if __name__=='__main__':
-  run("/\d/.test(\"32\")")
+  run("mmarcon/flashlight-test-plugin")
