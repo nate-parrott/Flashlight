@@ -4,11 +4,11 @@
     "Package Management",
     "Addons"
   ],
-  "displayName" : "Flashlight PM",
+  "displayName" : "Flashlight Package Manager",
   "name" : "fpm",
   "description" : "Evaluates javascript snippets in Spotligh",
   "examples" : [
-    "js [3, 2, 1].sort(function(a, b){return a - b;})",
-    "eval /foo/.test('foobar')"
+    "fpm install mmarcon/flashlight-test-plugin",
+    "flashpm remove mmarcon/flashlight-test-plugin"
   ]
 }
