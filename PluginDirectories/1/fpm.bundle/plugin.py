@@ -12,9 +12,9 @@ def results(fields, original_query):
 def run(command, user, repo):
     from subprocess import Popen
     if command == 'install':
-      Popen(['./shell/install.sh', 'https://github.com/{0}/{1}/archive/master.zip'.format(user, repo), repo])
+      Popen(['./shell/install.sh', 'https://github.com/{0}/{1}/archive/master.zip'.format(user, repo), repo], close_fds = True)
     elif command == 'remove':
-      Popen(['./shell/remove.sh', repo])
+      Popen(['./shell/remove.sh', repo], close_fds = True)
 
 if __name__=='__main__':
-  run("remove", "mmarcon/flashlight-test-plugin")
+  run("install", "mmarcon", "flashlight-test-plugin")
