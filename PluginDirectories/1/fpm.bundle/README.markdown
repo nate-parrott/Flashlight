@@ -1,5 +1,24 @@
-This is an auto-generated plugin skeleton. Edit the `examples.txt`, `info.json` and `plugin.py` files to turn it into the plugin you need.
+#Flashlight Package Manager
 
-For more info on how this works, see [the docs](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin).
+A simple decentralized package manager for Flashlight.
 
-If you're building a search plugin, you may want to base your code off [a search plugin](https://github.com/nate-parrott/Flashlight/tree/master/PluginDirectories/1/googlesearch.bundle) instead.
+Flashlight Package Manager allows Flashlight users to install any plugin that is hosted on Github. In order to work with Flashlight Package Manager the plugin must be in its own repository and the root of the repository must contain the `info.json` file.
+
+It is good practice to add a `version` property to `info.json`. It is not used at the moment, it's just displayed in Spotlight, however versioning will be supported in the future.
+
+## Supported commands
+
+### Install plugins
+
+    fpm install ~id(a)
+    flashpm install ~id(a)
+
+### Remove plugins
+
+    fpm remove ~id(a)
+    flashpm remove ~id(a)
+
+
+## Credits
+
+ * Icon: the icon is a mashup of [box](http://thenounproject.com/term/box/52632/) created by [MarkieAnn Packer](http://thenounproject.com/MarkieAnn/) and [Flashlight](http://thenounproject.com/term/flashlight/67679/) by [RJMetrics](http://thenounproject.com/rjmetrics/).

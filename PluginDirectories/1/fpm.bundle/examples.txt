@@ -1,2 +1,4 @@
-fpm ~id(a)
-flashpm ~id(a)
+fpm install ~id(a)
+fpm remove ~id(a)
+flashpm install ~id(a)
+flashpm remove ~id(a)
