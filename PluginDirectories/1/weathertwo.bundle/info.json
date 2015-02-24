@@ -1,7 +1,0 @@
-{
-	"name": "weathertwo",
-	"displayName": "WeatherTwo",
-	"description": "Updated weather plugin with both days and hour-by-hour forcast.",
-	"examples": ["weather brooklyn", "weather uppsala now"],
-	"categories": ["Weather"]
-}
