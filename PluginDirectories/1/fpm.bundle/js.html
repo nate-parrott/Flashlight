@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+                background: #fff;
+                color: #34495e;
+            }
+            pre {
+                white-space: pre-wrap;
+            }
+            pre.examples {
+                white-space: pre-wrap;
+                margin:0;
+                padding: 3px;
+                background: #ecf0f1;
+                border-radius: 3px;
+            }
+            hr {
+                border: 0;
+                height: 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            }
+            h1 {
+                font-size: 18px;
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+            .error {
+                color: #e74c3c;
+            }
+            .fpm-info p {
+                font-size: 14px;
+                font-weight: normal;
+                line-height: 1.2;
+                margin: 3px 0;
+            }
+            .fpm-info {
+                margin-top: 100px;
+                clear: both;
+            }
+            .owner-pic {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: inline-block;
+                background-image: url(mark-github.svg);
+            }
+            .info {
+                font-size: 14px;
+                font-weight: 200;
+            }
+            .owner-pic, .owner-info {
+                float: left;
+                margin-right: 10px;
+            }
+            .examples-title {
+                display: none;
+            }
+
+            a {
+                color: #3498db;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{USER}/{REPO}</h1>
+        <div class="owner-pic"></div>
+        <div class="owner-info">
+            <div class="info owner-name"></div>
+            <div class="info owner-email"></div>
+            <div class="info owner-url"></div>
+            <div class="info owner-location"></div>
+        </div>
+        <div class="fpm-info">
+            <p class="description">Loading information...</p>
+            <p class="version"> </p>
+            <p class="categories"> </p>
+            <p class="examples-title">Examples</p>
+            <pre class="examples"></pre>
+        </div>
+        <pre id="result"></pre>
+        <script>
+            window.config = {
+                user: '{USER}',
+                repo: '{REPO}'
+            };
+        </script>
+        <script>
+            //global error handler
+            window.onerror = function error(message) {
+                var resultElement = document.querySelector('#result');
+                resultElement.classList.add('error');
+                resultElement.innerHTML = message;
+
+            };
+        </script>
+        <script src="scripts/jquery-2.1.3.min.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
