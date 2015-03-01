@@ -1,0 +1,16 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "NightFoxAmbient",
+  "name" : "NightFoxAmbient",
+  "description" : "This is a twitter client for FlashLight, inspired NightFoxPro iOS.",
+  "examples" : [
+    "nfx tweet",
+    "tweet よるほ",
+    "t hello"
+  ],
+  "creator_name" : "noppefoxwolf",
+  "creator_url" : "http://noppelab.com",
+  "openPreferencesOnInstall": true
+}
