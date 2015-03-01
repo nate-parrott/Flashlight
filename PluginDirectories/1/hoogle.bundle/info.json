@@ -3,7 +3,7 @@
     "displayName": "Hoogle Search",
     "description": "Search Haskell API",
     "examples": ["hoogle map", "hoogle (a -> b) -> [a] -> [b]"],
-    "categories": ["Search", "Developper"],
+    "categories": ["Search", "Developer"],
     "creator_name": "hekt",
     "creator_url": "http://www.hekt.org/"
 }

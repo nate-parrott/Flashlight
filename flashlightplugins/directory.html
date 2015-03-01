@@ -207,12 +207,12 @@
                   <div class='control'>
                      {% if browse %}
 											 {% if deep_links %}
-                     		<a class='install' href='flashlight://plugin/{{ plugin.name }}'>Show <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     		<a class='install' href='flashlight://plugin/{{ plugin.name }}'>Show <span class='download_count'>{{plugin.model.downloads | format_as_compact_download_count}}</span></a>
 											 {% else %}
-	                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads}}</span></a>
+	                     <a class='install' href='/plugin/{{ plugin.name }}'>View <span class='download_count'>{{plugin.model.downloads | format_as_compact_download_count}}</span></a>
 											 {% endif %}
                      {% else %}
-                     <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads}}</span></a>
+                     <a class='install' href='{{ plugin.install_url }}'>Install <span class='download_count'>{{plugin.model.downloads | format_as_compact_download_count}}</span></a>
                      {% endif %}
                      <a class='installing'>Installing...</a>
                      <a class='uninstall' href='uninstall://{{ plugin.name }}'>Uninstall</a>

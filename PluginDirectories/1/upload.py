@@ -17,8 +17,7 @@ data = open(zip_file, 'rb').read()
 name = get_plugin_name(data)
 print "Uploading plugin:", name
 
-host = 'flashlightplugins.appspot.com'
-# host = 'localhost:24080'
+host = 'localhost:24080' if '--local' in sys.argv else 'flashlightplugins.appspot.com'
 
 info = requests.get('http://{0}/console_upload/{1}'.format(host, name.encode('utf-8'))).json()
 print info['version']
