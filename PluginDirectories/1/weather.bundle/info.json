@@ -1,10 +1,7 @@
 {
 	"name": "weather",
 	"displayName": "Weather",
-	"displayName_de": "Wetter",
-	"description": "View the forecast in Spotlight.",
-	"description_de": "Wettervorhersage in der Spotlight.",
-	"examples": ["weather brooklyn", "how's the weather in houston?"],
-	"examples_de": ["Wetter München", "Wie ist das Wetter in München?"],
-	"categories": ["Weather", "Featured"]
+	"description": "Updated weather plugin with both days and hour-by-hour forcast.",
+	"examples": ["weather brooklyn", "weather uppsala now", "how's the weather in new york now?"],
+	"categories": ["Weather"]
 }

@@ -2,6 +2,6 @@
     "name": "Weer",
     "displayName": "Weer",
     "description": "Zie de weervoorspellingen in Spotlight.",
-    "examples": ["weer Amsterdam", "Hoe is het weer in Den Haag?"],
+    "examples": ["weer Amsterdam nu", "Hoe is het weer in Den Haag?"],
     "categories": ["Weather", "Featured"]
 }
