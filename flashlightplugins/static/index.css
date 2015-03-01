@@ -16,8 +16,7 @@ body, html, #splash {
     background-image: url(/static/images/yosemite-small2.jpg);
     background-size: cover;
     background-position: center;
-    margin-top: -1.5em;
-    margin-bottom: -1.5em;
+
     border-bottom: 2px solid gray;
 }
 #splash img.main {
@@ -33,7 +32,8 @@ h1 {
     vertical-align: middle;
     text-align: center;
     padding: 10px;
-    padding-top: 30px;
+    padding-top: 40px;
+		padding-bottom: 40px;
 }
 @media screen and (max-width: 540px) {
     #splash h2 {

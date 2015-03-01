@@ -744,16 +744,22 @@
         },
         {
             "categories": [
-                "Utilities",
                 "Meta"
             ],
-            "description": "Evaluates javascript snippets in Spotligh",
+            "creator_name": "Massimiliano Marcon",
+            "creator_url": "http://marcon.me",
+            "description": "A simple decentralized package manager for Flashlight.",
             "displayName": "Flashlight Package Manager",
             "examples": [
                 "fpm install mmarcon/flashlight-test-plugin",
                 "flashpm remove mmarcon/flashlight-test-plugin"
             ],
             "name": "fpm",
+            "tags": [
+                "Utilities",
+                "Meta"
+            ],
+            "version": "1.0.1",
             "zip_url": "fpm.zip"
         },
         {
@@ -1347,6 +1353,23 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "noppefoxwolf",
+            "creator_url": "http://noppelab.com",
+            "description": "This is a twitter client for FlashLight, inspired NightFoxPro iOS.",
+            "displayName": "NightFoxAmbient",
+            "examples": [
+                "nfx tweet",
+                "tweet \u3088\u308b\u307b",
+                "t hello"
+            ],
+            "name": "NightFoxAmbient",
+            "openPreferencesOnInstall": true,
+            "zip_url": "NightFoxAmbient.zip"
+        },
+        {
+            "categories": [
                 "Weather"
             ],
             "creator_name": "Yusuke Miyazaki",
@@ -1880,6 +1903,22 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Damon",
+            "creator_url": "https://wwww.ticktick.com",
+            "description": "Create task to your TickTick",
+            "displayName": "TickTick todo",
+            "examples": [
+                "ticktick call Dad tomorrow",
+                "tk buy the milk",
+                "new task share story with Sam"
+            ],
+            "name": "ticktick",
+            "zip_url": "ticktick.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Convert timestamp to readable string",
@@ -2056,20 +2095,14 @@
         },
         {
             "categories": [
-                "Weather",
-                "Featured"
+                "Weather"
             ],
-            "description": "View the forecast in Spotlight.",
-            "description_de": "Wettervorhersage in der Spotlight.",
+            "description": "Updated weather plugin with both days and hour-by-hour forcast.",
             "displayName": "Weather",
-            "displayName_de": "Wetter",
             "examples": [
                 "weather brooklyn",
-                "how's the weather in houston?"
-            ],
-            "examples_de": [
-                "Wetter M\u00fcnchen",
-                "Wie ist das Wetter in M\u00fcnchen?"
+                "weather uppsala now",
+                "how's the weather in new york now?"
             ],
             "name": "weather",
             "zip_url": "weather.zip"
@@ -2082,7 +2115,7 @@
             "displayName": "Weblio dictionary",
             "examples": [
                 "weblio perception",
-                "woblio cerebral cortex"
+                "weblio cerebral cortex"
             ],
             "name": "weblio",
             "zip_url": "weblio.zip"
