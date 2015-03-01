@@ -1,5 +1,5 @@
 {
-	"name": "Copy Path",
+	"name": "copypath",
 	"displayName": "Copy Path From Finder",
 	"displayName_de": "Finder Pfad kopieren",
 	"description": "Copy path to clipboard from finder",

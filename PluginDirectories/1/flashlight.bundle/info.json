@@ -1,6 +1,7 @@
 {
   "categories" : [
-    "Search"
+    "Search",
+		"Meta"
   ],
   "displayName" : "Flashlight Plugin Search",
   "name" : "flashlight",

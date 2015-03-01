@@ -1,8 +1,7 @@
 {
   "categories" : [
     "Utilities",
-    "Developer",
-    "Javascript"
+    "Developer"
   ],
   "displayName" : "Evaluate JS",
   "name" : "js",

@@ -5,5 +5,6 @@ pick a color
 pick a color as format/uicolor(UIColor)
 copy color as format/rgb(rgb)
 copy color as format/rgba(rgba)
+copy color as format/uicolor_swift(UIColor for Swift)
 color(#fff)
 preview color color(#012345)

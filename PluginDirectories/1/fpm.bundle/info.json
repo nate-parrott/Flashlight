@@ -1,8 +1,7 @@
 {
   "categories" : [
     "Utilities",
-    "Package Management",
-    "Addons"
+    "Meta"
   ],
   "displayName" : "Flashlight Package Manager",
   "name" : "fpm",

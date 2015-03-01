@@ -352,7 +352,7 @@
             ],
             "iconPath": "/Applications/Chocolat.app/Contents/Resources/bowl.icns",
             "name": "choc",
-            "zip_url": "chocolat.zip"
+            "zip_url": "choc.zip"
         },
         {
             "categories": [
@@ -447,8 +447,8 @@
                 "kopiere Pfad",
                 "Pfad"
             ],
-            "name": "Copy Path",
-            "zip_url": "CopyPath.zip"
+            "name": "copypath",
+            "zip_url": "copypath.zip"
         },
         {
             "categories": [
@@ -525,7 +525,7 @@
                 "dd sth"
             ],
             "iconPath": "./Icon.png",
-            "name": "devdocs.io",
+            "name": "devdocs",
             "zip_url": "devdocs.zip"
         },
         {
@@ -608,7 +608,7 @@
                 "docpy class",
                 "docdj translation"
             ],
-            "name": "Doc Webdev",
+            "name": "doc-webdev",
             "zip_url": "doc-webdev.zip"
         },
         {
@@ -712,7 +712,8 @@
         },
         {
             "categories": [
-                "Search"
+                "Search",
+                "Meta"
             ],
             "description": "Search the Flashlight plugin directory, right inside Spotlight. It's very meta.",
             "displayName": "Flashlight Plugin Search",
@@ -740,6 +741,20 @@
             ],
             "name": "flickr",
             "zip_url": "flickr.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Meta"
+            ],
+            "description": "Evaluates javascript snippets in Spotligh",
+            "displayName": "Flashlight Package Manager",
+            "examples": [
+                "fpm install mmarcon/flashlight-test-plugin",
+                "flashpm remove mmarcon/flashlight-test-plugin"
+            ],
+            "name": "fpm",
+            "zip_url": "fpm.zip"
         },
         {
             "categories": [
@@ -965,6 +980,22 @@
         {
             "categories": [
                 "Search",
+                "Developper"
+            ],
+            "creator_name": "hekt",
+            "creator_url": "http://www.hekt.org/",
+            "description": "Search Haskell API",
+            "displayName": "Hoogle Search",
+            "examples": [
+                "hoogle map",
+                "hoogle (a -> b) -> [a] -> [b]"
+            ],
+            "name": "hoogle",
+            "zip_url": "hoogle.zip"
+        },
+        {
+            "categories": [
+                "Search",
                 "Featured"
             ],
             "description": "Immediately go to the first search result for your query.",
@@ -1117,8 +1148,7 @@
         {
             "categories": [
                 "Utilities",
-                "Developer",
-                "Javascript"
+                "Developer"
             ],
             "description": "Evaluates javascript snippets in Spotligh",
             "displayName": "Evaluate JS",
@@ -1252,7 +1282,7 @@
                 "man ifconfig"
             ],
             "name": "Man",
-            "zip_url": "man.zip"
+            "zip_url": "Man.zip"
         },
         {
             "categories": [
@@ -1287,7 +1317,7 @@
             ],
             "iconPath": "./Icon.png",
             "name": "MDN",
-            "zip_url": "mdn.zip"
+            "zip_url": "MDN.zip"
         },
         {
             "categories": [
@@ -1355,8 +1385,7 @@
         {
             "categories": [
                 "Search",
-                "Node.js",
-                "NPM"
+                "Developer"
             ],
             "displayName": "NPM Search",
             "examples": [
@@ -1425,20 +1454,6 @@
             ],
             "name": "piglatin",
             "zip_url": "piglatin.zip"
-        },
-        {
-            "categories": [
-                "Media"
-            ],
-            "description": "Search The Pirate Bay for torrents",
-            "displayName": "The Pirate Bay",
-            "examples": [
-                "pb 2001: A Space Odyssey",
-                "pb Rick Astley",
-                "pb Trailer Park Boys"
-            ],
-            "name": "thepiratebay",
-            "zip_url": "piratebay.zip"
         },
         {
             "categories": [
@@ -1707,7 +1722,7 @@
                 "spt Michael Jackson"
             ],
             "name": "Spotify",
-            "zip_url": "spotify.zip"
+            "zip_url": "Spotify.zip"
         },
         {
             "categories": [
@@ -1840,6 +1855,20 @@
             "zip_url": "terminal.zip"
         },
         {
+            "categories": [
+                "Media"
+            ],
+            "description": "Search The Pirate Bay for torrents",
+            "displayName": "The Pirate Bay",
+            "examples": [
+                "pb 2001: A Space Odyssey",
+                "pb Rick Astley",
+                "pb Trailer Park Boys"
+            ],
+            "name": "thepiratebay",
+            "zip_url": "thepiratebay.zip"
+        },
+        {
             "description": "Search Thingiverse for 3D printable models",
             "displayName": "Thingiverse",
             "examples": [
@@ -1947,6 +1976,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Language",
+                "Search"
+            ],
+            "description": "Search Tyda.se",
+            "displayName": "Tyda.se",
+            "examples": [
+                "tyda astonishing"
+            ],
+            "name": "tyda",
+            "zip_url": "tyda.zip"
+        },
+        {
+            "categories": [
                 "Media",
                 "Utilities"
             ],
@@ -2009,7 +2052,7 @@
             "preferred_locales": [
                 "nl"
             ],
-            "zip_url": "vertaal.zip"
+            "zip_url": "Vertaal.zip"
         },
         {
             "categories": [
@@ -2179,7 +2222,8 @@
             "displayName": "Xcode Shortcuts",
             "examples": [
                 "delete derived data",
-                "open iOS simulator"
+                "open iOS simulator",
+                "nuke xcode"
             ],
             "name": "xcode-shortcuts",
             "zip_url": "xcode-shortcuts.zip"
@@ -2272,7 +2316,7 @@
                 "y flashlight"
             ],
             "name": "YHD",
-            "zip_url": "yhd.zip"
+            "zip_url": "YHD.zip"
         },
         {
             "categories": [
@@ -2288,7 +2332,7 @@
             "preferred_locales": [
                 "zh"
             ],
-            "zip_url": "yixun.zip"
+            "zip_url": "YiXun.zip"
         },
         {
             "categories": [
@@ -2334,7 +2378,7 @@
             "preferred_locales": [
                 "zh"
             ],
-            "zip_url": "Zhihu.zip"
+            "zip_url": "zhihuDaily.zip"
         }
     ]
 }

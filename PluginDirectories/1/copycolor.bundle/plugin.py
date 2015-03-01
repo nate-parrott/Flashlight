@@ -21,8 +21,12 @@ def results(parsed, query):
 						return None
 		else:
 				format = find_format(parsed)
+				format_for_display = {
+					"uicolor_swift": "UIColor for Swift",
+					"uicolor": "UIColor for Objective-C"
+				}.get(format, format)
 				return {
-				"title": "Pick a color as {0}".format(format),
+				"title": "Pick a color as {0}".format(format_for_display),
 				"run_args": [format]
 				}
 

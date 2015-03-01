@@ -17,6 +17,9 @@ def color_to_hex(rgba):
 def color_to_uicolor(rgba):
 	return "[UIColor colorWithRed:{0} green:{1} blue:{2} alpha:{3}]".format(*rgba)
 
+def color_to_uicolor_swift(rgba):
+	return "UIColor(red: {0}, green:{1}, blue:{2}, alpha:{3})".format(*rgba)
+
 def color_to_rgba(rgba):
 	r,g,b,a = rgba
 	return "rgba({0}, {1}, {2}, {3})".format(int(r*255), int(g*255), int(b*255), a)
@@ -36,6 +39,7 @@ class Callback(NSObject):
 		copy_to_clipboard({
 			"hex": color_to_hex,
 			"uicolor": color_to_uicolor,
+			"uicolor_swift": color_to_uicolor_swift,
 			"rgba": color_to_rgba,
 			"rgb": color_to_rgb
 		}.get(format, color_to_hex)(color))
