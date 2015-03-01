@@ -1,0 +1,27 @@
+{
+    "options": [
+        {
+            "text": "Consumer Key:",
+            "key":"CK",
+            "type": "text"
+        },
+        {
+            "text": "Consumer Secret:",
+            "key":"CS",
+            "type": "text"
+        },
+        {
+            "text": "Access Token:",
+            "key":"AT",
+            "type": "text"
+        },
+        {
+            "text": "Access Token Secret:",
+            "key":"AS",
+            "type": "text"
+        },
+        {
+            "type": "divider"
+        }
+    ]
+}
