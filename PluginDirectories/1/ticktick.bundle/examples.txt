@@ -1,0 +1,3 @@
+ticktick ~title(call Dad tomorrow)
+tk ~title(buy the milk)
+new task ~title(share story with Sam)

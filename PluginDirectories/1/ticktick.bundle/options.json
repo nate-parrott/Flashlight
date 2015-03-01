@@ -1,0 +1,14 @@
+{
+    "options": [
+        {
+            "text": "Username:",
+            "key": "username",
+            "type": "text"
+        },
+        {
+            "text": "Password",
+            "key": "password",
+            "type": "text"
+        }
+    ]
+}
