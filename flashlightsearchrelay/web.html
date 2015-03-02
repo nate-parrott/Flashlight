@@ -1,0 +1,30 @@
+<style>
+
+.results {
+	padding: 0;
+}
+
+.results > li {
+	list-style-type: none;
+	cursor: pointer;
+}
+
+.results > li:hover {
+	background-color: rgba(0,0,0,0.05);
+}
+
+.results a {
+	color: inherit;
+}
+
+</style>
+
+<ol class='web results'>
+{% for result in response.d.results[0].Web %}
+	<li onClick='location = "{{ result.Url }}"'>
+		<h2>{{ result.Title }}</h2>
+		<p>{{ result.Description }}</p>
+		<a href='{{ result.Url }}'>{{ result.DisplayUrl }}</a>
+	</li>
+{% endfor %}
+</ol>
