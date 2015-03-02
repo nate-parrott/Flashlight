@@ -272,7 +272,7 @@
 				LastUpgradeCheck = 0610;
 				TargetAttributes = {
 					276144C0105F51CA00F906F6 = {
-						DevelopmentTeam = V626J4XE97;
+						DevelopmentTeam = VPN8ZW6EAC;
 					};
 				};
 			};
@@ -404,6 +404,8 @@
 		276144C4105F51CB00F906F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -412,12 +414,15 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PRODUCT_VERSION = 11;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		276144C5105F51CB00F906F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -426,6 +431,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PRODUCT_VERSION = 11;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

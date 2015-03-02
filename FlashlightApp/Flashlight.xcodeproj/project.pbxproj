@@ -506,6 +506,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					6C56447F159E7C0800215467 = {
+						DevelopmentTeam = VPN8ZW6EAC;
+					};
+				};
 			};
 			buildConfigurationList = 6C56447A159E7C0800215467 /* Build configuration list for PBXProject "Flashlight" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -785,6 +790,7 @@
 			baseConfigurationReference = 05413329E3C2229FC2FE2736 /* Pods-Flashlight.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
@@ -795,6 +801,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -804,6 +811,7 @@
 			baseConfigurationReference = 406B089D37D45E210BD6A866 /* Pods-Flashlight.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
@@ -814,6 +822,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
