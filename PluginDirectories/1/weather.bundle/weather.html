@@ -25,20 +25,20 @@
 		
 		// Instead of writing the name of the day, it should write "Today"
 		if (timestamp == "Today") {
-			return timestamp;
+			return nowstring[1];
 		}
 		var d = (new Date(timestamp * 1000)).getDay();
-		return ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][d];
+		return weekdays[d];
 	}
 
 	function hoursFromTimestamp(timestamp) {
 
 		if (timestamp == "Now") {
-			return timestamp;
+			return nowstring[0];
 		}
 		// getHours returns UTC. Adjust this with getTimezoneOffset.
 		var d = (new Date(timestamp * 1000)).getHours()+(new Date().getTimezoneOffset()/60);
-		console.log(timestamp + " " + new Date(timestamp * 1000).getHours() + " " + d);
+
 
 		if (d < 10) {
 			d = "0" + d + ":00";
@@ -72,10 +72,12 @@
 	var units = "<!--UNITS-->";
 	var appearance = "<!--APPEARANCE-->";
 	var time = "<!--TIME-->";
-	// var locale = "<!--LOCALE-->" // Future implementation? 
+	var locale = "<!--LOCALE-->" 
+	var weekdays = "<!--WEEKDAYS-->";
+	var nowstring = "<!--NOW-->";
 
 	// Lots of useful debugging stuff.	
-	// var debugging = false;
+	// var debugging = true;
 	// var preset = false;
 	// if (preset) {
 	// 	var locationName = "uppsala";
@@ -90,9 +92,11 @@
 	// 	console.log("time:" + time);
 
 	// 	document.write("location:" + locationName);
-	// 	document.write("units:" + units);
-	// 	document.write("appearance:" + appearance);
-	// 	document.write("time:" + time);
+	// 	document.write("\nunits:" + units);
+	// 	document.write("\nappearance:" + appearance);
+	// 	document.write("\ntime:" + time);
+	// 	document.write("\nweekdays:" + weekdays);
+	// 	document.write("\nnow:" + nowstring);
 	// } 
 
 	function load() {
@@ -162,7 +166,6 @@
 		var laterDays = crel("div", {"id": "laterDays"});
 
 		if (time == "now") {
-			console.log(json.list[2].dt);
 			json.list[0].dt = "Now"; // 
 			var el = crel("div", crel("div", {id: 'location'}, json.city.name + ", " + json.city.country), crel("div", {"id": "today"}, createHTMLForHours(json.list[0], 128)), laterDays);
 			for (i = 01; i < 4; i++) {

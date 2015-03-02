@@ -33,16 +33,28 @@ def results(parsed, original_query):
     # print >> sys.stderr, 'Interpreted the time as: ' + time
     # print >> sys.stderr, 'Interpreted the location as: ' + location
 
+    # title = i18n.localstr('"{0}" weather').format(location)
+    # html = (
+    #     open(i18n.find_localized_path("weather.html")).read().decode('utf-8')
+    #     .replace("<!--LOCATION-->", location)
+    #     .replace("<!--UNITS-->", "metric" if use_metric() else "imperial")
+    #     .replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
+    #     .replace("<!--TIME-->", time)
+    # )
+
     title = i18n.localstr('"{0}" weather').format(location)
     html = (
-        open(i18n.find_localized_path("weather.html")).read().decode('utf-8')
+        open("weather.html").read().decode('utf-8')
         .replace("<!--LOCATION-->", location)
         .replace("<!--UNITS-->", "metric" if use_metric() else "imperial")
         .replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
         .replace("<!--TIME-->", time)
-        # OpenWeatherMap supports a range of different languages.
-        #.replace("<!--locale-->") # Future implementation? 
+        .replace("\"<!--WEEKDAYS-->\"", i18n.localstr('[\'Sunday\', \'Monday\', \'Tuesday\', \'Wednesday\', \'Thursday\', \'Friday\', \'Saturday\']'))
+        .replace("\"<!--NOW-->\"", i18n.localstr('[\'Now\', \'Today\']'))
+        .replace("<!--LOCALE-->", i18n.localstr("locale"))
     )
+
+    
 
     return {
         "title": title,
