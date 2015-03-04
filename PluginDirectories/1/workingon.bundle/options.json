@@ -1,0 +1,9 @@
+{
+	"options": [
+		{
+			"text": "Your WorkingOn.co Token: ",
+			"type": "text",
+			"key": "token"
+		}
+	]
+}
