@@ -1,10 +1,1 @@
-Send message to channel:
 slack ~channel(#random) ~message(Good Morning, Everyone)
-slack #random Good Morning, Everyone
-
-Send message to person:
-slack ~channel(@person) ~message(Good Morning)
-slack @person Good Morning
-
-Clear cache:
-slack cache clear

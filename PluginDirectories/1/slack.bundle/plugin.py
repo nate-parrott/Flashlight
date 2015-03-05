@@ -18,7 +18,6 @@ def results(fields, original_query):
 
     token = settings.get('token')
     username = settings.get('username')
-    # username_subtext = settings.get('username_subtext')
 
     if not username or not token:
         return {
