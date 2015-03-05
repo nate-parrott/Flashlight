@@ -1,50 +1,181 @@
+api_base = 'slack.com'
+
+
 def results(fields, original_query):
-  channel_n = fields['~channel']
-  message_n = fields['~message']
-  channel_split = channel_n.split()
-  channel = channel_split[0]
-  message = ""
-  for x in xrange(1,len(channel_split)):
-  	message = message + channel_split[x] + " "
-  message = message + message_n
-  import json
-  settings = json.load(open("preferences.json"))
-  url = settings.get('url')
-  user = settings.get('user')
-  if user is None or user == '' or url is None or url == '':
-    return {
-	    "title": "Slack {0} '{1}'".format(channel, message),
-	    "run_args": ['NO_CREDENTIALS', ''],
-		"html": "<h2 style='font-family: sans-serif; padding: 2em'>Setup an 'Incoming WebHook' integration in Slack and enter the URL and your username in the plugin settings</h2>"
-	}
-  else:
-    return {
-	    "title": "Slack {0} '{1}'".format(channel, message),
-	    "run_args": [channel, message],
-		"html": "<h2 style='font-family: sans-serif; padding: 2em'>Message to '{0}': '{1}'</h2>".format(channel, message)
-	}
+    channel_n = fields['~channel']
+    message_n = fields['~message']
+    channel_split = channel_n.split()
+    channel = channel_split[0]
+    message = ''
+
+    for x in xrange(1,len(channel_split)):
+        message = message + channel_split[x] + " "
+    message = message + message_n
+
+    import json
+
+    settings = json.load(open('preferences.json'))
+
+    token = settings.get('token')
+    username = settings.get('username')
+    # username_subtext = settings.get('username_subtext')
+
+    if not username or not token:
+        return {
+            'title': "Slack {0} '{1}'".format(channel, message),
+            'run_args': ['NO_CREDENTIALS', ''],
+            'html': "<h2 style='font-family: sans-serif; padding: 2em'>Setup an 'Incoming WebHook' integration in Slack and enter the URL and your username in the plugin settings</h2>"
+        }
+    else:
+        return {
+            "title": "Slack {0} '{1}'".format(channel, message),
+            "run_args": [channel, message],
+            "html": "<h2 style='font-family: sans-serif; padding: 2em'>Message to '{0}': '{1}'</h2>".format(channel, message)
+        }
+
 
 def run(channel, message):
-  if channel != 'NO_CREDENTIALS':
-    import json
-    settings = json.load(open("preferences.json"))
-    url = settings.get('url')
-    user = settings.get('user')
-    import httplib, urllib2
-    conn = httplib.HTTPSConnection("hooks.slack.com")
-    resource = url.partition("hooks.slack.com")[2]
-    payload = { "channel": channel, "username": user, "text": message}
-    conn.request("POST", resource, json.dumps(payload))
-    response = conn.getresponse()
-    if response.status == 200:
-      post_notification("Message posted successfully")
-    else:
-      post_notification("Message failed")
+    if channel != 'NO_CREDENTIALS':
+        import json
+        import httplib, urllib
+
+        # Load Settings
+        settings = json.load(open('preferences.json'))
+        token = settings.get('token')
+        username = settings.get('username')
+        display_notifications = settings.get('display_notifications')
+
+        if channel == 'cache':
+            if message == 'clear':
+                import os
+                os.remove('cache.json')
+
+                if display_notifications:
+                    post_notification('Cache cleared.')
+                return True
+
+        # Load Cache
+        _cache_file = open('cache.json', 'w+')
+        try:
+            cache = json.loads(_cache_file.read())
+        except ValueError:
+            cache = {}
+
+        if not cache:
+            full_list = {
+                'channels': {},
+                'users': {},
+            }
+
+            conn = httplib.HTTPSConnection(api_base)
+            conn.request('GET', '/api/channels.list?token=%s' % token)
+            response = conn.getresponse()
+            content = json.loads(response.read())
+            for channel_data in content['channels']:
+                full_list['channels'][channel_data['name']] = channel_data['id']
+            conn.close()
+
+            conn = httplib.HTTPSConnection(api_base)
+            conn.request('GET', '/api/users.list?token=%s' % token)
+            response = conn.getresponse()
+            content = json.loads(response.read())
+            for user_data in content['members']:
+                full_list['users'][user_data['name']] = user_data['id']
+            conn.close()
+
+            _cache_file.seek(0)
+            _cache_file.write(str(full_list))
+            cache = full_list
+
+        _cache_file.close()
+
+        headers = {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'Accept': 'text/plain'
+        }
+        conn = httplib.HTTPSConnection(api_base)
+
+        needs_closed = False
+        if channel.startswith('#'):
+            pass
+        elif channel.startswith('@'):
+            needs_closed = True
+
+        cleaned_channel = channel[1:]
+
+        channel_id = ''
+        error = False
+        if needs_closed:
+            user_id = cache['users'].get(cleaned_channel)
+
+            if not user_id:
+                error = True
+            else:
+                payload = {
+                    'token': token,
+                    'user': user_id,
+                }
+                conn.request('POST', '/api/im.open', urllib.urlencode(payload), headers)
+                response = conn.getresponse()
+
+                if response.status == 200:
+                    content = response.read()
+
+                    try:
+                        content = json.loads(content)
+
+                        if not content['ok']:
+                            error = True
+                        else:
+                            if content.get('channel'):
+                                channel_id = content['channel']['id']
+                            else:
+                                error = True
+                    except ValueError:
+                        post_notification('Unable to open Direct Message.')
+                else:
+                    error = True
+
+            conn.close()
+
+            if error:
+                post_notification('Unable to open Direct Message.')
+                return False
+        else:
+            channel_id = cache['channels'].get(cleaned_channel)
+            if not channel_id:
+                post_notification('Unable to post to %s.' % channel)
+                return False
+
+        payload = {
+            'channel': channel_id,
+            'text': message,
+            'token': token,
+            'as_user': username,
+        }
+
+        # conn = httplib.HTTPSConnection(api_base)
+        conn.request('POST', '/api/chat.postMessage', urllib.urlencode(payload), headers)
+        response = conn.getresponse()
+
+        content = response.read()
+        content = json.loads(content)
+
+        if response.status == 200:
+            if display_notifications:
+                if channel.startswith('#'):
+                    post_notification('Message posted in %s' % channel)
+                elif channel.startswith('@'):
+                    post_notification('Message sent to %s' % channel)
+        else:
+            post_notification('Sending message failed.')
+
 
 def post_notification(message, title="Flashlight"):
-  import os, json, pipes
-  # do string escaping:
-  message = json.dumps(message)
-  title = json.dumps(title)
-  script = 'display notification {0} with title {1}'.format(message, title)
-  os.system("osascript -e {0}".format(pipes.quote(script)))
+    import os, json, pipes
+    # do string escaping:
+    message = json.dumps(message)
+    title = json.dumps(title)
+    script = 'display notification {0} with title {1}'.format(message, title)
+
+    os.system("osascript -e {0}".format(pipes.quote(script)))
