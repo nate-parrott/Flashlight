@@ -8,8 +8,8 @@ def results(fields, original_query):
     channel = channel_split[0]
     message = ''
 
-    for x in xrange(1,len(channel_split)):
-        message = message + channel_split[x] + " "
+    for x in xrange(1, len(channel_split)):
+        message = message + channel_split[x] + ' '
     message = message + message_n
 
     import json
@@ -19,22 +19,28 @@ def results(fields, original_query):
     token = settings.get('token')
     username = settings.get('username')
 
+    title = 'Press Enter to Send Message'
+
     if not username or not token:
-        return {
-            'title': "Slack {0} '{1}'".format(channel, message),
-            'run_args': ['NO_CREDENTIALS', ''],
-            'html': "<h2 style='font-family: sans-serif; padding: 2em'>Setup an 'Incoming WebHook' integration in Slack and enter the URL and your username in the plugin settings</h2>"
-        }
-    else:
-        return {
-            "title": "Slack {0} '{1}'".format(channel, message),
-            "run_args": [channel, message],
-            "html": "<h2 style='font-family: sans-serif; padding: 2em'>Message to '{0}': '{1}'</h2>".format(channel, message)
-        }
+        channel = 'No Credentials'
+        title = channel  # set the title to just "No Credentials"
+        message = 'Please add your API Token that can be located at the bottom of <a href="https://api.slack.com/web">https://api.slack.com/web</a>'
+
+    html = (
+        open('slack.html').read().decode('utf-8') \
+        .replace('<!--TO-->', channel) \
+        .replace('<!--MESSAGE-->', message)
+    )
+
+    return {
+        'title': title,
+        'run_args': [channel, message],
+        'html': html,
+    }
 
 
 def run(channel, message):
-    if channel != 'NO_CREDENTIALS':
+    if channel != 'No Credentials':
         import json
         import httplib, urllib
 
@@ -170,11 +176,11 @@ def run(channel, message):
             post_notification('Sending message failed.')
 
 
-def post_notification(message, title="Flashlight"):
+def post_notification(message, title='Flashlight'):
     import os, json, pipes
     # do string escaping:
     message = json.dumps(message)
     title = json.dumps(title)
     script = 'display notification {0} with title {1}'.format(message, title)
 
-    os.system("osascript -e {0}".format(pipes.quote(script)))
+    os.system('osascript -e {0}'.format(pipes.quote(script)))
