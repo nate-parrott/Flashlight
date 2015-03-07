@@ -1,14 +1,20 @@
 {
-  "categories" : [
+    "categories": [
     "Utilities",
     "Language"
   ],
-  "displayName" : "Speller",
-  "name" : "speller",
-  "description" : "Spell check for english",
-  "examples" : [
+    "displayName": "Speller",
+    "nl_displayName": "Speller",
+    "name": "speller",
+    "nl_name": "Spelling",
+    "nl_description": "Nederlandse spelling controleren",
+    "description": "Spell check for english",
+    "examples": [
     "spell throuh",
     "check spelling for wieght",
     "please spell carosle"
+  ],
+    "nl_examples": [
+    "spelling hallo"
   ]
 }
