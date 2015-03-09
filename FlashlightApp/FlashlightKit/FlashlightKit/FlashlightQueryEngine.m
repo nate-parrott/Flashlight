@@ -24,7 +24,7 @@
 @property (nonatomic) PSPluginDispatcher *dispatcher;
 @property (nonatomic) NSMutableArray *tasksInProgress;
 @property (nonatomic) NSArray *results;
-@property (nonatomic) NSMutableDictionary *searchPluginStates;
+@property (nonatomic) NSDictionary *staticResultsForLastQueryByPluginPath;
 
 @end
 
@@ -68,7 +68,6 @@
         }
     }];
     self.tasksInProgress = [NSMutableArray new];
-    self.searchPluginStates = [NSMutableDictionary new];
     return self;
 }
 
@@ -87,29 +86,30 @@
 
 - (void)runPluginsWithParseTrees:(NSDictionary *)pluginPathsToParseTreesMap ifQueryIsStill:(NSString *)query {
     if ([query isEqualToString:self.query]) {
+        NSMutableDictionary *staticPluginResultsByPath = [NSMutableDictionary new];
+        
         for (NSString *pluginPath in pluginPathsToParseTreesMap) {
             PSTaggedText *parseTree = pluginPathsToParseTreesMap[pluginPath];
             if ([parseTree isEqual:[NSNull null]]) parseTree = nil;
-            [self handlePluginAtPath:pluginPath parseTree:parseTree query:query];
+            
+            if ([self isPluginAtPathStatic:pluginPath]) {
+                FlashlightResult *result = self.staticResultsForLastQueryByPluginPath[pluginPath] ? : [self createStaticResult:pluginPath];
+                if (result) {
+                    [result setCurrentInputForStaticPlugin:parseTree.toNestedDictionary];
+                    [self addResults:@[result] forQuery:query];
+                    staticPluginResultsByPath[pluginPath] = result;
+                }
+            } else {
+                [self executePluginAtPath:pluginPath parseTree:parseTree query:query];
+            }
         }
+        
+        self.staticResultsForLastQueryByPluginPath = staticPluginResultsByPath;
     }
 }
 
-- (void)handlePluginAtPath:(NSString *)pluginPath parseTree:(PSTaggedText *)parseTree query:(NSString *)query {
-    SearchPluginState *searchPluginState = [self searchPluginStateForPlugin:pluginPath];
-    if (searchPluginState) {
-        NSString *searchQuery = [[parseTree findChild:@"~query"] getText];
-        [self addResults:[searchPluginState setQueryAndGetResults:searchQuery] forQuery:query];
-        __weak FlashlightQueryEngine *weakSelf = self;
-        __weak SearchPluginState *weakSearchPluginState = searchPluginState;
-        searchPluginState.resultsUpdate = ^{
-            if ([weakSelf.query isEqualToString:query]) {
-                [weakSelf addResults:weakSearchPluginState.results forQuery:query];
-            }
-        };
-    } else {
-        [self executePluginAtPath:pluginPath parseTree:parseTree query:query];
-    }
+- (BOOL)isPluginAtPathStatic:(NSString *)path {
+    return [[NSFileManager defaultManager] fileExistsAtPath:[path stringByAppendingPathComponent:@"static_result.json"]];
 }
 
 - (void)executePluginAtPath:(NSString *)pluginPath parseTree:(PSTaggedText *)parseTree query:(NSString *)query {
@@ -157,6 +157,14 @@
     }];
 }
 
+- (FlashlightResult *)createStaticResult:(NSString *)pluginPath {
+    FlashlightResult *result = [FlashlightResult new];
+    result.json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[pluginPath stringByAppendingPathComponent:@"static_result.json"]] options:0 error:nil];
+    if (!result.json) return nil;
+    result.pluginPath = pluginPath;
+    return result;
+}
+
 - (void)addResults:(NSArray *)resultObjs forQuery:(NSString *)query {
     dispatch_async(dispatch_get_main_queue(), ^{
         // don't replace old results with same unique ID
@@ -193,21 +201,6 @@
 
 + (NSString *)builtinModulesPath {
     return [[NSBundle bundleForClass:[self class]] pathForResource:@"BuiltinModules" ofType:@""];
-}
-
-#pragma mark Search Plugins
-- (SearchPluginState *)searchPluginStateForPlugin:(NSString *)pluginPath {
-    return nil; // block this off for now
-    if ([[NSFileManager defaultManager] fileExistsAtPath:[pluginPath stringByAppendingPathComponent:@"search.json"]]) {
-        SearchPluginState *s = self.searchPluginStates[pluginPath];
-        if (!s) {
-            s = [[SearchPluginState alloc] initWithPluginPath:pluginPath];
-            self.searchPluginStates[pluginPath] = s;
-        }
-        return s;
-    } else {
-        return nil;
-    }
 }
 
 @end

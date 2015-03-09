@@ -18,10 +18,16 @@
 
 - (NSString *)title;
 - (BOOL)supportsWebview;
-- (void)configureWebview:(WebView *)webView;
+@property (nonatomic,readonly) WebView *webView;
+- (void)cleanUpWebviewIfNeeded;
+
 - (BOOL)linksOpenInBrowser;
 - (BOOL)pressEnter:(FlashlightResultView *)resultView errorCallback:(void(^)(NSString *error))errorCallback;
 
 @property (nonatomic) NSString *uniqueIdentifier;
+
+@property (nonatomic) NSDictionary *currentInputForStaticPlugin;
+
+- (id)resultOfOutputFunction;
 
 @end

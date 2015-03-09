@@ -1892,6 +1892,9 @@
             "zip_url": "thepiratebay.zip"
         },
         {
+            "categories": [
+                "Search"
+            ],
             "description": "Search Thingiverse for 3D printable models",
             "displayName": "Thingiverse",
             "examples": [
@@ -2246,6 +2249,21 @@
             ],
             "name": "wolfram-alpha",
             "zip_url": "wolfram-alpha.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Tobias Orterer",
+            "description": "Posts to WorkingOn.co - set your token in settings!",
+            "displayName": "WorkingOn.co",
+            "examples": [
+                "on creating a flashlight plugin",
+                "working on getting this published"
+            ],
+            "name": "workingon",
+            "openPreferencesOnInstall": true,
+            "zip_url": "workingon.zip"
         },
         {
             "categories": [
