@@ -29,6 +29,9 @@
 "Featured" = "Uitgelicht";
 
 /* No comment provided by engineer. */
+"Other" = "Andere";
+
+/* No comment provided by engineer. */
 "Information" = "Informatie";
 
 /* No comment provided by engineer. */
@@ -42,6 +45,9 @@
 
 /* No comment provided by engineer. */
 "News" = "Nieuws";
+
+/* No comment provided by engineer. */
+"New" = "Nieuw";
 
 /* No comment provided by engineer. */
 "Okay" = "Oké";
@@ -68,7 +74,7 @@
 "Usage examples:" = "Voorbeelden:";
 
 /* No comment provided by engineer. */
-"Utilities" = "Utilities";
+"Utilities" = "Voorziening";
 
 /* No comment provided by engineer. */
 "Weather" = "Weer";

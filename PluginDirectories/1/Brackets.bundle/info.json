@@ -6,8 +6,7 @@
     "description_de": "Öffne Brackets. Der Pfad vom offenen Finder Fenster wird in Brackets geöffnet.",
     "examples": ["Brackets"],
     "iconPath": "//Applications/Brackets.app/Contents/Resources/appshell.icns",
-    "categories": ["Developer"]
+    "categories": ["Developer"],
+    "creator_name": "Matthias Dolstra",
+    "creator_url": "http://mdolstra.me"
 }
-
-
-

@@ -2,6 +2,7 @@
     "name": "CanIUse",
     "displayName": "Can I use",
     "description": "Checking CSS, HTML and Javascript for Browser Compatibility using caniuse.com",
+    "description_nl": "Controleer CSS, HTML and Javascript voor  Browser combitaliteit met caniuse.com",
     "description_de": "Überprüft CSS, HTML und Javascript nach Browserkompatiblität mittels caniuse.com",
     "examples": ["CIU div", "Can I use transforms "],
     "categories": ["Search", "Developer"],
