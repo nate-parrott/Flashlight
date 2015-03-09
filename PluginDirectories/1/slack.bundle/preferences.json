@@ -1,4 +1,5 @@
 {
-	"user" : "",
-	"url" : ""
+  "username" : "",
+  "display_notifications" : 1,
+  "token" : ""
 }

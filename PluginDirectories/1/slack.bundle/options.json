@@ -1,14 +1,27 @@
 {
     "options": [
         {
-            "text": "Slack Username:",
-            "key": "user",
+            "text": "Slack API Token",
+            "key": "token",
             "type": "text"
         },
         {
-            "text": "Webhook URL",
-            "key": "url",
+            "type": "hint",
+            "text": "API Token can be located at the bottom of https://api.slack.com/web"
+        },
+        {
+            "text": "Slack Username:",
+            "key": "username",
             "type": "text"
+        },
+        {
+            "text": "Display Notifications?",
+            "key": "display_notifications",
+            "type": "checkmark"
+        },
+        {
+            "type": "hint",
+            "text": "Error messages will always be displayed despite the \"Display Notifications\" setting."
         }
     ]
 }

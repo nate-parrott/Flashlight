@@ -1,1 +1,1 @@
-slack ~channel(#random) ~message(Good Morning)
+slack ~channel(#random) ~message(Good Morning, Everyone)
