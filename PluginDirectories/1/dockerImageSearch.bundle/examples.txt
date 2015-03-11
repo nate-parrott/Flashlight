@@ -1,0 +1,4 @@
+docker ~dockerquery(query here)
+search docker ~dockerquery(query here)
+search ~dockerquery(query here) on docker
+find ~dockerquery(query here) on docker
