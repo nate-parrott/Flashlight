@@ -29,7 +29,7 @@ def results(fields, original_query):
         if len(command)>0:
             return {
                 "title": "Eject "+command.replace("/Volumes/",""),
-                "run_args": ["umount "+command+";diskutil eject "+command]
+                "run_args": ["umount "+command.replace(" ","\ ")+";diskutil eject "+command.replace(" ","\ ")]
             }  
         else:
             return None
