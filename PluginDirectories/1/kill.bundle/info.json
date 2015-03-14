@@ -1,0 +1,9 @@
+{
+  "name": "kill",
+  "displayName": "Kill",
+  "description": "Kill an app",
+  "examples": ["kill atom", "kill safari"],
+  "categories": ["Utilities"],
+  "creator_name": "Jeff Shaver",
+  "creator_url": "https://twitter.com/jeffshaver_"
+}
