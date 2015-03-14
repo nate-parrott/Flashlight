@@ -242,6 +242,8 @@
             "categories": [
                 "Developer"
             ],
+            "creator_name": "Matthias Dolstra",
+            "creator_url": "http://mdolstra.me",
             "description": "Open Brackets Finder is open, opens the current folder/file in Brackets",
             "description_de": "\u00d6ffne Brackets. Der Pfad vom offenen Finder Fenster wird in Brackets ge\u00f6ffnet.",
             "displayName": "Open with Brackets",
@@ -310,6 +312,7 @@
             "creator_url": "http://mdolstra.me",
             "description": "Checking CSS, HTML and Javascript for Browser Compatibility using caniuse.com",
             "description_de": "\u00dcberpr\u00fcft CSS, HTML und Javascript nach Browserkompatiblit\u00e4t mittels caniuse.com",
+            "description_nl": "Controleer CSS, HTML and Javascript voor  Browser combitaliteit met caniuse.com",
             "displayName": "Can I use",
             "examples": [
                 "CIU div",
@@ -613,6 +616,23 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "creator_name": "alx stu",
+            "creator_url": "http://www.github.com/alxstu",
+            "description": "Search for Docker images on Docker.com",
+            "displayName": "Docker Image Search",
+            "examples": [
+                "Docker node.js",
+                "Search Docker Wordpress",
+                "Find redis on Docker"
+            ],
+            "name": "dockerImageSearch",
+            "zip_url": "dockerImageSearch.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Media"
             ],
@@ -661,6 +681,25 @@
         {
             "categories": [
                 "Utilities",
+                "System"
+            ],
+            "creator_name": "Antonio Cruz",
+            "description": "Eject mounted volumes (physical and network)",
+            "displayName": "Eject",
+            "examples": [
+                "ejectall",
+                "eject all",
+                "eject <volume>",
+                "ej <volume>",
+                "ejall",
+                "ej all"
+            ],
+            "name": "eject",
+            "zip_url": "eject.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
                 "Featured"
             ],
             "creator_name": "Marc Bachmann",
@@ -675,6 +714,21 @@
             ],
             "name": "emoji",
             "zip_url": "emoji.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Jeff Shaver",
+            "creator_url": "https://twitter.com/jeffshaver_",
+            "description": "Empty your trash",
+            "displayName": "Empty Trash",
+            "examples": [
+                "empty trash"
+            ],
+            "iconPath": "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/TrashIcon.icns",
+            "name": "EmptyTrash",
+            "zip_url": "EmptyTrash.zip"
         },
         {
             "categories": [
@@ -1167,6 +1221,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Jeff Shaver",
+            "creator_url": "https://twitter.com/jeffshaver_",
+            "description": "Kill an app",
+            "displayName": "Kill",
+            "examples": [
+                "kill atom",
+                "kill safari"
+            ],
+            "name": "kill",
+            "zip_url": "kill.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Search"
             ],
@@ -1520,6 +1589,20 @@
             "categories": [
                 "Search"
             ],
+            "description": "Say it with a GIF!",
+            "displayName": "Reaction Gifs",
+            "examples": [
+                "reaction gif for happy",
+                "rgif for sad",
+                "lazy reaction gif"
+            ],
+            "name": "reaction-gifs",
+            "zip_url": "reaction-gifs.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "description": "Search Reddit (rdt).",
             "description_de": "Durchsucht Reddit (rdt).",
             "displayName": "Reddit Search",
@@ -1724,13 +1807,19 @@
                 "Language"
             ],
             "description": "Spell check for english",
+            "description_nl": "Nederlandse spelling controleren",
             "displayName": "Speller",
+            "displayName_nl": "Speller",
             "examples": [
                 "spell throuh",
                 "check spelling for wieght",
                 "please spell carosle"
             ],
+            "examples_nl": [
+                "spelling hallo"
+            ],
             "name": "speller",
+            "name_nl": "Spelling",
             "zip_url": "speller.zip"
         },
         {
