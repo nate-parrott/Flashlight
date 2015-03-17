@@ -23,48 +23,61 @@
 		req.onload = function(e) {
 			if (req.readyState === 4) {
 				if (req.status === 200) {
-					callback(req.responseText);
+					callback(null, req.responseText);
 				} else {
-					callback(null);
+					callback(new Error());
 				}
 			}
 		};
 		req.onerror = function(e) {
-			callback(null);
+			callback(e);
 		};
 		req.send(null);
 	}
 
-	var query = '<!--QUERY-->'; 
+	var query = '<!--QUERY-->';
 	var page = 1;
 
+	function getGifs(tag, page, callback) {
+		var url = 'http://www.reactiongifs.com/tag/' + encodeURIComponent(tag) + '/page/' + page;
+		xhr(url, function(err, response) {
+			if (err) {
+				callback(null, []);
+			} else {
+				document.getElementById('helper').innerHTML = response;
+				var entries = document.getElementsByClassName('entry');
+				var urls = [];
+				for (var i = 0; i < entries.length; i++) {
+					var entry = entries[i];
+					var image = entry.getElementsByTagName('img')[0];
+					urls.push(image.getAttribute('src'));
+				}
+				callback(null, urls);
+			}
+		});
+	}
+
 	function load(tag, page) {
-		var url = 'http://nameless-fjord-1979.herokuapp.com/query/' + encodeURIComponent(tag) + '/' + page;
-		xhr(url, function(response) {
+		getGifs(tag, page, function(err, images) {
 			document.getElementById("loading").style.display = 'none';
 			document.getElementById("more").style.display = 'block';
-			var parsed;
-			if (response && (parsed = JSON.parse(response))) {
-				if (parsed.gifs.length === 0) {
-					document.getElementById("loading").style.display = 'none';
-					document.getElementById("more").style.display = 'none';
-					document.getElementById("empty").style.display = 'block';
-					document.getElementById("results").style.display = 'none';
-				} else {
-					var results = document.getElementById("results");
-					parsed.gifs.map(function(gif) {
-						var img = document.createElement('img');
-						img.src = gif.url;
-						img.addEventListener('click', function() {
-							copyToClipboard(gif.url);
-						});
-						return img;
-					}).forEach(function(img) {
-						results.appendChild(img);
-					});
-				}
+			if (images.length === 0) {
+				document.getElementById("loading").style.display = 'none';
+				document.getElementById("more").style.display = 'none';
+				document.getElementById("empty").style.display = 'block';
+				document.getElementById("results").style.display = 'none';
 			} else {
-				document.getElementById("error").style.display = 'block';
+				var results = document.getElementById("results");
+				images.map(function(url) {
+					var img = document.createElement('img');
+					img.src = url;
+					img.addEventListener('click', function() {
+						copyToClipboard(url);
+					});
+					return img;
+				}).forEach(function(img) {
+					results.appendChild(img);
+				});
 			}
 		});
 	}
@@ -117,6 +130,9 @@
 		cursor: pointer;
 		margin-bottom: 10px;
 	}
+	#helper {
+		display: none;
+	}
 	</style>
 
 </head>
@@ -131,5 +147,6 @@
 	<div id='more' onclick="loadMore()">
 		Load More
 	</div>
+	<div id='helper'></div>
 </body>
 </html>
