@@ -6,6 +6,6 @@
   "name" : "qr-googlechart",
   "description" : "Show qrcode image",
   "examples" : [
-    "qr hello world",
+    "qr hello world"
   ]
 }

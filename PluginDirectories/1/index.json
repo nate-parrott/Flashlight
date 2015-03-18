@@ -641,7 +641,8 @@
             "displayName": "Douban Movie",
             "displayName_zh": "\u8c46\u74e3\u7535\u5f71",
             "examples": [
-                "douban Interstellar"
+                "douban Interstellar",
+                "\u8c46\u74e3 \u4e00\u8def\u5411\u897f"
             ],
             "name": "douban",
             "zip_url": "douban.zip"
@@ -1236,6 +1237,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Dylan Zhang",
+            "creator_url": "http://dylanzhang.me",
+            "description": "Kill a process",
+            "displayName": "Kill",
+            "examples": [
+                "kill safari",
+                "kill iterm"
+            ],
+            "name": "kill9",
+            "zip_url": "kill9.zip"
+        },
+        {
+            "categories": [
                 "Information",
                 "Search"
             ],
@@ -1562,6 +1578,18 @@
             ],
             "name": "pypi",
             "zip_url": "pypi.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Show qrcode image",
+            "displayName": "QRCode by google chart api",
+            "examples": [
+                "qr hello world"
+            ],
+            "name": "qr-googlechart",
+            "zip_url": "qr-googlechart.zip"
         },
         {
             "categories": [
