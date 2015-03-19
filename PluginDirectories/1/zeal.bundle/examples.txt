@@ -1,0 +1,2 @@
+zeal ~query(os.system)
+zeal ~query(os.system) in ~docset(python)
