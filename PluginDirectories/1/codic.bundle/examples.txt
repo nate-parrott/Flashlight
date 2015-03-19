@@ -1,0 +1,1 @@
+codic ~query(manifest)
