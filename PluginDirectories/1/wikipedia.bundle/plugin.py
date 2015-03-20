@@ -12,7 +12,8 @@ def results(parsed, original_query):
           ["French Wikipedia", "~frWiki", "https://fr.m.wikipedia.org/w/index.php?search=", "https://fr.wikipedia.org/w/index.php?search="],
           ["Italian Wikipedia", "~itWiki", "https://it.m.wikipedia.org/w/index.php?search=", "https://it.wikipedia.org/w/index.php?search="],
           ["Wikipedia", "~jaWiki", "https://ja.m.wikipedia.org/w/index.php?search=", "https://ja.wikipedia.org/w/index.php?search="],
-          ["Nederlandse Wikipedia", "~nlWiki", "https://nl.m.wikipedia.org/w/index.php?search=", "https://nl.wikipedia.org/w/index.php?search="]
+          ["Nederlandse Wikipedia", "~nlWiki", "https://nl.m.wikipedia.org/w/index.php?search=", "https://nl.wikipedia.org/w/index.php?search="],
+          ["polskiej Wikipedii", "~plWiki", "https://pl.m.wikipedia.org/w/index.php?search=", "https://pl.wikipedia.org/w/index.php?search="]
     ]
     for name, key, mobile_url, url in search_specs:
         if key in parsed:

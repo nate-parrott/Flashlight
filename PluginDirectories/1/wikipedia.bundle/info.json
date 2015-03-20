@@ -6,6 +6,7 @@
     "displayName_it": "Wikipedia (IT)",
     "displayName_ja": "Wikipedia (JA)",
     "displayName_nl": "Wikipedia (NL)",
+    "displayName_pl": "Wikipedia (PL)",
 
     "description": "Search English Wikipedia (wiki).",
     "description_de": "Durchsuche das deutsche Wikipedia (wiki).",
@@ -13,6 +14,7 @@
     "description_it": "Cerca su Wikipedia.",
     "description_ja": "Wikipedia 検索",
     "description_nl": "Zoek op de Nederlandse Wikipedia (wiki).",
+    "description_pl": "Przeszukuj polską Wikipedie (wiki).",
 
     "examples": ["wiki Dogs", "search wikipedia for St. Louis, MO", "wikipedia Flashlight"],
     "examples_de": ["wiki Hunde", "Suche Wikipedia nach St. Louis, MO", "wikipedia Flashlight"],
@@ -20,6 +22,7 @@
     "examples_it": ["wiki cani", "cerca wikipedia Ponza", "wikipedia Flashlight"],
     "examples_ja": ["wiki 日本語", "wiki OS X", "wikipedia Flashlight"],
     "examples_nl": ["wiki hond", "Zoek op wikipedia voor St. Louis, MO", "wikipedia Flashlight"],
+    "examples_pl": ["wiki pies", "szukaj wikipedia Poznań", "wikipedia Flashlight"],
 
     "categories": ["Search", "Information", "Featured"]
 }
