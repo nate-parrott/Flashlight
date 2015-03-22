@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Zeal",
+  "name" : "zeal",
+  "description" : "A search plugin for Zeal. (requires Zeal app)",
+  "examples" : [
+    "zeal os in python",
+    "zeal os.system"
+  ]
+}
