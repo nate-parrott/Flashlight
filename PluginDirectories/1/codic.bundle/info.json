@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "codic",
+  "name" : "codic",
+  "description" : "Search words on codic.jp",
+  "examples" : [
+    "codic 処理する",
+    "codic 管理する"
+  ]
+}
