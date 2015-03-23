@@ -182,4 +182,9 @@
     }
 }
 
+- (void)dealloc {
+    self.webView.frameLoadDelegate = nil;
+    self.webView.policyDelegate = nil;
+}
+
 @end

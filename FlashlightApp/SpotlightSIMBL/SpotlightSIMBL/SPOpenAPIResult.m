@@ -19,13 +19,13 @@
 #import "_Flashlight_Bootstrap.h"
 #import <FlashlightKit/FlashlightKit.h>
 
-
 /*
  a wrapper around objc zeroing weak references, since we can't store zeroing weak references as associated objects.
  */
 @interface _Flashlight_WeakRefWrapper : NSObject
 
 @property (nonatomic,weak) id target;
+@property (nonatomic) id strongTarget;
 
 @end
 
@@ -60,7 +60,7 @@ _Flashlight_WeakRefWrapper* __SS_SSOpenAPIResult_getCustomPreviewReference(SPRes
 
 SPPreviewController* __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
     _Flashlight_WeakRefWrapper *vcRef = __SS_SSOpenAPIResult_getCustomPreviewReference(self);
-    SPPreviewController *vc = vcRef.target;
+    SPPreviewController *vc = vcRef.strongTarget;
     if (vc) {
         return vc;
     } else {
@@ -72,7 +72,7 @@ SPPreviewController* __SS_SSOpenAPIResult_customPreviewController(SPResult *self
         if (!_Flashlight_Is_10_10_2_Spotlight()) {
             vc.internalPreviewResult = self;
         }
-        vcRef.target = vc;
+        vcRef.strongTarget = vc;
         return vc;
     }
 }

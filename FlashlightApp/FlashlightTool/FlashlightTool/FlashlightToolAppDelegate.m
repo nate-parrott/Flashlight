@@ -21,6 +21,7 @@
 @property (nonatomic) IBOutlet NSTextView *errors;
 @property (nonatomic) NSDictionary *errorSections;
 
+@property (nonatomic) FlashlightResult *result;
 @property (weak) IBOutlet FlashlightResultView *resultView;
 @property (weak) IBOutlet NSTextField *resultTitle;
 
@@ -56,7 +57,8 @@
     
     self.queryEngine.resultsDidChangeBlock = ^(NSString *query, NSArray *results){
         weakSelf.resultTitle.stringValue = [weakSelf.queryEngine.results.firstObject json][@"title"] ? : @"None";
-        weakSelf.resultView.result = weakSelf.queryEngine.results.firstObject;
+        weakSelf.result = weakSelf.queryEngine.results.firstObject;
+        weakSelf.resultView.result = weakSelf.result;
         NSMutableDictionary *d = weakSelf.errorSections.mutableCopy;
         if (weakSelf.queryEngine.errorString) {
             d[@"Plugin.py Errors"] = weakSelf.queryEngine.errorString;
@@ -111,7 +113,9 @@
         [str appendAttributedString:obj2];
         return str;
     } initialVal:[NSAttributedString new]];
-    [self.errors.textStorage setAttributedString:errors];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.errors.textStorage setAttributedString:errors];
+    });
 }
 
 - (void)windowDidBecomeKey:(NSNotification *)notification {
