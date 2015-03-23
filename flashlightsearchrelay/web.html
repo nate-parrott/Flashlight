@@ -1,5 +1,16 @@
 <style>
 
+body {
+	font-family: "HelveticaNeue";
+	word-wrap: break-word;
+	font-size: small;
+	margin: 0;
+}
+h2 {
+	font-weight: 200;
+	margin: 0;
+}
+
 .results {
 	padding: 0;
 }
@@ -7,24 +18,32 @@
 .results > li {
 	list-style-type: none;
 	cursor: pointer;
+	padding: 10px;
 }
 
-.results > li:hover {
+.results > li:first-child {
 	background-color: rgba(0,0,0,0.05);
 }
 
 .results a {
 	color: inherit;
+	text-decoration: none;
+}
+
+.displayUrl {
+	text-decoration: underline !important;
 }
 
 </style>
 
 <ol class='web results'>
 {% for result in response.d.results[0].Web %}
-	<li onClick='location = "{{ result.Url }}"'>
-		<h2>{{ result.Title }}</h2>
-		<p>{{ result.Description }}</p>
-		<a href='{{ result.Url }}'>{{ result.DisplayUrl }}</a>
+	<li>
+		<a href='{{ result.Url }}'>
+			<h2>{{ result.Title }}</h2>
+			<p>{{ result.Description }}</p>
+			<a class='displayUrl' href='{{ result.Url }}'>{{ result.DisplayUrl }}</a>
+		</a>
 	</li>
 {% endfor %}
 </ol>

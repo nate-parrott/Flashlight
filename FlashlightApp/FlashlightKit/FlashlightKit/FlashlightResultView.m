@@ -34,6 +34,7 @@
 
 #pragma mark Lifecycle
 - (void)dealloc {
+    self.result = nil;
     self.webView = nil;
 }
 
@@ -61,6 +62,5 @@
 - (id)resultOfOutputFunction {
     return [self.result resultOfOutputFunction];
 }
-
 
 @end

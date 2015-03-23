@@ -413,6 +413,19 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "description": "Search words on codic.jp",
+            "displayName": "codic",
+            "examples": [
+                "codic \u51e6\u7406\u3059\u308b",
+                "codic \u7ba1\u7406\u3059\u308b"
+            ],
+            "name": "codic",
+            "zip_url": "codic.zip"
+        },
+        {
+            "categories": [
                 "Art",
                 "Developer"
             ],
@@ -747,6 +760,20 @@
             ],
             "name": "excuse",
             "zip_url": "excuse.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Ne4istb",
+            "description": "Tweet everything from Spotlight",
+            "displayName": "Fast tweet",
+            "examples": [
+                "tweet hello world",
+                "t i'm happy"
+            ],
+            "name": "fasttweet",
+            "zip_url": "fasttweet.zip"
         },
         {
             "categories": [
@@ -2278,12 +2305,14 @@
             "description_it": "Cerca su Wikipedia.",
             "description_ja": "Wikipedia \u691c\u7d22",
             "description_nl": "Zoek op de Nederlandse Wikipedia (wiki).",
+            "description_pl": "Przeszukuj polsk\u0105 Wikipedie (wiki).",
             "displayName": "Wikipedia (EN)",
             "displayName_de": "Wikipedia (DE)",
             "displayName_fr": "Wikipedia (FR)",
             "displayName_it": "Wikipedia (IT)",
             "displayName_ja": "Wikipedia (JA)",
             "displayName_nl": "Wikipedia (NL)",
+            "displayName_pl": "Wikipedia (PL)",
             "examples": [
                 "wiki Dogs",
                 "search wikipedia for St. Louis, MO",
@@ -2312,6 +2341,11 @@
             "examples_nl": [
                 "wiki hond",
                 "Zoek op wikipedia voor St. Louis, MO",
+                "wikipedia Flashlight"
+            ],
+            "examples_pl": [
+                "wiki pies",
+                "szukaj wikipedia Pozna\u0144",
                 "wikipedia Flashlight"
             ],
             "name": "wikipedia",
@@ -2530,6 +2564,19 @@
             ],
             "name": "youtube",
             "zip_url": "youtube.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "A search plugin for Zeal. (requires Zeal app)",
+            "displayName": "Zeal",
+            "examples": [
+                "zeal os in python",
+                "zeal os.system"
+            ],
+            "name": "zeal",
+            "zip_url": "zeal.zip"
         },
         {
             "categories": [

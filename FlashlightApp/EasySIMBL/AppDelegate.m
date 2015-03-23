@@ -16,7 +16,7 @@
 
 @interface AppDelegate ()
 
-@property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
+@property (nonatomic,weak) IBOutlet NSButton *enablePluginsButton;
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
 @property (nonatomic,weak) IBOutlet NSTextField *versionLabel, *searchAnything;
 @property (nonatomic,weak) IBOutlet NSButton *openGithub, *requestPlugin, *leaveFeedback;
@@ -112,7 +112,7 @@
     [self restartSIMBLIfUpdated];
     
     // i18n:
-    self.enablePluginsLabel.stringValue = NSLocalizedString(@"Enable Spotlight Plugins", @"");
+    self.enablePluginsButton.title = NSLocalizedString(@"Enable", @"");
     self.createNewAutomatorPluginMenuItem.title = NSLocalizedString(@"New Automator Plugin...", @"");
     self.leaveFeedback.stringValue = NSLocalizedString(@"Leave Feedback", @"");
     self.openGithub.stringValue = NSLocalizedString(@"Contribute on GitHub", @"");

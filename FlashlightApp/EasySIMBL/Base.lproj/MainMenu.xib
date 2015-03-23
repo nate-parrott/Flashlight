@@ -349,6 +349,7 @@
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="aboutWindow" destination="Nbs-13-Twb" id="JQi-Kg-U2G"/>
+                <outlet property="enablePluginsButton" destination="KeZ-dH-ema" id="z5X-Aq-hDg"/>
                 <outlet property="leaveFeedback" destination="YyB-xf-RjT" id="MGc-ch-NJm"/>
                 <outlet property="menuBarItemPreferenceButton" destination="Llk-bz-SPb" id="grz-AH-VkL"/>
                 <outlet property="openGithub" destination="no0-HV-O9k" id="12n-tY-kFy"/>
@@ -565,11 +566,11 @@
         </customObject>
         <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
         <customView id="9dh-Cp-Auf" userLabel="Toggle view">
-            <rect key="frame" x="0.0" y="0.0" width="227" height="38"/>
+            <rect key="frame" x="0.0" y="0.0" width="129" height="38"/>
             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button wantsLayer="YES" id="KeZ-dH-ema">
-                    <rect key="frame" x="9" y="10" width="226" height="18"/>
+                    <rect key="frame" x="9" y="10" width="117" height="18"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <contentFilters>
                         <ciFilter name="CIColorControls">
@@ -581,7 +582,7 @@
                             </configuration>
                         </ciFilter>
                     </contentFilters>
-                    <buttonCell key="cell" type="check" title="Enable Spotlight Plugins" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Uae-za-3vG">
+                    <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Uae-za-3vG">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -590,7 +591,7 @@
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="202.5" y="588"/>
+            <point key="canvasLocation" x="153.5" y="588"/>
         </customView>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
@@ -846,7 +847,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="QsG-zx-iR5">
                             <rect key="frame" x="59" y="41" width="237" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Once plugins are enabled, they'll still work if you quit the Flashlight app." id="RcK-sq-KTs">
+                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Once plugins are enabled, they'll still work after you quit the Flashlight app." id="RcK-sq-KTs">
                                 <font key="font" metaFont="smallSystem"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>

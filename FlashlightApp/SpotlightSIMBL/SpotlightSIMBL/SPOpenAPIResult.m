@@ -19,6 +19,21 @@
 #import "_Flashlight_Bootstrap.h"
 #import <FlashlightKit/FlashlightKit.h>
 
+
+/*
+ a wrapper around objc zeroing weak references, since we can't store zeroing weak references as associated objects.
+ */
+@interface _Flashlight_WeakRefWrapper : NSObject
+
+@property (nonatomic,weak) id target;
+
+@end
+
+@implementation _Flashlight_WeakRefWrapper
+
+@end
+
+
 id __SS_SSOpenAPIResult_initWithQuery_result(SPResult *self, SEL cmd, NSString *query, FlashlightResult *result) {
     Class superclass = NSClassFromString(@"SPResult") ? : NSClassFromString(@"PRSResult");
     void (*superIMP)(id, SEL, NSString*, NSString*) = (void *)[superclass instanceMethodForSelector: @selector(initWithContentType:displayName:)];
@@ -34,8 +49,18 @@ id __SS_SSOpenAPIResult_category(SPResult *self, SEL cmd) {
     return @"MENU_EXPRESSION";
 }
 
+_Flashlight_WeakRefWrapper* __SS_SSOpenAPIResult_getCustomPreviewReference(SPResult *self) {
+    _Flashlight_WeakRefWrapper *ref = objc_getAssociatedObject(self, @selector(customPreviewController));
+    if (!ref) {
+        ref = [_Flashlight_WeakRefWrapper new];
+        objc_setAssociatedObject(self, @selector(customPreviewController), ref, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return ref;
+}
+
 SPPreviewController* __SS_SSOpenAPIResult_customPreviewController(SPResult *self, SEL cmd) {
-    SPPreviewController *vc = objc_getAssociatedObject(self, @selector(customPreviewController));
+    _Flashlight_WeakRefWrapper *vcRef = __SS_SSOpenAPIResult_getCustomPreviewReference(self);
+    SPPreviewController *vc = vcRef.target;
     if (vc) {
         return vc;
     } else {
@@ -47,7 +72,7 @@ SPPreviewController* __SS_SSOpenAPIResult_customPreviewController(SPResult *self
         if (!_Flashlight_Is_10_10_2_Spotlight()) {
             vc.internalPreviewResult = self;
         }
-        objc_setAssociatedObject(self, @selector(customPreviewController), vc, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        vcRef.target = vc;
         return vc;
     }
 }
