@@ -4,7 +4,7 @@
   ],
   "displayName" : "Kill",
   "name" : "kill9",
-  "description" : "Kill a process",
+  "description" : "Search processes as you type and kill the selected process",
   "examples" : [
     "kill safari",
     "kill iterm"
