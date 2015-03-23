@@ -21,15 +21,11 @@ Clone and build using Xcode, or [download Flashlight.app from _releases_](https:
 
 **Start with the [tutorial on writing plugins](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin).**
 
-## How it works
+Once you're finished with a plugin, clone our repo, place your bundle in `PluginDirectories/1`, and we'll upload it to the online directory.
 
-The `Flashlight.app` Xcode target is a fork of [EasySIMBL](https://github.com/norio-nomura/EasySIMBL) (which is designed to allow loading runtime injection of plugins into arbitrary apps) that's been modified to load a single plugin (stored inside its own bundle, rather than an external directory) into the Spotlight process. It should be able to coexist with EasySIMBL if you use it.
+## Contributing
 
-The SIMBL plugin that's loaded into Spotlight, `SpotlightSIMBL.bundle`, patches Spotlight to add a new subclass of `SPQuery`, the internal class used to fetch results from different sources. It runs a bundled Python script, which uses [commanding](https://github.com/nate-parrott/commanding) to parse queries and determine their intents and parameters, then invokes the appropriate plugin's `plugin.py` script and presents the results using a custom subclass of `SPResult`.
-
-Since [I'm not sure how to subclass classes that aren't available at link time](http://stackoverflow.com/questions/26704130/subclass-objective-c-class-without-linking-with-the-superclass), subclasses of Spotlight internal classes are made at runtime using [Mike Ash's instructions and helper code](https://www.mikeash.com/pyblog/friday-qa-2010-11-19-creating-classes-at-runtime-for-fun-and-profit.html).
-
-The Spotlight plugin is gated to run only on versions `911-916` (Yosemite GM through 10.10.2 seed). If a new version of Spotlight comes out, you can manually edit `SpotlightSIMBL/SpotlightSIMBL/Info.plist` key `SIMBLTargetApplications.MaxBundleVersion`, restarts Spotlight, verify everything works, and then submit a pull request.
+We welcome all contributions to the Flashlight core and plugins. See [the wiki](https://github.com/nate-parrott/Flashlight/wiki/Contributing-to-Flashlight-and-Plugins) for more info.
 
 ## Credits
 
