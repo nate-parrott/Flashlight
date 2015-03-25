@@ -14,7 +14,7 @@
 @property (nonatomic) NSArray *examples;
 @property (nonatomic) BOOL installed;
 @property (nonatomic) BOOL installing;
-@property (nonatomic) NSURL *zipURL;
+@property (nonatomic,readonly) NSURL *zipURL;
 @property (nonatomic) NSArray *categories;
 @property (nonatomic) BOOL isAutomatorWorkflow, isSearchPlugin, openPreferencesOnInstall;
 

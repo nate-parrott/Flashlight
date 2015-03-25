@@ -57,6 +57,7 @@ NSString * UpdateCheckerAutoupdateStatusChangedNotification = @"UpdateCheckerAut
     NSMutableArray *plugins = self.pluginsNeedingUpdates.mutableCopy;
     [plugins removeObject:plugin];
     self.pluginsNeedingUpdates = plugins;
+    [[NSNotificationCenter defaultCenter] postNotificationName:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:self];
 }
 
 #pragma mark Autoupdates
@@ -75,6 +76,13 @@ NSString * UpdateCheckerAutoupdateStatusChangedNotification = @"UpdateCheckerAut
             NSString *plugin = self.pluginsNeedingUpdates.firstObject;
             [[PluginInstallManager shared] installPlugin:[PluginModel installedPluginNamed:plugin] callback:^(BOOL success, NSError *error) {
                 if (success) {
+                    
+                    // HACK: work-around a condition where the local plugin's info.json name is (illegally) different from its directory name, and we get into an infinite plugin loop.
+                    if ([self.pluginsNeedingUpdates containsObject:plugin]) {
+                        [self justInstalledPlugin:plugin];
+                    }
+                    // /HACK
+                    
                     [self updateNextPluginOrFinishIfStillAutoupdating];
                 } else {
                     self.autoupdating = NO;

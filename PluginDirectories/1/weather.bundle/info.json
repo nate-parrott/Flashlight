@@ -2,6 +2,6 @@
 	"name": "weather",
 	"displayName": "Weather",
 	"description": "Updated weather plugin with both days and hour-by-hour forcast.",
-	"examples": ["weather brooklyn", "weather uppsala now", "how's the weather in new york now?"],
-	"categories": ["Weather"]
+	"examples": ["weather brooklyn", "how's the weather in uppsala?", "weather new york now"],
+	"categories": ["Weather", "Featured"]
 }

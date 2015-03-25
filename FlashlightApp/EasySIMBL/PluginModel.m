@@ -10,6 +10,7 @@
 #import "ConvenienceCategories.h"
 #import "NSObject+InternationalizedValueForKey.h"
 #import "PrefEditorWindow.h"
+#import "PluginDirectoryAPI.h"
 
 @implementation PluginModel
 
@@ -35,7 +36,6 @@
     model.pluginDescription = [json internationalizedValueForKey:@"description"] ? : @"";
     model.examples = [json internationalizedValueForKey:@"examples"];
     model.installed = NO;
-    model.zipURL = [NSURL URLWithString:json[@"zip_url"] relativeToURL:url];
     model.categories = json[@"categories"] ? : @[@"Unknown"];
     model.isAutomatorWorkflow = [json[@"isAutomatorWorkflow"] boolValue];
     model.isSearchPlugin = [json[@"isSearchPlugin"] boolValue];
@@ -118,6 +118,11 @@
         }
     }
     return 1; // fallback to version 1
+}
+
+- (NSURL *)zipURL {
+    NSString *u = [NSString stringWithFormat:@"%@/plugin/%@/latest.zip", [PluginDirectoryAPI APIRoot], self.name];
+    return [NSURL URLWithString:u];
 }
 
 @end

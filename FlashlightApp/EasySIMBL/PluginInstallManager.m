@@ -66,10 +66,17 @@ NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification = @"Plugi
 - (void)installPlugin:(PluginModel *)plugin callback:(void(^)(BOOL success, NSError *error))callback {
     if ([self isPluginCurrentlyBeingInstalled:plugin]) return;
     
+    NSLog(@"Installing plugin: %@", plugin.name);
+    
     PluginInstallTask *task = [[PluginInstallTask alloc] initWithPlugin:plugin];
     self.installTasksInProgress = self.installTasksInProgress ? [self.installTasksInProgress setByAddingObject:task] : [NSSet setWithObject:task];
     [[NSNotificationCenter defaultCenter] postNotificationName:PluginInstallManagerDidUpdatePluginStatusesNotification object:self];
     [task startInstallationIntoPluginsDirectory:[PluginModel pluginsDir] withCallback:^(BOOL success, NSError *error) {
+        if (success) {
+            NSLog(@"Successfully installed plugin: %@", plugin.name);
+        } else {
+            NSLog(@"Failed to install plugin: %@", plugin.name);
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSMutableSet *tasks = self.installTasksInProgress.mutableCopy;
             [tasks removeObject:task];

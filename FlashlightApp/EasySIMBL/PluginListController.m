@@ -22,6 +22,7 @@ NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
 NSString * const kCategorySearchResults = @"_SearchResults";
 NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
+NSString * const kCategoryUpdates = @"_Updates";
 
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
@@ -50,8 +51,6 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 @property (nonatomic) IBOutlet NSView *postEnabledPane;
 
 @property (nonatomic) BOOL showUpdateInProgress;
-@property (nonatomic) IBOutlet NSTextField *updateLabel;
-@property (nonatomic) IBOutlet NSLayoutConstraint *updateLabelMaxHeightConstraint;
 
 @end
 
@@ -89,22 +88,13 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
         [self.webView setDrawsBackground:NO];
         
         [self updateUI];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(listOfUpdateablePluginsAvailableChanged) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:nil];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePluginStatuses) name:PluginInstallManagerDidUpdatePluginStatusesNotification object:[PluginInstallManager shared]];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFromDisk) name:PluginInstallManagerSetOfInstalledPluginsChangedNotification object:[PluginInstallManager shared]];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateStatusChanged) name:UpdateCheckerAutoupdateStatusChangedNotification object:[UpdateChecker shared]];
         [self updateStatusChanged];
-        
-        // DONOTSUBMIT
-        self.showUpdateInProgress = NO;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.showUpdateInProgress = YES;
-        });
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.showUpdateInProgress = NO;
-        });
     }
 }
 - (void)dealloc {
@@ -339,6 +329,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [ordered addObject:[NSNull null]];
     [ordered addObject:@"New"];
     
+    if (self.showUpdateInProgress) {
+        [ordered addObject:[NSNull null]];
+        [ordered addObject:kCategoryUpdates];
+    }
+    
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
@@ -355,7 +350,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                             @"Unknown": @"plugin",
                             @"Art": @"palette",
                             @"Developer": @"console",
-                            @"New": @"asterisk"
+                            @"New": @"asterisk",
+                            kCategoryUpdates: @"update"
                             };
     NSString *imageName = imageNamesForCategories[category] ? : @"plugin";
     NSImage *image = [NSImage imageNamed:imageName];
@@ -378,6 +374,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSTableCellView *view = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
         view.textField.stringValue = [self localizedNameForCategory:item];
         view.imageView.image = [self iconForCategory:item];
+        view.alphaValue = [item isEqualToString:kCategoryUpdates] ? 0.5 : 1;
         return view;
     }
 }
@@ -393,7 +390,15 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item {
-    return ![item isKindOfClass:[NSNull class]];
+    if ([item isKindOfClass:[NSNull class]]) {
+        return NO;
+    }
+    if ([item isKindOfClass:[NSString class]]) {
+        if ([item isEqualToString:kCategoryUpdates]) {
+            return NO;
+        }
+    }
+    return YES;
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
@@ -438,7 +443,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
                  @"Developer": NSLocalizedString(@"Developer", @""),
                  @"Unknown": NSLocalizedString(@"Unknown", @""),
                  @"Media": NSLocalizedString(@"Media", @""),
-                 @"New": NSLocalizedString(@"New", @"new plugins")
+                 @"New": NSLocalizedString(@"New", @"new plugins"),
+                 kCategoryUpdates: NSLocalizedString(@"Updating...", @"")
                  };
     });
     return dict[category] ? : category;
@@ -525,7 +531,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         PluginModel *model = [PluginModel new];
         model.name = [comps valueForQueryKey:@"name"];
         model.pluginDescription = @"";
-        model.zipURL = [NSURL URLWithString:[comps valueForQueryKey:@"zip_url"]];
         [[PluginInstallManager shared] installPlugin:model];
         [listener ignore];
     } else if ([request.URL.scheme isEqualToString:@"uninstall"]) {
@@ -582,12 +587,23 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 #pragma mark Updates
 
-- (void)updateStatusChanged {
-    // TODO
+- (void)listOfUpdateablePluginsAvailableChanged {
+    if ([UpdateChecker shared].pluginsNeedingUpdates.count > 0 &&
+        ![UpdateChecker shared].autoupdating) {
+        [[UpdateChecker shared] setAutoupdating:YES];
+    }
+    [self updateUI];
 }
+
+- (void)updateStatusChanged {
+    self.showUpdateInProgress = [UpdateChecker shared].autoupdating;
+}
+
 - (void)setShowUpdateInProgress:(BOOL)showUpdateInProgress {
-    _showUpdateInProgress = showUpdateInProgress;
-    self.updateLabelMaxHeightConstraint.constant = showUpdateInProgress ? 999 : 0;
+    if (showUpdateInProgress != _showUpdateInProgress) {
+        _showUpdateInProgress = showUpdateInProgress;
+        [self updateUI];
+    }
 }
 
 @end
