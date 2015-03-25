@@ -4,5 +4,5 @@
 	"displayName_de": "Google Suche",
 	"examples": ["google Apple stock", "search the web for OSX Yosemite", "g Flashlight"],
 	"examples_de": ["google Apple Aktie", "Suche im Internet nach OSX Yosemite", "g Flashlight"],
-	"categories": ["Search", "Featured"]
+	"categories": ["Search"]
 }

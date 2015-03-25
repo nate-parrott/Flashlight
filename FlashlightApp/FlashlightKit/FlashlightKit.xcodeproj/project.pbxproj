@@ -61,6 +61,7 @@
 		5F25EF001A7615380030693F /* PSTaggedText+ToNestedDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */; };
 		5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECF1A7615380030693F /* PSTerminalNode.h */; };
 		5F25EF021A7615380030693F /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EED01A7615380030693F /* PSTerminalNode.m */; };
+		5F38780C1AC2222F0003363D /* FlashlightSystemHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */; };
 		5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F35F61A7040700027AF00 /* AddressBook.framework */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
@@ -149,6 +150,8 @@
 		5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToNestedDictionaries.m"; sourceTree = "<group>"; };
 		5F25EECF1A7615380030693F /* PSTerminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTerminalNode.h; sourceTree = "<group>"; };
 		5F25EED01A7615380030693F /* PSTerminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTerminalNode.m; sourceTree = "<group>"; };
+		5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightSystemHelpers.h; sourceTree = "<group>"; };
+		5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightSystemHelpers.m; sourceTree = "<group>"; };
 		5F5F35F61A7040700027AF00 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				5F25EF031A76153F0030693F /* Parser */,
 				5FC13E5F1A4E169E008A0FE3 /* FlashlightResult.h */,
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
+				5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */,
+				5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */,
 				5FD350531A85327C001E0380 /* SearchPluginState.h */,
 				5FD350541A85327C001E0380 /* SearchPluginState.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
@@ -512,6 +517,7 @@
 				5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */,
 				5F25EEE81A7615380030693F /* PSParseCandidate.m in Sources */,
 				5F25EEDF1A7615380030693F /* PSFileSource.m in Sources */,
+				5F38780C1AC2222F0003363D /* FlashlightSystemHelpers.m in Sources */,
 				5F249B171A5CDA57001FEF8F /* TimeParser.c in Sources */,
 				5F25EED31A7615380030693F /* NSString+PSTokenize.m in Sources */,
 			);

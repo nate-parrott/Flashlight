@@ -1,0 +1,8 @@
+{
+	"title": "Web Search",
+	"run_args": [],
+	"webview_transparent_background": true,
+	"pass_result_of_output_function_as_first_run_arg": true,
+	"webview_links_open_in_browser": true,
+	"html_file": "search.html"
+}

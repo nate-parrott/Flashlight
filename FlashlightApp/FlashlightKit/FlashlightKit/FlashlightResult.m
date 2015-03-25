@@ -12,6 +12,7 @@
 #import "FlashlightResultView.h"
 #import "FlashlightQueryEngine.h"
 #import "FlashlightWebScriptObject.h"
+#import "FlashlightSystemHelpers.h"
 
 @interface FlashlightResult ()
 
@@ -93,7 +94,9 @@
     }
     if (self.json[@"html_file"]) {
         NSString *path = [self.pluginPath stringByAppendingPathComponent:self.json[@"html_file"]];
-        return [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+        NSMutableString *markup = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil].mutableCopy;
+        [markup replaceOccurrencesOfString:@"<!--FLASHLIGHT_THEME_MODE-->" withString:(FlashlightIsDarkModeEnabled() ? @"dark" : @"light") options:0 range:NSMakeRange(0, markup.length)];
+        return markup;
     }
     return nil;
 }

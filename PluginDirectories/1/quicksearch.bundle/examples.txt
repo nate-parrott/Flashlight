@@ -1,0 +1,3 @@
+search the web for ~query(xyz)
+/ ~query(xyz)
+!persistent
