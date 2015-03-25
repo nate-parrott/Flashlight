@@ -9,8 +9,10 @@
 #import "UpdateChecker.h"
 #import "PluginModel.h"
 #import "PluginDirectoryAPI.h"
+#import "PluginInstallManager.h"
 
 NSString * UpdateCheckerPluginsNeedingUpdatesDidChangeNotification = @"UpdateCheckerPluginsNeedingUpdatesDidChangeNotification";
+NSString * UpdateCheckerAutoupdateStatusChangedNotification = @"UpdateCheckerAutoupdateStatusChangedNotification";
 
 @implementation UpdateChecker
 
@@ -55,6 +57,33 @@ NSString * UpdateCheckerPluginsNeedingUpdatesDidChangeNotification = @"UpdateChe
     NSMutableArray *plugins = self.pluginsNeedingUpdates.mutableCopy;
     [plugins removeObject:plugin];
     self.pluginsNeedingUpdates = plugins;
+}
+
+#pragma mark Autoupdates
+
+- (void)setAutoupdating:(BOOL)autoupdating {
+    if (autoupdating != _autoupdating) {
+        _autoupdating = autoupdating;
+        [[NSNotificationCenter defaultCenter] postNotificationName:UpdateCheckerAutoupdateStatusChangedNotification object:self];
+        [self updateNextPluginOrFinishIfStillAutoupdating];
+    }
+}
+
+- (void)updateNextPluginOrFinishIfStillAutoupdating {
+    if (self.autoupdating) {
+        if (self.pluginsNeedingUpdates.count > 0) {
+            NSString *plugin = self.pluginsNeedingUpdates.firstObject;
+            [[PluginInstallManager shared] installPlugin:[PluginModel installedPluginNamed:plugin] callback:^(BOOL success, NSError *error) {
+                if (success) {
+                    [self updateNextPluginOrFinishIfStillAutoupdating];
+                } else {
+                    self.autoupdating = NO;
+                }
+            }];
+        } else {
+            self.autoupdating = NO;
+        }
+    }
 }
 
 @end

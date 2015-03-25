@@ -16,6 +16,7 @@
 #import "NSURLComponents+ValueForQueryKey.h"
 #import "SearchPluginEditorWindowController.h"
 #import "UpdateChecker.h"
+#import "PluginInstallManager.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
@@ -25,7 +26,6 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 @interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
 @property (nonatomic) NSArray *installedPlugins;
-@property (nonatomic) NSSet *installTasksInProgress;
 
 @property (nonatomic) dispatch_source_t dispatchSource;
 @property (nonatomic) int fileDesc;
@@ -48,6 +48,10 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 
 @property (nonatomic) IBOutlet NSView *disabledPane;
 @property (nonatomic) IBOutlet NSView *postEnabledPane;
+
+@property (nonatomic) BOOL showUpdateInProgress;
+@property (nonatomic) IBOutlet NSTextField *updateLabel;
+@property (nonatomic) IBOutlet NSLayoutConstraint *updateLabelMaxHeightConstraint;
 
 @end
 
@@ -85,7 +89,22 @@ NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
         [self.webView setDrawsBackground:NO];
         
         [self updateUI];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePluginStatuses) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUI) name:UpdateCheckerPluginsNeedingUpdatesDidChangeNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updatePluginStatuses) name:PluginInstallManagerDidUpdatePluginStatusesNotification object:[PluginInstallManager shared]];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadFromDisk) name:PluginInstallManagerSetOfInstalledPluginsChangedNotification object:[PluginInstallManager shared]];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateStatusChanged) name:UpdateCheckerAutoupdateStatusChangedNotification object:[UpdateChecker shared]];
+        [self updateStatusChanged];
+        
+        // DONOTSUBMIT
+        self.showUpdateInProgress = NO;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.showUpdateInProgress = YES;
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.showUpdateInProgress = NO;
+        });
     }
 }
 - (void)dealloc {
@@ -217,11 +236,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [self updateUI];
 }
 
-- (void)setInstallTasksInProgress:(NSSet *)installTasksInProgress {
-    _installTasksInProgress = installTasksInProgress;
-    [self updateUI];
-}
-
 - (void)updateControllers {
     [self.sourceList reloadData];
     [self updateArrayController];
@@ -253,11 +267,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 #pragma mark Local plugin files
 - (void)startWatchingPluginsDir {
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[self localPluginsPath]]) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:[self localPluginsPath] withIntermediateDirectories:YES attributes:nil error:nil];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[PluginModel pluginsDir]]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:[PluginModel pluginsDir] withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
-    self.fileDesc = open([[self localPluginsPath] fileSystemRepresentation], O_EVTONLY);
+    self.fileDesc = open([[PluginModel pluginsDir] fileSystemRepresentation], O_EVTONLY);
     
     // watch the file descriptor for writes
     self.dispatchSource = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, self.fileDesc, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE | DISPATCH_VNODE_ATTRIB, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
@@ -290,12 +304,12 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)reloadFromDisk {
-    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self localPluginsPath] error:nil];
+    NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[PluginModel pluginsDir] error:nil];
     NSMutableArray *models = [NSMutableArray new];
     for (NSString *itemName in contents) {
         NSString *ext = [itemName pathExtension];
         if ([@[@"bundle"] containsObject:ext]) {
-            NSData *data = [NSData dataWithContentsOfFile:[[[self localPluginsPath] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]];
+            NSData *data = [NSData dataWithContentsOfFile:[[[PluginModel pluginsDir] stringByAppendingPathComponent:itemName] stringByAppendingPathComponent:@"info.json"]];
             if (data) {
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 PluginModel *model = [PluginModel fromJson:json baseURL:nil];
@@ -306,63 +320,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     }
     self.installedPlugins = models;
     [self updateUI];
-}
-
-- (NSString *)localPluginsPath {
-    return [PluginModel pluginsDir];
-}
-
-#pragma mark (Un)?installation
-- (BOOL)isPluginCurrentlyBeingInstalled:(PluginModel *)plugin {
-    for (PluginInstallTask *task in self.installTasksInProgress) {
-        if ([task.plugin.name isEqualToString:plugin.name]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-- (void)installPlugin:(PluginModel *)plugin {
-    if ([self isPluginCurrentlyBeingInstalled:plugin]) return;
-    
-    PluginInstallTask *task = [[PluginInstallTask alloc] initWithPlugin:plugin];
-    self.installTasksInProgress = self.installTasksInProgress ? [self.installTasksInProgress setByAddingObject:task] : [NSSet setWithObject:task];
-    [task startInstallationIntoPluginsDirectory:[self localPluginsPath] withCallback:^(BOOL success, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (!success) {
-                NSAlert *alert;
-                if (error) {
-                    alert = [NSAlert alertWithError:error];
-                } else {
-                    alert = [[NSAlert alloc] init];
-                    [alert setMessageText:NSLocalizedString(@"Couldn't install plugin.", @"")];
-                    [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
-                }
-                alert.alertStyle = NSWarningAlertStyle;
-                [alert runModal];
-            }
-            NSMutableSet *tasks = self.installTasksInProgress.mutableCopy;
-            [tasks removeObject:task];
-            [self clearNLPModelCache];
-            self.installTasksInProgress = tasks;
-            [self reloadFromDisk];
-            [self updatePluginStatuses];
-        });
-    }];
-}
-- (void)uninstallPlugin:(PluginModel *)plugin {
-    if ([self isPluginCurrentlyBeingInstalled:plugin]) return;
-    
-    NSString *path = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"bundle"]];
-    NSString *disabledPath = [[self localPluginsPath] stringByAppendingPathComponent:[plugin.name stringByAppendingPathExtension:@"disabled-bundle"]];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:disabledPath isDirectory:nil]) {
-        [[NSFileManager defaultManager] removeItemAtPath:disabledPath error:nil];
-    }
-    [[NSFileManager defaultManager] moveItemAtPath:path toPath:disabledPath error:nil];
-    [self clearNLPModelCache];
-}
-
-- (void)clearNLPModelCache {
-    // TODO: get FlashlightKit to clear its cache somehow
 }
 
 #pragma mark Categorization
@@ -381,6 +338,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
     [ordered insertObject:[NSNull null] atIndex:4];
     [ordered addObject:[NSNull null]];
     [ordered addObject:@"New"];
+    
     return ordered;
 }
 - (NSImage *)iconForCategory:(NSString *)category {
@@ -493,7 +451,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 #pragma mark Creation/Editing
 - (IBAction)newPlugin:(id)sender {
     NSString *name = [[NSUUID UUID] UUIDString];
-    NSString *path = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    NSString *path = [[[PluginModel pluginsDir] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
     [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"WorkflowTemplate" ofType:@"bundle"] toPath:path error:nil];
     // rename the template:
     NSString *infoJsonPath = [path stringByAppendingPathComponent:@"info.json"];
@@ -508,13 +466,13 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 - (void)editAutomatorPluginNamed:(NSString *)name {
     PluginEditorWindowController *editor = [[PluginEditorWindowController alloc] initWithWindowNibName:@"PluginEditorWindowController"];
-    editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    editor.pluginPath = [[[PluginModel pluginsDir] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
     [editor showWindow:nil];
 }
 
 - (IBAction)newSearchPlugin:(id)sender {
     NSString *name = [[NSUUID UUID] UUIDString];
-    NSString *path = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    NSString *path = [[[PluginModel pluginsDir] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
     [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"SearchTemplate" ofType:@"bundle"] toPath:path error:nil];
     // rename the template:
     NSString *infoJsonPath = [path stringByAppendingPathComponent:@"info.json"];
@@ -529,7 +487,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 
 - (void)editSearchPluginNamed:(NSString *)name {
     SearchPluginEditorWindowController *editor = [[SearchPluginEditorWindowController alloc] initWithWindowNibName:@"SearchPluginEditorWindowController"];
-    editor.pluginPath = [[[self localPluginsPath] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
+    editor.pluginPath = [[[PluginModel pluginsDir] stringByAppendingPathComponent:name] stringByAppendingPathExtension:@"bundle"];
     [editor showWindow:nil];
 }
 
@@ -551,7 +509,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
     }
-    for (PluginInstallTask *installation in self.installTasksInProgress) {
+    for (PluginInstallTask *installation in [PluginInstallManager shared].installTasksInProgress) {
         [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
         [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
     }
@@ -568,8 +526,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         model.name = [comps valueForQueryKey:@"name"];
         model.pluginDescription = @"";
         model.zipURL = [NSURL URLWithString:[comps valueForQueryKey:@"zip_url"]];
-        [self installPlugin:model];
-        [self updatePluginStatuses];
+        [[PluginInstallManager shared] installPlugin:model];
         [listener ignore];
     } else if ([request.URL.scheme isEqualToString:@"uninstall"]) {
         NSString *name = request.URL.host;
@@ -577,9 +534,8 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
             return [p.name isEqualToString:name] ? p : nil;
         }].firstObject;
         if (plugin) {
-            [self uninstallPlugin:plugin];
+            [[PluginInstallManager shared] uninstallPlugin:plugin];
         }
-        [self reloadFromDisk];
         [listener ignore];
     } else if ([request.URL.scheme isEqualToString:@"open"]) {
         [listener ignore];
@@ -622,6 +578,16 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)showSearch:(NSString *)search {
     self.searchField.stringValue = search;
     [self search:nil];
+}
+
+#pragma mark Updates
+
+- (void)updateStatusChanged {
+    // TODO
+}
+- (void)setShowUpdateInProgress:(BOOL)showUpdateInProgress {
+    _showUpdateInProgress = showUpdateInProgress;
+    self.updateLabelMaxHeightConstraint.constant = showUpdateInProgress ? 999 : 0;
 }
 
 @end

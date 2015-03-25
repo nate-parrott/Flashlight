@@ -23,9 +23,6 @@
 @property (nonatomic) IBOutlet NSVisualEffectView *webViewEffectView;
 @property (nonatomic) IBOutlet WebView *webView;
 
-- (void)installPlugin:(PluginModel *)plugin;
-- (void)uninstallPlugin:(PluginModel *)plugin;
-
 @property (nonatomic,weak) IBOutlet NSView *errorBanner;
 @property (nonatomic,weak) IBOutlet NSTextField *errorText;
 @property (nonatomic,weak) IBOutlet NSButton *errorButton;

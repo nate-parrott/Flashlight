@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */; };
 		5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */; };
+		5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3878121AC2527C0003363D /* PluginInstallManager.m */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
 		5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */; };
 		5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */; };
@@ -108,6 +109,8 @@
 		5F2B37721A3E42E500AC2C19 /* SearchPluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginEditorWindowController.h; sourceTree = "<group>"; };
 		5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginEditorWindowController.m; sourceTree = "<group>"; };
 		5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPluginEditorWindowController.xib; sourceTree = "<group>"; };
+		5F3878111AC2527C0003363D /* PluginInstallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginInstallManager.h; sourceTree = "<group>"; };
+		5F3878121AC2527C0003363D /* PluginInstallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginInstallManager.m; sourceTree = "<group>"; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
@@ -335,6 +338,8 @@
 				5FD3EA7D1A202777005A312E /* PluginDirectoryAPI.m */,
 				5FF5D40F1A675F0800641D7A /* UpdateChecker.h */,
 				5FF5D4101A675F0800641D7A /* UpdateChecker.m */,
+				5F3878111AC2527C0003363D /* PluginInstallManager.h */,
+				5F3878121AC2527C0003363D /* PluginInstallManager.m */,
 				5F6326BE1A08313E00CE241E /* PluginModel.h */,
 				5F6326BF1A08313E00CE241E /* PluginModel.m */,
 				5F6326CB1A09310F00CE241E /* PluginInstallTask.h */,
@@ -656,6 +661,7 @@
 				5F6326FF1A0933E800CE241E /* ZZDataChannel.m in Sources */,
 				5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */,
 				5F6327031A0933E800CE241E /* ZZFileChannel.m in Sources */,
+				5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */,
 				5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */,
 				5F63270A1A0933E800CE241E /* ZZStandardCryptoEngine.cpp in Sources */,
 			);

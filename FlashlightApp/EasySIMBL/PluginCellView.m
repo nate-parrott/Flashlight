@@ -11,6 +11,7 @@
 #import "PluginListController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ITSwitch+Additions.h"
+#import "PluginInstallManager.h"
 
 @interface PluginCellView ()
 
@@ -41,7 +42,7 @@
 }
 
 - (IBAction)remove:(id)sender {
-    [self.listController uninstallPlugin:[self plugin]];
+    [[PluginInstallManager shared] uninstallPlugin:[self plugin]];
 }
 
 - (IBAction)openSettings:(id)sender {
