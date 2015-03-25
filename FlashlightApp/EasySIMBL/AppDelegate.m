@@ -22,6 +22,7 @@
 @property (nonatomic,weak) IBOutlet NSButton *openGithub, *requestPlugin, *leaveFeedback;
 @property (nonatomic,weak) IBOutlet NSWindow *aboutWindow;
 @property (nonatomic,weak) IBOutlet NSButton *menuBarItemPreferenceButton;
+@property (nonatomic,weak) IBOutlet NSMenuItem *flashlightEnabledMenuItem;
 
 @end
 
@@ -90,7 +91,6 @@
                 SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
                 
                 CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-                [self.useSIMBLSwitch setEnabled:NO];
                 state = NSOffState;
                 NSRunningApplication *runningApplication = [runningApplications objectAtIndex:0];
                 [runningApplication addObserver:self
@@ -105,8 +105,6 @@
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
         }
         [self setSIMBLOn:state == NSOnState animated:NO];
-    } else {
-        [self.useSIMBLSwitch setEnabled:NO];
     }
     
     [self restartSIMBLIfUpdated];
@@ -189,14 +187,13 @@
 {
     if ([keyPath isEqualToString:@"isTerminated"]) {
         [object removeObserver:self forKeyPath:keyPath];
-        [self.useSIMBLSwitch setEnabled:YES];
         CFRelease((CFTypeRef)context);
     }
 }
 
 #pragma mark IBAction
 
-- (IBAction)toggleUseSIMBL:(id)sender {
+- (IBAction)toggleFlashlightEnabled:(id)sender {
     BOOL result = !self.SIMBLOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
@@ -224,8 +221,9 @@
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
-    self.useSIMBLSwitch.state = SIMBLOn ? NSOnState : NSOffState;
     self.pluginListController.enabled = SIMBLOn;
+    self.flashlightEnabledMenuItem.state = SIMBLOn ? NSOnState : NSOffState;
+    self.flashlightEnabledMenuItem.title = SIMBLOn ? NSLocalizedString(@"Flashlight Enabled", nil) : NSLocalizedString(@"Flashlight Disabled", nil);
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {
@@ -337,6 +335,25 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight" userInfo:nil options:NSNotificationPostToAllSessions | NSNotificationDeliverImmediately];
     });
+}
+
+#pragma mark Uninstallation
+
+- (IBAction)uninstall:(id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Uninstall Flashlight?"];
+    [alert setInformativeText:@"If you select \"Uninstall\", Flashlight will quit, and you can drag its app icon to the trash."];
+    [alert addButtonWithTitle:@"Uninstall"]; // FirstButton, rightmost button
+    [alert addButtonWithTitle:@"Cancel"]; // SecondButton
+    alert.alertStyle = NSCriticalAlertStyle;
+    NSModalResponse resp = [alert runModal];
+    if (resp == NSAlertFirstButtonReturn) {
+        if (self.SIMBLOn) {
+            [self toggleFlashlightEnabled:nil];
+        }
+        [[NSWorkspace sharedWorkspace] selectFile:[[NSBundle mainBundle] bundlePath] inFileViewerRootedAtPath:nil];
+        [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.5];
+    }
 }
 
 @end

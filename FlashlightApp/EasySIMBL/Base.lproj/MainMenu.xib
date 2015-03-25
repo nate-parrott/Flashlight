@@ -35,6 +35,19 @@
                                     <action selector="checkForUpdates:" target="4AR-H2-g27" id="fgW-du-Q6I"/>
                                 </connections>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="PJK-HR-9p3"/>
+                            <menuItem title="Flashlight Enabled" id="Kal-wE-JXI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleFlashlightEnabled:" target="494" id="vsS-xv-bXl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Uninstall Flashlight..." id="xNf-g4-wGY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="uninstall:" target="494" id="RaH-hb-9Wm"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -349,14 +362,13 @@
         <customObject id="494" customClass="AppDelegate">
             <connections>
                 <outlet property="aboutWindow" destination="Nbs-13-Twb" id="JQi-Kg-U2G"/>
-                <outlet property="enablePluginsButton" destination="KeZ-dH-ema" id="z5X-Aq-hDg"/>
+                <outlet property="flashlightEnabledMenuItem" destination="Kal-wE-JXI" id="4AC-Ms-upt"/>
                 <outlet property="leaveFeedback" destination="YyB-xf-RjT" id="MGc-ch-NJm"/>
                 <outlet property="menuBarItemPreferenceButton" destination="Llk-bz-SPb" id="grz-AH-VkL"/>
                 <outlet property="openGithub" destination="no0-HV-O9k" id="12n-tY-kFy"/>
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="requestPlugin" destination="QeJ-hd-3A1" id="AK4-6B-Nzq"/>
                 <outlet property="searchAnything" destination="gNj-56-AoU" id="aX9-YH-2Hx"/>
-                <outlet property="useSIMBLSwitch" destination="KeZ-dH-ema" id="iab-e1-bce"/>
                 <outlet property="versionLabel" destination="v99-pH-dRh" id="UQq-qN-W0r"/>
                 <outlet property="window" destination="651" id="653"/>
             </connections>
@@ -364,8 +376,7 @@
         <customObject id="420" customClass="NSFontManager"/>
         <window title="Flashlight" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="651">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="168" y="456" width="602" height="447"/>
+            <rect key="contentRect" x="239" y="285" width="602" height="447"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="600" height="300"/>
             <value key="maxSize" type="size" width="2000" height="2000"/>
@@ -557,7 +568,6 @@
                 <outlet property="sourceList" destination="76J-wG-jzB" id="LkR-LD-LdE"/>
                 <outlet property="tableContainer" destination="IJ7-m0-7jG" id="UC5-K9-iZD"/>
                 <outlet property="tableView" destination="2Bw-eW-td2" id="Fpj-ZY-CR6"/>
-                <outlet property="toggleView" destination="9dh-Cp-Auf" id="H5c-0P-FHt"/>
                 <outlet property="toolbarItem" destination="6NI-Ay-AA6" id="d4e-Cy-LbB"/>
                 <outlet property="view" destination="652" id="deO-wQ-SCo"/>
                 <outlet property="webView" destination="DEt-An-xUj" id="3I1-bq-dVK"/>
@@ -565,34 +575,6 @@
             </connections>
         </customObject>
         <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
-        <customView id="9dh-Cp-Auf" userLabel="Toggle view">
-            <rect key="frame" x="0.0" y="0.0" width="129" height="38"/>
-            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <button wantsLayer="YES" id="KeZ-dH-ema">
-                    <rect key="frame" x="9" y="10" width="117" height="18"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                    <contentFilters>
-                        <ciFilter name="CIColorControls">
-                            <configuration>
-                                <real key="inputBrightness" value="0.0"/>
-                                <real key="inputContrast" value="1"/>
-                                <null key="inputImage"/>
-                                <real key="inputSaturation" value="0.0"/>
-                            </configuration>
-                        </ciFilter>
-                    </contentFilters>
-                    <buttonCell key="cell" type="check" title="Enable" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Uae-za-3vG">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="toggleUseSIMBL:" target="494" id="8UB-0c-S9O"/>
-                    </connections>
-                </button>
-            </subviews>
-            <point key="canvasLocation" x="153.5" y="588"/>
-        </customView>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -841,7 +823,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="toggleUseSIMBL:" target="494" id="xDb-GT-v9x"/>
+                                <action selector="toggleFlashlightEnabled:" target="494" id="ost-9X-GnL"/>
                             </connections>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="QsG-zx-iR5">
