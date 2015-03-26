@@ -62,6 +62,8 @@
 		5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECF1A7615380030693F /* PSTerminalNode.h */; };
 		5F25EF021A7615380030693F /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EED01A7615380030693F /* PSTerminalNode.m */; };
 		5F38780C1AC2222F0003363D /* FlashlightSystemHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */; };
+		5F4080A41AC3B6FF00F200E5 /* DAU.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4080A21AC3B6FF00F200E5 /* DAU.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F4080A51AC3B6FF00F200E5 /* DAU.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4080A31AC3B6FF00F200E5 /* DAU.m */; };
 		5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F35F61A7040700027AF00 /* AddressBook.framework */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
@@ -152,6 +154,8 @@
 		5F25EED01A7615380030693F /* PSTerminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTerminalNode.m; sourceTree = "<group>"; };
 		5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightSystemHelpers.h; sourceTree = "<group>"; };
 		5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightSystemHelpers.m; sourceTree = "<group>"; };
+		5F4080A21AC3B6FF00F200E5 /* DAU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAU.h; sourceTree = "<group>"; };
+		5F4080A31AC3B6FF00F200E5 /* DAU.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAU.m; sourceTree = "<group>"; };
 		5F5F35F61A7040700027AF00 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */,
 				5FC13E6B1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h */,
 				5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */,
+				5F4080A21AC3B6FF00F200E5 /* DAU.h */,
+				5F4080A31AC3B6FF00F200E5 /* DAU.m */,
 				5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */,
 				5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */,
 				5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */,
@@ -351,6 +357,7 @@
 				5F25EEF91A7615380030693F /* PSTaggedText+ParseExample.h in Headers */,
 				5F25EEE91A7615380030693F /* PSParsnipSource.h in Headers */,
 				5F25EED11A7615380030693F /* Finder.h in Headers */,
+				5F4080A41AC3B6FF00F200E5 /* DAU.h in Headers */,
 				5F25EEED1A7615380030693F /* PSPluginExampleSource.h in Headers */,
 				5F25EEEB1A7615380030693F /* PSPluginDispatcher.h in Headers */,
 				5F25EEE01A7615380030693F /* PSHelpers.h in Headers */,
@@ -491,6 +498,7 @@
 				5F25EEFA1A7615380030693F /* PSTaggedText+ParseExample.m in Sources */,
 				5F25EED71A7615380030693F /* PSBackgroundProcessor.m in Sources */,
 				5F25EEF81A7615380030693F /* PSTaggedText+FromNodes.m in Sources */,
+				5F4080A51AC3B6FF00F200E5 /* DAU.m in Sources */,
 				5F25EED51A7615380030693F /* Parsnip.m in Sources */,
 				5F25EEEA1A7615380030693F /* PSParsnipSource.m in Sources */,
 				5F25EEF01A7615380030693F /* PSProbabilityCounter.m in Sources */,

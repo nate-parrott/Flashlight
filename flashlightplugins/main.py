@@ -22,6 +22,7 @@ from model import Plugin
 from directory import directory_html, info_dict_for_plugin
 from util import get_localized_key
 import query_updates
+from applogging import LogHandler
 
 def send_upload_form(request, message=None):
 		request.response.write(template("upload.html",
@@ -250,6 +251,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
 															 ('/plugin/(.+)', PluginPageHandler),
 															 ('/upload', UploadHandler),
 															 ('/post_upload', PostUploadHandler),
+															 ('/logging', LogHandler),
 															 ('/directory', Directory),
 															 ('/serve/(.+)', ServeHandler),
 															 ('/categories', Categories),

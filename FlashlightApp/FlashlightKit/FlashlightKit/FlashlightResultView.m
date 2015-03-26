@@ -11,11 +11,14 @@
 #import "FlashlightWebScriptObject.h"
 #import <objc/runtime.h>
 #import "FlashlightResult.h"
+#import <FlashlightKit.h>
 
 @interface FlashlightResultView ()
 
 @property (nonatomic) NSProgressIndicator *loader;
 @property (nonatomic) WebView *webView;
+
+@property (nonatomic) NSTimer *visibilityLoggingTimer;
 
 @end
 
@@ -60,6 +63,21 @@
 
 - (id)resultOfOutputFunction {
     return [self.result resultOfOutputFunction];
+}
+
+#pragma mark Visibility
+- (void)viewWillMoveToWindow:(NSWindow *)newWindow {
+    if (newWindow && !self.visibilityLoggingTimer) {
+        self.visibilityLoggingTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(viewedFor1Sec) userInfo:nil repeats:NO];
+    } else if (!newWindow && self.visibilityLoggingTimer) {
+        [self.visibilityLoggingTimer invalidate];
+        self.visibilityLoggingTimer = nil;
+    }
+}
+
+- (void)viewedFor1Sec {
+    [DAU logDailyAction:@"viewResultFor1Sec"];
+    self.visibilityLoggingTimer = nil;
 }
 
 @end

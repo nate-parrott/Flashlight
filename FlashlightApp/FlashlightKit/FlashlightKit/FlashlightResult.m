@@ -13,6 +13,7 @@
 #import "FlashlightQueryEngine.h"
 #import "FlashlightWebScriptObject.h"
 #import "FlashlightSystemHelpers.h"
+#import <FlashlightKit.h>
 
 @interface FlashlightResult ()
 
@@ -40,6 +41,7 @@
 }
 
 - (BOOL)pressEnter:(FlashlightResultView *)resultView errorCallback:(void(^)(NSString *error))errorCallback {
+    [DAU logDailyAction:@"openedResult"];
     NSMutableArray *runArgs = [self.json[@"run_args"] mutableCopy];
     if (runArgs) {
         if ([self.json[@"pass_result_of_output_function_as_first_run_arg"] boolValue]) {
