@@ -40,7 +40,7 @@
 }
 
 + (void)sendLogForAction:(NSString *)action {
-    BOOL production = NO;
+    BOOL production = YES;
     NSString *url = production ? @"https://flashlightplugins.appspot.com/logging" : @"http://localhost:24080/logging";
     NSDictionary *payload = @{
                               @"user": [self anonymousId],
