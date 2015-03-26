@@ -91,6 +91,7 @@ img {
     display: inline-block;
     list-style-type: none;
     padding: 7px;
+		font-size: small;
 }
 #categories > li:hover {
     background-color: white;

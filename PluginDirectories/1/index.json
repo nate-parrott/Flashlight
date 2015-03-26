@@ -1004,8 +1004,7 @@
         },
         {
             "categories": [
-                "Search",
-                "Featured"
+                "Search"
             ],
             "displayName": "Google Search",
             "displayName_de": "Google Suche",
@@ -1268,7 +1267,7 @@
             ],
             "creator_name": "Dylan Zhang",
             "creator_url": "http://dylanzhang.me",
-            "description": "Kill a process",
+            "description": "Search processes as you type and kill the selected process",
             "displayName": "Kill",
             "examples": [
                 "kill safari",
@@ -1617,6 +1616,20 @@
             ],
             "name": "qr-googlechart",
             "zip_url": "qr-googlechart.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Featured"
+            ],
+            "description": "Search the web instantly from Spotlight. Type '/', followed by your search.",
+            "displayName": "Quick Web Search",
+            "examples": [
+                "/hubble telescope",
+                "/carroll gardens"
+            ],
+            "name": "quicksearch",
+            "zip_url": "quicksearch.zip"
         },
         {
             "categories": [
@@ -2242,14 +2255,15 @@
         },
         {
             "categories": [
-                "Weather"
+                "Weather",
+                "Featured"
             ],
             "description": "Updated weather plugin with both days and hour-by-hour forcast.",
             "displayName": "Weather",
             "examples": [
                 "weather brooklyn",
-                "weather uppsala now",
-                "how's the weather in new york now?"
+                "how's the weather in uppsala?",
+                "weather new york now"
             ],
             "name": "weather",
             "zip_url": "weather.zip"
@@ -2374,6 +2388,22 @@
             ],
             "name": "wiktionary",
             "zip_url": "wiktionary.zip"
+        },
+        {
+            "categories": [
+                "System"
+            ],
+            "creator_name": "Nate Gantt",
+            "description": "Easily toggle wifi/bluetooth",
+            "displayName": "Wireless Toggles",
+            "examples": [
+                "wifi on",
+                "turn wifi on",
+                "turn bluetooth on",
+                "bluetooth off"
+            ],
+            "name": "wireless-toggles",
+            "zip_url": "wireless-toggles.zip"
         },
         {
             "categories": [

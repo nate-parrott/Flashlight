@@ -1,6 +1,6 @@
 {
-  "displayName" : "Network Toggles",
-  "name" : "network-toggles",
+  "displayName" : "Wireless Toggles",
+  "name" : "wireless-toggles",
   "description" : "Easily toggle wifi/bluetooth",
   "categories" : ["System"],
   "examples" : [
@@ -9,6 +9,5 @@
     "turn bluetooth on",
     "bluetooth off"
   ],
-  "creator_name": "Nate Gantt",
-  "creator_url": "TEMP PLACEHOLDER BEFORE THIS GOES ON GITHUB"
+  "creator_name": "Nate Gantt"
 }
