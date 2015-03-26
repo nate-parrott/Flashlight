@@ -45,7 +45,7 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
     NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
-    
+        
     self.SIMBLOn = YES;
     
     [self checkSpotlightVersion];

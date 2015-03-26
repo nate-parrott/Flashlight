@@ -85,6 +85,7 @@
 }
 
 - (void)runPluginsWithParseTrees:(NSDictionary *)pluginPathsToParseTreesMap ifQueryIsStill:(NSString *)query {
+    if ([self pluginInfrastructureIsMissing]) return;
     if ([query isEqualToString:self.query]) {
         NSMutableDictionary *staticPluginResultsByPath = [NSMutableDictionary new];
         
@@ -112,9 +113,18 @@
     return [[NSFileManager defaultManager] fileExistsAtPath:[path stringByAppendingPathComponent:@"static_result.json"]];
 }
 
+- (NSString *)pluginInvocationScriptPath {
+    return [[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"];
+}
+
+- (BOOL)pluginInfrastructureIsMissing {
+    // this can happen if Flashlight.app is deleted w/out disabling the SIMBL service
+    return ![[NSFileManager defaultManager] fileExistsAtPath:[self pluginInvocationScriptPath]];
+}
+
 - (void)executePluginAtPath:(NSString *)pluginPath parseTree:(PSTaggedText *)parseTree query:(NSString *)query {
     __weak FlashlightQueryEngine *weakSelf = self;
-    NSTask *task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"]];
+    NSTask *task = [NSTask withPathMarkedAsExecutableIfNecessary:[self pluginInvocationScriptPath]];
     NSDictionary *input = @{
                             @"args": [parseTree toNestedDictionary] ? : [NSNull null],
                             @"query": query,

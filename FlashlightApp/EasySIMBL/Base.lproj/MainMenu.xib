@@ -667,7 +667,7 @@
             </view>
             <point key="canvasLocation" x="-242" y="535.5"/>
         </window>
-        <scrollView autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
+        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
             <rect key="frame" x="0.0" y="0.0" width="454" height="448"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="puk-vq-Kg7">
@@ -680,7 +680,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                         <tableColumns>
-                            <tableColumn width="449" minWidth="40" maxWidth="999999" id="1hD-Dq-kq9">
+                            <tableColumn width="451" minWidth="40" maxWidth="999999" id="1hD-Dq-kq9">
                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -694,11 +694,11 @@
                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                 <prototypeCellViews>
                                     <tableCellView id="FQb-yf-BXy" customClass="PluginCellView">
-                                        <rect key="frame" x="1" y="1" width="449" height="94"/>
+                                        <rect key="frame" x="1" y="1" width="451" height="94"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="6mi-ds-L3P">
-                                                <rect key="frame" x="3" y="31" width="443" height="56"/>
+                                                <rect key="frame" x="3" y="31" width="445" height="56"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This plugin does some crazy stuff like change the word and everything." id="rtk-em-P81">
                                                     <font key="font" metaFont="system"/>
@@ -710,7 +710,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Agl-8K-jT3">
-                                                <rect key="frame" x="428" y="7" width="16" height="16"/>
+                                                <rect key="frame" x="430" y="7" width="16" height="16"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <connections>
                                                     <binding destination="FQb-yf-BXy" name="animate" keyPath="objectValue.installing" id="PM8-oS-CTm"/>
@@ -739,7 +739,7 @@
                                                 </connections>
                                             </button>
                                             <button verticalHuggingPriority="750" id="LNg-W2-VyP">
-                                                <rect key="frame" x="347" y="8" width="97" height="17"/>
+                                                <rect key="frame" x="349" y="8" width="97" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 <buttonCell key="cell" type="inline" title="Edit" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pqr-Lb-xGV">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
