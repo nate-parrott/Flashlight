@@ -1,4 +1,6 @@
 import urllib, json, datetime, time
+from eventkitutility import create_events
+from post_notification import post_notification
 
 def html_from_date_obj(date_obj):
 	if date_obj == None:
@@ -67,5 +69,11 @@ def results(parsed, original_query, object):
 	}
 
 def run(*args):
-	from create_event import create_event
-	create_event(*args)
+	event, from_date, to_date, location = args
+	success = all(create_events([{
+		"type": "event",
+		"title": event,
+		"date": from_date,
+		"endDate": to_date
+	}]))
+	post_notification("Created event" if success else "Failed to create event")

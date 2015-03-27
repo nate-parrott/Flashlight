@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
             events = [NSJSONSerialization JSONObjectWithData:payload options:0 error:nil];
         }
         NSArray *successes = [[EventKitUtility new] createEvents:events];
-        NSLog(@"%@", [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:successes options:0 error:nil] encoding:NSUTF8StringEncoding]);
+        printf("%s\n", [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:successes options:0 error:nil] encoding:NSUTF8StringEncoding].UTF8String);
     }
     return 0;
 }

@@ -15,7 +15,6 @@
 #import "PSHelpers.h"
 #import "PSTaggedText+ToJSON.h"
 #import "PSTaggedText+ToNestedDictionaries.h"
-#import "SearchPluginState.h"
 
 @interface FlashlightQueryEngine ()
 

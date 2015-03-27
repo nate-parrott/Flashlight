@@ -91,8 +91,10 @@ typedef void (^EventCreationCallback)(BOOL success);
         EKReminder *reminder = [EKReminder reminderWithEventStore:store];
         reminder.calendar = store.defaultCalendarForNewReminders;
         [self populateCalendarItem:reminder withCommonPropertiesFromDict:dict];
-        NSDate *dueDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"date"] doubleValue]];
-        reminder.dueDateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:dueDate];
+        if (dict[@"date"]) {
+            NSDate *dueDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"date"] doubleValue]];
+            reminder.dueDateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:dueDate];
+        }
         callback([store saveReminder:reminder commit:YES error:nil]);
     }];
 }
@@ -104,7 +106,7 @@ typedef void (^EventCreationCallback)(BOOL success);
         item.calendar = [store defaultCalendarForNewEvents];
         [self populateCalendarItem:item withCommonPropertiesFromDict:dict];
         item.startDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"date"] doubleValue]];
-        NSTimeInterval endDate = dict[@"date"] ? [dict[@"date"] doubleValue] : item.startDate.timeIntervalSince1970 + 60*60;
+        NSTimeInterval endDate = dict[@"endDate"] ? [dict[@"endDate"] doubleValue] : item.startDate.timeIntervalSince1970 + 60*60;
         item.endDate = [NSDate dateWithTimeIntervalSince1970:endDate];
         item.allDay = [dict[@"allDay"] boolValue];
         item.location = dict[@"location"];

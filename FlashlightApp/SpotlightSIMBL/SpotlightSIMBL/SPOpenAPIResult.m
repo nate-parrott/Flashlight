@@ -93,17 +93,31 @@ BOOL __SS_SSOpenAPIResult_shouldNotBeTopHit(SPResult *self, SEL cmd) {
 
 id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
     FlashlightResult *result = objc_getAssociatedObject(self, @selector(resultAssociatedObject));
-    NSString *iconPath = [result.pluginPath stringByAppendingPathComponent:@"icon.png"];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
-        NSData *infoJsonData = [NSData dataWithContentsOfFile:[result.pluginPath stringByAppendingPathComponent:@"info.json"]];
-        if (infoJsonData) {
-            NSDictionary *info = [NSJSONSerialization JSONObjectWithData:infoJsonData options:0 error:nil];
-            if (info[@"iconPath"]) {
-                iconPath = info[@"iconPath"];
+    
+    NSMutableArray *iconSearchPaths = [NSMutableArray new];
+    if (FlashlightIsDarkModeEnabled()) {
+        [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"icon-dark.png"]];
+    }
+    [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"Icon.png"]];
+    [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"icon.png"]];
+    for (NSString *path in iconSearchPaths) {
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+            return [[NSImage alloc] initByReferencingFile:path];
+        }
+    }
+    
+    // if we still don't have an image, see if there's one referenced in `info.json` (this is an undocumented API supported for compatibility)
+    NSData *infoJsonData = [NSData dataWithContentsOfFile:[result.pluginPath stringByAppendingPathComponent:@"info.json"]];
+    if (infoJsonData) {
+        NSDictionary *info = [NSJSONSerialization JSONObjectWithData:infoJsonData options:0 error:nil];
+        if (info[@"iconPath"]) {
+            NSString *iconPath = info[@"iconPath"];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
+                return [[NSImage alloc] initByReferencingFile:iconPath];
             }
         }
     }
-    return [[NSImage alloc] initByReferencingFile:iconPath];
+    return nil;
 }
 
 // - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;

@@ -64,6 +64,7 @@
 		5F38780C1AC2222F0003363D /* FlashlightSystemHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */; };
 		5F4080A41AC3B6FF00F200E5 /* DAU.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4080A21AC3B6FF00F200E5 /* DAU.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4080A51AC3B6FF00F200E5 /* DAU.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4080A31AC3B6FF00F200E5 /* DAU.m */; };
+		5F4080F91AC5D11E00F200E5 /* FlashlightSystemHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F5F35F71A7040700027AF00 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5F35F61A7040700027AF00 /* AddressBook.framework */; };
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
@@ -81,8 +82,6 @@
 		5FC13E6E1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */; };
 		5FC13E741A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */; };
 		5FC13E751A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */; };
-		5FD350551A85327C001E0380 /* SearchPluginState.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FD350531A85327C001E0380 /* SearchPluginState.h */; };
-		5FD350561A85327C001E0380 /* SearchPluginState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FD350541A85327C001E0380 /* SearchPluginState.m */; };
 		5FF873121A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */; };
 /* End PBXBuildFile section */
@@ -176,8 +175,6 @@
 		5FC13E6C1A4E2EB3008A0FE3 /* FlashlightQueryEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightQueryEngine.m; sourceTree = "<group>"; };
 		5FC13E721A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTask+FlashlightExtensions.h"; sourceTree = "<group>"; };
 		5FC13E731A4E6B58008A0FE3 /* NSTask+FlashlightExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTask+FlashlightExtensions.m"; sourceTree = "<group>"; };
-		5FD350531A85327C001E0380 /* SearchPluginState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPluginState.h; sourceTree = "<group>"; };
-		5FD350541A85327C001E0380 /* SearchPluginState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPluginState.m; sourceTree = "<group>"; };
 		5FF873101A6D718800EAD72F /* NSObject+InternationalizedValueForKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+InternationalizedValueForKey.h"; sourceTree = "<group>"; };
 		5FF873111A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,8 +302,6 @@
 				5FC13E601A4E169E008A0FE3 /* FlashlightResult.m */,
 				5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */,
 				5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */,
-				5FD350531A85327C001E0380 /* SearchPluginState.h */,
-				5FD350541A85327C001E0380 /* SearchPluginState.m */,
 				5FC13E631A4E1722008A0FE3 /* FlashlightResultView.h */,
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
@@ -362,13 +357,13 @@
 				5F25EEEB1A7615380030693F /* PSPluginDispatcher.h in Headers */,
 				5F25EEE01A7615380030693F /* PSHelpers.h in Headers */,
 				5F25EEE51A7615380030693F /* PSNonterminalNode.h in Headers */,
+				5F4080F91AC5D11E00F200E5 /* FlashlightSystemHelpers.h in Headers */,
 				5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */,
 				5F25EEE21A7615380030693F /* PSMerging.h in Headers */,
 				5FC13E651A4E1722008A0FE3 /* FlashlightResultView.h in Headers */,
 				5F25EEFD1A7615380030693F /* PSTaggedText+ToJSON.h in Headers */,
 				5F25EEF31A7615380030693F /* PSStartNode.h in Headers */,
 				5FC13E611A4E169E008A0FE3 /* FlashlightResult.h in Headers */,
-				5FD350551A85327C001E0380 /* SearchPluginState.h in Headers */,
 				5FC13E6D1A4E2EB3008A0FE3 /* FlashlightQueryEngine.h in Headers */,
 				5F25EEDA1A7615380030693F /* PSDateSource.h in Headers */,
 				5F25EEE71A7615380030693F /* PSParseCandidate.h in Headers */,
@@ -521,7 +516,6 @@
 				5F25EEEE1A7615380030693F /* PSPluginExampleSource.m in Sources */,
 				5F25EEDD1A7615380030693F /* PSEndNode.m in Sources */,
 				5FF873131A6D718800EAD72F /* NSObject+InternationalizedValueForKey.m in Sources */,
-				5FD350561A85327C001E0380 /* SearchPluginState.m in Sources */,
 				5F249B191A5CDA57001FEF8F /* tokeIt.l in Sources */,
 				5F25EEE81A7615380030693F /* PSParseCandidate.m in Sources */,
 				5F25EEDF1A7615380030693F /* PSFileSource.m in Sources */,
