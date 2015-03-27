@@ -531,7 +531,12 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         PluginModel *model = [PluginModel new];
         model.name = [comps valueForQueryKey:@"name"];
         model.pluginDescription = @"";
-        [[PluginInstallManager shared] installPlugin:model];
+        BOOL isUpdate = [request.URL.scheme isEqualToString:@"update"];
+        if (isUpdate) {
+            [[PluginInstallManager shared] updatePlugin:model];
+        } else {
+            [[PluginInstallManager shared] installPlugin:model];
+        }
         [listener ignore];
     } else if ([request.URL.scheme isEqualToString:@"uninstall"]) {
         NSString *name = request.URL.host;

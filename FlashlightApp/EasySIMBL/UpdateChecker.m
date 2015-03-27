@@ -74,7 +74,7 @@ NSString * UpdateCheckerAutoupdateStatusChangedNotification = @"UpdateCheckerAut
     if (self.autoupdating) {
         if (self.pluginsNeedingUpdates.count > 0) {
             NSString *plugin = self.pluginsNeedingUpdates.firstObject;
-            [[PluginInstallManager shared] installPlugin:[PluginModel installedPluginNamed:plugin] callback:^(BOOL success, NSError *error) {
+            [[PluginInstallManager shared] installPlugin:[PluginModel installedPluginNamed:plugin] isUpdate:YES callback:^(BOOL success, NSError *error) {
                 if (success) {
                     
                     // HACK: work-around a condition where the local plugin's info.json name is (illegally) different from its directory name, and we get into an infinite plugin loop.

@@ -47,28 +47,43 @@ NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification = @"Plugi
 }
 
 - (void)installPlugin:(PluginModel *)plugin {
-    [self installPlugin:plugin callback:^(BOOL success, NSError *error) {
+    [self installPlugin:plugin callback:[self defaultPluginInstallationCallback]];
+}
+
+- (void(^)(BOOL success, NSError *error))defaultPluginInstallationCallback {
+    return ^(BOOL success, NSError *error) {
         if (!success) {
-            NSAlert *alert;
-            if (error) {
-                alert = [NSAlert alertWithError:error];
-            } else {
-                alert = [[NSAlert alloc] init];
-                [alert setMessageText:NSLocalizedString(@"Couldn't install plugin.", @"")];
-                [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
-            }
-            alert.alertStyle = NSWarningAlertStyle;
-            [alert runModal];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSAlert *alert;
+                if (error) {
+                    alert = [NSAlert alertWithError:error];
+                } else {
+                    alert = [[NSAlert alloc] init];
+                    [alert setMessageText:NSLocalizedString(@"Couldn't install plugin.", @"")];
+                    [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
+                }
+                alert.alertStyle = NSWarningAlertStyle;
+                [alert runModal];
+            });
         }
-    }];
+    };
 }
 
 - (void)installPlugin:(PluginModel *)plugin callback:(void(^)(BOOL success, NSError *error))callback {
+    [self installPlugin:plugin isUpdate:NO callback:callback];
+}
+
+- (void)updatePlugin:(PluginModel *)plugin {
+    [self installPlugin:plugin isUpdate:YES callback:[self defaultPluginInstallationCallback]];
+}
+
+- (void)installPlugin:(PluginModel *)plugin isUpdate:(BOOL)isUpdate callback:(void(^)(BOOL success, NSError *error))callback {
     if ([self isPluginCurrentlyBeingInstalled:plugin]) return;
     
     NSLog(@"Installing plugin: %@", plugin.name);
     
     PluginInstallTask *task = [[PluginInstallTask alloc] initWithPlugin:plugin];
+    task.isUpdate = isUpdate;
     self.installTasksInProgress = self.installTasksInProgress ? [self.installTasksInProgress setByAddingObject:task] : [NSSet setWithObject:task];
     [[NSNotificationCenter defaultCenter] postNotificationName:PluginInstallManagerDidUpdatePluginStatusesNotification object:self];
     [task startInstallationIntoPluginsDirectory:[PluginModel pluginsDir] withCallback:^(BOOL success, NSError *error) {

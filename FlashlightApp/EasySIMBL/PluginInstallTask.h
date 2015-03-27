@@ -16,5 +16,6 @@
 - (void)installPluginData:(NSData *)data intoPluginsDirectory:(NSString *)directory callback:(void(^)(BOOL success, NSError *error))callback;
 @property (nonatomic,readonly) PluginModel *plugin;
 @property (nonatomic,readonly) NSString *installedPluginName;
+@property (nonatomic) BOOL isUpdate;
 
 @end

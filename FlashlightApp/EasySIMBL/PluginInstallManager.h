@@ -20,7 +20,9 @@ extern NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification;
 + (PluginInstallManager *)shared;
 
 - (void)installPlugin:(PluginModel *)plugin;
+- (void)updatePlugin:(PluginModel *)plugin;
 - (void)installPlugin:(PluginModel *)plugin callback:(void(^)(BOOL success, NSError *error))callback;
+- (void)installPlugin:(PluginModel *)plugin isUpdate:(BOOL)isUpdate callback:(void(^)(BOOL success, NSError *error))callback;
 - (void)uninstallPlugin:(PluginModel *)plugin;
 - (BOOL)isPluginCurrentlyBeingInstalled:(PluginModel *)plugin;
 

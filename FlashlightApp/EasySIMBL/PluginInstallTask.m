@@ -95,7 +95,7 @@
             _installedPluginName = pluginName;
             PluginModel *pluginModel = [PluginModel installedPluginNamed:pluginName];
             // done:
-            if (pluginModel.openPreferencesOnInstall) {
+            if (pluginModel.openPreferencesOnInstall && !self.isUpdate) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     AppDelegate *d = (id)[NSApp delegate];
                     [pluginModel presentOptionsInWindow:d.window];
