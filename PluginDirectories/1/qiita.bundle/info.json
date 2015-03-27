@@ -1,0 +1,7 @@
+{
+	"name": "Qiita",
+	"displayName": "Search Qiita",
+	"examples": ["qiita flashlight"],
+	"categories": ["Developer"],
+	"creator_name": "Takuya Mannami"
+}
