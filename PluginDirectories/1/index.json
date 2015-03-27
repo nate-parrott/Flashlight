@@ -1607,6 +1607,18 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "creator_name": "Takuya Mannami",
+            "displayName": "Search Qiita",
+            "examples": [
+                "qiita flashlight"
+            ],
+            "name": "qiita",
+            "zip_url": "qiita.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "description": "Show qrcode image",
