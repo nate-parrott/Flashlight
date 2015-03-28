@@ -22,7 +22,7 @@
     return self;
 }
 - (void)startInstallationIntoPluginsDirectory:(NSString *)directory withCallback:(void(^)(BOOL success, NSError *error))callback {
-    [[PluginDirectoryAPI shared] logPluginInstall:self.plugin.name];
+    [[PluginDirectoryAPI shared] logPluginInstall:self.plugin.name isUpdate:self.isUpdate];
     if (self.plugin.zipURL) {
         [[[NSURLSession sharedSession] dataTaskWithURL:self.plugin.zipURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (data && !error) {
@@ -84,13 +84,14 @@
                 return;
             }
             
-            // once we're done zipping, move from the temporary directory to the main directory (triggering a reload of the `examples.txt` index)
+            // once we're done unzipping, move from the temporary directory to the main directory (triggering a reload of the `examples.txt` index)
             NSString *bundleFilename = [pluginName stringByAppendingPathExtension:@"bundle"];
+            NSString *sourcePath = [tempDirectory.path stringByAppendingPathComponent:bundleFilename];
             NSString *destPath = [pluginsDirectory stringByAppendingPathComponent:bundleFilename];
-            if ([[NSFileManager defaultManager] fileExistsAtPath:destPath]) {
-                [[NSFileManager defaultManager] removeItemAtPath:destPath error:nil];
-            }
-            [[NSFileManager defaultManager] moveItemAtPath:[tempDirectory.path stringByAppendingPathComponent:bundleFilename] toPath:destPath error:nil];
+            // ...but first, if there's an old bundle containing a `preferences.json` file, copy it into the new bundle:
+            [self _copyPreferencesFileFromBundle:destPath toBundle:sourcePath];
+            // finally, do an atomic move:
+            [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:destPath] withItemAtURL:[NSURL fileURLWithPath:sourcePath] backupItemName:nil options:0 resultingItemURL:nil error:nil];
             
             _installedPluginName = pluginName;
             PluginModel *pluginModel = [PluginModel installedPluginNamed:pluginName];
@@ -107,6 +108,12 @@
             callback(NO, zipError);
         }
     });
+}
+
+- (void)_copyPreferencesFileFromBundle:(NSString *)source toBundle:(NSString *)dest {
+    NSString *copyFrom = [source stringByAppendingPathComponent:@"preferences.json"];
+    NSString *copyTo = [dest stringByAppendingPathComponent:@"preferences.json"];
+    [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:copyTo] withItemAtURL:[NSURL fileURLWithPath:copyFrom] backupItemName:nil options:0 resultingItemURL:nil error:nil];
 }
 
 @end

@@ -16,7 +16,7 @@
 - (NSURL *)URLForCategory:(NSString *)category;
 - (NSURL *)URLForSearchQuery:(NSString *)query;
 - (NSURL *)URLForPluginNamed:(NSString *)name;
-- (void)logPluginInstall:(NSString *)name;
+- (void)logPluginInstall:(NSString *)name isUpdate:(BOOL)update;
 - (void)getPluginsNeedingUpdatesWithExistingVersions:(NSDictionary *)pluginsByVersion callback:(void(^)(NSArray *pluginsNeedingUpdate))callback;
 + (NSString *)APIRoot;
 

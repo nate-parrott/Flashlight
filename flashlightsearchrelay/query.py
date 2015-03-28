@@ -5,5 +5,5 @@ search_api = BingSearchAPI(secret_config['BING_API_KEY'])
 
 def query(q, sources='web'):
 	params = {"$format": "json", "$top": 20}
-	response = search_api.search(sources, q, params)
+	response = search_api.search(sources, q.encode('utf-8'), params)
 	return response.json()

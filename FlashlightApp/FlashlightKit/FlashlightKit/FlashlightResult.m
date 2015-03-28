@@ -191,8 +191,8 @@
 }
 
 - (void)dealloc {
-    self.webView.frameLoadDelegate = nil;
-    self.webView.policyDelegate = nil;
+    _webView.frameLoadDelegate = nil;
+    _webView.policyDelegate = nil;
 }
 
 @end

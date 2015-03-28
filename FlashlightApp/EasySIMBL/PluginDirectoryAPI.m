@@ -68,10 +68,13 @@
                          ];
     return [comps URL];
 }
-- (void)logPluginInstall:(NSString *)name {
+- (void)logPluginInstall:(NSString *)name isUpdate:(BOOL)update {
     NSString *endpoint = [NSString stringWithFormat:@"%@/log_install", [[self class] APIRoot]];
     NSURLComponents *comps = [NSURLComponents componentsWithString:endpoint];
-    comps.queryItems = @[[NSURLQueryItem queryItemWithName:@"name" value:name]];
+    comps.queryItems = @[
+                         [NSURLQueryItem queryItemWithName:@"name" value:name],
+                         [NSURLQueryItem queryItemWithName:@"update" value:(update ? @"1" : @"0")]
+                         ];
     [[[NSURLSession sharedSession] dataTaskWithRequest:[NSURLRequest requestWithURL:comps.URL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // disregard result
     }] resume];
