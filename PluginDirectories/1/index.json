@@ -695,7 +695,8 @@
         {
             "categories": [
                 "Utilities",
-                "System"
+                "System",
+                "Featured"
             ],
             "creator_name": "Antonio Cruz",
             "description": "Eject mounted volumes (physical and network)",
@@ -743,6 +744,22 @@
             "iconPath": "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/TrashIcon.icns",
             "name": "EmptyTrash",
             "zip_url": "EmptyTrash.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Richard van der Dys",
+            "creator_url": "http://richardvanderdys.com",
+            "description": "Search your Evernotes",
+            "displayName": "Evernote Search",
+            "examples": [
+                "search evernote for workout routines",
+                "evernote funny documents",
+                "notes for cooking recipes"
+            ],
+            "name": "evernote-search",
+            "zip_url": "evernote-search.zip"
         },
         {
             "categories": [

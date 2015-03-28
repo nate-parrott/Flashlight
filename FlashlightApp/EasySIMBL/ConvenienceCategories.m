@@ -80,3 +80,11 @@
 }
 
 @end
+
+void PerformOnMainThread(dispatch_block_t block) {
+    if ([NSThread currentThread] == [NSThread mainThread]) {
+        block();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), block);
+    }
+}

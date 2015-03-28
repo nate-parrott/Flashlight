@@ -7,6 +7,7 @@
 //
 
 #import "PluginDirectoryAPI.h"
+#import "ConvenienceCategories.h"
 
 @interface PluginDirectoryAPI ()
 
@@ -32,11 +33,15 @@
         if (data) {
             NSArray *categories = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             if (categories && [categories isKindOfClass:[NSArray class]]) {
-                callback(categories, nil);
+                PerformOnMainThread(^{
+                    callback(categories, nil);
+                });
                 return;
             }
         }
-        callback(nil, error);
+        PerformOnMainThread(^{
+            callback(nil, error);
+        });
     }] resume];
 }
 - (NSURL *)URLForCategory:(NSString *)category {

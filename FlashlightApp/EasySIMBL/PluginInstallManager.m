@@ -9,6 +9,7 @@
 #import "PluginInstallManager.h"
 #import "PluginInstallTask.h"
 #import "PluginModel.h"
+#import "ConvenienceCategories.h"
 
 NSString *PluginInstallManagerDidUpdatePluginStatusesNotification = @"PluginInstallManagerDidUpdatePluginStatusesNotification";
 NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification = @"PluginInstallManagerSetOfInstalledPluginsChangedNotification";
@@ -53,7 +54,7 @@ NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification = @"Plugi
 - (void(^)(BOOL success, NSError *error))defaultPluginInstallationCallback {
     return ^(BOOL success, NSError *error) {
         if (!success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
+            PerformOnMainThread(^{
                 NSAlert *alert;
                 if (error) {
                     alert = [NSAlert alertWithError:error];
@@ -92,7 +93,7 @@ NSString *PluginInstallManagerSetOfInstalledPluginsChangedNotification = @"Plugi
         } else {
             NSLog(@"Failed to install plugin: %@", plugin.name);
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
+        PerformOnMainThread(^{
             NSMutableSet *tasks = self.installTasksInProgress.mutableCopy;
             [tasks removeObject:task];
             [self clearNLPModelCache];
