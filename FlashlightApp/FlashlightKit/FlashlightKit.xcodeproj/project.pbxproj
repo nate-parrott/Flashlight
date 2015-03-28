@@ -69,6 +69,8 @@
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
 		5F870A601A5478DB00161E2F /* run_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A5F1A5478DB00161E2F /* run_plugin.py */; };
+		5FA99DF51AC6793300CC0174 /* invoke_plugin.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 5FA99DF41AC6792F00CC0174 /* invoke_plugin.pyc */; };
+		5FA99DF71AC6793E00CC0174 /* run_plugin.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 5FA99DF61AC6793E00CC0174 /* run_plugin.pyc */; };
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
@@ -159,6 +161,8 @@
 		5F870A171A52D43600161E2F /* BuiltinModules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuiltinModules; sourceTree = "<group>"; };
 		5F870A591A5468F700161E2F /* invoke_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = invoke_plugin.py; sourceTree = "<group>"; };
 		5F870A5F1A5478DB00161E2F /* run_plugin.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = run_plugin.py; sourceTree = "<group>"; };
+		5FA99DF41AC6792F00CC0174 /* invoke_plugin.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = invoke_plugin.pyc; sourceTree = "<group>"; };
+		5FA99DF61AC6793E00CC0174 /* run_plugin.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = run_plugin.pyc; sourceTree = "<group>"; };
 		5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlashlightKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FC13DF21A4E12DB008A0FE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightKit.h; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 				5F249B1A1A5CDA71001FEF8F /* TimeParser */,
 				5F870A591A5468F700161E2F /* invoke_plugin.py */,
 				5F870A5F1A5478DB00161E2F /* run_plugin.py */,
+				5FA99DF41AC6792F00CC0174 /* invoke_plugin.pyc */,
+				5FA99DF61AC6793E00CC0174 /* run_plugin.pyc */,
 				5F870A171A52D43600161E2F /* BuiltinModules */,
 				5FC13DF11A4E12DB008A0FE3 /* Supporting Files */,
 			);
@@ -468,6 +474,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F870A181A52D43600161E2F /* BuiltinModules in Resources */,
+				5FA99DF51AC6793300CC0174 /* invoke_plugin.pyc in Resources */,
+				5FA99DF71AC6793E00CC0174 /* run_plugin.pyc in Resources */,
 				5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */,
 				5F870A601A5478DB00161E2F /* run_plugin.py in Resources */,
 			);

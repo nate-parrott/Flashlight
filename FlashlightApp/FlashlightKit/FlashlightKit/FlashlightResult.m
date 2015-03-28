@@ -48,13 +48,16 @@
             [runArgs insertObject:[resultView resultOfOutputFunction] atIndex:0];
         }
         
-        NSTask* task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"py"]];
+        NSString *scriptPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"pyc"];
+        // NSTask* task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"run_plugin" ofType:@"pyc"]];
+        NSTask *task = [[NSTask alloc] init];
+        task.launchPath = @"/usr/bin/python";
         NSDictionary *input = @{
                                 @"runArgs": runArgs,
                                 @"builtinModulesPath": [FlashlightQueryEngine builtinModulesPath],
                                 @"pluginPath": self.pluginPath
                                 };
-        task.arguments = @[input.toJson];
+        task.arguments = @[scriptPath, input.toJson];
         [task launchWithTimeout:30 callback:^(NSData *stdoutData, NSData *stderrData) {
             NSString *error = nil;
             if (stderrData) {
