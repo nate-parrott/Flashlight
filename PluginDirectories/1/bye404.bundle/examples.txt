@@ -1,0 +1,3 @@
+bye404 search ~query(query here)
+bye404 ~query(query here)
+
