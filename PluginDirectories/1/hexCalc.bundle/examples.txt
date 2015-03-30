@@ -1,0 +1,4 @@
+hex ~message(0xAC)
+hex ~message(0xac)
+hex ~message(0x000ac)
+hex ~message(0x000100ac)
