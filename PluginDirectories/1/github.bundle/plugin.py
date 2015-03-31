@@ -6,7 +6,7 @@ import i18n
 def results(parsed, original_query):
 
     search_specs = [
-        ["Github", "~githubquery", "https://github.com/search?q="]
+        ["GitHub", "~githubquery", "https://github.com/search?q="]
     ]
     for name, key, url in search_specs:
         if key in parsed:
