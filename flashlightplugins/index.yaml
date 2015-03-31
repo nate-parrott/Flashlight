@@ -10,6 +10,13 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: Action
+  properties:
+  - name: action
+  - name: date
+    direction: desc
+  - name: user
+
 - kind: Plugin
   properties:
   - name: approved

@@ -23,6 +23,7 @@ from directory import directory_html, info_dict_for_plugin
 from util import get_localized_key
 import query_updates
 from applogging import LogHandler
+from stats import StatsHandler
 
 def send_upload_form(request, message=None):
 		request.response.write(template("upload.html",
@@ -257,6 +258,7 @@ app = webapp2.WSGIApplication([('/', MainHandler),
 															 ('/categories', Categories),
 															 ('/log_install', LogInstall),
 															 ('/login', Login),
+															 ('/stats', StatsHandler),
 															 ('/latest_download', LatestDownload),
 															 ('/query_updates', query_updates.QueryUpdatesHandler),
 															 ('/feedback', Redirect("http://flashlight.42pag.es/feedback")),
