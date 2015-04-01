@@ -16,8 +16,9 @@
 
 @property (nonatomic) NSStatusItem *statusItem;
 @property (nonatomic) IBOutlet NSMenu *statusMenu;
-@property (nonatomic) IBOutlet NSMenu *pluginExamples;
 @property (nonatomic) BOOL statusItemShown;
+
+@property (nonatomic) NSArray *defaultMenuItems;
 
 @end
 
@@ -25,6 +26,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    self.defaultMenuItems = self.statusMenu.itemArray;
     
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(settingsChanged:) name:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight"];
     [self settingsChanged:nil];
@@ -65,9 +68,14 @@
 
 #pragma mark Plugin examples
 - (void)menuNeedsUpdate:(NSMenu *)menu {
-    if (menu == self.pluginExamples) {
+    if (menu == self.statusMenu) {
         [menu removeAllItems];
+        for (NSMenuItem *item in self.defaultMenuItems) {
+            [self.statusMenu addItem:item];
+        }
+        
         NSString *pluginsDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"FlashlightPlugins"];
+        NSInteger examplesAdded = 0;
         for (NSString *plugin in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:pluginsDir error:nil]) {
             NSString *pluginPath = [pluginsDir stringByAppendingPathComponent:plugin];
             if ([pluginPath.pathExtension.lowercaseString isEqualToString:@"bundle"]) {
@@ -79,10 +87,11 @@
                     if ([infoJson isKindOfClass:[NSDictionary class]]) {
                         NSArray *examples = [infoJson internationalizedValueForKey:@"examples"];
                         if ([examples isKindOfClass:[NSArray class]] && examples.count > 0) {
-                            if (menu.itemArray.count > 0) {
+                            if (examplesAdded > 0) {
                                 // append divider:
                                 [menu addItem:[NSMenuItem separatorItem]];
                             }
+                            examplesAdded++;
                             NSInteger i = 0;
                             for (NSString *example in examples) {
                                 NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:example action:@selector(openExample:) keyEquivalent:@""];

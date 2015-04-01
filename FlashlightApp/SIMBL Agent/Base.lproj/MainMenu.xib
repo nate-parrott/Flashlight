@@ -1111,19 +1111,10 @@
 			<object class="NSMenu" id="1043790343">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="382901615">
-						<reference key="NSMenu" ref="1043790343"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Flashlight is running —</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="94247583">
 						<reference key="NSMenu" ref="1043790343"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">open Spotlight to search.</string>
+						<string key="NSTitle">Open Spotlight to Search</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1141,33 +1132,11 @@
 					</object>
 					<object class="NSMenuItem" id="516647835">
 						<reference key="NSMenu" ref="1043790343"/>
-						<string key="NSTitle">Get new plugins</string>
+						<string key="NSTitle">Get new plugins...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
-					<object class="NSMenuItem" id="706656518">
-						<reference key="NSMenu" ref="1043790343"/>
-						<string key="NSTitle">Manage plugins</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
-					<object class="NSMenuItem" id="412134391">
-						<reference key="NSMenu" ref="1043790343"/>
-						<string key="NSTitle">What can I search?</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-						<string key="NSAction">submenuAction:</string>
-						<reference key="NSTarget" ref="701433788"/>
-						<object class="NSMenu" key="NSSubmenu" id="701433788">
-							<string key="NSTitle"/>
-							<array class="NSMutableArray" key="NSMenuItems"/>
-						</object>
 					</object>
 					<object class="NSMenuItem" id="191023024">
 						<reference key="NSMenu" ref="1043790343"/>
@@ -1182,6 +1151,25 @@
 					<object class="NSMenuItem" id="1004967477">
 						<reference key="NSMenu" ref="1043790343"/>
 						<string key="NSTitle">Hide this menu...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="1071448249">
+						<reference key="NSMenu" ref="1043790343"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="812491926">
+						<reference key="NSMenu" ref="1043790343"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<string key="NSTitle">Sample searches:</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -1706,22 +1694,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">managePlugins:</string>
-						<reference key="source" ref="319322392"/>
-						<reference key="destination" ref="706656518"/>
-					</object>
-					<int key="connectionID">466</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">pluginExamples</string>
-						<reference key="source" ref="319322392"/>
-						<reference key="destination" ref="701433788"/>
-					</object>
-					<int key="connectionID">475</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">hideThisMenu:</string>
 						<reference key="source" ref="319322392"/>
 						<reference key="destination" ref="1004967477"/>
@@ -1731,10 +1703,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="701433788"/>
+						<reference key="source" ref="1043790343"/>
 						<reference key="destination" ref="319322392"/>
 					</object>
-					<int key="connectionID">477</int>
+					<int key="connectionID">484</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2589,24 +2561,18 @@
 						<reference key="object" ref="1043790343"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="516647835"/>
-							<reference ref="382901615"/>
 							<reference ref="94247583"/>
 							<reference ref="847989738"/>
-							<reference ref="706656518"/>
-							<reference ref="412134391"/>
 							<reference ref="1004967477"/>
 							<reference ref="191023024"/>
+							<reference ref="1071448249"/>
+							<reference ref="812491926"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">455</int>
 						<reference key="object" ref="516647835"/>
-						<reference key="parent" ref="1043790343"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">456</int>
-						<reference key="object" ref="382901615"/>
 						<reference key="parent" ref="1043790343"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -2620,25 +2586,6 @@
 						<reference key="parent" ref="1043790343"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">463</int>
-						<reference key="object" ref="706656518"/>
-						<reference key="parent" ref="1043790343"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">468</int>
-						<reference key="object" ref="412134391"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="701433788"/>
-						</array>
-						<reference key="parent" ref="1043790343"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">471</int>
-						<reference key="object" ref="701433788"/>
-						<array class="NSMutableArray" key="children"/>
-						<reference key="parent" ref="412134391"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">478</int>
 						<reference key="object" ref="1004967477"/>
 						<reference key="parent" ref="1043790343"/>
@@ -2646,6 +2593,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">479</int>
 						<reference key="object" ref="191023024"/>
+						<reference key="parent" ref="1043790343"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">481</int>
+						<reference key="object" ref="1071448249"/>
+						<reference key="parent" ref="1043790343"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">482</int>
+						<reference key="object" ref="812491926"/>
 						<reference key="parent" ref="1043790343"/>
 					</object>
 				</array>
@@ -2761,17 +2718,15 @@
 				<string key="419.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="450.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="452.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="453.IBPersistedLastKnownCanvasPosition">{302, 422.5}</string>
+				<string key="453.IBPersistedLastKnownCanvasPosition">{230, 405.5}</string>
 				<string key="453.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="455.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="456.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="461.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="462.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="463.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="468.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="471.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="478.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="479.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="481.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="482.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2793,7 +2748,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">480</int>
+			<int key="maxID">484</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2834,20 +2789,17 @@
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="pluginExamples">NSMenu</string>
-						<string key="statusMenu">NSMenu</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="pluginExamples">
-							<string key="name">pluginExamples</string>
-							<string key="candidateClassName">NSMenu</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="statusMenu">
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">statusMenu</string>
+						<string key="NS.object.0">NSMenu</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">statusMenu</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">statusMenu</string>
 							<string key="candidateClassName">NSMenu</string>
 						</object>
-					</dictionary>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">SIMBL Agent/UIManager.m</string>
