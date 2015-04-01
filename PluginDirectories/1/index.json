@@ -273,6 +273,25 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "description": "Search 886404 (bye404).A mirror of google search for users under GFW",
+            "description_zh": "Search 886404 (\u5929\u5916\u5929,\u57fa\u4e8e\u8c37\u6b4c\u7684\u641c\u7d22\u5f15\u64ce).",
+            "displayName": "886404 Search",
+            "displayName_zh": "886404 \u641c\u7d22",
+            "examples": [
+                "bye404 FlashLight",
+                "bye404 search Flashlight"
+            ],
+            "examples_zh": [
+                "bye404 Flashlight",
+                "bye404 \u641c\u7d22 Flashlight"
+            ],
+            "name": "bye404",
+            "zip_url": "bye404.zip"
+        },
+        {
+            "categories": [
                 "Utilities",
                 "Featured"
             ],
@@ -1080,6 +1099,19 @@
                 "zh"
             ],
             "zip_url": "haomatong.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Convert Hex values to Decimal",
+            "displayName": "HexCalc",
+            "examples": [
+                "hex 0xAC",
+                "hex 0xac"
+            ],
+            "name": "hexCalc",
+            "zip_url": "hexCalc.zip"
         },
         {
             "categories": [
@@ -2301,11 +2333,13 @@
             "categories": [
                 "Language"
             ],
-            "description": "Search definition in Weblio dictionary",
+            "description": "Search definition in Weblio dictionary(Ruigo, Chinese, Korean, English dictionaries supported)",
             "displayName": "Weblio dictionary",
             "examples": [
-                "weblio perception",
-                "weblio cerebral cortex"
+                "weblio \u30a2\u30c3\u30d7\u30eb",
+                "weblio cn for \u30a2\u30c3\u30d7\u30eb",
+                "\u30a6\u30a7\u30d6\u30ea\u30aa \u97d3\u56fd\u8a9e \u3067 \u30a2\u30c3\u30d7\u30eb",
+                "\u30a6\u30a7\u30d6\u30ea\u30aa cjjc for \u30a2\u30c3\u30d7\u30eb"
             ],
             "name": "weblio",
             "zip_url": "weblio.zip"
