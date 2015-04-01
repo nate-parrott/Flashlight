@@ -1,0 +1,2 @@
+bye404 搜索 ~query(query here)
+bye404 ~query(query here)
