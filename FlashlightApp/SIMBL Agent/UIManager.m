@@ -9,6 +9,8 @@
 #import "UIManager.h"
 #import <ServiceManagement/ServiceManagement.h>
 #import "NSObject+InternationalizedValueForKey.h"
+#import "FlashlightIconResolution.h"
+#import "NSImage+Resize.h"
 
 @interface UIManager () <NSMenuDelegate>
 
@@ -71,6 +73,8 @@
             if ([pluginPath.pathExtension.lowercaseString isEqualToString:@"bundle"]) {
                 NSData *infoJsonData = [NSData dataWithContentsOfFile:[pluginPath stringByAppendingPathComponent:@"info.json"]];
                 if (infoJsonData) {
+                    NSImage *icon = [[FlashlightIconResolution iconForPluginAtPath:pluginPath] resizeImageWithMaxDimension:NSMakeSize(13, 13)];
+                    
                     NSDictionary *infoJson = [NSJSONSerialization JSONObjectWithData:infoJsonData options:0 error:nil];
                     if ([infoJson isKindOfClass:[NSDictionary class]]) {
                         NSArray *examples = [infoJson internationalizedValueForKey:@"examples"];
@@ -79,10 +83,15 @@
                                 // append divider:
                                 [menu addItem:[NSMenuItem separatorItem]];
                             }
+                            NSInteger i = 0;
                             for (NSString *example in examples) {
                                 NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:example action:@selector(openExample:) keyEquivalent:@""];
+                                if (i == 0 && icon) {
+                                    [item setOffStateImage:icon];
+                                }
                                 item.target = self;
                                 [menu addItem:item];
+                                i++;
                             }
                         }
                     }

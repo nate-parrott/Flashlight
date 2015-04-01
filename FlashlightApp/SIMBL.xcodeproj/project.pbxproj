@@ -12,6 +12,8 @@
 		2761463C105F985500F906F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276144CF105F523C00F906F6 /* MainMenu.xib */; };
 		276156DC1060C08C00FEF11C /* SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789609B3031900F50FE7 /* SIMBL.m */; };
 		27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF789409B3031900F50FE7 /* NSAlert_SIMBL.m */; };
+		5F3190D71ACBCBA000D70528 /* FlashlightIconResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3190D61ACBCBA000D70528 /* FlashlightIconResolution.m */; };
+		5F3190DA1ACBCE0100D70528 /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3190D91ACBCE0100D70528 /* NSImage+Resize.m */; };
 		5F4BFF531A7C243E00A64664 /* UIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4BFF521A7C243E00A64664 /* UIManager.m */; };
 		5F4BFF5D1A7C2C1700A64664 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */; };
 		5F86D4AE1A07E71100D4A777 /* SpotlightSIMBL.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F86D4A71A07E48800D4A777 /* SpotlightSIMBL.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,6 +83,10 @@
 		276144CE105F523C00F906F6 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		276144D8105F523C00F906F6 /* SIMBLAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIMBLAgent.h; sourceTree = "<group>"; };
 		276144D9105F523C00F906F6 /* SIMBLAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SIMBLAgent.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5F3190D51ACBCBA000D70528 /* FlashlightIconResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashlightIconResolution.h; path = FlashlightKit/FlashlightKit/FlashlightIconResolution.h; sourceTree = SOURCE_ROOT; };
+		5F3190D61ACBCBA000D70528 /* FlashlightIconResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashlightIconResolution.m; path = FlashlightKit/FlashlightKit/FlashlightIconResolution.m; sourceTree = SOURCE_ROOT; };
+		5F3190D81ACBCE0100D70528 /* NSImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
+		5F3190D91ACBCE0100D70528 /* NSImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
 		5F4BFF511A7C243E00A64664 /* UIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIManager.h; sourceTree = "<group>"; };
 		5F4BFF521A7C243E00A64664 /* UIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIManager.m; sourceTree = "<group>"; };
 		5F4BFF5C1A7C2C1700A64664 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -162,6 +168,10 @@
 				276144D9105F523C00F906F6 /* SIMBLAgent.m */,
 				5F4BFF511A7C243E00A64664 /* UIManager.h */,
 				5F4BFF521A7C243E00A64664 /* UIManager.m */,
+				5F3190D81ACBCE0100D70528 /* NSImage+Resize.h */,
+				5F3190D91ACBCE0100D70528 /* NSImage+Resize.m */,
+				5F3190D51ACBCBA000D70528 /* FlashlightIconResolution.h */,
+				5F3190D61ACBCBA000D70528 /* FlashlightIconResolution.m */,
 				5FD350491A8407BD001E0380 /* NSObject+InternationalizedValueForKey.h */,
 				5FD3504A1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m */,
 				5FD3504F1A841827001E0380 /* StatusItemOn@2x.png */,
@@ -346,6 +356,8 @@
 				5FD3504B1A8407BD001E0380 /* NSObject+InternationalizedValueForKey.m in Sources */,
 				276144F6105F531D00F906F6 /* SIMBLAgent.m in Sources */,
 				5F4BFF531A7C243E00A64664 /* UIManager.m in Sources */,
+				5F3190D71ACBCBA000D70528 /* FlashlightIconResolution.m in Sources */,
+				5F3190DA1ACBCE0100D70528 /* NSImage+Resize.m in Sources */,
 				276156DC1060C08C00FEF11C /* SIMBL.m in Sources */,
 				27D59F5610791EE100424BBD /* NSAlert_SIMBL.m in Sources */,
 				6CDFDC75159DBC7C002E8E63 /* main.m in Sources */,

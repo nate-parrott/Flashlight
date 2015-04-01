@@ -18,6 +18,7 @@
 #import <WebKit/WebKit.h>
 #import "_Flashlight_Bootstrap.h"
 #import <FlashlightKit/FlashlightKit.h>
+#import <FlashlightKit/FlashlightIconResolution.h>
 
 /*
  a wrapper around objc zeroing weak references, since we can't store zeroing weak references as associated objects.
@@ -93,31 +94,8 @@ BOOL __SS_SSOpenAPIResult_shouldNotBeTopHit(SPResult *self, SEL cmd) {
 
 id __SS_SSOpenAPIResult_iconImage(SPResult *self, SEL cmd) {
     FlashlightResult *result = objc_getAssociatedObject(self, @selector(resultAssociatedObject));
-    
-    NSMutableArray *iconSearchPaths = [NSMutableArray new];
-    if (FlashlightIsDarkModeEnabled()) {
-        [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"icon-dark.png"]];
-    }
-    [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"Icon.png"]];
-    [iconSearchPaths addObject:[result.pluginPath stringByAppendingPathComponent:@"icon.png"]];
-    for (NSString *path in iconSearchPaths) {
-        if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-            return [[NSImage alloc] initByReferencingFile:path];
-        }
-    }
-    
-    // if we still don't have an image, see if there's one referenced in `info.json` (this is an undocumented API supported for compatibility)
-    NSData *infoJsonData = [NSData dataWithContentsOfFile:[result.pluginPath stringByAppendingPathComponent:@"info.json"]];
-    if (infoJsonData) {
-        NSDictionary *info = [NSJSONSerialization JSONObjectWithData:infoJsonData options:0 error:nil];
-        if (info[@"iconPath"]) {
-            NSString *iconPath = info[@"iconPath"];
-            if ([[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
-                return [[NSImage alloc] initByReferencingFile:iconPath];
-            }
-        }
-    }
-    return nil;
+    NSImage *icon = [FlashlightIconResolution iconForPluginAtPath:result.pluginPath];
+    return icon;
 }
 
 // - (BOOL)openWithSearchString:(id)arg1 block:(CDUnknownBlockType)arg2;

@@ -61,6 +61,8 @@
 		5F25EF001A7615380030693F /* PSTaggedText+ToNestedDictionaries.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */; };
 		5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F25EECF1A7615380030693F /* PSTerminalNode.h */; };
 		5F25EF021A7615380030693F /* PSTerminalNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25EED01A7615380030693F /* PSTerminalNode.m */; };
+		5F3190D31ACBCB1800D70528 /* FlashlightIconResolution.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F3190D11ACBCB1800D70528 /* FlashlightIconResolution.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F3190D41ACBCB1800D70528 /* FlashlightIconResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3190D21ACBCB1800D70528 /* FlashlightIconResolution.m */; };
 		5F38780C1AC2222F0003363D /* FlashlightSystemHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */; };
 		5F4080A41AC3B6FF00F200E5 /* DAU.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F4080A21AC3B6FF00F200E5 /* DAU.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5F4080A51AC3B6FF00F200E5 /* DAU.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4080A31AC3B6FF00F200E5 /* DAU.m */; };
@@ -153,6 +155,8 @@
 		5F25EECE1A7615380030693F /* PSTaggedText+ToNestedDictionaries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PSTaggedText+ToNestedDictionaries.m"; sourceTree = "<group>"; };
 		5F25EECF1A7615380030693F /* PSTerminalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTerminalNode.h; sourceTree = "<group>"; };
 		5F25EED01A7615380030693F /* PSTerminalNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTerminalNode.m; sourceTree = "<group>"; };
+		5F3190D11ACBCB1800D70528 /* FlashlightIconResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashlightIconResolution.h; sourceTree = "<group>"; };
+		5F3190D21ACBCB1800D70528 /* FlashlightIconResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightIconResolution.m; sourceTree = "<group>"; };
 		5F38780A1AC2221D0003363D /* FlashlightSystemHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashlightSystemHelpers.h; sourceTree = "<group>"; };
 		5F38780B1AC2222F0003363D /* FlashlightSystemHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashlightSystemHelpers.m; sourceTree = "<group>"; };
 		5F4080A21AC3B6FF00F200E5 /* DAU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAU.h; sourceTree = "<group>"; };
@@ -310,6 +314,8 @@
 				5FC13E641A4E1722008A0FE3 /* FlashlightResultView.m */,
 				5FC13E671A4E2D40008A0FE3 /* FlashlightWebScriptObject.h */,
 				5FC13E681A4E2D40008A0FE3 /* FlashlightWebScriptObject.m */,
+				5F3190D11ACBCB1800D70528 /* FlashlightIconResolution.h */,
+				5F3190D21ACBCB1800D70528 /* FlashlightIconResolution.m */,
 				5F249B1A1A5CDA71001FEF8F /* TimeParser */,
 				5F870A591A5468F700161E2F /* invoke_plugin.py */,
 				5F870A5F1A5478DB00161E2F /* run_plugin.py */,
@@ -363,6 +369,7 @@
 				5F25EEEB1A7615380030693F /* PSPluginDispatcher.h in Headers */,
 				5F25EEE01A7615380030693F /* PSHelpers.h in Headers */,
 				5F25EEE51A7615380030693F /* PSNonterminalNode.h in Headers */,
+				5F3190D31ACBCB1800D70528 /* FlashlightIconResolution.h in Headers */,
 				5F4080F91AC5D11E00F200E5 /* FlashlightSystemHelpers.h in Headers */,
 				5F25EF011A7615380030693F /* PSTerminalNode.h in Headers */,
 				5F25EEE21A7615380030693F /* PSMerging.h in Headers */,
@@ -515,6 +522,7 @@
 				5F25EEFC1A7615380030693F /* PSTaggedText+PreprocessedForLearning.m in Sources */,
 				5F25EEE61A7615380030693F /* PSNonterminalNode.m in Sources */,
 				5FC13E621A4E169E008A0FE3 /* FlashlightResult.m in Sources */,
+				5F3190D41ACBCB1800D70528 /* FlashlightIconResolution.m in Sources */,
 				5F25EEF21A7615380030693F /* PSSpecialNode.m in Sources */,
 				5F25EEFE1A7615380030693F /* PSTaggedText+ToJSON.m in Sources */,
 				5F249B161A5CDA57001FEF8F /* parseIt.ym in Sources */,
