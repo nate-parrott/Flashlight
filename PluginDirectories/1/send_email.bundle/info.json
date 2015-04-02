@@ -3,5 +3,7 @@
 	"displayName": "Send Email",
 	"description": "Send email. Optionally attach selected files from Finder.",
 	"examples": ["send an email to nate saying hello", "attach these files to a new email to nate@gmail.com with the subject Hello"],
-	"categories": ["Utilities", "Featured"]
+	"categories": ["Utilities", "Featured"],
+	"keywords": ["mail", "email", "gmail"],
+	"openPreferencesOnInstall": true
 }

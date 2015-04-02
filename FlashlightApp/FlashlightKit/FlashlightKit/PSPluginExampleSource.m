@@ -128,7 +128,9 @@ NSString * const PSParsnipSourceDataPluginPathForIntentDictionaryKey = @"PSParsn
                               @"1/2",
                               @"where who ?",
                               @"the : to",
-                              @""
+                              @"",
+                              @"1/2",
+                              @"2 + 3 / 5 - 4"
                               ];
     NSInteger i = 0;
     for (NSString *ex in nullExamples) {

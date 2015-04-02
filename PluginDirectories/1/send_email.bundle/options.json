@@ -1,0 +1,17 @@
+{
+	"options": [
+		{
+			"text": "Mail client:",
+			"type": "dropdown",
+			"key": "client",
+			"options": [
+				{"text": "Apple Mail", "value": "mail.app"},
+				{"text": "Gmail", "value": "gmail"}
+			]
+		},
+		{
+			"type": "hint",
+			"text": "Only Apple Mail supports attaching files by typing \"attach this file.\""
+		}
+	]
+}

@@ -48,9 +48,18 @@ def html(parsed):
 		return open('html.html').read().replace("<!--RECIPIENTS-->", ", ".join(recips)).replace("<!--SUBJECT-->", subject).replace("<!--BODY-->", body).replace("<!--ATTACH-->", attach)
 
 def run(parsed):
+		import json
 		recips = get_emails(parsed)
 		subject = parsed.get('~subject', '')
 		body = parsed.get('~message', '')
 		attach = get_attachment(parsed)
-		from send_mail import send_mail
-		send_mail(recips, subject, body, attach)
+		prefs = json.loads(open("preferences.json").read())
+		
+		client = prefs.get('client', 'mail.app')
+		if client == 'mail.app':
+			from send_mail import send_mail
+			send_mail(recips, subject, body, attach)
+		elif client == 'gmail':
+			import gmail
+			gmail.open(recips, subject, body)
+
