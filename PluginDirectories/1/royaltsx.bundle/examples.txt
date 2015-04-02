@@ -1,0 +1,2 @@
+royaltsx ~hostname(Hostname)
+rtsx ~hostname(Hostname)
