@@ -1796,6 +1796,26 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Royal Applications Team",
+            "creator_url": "http://www.royalapplications.com/ts",
+            "description": "Open Royal TSX Ad-hoc connections",
+            "displayName": "Royal TSX Ad-hoc",
+            "examples": [
+                "royaltsx 192.168.0.1",
+                "rtsx rdp://hostname",
+                "rtsx ssh://192.168.0.1"
+            ],
+            "name": "royaltsx",
+            "tags": [
+                "Utilities"
+            ],
+            "version": "1.0.0",
+            "zip_url": "royaltsx.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Search for gems",
@@ -1842,7 +1862,13 @@
                 "send an email to nate saying hello",
                 "attach these files to a new email to nate@gmail.com with the subject Hello"
             ],
+            "keywords": [
+                "mail",
+                "email",
+                "gmail"
+            ],
             "name": "send_email",
+            "openPreferencesOnInstall": true,
             "zip_url": "send_email.zip"
         },
         {
