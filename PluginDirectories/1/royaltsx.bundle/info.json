@@ -8,7 +8,7 @@
   "displayName" : "Royal TSX Ad-hoc",
   "name" : "royaltsx",
   "description" : "Open Royal TSX Ad-hoc connections",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "creator_name": "Royal Applications Team",
   "creator_url": "http://www.royalapplications.com/ts",
   "examples" : [
