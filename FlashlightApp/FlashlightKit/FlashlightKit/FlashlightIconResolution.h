@@ -10,6 +10,7 @@
 
 @interface FlashlightIconResolution : NSObject
 
++ (NSString *)pathForIconForPluginAtPath:(NSString *)pluginPath;
 + (NSImage *)iconForPluginAtPath:(NSString *)pluginPath;
 
 @end

@@ -6,6 +6,18 @@
 // project.
 
 
+// GRMustache
+#define COCOAPODS_POD_AVAILABLE_GRMustache
+#define COCOAPODS_VERSION_MAJOR_GRMustache 7
+#define COCOAPODS_VERSION_MINOR_GRMustache 3
+#define COCOAPODS_VERSION_PATCH_GRMustache 1
+
+// JRSwizzle
+#define COCOAPODS_POD_AVAILABLE_JRSwizzle
+#define COCOAPODS_VERSION_MAJOR_JRSwizzle 1
+#define COCOAPODS_VERSION_MINOR_JRSwizzle 0
+#define COCOAPODS_VERSION_PATCH_JRSwizzle 0
+
 // LetsMove
 #define COCOAPODS_POD_AVAILABLE_LetsMove
 #define COCOAPODS_VERSION_MAJOR_LetsMove 1

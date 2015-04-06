@@ -1,7 +1,7 @@
 FRAMEWORK_SEARCH_PATHS = "${PODS_ROOT}/Sparkle" "$(PODS_ROOT)/Sparkle"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/LetsMove" "${PODS_ROOT}/Headers/Public/Sparkle"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/LetsMove" -isystem "${PODS_ROOT}/Headers/Public/Sparkle"
-OTHER_LDFLAGS = -ObjC -l"Pods-Flashlight-LetsMove" -l"Pods-Flashlight-Sparkle" -framework "Sparkle"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GRMustache" "${PODS_ROOT}/Headers/Public/JRSwizzle" "${PODS_ROOT}/Headers/Public/LetsMove" "${PODS_ROOT}/Headers/Public/Sparkle"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GRMustache" -isystem "${PODS_ROOT}/Headers/Public/JRSwizzle" -isystem "${PODS_ROOT}/Headers/Public/LetsMove" -isystem "${PODS_ROOT}/Headers/Public/Sparkle"
+OTHER_LDFLAGS = -ObjC -l"Pods-Flashlight-GRMustache" -l"Pods-Flashlight-JRSwizzle" -l"Pods-Flashlight-LetsMove" -l"Pods-Flashlight-Sparkle" -framework "Foundation" -framework "Sparkle"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

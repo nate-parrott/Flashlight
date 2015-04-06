@@ -10,7 +10,7 @@
 
 @implementation FlashlightIconResolution
 
-+ (NSImage *)iconForPluginAtPath:(NSString *)pluginPath {
++ (NSString *)pathForIconForPluginAtPath:(NSString *)pluginPath {
     BOOL darkMode = [[[[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain] objectForKey:@"AppleInterfaceStyle"] isEqualToString:@"Dark"];
     
     NSMutableArray *iconSearchPaths = [NSMutableArray new];
@@ -21,7 +21,7 @@
     [iconSearchPaths addObject:[pluginPath stringByAppendingPathComponent:@"icon.png"]];
     for (NSString *path in iconSearchPaths) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
-            return [[NSImage alloc] initByReferencingFile:path];
+            return path;
         }
     }
     
@@ -32,11 +32,16 @@
         if (info[@"iconPath"]) {
             NSString *iconPath = info[@"iconPath"];
             if ([[NSFileManager defaultManager] fileExistsAtPath:iconPath]) {
-                return [[NSImage alloc] initByReferencingFile:iconPath];
+                return iconPath;
             }
         }
     }
     return nil;
+}
+
++ (NSImage *)iconForPluginAtPath:(NSString *)pluginPath {
+    NSString *path = [self pathForIconForPluginAtPath:pluginPath];
+    return path ? [[NSImage alloc] initByReferencingFile:path] : nil;
 }
 
 @end

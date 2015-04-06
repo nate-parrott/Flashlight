@@ -17,6 +17,7 @@
 #import "SearchPluginEditorWindowController.h"
 #import "UpdateChecker.h"
 #import "PluginInstallManager.h"
+#import "PluginListRenderer.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";

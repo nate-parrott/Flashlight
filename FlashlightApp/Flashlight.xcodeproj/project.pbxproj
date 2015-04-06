@@ -10,6 +10,9 @@
 		5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2B37731A3E42E500AC2C19 /* SearchPluginEditorWindowController.m */; };
 		5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */; };
 		5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3878121AC2527C0003363D /* PluginInstallManager.m */; };
+		5F5C4E941AD25A9C00D1D883 /* PluginListRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C4E931AD25A9C00D1D883 /* PluginListRenderer.m */; };
+		5F5C4E961AD25C6B00D1D883 /* PluginList.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F5C4E951AD25C6B00D1D883 /* PluginList.html */; };
+		5F5C4E991AD2609B00D1D883 /* FlashlightIconResolution.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5C4E981AD2609B00D1D883 /* FlashlightIconResolution.m */; };
 		5F60B0F31A1690E9004BCF08 /* ITSwitch+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */; };
 		5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F60B0F91A194F11004BCF08 /* PluginEditorWindowController.m */; };
 		5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F60B0FA1A194F11004BCF08 /* PluginEditorWindowController.xib */; };
@@ -111,6 +114,11 @@
 		5F2B37741A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchPluginEditorWindowController.xib; sourceTree = "<group>"; };
 		5F3878111AC2527C0003363D /* PluginInstallManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginInstallManager.h; sourceTree = "<group>"; };
 		5F3878121AC2527C0003363D /* PluginInstallManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginInstallManager.m; sourceTree = "<group>"; };
+		5F5C4E921AD25A9C00D1D883 /* PluginListRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginListRenderer.h; sourceTree = "<group>"; };
+		5F5C4E931AD25A9C00D1D883 /* PluginListRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginListRenderer.m; sourceTree = "<group>"; };
+		5F5C4E951AD25C6B00D1D883 /* PluginList.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PluginList.html; sourceTree = "<group>"; };
+		5F5C4E971AD2609B00D1D883 /* FlashlightIconResolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashlightIconResolution.h; path = FlashlightKit/FlashlightKit/FlashlightIconResolution.h; sourceTree = SOURCE_ROOT; };
+		5F5C4E981AD2609B00D1D883 /* FlashlightIconResolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashlightIconResolution.m; path = FlashlightKit/FlashlightKit/FlashlightIconResolution.m; sourceTree = SOURCE_ROOT; };
 		5F60B0F11A1690E9004BCF08 /* ITSwitch+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ITSwitch+Additions.h"; sourceTree = "<group>"; };
 		5F60B0F21A1690E9004BCF08 /* ITSwitch+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ITSwitch+Additions.m"; sourceTree = "<group>"; };
 		5F60B0F81A194F11004BCF08 /* PluginEditorWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginEditorWindowController.h; sourceTree = "<group>"; };
@@ -344,6 +352,8 @@
 				5F6326BF1A08313E00CE241E /* PluginModel.m */,
 				5F6326CB1A09310F00CE241E /* PluginInstallTask.h */,
 				5F6326CC1A09310F00CE241E /* PluginInstallTask.m */,
+				5F5C4E971AD2609B00D1D883 /* FlashlightIconResolution.h */,
+				5F5C4E981AD2609B00D1D883 /* FlashlightIconResolution.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -450,6 +460,9 @@
 				6C564497159E7C0900215467 /* AppDelegate.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
+				5F5C4E921AD25A9C00D1D883 /* PluginListRenderer.h */,
+				5F5C4E931AD25A9C00D1D883 /* PluginListRenderer.m */,
+				5F5C4E951AD25C6B00D1D883 /* PluginList.html */,
 				5FF5D4151A67778C00641D7A /* Categories */,
 				5F6326C71A08538B00CE241E /* PluginCellView.h */,
 				5F6326C81A08538B00CE241E /* PluginCellView.m */,
@@ -574,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FBEC9C41A166C00007FEC54 /* dsa_pub.pem in Resources */,
+				5F5C4E961AD25C6B00D1D883 /* PluginList.html in Resources */,
 				6C56448F159E7C0800215467 /* InfoPlist.strings in Resources */,
 				5FF8731D1A6D977500EAD72F /* GenericPluginIcon.icns in Resources */,
 				5F60B0FE1A196562004BCF08 /* WorkflowTemplate.bundle in Resources */,
@@ -647,6 +661,7 @@
 				5F6327061A0933E800CE241E /* ZZNewArchiveEntry.mm in Sources */,
 				5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */,
 				5F6326C01A08313E00CE241E /* PluginModel.m in Sources */,
+				5F5C4E991AD2609B00D1D883 /* FlashlightIconResolution.m in Sources */,
 				5F60B0FB1A194F11004BCF08 /* PluginEditorWindowController.m in Sources */,
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
 				5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */,
@@ -662,6 +677,7 @@
 				5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */,
 				5F6327031A0933E800CE241E /* ZZFileChannel.m in Sources */,
 				5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */,
+				5F5C4E941AD25A9C00D1D883 /* PluginListRenderer.m in Sources */,
 				5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */,
 				5F63270A1A0933E800CE241E /* ZZStandardCryptoEngine.cpp in Sources */,
 			);

@@ -118,6 +118,20 @@
         },
         {
             "categories": [
+                "Developer"
+            ],
+            "creator_name": "Ne4istb",
+            "description": "Quick search in AngularJS Documentation",
+            "displayName": "AngularJS Docs",
+            "examples": [
+                "angular directives",
+                "ng compile"
+            ],
+            "name": "angulardocs",
+            "zip_url": "angulardocs.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
@@ -1818,7 +1832,7 @@
             "tags": [
                 "Utilities"
             ],
-            "version": "1.0.0",
+            "version": "1.0.1",
             "zip_url": "royaltsx.zip"
         },
         {

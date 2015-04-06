@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            margin: 20px;
+            line-height: 1.4;
+            font-family: "HelveticaNeue";
+        }
+        h1, h2, h3, h4 {
+            font-weight: lighter;
+        }
+				.plugin {
+					margin-bottom: 2em;
+				}
+				h6 {
+					opacity: 0.7;
+					font-weight: bold;
+					font-size: small;
+					margin: 0;
+					text-transform: uppercase;
+				}
+				.buttons a {
+					display: inline-block;
+					color: inherit;
+					text-transform: uppercase;
+					font-size: small;
+					font-weight: bold;
+					margin: 6px;
+					margin-left: 0;
+					padding: 6px;
+					border-radius: 15px;
+					text-decoration: none;
+				}
+				.icon {
+					height: 0.7em;
+					margin-right: 1em;
+				}
+        </style>
+    </head>
+    <body>
+        <h1>Installed Plugins</h1>
+        <p>Each plugin can recognize certain commands when you type them into Spotlight.</p>
+        <div id='plugins'>
+            {{#each plugin}}
+                <div class='plugin' id='plugin_{{name}}'>
+                    <h2>
+											{{#if icon}}
+												<img class='icon' src='{{icon}}' />
+											{{/icon}}
+											{{ displayName }}
+										</h2>
+										{{#description}}
+										<p class='description'>{{description}}</p>
+										{{/description}}
+										<h6>Examples</h6>
+										<ul class='examples'>
+											{{#examples}}
+												<li>{{.}}</li>
+											{{/examples}}
+										</ul>
+										<div class='buttons'>
+											{{#buttons}}
+											<a href='{{url}}'>{{title}}</a>
+											{{/buttons}}
+										</div>
+                </div>
+            {{/each}}
+        </div>
+    </body>
+</html>
