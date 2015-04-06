@@ -3,69 +3,127 @@
     <head>
         <style>
         body {
-            margin: 20px;
+            margin: 0;
             line-height: 1.4;
             font-family: "HelveticaNeue";
+						cursor: default;
         }
         h1, h2, h3, h4 {
             font-weight: lighter;
         }
-				.plugin {
-					margin-bottom: 2em;
+				
+				h2 {
+					margin-bottom: 0;
 				}
-				h6 {
-					opacity: 0.7;
-					font-weight: bold;
-					font-size: small;
-					margin: 0;
+				
+				.header {
+					width: 100%;
+					display: table;
+					background-color: rgba(0,0,0,0.06);
+					margin-bottom: 4px;
+				}
+				.plugin {
+					margin-bottom: 12px;
+				}
+				.header > div.name {
+					padding-left: 0;
+				}
+				.header > div {
+					display: table-cell;
+					padding: 4px;
 					text-transform: uppercase;
+					font-size: x-small;
+					font-weight: bold;
+				}
+				
+				.header > div.icon {
+					width: 20px;
+					text-align: center;
+				}
+				
+				.buttons {
+					text-align: right;
+					padding-right: 1em !important;
 				}
 				.buttons a {
-					display: inline-block;
 					color: inherit;
-					text-transform: uppercase;
-					font-size: small;
-					font-weight: bold;
-					margin: 6px;
-					margin-left: 0;
-					padding: 6px;
-					border-radius: 15px;
+					padding-left: 3px;
 					text-decoration: none;
 				}
-				.icon {
-					height: 0.7em;
-					margin-right: 1em;
+				.buttons a:hover {
+					opacity: 0.75;
+				}
+				.buttons a:active {
+					opacity: 0.5;
+				}
+				.examples {
+					padding: 0;
+					margin: -2px;
+				}
+				.examples li {
+					display: inline-block;
+					padding: 2px;
+					list-style-type: none;
+				}
+				.examples li:before {
+					content: "“";
+				}
+				.examples li:after {
+					content: "”";
+				}
+				.icon img {
+					height: 0.9em;
+					position: relative;
+					top: 0.05em;
+				}
+				.description {
+					font-size: small;
+					opacity: 0.7;
+					margin-top: 2px;
+					margin-bottom: 2px;
+				}
+				.marginalized {
+					margin-left: 28px;
+					margin-right: 20px;
+				}
+				p {
+					font-size: small;
 				}
         </style>
     </head>
     <body>
-        <h1>Installed Plugins</h1>
-        <p>Each plugin can recognize certain commands when you type them into Spotlight.</p>
+				<div id='title' class='marginalized'>
+	        <h2>Installed Plugins</h2>
+	        <p>Each plugin can recognize certain commands when you type them into Spotlight.</p>
+				</div>
         <div id='plugins'>
-            {{#each plugin}}
+            {{#plugins}}
                 <div class='plugin' id='plugin_{{name}}'>
-                    <h2>
-											{{#if icon}}
-												<img class='icon' src='{{icon}}' />
-											{{/icon}}
-											{{ displayName }}
-										</h2>
+										<div class='header'>
+											<div class='icon'>
+												{{#icon}}
+													<img src='{{icon}}' />
+												{{/icon}}
+											</div>
+											<div class='name'>
+												{{ displayName }}
+											</div>
+											<div class='buttons'>
+												{{#buttons}}
+												<a href='{{url}}'>{{title}}</a>
+												{{/buttons}}
+											</div>
+										</div>
 										{{#description}}
-										<p class='description'>{{description}}</p>
+										<p class='description marginalized'>{{description}}</p>
 										{{/description}}
-										<h6>Examples</h6>
-										<ul class='examples'>
+										<ul class='examples marginalized'>
 											{{#examples}}
 												<li>{{.}}</li>
 											{{/examples}}
 										</ul>
-										<div class='buttons'>
-											{{#buttons}}
-											<a href='{{url}}'>{{title}}</a>
-											{{/buttons}}
-										</div>
                 </div>
-            {{/each}}
+            {{/plugins}}
         </div>
     </body>
 </html>

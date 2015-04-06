@@ -17,7 +17,7 @@
 #import "SearchPluginEditorWindowController.h"
 #import "UpdateChecker.h"
 #import "PluginInstallManager.h"
-#import "PluginListRenderer.h"
+#import "InstalledPluginListRenderer.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
@@ -25,7 +25,7 @@ NSString * const kCategorySearchResults = @"_SearchResults";
 NSString * const kCategoryShowIndividualPlugin = @"_ShowIndividualPlugin";
 NSString * const kCategoryUpdates = @"_Updates";
 
-@interface PluginListController () <NSTableViewDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
+@interface PluginListController () <NSOutlineViewDelegate, NSOutlineViewDataSource, NSWindowDelegate>
 
 @property (nonatomic) NSArray *installedPlugins;
 
@@ -73,11 +73,7 @@ NSString * const kCategoryUpdates = @"_Updates";
         
         self.sourceList.selectionHighlightStyle = NSTableViewSelectionHighlightStyleSourceList;
         
-        [self.tableView setDoubleAction:@selector(doubleClickedPlugin:)];
-        [self.tableView setTarget:self];
-        
         self.initializedYet = YES;
-        self.arrayController.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES]];
         
         [self startWatchingPluginsDir];
         [self reloadFromDisk];
@@ -121,21 +117,14 @@ NSString * const kCategoryUpdates = @"_Updates";
     } else {
         self.errorBanner.hidden = YES;
     }
-    [self updateControllers];
-    
-    BOOL showingInstalled = [self.selectedCategory isEqualToString:kCategoryInstalled];
+    [self.sourceList reloadData];
     
     if (self.enabled) {
-        if (showingInstalled) {
-            self.rightPaneView = self.tableContainer;
-        } else {
-            self.rightPaneView = self.webViewEffectView;
-        }
+        self.rightPaneView = self.webViewEffectView;
         NSInteger i = [[self categoriesForDisplay] indexOfObject:self.selectedCategory];
         if (i != NSNotFound) {
             [self.sourceList selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
         }
-        
     } else {
         self.rightPaneView = self.disabledPane;
         [self.sourceList selectRowIndexes:[NSIndexSet indexSet] byExtendingSelection:NO];
@@ -162,44 +151,8 @@ NSString * const kCategoryUpdates = @"_Updates";
     [self updateUI];
 }
 
-- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row {
-    ((PluginCellView *)[rowView viewAtColumn:0]).listController = self;
-}
-
 - (void)resized {
-    [self.tableView noteHeightOfRowsWithIndexesChanged:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.arrayController.arrangedObjects count])]];
-}
-
-- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-    CGFloat xInset = 449 - 443;
-    CGFloat yInset = 94 - 56;
-    return [[[self.arrayController.arrangedObjects objectAtIndex:row] attributedString] boundingRectWithSize:CGSizeMake(tableView.bounds.size.width-xInset, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin].size.height + yInset;
-}
-
-- (NSIndexSet *)tableView:(NSTableView *)tableView
-selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
-    if (proposedSelectionIndexes.firstIndex == NSNotFound) {
-        self.selectedPluginName = nil;
-        return proposedSelectionIndexes;
-    } else {
-        self.selectedPluginName = [self.arrayController.arrangedObjects[proposedSelectionIndexes.firstIndex] name];
-        return [NSIndexSet indexSetWithIndex:proposedSelectionIndexes.firstIndex];
-    }
-}
-- (IBAction)doubleClickedPlugin:(id)sender {
-    PluginModel *plugin = [(PluginCellView *)[self.tableView viewAtColumn:[self.tableView clickedColumn] row:[self.tableView clickedRow] makeIfNecessary:YES] plugin];
-    if (!plugin.installed) return;
-    if (plugin.isAutomatorWorkflow) {
-        [self editAutomatorPluginNamed:plugin.name];
-    } else if (plugin.isSearchPlugin) {
-        [self editSearchPluginNamed:plugin.name];
-    } else {
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:NSLocalizedString(@"This plugin has no additional options.", @"")];
-        [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")];
-        
-        [alert runModal];
-    }
+    // necessary?
 }
 
 #pragma mark Data
@@ -225,35 +178,6 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)setInstalledPlugins:(NSArray *)installedPlugins {
     _installedPlugins = installedPlugins;
     [self updateUI];
-}
-
-- (void)updateControllers {
-    [self.sourceList reloadData];
-    [self updateArrayController];
-}
-
-- (void)updateArrayController {
-    [self.arrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [self.arrayController.arrangedObjects count])]];
-    if (self.installedPlugins)
-        [self.arrayController addObjects:self.installedPlugins];
-    [self.arrayController rearrangeObjects];
-    [self.tableView reloadData];
-    
-    if (self.selectedPluginName) {
-        NSArray *objects = self.arrayController.arrangedObjects;
-        BOOL found = false;
-        for (NSInteger i=0; i<objects.count; i++) {
-            PluginModel *model = objects[i];
-            if ([model.name isEqualToString:self.selectedPluginName]) {
-                [self.tableView selectColumnIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
-                [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
-                [self.tableView scrollRowToVisible:i];
-                found = true;
-                break;
-            }
-        }
-        //if (!found) self.selectedPluginName = nil;
-    }
 }
 
 #pragma mark Local plugin files
@@ -413,16 +337,17 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 - (void)setSelectedCategory:(NSString *)selectedCategory {
     _selectedCategory = selectedCategory;
     [self updateUI];
-    if (![selectedCategory isEqualToString:kCategoryInstalled]) {
-        self.webView.alphaValue = 0;
-        [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
-        if ([selectedCategory isEqualToString:kCategorySearchResults]) {
-            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForSearchQuery:self.searchField.stringValue]]];
-        } else if ([selectedCategory isEqualToString:kCategoryShowIndividualPlugin]) {
-            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForPluginNamed:self.selectedPluginName]]];
-        } else {
-            [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
-        }
+    
+    self.webView.alphaValue = 0;
+    [self.webView.mainFrame loadHTMLString:@"" baseURL:nil];
+    if ([selectedCategory isEqualToString:kCategorySearchResults]) {
+        [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForSearchQuery:self.searchField.stringValue]]];
+    } else if ([selectedCategory isEqualToString:kCategoryShowIndividualPlugin]) {
+        [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForPluginNamed:self.selectedPluginName]]];
+    } else if ([selectedCategory isEqualToString:kCategoryInstalled]) {
+        [self loadInstalledPluginPage];
+    } else {
+        [self.webView.mainFrame loadRequest:[NSURLRequest requestWithURL:[[PluginDirectoryAPI shared] URLForCategory:selectedCategory]]];
     }
 }
 
@@ -505,22 +430,26 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
 }
 
 - (void)updatePluginStatuses {
-    NSMutableString *script = [NSMutableString new];
-    [script appendFormat:@"var elements = document.querySelectorAll('#plugins > li');\n"];
-    [script appendFormat:@"for (var i=0; i<elements.length; i++) elements[i].setAttribute('status', 'uninstalled')\n"];
-    for (PluginModel *plugin in self.installedPlugins) {
-        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
-        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installed');\n"];
+    if ([self.selectedCategory isEqualToString:kCategoryInstalled]) {
+        [self loadInstalledPluginPage];
+    } else {
+        NSMutableString *script = [NSMutableString new];
+        [script appendFormat:@"var elements = document.querySelectorAll('#plugins > li');\n"];
+        [script appendFormat:@"for (var i=0; i<elements.length; i++) elements[i].setAttribute('status', 'uninstalled')\n"];
+        for (PluginModel *plugin in self.installedPlugins) {
+            [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", plugin.name];
+            [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installed');\n"];
+        }
+        for (NSString *name in [UpdateChecker shared].pluginsNeedingUpdates) {
+            [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
+            [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
+        }
+        for (PluginInstallTask *installation in [PluginInstallManager shared].installTasksInProgress) {
+            [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
+            [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
+        }
+        [self.webView stringByEvaluatingJavaScriptFromString:script];
     }
-    for (NSString *name in [UpdateChecker shared].pluginsNeedingUpdates) {
-        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", name];
-        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'needsUpdate');\n"];
-    }
-    for (PluginInstallTask *installation in [PluginInstallManager shared].installTasksInProgress) {
-        [script appendFormat:@"elements = document.getElementsByClassName('%@');\n", installation.plugin.name];
-        [script appendString:@"if (elements.length) elements[0].setAttribute('status', 'installing');\n"];
-    }
-    [self.webView stringByEvaluatingJavaScriptFromString:script];
 }
 
 - (void)webView:(WebView *)webView decidePolicyForNavigationAction:(NSDictionary *)actionInformation request:(NSURLRequest *)request frame:(WebFrame *)frame decisionListener:(id<WebPolicyDecisionListener>)listener {
@@ -553,6 +482,9 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         NSURLComponents *comps = [NSURLComponents componentsWithURL:request.URL resolvingAgainstBaseURL:NO];
         comps.scheme = @"http";
         [[NSWorkspace sharedWorkspace] openURL:comps.URL];
+    } else if ([request.URL.scheme isEqualToString:@"flashlight"]) {
+        [listener ignore];
+        [[NSWorkspace sharedWorkspace] openURL:request.URL];
     } else {
         [listener use];
     }
@@ -577,9 +509,7 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         return [[obj name] isEqualToString:name] ? obj : nil;
     }].firstObject;
     NSUInteger index = model ? [self.installedPlugins indexOfObject:model] : NSNotFound;
-    if (index != NSNotFound) {
-        [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
-    }
+    // TODO
 }
 
 - (void)showCategory:(NSString *)category {
@@ -610,6 +540,11 @@ selectionIndexesForProposedSelection:(NSIndexSet *)proposedSelectionIndexes {
         _showUpdateInProgress = showUpdateInProgress;
         [self updateUI];
     }
+}
+
+#pragma mark Installed Plugin List
+- (void)loadInstalledPluginPage {
+    [self.webView.mainFrame loadHTMLString:[[InstalledPluginListRenderer new] renderPluginListHTMLForInstalled:self.installedPlugins] baseURL:nil];
 }
 
 @end

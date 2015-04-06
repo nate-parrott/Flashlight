@@ -557,7 +557,6 @@
         <userDefaultsController representsSharedInstance="YES" id="702"/>
         <customObject id="715" customClass="PluginListController">
             <connections>
-                <outlet property="arrayController" destination="714" id="716"/>
                 <outlet property="disabledPane" destination="Lha-km-r1j" id="fAj-eE-tXv"/>
                 <outlet property="errorBanner" destination="eIK-Jf-OGb" id="bJL-om-cww"/>
                 <outlet property="errorButton" destination="9nN-QT-MfC" id="Jom-wc-gLW"/>
@@ -565,15 +564,12 @@
                 <outlet property="rightPaneContainer" destination="90w-qC-o2U" id="T9B-5b-yzZ"/>
                 <outlet property="searchField" destination="B2I-e5-KQB" id="CEZ-40-eaP"/>
                 <outlet property="sourceList" destination="76J-wG-jzB" id="LkR-LD-LdE"/>
-                <outlet property="tableContainer" destination="IJ7-m0-7jG" id="UC5-K9-iZD"/>
-                <outlet property="tableView" destination="2Bw-eW-td2" id="Fpj-ZY-CR6"/>
                 <outlet property="toolbarItem" destination="6NI-Ay-AA6" id="d4e-Cy-LbB"/>
                 <outlet property="view" destination="652" id="deO-wQ-SCo"/>
                 <outlet property="webView" destination="DEt-An-xUj" id="3I1-bq-dVK"/>
                 <outlet property="webViewEffectView" destination="aTm-s5-Sy6" id="K3m-lK-wDE"/>
             </connections>
         </customObject>
-        <arrayController selectsInsertedObjects="NO" avoidsEmptySelection="NO" id="714"/>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -666,119 +662,6 @@
             </view>
             <point key="canvasLocation" x="-242" y="535.5"/>
         </window>
-        <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="96" horizontalPageScroll="10" verticalLineScroll="96" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="IJ7-m0-7jG" userLabel="Plugin List">
-            <rect key="frame" x="0.0" y="0.0" width="454" height="448"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="puk-vq-Kg7">
-                <rect key="frame" x="1" y="0.0" width="238" height="134"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" selectionHighlightStyle="none" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="94" rowSizeStyle="automatic" viewBased="YES" id="2Bw-eW-td2">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <size key="intercellSpacing" width="3" height="2"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
-                        <tableColumns>
-                            <tableColumn width="451" minWidth="40" maxWidth="999999" id="1hD-Dq-kq9">
-                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
-                                    <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                </tableHeaderCell>
-                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="XWZ-Ty-qkr">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                <prototypeCellViews>
-                                    <tableCellView id="FQb-yf-BXy" customClass="PluginCellView">
-                                        <rect key="frame" x="1" y="1" width="451" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="6mi-ds-L3P">
-                                                <rect key="frame" x="3" y="31" width="445" height="56"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="This plugin does some crazy stuff like change the word and everything." id="rtk-em-P81">
-                                                    <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                    <connections>
-                                                        <binding destination="FQb-yf-BXy" name="value" keyPath="objectValue.attributedString" id="Klm-NT-7ma"/>
-                                                    </connections>
-                                                </textFieldCell>
-                                            </textField>
-                                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" id="Agl-8K-jT3">
-                                                <rect key="frame" x="430" y="7" width="16" height="16"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <binding destination="FQb-yf-BXy" name="animate" keyPath="objectValue.installing" id="PM8-oS-CTm"/>
-                                                </connections>
-                                            </progressIndicator>
-                                            <button verticalHuggingPriority="750" id="XCq-UX-7Ic">
-                                                <rect key="frame" x="6" y="8" width="97" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <buttonCell key="cell" type="inline" title="Remove" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YVv-RQ-efJ">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="smallSystemBold"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="remove:" target="FQb-yf-BXy" id="Ax6-vV-v2w"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" id="4lu-N2-9Kf">
-                                                <rect key="frame" x="111" y="8" width="97" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <buttonCell key="cell" type="inline" title="Settings" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lXb-U2-Vam">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="smallSystemBold"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="openSettings:" target="FQb-yf-BXy" id="Mpy-la-wLc"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" id="LNg-W2-VyP">
-                                                <rect key="frame" x="349" y="8" width="97" height="17"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                <buttonCell key="cell" type="inline" title="Edit" bezelStyle="inline" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pqr-Lb-xGV">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="smallSystemBold"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="edit:" target="FQb-yf-BXy" id="nmg-Bk-cJc"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <connections>
-                                            <outlet property="editButton" destination="LNg-W2-VyP" id="dIe-LV-X3I"/>
-                                            <outlet property="loader" destination="Agl-8K-jT3" id="Ewm-F1-sNa"/>
-                                            <outlet property="removeButton" destination="XCq-UX-7Ic" id="6Ja-6I-Mga"/>
-                                            <outlet property="settingsButton" destination="4lu-N2-9Kf" id="mxP-Y2-S4V"/>
-                                        </connections>
-                                    </tableCellView>
-                                </prototypeCellViews>
-                                <connections>
-                                    <binding destination="714" name="value" keyPath="arrangedObjects.objectValue.name" id="mCV-Ix-3jb"/>
-                                </connections>
-                            </tableColumn>
-                        </tableColumns>
-                        <connections>
-                            <outlet property="delegate" destination="715" id="ZV9-wI-bOo"/>
-                        </connections>
-                    </tableView>
-                </subviews>
-                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-            </clipView>
-            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="vIk-Od-X2W">
-                <rect key="frame" x="1" y="119" width="223" height="15"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </scroller>
-            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="LGm-1l-YKZ">
-                <rect key="frame" x="224" y="17" width="15" height="102"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </scroller>
-            <point key="canvasLocation" x="884" y="-3"/>
-        </scrollView>
         <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="aTm-s5-Sy6" userLabel="WebView visual effect view">
             <rect key="frame" x="0.0" y="-1" width="316" height="316"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>

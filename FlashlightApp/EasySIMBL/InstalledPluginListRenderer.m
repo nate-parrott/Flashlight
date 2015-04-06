@@ -6,20 +6,20 @@
 //
 //
 
-#import "PluginListRenderer.h"
+#import "InstalledPluginListRenderer.h"
 #import <GRMustache.h>
 #import "ConvenienceCategories.h"
 #import "PluginModel.h"
 #import "FlashlightIconResolution.h"
 
-@implementation PluginListRenderer
+@implementation InstalledPluginListRenderer
 
 + (GRMustacheTemplate *)template {
     static GRMustacheTemplate *template = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSError *error = nil;
-        template = [GRMustacheTemplate templateFromResource:@"PluginList" bundle:nil error:&error];
+        template = [GRMustacheTemplate templateFromContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PluginList" ofType:@"html"] error:&error];
         if (error) NSLog(@"%@", error);
     });
     return template;
@@ -46,15 +46,21 @@
                                @"displayName": plugin.displayName ? : @"",
                                @"examples": plugin.examples ? : @[]
                                }.mutableCopy;
-    if (plugin.description) d[@"description"] = plugin.description;
+    if (plugin.pluginDescription) d[@"description"] = plugin.pluginDescription;
     NSString *iconPath = [FlashlightIconResolution pathForIconForPluginAtPath:plugin.path];
-    if (iconPath) d[@"icon"] = iconPath;
+    if (iconPath) d[@"icon"] = [NSURL fileURLWithPath:iconPath].absoluteString;
     
     NSMutableArray *buttons = [NSMutableArray new];
     if (plugin.hasOptions) {
         [buttons addObject:@{
                              @"title": NSLocalizedString(@"Settings", @""),
                              @"url": [NSString stringWithFormat:@"flashlight://plugin/%@/preferences", plugin.name]
+                             }];
+    }
+    if (plugin.isAutomatorWorkflow) {
+        [buttons addObject:@{
+                             @"title": NSLocalizedString(@"Edit", nil),
+                             @"url": @"about:blank" // TODO
                              }];
     }
     [buttons addObject:@{

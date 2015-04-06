@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PluginListRenderer : NSObject
+@interface InstalledPluginListRenderer : NSObject
 
 - (NSString *)renderPluginListHTMLForInstalled:(NSArray *)installedPlugins;
 
