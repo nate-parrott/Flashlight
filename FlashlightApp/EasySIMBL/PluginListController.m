@@ -544,7 +544,7 @@ NSString * const kCategoryUpdates = @"_Updates";
 
 #pragma mark Installed Plugin List
 - (void)loadInstalledPluginPage {
-    [self.webView.mainFrame loadHTMLString:[[InstalledPluginListRenderer new] renderPluginListHTMLForInstalled:self.installedPlugins] baseURL:nil];
+    [[InstalledPluginListRenderer new] populateWebview:self.webView withInstalledPlugins:self.installedPlugins];
 }
 
 @end

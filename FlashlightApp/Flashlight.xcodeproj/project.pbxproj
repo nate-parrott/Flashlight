@@ -42,6 +42,7 @@
 		5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326F81A0933E800CE241E /* ZZStandardDecryptInputStream.mm */; };
 		5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */; };
 		5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63270D1A0939A900CE241E /* libz.dylib */; };
+		5F916B601AD353DF0078B4F4 /* PluginListContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */; };
 		5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */; };
 		5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */; };
 		5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */; };
@@ -181,6 +182,7 @@
 		5F6326F91A0933E800CE241E /* ZZStoreOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStoreOutputStream.h; sourceTree = "<group>"; };
 		5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZStoreOutputStream.m; sourceTree = "<group>"; };
 		5F63270D1A0939A900CE241E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PluginListContent.html; sourceTree = "<group>"; };
 		5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorWindow.h; sourceTree = "<group>"; };
 		5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefEditorWindow.m; sourceTree = "<group>"; };
 		5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorTableView.h; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				5F5C4E921AD25A9C00D1D883 /* InstalledPluginListRenderer.h */,
 				5F5C4E931AD25A9C00D1D883 /* InstalledPluginListRenderer.m */,
 				5F5C4E951AD25C6B00D1D883 /* PluginList.html */,
+				5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */,
 				5FF5D4151A67778C00641D7A /* Categories */,
 				5F6326C71A08538B00CE241E /* PluginCellView.h */,
 				5F6326C81A08538B00CE241E /* PluginCellView.m */,
@@ -594,6 +597,7 @@
 				5FD3504E1A840EF2001E0380 /* Icon.icns in Resources */,
 				5F2B37761A3E42E500AC2C19 /* SearchPluginEditorWindowController.xib in Resources */,
 				5FC0166C1A1DBE7300F8E4E7 /* Localizable.strings in Resources */,
+				5F916B601AD353DF0078B4F4 /* PluginListContent.html in Resources */,
 				5FBEC9B61A154DEA007FEC54 /* Icons.xcassets in Resources */,
 				5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */,
 				5F60B0FC1A194F11004BCF08 /* PluginEditorWindowController.xib in Resources */,

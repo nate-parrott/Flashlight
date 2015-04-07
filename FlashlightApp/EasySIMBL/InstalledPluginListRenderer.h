@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
 
 @interface InstalledPluginListRenderer : NSObject
 
-- (NSString *)renderPluginListHTMLForInstalled:(NSArray *)installedPlugins;
+- (void)populateWebview:(WebView *)webview withInstalledPlugins:(NSArray *)installedPlugins;
 
 @end
