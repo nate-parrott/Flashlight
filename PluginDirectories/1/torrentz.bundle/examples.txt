@@ -1,2 +1,2 @@
-search torrent t for ~message(godzilla)
+search torrentz for ~message(godzilla)
 torrentz ~message(godzilla)

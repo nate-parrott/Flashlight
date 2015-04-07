@@ -45,7 +45,7 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
     NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
-        
+    
     self.SIMBLOn = YES;
     
     [self checkSpotlightVersion];
@@ -212,6 +212,11 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
         });
+    }
+    
+    if (result) {
+        // show available plugins on enable
+        [self.pluginListController showInstalledPlugins];
     }
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn {

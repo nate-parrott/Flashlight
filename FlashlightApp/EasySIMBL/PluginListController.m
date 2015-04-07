@@ -8,7 +8,6 @@
 
 #import "PluginListController.h"
 #import "PluginModel.h"
-#import "PluginCellView.h"
 #import "PluginInstallTask.h"
 #import "ConvenienceCategories.h"
 #import "PluginEditorWindowController.h"
@@ -18,6 +17,7 @@
 #import "UpdateChecker.h"
 #import "PluginInstallManager.h"
 #import "InstalledPluginListRenderer.h"
+#import "StarterPack.h"
 
 NSString * const kCategoryInstalled = @"Installed";
 NSString * const kCategoryFeatured = @"Featured";
@@ -183,7 +183,7 @@ NSString * const kCategoryUpdates = @"_Updates";
 #pragma mark Local plugin files
 - (void)startWatchingPluginsDir {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[PluginModel pluginsDir]]) {
-        [[NSFileManager defaultManager] createDirectoryAtPath:[PluginModel pluginsDir] withIntermediateDirectories:YES attributes:nil error:nil];
+        [StarterPack unpack];
     }
     
     self.fileDesc = open([[PluginModel pluginsDir] fileSystemRepresentation], O_EVTONLY);
@@ -485,6 +485,9 @@ NSString * const kCategoryUpdates = @"_Updates";
     } else if ([request.URL.scheme isEqualToString:@"flashlight"]) {
         [listener ignore];
         [[NSWorkspace sharedWorkspace] openURL:request.URL];
+    } else if ([request.URL.scheme isEqualToString:@"edit"]) {
+        NSString *name = request.URL.host;
+        [self editAutomatorPluginNamed:name];
     } else {
         [listener use];
     }
@@ -508,12 +511,15 @@ NSString * const kCategoryUpdates = @"_Updates";
     PluginModel *model = [self.installedPlugins map:^id(id obj) {
         return [[obj name] isEqualToString:name] ? obj : nil;
     }].firstObject;
-    NSUInteger index = model ? [self.installedPlugins indexOfObject:model] : NSNotFound;
     // TODO
 }
 
 - (void)showCategory:(NSString *)category {
     self.selectedCategory = category;
+}
+
+- (void)showInstalledPlugins {
+    [self showCategory:kCategoryInstalled];
 }
 
 - (void)showSearch:(NSString *)search {

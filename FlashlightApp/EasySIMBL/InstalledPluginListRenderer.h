@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+@class PluginModel;
 
 @interface InstalledPluginListRenderer : NSObject
 

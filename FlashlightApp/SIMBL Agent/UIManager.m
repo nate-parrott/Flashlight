@@ -94,7 +94,9 @@
                             examplesAdded++;
                             NSInteger i = 0;
                             for (NSString *example in examples) {
-                                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:example action:@selector(openExample:) keyEquivalent:@""];
+                                const NSInteger maxLength = 40;
+                                NSString *title = example.length > maxLength ? [[example substringToIndex:maxLength] stringByAppendingPathComponent:@"…"] : example;
+                                NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:title action:@selector(openExample:) keyEquivalent:@""];
                                 if (i == 0 && icon) {
                                     [item setOffStateImage:icon];
                                 }

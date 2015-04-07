@@ -21,7 +21,6 @@
 		5F6326BD1A0830F700CE241E /* PluginListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BC1A0830F700CE241E /* PluginListController.m */; };
 		5F6326C01A08313E00CE241E /* PluginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326BF1A08313E00CE241E /* PluginModel.m */; };
 		5F6326C21A083A1300CE241E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6326C11A083A1300CE241E /* QuartzCore.framework */; };
-		5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326C81A08538B00CE241E /* PluginCellView.m */; };
 		5F6326CD1A09310F00CE241E /* PluginInstallTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326CC1A09310F00CE241E /* PluginInstallTask.m */; };
 		5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326D21A0933E800CE241E /* ZZAESDecryptInputStream.mm */; };
 		5F6326FC1A0933E800CE241E /* ZZArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326D41A0933E800CE241E /* ZZArchive.mm */; };
@@ -42,6 +41,27 @@
 		5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326F81A0933E800CE241E /* ZZStandardDecryptInputStream.mm */; };
 		5F63270C1A0933E800CE241E /* ZZStoreOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */; };
 		5F63270E1A0939A900CE241E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F63270D1A0939A900CE241E /* libz.dylib */; };
+		5F8CCEA71AD3A1A1009D200E /* StarterPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8CCEA61AD3A1A1009D200E /* StarterPack.m */; };
+		5F8CCEBC1AD3A65F009D200E /* shutdown.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEA91AD3A65F009D200E /* shutdown.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEBD1AD3A660009D200E /* weather.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAA1AD3A65F009D200E /* weather.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEBE1AD3A660009D200E /* call.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAB1AD3A65F009D200E /* call.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEBF1AD3A660009D200E /* googlemaps.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAC1AD3A65F009D200E /* googlemaps.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC01AD3A660009D200E /* imessage.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAD1AD3A65F009D200E /* imessage.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC11AD3A660009D200E /* send_email.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAE1AD3A65F009D200E /* send_email.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC21AD3A660009D200E /* speller.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEAF1AD3A65F009D200E /* speller.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC31AD3A660009D200E /* calendar.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB01AD3A65F009D200E /* calendar.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC41AD3A660009D200E /* eject.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB11AD3A65F009D200E /* eject.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC51AD3A660009D200E /* open-url.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB21AD3A65F009D200E /* open-url.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC61AD3A660009D200E /* quicksearch.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB31AD3A65F009D200E /* quicksearch.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC71AD3A660009D200E /* remind-me.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB41AD3A65F009D200E /* remind-me.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC81AD3A660009D200E /* wikipedia.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB51AD3A65F009D200E /* wikipedia.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCEC91AD3A660009D200E /* Instranslator.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB61AD3A65F009D200E /* Instranslator.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCECA1AD3A660009D200E /* notes.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB71AD3A65F009D200E /* notes.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCECB1AD3A660009D200E /* emoji.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB81AD3A65F009D200E /* emoji.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCECC1AD3A660009D200E /* giphy.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEB91AD3A65F009D200E /* giphy.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCECD1AD3A660009D200E /* im-feeling-lucky.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEBA1AD3A65F009D200E /* im-feeling-lucky.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCECE1AD3A660009D200E /* largetext.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEBB1AD3A65F009D200E /* largetext.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F8CCED11AD3ACA2009D200E /* flashlight.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCED01AD3ACA2009D200E /* flashlight.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F916B601AD353DF0078B4F4 /* PluginListContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */; };
 		5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */; };
 		5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */; };
@@ -93,6 +113,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5F8CCEA81AD3A555009D200E /* Copy Starter Pack */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = StarterPackPlugins;
+			dstSubfolderSpec = 7;
+			files = (
+				5F8CCED11AD3ACA2009D200E /* flashlight.bundle in Copy Starter Pack */,
+				5F8CCEBC1AD3A65F009D200E /* shutdown.bundle in Copy Starter Pack */,
+				5F8CCEBD1AD3A660009D200E /* weather.bundle in Copy Starter Pack */,
+				5F8CCEBE1AD3A660009D200E /* call.bundle in Copy Starter Pack */,
+				5F8CCEBF1AD3A660009D200E /* googlemaps.bundle in Copy Starter Pack */,
+				5F8CCEC01AD3A660009D200E /* imessage.bundle in Copy Starter Pack */,
+				5F8CCEC11AD3A660009D200E /* send_email.bundle in Copy Starter Pack */,
+				5F8CCEC21AD3A660009D200E /* speller.bundle in Copy Starter Pack */,
+				5F8CCEC31AD3A660009D200E /* calendar.bundle in Copy Starter Pack */,
+				5F8CCEC41AD3A660009D200E /* eject.bundle in Copy Starter Pack */,
+				5F8CCEC51AD3A660009D200E /* open-url.bundle in Copy Starter Pack */,
+				5F8CCEC61AD3A660009D200E /* quicksearch.bundle in Copy Starter Pack */,
+				5F8CCEC71AD3A660009D200E /* remind-me.bundle in Copy Starter Pack */,
+				5F8CCEC81AD3A660009D200E /* wikipedia.bundle in Copy Starter Pack */,
+				5F8CCEC91AD3A660009D200E /* Instranslator.bundle in Copy Starter Pack */,
+				5F8CCECA1AD3A660009D200E /* notes.bundle in Copy Starter Pack */,
+				5F8CCECB1AD3A660009D200E /* emoji.bundle in Copy Starter Pack */,
+				5F8CCECC1AD3A660009D200E /* giphy.bundle in Copy Starter Pack */,
+				5F8CCECD1AD3A660009D200E /* im-feeling-lucky.bundle in Copy Starter Pack */,
+				5F8CCECE1AD3A660009D200E /* largetext.bundle in Copy Starter Pack */,
+			);
+			name = "Copy Starter Pack";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6C5644B9159E7D6C00215467 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,8 +183,6 @@
 		5F6326BE1A08313E00CE241E /* PluginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginModel.h; sourceTree = "<group>"; };
 		5F6326BF1A08313E00CE241E /* PluginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginModel.m; sourceTree = "<group>"; };
 		5F6326C11A083A1300CE241E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		5F6326C71A08538B00CE241E /* PluginCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginCellView.h; sourceTree = "<group>"; };
-		5F6326C81A08538B00CE241E /* PluginCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginCellView.m; sourceTree = "<group>"; };
 		5F6326CB1A09310F00CE241E /* PluginInstallTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginInstallTask.h; sourceTree = "<group>"; };
 		5F6326CC1A09310F00CE241E /* PluginInstallTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PluginInstallTask.m; sourceTree = "<group>"; };
 		5F6326CF1A0933E800CE241E /* zipzap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "zipzap-Prefix.pch"; sourceTree = "<group>"; };
@@ -182,6 +230,28 @@
 		5F6326F91A0933E800CE241E /* ZZStoreOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStoreOutputStream.h; sourceTree = "<group>"; };
 		5F6326FA1A0933E800CE241E /* ZZStoreOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZStoreOutputStream.m; sourceTree = "<group>"; };
 		5F63270D1A0939A900CE241E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5F8CCEA51AD3A1A1009D200E /* StarterPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarterPack.h; sourceTree = "<group>"; };
+		5F8CCEA61AD3A1A1009D200E /* StarterPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarterPack.m; sourceTree = "<group>"; };
+		5F8CCEA91AD3A65F009D200E /* shutdown.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = shutdown.bundle; path = ../PluginDirectories/1/shutdown.bundle; sourceTree = "<group>"; };
+		5F8CCEAA1AD3A65F009D200E /* weather.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = weather.bundle; path = ../PluginDirectories/1/weather.bundle; sourceTree = "<group>"; };
+		5F8CCEAB1AD3A65F009D200E /* call.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = call.bundle; path = ../PluginDirectories/1/call.bundle; sourceTree = "<group>"; };
+		5F8CCEAC1AD3A65F009D200E /* googlemaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = googlemaps.bundle; path = ../PluginDirectories/1/googlemaps.bundle; sourceTree = "<group>"; };
+		5F8CCEAD1AD3A65F009D200E /* imessage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = imessage.bundle; path = ../PluginDirectories/1/imessage.bundle; sourceTree = "<group>"; };
+		5F8CCEAE1AD3A65F009D200E /* send_email.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = send_email.bundle; path = ../PluginDirectories/1/send_email.bundle; sourceTree = "<group>"; };
+		5F8CCEAF1AD3A65F009D200E /* speller.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = speller.bundle; path = ../PluginDirectories/1/speller.bundle; sourceTree = "<group>"; };
+		5F8CCEB01AD3A65F009D200E /* calendar.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = calendar.bundle; path = ../PluginDirectories/1/calendar.bundle; sourceTree = "<group>"; };
+		5F8CCEB11AD3A65F009D200E /* eject.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = eject.bundle; path = ../PluginDirectories/1/eject.bundle; sourceTree = "<group>"; };
+		5F8CCEB21AD3A65F009D200E /* open-url.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "open-url.bundle"; path = "../PluginDirectories/1/open-url.bundle"; sourceTree = "<group>"; };
+		5F8CCEB31AD3A65F009D200E /* quicksearch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = quicksearch.bundle; path = ../PluginDirectories/1/quicksearch.bundle; sourceTree = "<group>"; };
+		5F8CCEB41AD3A65F009D200E /* remind-me.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "remind-me.bundle"; path = "../PluginDirectories/1/remind-me.bundle"; sourceTree = "<group>"; };
+		5F8CCEB51AD3A65F009D200E /* wikipedia.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = wikipedia.bundle; path = ../PluginDirectories/1/wikipedia.bundle; sourceTree = "<group>"; };
+		5F8CCEB61AD3A65F009D200E /* Instranslator.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Instranslator.bundle; path = ../PluginDirectories/1/Instranslator.bundle; sourceTree = "<group>"; };
+		5F8CCEB71AD3A65F009D200E /* notes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = notes.bundle; path = ../PluginDirectories/1/notes.bundle; sourceTree = "<group>"; };
+		5F8CCEB81AD3A65F009D200E /* emoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = emoji.bundle; path = ../PluginDirectories/1/emoji.bundle; sourceTree = "<group>"; };
+		5F8CCEB91AD3A65F009D200E /* giphy.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = giphy.bundle; path = ../PluginDirectories/1/giphy.bundle; sourceTree = "<group>"; };
+		5F8CCEBA1AD3A65F009D200E /* im-feeling-lucky.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "im-feeling-lucky.bundle"; path = "../PluginDirectories/1/im-feeling-lucky.bundle"; sourceTree = "<group>"; };
+		5F8CCEBB1AD3A65F009D200E /* largetext.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = largetext.bundle; path = ../PluginDirectories/1/largetext.bundle; sourceTree = "<group>"; };
+		5F8CCED01AD3ACA2009D200E /* flashlight.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = flashlight.bundle; path = ../PluginDirectories/1/flashlight.bundle; sourceTree = "<group>"; };
 		5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PluginListContent.html; sourceTree = "<group>"; };
 		5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorWindow.h; sourceTree = "<group>"; };
 		5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefEditorWindow.m; sourceTree = "<group>"; };
@@ -332,6 +402,34 @@
 			path = zipzap;
 			sourceTree = "<group>";
 		};
+		5F8CCECF1AD3A68A009D200E /* Starter Pack */ = {
+			isa = PBXGroup;
+			children = (
+				5F8CCED01AD3ACA2009D200E /* flashlight.bundle */,
+				5F8CCEA91AD3A65F009D200E /* shutdown.bundle */,
+				5F8CCEAA1AD3A65F009D200E /* weather.bundle */,
+				5F8CCEAB1AD3A65F009D200E /* call.bundle */,
+				5F8CCEAC1AD3A65F009D200E /* googlemaps.bundle */,
+				5F8CCEAD1AD3A65F009D200E /* imessage.bundle */,
+				5F8CCEAE1AD3A65F009D200E /* send_email.bundle */,
+				5F8CCEAF1AD3A65F009D200E /* speller.bundle */,
+				5F8CCEB01AD3A65F009D200E /* calendar.bundle */,
+				5F8CCEB11AD3A65F009D200E /* eject.bundle */,
+				5F8CCEB21AD3A65F009D200E /* open-url.bundle */,
+				5F8CCEB31AD3A65F009D200E /* quicksearch.bundle */,
+				5F8CCEB41AD3A65F009D200E /* remind-me.bundle */,
+				5F8CCEB51AD3A65F009D200E /* wikipedia.bundle */,
+				5F8CCEB61AD3A65F009D200E /* Instranslator.bundle */,
+				5F8CCEB71AD3A65F009D200E /* notes.bundle */,
+				5F8CCEB81AD3A65F009D200E /* emoji.bundle */,
+				5F8CCEB91AD3A65F009D200E /* giphy.bundle */,
+				5F8CCEBA1AD3A65F009D200E /* im-feeling-lucky.bundle */,
+				5F8CCEBB1AD3A65F009D200E /* largetext.bundle */,
+			);
+			name = "Starter Pack";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		5FF5D4131A67777400641D7A /* SIMBL */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,15 +558,16 @@
 				5FF5D4141A67778000641D7A /* Models */,
 				6C564496159E7C0900215467 /* AppDelegate.h */,
 				6C564497159E7C0900215467 /* AppDelegate.m */,
+				5F8CCEA51AD3A1A1009D200E /* StarterPack.h */,
+				5F8CCEA61AD3A1A1009D200E /* StarterPack.m */,
 				5F6326BB1A0830F700CE241E /* PluginListController.h */,
 				5F6326BC1A0830F700CE241E /* PluginListController.m */,
 				5F5C4E921AD25A9C00D1D883 /* InstalledPluginListRenderer.h */,
 				5F5C4E931AD25A9C00D1D883 /* InstalledPluginListRenderer.m */,
 				5F5C4E951AD25C6B00D1D883 /* PluginList.html */,
 				5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */,
+				5F8CCECF1AD3A68A009D200E /* Starter Pack */,
 				5FF5D4151A67778C00641D7A /* Categories */,
-				5F6326C71A08538B00CE241E /* PluginCellView.h */,
-				5F6326C81A08538B00CE241E /* PluginCellView.m */,
 				6C564499159E7C0900215467 /* MainMenu.xib */,
 				5FF5D4161A6777A000641D7A /* Windows */,
 				5F60B0FD1A196562004BCF08 /* WorkflowTemplate.bundle */,
@@ -508,6 +607,7 @@
 				6C56447D159E7C0800215467 /* Frameworks */,
 				6C56447E159E7C0800215467 /* Resources */,
 				6C5644B9159E7D6C00215467 /* CopyFiles */,
+				5F8CCEA81AD3A555009D200E /* Copy Starter Pack */,
 				600691463A7845E1B87A281D /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -670,7 +770,6 @@
 				5F6326FB1A0933E800CE241E /* ZZAESDecryptInputStream.mm in Sources */,
 				5F2B37751A3E42E500AC2C19 /* SearchPluginEditorWindowController.m in Sources */,
 				6CCA2AF115AAC6200085ABB4 /* SIMBL.m in Sources */,
-				5F6326C91A08538B00CE241E /* PluginCellView.m in Sources */,
 				5F6327091A0933E800CE241E /* ZZOldArchiveEntryWriter.mm in Sources */,
 				5F6327011A0933E800CE241E /* ZZDeflateOutputStream.m in Sources */,
 				5F6327041A0933E800CE241E /* ZZFileChannelOutput.m in Sources */,
@@ -683,6 +782,7 @@
 				5F3878131AC2527C0003363D /* PluginInstallManager.m in Sources */,
 				5F5C4E941AD25A9C00D1D883 /* InstalledPluginListRenderer.m in Sources */,
 				5F63270B1A0933E800CE241E /* ZZStandardDecryptInputStream.mm in Sources */,
+				5F8CCEA71AD3A1A1009D200E /* StarterPack.m in Sources */,
 				5F63270A1A0933E800CE241E /* ZZStandardCryptoEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

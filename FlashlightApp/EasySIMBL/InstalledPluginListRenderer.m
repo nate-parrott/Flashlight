@@ -35,10 +35,23 @@
 }
 
 - (NSString *)renderPluginListContentForInstalled:(NSArray *)installedPlugins {
+    installedPlugins = [self orderPlugins:installedPlugins];
     NSError *err = nil;
     NSString *html = [[[self class] template] renderObject:[self templateArgsForInstalled:installedPlugins] error:&err];
     if (err) NSLog(@"%@", err);
     return html;
+}
+
+- (NSArray *)orderPlugins:(NSArray *)plugins {
+    NSMutableDictionary *modDates = [NSMutableDictionary new];
+    for (PluginModel *plugin in plugins) {
+        modDates[plugin.name] = [[NSFileManager defaultManager] attributesOfItemAtPath:plugin.path error:nil][NSFileModificationDate] ? : [NSDate distantPast];
+    }
+    return [plugins sortedArrayUsingComparator:^NSComparisonResult(PluginModel *obj1, PluginModel *obj2) {
+        NSDate *date1 = modDates[[obj1 name]];
+        NSDate *date2 = modDates[[obj2 name]];
+        return [date2 compare:date1];
+    }];
 }
 
 - (NSDictionary *)templateArgsForInstalled:(NSArray *)installedPlugins {
@@ -67,15 +80,24 @@
                              }];
     }
     if (plugin.isAutomatorWorkflow) {
+        NSURLComponents *comps = [NSURLComponents componentsWithString:@"edit://plugin"];
+        comps.host = plugin.name;
         [buttons addObject:@{
                              @"title": NSLocalizedString(@"Edit", nil),
-                             @"url": @"about:blank" // TODO
+                             @"url": comps.URL.absoluteString
                              }];
     }
-    [buttons addObject:@{
-                         @"title": NSLocalizedString(@"Uninstall", @""),
-                         @"url": [NSString stringWithFormat:@"uninstall://%@", plugin.name]
-                         }];
+    if (plugin.installing) {
+        [buttons addObject:@{
+                             @"title": NSLocalizedString(@"Installing...", @""),
+                             @"url": @"about:blank"
+                             }];
+    } else if (plugin.installed) {
+        [buttons addObject:@{
+                             @"title": NSLocalizedString(@"Uninstall", @""),
+                             @"url": [NSString stringWithFormat:@"uninstall://%@", plugin.name]
+                             }];
+    }
     d[@"buttons"] = buttons;
     
     return d;
