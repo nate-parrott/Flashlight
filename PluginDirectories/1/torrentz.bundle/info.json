@@ -1,0 +1,8 @@
+{
+    "name": "say",
+    "displayName": "Say Something",
+    "description": "Speaks your input text",
+    "examples": ["say hello world", "say good morning"],
+    "creator_name": "Your name",
+    "creator_url": "A link of your choosing"
+}

@@ -1,0 +1,2 @@
+search torrent t for ~message(godzilla)
+torrentz ~message(godzilla)
