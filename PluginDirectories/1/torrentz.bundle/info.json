@@ -1,8 +1,7 @@
 {
-    "name": "say",
-    "displayName": "Say Something",
-    "description": "Speaks your input text",
-    "examples": ["say hello world", "say good morning"],
-    "creator_name": "Your name",
-    "creator_url": "A link of your choosing"
+    "name": "torrentz",
+    "displayName": "Torrentz.eu Search",
+    "examples": ["search torrentz for godzilla", "torrentz batman"],
+    "creator_name": "arnomoonens",
+    "creator_url": "https://github.com/arnomoonens"
 }

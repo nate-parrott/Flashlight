@@ -1239,10 +1239,10 @@
             ],
             "creator_name": "Toni Hoffmann (xremix)",
             "creator_url": "http://xremix.de",
-            "description": "Shows Useragent and external IP Address",
+            "description": "Shows useragent, local, and external IP Address",
             "description_de": "Zeigt Useragent und externe IP Adresse an",
-            "displayName": "External IP / Useragent",
-            "displayName_de": "Externe IP / Useragent",
+            "displayName": "IP / Useragent",
+            "displayName_de": "IP / Useragent",
             "examples": [
                 "what is my ip",
                 "useragent",
@@ -2261,6 +2261,17 @@
             ],
             "name": "torrent",
             "zip_url": "torrent.zip"
+        },
+        {
+            "creator_name": "arnomoonens",
+            "creator_url": "https://github.com/arnomoonens",
+            "displayName": "Torrentz.eu Search",
+            "examples": [
+                "search torrentz for godzilla",
+                "torrentz batman"
+            ],
+            "name": "torrentz",
+            "zip_url": "torrentz.zip"
         },
         {
             "categories": [
