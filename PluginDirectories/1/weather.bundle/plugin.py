@@ -20,11 +20,8 @@ def use_metric():
 def results(parsed, original_query):
 
     location = parsed['~location']
-    if '~now' in parsed:
-        if parsed['~now'] == i18n.localstr('now'):
-            time = 'now'
-        else:
-            time = 'later'
+    if 'time/now' in parsed:
+        time = 'now'
     else:
         time = 'later'
 

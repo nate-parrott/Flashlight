@@ -17,7 +17,7 @@
 }
 
 .preview {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -89,7 +89,7 @@ function showPreview(data) {
 	
 	var fullLink = document.createElement("a");
 	fullLink.setAttribute("href", data['source-url']);
-	fullLink.innerText = data['display-url'];
+	fullLink.innerText = data['display-url'].split('/')[0];
 	preview.appendChild(fullLink);
 	
 	var back = document.createElement("div");

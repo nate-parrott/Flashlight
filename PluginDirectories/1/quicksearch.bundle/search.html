@@ -113,7 +113,17 @@
 	// External interface
 	
 	function updateInput(input) {
-		state.query = input['~query'] || "";
+		var query = null;
+		var type = null;
+		if (input['~query']) {
+			query = input['~query']
+			type = 'web'
+		} else if (input['~imagequery']) {
+			query = input['~imagequery']
+			type = 'image'
+		}
+		state.query = query;
+		state.queryType = type;
 		updatedState();
 	}
 	
@@ -133,7 +143,9 @@
 		queryToShowResultsFor: null,
 		currentlyFetchingResultsForQuery: null,
 		queryForMostRecentResults: null,
-		mostRecentResults: ""
+		mostRecentResults: "",
+		
+		queryType: null
 	}
 	
 	function updatedState() {
@@ -152,7 +164,7 @@
 		var resultsNeedUpdate = state.queryToShowResultsFor && state.queryToShowResultsFor !== state.queryForMostRecentResults;
 		var updateResultsNow = resultsNeedUpdate && state.currentlyFetchingResultsForQuery === null;
 		if (updateResultsNow) {
-			updateResults(state.queryToShowResultsFor);
+			updateResults(state.queryToShowResultsFor, state.queryType);
 		}
 				
 		render();
@@ -192,6 +204,14 @@
 			results.className = "resultsContainer";
 			results.innerHTML = state.mostRecentResults;
 			main.appendChild(results);
+			// exec the results:
+			setTimeout(function() {
+				var scripts = document.querySelectorAll('.resultsContainer script');
+				console.log(scripts)
+				for (var i=0; i<scripts.length; i++) {
+					eval(scripts[i].innerHTML);
+				}
+			}, 0);
 			
 			var bing = document.createElement("img");
 			bing.src = "bing.svg";
@@ -229,10 +249,10 @@
 		});
 	}
 	
-	function updateResults(query) {
+	function updateResults(query, type) {
 		state.currentlyFetchingResultsForQuery = query;
 		updatedState();
-		loadResults(query, function(results) {
+		loadResults(query, type, function(results) {
 			state.mostRecentResults = results;
 			state.queryForMostRecentResults = query;
 			state.currentlyFetchingResultsForQuery = null;
@@ -292,11 +312,11 @@
 		}
 	}
 	
-	function loadResults(query, callback) {
+	function loadResults(query, type, callback) {
 		if (query === "") {
 			callback("");
 		} else {
-			var url = 'https://flashlightsearchrelay.appspot.com/search/web?q=' + encodeURIComponent(query);
+			var url = 'https://flashlightsearchrelay.appspot.com/search/' + type + '?q=' + encodeURIComponent(query);
 			xhr(url, callback);
 		}
 	}

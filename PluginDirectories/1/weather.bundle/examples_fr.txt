@@ -1,3 +1,4 @@
-Quel est le climat à ~location(Brooklyn) ~now(maintenant)?
-Météo pour ~location(Shangai) ~now(maintenant)
-temps ~location(paris) ~now(maintenant)
+Quel est le climat à ~location(Brooklyn)?
+Météo pour ~location(Shangai)
+temps ~location(paris)
+temps ~location(paris)
