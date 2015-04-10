@@ -40,6 +40,10 @@ class MainHandler2(webapp2.RequestHandler):
 		def get(self):
 				self.response.write(template("index2.html"))
 
+class MainHandler3(webapp2.RequestHandler):
+		def get(self):
+				self.response.write(template("index3.html"))
+
 class UploadHandler(webapp2.RequestHandler):
 		def get(self):
 				send_upload_form(self)
@@ -251,6 +255,7 @@ def Redirect(url):
 
 app = webapp2.WSGIApplication([('/', MainHandler),
 															 ('/preview', MainHandler2),
+															 ('/preview3', MainHandler3),
 															 ('/browse', BrowseHandler),
 															 ('/plugin/(.+)/latest\.zip', PluginZipRedirectHandler),
 															 ('/plugin/(.+)', PluginPageHandler),

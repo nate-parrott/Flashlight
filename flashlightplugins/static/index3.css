@@ -1,0 +1,98 @@
+html, body {
+	margin: 0;
+	line-height: 1.5;
+	font-family: "HelveticaNeue", sans-serif;
+	height: 100%;
+}
+
+.screen {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+.screen > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding: 20px;
+}
+.screen > div > div {
+	width: 100%;
+	max-width: 800px;
+	display: inline-block;
+}
+
+#animation {
+	width: 100%;
+	max-width: 600px;
+}
+
+#background-container {
+	z-index: -1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+
+#background {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100vmax;
+	height: 100vmax;
+	margin-top: -50vmax;
+	margin-left: -50vmax;
+	background-color: #06A6FF;
+	color: white;
+}
+
+.splash-sprite {
+	position: absolute;
+	font-size: 17px !important;
+}
+
+@media screen and (min-width: 700px) {
+	.splash-sprite {
+		font-size: 25px !important;
+	}
+}
+
+#main {
+	color: white;
+}
+
+#main a:link, #main a:visited {
+	color: white;
+}
+
+#main h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-shadow: 2px 2px 0px black;
+}
+
+#actions {
+	margin-top: -1em;
+}
+
+#actions a:link, #actions a:visited {
+	display: inline-block;
+	padding: 4px 10px;
+	color: #06A6FF;
+	font-weight: bold;
+	text-transform: uppercase;
+	background-color: rgba(255,255,255,0.6);
+	font-size: small;
+	text-decoration: none;
+}
+
+#actions:not(:hover) a#download, #actions a:hover {
+	background-color: white;
+}
+
+#main p {
+	font-weight: bold;
+}

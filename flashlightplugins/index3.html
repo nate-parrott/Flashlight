@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flashlight — do anything with a keystroke</title>
+	
+  <meta property="og:image" content="http://flashlight.nateparrott.com/static/images/simple-screenshot.png" />
+  <meta property="og:description" content="Check the weather, search the web, set reminders and more, right inside your Mac's search box." />
+  <meta property="og:title" content="Flashlight — do anything with a keystroke" />
+  <meta property="og:type" content="website" />
+	
+	<link rel='stylesheet' href='/static/index3.css'/>
+	<script src='/static/animation/animation.js'></script>
+	
+	<script src='/static/splash.js'></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+</head>
+<body>
+	<div id='background-container'>
+		<div id='background'></div>
+	</div>
+	
+	<div id='main' class='screen'>
+		<div>
+			<div>
+				<h1>Control your Mac with a keystroke.</h1>
+				
+				<svg id="animation" viewBox="0,0,1584,1084">
+				  <image id='empty' xlink:href="/static/animation/resources/empty.png" x="0" y="0" height="100%" width="100%"/>
+					<image id='result' x="0" y="0" height="100%" width="100%"/>
+				  <text x="214" y="138" font-family="HelveticaNeue" font-size="54">
+							<tspan id='text'>Spotlight Search</tspan><tspan style="font-weight: 100">|</tspan>
+				   </text>
+				</svg>
+				<div id='actions'>
+					<a href='/latest_download' id='download'>Download</a>
+					<a href='https://github.com/nate-parrott/Flashlight'>Github</a>
+					<a href='/browse'>Browse Plugins</a>
+				</div>
+				<p>Search the web, save a note, add a reminder and over 160 other things, just by typing into your Mac's Spotlight search box. Or <a href='https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin'>write your own plugins.</a></p>
+				<p class='fineprint'>Requires OS X Yosemite. Completely open-source.</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
