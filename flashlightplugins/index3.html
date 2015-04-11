@@ -25,7 +25,7 @@
 	<div id='main' class='screen'>
 		<div>
 			<div>
-				<h1>Control your Mac with a keystroke.</h1>
+				<h1>Flashlight: Control your Mac with a keystroke.</h1>
 				
 				<svg id="animation" viewBox="0,0,1584,1084">
 				  <image id='empty' xlink:href="/static/animation/resources/empty.png" x="0" y="0" height="100%" width="100%"/>
@@ -39,11 +39,59 @@
 					<a href='https://github.com/nate-parrott/Flashlight'>Github</a>
 					<a href='/browse'>Browse Plugins</a>
 				</div>
-				<p>Search the web, save a note, add a reminder and over 160 other things, just by typing into your Mac's Spotlight search box. Or <a href='https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin'>write your own plugins.</a></p>
-				<p class='fineprint'>Requires OS X Yosemite. Completely open-source.</p>
+				<p><strong>Search the web, save a note, add a reminder, or do over 160 other things, just by typing into your Mac's Spotlight search box. Or <a href='https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin'>write your own plugins.</a></strong> Requires OS X Yosemite.</p>
 			</div>
 		</div>
 	</div>
 	
+	<div class='section'>
+		<div>
+			<div>
+				<p>Flashlight is an <strong>open platform for Spotlight</strong>, which allows developers to <a href='https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin'>write plugins</a> that extend OS X's built-in search with new features. Here are some of our favorites:</p>
+				<div id='featured'>
+					{{ featured_html | safe }}
+				</div>
+				<p>
+					<a class='button' href='/browse'>Browse all <span class='fa fa-chevron-right'></span></a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class='section'>
+		<div>
+			<div>
+		    <div id='social'>
+		       <div>
+		          <div id="fb-root"></div>
+		          <script>(function(d, s, id) {
+		            var js, fjs = d.getElementsByTagName(s)[0];
+		            if (d.getElementById(id)) return;
+		            js = d.createElement(s); js.id = id;
+		            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=385205984962960&version=v2.0";
+		            fjs.parentNode.insertBefore(js, fjs);
+		          }(document, 'script', 'facebook-jssdk'));</script>
+		          <div class="fb-like" data-href="http://flashlight.nateparrott.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+		       </div>
+      
+		       <div>
+		    		<iframe data-wr_replaced="true" frameborder="0" height="20" scrolling="0" style="" src="http://ghbtns.com/github-btn.html?user=nate-parrott&amp;repo=Flashlight&amp;type=watch&amp;count=true" width="95" allowtransparency="true"></iframe>
+		       </div>
+      
+		       <div>
+		          <a href="https://twitter.com/share" class="twitter-share-button" data-related="itsflashlight">Tweet</a>
+		       </div>
+			
+		 	 	 <div>
+		 	 		 <a href="https://twitter.com/itsflashlight" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @itsflashlight</a>
+		 	 		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		 	 	 </div>
+		    </div>
+				
+				<p>By <a href='http://nateparrott.com'>Nate Parrott</a> and <a href='https://github.com/nate-parrott/Flashlight/graphs/contributors'>many others.</a></p>
+				
+			</div>
+		</div>
+	</div>
 </body>
 </html>

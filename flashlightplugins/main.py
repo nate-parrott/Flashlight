@@ -42,7 +42,10 @@ class MainHandler2(webapp2.RequestHandler):
 
 class MainHandler3(webapp2.RequestHandler):
 		def get(self):
-				self.response.write(template("index3.html"))
+				args = {
+					"featured_html": directory_html(category='Featured', browse=True)
+				}
+				self.response.write(template("index3.html", args))
 
 class UploadHandler(webapp2.RequestHandler):
 		def get(self):

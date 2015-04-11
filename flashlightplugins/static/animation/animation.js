@@ -60,10 +60,6 @@ var searches = [
 		image: 'Messages'
 	},
 	{
-		text: "beer emoji",
-		image: "EmojiSearch"
-	},
-	{
 		text: "calendar event \"dentist appointment\" tuesday",
 		image: "CalendarEvents"
 	},
@@ -74,6 +70,10 @@ var searches = [
 	{
 		text: "remind me to buy shampoo tomorrow",
 		image: "Reminders"
+	},
+	{
+		text: "beer emoji",
+		image: "EmojiSearch"
 	},
 	{
 		text: "translate bicycle to french",
