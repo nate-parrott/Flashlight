@@ -1,0 +1,3 @@
+show(show desktop icons)
+show(restore desktop icons)
+hide(hide desktop icons)

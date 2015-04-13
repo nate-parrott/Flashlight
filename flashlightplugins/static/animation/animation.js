@@ -11,7 +11,7 @@ Animation = {
 	run: function(searches, callback) {
 		Animation.iterateAsync(searches, 0, function(search, next) {
 			Animation.showSearch(search, function() {
-				setTimeout(next, 1300);
+				setTimeout(next, 1500);
 			});
 		}, function() {
 			// done

@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Hide Desktop Icons",
+  "name" : "hide-desktop-icons",
+  "description" : "Temporarily hide all the icons on your desktop.",
+  "examples" : [
+    "hide desktop icons",
+    "show desktop icons"
+  ]
+}
