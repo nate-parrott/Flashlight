@@ -31,7 +31,6 @@ def send_upload_form(request, message=None):
 																		 "message": message,
 																		 "admin": users.is_current_user_admin()}))
 
-
 class MainHandler(webapp2.RequestHandler):
 		def get(self):
 				self.response.write(template("index.html"))
@@ -42,10 +41,18 @@ class MainHandler2(webapp2.RequestHandler):
 
 class MainHandler3(webapp2.RequestHandler):
 		def get(self):
+			key = 'main.MainHandler3.rendered'
+			rendered = memcache.get(key)
+			if not rendered:
+				rendered = self.render()
+				memcache.set(key, rendered, time=60)
+			self.response.write(rendered)
+				
+		def render(self):
 				args = {
 					"featured_html": directory_html(category='Featured', browse=True)
 				}
-				self.response.write(template("index3.html", args))
+				return template("index3.html", args)
 
 class UploadHandler(webapp2.RequestHandler):
 		def get(self):

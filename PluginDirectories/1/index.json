@@ -876,6 +876,23 @@
         },
         {
             "categories": [
+                "Search",
+                "Developer"
+            ],
+            "creator_name": "alx stu",
+            "creator_url": "http://www.github.com/alxstu",
+            "description": "Search for FontAwesome Icons on glyphsearch.com",
+            "displayName": "FontAwesome Search",
+            "examples": [
+                "fontawesome twitter",
+                "search fontawesome coffee",
+                "fa trash"
+            ],
+            "name": "FontAwesome",
+            "zip_url": "FontAwesome.zip"
+        },
+        {
+            "categories": [
                 "Meta"
             ],
             "creator_name": "Massimiliano Marcon",
@@ -1126,6 +1143,19 @@
             ],
             "name": "hexCalc",
             "zip_url": "hexCalc.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "Temporarily hide all the icons on your desktop.",
+            "displayName": "Hide Desktop Icons",
+            "examples": [
+                "hide desktop icons",
+                "show desktop icons"
+            ],
+            "name": "hide-desktop-icons",
+            "zip_url": "hide-desktop-icons.zip"
         },
         {
             "categories": [
@@ -1708,7 +1738,8 @@
             "displayName": "Quick Web Search",
             "examples": [
                 "/hubble telescope",
-                "/carroll gardens"
+                "/carroll gardens",
+                "images of california"
             ],
             "name": "quicksearch",
             "zip_url": "quicksearch.zip"
@@ -2263,6 +2294,10 @@
             "zip_url": "torrent.zip"
         },
         {
+            "categories": [
+                "Media",
+                "Search"
+            ],
             "creator_name": "arnomoonens",
             "creator_url": "https://github.com/arnomoonens",
             "displayName": "Torrentz.eu Search",
@@ -2381,8 +2416,7 @@
             "displayName": "Weather",
             "examples": [
                 "weather brooklyn",
-                "how's the weather in uppsala?",
-                "weather new york now"
+                "how's the weather in san francisco?"
             ],
             "name": "weather",
             "zip_url": "weather.zip"
