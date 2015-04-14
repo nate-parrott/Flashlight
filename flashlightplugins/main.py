@@ -31,17 +31,13 @@ def send_upload_form(request, message=None):
 																		 "message": message,
 																		 "admin": users.is_current_user_admin()}))
 
-class MainHandler(webapp2.RequestHandler):
-		def get(self):
-				self.response.write(template("index.html"))
-
-class MainHandler2(webapp2.RequestHandler):
+class PreviewHandler(webapp2.RequestHandler):
 		def get(self):
 				self.response.write(template("index2.html"))
 
-class MainHandler3(webapp2.RequestHandler):
+class MainHandler(webapp2.RequestHandler):
 		def get(self):
-			key = 'main.MainHandler3.rendered'
+			key = 'main.MainHandler.rendered'
 			rendered = memcache.get(key)
 			if not rendered:
 				rendered = self.render()
@@ -52,7 +48,7 @@ class MainHandler3(webapp2.RequestHandler):
 				args = {
 					"featured_html": directory_html(category='Featured', browse=True)
 				}
-				return template("index3.html", args)
+				return template("index.html", args)
 
 class UploadHandler(webapp2.RequestHandler):
 		def get(self):
@@ -264,8 +260,7 @@ def Redirect(url):
 	return Redir
 
 app = webapp2.WSGIApplication([('/', MainHandler),
-															 ('/preview', MainHandler2),
-															 ('/preview3', MainHandler3),
+															 ('/preview', PreviewHandler),
 															 ('/browse', BrowseHandler),
 															 ('/plugin/(.+)/latest\.zip', PluginZipRedirectHandler),
 															 ('/plugin/(.+)', PluginPageHandler),

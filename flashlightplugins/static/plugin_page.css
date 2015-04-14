@@ -1,3 +1,6 @@
+body {
+	background-color: #0086dF !important;
+}
 #hint {
    font-weight: 200;
    font-size: 0.7em;
@@ -45,7 +48,6 @@ h6 {
    text-transform: uppercase;
    letter-spacing: 2px;
    font-size: small;
-   color: #eee;
    vertical-align: bottom;
    position: relative;
    top: 2px;
@@ -63,15 +65,16 @@ h6 {
     margin-top: 0;
 }
 #show-button {
-   background-color: #eee;
-   padding: 10px;
+   background-color: white;
+   padding: 10px 15px;
    display: inline-block;
-   color: #333;
+   color: #06A6FF;
    text-decoration: none;
    font-weight: bold;
    text-transform: uppercase;
    letter-spacing: 2px;
    font-size: small;
+	 border-radius: 18px;
 }
 #reqs-flashlight {
 	font-size: small;
@@ -84,9 +87,6 @@ h6 {
    margin-left: 1em;
    margin-right: 1em;
    text-align: center;
-}
-#social {
-	color: #eee;
 }
 
 
@@ -104,10 +104,7 @@ body, html, #splash {
 #splash {
     display: table;
     width: 100%;
-    background-image: url(/static/images/yosemite-small2.jpg);
-    background-size: cover;
-    background-position: center;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 h1 {
     margin: 0;
@@ -119,6 +116,8 @@ h1 {
     padding: 10px;
     padding-top: 73px;
 	padding-bottom: 73px;
+	background-color: #06A6FF;
+	color: white;
 }
 #top {
     position: absolute;
