@@ -11,7 +11,7 @@ Animation = {
 	run: function(searches, callback) {
 		Animation.iterateAsync(searches, 0, function(search, next) {
 			Animation.showSearch(search, function() {
-				setTimeout(next, 1500);
+				setTimeout(next, 1700);
 			});
 		}, function() {
 			// done
@@ -86,6 +86,14 @@ var searches = [
 	{
 		text: "twitter.com",
 		image: "OpenURL"
+	},
+	{
+		text: "call justin",
+		image: "Call"
+	},
+	{
+		text: "sadness gif",
+		image: "Giphy"
 	},
 	{
 		text: "email titanic.png to nate",
