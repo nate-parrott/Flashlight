@@ -822,6 +822,10 @@
                 "tweet hello world",
                 "t i'm happy"
             ],
+            "keywords": [
+                "twitter",
+                "tweet"
+            ],
             "name": "fasttweet",
             "zip_url": "fasttweet.zip"
         },
@@ -1012,8 +1016,7 @@
         {
             "categories": [
                 "Search",
-                "Media",
-                "Featured"
+                "Media"
             ],
             "displayName": "Google Image Search",
             "displayName_de": "Google Bilder Suche",
