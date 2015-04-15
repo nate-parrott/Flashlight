@@ -154,7 +154,7 @@ def run(channel, message):
 
         payload = {
             'channel': channel_id,
-            'text': message,
+            'text': unicode(message).encode('utf-8'),
             'token': token,
             'as_user': username,
         }
