@@ -73,7 +73,7 @@ def read_plugin_info(plugin, zip_data):
 						plugin.info_json = json.dumps(data)
 						plugin.categories = data.get('categories', ['Other'])
 						has_info = True
-				elif name.endswith('/Icon.png'):
+				elif name.endswith('/Icon.png') or name.endswith('/icon.png'):
 						data = archive.open(name).read()
 						plugin.icon_url = resize_and_store(data, 128)
 				elif name.endswith('/Screenshot.png'):
