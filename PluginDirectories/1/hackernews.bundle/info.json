@@ -1,0 +1,9 @@
+{
+  "name": "hackernews",
+  "displayName": "Hacker News",
+  "description": "Search Hacker News",
+  "examples": ["hackernews dropbox", "hn airbnb"],
+  "categories": ["Search"],
+  "creator_name": "Rootul Patel",
+  "creator_url": "https://github.com/rootulp"
+}
