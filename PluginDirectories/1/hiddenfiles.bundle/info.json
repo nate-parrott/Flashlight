@@ -1,0 +1,10 @@
+{
+    "name": "hiddenfiles",
+    "displayName": "Show hidden files",
+    "description": "Quickly show/hide hidden files and folders in OSX",
+    "examples": ["show hidden files", "hide hidden files"],
+    "categories": ["Utilities", "System"],
+    "creator_name": "Spencer Clem",
+    "creator_url": "https://github.com/stclem93"
+}
+
