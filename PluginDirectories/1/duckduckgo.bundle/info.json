@@ -1,6 +1,6 @@
 {
 	"name": "duckduckgo",
 	"displayName": "DuckDuckGo Search",
-	"examples": ["duckduckgo Apple stock", "ddg Flashlight", "search duckduckgo for 'search term'"],
+	"examples": ["duckduckgo Apple stock", "ddg Flashlight", "\\!amg La Dispute", "search duckduckgo for 'search term'"],
 	"categories": ["Search"]
 }
