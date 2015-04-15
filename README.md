@@ -46,7 +46,7 @@ Huge thanks to everyone who's contributed translations:
  - [Kejk](http://github.com/kejk) for Swedish
  
 
-If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization.markdown)
+If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization)
 
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 

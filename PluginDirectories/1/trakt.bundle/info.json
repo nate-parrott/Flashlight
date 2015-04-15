@@ -1,0 +1,7 @@
+{
+	"name": "trakt",
+	"displayName": "Search Trakt.tv",
+    "displayName_de": "Trakt.tv durchsuchen",
+	"examples": ["trakt Breaking Bad"],
+	"categories": ["Media"]
+}
