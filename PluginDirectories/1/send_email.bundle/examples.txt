@@ -1,27 +1,13 @@
-send an email
 compose an email
-new email
-send an email to ~_PersonalName(nate)
-draft an email to ~_PersonalName(john smith) saying ~message(hello world)
-write an email to ~_PersonalName(nate parrott) saying ~message(hello world)
-create an email to ~_PersonalName(jessie) with the subject ~subject(whats up?)
-create an email saying ~message(hello world)
-write an email saying ~message(hello world)
-compose an email saying ~message(hello world)
-email ~_PersonalName(thurston) with the body ~message(yo)
-email ~_PersonalName(justin brower) with the subject ~subject(hello world) saying ~message(whats up)
-email ~_PersonalName(jacob wolpin) with these files
-email ~_PersonalName(justin brower) with the subject ~subject(hello world) saying ~message(whats up) and include_files(include these files)
-email include_files(these files) to ~_PersonalName(nateparro2t@gmail.com)
-include_files(attach these files) in an email to ~_PersonalName(will thompson) with the subject ~subject(here you go)
-include_files(send these files) to ~_PersonalName(nateparro2t@gmail.com) and say ~message(hello world)
-compose an email to ~_PersonalName(john smith) with the subject(hey there)
-write an email to ~_PersonalName(john smith) and ~_PersonalName(jane doe) with the ~subject(hey there)
-send an email to ~_PersonalName(john smith), ~_PersonalName(jane doe) and ~_PersonalName(todd) with the subject ~subject(hey there)
-send an email to ~_PersonalName(john smith), ~_PersonalName(jane doe) and ~_PersonalName(todd)
-include_files(attach these files to a) new email to ~_PersonalName(nate@gmail.com) with the subject ~subject(Hello)
-include_files(send these) to ~_PersonalName(nate)
-include_files(send this) to ~_PersonalName(nate)
-include_files(send these files)
-compose an email
-email ~_PersonalName(john) : ~message(hello)
+send an email to recip(@contact(...))
+send an email to recip(@contact(...)) saying ~message(hello) with the subject ~subject(this is it)
+compose a new email to recip(email(nateparro2t@gmail.com))
+send @file(...) to recip(@contact(...))
+email @file(...) to recip(@contact(...)), recip(@contact(...)) and recip(email(riowhgieorg@yahoo.com))
+email recip(@contact(...)) saying ~message(hello world)
+send an email saying ~message(good morning) to recip(@contact(...)) with @file(...) attached
+new email with the subject ~subject(subject) and contents ~message(hello, world) with @file(...) attached to recip(email(hruogheog@hotmail.com))
+send ~message(hello world) and @file(...) to recip/@contact(...)
+send @file(...) to recip(@contact(...)) with the subject ~subject(here you go) as an email
+gmail say ~message(good morning) to recip(@contact(...))
+attach @file(...) in a new email to recip(@contact(...)) with the subject ~subject(subject) saying ~message(hello, world)

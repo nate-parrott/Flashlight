@@ -1,5 +1,10 @@
 copy color
-copy color as hex
-copy color as copy_uicolor(UIColor)
+copy color as format/hex(hex)
+copy color as format/uicolor(UIColor)
 pick a color
-pick a color as copy_uicolor(UIColor)
+pick a color as format/uicolor(UIColor)
+copy color as format/rgb(rgb)
+copy color as format/rgba(rgba)
+copy color as format/uicolor_swift(UIColor for Swift)
+color(#fff)
+preview color color(#012345)

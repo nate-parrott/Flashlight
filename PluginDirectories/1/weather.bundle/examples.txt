@@ -1,7 +1,9 @@
-weather ~location(brooklyn)
+weather ~location(query)
+weather ~location(query) time/now(now)
 weather in ~location(new york)
 how's the weather in ~location(queens)?
+how's the weather in ~location(queens) time/now(now)?
 forecast for ~location(the bronx)
-~location(london) weather
-~location(istanbul) forecast
+~location(london) weather time/now(time) 
 ~location(san francisco) weather
+~location(istanbul) forecast time/now(time)

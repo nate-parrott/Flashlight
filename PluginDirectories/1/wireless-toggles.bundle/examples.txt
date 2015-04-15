@@ -1,0 +1,8 @@
+wifi_on(wifi on)
+wifi_on(turn on wifi)
+wifi_off(wifi off)
+wifi_off(turn off wifi)
+bluetooth_on(bluetooth on)
+bluetooth_on(turn bluetooth on)
+bluetooth_off(bluetooth off)
+bluetooth_off(turn bluetooth off)

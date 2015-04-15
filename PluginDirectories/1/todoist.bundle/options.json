@@ -1,0 +1,9 @@
+{
+    "options": [
+        {
+            "text": "API token (found in your account settings):",
+            "key": "token",
+            "type": "text"
+        }
+    ]
+}

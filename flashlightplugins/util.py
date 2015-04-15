@@ -9,6 +9,13 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+def format_as_compact_download_count(count):
+	if count > 9000:
+		return "{:.1f}k".format(count/1000.0)
+	else:
+		return str(count)
+	
+JINJA_ENVIRONMENT.filters['format_as_compact_download_count'] = format_as_compact_download_count
 
 def template(name, vars={}):
     template = JINJA_ENVIRONMENT.get_template(name)
@@ -33,7 +40,6 @@ def language_suffixes(languages):
             else:
                 break
     yield ''
-
 
 def get_localized_key(dict, name, languages, default=None):
     for suffix in language_suffixes(languages):

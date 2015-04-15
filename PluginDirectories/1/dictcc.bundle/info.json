@@ -6,5 +6,7 @@
 	"description_de": "Übersetze von Englisch nach Deutsch mit dict.cc",
 	"examples": ["dict Suchmaschine"],
 	"categories": ["Language"],
-	"preferred_locales": ["de"]
+	"preferred_locales": ["de"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

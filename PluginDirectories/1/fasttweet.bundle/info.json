@@ -1,0 +1,9 @@
+{
+  "name": "fasttweet",
+  "displayName": "Fast tweet",
+  "description": "Tweet everything from Spotlight",
+  "examples": ["tweet hello world", "t i'm happy"],
+  "categories": ["Utilities"],
+  "creator_name": "Ne4istb",
+	"keywords": ["twitter", "tweet"]
+}

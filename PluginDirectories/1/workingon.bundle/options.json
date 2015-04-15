@@ -1,0 +1,15 @@
+{
+	"options": [
+		{
+			"text": "Your WorkingOn.co Token: ",
+			"type": "text",
+			"key": "token"
+		},
+		{
+			"type": "buttons",
+			"buttons": [
+				{"text": "Get a token", "url": "https://www.workingon.co/tools"}
+			]
+		}
+	]
+}

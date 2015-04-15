@@ -1,0 +1,8 @@
+{
+	"name": "eject",
+	"displayName": "Eject",
+	"description": "Eject mounted volumes (physical and network)",
+	"examples": ["ejectall", "eject all", "eject <volume>", "ej <volume>", "ejall", "ej all"],
+	"creator_name": "Antonio Cruz",
+	"categories": ["Utilities", "System", "Featured"]
+}

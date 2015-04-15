@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Search",
+		"Featured"
+  ],
+  "displayName" : "Quick Web Search",
+  "name" : "quicksearch",
+	"description": "Search the web instantly from Spotlight. Type '/', followed by your search.",
+  "examples" : [
+    "/hubble telescope",
+		"/carroll gardens",
+		"images of california"
+  ]
+}

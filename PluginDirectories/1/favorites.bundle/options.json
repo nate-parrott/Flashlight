@@ -1,0 +1,13 @@
+{
+    "options": [
+	    {
+		    "type": "table",
+		    "text": "Shortcuts:",
+		    "key": "shortcuts",
+		    "columns": [
+		        {"text": "Shortcut", "key": "shortcut"},
+		        {"text": "url", "key": "url"}
+		    ]
+		}
+	]
+}

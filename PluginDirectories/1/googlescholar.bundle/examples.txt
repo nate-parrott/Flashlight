@@ -1,0 +1,2 @@
+gs ~googlescholarquery(query here)
+search google scholar for ~googlescholarquery(query) articles

@@ -1,0 +1,3 @@
+subr ~message(cfb)
+subreddit ~message(cfb)
+r / ~message(funny)

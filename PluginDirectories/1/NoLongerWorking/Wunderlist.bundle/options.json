@@ -1,0 +1,14 @@
+{
+    "options": [
+        {
+            "text": "email:",
+            "key": "email",
+            "type": "text"
+        },
+        {
+            "text": "password",
+            "key": "password",
+            "type": "text"
+        }
+    ]
+}

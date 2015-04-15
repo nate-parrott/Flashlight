@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<!-- The data was not being updated and it was "stuck" on 
+		in the middle of the day. I think this is caused by the 
+		site being cached by safari, because when I cleared its 
+		cache it worked. This prevents cache from being used. 
+		
+		http://stackoverflow.com/questions/1341089/
+		-->
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+	
+	<script>
+	
+	function xhr(url, callback) {
+		var req = new XMLHttpRequest();
+		req.open('GET', url, true);
+		req.onload = function(e) {
+			if (req.readyState === 4) {
+				if (req.status === 200) {
+					callback(null, req.responseText);
+				} else {
+					callback(new Error());
+				}
+			}
+		};
+		req.onerror = function(e) {
+			callback(e);
+		};
+		req.send(null);
+	}
+
+	var query = '<!--QUERY-->';
+	var page = 1;
+
+	function getGifs(tag, page, callback) {
+		var url = 'http://www.reactiongifs.com/tag/' + encodeURIComponent(tag) + '/page/' + page;
+		xhr(url, function(err, response) {
+			if (err) {
+				callback(null, []);
+			} else {
+				document.getElementById('helper').innerHTML = response;
+				var entries = document.getElementsByClassName('entry');
+				var urls = [];
+				for (var i = 0; i < entries.length; i++) {
+					var entry = entries[i];
+					var image = entry.getElementsByTagName('img')[0];
+					urls.push(image.getAttribute('src'));
+				}
+				callback(null, urls);
+			}
+		});
+	}
+
+	function load(tag, page) {
+		getGifs(tag, page, function(err, images) {
+			document.getElementById("loading").style.display = 'none';
+			document.getElementById("more").style.display = 'block';
+			if (images.length === 0) {
+				document.getElementById("loading").style.display = 'none';
+				document.getElementById("more").style.display = 'none';
+				document.getElementById("empty").style.display = 'block';
+				document.getElementById("results").style.display = 'none';
+			} else {
+				var results = document.getElementById("results");
+				images.map(function(url) {
+					var img = document.createElement('img');
+					img.src = url;
+					img.addEventListener('click', function() {
+						copyToClipboard(url);
+					});
+					return img;
+				}).forEach(function(img) {
+					results.appendChild(img);
+				});
+			}
+		});
+	}
+	
+	function copyToClipboard(data) {
+		var command = 'printf "' + data + '" | LANG=en_US.UTF-8 pbcopy && osascript -e \'display notification "Copied URL!" with title "Flashlight"\'';
+		flashlight.bash(command);
+	}
+
+	function loadMore() {
+		document.getElementById("more").style.display = 'none';
+		document.getElementById("loading").style.display = 'block';
+		load(query, ++page);
+	}
+	
+	load(query, page);
+	
+	</script>
+	
+	<style>
+	html {
+		width: 100%;
+		height: 100%;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+	}
+	#loading {
+		clear: both;
+		text-align: center;
+		margin-top: 10px;
+	}
+	#empty {
+		display: none;
+		clear: both;
+		text-align: center;
+		margin-top: 10px;
+	}
+	#results img {
+	  	margin: 10px;
+  		border: 1px darkgray solid;
+		padding: 3px;
+		display: block;
+		float: left;
+		max-height: 150px;
+	}
+	#more {
+		clear: both;
+		text-align: center;
+		text-decoration: underline;
+		display: none;
+		cursor: pointer;
+		margin-bottom: 10px;
+	}
+	#helper {
+		display: none;
+	}
+	</style>
+
+</head>
+<body>
+	<div id='results'></div>
+	<div id='loading'>
+		Loading...
+	</div>
+	<div id='empty'>
+		No Results Found
+	</div>
+	<div id='more' onclick="loadMore()">
+		Load More
+	</div>
+	<div id='helper'></div>
+</body>
+</html>

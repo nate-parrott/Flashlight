@@ -1,9 +1,10 @@
 {
 	"name": "imessage",
 	"displayName": "iMessage",
-	"description": "Send iMessages. Optionally attach selected files from Finder.",
+	"description": "Send iMessages (or texts, if you can send them from the Messages app).",
 	"description_de": "Sende iMessages. Optional kannst du Anhänge ausgewälter Dateien aus dem Finder anhängen.",
-	"examples": ["text nate, where are you?", "imessage these files to Justin Brower"],
+	"examples": ["text nate, where are you?", "imessage justin saying hello"],
 	"examples_de": ["sende nate, Wo bist du?", "Bildernachricht mit diesen Datien an Justin Brower"],
-	"categories": ["Utilities", "Featured"]
+	"categories": ["Utilities", "Featured"],
+	"keywords": ["imessage", "messages", "sms", "text", "texting"]
 }

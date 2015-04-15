@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+      }
+      .center {
+        display: -webkit-inline-flex;
+        -webkit-justify-content: center;
+        -webkit-align-items: center;
+      }
+      .char {
+        width: 25%;
+        height: 20%;
+        font-size: 48px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+		FIRST_CHAR = null;
+		
+		function output() {
+			return FIRST_CHAR;
+		}
+		
+      request = new XMLHttpRequest();
+      request.open('GET', 'http://ucdsearch.com/%type%/%query%', true);
+
+      request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+          var data = JSON.parse(request.responseText);
+					for (var i=0; i<data.length && i<100; i++) {
+						var val = data[i];
+            (function() {
+	            var div = document.createElement("div");
+	            div.setAttribute('class', 'char center');
+	            div.innerHTML = '&#' + parseInt(val['_source'].cp, 16);
+	            div.addEventListener("click", function() {
+								copyToClipboard(div.innerText);
+	            });
+							if (!FIRST_CHAR) FIRST_CHAR = div.innerText;
+	            document.body.appendChild(div);
+            })();
+					}
+          if (data.length === 0) {
+            showMessage('&#8709;');
+          }
+        }
+        else {
+          showMessage("&#9888;");
+        }
+      };
+
+      request.onerror = function () {
+        showMessage("&#9888;");
+      };
+			
+      function copyToClipboard(char) {
+          command = 'printf "'+char+'" | LANG=en_US.UTF-8 pbcopy && osascript -e \'display notification "Copied!" with title "Flashlight"\'';
+          flashlight.bash(command);
+      }
+			
+			setTimeout(function() {
+	      request.send();
+			}, 400);
+
+      function showMessage (msg) {
+        document.body.setAttribute('class', 'center');
+        document.body.style.fontSize = '48px';
+        document.body.innerHTML = msg;
+      }
+    </script>
+  </body>
+</html>

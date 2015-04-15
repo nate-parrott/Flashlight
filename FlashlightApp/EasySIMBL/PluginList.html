@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        body {
+            margin: 0;
+            line-height: 1.4;
+            font-family: "HelveticaNeue";
+						cursor: default;
+        }
+        h1, h2, h3, h4 {
+            font-weight: lighter;
+        }
+				
+				h2 {
+					margin-bottom: 0;
+				}
+				
+				.header {
+					width: 100%;
+					display: table;
+					background-color: rgba(0,0,0,0.06);
+					margin-bottom: 4px;
+				}
+				.plugin {
+					margin-bottom: 12px;
+				}
+				.header > div.name {
+					padding-left: 0;
+				}
+				.header > div {
+					display: table-cell;
+					padding: 4px;
+					text-transform: uppercase;
+					font-size: x-small;
+					font-weight: bold;
+				}
+				
+				.header > div.icon {
+					width: 20px;
+					text-align: center;
+				}
+				
+				.buttons {
+					text-align: right;
+					padding-right: 1em !important;
+				}
+				.buttons a {
+					color: inherit;
+					padding-left: 3px;
+					text-decoration: none;
+				}
+				.buttons a:hover {
+					opacity: 0.75;
+				}
+				.buttons a:active {
+					opacity: 0.5;
+				}
+				.examples {
+					padding: 0;
+					margin: -2px;
+				}
+				.examples li {
+					display: inline-block;
+					padding: 2px;
+					list-style-type: none;
+				}
+				.examples li:before {
+					content: "“";
+				}
+				.examples li:after {
+					content: "”";
+				}
+				.icon img {
+					height: 0.9em;
+					position: relative;
+					top: 0.05em;
+				}
+				.description {
+					font-size: small;
+					opacity: 0.5;
+					margin-top: 2px;
+					margin-bottom: 2px;
+				}
+				.marginalized {
+					margin-left: 28px;
+					margin-right: 20px;
+				}
+				p {
+					font-size: small;
+				}
+                a:link {
+                    color: inherit;
+                }
+        </style>
+    </head>
+    <body>
+				<div id='content'>
+					<!--CONTENT-->
+				</div>
+				<script>
+				function replaceContent(html) {
+					document.getElementById("content").innerHTML = html;
+				}
+				__flashlight_is_installed_plugin_list = "true";
+				</script>
+    </body>
+</html>

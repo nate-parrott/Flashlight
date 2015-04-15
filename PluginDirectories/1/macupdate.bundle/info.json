@@ -1,0 +1,13 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "Search MacUpdate",
+  "displayName_de": "MacUpdate Suche",
+  "name" : "macupdate",
+  "description" : "MacUpdate search",
+  "examples" : [
+    "macupdate flashlight",
+    "mu flashlight"
+  ]
+}

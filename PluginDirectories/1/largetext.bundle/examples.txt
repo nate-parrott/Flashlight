@@ -1,0 +1,2 @@
+large text: ~text(hello, world)
+show ~text(718 123 4567) in large text

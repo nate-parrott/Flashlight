@@ -1,0 +1,4 @@
+spell ~word(throuh)
+check spelling for ~word(wieght)
+please spell ~word(carosle)
+how do I spell ~word(reoger) ?

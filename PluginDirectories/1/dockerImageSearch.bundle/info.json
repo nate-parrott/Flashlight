@@ -1,0 +1,9 @@
+{
+	"name": "dockerImageSearch",
+	"displayName": "Docker Image Search",
+	"description": "Search for Docker images on Docker.com",
+	"examples": ["Docker node.js", "Search Docker Wordpress", "Find redis on Docker"],
+	"categories": ["Search", "Developer"],
+	"creator_name": "alx stu",
+	"creator_url": "http://www.github.com/alxstu"
+}

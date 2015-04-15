@@ -1,0 +1,10 @@
+{
+    "name": "airdrop",
+    "displayName": "AirDrop",
+    "description": "Open AirDrop in Finder",
+    "description_ja": "Finder で AirDrop を開く",
+    "examples": ["airdrop"],
+    "categories": ["Utilities"],
+    "creator_name": "Yusuke Miyazaki",
+    "creator_url": "http://www.ymyzk.com"
+}

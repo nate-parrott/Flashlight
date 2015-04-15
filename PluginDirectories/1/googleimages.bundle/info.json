@@ -4,5 +4,5 @@
 	"displayName_de": "Google Bilder Suche",
 	"examples": ["image search for ducks", "gi ducks", "show me images of ducks", "show me a picture of ducks", "google images ducks"],
 	"examples_de": ["Bildersuche nach Enten", "gi Enten", "Zeige mir Bilder von Enten", "Zeige mir ein Bild von Enten", "Google Bilder Enten"],
-	"categories": ["Search", "Media", "Featured"]
+	"categories": ["Search", "Media"]
 }

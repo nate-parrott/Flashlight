@@ -1,0 +1,19 @@
+{
+	"options": [
+		{
+			"text": "Default language: ",
+			"type": "dropdown",
+			"key": "lang",
+			"options": [
+				{"text": "English",		"value": "en"},
+				{"text": "French",		"value": "fr"},
+				{"text": "Spanish",		"value": "es"},
+				{"text": "Italian",		"value": "it"},
+				{"text": "Chinese",		"value": "ch"},
+				{"text": "Russian",		"value": "ru"},
+				{"text": "Portuguese",	"value": "pt"},
+				{"text": "Polish",		"value": "pl"}
+			]
+		}
+	]
+}

@@ -1,3 +1,7 @@
 {
-  "\"{0}\" weather": "\"{0}\" Weer"
+  "\"{0}\" weather": "\"{0}\" Weer",
+  "now": "nu",
+  "en": "nl",
+  "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']": "['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag']",
+  "['Now', 'Today']": "['Nu', 'Vandaag']"
 }

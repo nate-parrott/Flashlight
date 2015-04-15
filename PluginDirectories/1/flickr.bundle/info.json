@@ -5,5 +5,7 @@
 	"description_de": "Flickr Suche",
 	"examples": ["flickr sunset"],
 	"examples_de": ["flickr Sonnenuntergang"],
-	"categories": ["Art"]
+	"categories": ["Art"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

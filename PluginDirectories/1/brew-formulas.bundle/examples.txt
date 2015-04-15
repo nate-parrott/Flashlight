@@ -1,0 +1,3 @@
+brew formulas ~bfquery(query here)
+brew ~bfquery(query here)
+bf ~bfquery(query here)

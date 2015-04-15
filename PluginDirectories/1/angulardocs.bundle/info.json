@@ -1,0 +1,8 @@
+{
+  "name": "angulardocs",
+  "displayName": "AngularJS Docs",
+  "description": "Quick search in AngularJS Documentation",
+  "examples": ["angular directives", "ng compile"],
+  "categories": ["Developer"],
+  "creator_name": "Ne4istb"
+}

@@ -1,0 +1,7 @@
+{
+	"name": "hexCalc",
+	"displayName": "HexCalc",
+	"description": "Convert Hex values to Decimal",
+	"examples": ["hex 0xAC", "hex 0xac"],
+    "categories": ["Developer"]
+}

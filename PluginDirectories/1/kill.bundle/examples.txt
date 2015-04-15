@@ -1,0 +1,2 @@
+kill ~app(Atom)
+kill ~app(Safari)

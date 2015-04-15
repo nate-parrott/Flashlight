@@ -23,6 +23,7 @@
 @property (nonatomic) PSPluginDispatcher *dispatcher;
 @property (nonatomic) NSMutableArray *tasksInProgress;
 @property (nonatomic) NSArray *results;
+@property (nonatomic) NSDictionary *staticResultsForLastQueryByPluginPath;
 
 @end
 
@@ -83,56 +84,115 @@
 }
 
 - (void)runPluginsWithParseTrees:(NSDictionary *)pluginPathsToParseTreesMap ifQueryIsStill:(NSString *)query {
-    __weak FlashlightQueryEngine *weakSelf = self;
+    if ([self pluginInfrastructureIsMissing]) return;
     if ([query isEqualToString:self.query]) {
+        NSMutableDictionary *staticPluginResultsByPath = [NSMutableDictionary new];
+        
         for (NSString *pluginPath in pluginPathsToParseTreesMap) {
             PSTaggedText *parseTree = pluginPathsToParseTreesMap[pluginPath];
             if ([parseTree isEqual:[NSNull null]]) parseTree = nil;
-            NSTask *task = [NSTask withPathMarkedAsExecutableIfNecessary:[[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"]];
-            NSDictionary *input = @{
-                                    @"args": [parseTree toNestedDictionary] ? : [NSNull null],
-                                    @"query": query,
-                                    @"builtinModulesPath": [[self class] builtinModulesPath],
-                                    @"parseTree": [parseTree toJsonObject] ? : [NSNull null],
-                                    @"pluginPath": pluginPath
-                                    };
-            task.arguments = @[input.toJson];
-            @synchronized(weakSelf.tasksInProgress) {
-                [weakSelf.tasksInProgress addObject:task];
+            
+            if ([self isPluginAtPathStatic:pluginPath]) {
+                FlashlightResult *result = self.staticResultsForLastQueryByPluginPath[pluginPath] ? : [self createStaticResult:pluginPath];
+                if (result) {
+                    [result setCurrentInputForStaticPlugin:parseTree.toNestedDictionary];
+                    [self addResults:@[result] forQuery:query];
+                    staticPluginResultsByPath[pluginPath] = result;
+                }
+            } else {
+                [self executePluginAtPath:pluginPath parseTree:parseTree query:query];
             }
-            [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
-                // only act on the result data if we're still part of the tasksInProgress
-                if ([weakSelf.tasksInProgress containsObject:task]) {
-                    [weakSelf.tasksInProgress removeObject:self];
-                    
-                    if (weakSelf.debugDataChangeBlock) {
-                        // report the error:
-                        if (stderrData) {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                weakSelf.errorString = [weakSelf.errorString ? : @"" stringByAppendingString:[[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding]];
-                                weakSelf.debugDataChangeBlock();
-                            });
-                        }
-                    }
-                    if (stdoutData) {
-                        NSArray *results = [NSJSONSerialization JSONObjectWithData:stdoutData options:0 error:nil];
-                        NSArray *resultsObjs = [results mapFilter:^id(id obj) {
-                            FlashlightResult *res = [FlashlightResult new];
-                            res.json = obj;
-                            res.pluginPath = pluginPath;
-                            return res;
-                        }];
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            if ([weakSelf.query isEqualToString:query]) {
-                                weakSelf.results = [[weakSelf.results arrayByAddingObjectsFromArray:resultsObjs] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"canBeTopHit" ascending:NO]]];
-                                weakSelf.resultsDidChangeBlock(query, weakSelf.results);
-                            }
-                        });
-                    }
+        }
+        
+        self.staticResultsForLastQueryByPluginPath = staticPluginResultsByPath;
+    }
+}
+
+- (BOOL)isPluginAtPathStatic:(NSString *)path {
+    return [[NSFileManager defaultManager] fileExistsAtPath:[path stringByAppendingPathComponent:@"static_result.json"]];
+}
+
+- (NSString *)pluginInvocationScriptPath {
+    return [[NSBundle bundleForClass:[self class]] pathForResource:@"invoke_plugin" ofType:@"py"];
+}
+
+- (BOOL)pluginInfrastructureIsMissing {
+    // this can happen if Flashlight.app is deleted w/out disabling the SIMBL service
+    return ![[NSFileManager defaultManager] fileExistsAtPath:[self pluginInvocationScriptPath]];
+}
+
+- (void)executePluginAtPath:(NSString *)pluginPath parseTree:(PSTaggedText *)parseTree query:(NSString *)query {
+    __weak FlashlightQueryEngine *weakSelf = self;
+    NSTask *task = [NSTask withPathMarkedAsExecutableIfNecessary:[self pluginInvocationScriptPath]];
+    NSDictionary *input = @{
+                            @"args": [parseTree toNestedDictionary] ? : [NSNull null],
+                            @"query": query,
+                            @"builtinModulesPath": [[self class] builtinModulesPath],
+                            @"parseTree": [parseTree toJsonObject] ? : [NSNull null],
+                            @"pluginPath": pluginPath
+                            };
+    task.arguments = @[input.toJson];
+    @synchronized(weakSelf.tasksInProgress) {
+        [weakSelf.tasksInProgress addObject:task];
+    }
+    [task launchWithTimeout:2 callback:^(NSData *stdoutData, NSData *stderrData) {
+        // only act on the result data if we're still part of the tasksInProgress
+        BOOL wasInProgress = NO;
+        @synchronized(weakSelf.tasksInProgress) {
+            wasInProgress = [weakSelf.tasksInProgress containsObject:task];
+            if (wasInProgress) [weakSelf.tasksInProgress removeObject:task];
+        }
+        if (wasInProgress) {
+            if (weakSelf.debugDataChangeBlock) {
+                // report the error:
+                if (stderrData) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        weakSelf.errorString = [weakSelf.errorString ? : @"" stringByAppendingString:[[NSString alloc] initWithData:stderrData encoding:NSUTF8StringEncoding]];
+                        weakSelf.debugDataChangeBlock();
+                    });
+                }
+            }
+            if (stdoutData) {
+                NSArray *results = [NSJSONSerialization JSONObjectWithData:stdoutData options:0 error:nil];
+                NSArray *resultsObjs = [results mapFilter:^id(id obj) {
+                    FlashlightResult *res = [FlashlightResult new];
+                    res.json = obj;
+                    res.pluginPath = pluginPath;
+                    return res;
+                }];
+                [self addResults:resultsObjs forQuery:query];
+            }
+        }
+    }];
+}
+
+- (FlashlightResult *)createStaticResult:(NSString *)pluginPath {
+    FlashlightResult *result = [FlashlightResult new];
+    result.json = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[pluginPath stringByAppendingPathComponent:@"static_result.json"]] options:0 error:nil];
+    if (!result.json) return nil;
+    result.pluginPath = pluginPath;
+    return result;
+}
+
+- (void)addResults:(NSArray *)resultObjs forQuery:(NSString *)query {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // don't replace old results with same unique ID
+        if ([self.query isEqualToString:query]) {
+            NSSet *uniqueIdsForOldResults = [NSSet setWithArray:[self.results mapFilter:^id(id obj) {
+                return [obj uniqueIdentifier];
+            }]];
+            NSArray *newResults = [resultObjs mapFilter:^id(id obj) {
+                NSString *objId = [obj uniqueIdentifier];
+                if (objId && [uniqueIdsForOldResults containsObject:objId]) {
+                    return nil;
+                } else {
+                    return obj;
                 }
             }];
+            self.results = [[self.results arrayByAddingObjectsFromArray:newResults] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"canBeTopHit" ascending:NO]]];
+            self.resultsDidChangeBlock(query, self.results);
         }
-    }
+    });
 }
 
 - (void)cancelAllTasks {

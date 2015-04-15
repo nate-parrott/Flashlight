@@ -1,0 +1,11 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Create a Note",
+  "name" : "notes",
+  "examples" : [
+    "note from clipboard",
+    "new note: 718 788 1234"
+  ]
+}

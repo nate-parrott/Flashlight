@@ -1,0 +1,6 @@
+log
+off
+out
+screen
+saver
+down

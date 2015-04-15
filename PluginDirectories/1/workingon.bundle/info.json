@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "creator_name": "Tobias Orterer",
+  "displayName" : "WorkingOn.co",
+  "name" : "workingon",
+  "description" : "Posts to WorkingOn.co - set your token in settings!",
+  "examples" : [
+    "on creating a flashlight plugin",
+    "working on getting this published"
+  ],
+  "openPreferencesOnInstall": true
+}

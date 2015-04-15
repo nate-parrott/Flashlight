@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Kill",
+  "name" : "kill9",
+  "description" : "Search processes as you type and kill the selected process",
+  "examples" : [
+    "kill safari",
+    "kill iterm"
+  ],
+  "creator_name": "Dylan Zhang",
+  "creator_url": "http://dylanzhang.me"
+}

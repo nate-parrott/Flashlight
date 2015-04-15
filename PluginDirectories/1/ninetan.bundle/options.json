@@ -1,0 +1,20 @@
+{
+    "options": [
+        {
+            "text": "Default location:",
+            "type": "dropdown",
+            "key": "default_location",
+            "options": [
+                {"text": "Chiba", "value": "chiba"},
+                {"text": "Hyogo", "value": "hyogo"},
+                {"text": "Ibaraki", "value": "ibaraki"},
+                {"text": "Kyoto", "value": "kyoto"},
+                {"text": "Osaka", "value": "osaka"},
+                {"text": "Roppongi", "value": "roppongi"},
+                {"text": "Shizuoka", "value": "shizuoka"},
+                {"text": "Tokyo", "value": "tokyo"},
+                {"text": "Wakayama", "value": "wakayama"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "options": [
+        {
+            "text": "Theme:",
+            "type": "dropdown",
+            "key": "theme",
+            "options": [
+                {"text": "Arta", "value": "arta"},
+                {"text": "Ascetic", "value": "ascetic"},
+                {"text": "Atelier dune.dark", "value": "atelier-dune.dark"},
+                {"text": "Atelier dune.light", "value": "atelier-dune.light"},
+                {"text": "Atelier forest.dark", "value": "atelier-forest.dark"},
+                {"text": "Atelier forest.light", "value": "atelier-forest.light"},
+                {"text": "Atelier heath.dark", "value": "atelier-heath.dark"},
+                {"text": "Atelier heath.light", "value": "atelier-heath.light"},
+                {"text": "Atelier lakeside.dark", "value": "atelier-lakeside.dark"},
+                {"text": "Atelier lakeside.light", "value": "atelier-lakeside.light"},
+                {"text": "Atelier seaside.dark", "value": "atelier-seaside.dark"},
+                {"text": "Atelier seaside.light", "value": "atelier-seaside.light"},
+                {"text": "Brown paper", "value": "brown_paper"},
+                {"text": "Codepen embed", "value": "codepen-embed"},
+                {"text": "Color brewer", "value": "color-brewer"},
+                {"text": "Dark", "value": "dark"},
+                {"text": "Default", "value": "default"},
+                {"text": "Docco", "value": "docco"},
+                {"text": "Far", "value": "far"},
+                {"text": "Foundation", "value": "foundation"},
+                {"text": "Github", "value": "github"},
+                {"text": "Googlecode", "value": "googlecode"},
+                {"text": "Hybrid", "value": "hybrid"},
+                {"text": "Idea", "value": "idea"},
+                {"text": "Ir black", "value": "ir_black"},
+                {"text": "Kimbie dark", "value": "kimbie.dark"},
+                {"text": "Kimbie light", "value": "kimbie.light"},
+                {"text": "Magula", "value": "magula"},
+                {"text": "Mono blue", "value": "mono-blue"},
+                {"text": "Monokai", "value": "monokai"},
+                {"text": "Monokai sublime", "value": "monokai_sublime"},
+                {"text": "Obsidian", "value": "obsidian"},
+                {"text": "Paraiso dark", "value": "paraiso.dark"},
+                {"text": "Paraiso light", "value": "paraiso.light"},
+                {"text": "Pojoaque", "value": "pojoaque"},
+                {"text": "Railscasts", "value": "railscasts"},
+                {"text": "Rainbow", "value": "rainbow"},
+                {"text": "School book", "value": "school_book"},
+                {"text": "Solarized dark", "value": "solarized_dark"},
+                {"text": "Solarized light", "value": "solarized_light"},
+                {"text": "Sunburst", "value": "sunburst"},
+                {"text": "Tomorrow night blue", "value": "tomorrow-night-blue"},
+                {"text": "Tomorrow night bright", "value": "tomorrow-night-bright"},
+                {"text": "Tomorrow night eighties", "value": "tomorrow-night-eighties"},
+                {"text": "Tomorrow night", "value": "tomorrow-night"},
+                {"text": "Tomorrow", "value": "tomorrow"},
+                {"text": "Vs", "value": "vs"},
+                {"text": "Xcode", "value": "xcode"},
+                {"text": "Zenburn", "value": "zenburn"}
+
+            ]
+        },
+        {
+            "type": "hint",
+            "text": "Select the theme for the syntax highlighter."
+        },
+        {
+            "type": "divider"
+        },
+        {
+            "type": "buttons",
+            "buttons": [
+                {"text": "Contact the author", "url": "http://marcon.me"}
+            ]
+        }
+    ]
+}

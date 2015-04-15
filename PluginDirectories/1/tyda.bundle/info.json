@@ -1,0 +1,11 @@
+{
+  "categories" : [
+    "Utilities", "Language", "Search" 
+  ],
+  "displayName" : "Tyda.se",
+  "name" : "tyda",
+  "description" : "Search Tyda.se",
+  "examples" : [
+    "tyda astonishing"
+  ]
+}

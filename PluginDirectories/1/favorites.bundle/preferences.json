@@ -1,0 +1,12 @@
+{
+  "shortcuts" : [
+    {
+      "url" : "https://www.google.com",
+      "shortcut" : "google"
+    },
+    {
+      "url" : "https://www.amazon.com",
+      "shortcut" : "amazon"
+    }
+  ]
+}

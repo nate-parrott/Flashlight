@@ -1,7 +1,6 @@
 from google.appengine.ext import ndb
 import search
 
-
 class Plugin(ndb.Model):
     info_json = ndb.TextProperty()
     categories = ndb.StringProperty(repeated=True)
@@ -13,9 +12,9 @@ class Plugin(ndb.Model):
     notes = ndb.TextProperty()
     icon_url = ndb.StringProperty()
     screenshot_url = ndb.StringProperty()
-    zip_md5 = ndb.StringProperty()
     downloads = ndb.IntegerProperty(default=0)
     search_doc_id = ndb.StringProperty()
+    version = ndb.IntegerProperty()
 
     def disable(self):
         self.approved = False

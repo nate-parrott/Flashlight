@@ -1,0 +1,1 @@
+slack ~channel(#random) ~message(Good Morning, Everyone)

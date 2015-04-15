@@ -1,0 +1,7 @@
+{
+   "name": "say",
+   "displayName": "Say Something",
+   "description": "This is an example plugin",
+   "examples": ["say hello world", "say good morning"],
+   "categories": ["Utilities"]
+}

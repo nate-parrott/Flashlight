@@ -1,0 +1,5 @@
+upload @file(...) to cloudapp
+cloud @file(...)
+cloudapp @file(...)
+cl.ly link for @file(...)
+copy a link to @file(...)

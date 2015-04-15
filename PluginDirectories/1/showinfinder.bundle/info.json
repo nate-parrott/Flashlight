@@ -5,5 +5,7 @@
 	"description": "Opens a path in Finder",
 	"description_de": "Zeigt einen Pfad im Finder an",
 	"examples": ["finder /Applications/iTunes.app"],
-	"categories": ["Utilities"]
+	"categories": ["Utilities"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

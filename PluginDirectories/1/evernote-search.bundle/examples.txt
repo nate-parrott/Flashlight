@@ -1,0 +1,3 @@
+search evernote for ~query(Workout Routine)
+evernote ~query(Funny documents)
+notes ~query(Cooking Recipes)

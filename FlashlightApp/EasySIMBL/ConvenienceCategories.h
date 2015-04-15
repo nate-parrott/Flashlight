@@ -28,3 +28,5 @@ typedef NSArray* (^NSDictionaryMapFunction)(id key, id val);
 -(void)mergeKeysFromDictionary:(NSDictionary*)otherDict;
 
 @end
+
+void PerformOnMainThread(dispatch_block_t block);

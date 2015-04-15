@@ -5,5 +5,9 @@
     "description": "Ninetan's forecasting system",
     "description_ja": "ないんたん天気予報",
     "examples": ["sx9 kyoto", "ninetan osaka"],
-    "categories": ["Weather"]
+    "examples_ja": ["sx9 kyoto", "ninetan osaka", "ないんたん 京都"],
+    "categories": ["Weather"],
+    "preferred_locales": ["ja"],
+    "creator_name": "Yusuke Miyazaki",
+    "creator_url": "http://www.ymyzk.com"
 }

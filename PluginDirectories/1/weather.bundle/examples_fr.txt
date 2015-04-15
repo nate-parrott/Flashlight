@@ -1,3 +1,4 @@
-Quel est le climat à ~location(Brooklyn) ?
+Quel est le climat à ~location(Brooklyn)?
 Météo pour ~location(Shangai)
+temps ~location(paris)
 temps ~location(paris)

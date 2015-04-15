@@ -1,0 +1,6 @@
+deriveddata(clear derived data)
+deriveddata(delete derived data)
+iossim(launch iOS simulator)
+iossim(open iOS simulator)
+iossim(open iphone simulator)
+nuke(nuke xcode)

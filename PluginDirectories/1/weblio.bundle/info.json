@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Language"
+  ],
+  "displayName" : "Weblio dictionary",
+  "name" : "weblio",
+  "description" : "Search definition in Weblio dictionary(Ruigo, Chinese, Korean, English dictionaries supported)",
+  "examples" : [
+    "weblio アップル",
+    "weblio cn for アップル",
+    "ウェブリオ 韓国語 で アップル",
+    "ウェブリオ cjjc for アップル"
+  ]
+}

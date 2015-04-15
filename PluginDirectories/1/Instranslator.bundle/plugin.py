@@ -41,9 +41,9 @@ def results(parsed, original_query):
 
 
     if from_lang == 'auto':
-        title = "Translate \"{0}\" to {1}".format(text, to_lang)
+        title = u"Translate \"{0}\" to {1}".format(text, to_lang)
     else:
-        title = "Translate \"{0}\" from {1} to {2}".format(text, from_lang, to_lang)
+        title = u"Translate \"{0}\" from {1} to {2}".format(text, from_lang, to_lang)
     return {
         "title": title,
         "html": html,

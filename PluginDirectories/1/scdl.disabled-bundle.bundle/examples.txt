@@ -1,2 +1,0 @@
-scdl ~url(https://soundcloud.com/joeengelman/egg-white-delight)
-download ~url(https://soundcloud.com/joeengelman/egg-white-delight) from Soundcloud

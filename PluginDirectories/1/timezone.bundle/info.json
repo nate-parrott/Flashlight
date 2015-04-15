@@ -10,5 +10,7 @@
 	"examples_de": ["Zeit München", "Uhrzeit Tokio"],
 	"examples_fr": ["heure Munich", "fuseau Tokio"],
 	"categories": ["Weather", "Utilities"],
-    "search_keywords": "world clock"
+    "search_keywords": "world clock",
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

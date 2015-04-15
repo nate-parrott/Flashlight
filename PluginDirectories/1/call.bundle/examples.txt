@@ -1,0 +1,10 @@
+call ~digit(2610333366)
+dial ~digit(2610333366)
+facetime ~digit(6945687943)
+call @contact(___)
+call @contact(___) label/work(work)
+call @contact(___)'s label/home(home number)
+call @contact(___)'s label/mobile(cell)
+facetime @contact(___)'s label/mobile(mobile)
+give @contact(___) a call
+ring @contact(___)

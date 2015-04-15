@@ -1,0 +1,19 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "tags" : [
+    "Utilities"
+  ],
+  "displayName" : "Royal TSX Ad-hoc",
+  "name" : "royaltsx",
+  "description" : "Open Royal TSX Ad-hoc connections",
+  "version": "1.0.1",
+  "creator_name": "Royal Applications Team",
+  "creator_url": "http://www.royalapplications.com/ts",
+  "examples" : [
+    "royaltsx 192.168.0.1",
+    "rtsx rdp://hostname",
+    "rtsx ssh://192.168.0.1"
+  ]
+}

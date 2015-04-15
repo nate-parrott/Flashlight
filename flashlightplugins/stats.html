@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+{% block body %}
+
+<h1>Stats</h1>
+
+<h2>DAU</h2>
+<p>(action=viewResultFor1Sec)</p>
+<table>
+	{% for row in dau %}
+	<tr>
+		<td>{{ row.date }}</td>
+		<td>{{ row.count }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

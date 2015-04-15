@@ -1,3 +1,7 @@
 {
-  "\"{0}\" weather": "\"{0}\" temps"
+  "\"{0}\" weather": "\"{0}\" temps",
+  "now": "maintenant",
+  "en": "fr",
+  "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']": "['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']",
+  "['Now', 'Today']": "['Maintenant', 'Aujourd\\u0027hui']" 
 }

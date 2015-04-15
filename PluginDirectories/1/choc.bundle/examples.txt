@@ -1,0 +1,3 @@
+choc ~query(path)
+chocolat ~query(path)
+open with chocolat ~query(path)

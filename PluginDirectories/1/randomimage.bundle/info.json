@@ -6,5 +6,7 @@
     "examples": ["image grumpy cat", "random image flashlight", "image me spotlight"],
     "examples_de": ["bild grumpy cat", "zufallsbild flashlight"],
     "description": "Returns a random Google image and allows to copy the url",
-    "description_de": "Gibt ein zufälliges Google Bild zurück und erlaubt es die URL zu kopieren"
+    "description_de": "Gibt ein zufälliges Google Bild zurück und erlaubt es die URL zu kopieren",
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

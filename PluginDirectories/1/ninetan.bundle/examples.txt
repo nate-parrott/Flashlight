@@ -1,2 +1,4 @@
+sx9
+ninetan
 sx9 ~location(kyoto)
 ninetan ~location(osaka)

@@ -1,0 +1,4 @@
+wiki ~plWiki(query here)
+wikipedia ~plWiki(query here)
+wiki ~plWiki(query here)
+szukaj wikipedia ~plWiki(query here)

@@ -1,0 +1,2 @@
+angular ~query(directive)
+ng ~query(compile)

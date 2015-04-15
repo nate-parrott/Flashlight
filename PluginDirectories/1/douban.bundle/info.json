@@ -4,6 +4,6 @@
 	"displayName_zh": "豆瓣电影",
 	"description": "Look for movie info on douban",
 	"description_zh": "快速搜索豆瓣电影",
-	"examples": ["douban Interstellar"],
+	"examples": ["douban Interstellar","豆瓣 一路向西"],
     "categories": ["Information", "Media"]
 }

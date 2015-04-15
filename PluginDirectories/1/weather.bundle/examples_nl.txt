@@ -1,7 +1,7 @@
 weer ~location(brooklyn)
+weer ~location(brooklyn)
 weer in ~location(new york)
 Hoe is het weer in ~location(queens)?
 voorspellingen voor ~location(the bronx)
 ~location(london) weer
 ~location(istanbul) voorspellingen
-~location(san francisco) weer

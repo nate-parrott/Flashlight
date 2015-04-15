@@ -1,0 +1,9 @@
+{
+    "name": "uuid",
+    "displayName": "Generate a UUID",
+    "description": "Generate random UUIDs",
+    "examples": ["uuid"],
+    "categories": ["Utilities"],
+    "creator_name": "Timo Schneider",
+    "creator_url": "http://schnti.de"
+}

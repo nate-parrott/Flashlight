@@ -1,0 +1,9 @@
+{
+    "name": "ticktick",
+    "displayName": "TickTick todo",
+    "description": "Create task to your TickTick",
+    "examples": ["ticktick call Dad tomorrow", "tk buy the milk", "new task share story with Sam"],
+    "categories": ["Utilities"],
+    "creator_name": "Damon",
+    "creator_url": "https://wwww.ticktick.com"
+}

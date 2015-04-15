@@ -1,0 +1,4 @@
+discogs ~discogsquery(query here)
+search discogs ~discogsquery(query here)
+search ~discogsquery(query here) on discogs
+find ~discogsquery(query here) on discogs

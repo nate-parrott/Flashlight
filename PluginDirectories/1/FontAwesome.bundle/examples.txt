@@ -1,0 +1,3 @@
+fontawesome ~fontawesome(query here)
+search fontawesome ~fontawesome(query here)
+fa ~fontawesome(query here)

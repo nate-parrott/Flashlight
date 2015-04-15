@@ -1,0 +1,20 @@
+{
+    "categories": [
+    "Utilities",
+    "Language"
+  ],
+    "displayName": "Speller",
+    "displayName_nl": "Speller",
+    "name": "speller",
+    "name_nl": "Spelling",
+    "description_nl": "Nederlandse spelling controleren",
+    "description": "Spell check for english",
+    "examples": [
+    "spell throuh",
+    "check spelling for wieght",
+    "please spell carosle"
+  ],
+    "examples_nl": [
+    "spelling hallo"
+  ]
+}

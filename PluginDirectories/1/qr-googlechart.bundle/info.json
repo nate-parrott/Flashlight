@@ -1,0 +1,11 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "QRCode by google chart api",
+  "name" : "qr-googlechart",
+  "description" : "Show qrcode image",
+  "examples" : [
+    "qr hello world"
+  ]
+}

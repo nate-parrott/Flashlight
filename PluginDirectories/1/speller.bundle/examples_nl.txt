@@ -1,0 +1,4 @@
+spelling ~word(door)
+spel ~word(carosle)
+Controleer spelling voor ~word(gewight)
+spelling ~word(carosle)

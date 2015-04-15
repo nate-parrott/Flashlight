@@ -1,0 +1,8 @@
+{
+    "name": "torrentz",
+    "displayName": "Torrentz.eu Search",
+    "examples": ["search torrentz for godzilla", "torrentz batman"],
+    "creator_name": "arnomoonens",
+    "creator_url": "https://github.com/arnomoonens",
+		"categories": ["Media", "Search"]
+}

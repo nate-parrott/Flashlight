@@ -64,8 +64,6 @@
     
     self.saveTimer = nil;
     self.pendingSave = NO;
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
 }
 #pragma mark Window
 - (void)windowDidLoad {
@@ -101,7 +99,6 @@
     self.pendingSave = NO;
     [self.saveTimer invalidate];
     self.saveTimer = nil;
-    [[NSNotificationCenter defaultCenter] postNotificationName:PluginDidChangeOnDiskNotification object:self];
     [self close];
 }
 

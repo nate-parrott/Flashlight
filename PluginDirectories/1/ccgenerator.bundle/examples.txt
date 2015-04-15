@@ -1,0 +1,9 @@
+visa
+master
+mastercard
+amex
+diners
+jcb
+discover
+hiper
+hipercard

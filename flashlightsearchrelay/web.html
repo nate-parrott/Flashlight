@@ -1,0 +1,11 @@
+<ol class='web results'>
+{% for result in response.d.results[0].Web %}
+	<li>
+		<a href='{{ result.Url }}'>
+			<h2>{{ result.Title }}</h2>
+			<p>{{ result.Description }}</p>
+			<a class='displayUrl' href='{{ result.Url }}'>{{ result.DisplayUrl }}</a>
+		</a>
+	</li>
+{% endfor %}
+</ol>

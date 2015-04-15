@@ -1,0 +1,8 @@
+{
+	"name": "romsearch",
+	"displayName": "Rom Search",
+	"examples": ["search for supersmash bros roms", "search roms for super smash bros", "rs golden eye"],
+	"categories": ["Search"],
+	"creator_name" : "Justin Brower",
+	"creator_url" : "http://github.com/jbrower95"
+}

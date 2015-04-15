@@ -3,7 +3,7 @@ import urllib, json
 def results(parsed, original_query):
   search_specs = [
     ["Torrentz", "~torrentzquery", "http://torrentz.eu/search?q="],
-    ["Kickass",  "~kickassquery",  "http://kickass.so/usearch/"  ]
+    ["Kickass",  "~kickassquery",  "http://kickass.to/usearch/"  ]
   ]
 
   for name, key, url in search_specs:

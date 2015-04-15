@@ -1,0 +1,8 @@
+!persistent
+
+search the web for ~query(xyz)
+/ ~query(xyz)
+
+images of ~imagequery(xyz)
+image search ~imagequery(abc)
+pictures of ~imagequery(def)

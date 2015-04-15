@@ -1,0 +1,3 @@
+say ~message(Good Morning)
+speak ~message(Hello, world)
+please speak ~message(what's up) out loud

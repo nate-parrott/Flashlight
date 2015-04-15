@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Rubygems search",
+  "name" : "rubygems",
+  "description" : "Search for gems",
+  "examples" : [
+    "gem sinatra",
+    "gem volt"
+  ]
+}

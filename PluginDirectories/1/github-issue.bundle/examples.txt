@@ -1,0 +1,2 @@
+ghi ~query(organisation/project title labels=bug)
+github issue ~query(project)

@@ -1,5 +1,5 @@
 kopiere farbe
-kopiere farbe als hex
-kopiere farbe als copy_uicolor(UIColor)
+kopiere farbe als format/hex
+kopiere farbe als format/uicolor(UIColor)
 nimm eine farbe
-nimm eine farbe als copy_uicolor(UIColor)
+nimm eine farbe als format/uicolor(UIColor)

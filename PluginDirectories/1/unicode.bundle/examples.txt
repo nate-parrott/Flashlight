@@ -1,0 +1,7 @@
+unicode ~query(a)
+unicode: ~query(a b)
+unicode characters for ~query(a)
+unicode characters for ~query(a b)
+~emoji(a) emoji
+~emoji(a b) emoji
+~query(lambda) unicode

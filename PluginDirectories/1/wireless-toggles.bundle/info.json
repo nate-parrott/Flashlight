@@ -1,0 +1,13 @@
+{
+  "displayName" : "Wireless Toggles",
+  "name" : "wireless-toggles",
+  "description" : "Easily toggle wifi/bluetooth",
+  "categories" : ["System"],
+  "examples" : [
+    "wifi on",
+    "turn wifi on",
+    "turn bluetooth on",
+    "bluetooth off"
+  ],
+  "creator_name": "Nate Gantt"
+}

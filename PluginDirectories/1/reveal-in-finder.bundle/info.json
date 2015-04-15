@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "System"
+  ],
+  "displayName" : "Reveal in Finder",
+  "name" : "reveal-in-finder",
+  "description" : "Search for files and reveal them in Finder, instead of opening them.",
+  "examples" : [
+		"reveal homework1.pdf",
+    "show Keynote in finder"
+  ]
+}

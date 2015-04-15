@@ -1,0 +1,9 @@
+{
+	"name": "excuse",
+	"displayName": "Programmer Excuses",
+	"description" : "Do you need a excuse? Done something wrong? Here is the solution",
+	"categories" : ["Information", "Developer"],
+	"examples" : ["excuse", "help me out of this", "give me an excuse"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
+}

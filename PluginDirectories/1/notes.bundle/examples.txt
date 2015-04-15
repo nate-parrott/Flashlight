@@ -1,0 +1,9 @@
+new note
+create a note
+new note with clipboard(clipboard contents)
+create a note with clipboard(the contents of the clipboard)
+clipboard(save the clipboard) to a new note
+new note saying ~note(hello, world)
+create a note with ~note(abc def)
+save ~note(note) as note
+new note: ~note(xyz)

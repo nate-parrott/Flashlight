@@ -1,0 +1,10 @@
+{
+    "name": "emoji",
+    "displayName": "Emoji",
+    "description": "Search and copy emoji.",
+    "description_de": "Durchsuche und kopiere emoji.",
+    "examples": ["emoji grin", "heart emoji", ":rocket:"],
+    "categories": ["Utilities", "Featured"],
+    "creator_name": "Marc Bachmann",
+    "creator_url": "https://github.com/marcbachmann/flashlight-emoji"
+}

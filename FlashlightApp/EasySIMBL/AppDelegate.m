@@ -9,11 +9,20 @@
 #import "SIMBL.h"
 #import "ITSwitch+Additions.h"
 #import "PluginListController.h"
+#import "PluginModel.h"
+#import <LetsMove/PFMoveApplication.h>
+#import "UpdateChecker.h"
+#import "PluginInstallTask.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic,weak) IBOutlet NSTextField *enablePluginsLabel;
+@property (nonatomic,weak) IBOutlet NSButton *enablePluginsButton;
 @property (nonatomic,weak) IBOutlet NSMenuItem *createNewAutomatorPluginMenuItem;
+@property (nonatomic,weak) IBOutlet NSTextField *versionLabel, *searchAnything;
+@property (nonatomic,weak) IBOutlet NSButton *openGithub, *requestPlugin, *leaveFeedback;
+@property (nonatomic,weak) IBOutlet NSWindow *aboutWindow;
+@property (nonatomic,weak) IBOutlet NSButton *menuBarItemPreferenceButton;
+@property (nonatomic,weak) IBOutlet NSMenuItem *flashlightEnabledMenuItem;
 
 @end
 
@@ -37,11 +46,15 @@
 {
     NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
     
-    self.SIMBLOn = NO;
+    self.SIMBLOn = YES;
     
     [self checkSpotlightVersion];
     
-    [self setupURLHandling];
+    [self setupDefaults];
+    
+    self.versionLabel.stringValue = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    
+    PFMoveToApplicationsFolderIfNecessary();
     
     NSString *loginItemBundlePath = nil;
     NSBundle *loginItemBundle = nil;
@@ -70,15 +83,14 @@
             [defaults addSuiteNamed:self.loginItemBundleIdentifier];
             
             if ([[defaults objectForKey:self.loginItemBundleIdentifier] isEqualToString:loginItemBundleVersion]) {
-                SIMBLLogInfo(@"Already my 'SIMBL Agent' is running.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running.");
                 
                 state = NSOnState;
             } else {
                 // if running agent's bundle is different from my bundle, need restart agent from my bundle.
-                SIMBLLogInfo(@"Already 'SIMBL Agent' is running, but version is different.");
+                SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
                 
                 CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-                [self.useSIMBLSwitch setEnabled:NO];
                 state = NSOffState;
                 NSRunningApplication *runningApplication = [runningApplications objectAtIndex:0];
                 [runningApplication addObserver:self
@@ -93,15 +105,28 @@
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
         }
         [self setSIMBLOn:state == NSOnState animated:NO];
-    } else {
-        [self.useSIMBLSwitch setEnabled:NO];
     }
     
     [self restartSIMBLIfUpdated];
     
     // i18n:
-    self.enablePluginsLabel.stringValue = NSLocalizedString(@"Enable Spotlight Plugins", @"");
+    self.enablePluginsButton.title = NSLocalizedString(@"Enable", @"");
     self.createNewAutomatorPluginMenuItem.title = NSLocalizedString(@"New Automator Plugin...", @"");
+    self.leaveFeedback.stringValue = NSLocalizedString(@"Leave Feedback", @"");
+    self.openGithub.stringValue = NSLocalizedString(@"Contribute on GitHub", @"");
+    self.requestPlugin.stringValue = NSLocalizedString(@"Request a Plugin", @"");
+    self.searchAnything.stringValue = NSLocalizedString(@"Search anything.", @"");
+    self.menuBarItemPreferenceButton.stringValue = NSLocalizedString(@"Show menu bar item", @"");
+    [self.menuBarItemPreferenceButton sizeToFit];
+    self.menuBarItemPreferenceButton.frame = NSMakeRect(self.menuBarItemPreferenceButton.superview.bounds.size.width/2 - self.menuBarItemPreferenceButton.frame.size.width/2, self.menuBarItemPreferenceButton.frame.origin.y, self.menuBarItemPreferenceButton.frame.size.width, self.menuBarItemPreferenceButton.frame.size.height);
+    
+    [UpdateChecker shared]; // begin fetch
+    
+    [self setupURLHandling];
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
+    [self.window makeKeyAndOrderFront:nil];
 }
 
 - (void)restartSIMBLIfUpdated {
@@ -125,8 +150,33 @@
 
 - (void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
 {
-    // TODO: install the plugin
-    [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    BOOL anyFilesMatch = NO;
+    for (NSString *filename in filenames) {
+        if ([filename.pathExtension isEqualToString:@"flashlightplugin"]) {
+            PluginInstallTask *task = [PluginInstallTask new];
+            [task installPluginData:[NSData dataWithContentsOfFile:filename] intoPluginsDirectory:[PluginModel pluginsDir] callback:^(BOOL success, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.pluginListController showInstalledPluginWithName:task.installedPluginName];
+                        });
+                    } else {
+                        NSAlert *alert = [[NSAlert alloc] init];
+                        [alert setMessageText:NSLocalizedString(@"Couldn't Install Plugin", @"")];
+                        [alert addButtonWithTitle:NSLocalizedString(@"Okay", @"")]; // FirstButton, rightmost button
+                        [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"This file doesn't appear to be a valid plugin.", @"")]];
+                        alert.alertStyle = NSCriticalAlertStyle;
+                        [alert runModal];
+                    }
+                });
+            }];
+        }
+    }
+    if (anyFilesMatch) {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplySuccess];
+    } else {
+        [sender replyToOpenOrPrint:NSApplicationDelegateReplyFailure];
+    }
 }
 
 #pragma mark NSKeyValueObserving Protocol
@@ -135,14 +185,13 @@
 {
     if ([keyPath isEqualToString:@"isTerminated"]) {
         [object removeObserver:self forKeyPath:keyPath];
-        [self.useSIMBLSwitch setEnabled:YES];
         CFRelease((CFTypeRef)context);
     }
 }
 
 #pragma mark IBAction
 
-- (IBAction)toggleUseSIMBL:(id)sender {
+- (IBAction)toggleFlashlightEnabled:(id)sender {
     BOOL result = !self.SIMBLOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
@@ -164,20 +213,20 @@
             [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
         });
     }
+    
+    if (result) {
+        // show available plugins on enable
+        [self.pluginListController showInstalledPlugins];
+    }
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn {
     [self setSIMBLOn:SIMBLOn animated:YES];
 }
 - (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
     _SIMBLOn = SIMBLOn;
-    if (animated) {
-        self.useSIMBLSwitch.on = SIMBLOn;
-    } else {
-        [self.useSIMBLSwitch setOnWithoutAnimation:SIMBLOn];
-    }
-    self.tableView.enabled = SIMBLOn;
-    [self.tableView setAlphaValue:SIMBLOn ? 1 : 0.6];
-    [self.webView setAlphaValue:SIMBLOn ? 1 : 0.6];
+    self.pluginListController.enabled = SIMBLOn;
+    self.flashlightEnabledMenuItem.state = SIMBLOn ? NSOnState : NSOffState;
+    self.flashlightEnabledMenuItem.title = SIMBLOn ? NSLocalizedString(@"Flashlight Enabled", nil) : NSLocalizedString(@"Flashlight Disabled", nil);
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {
@@ -193,7 +242,7 @@
     NSString *fullSpotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
     NSString *spotlightVersion = [fullSpotlightVersion componentsSeparatedByString:@"."][0];
     NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
-    if (![@[@"911", @"916"] containsObject:spotlightVersion]) {
+    if (![@[@"911", @"916", @"917"] containsObject:spotlightVersion]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             NSAlert *alert = [[NSAlert alloc] init];
@@ -218,9 +267,12 @@
 - (IBAction)leaveFeedback:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/feedback"]];
 }
+- (IBAction)requestAPlugin:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://flashlight.nateparrott.com/ideas"]];
+}
 #pragma mark Links
 - (IBAction)showPythonAPI:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/blob/master/Docs/Tutorial.markdown"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin"]];
 
 }
 
@@ -232,8 +284,78 @@
     NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject]
                         stringValue];
     NSURL *url = [NSURL URLWithString:urlStr];
+    
+    NSMutableDictionary *query = [NSMutableDictionary new];
+    for (NSURLQueryItem *queryItem in [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO].queryItems) {
+        query[queryItem.name] = queryItem.value ? : @"";
+    }
+    
     if ([url.scheme isEqualToString:@"flashlight-show"]) {
         [self.pluginListController showPluginWithName:url.host];
+    } else if ([url.scheme isEqualToString:@"flashlight"]) {
+        NSMutableArray *parts = [@[url.host] arrayByAddingObjectsFromArray:url.pathComponents].mutableCopy;
+        if (parts.count >= 2) {
+            [parts removeObjectAtIndex:1];
+        }
+        if (parts.count >= 2 && [parts[0] isEqualToString:@"plugin"]) {
+            NSString *pluginName = parts[1];
+            if (parts.count == 2) {
+                [self.pluginListController showPluginWithName:pluginName];
+            } else {
+                if (parts.count == 3 && [parts[2] isEqualToString:@"preferences"]) {
+                    [[PluginModel installedPluginNamed:parts[1]] presentOptionsInWindow:self.window];
+                }
+            }
+        } else if (parts.count == 2 && [parts[0] isEqualToString:@"category"]) {
+            [self.pluginListController showCategory:parts[1]];
+        } else if (parts.count == 1 && [parts[0] isEqualToString:@"search"]) {
+            [self.pluginListController showSearch:query[@"q"]];
+        } else if (parts.count >= 1 && [parts[0] isEqualToString:@"preferences"]) {
+            if (parts.count == 2 && [parts[1] isEqualToString:@"menuBarItem"]) {
+                [self.aboutWindow makeKeyAndOrderFront:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    // in case we're mid-launch — we don't want the main window to be made key above this window
+                    [self.aboutWindow makeKeyAndOrderFront:nil];
+                });
+            }
+        }
+    }
+}
+#pragma mark Preferences
+- (void)setupDefaults {
+    NSDictionary *defaults = @{
+                               @"ShowMenuItem": @YES
+                               };
+    for (NSString *key in defaults) {
+        if (![[NSUserDefaults standardUserDefaults] valueForKey:key]) {
+            [[NSUserDefaults standardUserDefaults] setValue:defaults[key] forKey:key];
+        }
+    }
+}
+
+- (IBAction)showMenuBarItemPressed:(id)sender {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight" userInfo:nil options:NSNotificationPostToAllSessions | NSNotificationDeliverImmediately];
+    });
+}
+
+#pragma mark Uninstallation
+
+- (IBAction)uninstall:(id)sender {
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:@"Uninstall Flashlight?"];
+    [alert setInformativeText:@"If you select \"Uninstall\", Flashlight will quit, and you can drag its app icon to the trash."];
+    [alert addButtonWithTitle:@"Uninstall"]; // FirstButton, rightmost button
+    [alert addButtonWithTitle:@"Cancel"]; // SecondButton
+    alert.alertStyle = NSCriticalAlertStyle;
+    NSModalResponse resp = [alert runModal];
+    if (resp == NSAlertFirstButtonReturn) {
+        if (self.SIMBLOn) {
+            [self toggleFlashlightEnabled:nil];
+        }
+        [[NSWorkspace sharedWorkspace] selectFile:[[NSBundle mainBundle] bundlePath] inFileViewerRootedAtPath:nil];
+        [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.5];
     }
 }
 

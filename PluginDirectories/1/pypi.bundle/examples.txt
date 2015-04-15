@@ -1,0 +1,1 @@
+pypi ~query(setuptools)

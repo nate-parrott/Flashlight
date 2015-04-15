@@ -1,0 +1,3 @@
+!always_invoke
+open ~url(google.com)
+launch ~url(google.com)

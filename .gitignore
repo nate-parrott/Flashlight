@@ -25,3 +25,6 @@ DerivedData
 #
 __pycache__/
 *.py[cod]
+
+# Config files that shouldn't be committed (e.g. API keys)
+secret-config.json

@@ -1,0 +1,10 @@
+{
+	"name": "bye404",
+	"displayName": "886404 Search",
+	"displayName_zh": "886404 搜索",
+	"description": "Search 886404 (bye404).A mirror of google search for users under GFW",
+	"description_zh": "Search 886404 (天外天,基于谷歌的搜索引擎).",
+	"examples": ["bye404 FlashLight","bye404 search Flashlight"],
+	"examples_zh": ["bye404 Flashlight","bye404 搜索 Flashlight"],
+	"categories": ["Search"]
+}

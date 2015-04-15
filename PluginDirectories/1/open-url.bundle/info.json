@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities",
+		"Featured"
+  ],
+  "displayName" : "Open URL",
+  "name" : "open-url",
+  "description" : "Open URLs by typing or pasting them in Spotlight.",
+  "examples" : [
+    "twitter.com/itsflashlight"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Task to Todoist",
+  "name" : "todoist",
+  "description" : "Create a new task in Todoist",
+  "examples" : [
+    "todoist do the dishes",
+    "todoist call mom"
+  ]
+}

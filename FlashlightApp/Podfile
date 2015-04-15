@@ -6,6 +6,8 @@ xcodeproj 'Flashlight.xcodeproj/'
 target "Flashlight" do
 
 pod "Sparkle"
+pod "LetsMove"
+pod "GRMustache"
 
 end
 

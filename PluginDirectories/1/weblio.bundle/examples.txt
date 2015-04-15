@@ -1,0 +1,5 @@
+ウェブリオ ~lang(中国語) で ~webliodict(アップル)
+ウェブリオ ~lang(cjjc) for ~webliodict(アップル)
+ウェブリオ　~webliodict(アップル)
+weblio ~webliodict(アップル)
+weblio ~lang(cjjc) for ~webliodict(アップル)

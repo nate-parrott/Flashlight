@@ -1,0 +1,84 @@
+<head>
+
+<style>
+body {
+	font-family: "HelveticaNeue";
+}
+body.light {
+	color: black;
+}
+body.dark {
+	color: white;
+}
+
+html, body, #main {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+#main td {
+	text-align: center;
+	padding: 10px;
+}
+/*#main {
+	display: table;
+}
+#main > * {
+	display: table-row;
+	text-align: center;
+	padding: 10px;
+}
+#main > * > * {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}*/
+#dates {
+	height: 100%;
+}
+#event {
+	font-size: 24px;
+	background-color: red;
+	color: white;
+	font-weight: 200;
+}
+.day_of_month {
+	display: block;
+	font-size: 39px;
+}
+#hint {
+	font-size: small;
+	text-transform: lowercase;
+	font-weight: bold;
+	opacity: 0.9;
+}
+.dash {
+	font-size: 30px;
+}
+#location td:before {
+	content: "at ";
+	opacity: 0.7;
+}
+</style>
+	
+</head>
+<body class='{{ color }}'>
+	<table id='main'>
+		<tr id='event'>
+			<td colspan='100'>{{ event }}</td>
+			</tr>
+		<tr id='dates'>
+			{% for date in dates %}
+			<td> {{ date|safe }} </td>
+			{% endfor %}
+		</tr>
+		{% if location %}
+		<tr id='location'>
+			<td colspan='100'>{{ location }}</td>
+		</tr>
+		{% endif %}
+		<tr id='hint'>
+			<td colspan='100'>Press Enter to add to your calendar</tf>
+		</tr>
+	</table>
+</body>

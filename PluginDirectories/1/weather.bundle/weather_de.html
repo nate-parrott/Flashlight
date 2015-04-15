@@ -2,16 +2,53 @@
 <html>
 <head>
 	<meta charset='utf-8'/>
+	<!-- The data was not being updated and it was "stuck" on 
+		in the middle of the day. I think this is caused by the 
+		site being cached by safari, because when I cleared its 
+		cache it worked. This prevents cache from being used. 
+		
+		http://stackoverflow.com/questions/1341089/
+		-->
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
 	<script src='crel.js'></script>
 	<script src='skycons.js'></script>
 	
 	<script>
 	
+
 	function weekdayFromTimestamp(timestamp) {
 		// from http://stackoverflow.com/questions/5634403/getting-day-of-the-week-from-timestamp-using-javascript:
+		
+		// Instead of writing the name of the day, it should write "Today"
+		if (timestamp == "Heute") {
+			return timestamp;
+		}
 		var d = (new Date(timestamp * 1000)).getDay();
 		return ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'][d];
 	}
+
+	function hoursFromTimestamp(timestamp) {
+
+		if (timestamp == "Heute") {
+			return timestamp;
+		}
+		// getHours returns UTC. Adjust this with getTimezoneOffset.
+		var d = (new Date(timestamp * 1000)).getHours()+(new Date().getTimezoneOffset()/60);
+		console.log(timestamp + " " + new Date(timestamp * 1000).getHours() + " " + d);
+
+		if (d < 10) {
+			d = "0" + d + ":00";
+		} else {
+			d = d + ":00";
+		}
+		return d;
+	}
+
+
 	
 	function xhr(url, callback) {
 		var xhr = new XMLHttpRequest();
@@ -34,9 +71,37 @@
 	var locationName = "<!--LOCATION-->";
 	var units = "<!--UNITS-->";
 	var appearance = "<!--APPEARANCE-->";
-	
+	var time = "<!--TIME-->";
+	// var locale = "<!--LOCALE-->" // Future implementation? 
+
+	// Lots of useful debugging stuff.	
+	var debugging = false;
+	var preset = true;
+	if (preset) {
+		var locationName = "uppsala";
+		var units = "metric";
+		var appearance = "light";
+		var time ="now";
+	}
+	if (debugging) {
+		console.log("location:" + locationName);
+		console.log("units:" + units);
+		console.log("appearance:" + appearance);
+		console.log("time:" + time);
+
+		document.write("location:" + locationName);
+		document.write("units:" + units);
+		document.write("appearance:" + appearance);
+		document.write("time:" + time);
+	} 
+
 	function load() {
-		var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&lang=de&units="+units+"&q=" + encodeURIComponent(locationName);
+		// The API its URL is different for day-by-day and hourly forcast
+		if (time == "now") {
+			var url = "http://api.openweathermap.org/data/2.5/forecast?&lang=de&units=" + units + "&q=" + encodeURIComponent(locationName);
+		} else {
+			var url = "http://api.openweathermap.org/data/2.5/forecast/daily?lang=de&mode=json&cnt=4&units=" + units + "&q=" + encodeURIComponent(locationName);
+		}
 		xhr(url, function(response) {
 			document.getElementById("loading").style.display = 'none';
 			var parsed;
@@ -81,13 +146,35 @@
 		crel("div", {"class": "condition"}, day.weather[0].description)
 		)
 	}
+
+	// The API is not the same for the hourly forecast.
+	function createHTMLForHours(hour, iconSize) {
+		var tempUnit = units=='metric' ? "°C" : "°F";
+		return crel("div", {"class": "forecast"},
+		iconElementForWeatherCode(hour.weather[0].id, hour.weather[0].icon.match(/.*n/), iconSize),
+		crel("div", {"class": "day"}, hoursFromTimestamp(hour.dt)),
+		crel("div", {"class": "temp"}, Math.round(hour.main.temp) + tempUnit),
+		crel("div", {"class": "condition"}, hour.weather[0].description)
+		)
+	}
 	
 	function createHTMLForJson(json) {
 		var laterDays = crel("div", {"id": "laterDays"});
-		var el = crel("div", crel("div", {id: 'location'}, json.city.name + ", " + json.city.country), crel("div", {"id": "today"}, createHTMLForDay(json.list[0], 128)), laterDays);
-		json.list.slice(1).forEach(function(day) {
-			laterDays.appendChild(createHTMLForDay(day, 64));
-		})
+
+		if (time == "now") {
+			console.log(json.list[2].dt);
+			json.list[0].dt = "Heute"; // 
+			var el = crel("div", crel("div", {id: 'location'}, json.city.name + ", " + json.city.country), crel("div", {"id": "today"}, createHTMLForHours(json.list[0], 128)), laterDays);
+			for (i = 01; i < 4; i++) {
+				laterDays.appendChild(createHTMLForHours(json.list[i], 64));
+			}
+		} else {
+			json.list[0].dt = "Heute";
+			var el = crel("div", crel("div", {id: 'location'}, json.city.name + ", " + json.city.country), crel("div", {"id": "today"}, createHTMLForDay(json.list[0], 128)), laterDays);
+			json.list.slice(1).forEach(function(day) {
+				laterDays.appendChild(createHTMLForDay(day, 64));
+			})
+		}
 		return el;
 	}
 	

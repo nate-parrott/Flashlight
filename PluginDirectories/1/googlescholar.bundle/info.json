@@ -1,0 +1,7 @@
+{
+    "name": "googlescholar",
+    "displayName": "Google Scholar Search",
+    "description": "Search at Google Scholar",
+    "examples": ["gs body", "search google scholar for fitness articles"],
+    "categories": ["Search"]
+}

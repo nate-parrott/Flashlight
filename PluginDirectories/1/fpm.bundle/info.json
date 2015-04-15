@@ -1,0 +1,19 @@
+{
+  "categories": [
+    "Meta"
+  ],
+  "tags" : [
+    "Utilities",
+    "Meta"
+  ],
+  "displayName" : "Flashlight Package Manager",
+  "name" : "fpm",
+  "description" : "A simple decentralized package manager for Flashlight.",
+  "examples" : [
+    "fpm install mmarcon/flashlight-test-plugin",
+    "flashpm remove mmarcon/flashlight-test-plugin"
+  ],
+  "version": "1.0.1",
+  "creator_name": "Massimiliano Marcon",
+  "creator_url": "http://marcon.me"
+}

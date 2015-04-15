@@ -13,14 +13,13 @@
 
 @interface PluginListController : NSObject
 
-@property (nonatomic,weak) IBOutlet NSArrayController *arrayController;
+@property (nonatomic) IBOutlet NSView *rightPaneContainer;
 @property (nonatomic) IBOutlet NSView *view;
-@property (nonatomic) IBOutlet NSTableView *tableView;
-@property (nonatomic) IBOutlet WebView *webView;
-@property (nonatomic) IBOutlet NSVisualEffectView *effectView;
 
-- (void)installPlugin:(PluginModel *)plugin;
-- (void)uninstallPlugin:(PluginModel *)plugin;
+@property (nonatomic) IBOutlet NSView *tableContainer;
+
+@property (nonatomic) IBOutlet NSVisualEffectView *webViewEffectView;
+@property (nonatomic) IBOutlet WebView *webView;
 
 @property (nonatomic,weak) IBOutlet NSView *errorBanner;
 @property (nonatomic,weak) IBOutlet NSTextField *errorText;
@@ -33,5 +32,13 @@
 @property (nonatomic) IBOutlet NSOutlineView *sourceList;
 
 - (void)showPluginWithName:(NSString *)name;
+- (void)showInstalledPlugins;
+- (void)showInstalledPluginWithName:(NSString *)name;
+- (void)showCategory:(NSString *)category;
+- (void)showSearch:(NSString *)search;
+
+@property (nonatomic) BOOL enabled;
+
+- (void)editAutomatorPluginNamed:(NSString *)name;
 
 @end

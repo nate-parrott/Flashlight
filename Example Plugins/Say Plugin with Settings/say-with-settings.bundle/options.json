@@ -1,0 +1,54 @@
+{
+	"options": [
+		{
+			"text": "Voice:",
+			"type": "dropdown",
+			"key": "voice",
+			"options": [
+				{"text": "Victoria", "value": "victoria"},
+				{"text": "Alex", "value": "alex"},
+				{"text": "Albert", "value": "albert"},
+				{"text": "Good News", "value": "good news"}
+			]
+		},
+		{
+			"text": "Greeting:",
+			"key": "greeting",
+			"type": "text"
+		},
+		{
+			"type": "hint",
+			"text": "The greeting is a bit of text that's always spoken before the rest of your message."
+		},
+		{
+			"type": "checkmark",
+			"text": "Speak extra fast",
+			"key": "fast"
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "table",
+			"text": "Shortcuts:",
+			"key": "shortcuts",
+			"columns": [
+				{"text": "Shortcut", "key": "shortcut"},
+				{"text": "Full message", "key": "message"}
+			]
+		},
+		{
+			"type": "hint",
+			"text": "When you type the name of a shortcut, the full message will be spoken instead."
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "buttons",
+			"buttons": [
+				{"text": "Learn about Flashlight", "url": "http://flashlight.nateparrott.com"}
+			]
+		}
+	]
+}

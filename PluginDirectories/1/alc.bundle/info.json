@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Language"
+  ],
+  "displayName" : "Alc 英辞郎",
+  "name" : "alc",
+  "description" : "英辞郎 on the WEB検索プラグイン",
+  "examples" : [
+    "alc false memory",
+    "eow motor skill"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "categories" : [
+    "Search",
+		"Meta"
+  ],
+  "displayName" : "Flashlight Plugin Search",
+  "name" : "flashlight",
+  "description" : "Search the Flashlight plugin directory, right inside Spotlight. It's very meta.",
+  "examples" : [
+    "Bitcoin Flashlight plugins",
+    "flashlight: call"
+  ]
+}

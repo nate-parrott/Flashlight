@@ -1,0 +1,1 @@
+PODS_FLASHLIGHT_JRSWIZZLE_OTHER_LDFLAGS = -framework "Foundation"

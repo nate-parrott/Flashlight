@@ -1,0 +1,14 @@
+{
+    "options": [
+        {
+            "text": "Server:",
+            "type": "dropdown",
+            "key": "server",
+            "options": [
+                {"text": "https://pypi.python.org (CheeseShop)", "value": "cheeseshop"},
+                {"text": "https://warehouse.python.org (Warehouse)", "value": "warehouse"},
+                {"text": "http://localhost:3141 (devpi)", "value": "devpi"}
+            ]
+        }
+    ]
+}

@@ -1,1 +1,2 @@
 douban ~keyword(Star Wars)
+豆瓣 ~keyword(Star Wars)

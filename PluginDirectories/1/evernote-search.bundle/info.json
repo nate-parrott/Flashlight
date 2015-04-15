@@ -1,0 +1,15 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Evernote Search",
+  "name" : "evernote-search",
+  "description" : "Search your Evernotes",
+  "examples" : [
+    "search evernote for workout routines",
+    "evernote funny documents",
+    "notes for cooking recipes"
+  ],
+  "creator_name": "Richard van der Dys",
+  "creator_url": "http://richardvanderdys.com"
+}

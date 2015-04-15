@@ -7,6 +7,8 @@
     "description_de": "Durchsuche Wiktionary",
 
     "examples": ["wiktionary COB", "wiktionary ASAP", "wiktionary Flashlight"],
-    "examples": ["wiktionary COB", "wiktionary ASAP", "wiktionary Taschenlampe"],
-    "categories": ["Information", "Language"]
+    "examples_de": ["wiktionary COB", "wiktionary ASAP", "wiktionary Taschenlampe"],
+    "categories": ["Information", "Language"],
+	"creator_name": "Toni Hoffmann (xremix)",
+	"creator_url": "http://xremix.de"
 }

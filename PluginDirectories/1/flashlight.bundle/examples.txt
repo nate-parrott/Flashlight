@@ -1,0 +1,6 @@
+flashlight ~query(call)
+~query(call) plugins flashlight
+search for ~query(wikipedia) flashlight plugin
+flashlight plugin search ~query(emoji)
+find ~query(emoji) flashlight plugins
+flashlight: ~query(call)

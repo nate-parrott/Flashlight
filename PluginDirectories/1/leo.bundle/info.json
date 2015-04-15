@@ -1,0 +1,10 @@
+{
+	"name": "leo",
+	"displayName": "Leo.org Dictionary",
+	"displayName_de": "Leo Wörterbuch",
+	"description": "Look up words and phrases in Leo Dictionary",
+	"description_de": "Sucht nach den Wörtern und Phrasen bei den Leo Wörterbüchern",
+	"examples": ["leo Taschenlampe", "leo en Flashlight", "leo es Taschenlampe"],
+	"categories": ["Utilities", "Language"],
+	"creator_name": "patternoia"
+}

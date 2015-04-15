@@ -1,3 +1,7 @@
 {
-  "\"{0}\" weather": "\"{0}\" Wetter"
+  "\"{0}\" weather": "\"{0}\" Wetter",
+  "now": "heute",
+  "en": "de",
+  "['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']": "['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag']",
+  "['Now', 'Today']": "['Heute', 'Heute']"  
 }

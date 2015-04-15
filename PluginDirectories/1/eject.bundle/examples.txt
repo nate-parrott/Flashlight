@@ -1,0 +1,6 @@
+ejectall
+eject all
+eject ~device(dev)
+ej ~device(dev)
+ejall
+ej all

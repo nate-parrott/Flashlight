@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "File Mover",
+  "name" : "move-file",
+  "description" : "Copy, move and delete files, just by typing.",
+  "examples" : [
+    "move this file to Documents",
+    "copy receipt.pdf to Receipts"
+  ]
+}

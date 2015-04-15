@@ -12,6 +12,10 @@ handlers:
   login: admin
   script: cleanup.app
 
+- url: /__background_work/.*
+  login: admin
+  script: background_work.app
+
 - url: .*
   script: main.app
 

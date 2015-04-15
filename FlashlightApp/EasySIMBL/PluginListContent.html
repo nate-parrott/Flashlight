@@ -1,0 +1,35 @@
+<div id='title' class='marginalized'>
+  <h2>Installed Commands</h2>
+  <p>Each plugin can recognize certain commands when you type them into Spotlight.
+    <a href='flashlight://category/Featured'>Install more plugins</a> to recognize new commands.
+ </p>
+</div>
+<div id='plugins'>
+    {{#plugins}}
+        <div class='plugin' id='plugin_{{name}}'>
+						<div class='header'>
+							<div class='icon'>
+								{{#icon}}
+									<img src='{{icon}}' />
+								{{/icon}}
+							</div>
+							<div class='name'>
+								{{ displayName }}
+							</div>
+							<div class='buttons'>
+								{{#buttons}}
+								<a href='{{url}}'>{{title}}</a>
+								{{/buttons}}
+							</div>
+						</div>
+						{{#description}}
+						<p class='description marginalized'>{{description}}</p>
+						{{/description}}
+						<ul class='examples marginalized'>
+							{{#examples}}
+								<li>{{.}}</li>
+							{{/examples}}
+						</ul>
+        </div>
+    {{/plugins}}
+</div>

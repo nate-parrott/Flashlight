@@ -1,0 +1,11 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Asana - Create a New Task",
+  "name" : "asana",
+  "description" : "Create a new task in Asana",
+  "examples" : [
+    "asana do the dishes"
+  ]
+}

@@ -1,0 +1,2 @@
+tweet ~message(I'm happy)
+t ~message(Hello, world)

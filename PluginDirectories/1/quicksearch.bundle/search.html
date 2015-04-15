@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<style>
+	body {
+		font-family: "HelveticaNeue";
+		word-wrap: break-word;
+		font-size: small;
+		margin: 0;
+		overflow-x: hidden;
+		color: black;
+	}
+	
+	body.dark {
+		color: white;
+	}
+	
+	.queryPicker {
+		font-size: x-small;
+		text-transform: uppercase;
+		font-weight: bold;
+		width: 9999px;
+		padding-left: 20px;
+		padding-top: 20px;
+	}
+	
+	.queryPicker > div {
+		display: inline-block;
+		padding: 3px 7px;
+		cursor: default;
+	}
+	
+	.queryPicker > div:first-child {
+		padding-left: 0;
+	}
+	
+	.queryPicker > div:hover {
+		text-decoration: underline;
+	}
+	
+	.queryPicker > div.selected {
+		text-decoration: underline;
+	}
+	
+	h2 {
+		font-weight: bold;
+		font-size: 1.2em;
+		margin: 0;
+	}
+	
+	.results {
+		padding: 0;
+		margin: 0;
+	}
+
+	.results > li {
+		list-style-type: none;
+		cursor: pointer;
+		padding: 10px;
+		padding-left: 20px;
+	}
+	
+	.results p {
+		margin: 0;
+		opacity: 0.7;
+	}
+	
+	.results a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.displayUrl {
+		text-decoration: underline !important;
+	}
+	
+	#loading {
+		position: fixed;
+		z-index: 10;
+		font-size: 20px;
+		top: 50%;
+		left: 50%;
+		margin-top: -0.5em;
+		margin-left: -0.5em;
+		-webkit-animation: rotating 1s linear infinite;
+	}
+	
+	@-webkit-keyframes rotating {
+	    from{
+	        -webkit-transform: rotate(0deg);
+	    }
+	    to{
+	        -webkit-transform: rotate(360deg);
+	    }
+	}
+	
+	#loading.hidden {
+		display: none;
+	}
+	
+	.bing {
+		width: 50px;
+		margin-left: auto;
+		display: block;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	
+	</style>
+	<script>
+	
+	// External interface
+	
+	function updateInput(input) {
+		var query = null;
+		var type = null;
+		if (input['~query']) {
+			query = input['~query']
+			type = 'web'
+		} else if (input['~imagequery']) {
+			query = input['~imagequery']
+			type = 'image'
+		}
+		state.query = query;
+		state.queryType = type;
+		updatedState();
+	}
+	
+	function output() {
+		return JSON.stringify([state.query, state.queryToShowResultsFor]);
+	}
+	
+	// State
+	
+	var state = {
+		query: "",
+		currentlyFetchingAutocompletesForQuery: null,
+		
+		queryForMostRecentAutocompletes: "",
+		mostRecentAutocompletes: [],
+		
+		queryToShowResultsFor: null,
+		currentlyFetchingResultsForQuery: null,
+		queryForMostRecentResults: null,
+		mostRecentResults: "",
+		
+		queryType: null
+	}
+	
+	function updatedState() {
+		if (state.queryToShowResultsFor !== null && !stringStartsWith(state.queryToShowResultsFor, state.query)) {
+			state.queryToShowResultsFor = null;
+			updatedState();
+			return;
+		}
+		
+		var autocompletesNeedUpdate = state.query !== state.queryForMostRecentAutocompletes;
+		var updateAutocompletesNow = autocompletesNeedUpdate && state.currentlyFetchingAutocompletesForQuery === null;
+		if (updateAutocompletesNow) {
+			fetchAutocompletes(state.query);
+		}
+		
+		var resultsNeedUpdate = state.queryToShowResultsFor && state.queryToShowResultsFor !== state.queryForMostRecentResults;
+		var updateResultsNow = resultsNeedUpdate && state.currentlyFetchingResultsForQuery === null;
+		if (updateResultsNow) {
+			updateResults(state.queryToShowResultsFor, state.queryType);
+		}
+				
+		render();
+	}
+	
+	// Rendering
+	
+	var lastRender = null;
+	function render() {
+		var main = document.createElement("div");
+		
+		var queryPicker = document.createElement("div");
+		queryPicker.className = 'queryPicker';
+		possibleQueriesToShow().forEach(function(query) {
+			var d = document.createElement("div");
+			d.innerText = query;
+			if (state.queryToShowResultsFor === query) {
+				d.className = 'selected';
+			}
+			d.addEventListener('click', function() {
+				state.queryToShowResultsFor = query;
+				// clear existing results:
+				state.queryForMostRecentResults = null;
+				state.mostRecentResults = "";
+				
+				updatedState();
+			});
+			queryPicker.appendChild(d);
+		});
+		main.appendChild(queryPicker);
+		
+		var currentlyLoading = state.currentlyFetchingAutocompletesForQuery || state.currentlyFetchingResultsForQuery;
+		document.getElementById("loading").className = currentlyLoading ? "visible" : "hidden";
+		
+		if (state.queryForMostRecentResults && stringStartsWith(state.queryForMostRecentResults, state.query)) {
+			var results = document.createElement("div");
+			results.className = "resultsContainer";
+			results.innerHTML = state.mostRecentResults;
+			main.appendChild(results);
+			// exec the results:
+			setTimeout(function() {
+				var scripts = document.querySelectorAll('.resultsContainer script');
+				console.log(scripts)
+				for (var i=0; i<scripts.length; i++) {
+					eval(scripts[i].innerHTML);
+				}
+			}, 0);
+			
+			var bing = document.createElement("img");
+			bing.src = "bing.svg";
+			bing.className = "bing";
+			main.appendChild(bing);
+		}
+		
+		if (lastRender) {
+			lastRender.parentNode.removeChild(lastRender);
+		}
+		lastRender = main;
+		document.body.appendChild(main);
+	}
+	
+	function possibleQueriesToShow() {
+		return uniqueArray([state.query].concat(state.mostRecentAutocompletes));
+	}
+	
+	// Actions
+	function fetchAutocompletes(query) {
+		state.currentlyFetchingAutocompletesForQuery = query;
+		updatedState();
+		loadAutocompletes(state.query, function(autocompletes) {
+			state.mostRecentAutocompletes = autocompletes;
+			state.queryForMostRecentAutocompletes = query;
+			state.currentlyFetchingAutocompletesForQuery = null;
+			var queryToShowResultsFor = firstStringWithPrefix(autocompletes.concat([query]), state.query);
+			if (queryToShowResultsFor && queryToShowResultsFor !== state.queryToShowResultsFor) {
+				state.queryToShowResultsFor = queryToShowResultsFor;
+				// clear existing results:
+				state.queryForMostRecentResults = null;
+				state.mostRecentResults = "";
+			}
+			updatedState();
+		});
+	}
+	
+	function updateResults(query, type) {
+		state.currentlyFetchingResultsForQuery = query;
+		updatedState();
+		loadResults(query, type, function(results) {
+			state.mostRecentResults = results;
+			state.queryForMostRecentResults = query;
+			state.currentlyFetchingResultsForQuery = null;
+			updatedState();
+		});
+	}
+	
+	// Utility functions
+	
+	function xhr(url, callback) {
+		var x = new XMLHttpRequest();
+		x.onreadystatechange = function() {
+    	if (x.readyState == 4) {
+				callback(x.responseText);
+    	}
+		}
+		x.open('GET', url, true);
+		x.send(null);
+	}
+	
+	function uniqueArray(array) {
+		var uniqued = [];
+		var seenObjects = {};
+		array.forEach(function(object) {
+			if (seenObjects[object] === undefined) {
+				seenObjects[object] = true;
+				uniqued.push(object);
+			}
+		})
+		return uniqued;
+	}
+	
+	function firstStringWithPrefix(strings, prefix) {
+		for (var i=0; i<strings.length; i++) {
+			if (stringStartsWith(strings[i], prefix)) {
+				return strings[i];
+			}
+		}
+		return null;
+	}
+	
+	function stringStartsWith(string, prefix) {
+		return string.length >= prefix.length && string.substring(0, prefix.length) === prefix;
+	}
+	
+	// API calls
+		
+	function loadAutocompletes(query, callback) {
+		if (query === "") {
+			callback([]);
+		} else {
+			var url = "https://suggestqueries.google.com/complete/search?client=Firefox&q=" + encodeURIComponent(query);
+			xhr(url, function(response) {
+				var completions = response ? JSON.parse(response)[1] : [];
+				callback(completions);
+			});
+		}
+	}
+	
+	function loadResults(query, type, callback) {
+		if (query === "") {
+			callback("");
+		} else {
+			var url = 'https://flashlightsearchrelay.appspot.com/search/' + type + '?q=' + encodeURIComponent(query);
+			xhr(url, callback);
+		}
+	}
+	
+	</script>
+</head>
+<body class='<!--FLASHLIGHT_THEME_MODE-->'>
+	<div id='loading' class='visible'>↻</div>
+</body>
+</html>

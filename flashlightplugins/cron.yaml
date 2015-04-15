@@ -1,0 +1,4 @@
+cron:
+- description: update search ranks
+  url: /__background_work/update_search_ranks
+  schedule: every 6 hours

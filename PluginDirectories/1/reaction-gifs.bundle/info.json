@@ -1,0 +1,7 @@
+{
+	"name": "reaction-gifs",
+	"displayName": "Reaction Gifs",
+	"description": "Say it with a GIF!",
+	"examples": ["reaction gif for happy", "rgif for sad", "lazy reaction gif"],
+	"categories": ["Search"]
+}

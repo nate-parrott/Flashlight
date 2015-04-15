@@ -4,7 +4,7 @@ body {
   line-height: 1.25;
   color: white;
   font-family: "Helvetica Neue", "Helvetica", sans-serif;
-  background-color: #333334;
+  background-color: #06A6FF;
   margin: 0 !important;
   margin-bottom: 2em;
   padding: 0;
@@ -91,6 +91,7 @@ img {
     display: inline-block;
     list-style-type: none;
     padding: 7px;
+		font-size: small;
 }
 #categories > li:hover {
     background-color: white;
