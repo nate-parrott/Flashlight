@@ -13,10 +13,11 @@ def results(parsed, original_query):
                   "Version/7.0 Mobile/11A465 Safari/9537.53")
     for name, key, url in search_specs:
         if key in parsed:
+            search_item = parsed[key].encode('utf_8')
             localizedurl = i18n.localstr(url)
-            search_url = localizedurl + urllib.quote_plus(parsed[key])
+            search_url = localizedurl + urllib.quote_plus(search_item)
             title = i18n.localstr("Search {0} for '{1}'").format(name,
-                                                                 parsed[key])
+                                                                 search_item)
 
             return {
                 "title": title,
