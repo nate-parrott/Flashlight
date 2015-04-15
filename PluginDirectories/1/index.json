@@ -529,6 +529,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Search"
+            ],
+            "description": "Add your own shortcuts to search any site on the web.",
+            "displayName": "Custom Search",
+            "examples": [
+                "[your custom shortcut] [your search]"
+            ],
+            "name": "custom-search",
+            "openPreferencesOnInstall": true,
+            "zip_url": "custom-search.zip"
+        },
+        {
+            "categories": [
                 "Information"
             ],
             "description": "\u77e5\u4e4e\u65e5\u62a5\u5217\u8868, \u6bcf\u7bc7\u6587\u7ae0\u4f5c\u4e3a\u4e00\u4e2a\u641c\u7d22\u7ed3\u679c\u9879, Enter \u6253\u5f00",
@@ -701,6 +715,7 @@
             "examples": [
                 "duckduckgo Apple stock",
                 "ddg Flashlight",
+                "\\!amg La Dispute",
                 "search duckduckgo for 'search term'"
             ],
             "name": "duckduckgo",
@@ -2313,6 +2328,18 @@
         },
         {
             "categories": [
+                "Media"
+            ],
+            "displayName": "Search Trakt.tv",
+            "displayName_de": "Trakt.tv durchsuchen",
+            "examples": [
+                "trakt Breaking Bad"
+            ],
+            "name": "trakt",
+            "zip_url": "trakt.zip"
+        },
+        {
+            "categories": [
                 "Search"
             ],
             "description": "Search Twitter (tt).",
@@ -2379,6 +2406,20 @@
             ],
             "name": "urbandictionary",
             "zip_url": "urbandictionary.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Timo Schneider",
+            "creator_url": "http://schnti.de",
+            "description": "Generate random UUIDs",
+            "displayName": "Generate a UUID",
+            "examples": [
+                "uuid"
+            ],
+            "name": "uuid",
+            "zip_url": "uuid.zip"
         },
         {
             "categories": [
