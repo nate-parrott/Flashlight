@@ -1,0 +1,2 @@
+trakt ~traktquery(query here)
+search trakt for ~traktquery(breaking bad)
