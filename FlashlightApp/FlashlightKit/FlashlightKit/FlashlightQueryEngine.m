@@ -160,7 +160,9 @@
                     res.pluginPath = pluginPath;
                     return res;
                 }];
-                [self addResults:resultsObjs forQuery:query];
+                if (resultsObjs.count > 0) {
+                    [self addResults:resultsObjs forQuery:query];
+                }
             }
         }
     }];

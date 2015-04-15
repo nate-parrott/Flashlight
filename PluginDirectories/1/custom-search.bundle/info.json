@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities", "Search"
+  ],
+  "displayName" : "Custom Search",
+  "name" : "custom-search",
+  "description" : "Add your own shortcuts to search any site on the web.",
+  "examples" : [
+    "[your custom shortcut] [your search]"
+	],
+	"openPreferencesOnInstall": true
+}
