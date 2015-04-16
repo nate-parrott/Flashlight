@@ -1,0 +1,55 @@
+{
+	"options": [
+		{
+			"text": "Default Category:",
+			"type": "dropdown",
+			"key": "cat",
+			"options": [
+				{"text": "All categories", "value": "0_0"},
+				{"text": "Anime", "value": "1_0"},
+				{"text": "Anime - Anime Music Video", "value": "1_32"},
+				{"text": "Anime - English-translated Anime", "value": "1_37"},
+				{"text": "Anime - Non-English-translated Anime", "value": "1_38"},
+				{"text": "Anime - Raw Anime", "value": "1_11"},
+				{"text": "Audio", "value": "3_0"},
+				{"text": "Audio - Lossless Audio", "value": "3_14"},
+				{"text": "Audio - Lossy Audio", "value": "3_15"},
+				{"text": "Literature", "value": "2_0"},
+				{"text": "Literature - English-translated Literature", "value": "2_12"},
+				{"text": "Literature - Non-English-translated Literature", "value": "2_39"},
+				{"text": "Literature - Raw Literature", "value": "2_13"},
+				{"text": "Live Action", "value": "5_0"},
+				{"text": "Live Action - English-translated Live Action", "value": "5_19"},
+				{"text": "Live Action - Live Action Promotional Video", "value": "5_22"},
+				{"text": "Live Action - Non-English-translated Live Action", "value": "5_21"},
+				{"text": "Live Action - Raw Live Action", "value": "5_20"},
+				{"text": "Pictures", "value": "4_0"},
+				{"text": "Pictures - Graphics", "value": "4_18"},
+				{"text": "Pictures - Photos", "value": "4_17"},
+				{"text": "Software", "value": "6_0"},
+				{"text": "Software - Applications", "value": "6_23"},
+				{"text": "Software - Games", "value": "6_24"}
+			]
+		},
+		{
+			"text": "Default Filter:",
+			"type": "dropdown",
+			"key": "filter",
+			"options": [
+				{"text": "Show all", "value": "0"},
+				{"text": "Filter remakes", "value": "1"},
+				{"text": "Trusted only", "value": "2"},
+				{"text": "A+ only", "value": "3"}
+			]
+		},
+		{
+			"text": "Additional Modifiers:",
+			"type": "text",
+			"key": "mod"
+		},
+		{
+			"type": "hint",
+			"text": "Additional search terms such as desired video quality (1080) or uploader (HorribleSubs)"
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+   "name": "nyaa",
+   "displayName": "Search nyaa.se",
+   "description": "Search nyaa.se for anime torrents",
+   "examples": ["search nyaa for cowboy bebop", "nyaa samurai champloo"],
+   "categories": ["Search"]
+}
