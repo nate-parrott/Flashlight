@@ -4,7 +4,7 @@
   "description": "Search Unicode characters and emoji. Click to copy.",
   "search_keywords": ["character map", "special characters"],
   "examples": ["unicode: tree", "banana emoji"],
-  "categories": ["Media", "Utilities"],
+  "categories": ["Utilities"],
   "creator_name": "Thomas Eschemann",
   "creator_url": "http://eschemann.fr"
 }

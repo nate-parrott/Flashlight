@@ -270,11 +270,13 @@ NSString * const kCategoryUpdates = @"_Updates";
                             @"Search": @"search",
                             @"System": @"cog",
                             @"Utilities": @"wrench",
+                            @"Media": @"media",
                             @"Weather": @"cloud",
                             @"News": @"newspaper",
                             @"Unknown": @"plugin",
-                            @"Art": @"palette",
+                            @"Design": @"palette",
                             @"Developer": @"console",
+                            @"Meta": @"meta",
                             @"New": @"asterisk",
                             kCategoryUpdates: @"update"
                             };

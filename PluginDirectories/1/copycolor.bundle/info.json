@@ -6,5 +6,5 @@
 	"description_de": "Öffnet den OS X Color Picker und kopiert das Ergebnis als HEX oder UIColor",
 	"examples": ["pick color", "copy color as UIColor", "#00caa2"],
 	"examples_de": ["Kopiere Farbe", "Kopiere Farbe als UIColor"],
-	"categories": ["Art", "Developer"]
+	"categories": ["Design", "Developer"]
 }

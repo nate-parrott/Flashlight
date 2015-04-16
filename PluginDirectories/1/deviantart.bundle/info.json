@@ -5,5 +5,5 @@
 	"description": "Search deviantART™ (deviant)",
 	"description_de": "Durchsuche deviantART™ (deviant)",
 	"examples": ["searchdeviant yosemite", "deviantart maverick", "deviant flashlight"],
-	"categories": ["Art"]
+	"categories": ["Media", "Search", "Design"]
 }

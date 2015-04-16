@@ -3,7 +3,7 @@
 	"displayName": "FontAwesome Search",
 	"description": "Search for FontAwesome Icons on glyphsearch.com",
 	"examples": ["fontawesome twitter", "search fontawesome coffee", "fa trash"],
-	"categories": ["Search", "Developer"],
+	"categories": ["Search", "Developer", "Design"],
 	"creator_name": "alx stu",
 	"creator_url": "http://www.github.com/alxstu"
 }

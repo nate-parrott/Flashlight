@@ -4,7 +4,7 @@
     "description": "Generates Lorem Ipsum placeholder text.",
     "description_de": "Erstellt Lorem Ipsum Platzhalter.",
     "examples": ["1 paragraph of lorem ipsum", "lipsum 5 words"],
-    "categories": ["Utilities", "Developer"],
+    "categories": ["Utilities", "Developer", "Design"],
     "creator_name": "Anton Vakhmin",
     "creator_url": "https://github.com/LastDanmer"
 }

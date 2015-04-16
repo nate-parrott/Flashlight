@@ -15,7 +15,7 @@
         },
         {
             "categories": [
-                "Art"
+                "Media"
             ],
             "description": "Search 500px\u2122 (500px)",
             "displayName": "500px\u2122 Search",
@@ -459,7 +459,7 @@
         },
         {
             "categories": [
-                "Art",
+                "Design",
                 "Developer"
             ],
             "description": "Opens the OS X color picker, then copies the result as hex, RGB, RGBA or UIColor. Plus, preview any hex color.",
@@ -593,7 +593,9 @@
         },
         {
             "categories": [
-                "Art"
+                "Media",
+                "Search",
+                "Design"
             ],
             "description": "Search deviantART\u2122 (deviant)",
             "description_de": "Durchsuche deviantART\u2122 (deviant)",
@@ -877,7 +879,8 @@
         },
         {
             "categories": [
-                "Art"
+                "Media",
+                "Search"
             ],
             "creator_name": "Toni Hoffmann (xremix)",
             "creator_url": "http://xremix.de",
@@ -896,7 +899,8 @@
         {
             "categories": [
                 "Search",
-                "Developer"
+                "Developer",
+                "Design"
             ],
             "creator_name": "alx stu",
             "creator_url": "http://www.github.com/alxstu",
@@ -1129,6 +1133,21 @@
             ],
             "name": "googletranslate",
             "zip_url": "googletranslate.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Rootul Patel",
+            "creator_url": "https://github.com/rootulp",
+            "description": "Search Hacker News",
+            "displayName": "Hacker News",
+            "examples": [
+                "hackernews dropbox",
+                "hn airbnb"
+            ],
+            "name": "hackernews",
+            "zip_url": "hackernews.zip"
         },
         {
             "categories": [
@@ -1470,7 +1489,8 @@
         {
             "categories": [
                 "Utilities",
-                "Developer"
+                "Developer",
+                "Design"
             ],
             "creator_name": "Anton Vakhmin",
             "creator_url": "https://github.com/LastDanmer",
@@ -2373,7 +2393,6 @@
         },
         {
             "categories": [
-                "Media",
                 "Utilities"
             ],
             "creator_name": "Thomas Eschemann",
