@@ -1,0 +1,2 @@
+hidden files ~message(show)
+~message(hide) hidden files
