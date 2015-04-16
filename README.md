@@ -44,6 +44,8 @@ Huge thanks to everyone who's contributed translations:
  - [davochka](http://github.com/davochka) for Russian
  - [dougian](http://github.com/dougian) for Greek
  - [Kejk](http://github.com/kejk) for Swedish
+ - [majk-p](https://github.com/majk-p) for Polish
+ - [jurgemaister](https://github.com/jurgemaister) for Norweigan
  
 
 If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization)
