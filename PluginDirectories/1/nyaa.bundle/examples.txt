@@ -1,0 +1,2 @@
+search nyaa for ~nyaaquery(bebop)
+nyaa ~nyaaquery(bebop)
