@@ -11,7 +11,7 @@ def results(parsed, original_query):
 
   for name, key in search_specs:
     if key in parsed:
-      search_url = url + urllib.quote_plus(parsed[key])
+      search_url = url + urllib.quote(parsed[key])
       return {
         "title": "Search {0} for '{1}'".format(name, parsed[key]),
         "run_args": [search_url],
