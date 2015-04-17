@@ -3,7 +3,7 @@
     "Search"
   ],
   "displayName" : "DHL Sendungsverfolgung",
-  "name" : "dhl-tracking.bundle",
+  "name" : "dhltracking.bundle",
   "description" : "Verfolgt dein DHL Paket.",
   "examples" : [
     "dhl <paketnummer>",
