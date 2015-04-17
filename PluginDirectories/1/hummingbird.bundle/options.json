@@ -1,0 +1,16 @@
+{
+	"options": [
+		{
+			"text": "Default filter:",
+			"type": "dropdown",
+			"key": "filter",
+			"options": [
+				{"text": "Everything", "value": ""},
+				{"text": "Anime", "value": "&scope=anime"},
+				{"text": "Manga", "value": "&scope=manga"},
+				{"text": "Users", "value": "&scope=users"},
+				{"text": "Groups", "value": "&scope=groups"}
+			]
+		}
+	]
+}

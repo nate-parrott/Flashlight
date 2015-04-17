@@ -1,0 +1,7 @@
+{
+   "name": "hummingbird",
+   "displayName": "Search hummingbird.me",
+   "description": "Search hummingbird.me",
+   "examples": ["hummingbird evangelion", "hb steins"],
+   "categories": ["Search", "Media"]
+}
