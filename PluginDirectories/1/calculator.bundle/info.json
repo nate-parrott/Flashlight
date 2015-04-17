@@ -1,0 +1,9 @@
+{
+    "name": "cal",
+    "displayName": "Calculator",
+    "description": "The easiest way",
+    "examples": ["cal 2+3", "cal (4*5)+2"],
+    "categories": ["Utilities"],
+    "creator_name": "lmorel3",
+    "creator_url": "lmorel3.fr"
+}
