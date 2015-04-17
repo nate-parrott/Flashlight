@@ -1,0 +1,12 @@
+{
+    "name": "allocine",
+    "displayName": "Allocine search",
+    "displayName_fr": "Allocine rechercher",
+    "description": "Searches Allocine",
+    "description_fr": "Rechercher sur Allocine",
+    "examples": ["allocine Braindead", "allocine Ken Loach "],
+    "examples_fr": ["allocine La Haine", "allocine Jeunet"],
+    "categories": ["Search"],
+    "creator_name": "T0mab",
+    "creator_url": "https://github.com/t0mab"
+}
