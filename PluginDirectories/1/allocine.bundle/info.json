@@ -1,7 +1,7 @@
 {
     "name": "allocine",
     "displayName": "Allocine search",
-    "displayName_fr": "Allocine rechercher",
+    "displayName_fr": "Recherche Allocine",
     "description": "Searches Allocine",
     "description_fr": "Rechercher sur Allocine",
     "examples": ["allocine Braindead", "allocine Ken Loach "],
