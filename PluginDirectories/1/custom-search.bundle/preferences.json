@@ -2,7 +2,7 @@
   "keywords" : [
     {
       "keyword" : "wiki",
-      "url" : "http:\/\/en.wikipedia.org\/wiki\/Special:Search?search=123456&go=Go",
+      "url" : "http:\/\/en.wikipedia.org\/wiki\/Special:Search?search=${query}&go=Go",
       "siteName" : "Wikipedia"
     }
   ]
