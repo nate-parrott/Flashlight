@@ -3,5 +3,7 @@
    "displayName": "Search hummingbird.me",
    "description": "Search hummingbird.me",
    "examples": ["hummingbird evangelion", "hb steins"],
-   "categories": ["Search", "Media"]
+   "categories": ["Search", "Media"],
+   "creator_name": "Matthew Dias",
+   "creator_url": "http://www.matthewdias.me"
 }
