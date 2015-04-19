@@ -1,0 +1,4 @@
+allocine ~allocinequery(Braindead)
+allocine ~allocinequery(Ken Loach)
+search allocine ~allocinequery(Bad Taste)
+search allocine for ~allocinequery(Profondo Rosso)
