@@ -46,6 +46,7 @@ Huge thanks to everyone who's contributed translations:
  - [Kejk](http://github.com/kejk) for Swedish
  - [majk-p](https://github.com/majk-p) for Polish
  - [jurgemaister](https://github.com/jurgemaister) for Norweigan
+ - [/vlcekmi3](https://github.com/vlcekmi3) for Czech
  
 
 If it's not translated into your native language yet, you should [consider helping us localize.](https://github.com/nate-parrott/Flashlight/wiki/Internationalization)
