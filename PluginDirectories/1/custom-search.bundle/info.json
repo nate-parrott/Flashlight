@@ -1,6 +1,6 @@
 {
   "categories" : [
-    "Utilities", "Search"
+    "Utilities", "Search", "Meta"
   ],
   "displayName" : "Custom Search",
   "name" : "custom-search",

@@ -35,7 +35,7 @@ def results(fields, original_query):
 	title = u"{0} {1}".format(action, name)
 	from centered_text import centered_text
 	if name == phone:
-		html = u"<p><span class='icon-phone'></span> {0}</p>".format(centered_text(phone))
+		html = centered_text(u"<p><span class='icon-phone'></span> {0}</p>".format(phone))
 	else:
 		html = centered_text(u" <h1>{0}</h1> <p><span class='icon-phone'></span> {1}</p>  ".format(name, phone))
 	return {

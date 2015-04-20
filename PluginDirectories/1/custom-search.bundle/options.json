@@ -12,7 +12,7 @@
 		},
 		{
 			"type": "hint",
-			"text": "To create a custom search shortcut for a specific search engine or website, search for '123456' on that site, and copy the URL into the 'Search URL' cell."
+			"text": "To create a custom search shortcut for a specific search engine or website, search for '123456' using that site, and copy the URL into the 'Search URL' cell."
 		}
 	]
 }

@@ -224,7 +224,7 @@ class ConsoleUpload(webapp2.RequestHandler):
 
 class BrowseHandler(webapp2.RequestHandler):
 		def get(self):
-				cats = list(categories())
+				cats = list(sorted(categories()))
 				if 'Featured' in cats:
 						cats.remove('Featured')
 				cats.insert(0, 'Featured')

@@ -1,5 +1,5 @@
 {
-    "name": "cal",
+    "name": "calculator",
     "displayName": "Calculator",
     "description": "The easiest way",
     "examples": ["cal 2+3", "cal (4*5)+2"],

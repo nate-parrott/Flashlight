@@ -101,6 +101,27 @@
             "categories": [
                 "Search"
             ],
+            "creator_name": "T0mab",
+            "creator_url": "https://github.com/t0mab",
+            "description": "Searches Allocine",
+            "description_fr": "Rechercher sur Allocine",
+            "displayName": "Allocine search",
+            "displayName_fr": "Allocine rechercher",
+            "examples": [
+                "allocine Braindead",
+                "allocine Ken Loach "
+            ],
+            "examples_fr": [
+                "allocine La Haine",
+                "allocine Jeunet"
+            ],
+            "name": "allocine",
+            "zip_url": "allocine.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
             "description": "Search Amazon (shortcut: a).",
             "description_de": "Durchsuche Amazon (shortcut: a).",
             "displayName": "Amazon Search",
@@ -303,6 +324,21 @@
             ],
             "name": "bye404",
             "zip_url": "bye404.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "lmorel3",
+            "creator_url": "lmorel3.fr",
+            "description": "The easiest way",
+            "displayName": "Calculator",
+            "examples": [
+                "cal 2+3",
+                "cal (4*5)+2"
+            ],
+            "name": "calculator",
+            "zip_url": "calculator.zip"
         },
         {
             "categories": [
@@ -530,7 +566,8 @@
         {
             "categories": [
                 "Utilities",
-                "Search"
+                "Search",
+                "Meta"
             ],
             "description": "Add your own shortcuts to search any site on the web.",
             "displayName": "Custom Search",
@@ -1183,6 +1220,22 @@
         },
         {
             "categories": [
+                "Utilities",
+                "System"
+            ],
+            "creator_name": "Spencer Clem",
+            "creator_url": "https://github.com/stclem93",
+            "description": "Quickly show/hide hidden files and folders in OSX",
+            "displayName": "Show hidden files",
+            "examples": [
+                "show hidden files",
+                "hide hidden files"
+            ],
+            "name": "hiddenfiles",
+            "zip_url": "hiddenfiles.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "description": "Temporarily hide all the icons on your desktop.",
@@ -1209,6 +1262,20 @@
             ],
             "name": "hoogle",
             "zip_url": "hoogle.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Media"
+            ],
+            "description": "Search hummingbird.me",
+            "displayName": "Search hummingbird.me",
+            "examples": [
+                "hummingbird evangelion",
+                "hb steins"
+            ],
+            "name": "hummingbird",
+            "zip_url": "hummingbird.zip"
         },
         {
             "categories": [
@@ -1667,6 +1734,20 @@
             ],
             "name": "npm",
             "zip_url": "npm.zip"
+        },
+        {
+            "categories": [
+                "Search",
+                "Media"
+            ],
+            "description": "Search nyaa.se for anime torrents",
+            "displayName": "Search nyaa.se",
+            "examples": [
+                "search nyaa for cowboy bebop",
+                "nyaa samurai champloo"
+            ],
+            "name": "nyaa",
+            "zip_url": "nyaa.zip"
         },
         {
             "categories": [
@@ -2476,10 +2557,17 @@
                 "Featured"
             ],
             "description": "Updated weather plugin with both days and hour-by-hour forcast.",
+            "description_fr": "Affiche les informations m\u00e9t\u00e9ologiques",
             "displayName": "Weather",
+            "displayName_fr": "M\u00e9t\u00e9o",
             "examples": [
                 "weather brooklyn",
                 "how's the weather in san francisco?"
+            ],
+            "examples_fr": [
+                "temps paris",
+                "Quel est le climat \u00e0 Dunkerque ?",
+                "M\u00e9t\u00e9o pour lille"
             ],
             "name": "weather",
             "zip_url": "weather.zip"
