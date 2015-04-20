@@ -5,7 +5,7 @@ def results(fields, original_query):
 		for prefix in [w.lower() + u' ' for w in [keyword['keyword'], keyword['siteName']]]:
 			if original_query.lower().startswith(prefix):
 				query = original_query[len(prefix):]
-				url = keyword['url'].replace('123456', urllib.quote(query.encode('utf-8'))).encode('utf-8')
+				url = keyword['url'].replace('${query}', urllib.quote(query.encode('utf-8'))).encode('utf-8')
 				return {
 					"webview_user_agent": "Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)",
 					"webview_links_open_in_browser": True,
