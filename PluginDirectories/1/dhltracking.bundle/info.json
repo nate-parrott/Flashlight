@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "DHL Sendungsverfolgung",
+  "name" : "dhltracking.bundle",
+  "description" : "Verfolgt dein DHL Paket.",
+  "examples" : [
+    "dhl <paketnummer>",
+    "dhl 92478293748923"
+  ]
+}
