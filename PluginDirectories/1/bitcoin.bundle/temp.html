@@ -55,10 +55,9 @@
           setTimeout(function() {
              $.ajax({
                 url: url,
-                success: function(resultText) {
-                   console.log(resultText)
-                   var res = JSON.parse(resultText);
-                   var price = res.ticker.last;
+                success: function(result) {
+                   console.log(result)
+                   var price = result.last;
                    $("#money").text(symbol + (price * count));
                 }
              })

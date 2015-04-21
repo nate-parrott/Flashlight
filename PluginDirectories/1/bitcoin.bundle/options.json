@@ -1,0 +1,31 @@
+{
+    "options": [
+        {
+            "text": "Currency",
+            "type": "dropdown",
+            "key": "currency_code",
+            "options": [
+            	  {"text":"Automatic", "value" : false},
+				  {"text":"AUD", "value": "AUD"},
+				  {"text":"BRL", "value": "BRL"},
+				  {"text":"CAD", "value": "CAD"},
+				  {"text":"CHF", "value": "CHF"},
+				  {"text":"CNY", "value": "CNY"},
+				  {"text":"EUR", "value": "EUR"},
+				  {"text":"GBP", "value": "GBP"},
+				  {"text":"IDR", "value": "IDR"},
+				  {"text":"ILS", "value": "ILS"},
+				  {"text":"MXN", "value": "MXN"},
+				  {"text":"NOK", "value": "NOK"},
+				  {"text":"NZD", "value": "NZD"},
+				  {"text":"PLN", "value": "PLN"},
+				  {"text":"RON", "value": "RON"},
+				  {"text":"RUB", "value": "RUB"},
+				  {"text":"SEK", "value": "SEK"},
+				  {"text":"SGD", "value": "SGD"},
+				  {"text":"USD", "value": "USD"},
+				  {"text":"ZAR", "value": "ZAR"}
+            ]
+        }
+    ]
+}
