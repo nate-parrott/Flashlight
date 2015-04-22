@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "idealo Preisvergleich",
+  "name" : "idealo.bundle",
+  "description" : "Preise vergleichen auf idealo.de",
+  "examples" : [
+    "idealo <suchbegriff>",
+    "idealo iphone 6"
+  ],
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
+}
