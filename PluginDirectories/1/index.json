@@ -106,7 +106,7 @@
             "description": "Searches Allocine",
             "description_fr": "Rechercher sur Allocine",
             "displayName": "Allocine search",
-            "displayName_fr": "Allocine rechercher",
+            "displayName_fr": "Recherche Allocine",
             "examples": [
                 "allocine Braindead",
                 "allocine Ken Loach "
@@ -495,6 +495,45 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "creator_name": "T0mab",
+            "creator_url": "https://github.com/t0mab",
+            "description": "Track a colissimo parcel",
+            "description_de": "Colissimo paket verfolgen",
+            "description_es": "Seguimiento de un colissimo paquete",
+            "description_fr": "Suivre un colissimo",
+            "description_it": "Monitoraggio dei pacchi colissimo",
+            "description_nl": "Colissimo pakket volgen",
+            "displayName": "Colissimo Parcel Tracker",
+            "displayName_de": "Colissimo paket verfolgen",
+            "displayName_es": "Seguimiento colissimo",
+            "displayName_fr": "Suivi colissimo",
+            "displayName_it": "Monitoraggio colissimo",
+            "displayName_nl": "Colissimo volgen",
+            "examples": [
+                "colissimo <parcelnumber>"
+            ],
+            "examples_de": [
+                "colissimo <packetnummer>"
+            ],
+            "examples_es": [
+                "colissimo <n\u00famerodepaquete>"
+            ],
+            "examples_fr": [
+                "colissimo <num\u00e9rodecolis>"
+            ],
+            "examples_it": [
+                "colissimo <numerodicollo>"
+            ],
+            "examples_nl": [
+                "colissimo <pakketnummer>"
+            ],
+            "name": "colisimo",
+            "zip_url": "colisimo.zip"
+        },
+        {
+            "categories": [
                 "Design",
                 "Developer"
             ],
@@ -645,6 +684,19 @@
             ],
             "name": "deviantart",
             "zip_url": "deviantart.zip"
+        },
+        {
+            "categories": [
+                "Information"
+            ],
+            "description": "Verfolgt dein DHL Paket.",
+            "displayName": "DHL Sendungsverfolgung",
+            "examples": [
+                "dhl <paketnummer>",
+                "dhl 92478293748923"
+            ],
+            "name": "dhltracking",
+            "zip_url": "dhltracking.zip"
         },
         {
             "categories": [
@@ -1268,6 +1320,8 @@
                 "Search",
                 "Media"
             ],
+            "creator_name": "Matthew Dias",
+            "creator_url": "http://www.matthewdias.me",
             "description": "Search hummingbird.me",
             "displayName": "Search hummingbird.me",
             "examples": [
@@ -1740,6 +1794,8 @@
                 "Search",
                 "Media"
             ],
+            "creator_name": "Matthew Dias",
+            "creator_url": "http://www.matthewdias.me",
             "description": "Search nyaa.se for anime torrents",
             "displayName": "Search nyaa.se",
             "examples": [

@@ -50,7 +50,7 @@ frame = NSScreen.mainScreen().frame()
 window = Window.alloc().initWithContentRect_styleMask_backing_defer_(frame, NSBorderlessWindowMask, NSBackingStoreBuffered, False)
 window.setLevel_(NSMainMenuWindowLevel+2)
 
-text = sys.argv[1]
+text = sys.argv[1].decode('utf-8')
 
 def attributed_text_at_size(text, size):
 	paragraph_style = NSMutableParagraphStyle.new()
