@@ -1,0 +1,7 @@
+espn @sport(nhl)
+espn scores ~sport(nfl)
+~sport(mlb) scores
+~sport(nba) espn scores
+
+
+
