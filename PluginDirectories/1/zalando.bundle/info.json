@@ -1,0 +1,17 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "Zalando",
+  "name" : "zalando",
+  "description" : "Finde deinen Style bei Zalando",
+  "examples" : [
+    "zalando puma schuhe",
+    "zalando diesel hose",
+    "zalando BOSS Hemd sale"
+  ],
+  "openPreferencesOnInstall": true,
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
+
+}

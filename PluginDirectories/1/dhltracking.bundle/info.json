@@ -8,5 +8,7 @@
   "examples" : [
     "dhl <paketnummer>",
     "dhl 92478293748923"
-  ]
+  ],
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
 }

@@ -1,0 +1,38 @@
+{
+  "options": [
+    {
+      "type": "hint",
+      "text": "Wähle deine bevorzugte Kategorie und dein Land."
+    },
+    {
+      "type": "dropdown",
+      "text": "Kategorie:",
+      "key": "category",
+      "options": [
+        {"text": "Alle", "value": "katalog"},
+        {"text": "Damen", "value": "damen"},
+        {"text": "Herren", "value": "herren"},
+        {"text": "Kinder", "value": "kinder"}
+      ]
+    },
+    {
+      "type": "dropdown",
+      "text": "Land:",
+      "key": "country",
+      "options": [
+        {"text": "Deutschland", "value": "de"},
+        {"text": "Österreich", "value": "at"},
+        {"text": "Schweiz", "value": "ch"}
+      ]
+    },
+    {
+      "type": "checkmark",
+      "text": "Nur Sale Angebote",
+      "key": "sale"
+    },
+    {
+      "type": "hint",
+      "text": "Du kannst auch den Suchbegriff 'Sale' benutzen um individuell nach Angeboten zu suchen. Zum Beispiel \"zalando sale nike schuhe\" sucht automatisch nur Sale Angebote zu \"nike schuhe\"."
+    }
+  ]
+}
