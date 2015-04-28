@@ -1,0 +1,7 @@
+{
+	"name": "lastfm",
+	"displayName": "Last.fm Search",
+	"description": "Search Last.fm from Spotlight.",
+	"examples": ["lastfm flashlight", "lfm flashlight"],
+	"categories": ["Search"]
+}

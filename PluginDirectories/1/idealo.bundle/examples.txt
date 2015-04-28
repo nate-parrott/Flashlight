@@ -1,0 +1,1 @@
+idealo ~idealoquery(query here)

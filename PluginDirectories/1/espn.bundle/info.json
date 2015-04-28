@@ -1,0 +1,9 @@
+{
+    "name": "espn", 
+    "displayName": "ESPN Scores",
+    "description": "Gets latest sports scores from espn.com",
+    "examples": ["espn nhl", "espn nfl"],
+    "categories": ["information"],
+    "creator_name": "Cody Balos",
+    "creator_url": "https://github.com/cojomojo"
+}
