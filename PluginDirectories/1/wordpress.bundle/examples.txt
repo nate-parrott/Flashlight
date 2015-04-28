@@ -1,0 +1,2 @@
+wp ~wp_func(the_content)
+wordpress ~wp_func(the_content)
