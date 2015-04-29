@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Developer"
+  ],
+  "displayName" : "Search Jira",
+  "name" : "jira",
+  "description" : "This plugin searches an Atlassian Jira instance",
+  "examples" : [
+    "jira PROJ-123",
+    "jira proj: something",
+    "jira something in proj",
+    "jira something and other things"
+  ]
+}
