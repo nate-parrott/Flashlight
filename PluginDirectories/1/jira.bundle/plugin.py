@@ -23,13 +23,17 @@ def results(parsed, original_query):
             search_url = host + url + basic + search_key
 		
 	    regexJIRA = re.compile("^ *(?P<jira>[a-zA-Z]+-\d+) *$")
-	    regexPROJ = re.compile("^ *(?P<project>[a-zA-Z]{3,}):(.*)")
+	    regexPROJ1 = re.compile("^ *(?P<project>[a-zA-Z]{3,}):(.*)")
+	    regexPROJ2 = re.compile("^ *(?P<project>[a-zA-Z]{3,}): *$")
 	    searchJIRA = regexJIRA.search(parsed[key].encode('UTF-8'))
-	    searchPROJ = regexPROJ.search(parsed[key].encode('UTF-8'))
+	    searchPROJ1 = regexPROJ1.search(parsed[key].encode('UTF-8'))
+	    searchPROJ2 = regexPROJ2.search(parsed[key].encode('UTF-8'))
 	    if searchJIRA:
 		search_url = host + "/browse/" + urllib.quote_plus(searchJIRA.group(0).encode('UTF-8')) + basic
-	    if searchPROJ:
-		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ.group(1).encode('UTF-8') + " AND text ~ \"" + searchPROJ.group(2).encode('UTF-8') + "\"  ORDER BY updated DESC")
+	    if searchPROJ1:
+		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ1.group(1).encode('UTF-8') + " AND text ~ \"" + searchPROJ1.group(2).encode('UTF-8') + "\"  ORDER BY updated DESC")
+	    if searchPROJ2:
+		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ2.group(1).encode('UTF-8') + " ORDER BY updated DESC")
 	    html = """
                 <script>
                 setTimeout(function() {
