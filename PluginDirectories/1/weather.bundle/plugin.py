@@ -17,24 +17,23 @@ def use_metric():
     return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
 
 
-# Adds the local country code to the city given if not specified
-# By specified, we mean "london,CA" format.
-def localise_location(location):
+# Extract the country code from the location if given, or return local if not.
+def get_country(location):
     country_codes = AppKit.NSLocale.ISOCountryCodes()
     current_country = AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleCountryCode)
 
     if ("," in location):
-        if location.upper().endswith(tuple(country_codes)):
-            return location
-        else:  #Comma, but invalid country, so remove it
-            location = location.split(",")[0]
-    return location + "," + current_country
+        for country in country_codes:
+            if location.split(",")[1].strip().upper() == country:
+                return country
+
+    return current_country
 
 
 def results(parsed, original_query):
 
     location = parsed['~location']
-    location = localise_location(location)
+    country = get_country(location)
     if 'time/now' in parsed:
         time = 'now'
     else:
@@ -58,6 +57,7 @@ def results(parsed, original_query):
     html = (
         open("weather.html").read().decode('utf-8')
         .replace("<!--LOCATION-->", location)
+        .replace("<!--COUNTRY-->", country)
         .replace("<!--UNITS-->", "metric" if use_metric() else "imperial")
         .replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
         .replace("<!--TIME-->", time)
