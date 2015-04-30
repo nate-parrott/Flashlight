@@ -1,0 +1,2 @@
+fntoggle
+toggle function keys
