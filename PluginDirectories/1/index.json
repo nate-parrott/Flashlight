@@ -754,6 +754,23 @@
         },
         {
             "categories": [
+                "Search",
+                "Language"
+            ],
+            "displayName": "Dizionario",
+            "examples": [
+                "sinonimi casa",
+                "significato televisione",
+                "d computer"
+            ],
+            "name": "dizionario",
+            "preferred_locales": [
+                "it"
+            ],
+            "zip_url": "dizionario.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Open Documentations",
@@ -888,6 +905,21 @@
         },
         {
             "categories": [
+                "information"
+            ],
+            "creator_name": "Cody Balos",
+            "creator_url": "https://github.com/cojomojo",
+            "description": "Gets latest sports scores from espn.com",
+            "displayName": "ESPN Scores",
+            "examples": [
+                "espn nhl",
+                "espn nfl"
+            ],
+            "name": "espn",
+            "zip_url": "espn.zip"
+        },
+        {
+            "categories": [
                 "Utilities"
             ],
             "creator_name": "Richard van der Dys",
@@ -956,6 +988,21 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
+            "description": "Track your order.",
+            "displayName": "FedEx",
+            "examples": [
+                "fedex <tracking number>",
+                "fedex 449044304137821"
+            ],
+            "name": "fedex",
+            "zip_url": "fedex.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Meta"
             ],
@@ -986,6 +1033,21 @@
             ],
             "name": "flickr",
             "zip_url": "flickr.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Yatharth Agarwal",
+            "creator_url": "https://github.com/YatharthROCK/Flashlight",
+            "description": "Toggles the behaviour of your function keys",
+            "displayName": "Function Key Toggle",
+            "examples": [
+                "fntoggle",
+                "toggle function keys"
+            ],
+            "name": "fntoggle",
+            "zip_url": "fntoggle.zip"
         },
         {
             "categories": [
@@ -1335,6 +1397,21 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
+            "description": "Preise vergleichen auf idealo.de",
+            "displayName": "idealo Preisvergleich",
+            "examples": [
+                "idealo <suchbegriff>",
+                "idealo iphone 6"
+            ],
+            "name": "idealo",
+            "zip_url": "idealo.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Featured"
             ],
@@ -1475,6 +1552,21 @@
             ],
             "name": "jd",
             "zip_url": "jd.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "This plugin searches an Atlassian Jira instance",
+            "displayName": "Search Jira",
+            "examples": [
+                "jira PROJ-123",
+                "jira proj: something",
+                "jira something in proj",
+                "jira something and other things"
+            ],
+            "name": "jira",
+            "zip_url": "jira.zip"
         },
         {
             "categories": [
@@ -2807,6 +2899,37 @@
             ],
             "name": "wolfram-alpha",
             "zip_url": "wolfram-alpha.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "creator_name": "Esteban (TCattd)",
+            "creator_url": "http://www.attitude.cl",
+            "description": "Search WordPress's functions (using wpseek).",
+            "displayName": "WordPress functions",
+            "examples": [
+                "wp the_content"
+            ],
+            "name": "wordpress",
+            "zip_url": "wordpress.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Language"
+            ],
+            "creator_name": "Sergio Padrino",
+            "creator_url": "http://sergiou87.github.io",
+            "description": "Search words in WordReference.com (wr)",
+            "displayName": "WordReference.com",
+            "examples": [
+                "wr enes hello",
+                "wr esen hola",
+                "wr enzh dog"
+            ],
+            "name": "wordreference",
+            "zip_url": "wordreference.zip"
         },
         {
             "categories": [

@@ -3,7 +3,7 @@
     "Search"
   ],
   "displayName" : "idealo Preisvergleich",
-  "name" : "idealo.bundle",
+  "name" : "idealo",
   "description" : "Preise vergleichen auf idealo.de",
   "examples" : [
     "idealo <suchbegriff>",

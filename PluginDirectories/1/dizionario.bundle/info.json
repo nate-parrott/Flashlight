@@ -1,6 +1,7 @@
 {
-	"name": "italiandictionary",
+	"name": "dizionario",
 	"displayName": "Dizionario",
 	"examples": ["sinonimi casa", "significato televisione", "d computer"],
-	"categories": ["Search"]
+	"categories": ["Search", "Language"],
+  "preferred_locales": ["it"]
 }

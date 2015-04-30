@@ -1,5 +1,5 @@
 {
-	"name": "wordpress functions",
+	"name": "wordpress",
 	"displayName": "WordPress functions",
 	"description": "Search WordPress's functions (using wpseek).",
 	"examples": ["wp the_content"],
