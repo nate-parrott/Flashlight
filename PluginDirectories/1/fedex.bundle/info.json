@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "FedEx",
+  "name" : "fedex.bundle",
+  "description" : "Track your order.",
+  "examples" : [
+    "fedex <tracking number>",
+    "fedex 449044304137821"
+  ],
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
+}

@@ -1,0 +1,4 @@
+wp ~wp_func(the_content)
+wpf ~wp_func(the_content)
+wps ~wp_func(the_content)
+wordpress ~wp_func(the_content)

@@ -53,7 +53,7 @@ If it's not translated into your native language yet, you should [consider helpi
 
 The iOS-style switches in the app (`ITSwitch.h/m`) are [ITSwitch](https://github.com/iluuu1994/ITSwitch), by [Ilija Tovilo](https://github.com/iluuu1994).
 
-The code injection system is forked from [Norio Nomura](Norio Nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
+The code injection system is forked from [Norio Nomura](https://github.com/norio-nomura)'s [EasySIMBL](https://github.com/norio-nomura/EasySIMBL).
 
 The [ZipZap library by Glen Low](https://github.com/pixelglow/zipzap) is used internally.
 

@@ -1,0 +1,9 @@
+{
+    "name": "fntoggle",
+    "displayName": "Function Key Toggle",
+    "description": "Toggles the behaviour of your function keys",
+    "examples": ["fntoggle", "toggle function keys"],
+    "categories": ["Utilities"],
+    "creator_name": "Yatharth Agarwal",
+    "creator_url": "https://github.com/YatharthROCK/Flashlight"
+}
