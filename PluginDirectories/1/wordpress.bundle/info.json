@@ -1,0 +1,9 @@
+{
+	"name": "wordpress functions",
+	"displayName": "WordPress functions",
+	"description": "Search WordPress's functions (using wpseek).",
+	"examples": ["wp the_content"],
+	"categories": ["Developer"],
+	"creator_name": "Esteban (TCattd)",
+	"creator_url": "http://www.attitude.cl"
+}
