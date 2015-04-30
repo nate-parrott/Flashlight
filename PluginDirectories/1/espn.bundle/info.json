@@ -3,7 +3,7 @@
     "displayName": "ESPN Scores",
     "description": "Gets latest sports scores from espn.com",
     "examples": ["espn nhl", "espn nfl"],
-    "categories": ["information"],
+    "categories": ["Information"],
     "creator_name": "Cody Balos",
     "creator_url": "https://github.com/cojomojo"
 }
