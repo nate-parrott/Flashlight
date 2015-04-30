@@ -1,0 +1,6 @@
+{
+	"name": "italiandictionary",
+	"displayName": "Dizionario",
+	"examples": ["sinonimi casa", "significato televisione", "d computer"],
+	"categories": ["Search"]
+}

@@ -689,6 +689,8 @@
             "categories": [
                 "Information"
             ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
             "description": "Verfolgt dein DHL Paket.",
             "displayName": "DHL Sendungsverfolgung",
             "examples": [
@@ -1570,6 +1572,19 @@
             ],
             "name": "largetext",
             "zip_url": "largetext.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "description": "Search Last.fm from Spotlight.",
+            "displayName": "Last.fm Search",
+            "examples": [
+                "lastfm flashlight",
+                "lfm flashlight"
+            ],
+            "name": "lastfm",
+            "zip_url": "lastfm.zip"
         },
         {
             "categories": [
@@ -2956,6 +2971,23 @@
             ],
             "name": "youtube",
             "zip_url": "youtube.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
+            "description": "Finde deinen Style bei Zalando",
+            "displayName": "Zalando",
+            "examples": [
+                "zalando puma schuhe",
+                "zalando diesel hose",
+                "zalando BOSS Hemd sale"
+            ],
+            "name": "zalando",
+            "openPreferencesOnInstall": true,
+            "zip_url": "zalando.zip"
         },
         {
             "categories": [

@@ -1,0 +1,5 @@
+sinonimi ~treccaniquery(a)
+d ~treccaniquery(a b)
+significato ~treccaniquery(a b c)
+dizionario ~treccaniquery(a)
+~treccaniquery(a) dizionario
