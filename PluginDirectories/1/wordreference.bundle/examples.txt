@@ -1,0 +1,3 @@
+wr ~mode(enes) ~word(hello)
+wr ~mode(esen) ~word(hola)
+wr ~mode(enzh) ~word(dog)

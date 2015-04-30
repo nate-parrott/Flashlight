@@ -1,0 +1,9 @@
+{
+	"name": "wordreference",
+	"displayName": "WordReference.com",
+	"description": "Search words in WordReference.com (wr)",
+	"examples": ["wr enes hello", "wr esen hola", "wr enzh dog"],
+	"categories": ["Utilities", "Language"],
+	"creator_name": "Sergio Padrino",
+	"creator_url": "http://sergiou87.github.io"
+}
