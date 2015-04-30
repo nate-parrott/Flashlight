@@ -149,7 +149,11 @@ typedef void (^PrefEditorWindowChangeFunction)(id sender);
         }
         return checkmark;
     } else if ([type isEqualToString:@"text"]) {
-        NSTextField *field = [NSTextField new];
+        Class fieldClass = [NSTextField class];
+        if ([option[@"password"] boolValue]) {
+            fieldClass = [NSSecureTextField class];
+        }
+        NSTextField *field = [fieldClass new];
         [field addConstraint:[NSLayoutConstraint constraintWithItem:field attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:200]];
         field.placeholderString = option[@"placeholder"];
         field.continuous = YES;
