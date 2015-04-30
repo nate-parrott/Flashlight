@@ -135,13 +135,22 @@
 			map = new google.maps.Map(document.getElementById('map-canvas'));
 		}
 
-		function parseDateFromResponse(responseText){
-			var time = responseText.split('\n')[10].trim().split(' ')[1];
-			return time.split(':')[0] + ':' + time.split(':')[1];
+		function parseDateFromResponse(ts, response){
+			// We pretend that the date is UTC, to avoid having to set a timezone
+			// As the date is only used within this scope, thie should be fine.
+			var utc_seconds = (ts + response.rawOffset + response.dstOffset);
+			var date = new Date(0);
+			date.setUTCSeconds(utc_seconds);
+			var hour = date.getUTCHours();
+			var minute = date.getUTCMinutes();
+			if (hour < 10) { hour = "0" + hour};
+			if (minute<10) { minute = "0" + minute};
+			return hour + ":" + minute;
 		};
-		function parseOffsetFromResponse(responseText){
-			var time = responseText.split('\n')[7].trim().split('>')[1].split('<')[0];
-			return time;
+
+		function parseOffsetFromResponse(response){
+			//This rounds to 1DP, but only if we need to as most offsets are whole hours.
+			return Math.round((response.rawOffset + response.dstOffset) / 360) / 10;
 		};
 
 		function getCoordinateFromAddress(address) {
@@ -157,11 +166,16 @@
 		}
 
 		function getTimeZoneFromCoordinates(lat, long, title){
-			var url = "http://www.earthtools.org/timezone-1.1/"+lat+"/"+long;
+			var ts = Math.round(Date.now() / 1000); //Seconds since Epoch
+			var url = "https://maps.googleapis.com/maps/api/timezone/json?location=" + lat + "," + long + "&timestamp=" + ts;
 			var xhr = new XMLHttpRequest();
 			xhr.onload=function(e){
-				
-				showResult(title, parseDateFromResponse(this.responseText), parseOffsetFromResponse(this.responseText));
+				var resp = JSON.parse(this.responseText);
+				if (resp.status==="OK") {
+					showResult(title, parseDateFromResponse(ts, resp), parseOffsetFromResponse(resp));
+				} else {
+					showError();
+				}
 			}
 			xhr.open("GET",url,true);
 			xhr.send();
