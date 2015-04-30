@@ -94,6 +94,7 @@ typedef void (^EventCreationCallback)(BOOL success);
         if (dict[@"date"]) {
             NSDate *dueDate = [NSDate dateWithTimeIntervalSince1970:[dict[@"date"] doubleValue]];
             reminder.dueDateComponents = [[NSCalendar currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:dueDate];
+            [reminder addAlarm:[EKAlarm alarmWithRelativeOffset:0]];
         }
         callback([store saveReminder:reminder commit:YES error:nil]);
     }];
