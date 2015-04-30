@@ -1,0 +1,2 @@
+jira ~query(query here)
+jira ~query(query here) in ~project(project here)
