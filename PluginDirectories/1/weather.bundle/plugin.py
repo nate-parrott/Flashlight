@@ -17,9 +17,24 @@ def use_metric():
     return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
 
 
+# Adds the local country code to the city given if not specified
+# By specified, we mean "london,CA" format.
+def localise_location(location):
+    country_codes = AppKit.NSLocale.ISOCountryCodes()
+    current_country = AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleCountryCode)
+
+    if ("," in location):
+        if location.upper().endswith(tuple(country_codes)):
+            return location
+        else:  #Comma, but invalid country, so remove it
+            location = location.split(",")[0]
+    return location + "," + current_country
+
+
 def results(parsed, original_query):
 
     location = parsed['~location']
+    location = localise_location(location)
     if 'time/now' in parsed:
         time = 'now'
     else:
