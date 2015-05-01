@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities", "Developer"
+  ],
+  "displayName" : "dig",
+  "name" : "dig",
+  "description" : "Search dns by Google Apps Toolbox",
+  "examples" : [
+    "dig www.google.com",
+    "dig www.yahoo.com"
+  ]
+}
