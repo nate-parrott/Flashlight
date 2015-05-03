@@ -2,8 +2,10 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     settings = json.load(open('preferences.json'))
+    catgory_mapping = json.load(open('category-mapping.json'))
+
     country = settings.get('country')
-    category = settings.get('category')
+    category = catgory_mapping[country][settings.get('category')]
     sale = settings.get('sale')
     sale_filter = ""
     if sale:
@@ -38,4 +40,4 @@ def results(parsed, original_query):
 
 def run(url):
     import os
-    os.system('open "{0}"'.format(url))
+    os.system('open "{0}"'.format(url.replace("https://m.", "https://www.")))
