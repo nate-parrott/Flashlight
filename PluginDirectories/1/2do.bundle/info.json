@@ -1,7 +1,7 @@
 {
-    "name": "tyme",
-    "displayName": "Tyme",
-    "description": "Create tasks in Tyme",
+    "name": "2do",
+    "displayName": "2Do",
+    "description": "Create tasks in 2Do",
     "examples": ["add task Pay bills", "tyme Check emails #office #home", "tyme Refactor code > Plugin #important, not urgent"],
     "categories": ["Utilities"],
     "creator_name": "Sven Oos",
