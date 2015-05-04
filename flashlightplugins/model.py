@@ -1,5 +1,6 @@
 from google.appengine.ext import ndb
 import search
+from google.appengine.api import memcache
 
 class Plugin(ndb.Model):
     info_json = ndb.TextProperty()
@@ -35,6 +36,13 @@ class Plugin(ndb.Model):
         else:
             return None
 
+def total_plugins_count():
+		key = "total_plugins_count"
+		count = memcache.get(key)
+		if count == None:
+			count = Plugin.query(Plugin.approved == True).count()
+			memcache.set(key, count, 2 * 60 * 60) # cache for 2 hours
+		return count
 
 def increment_download_count(name):
     key = Plugin.by_name(name).key

@@ -252,7 +252,7 @@
             "categories": [
                 "Information"
             ],
-            "description": "Show latest Bitcoin price",
+            "description": "Show latest Bitcoin price from bitcoinaverage.com",
             "description_de": "Zeigt den aktuellen Bitcoin Preis an.",
             "description_fr": "Affiche les derniers prix du Bitcoin",
             "displayName": "Bitcoin Price",
@@ -721,6 +721,20 @@
         },
         {
             "categories": [
+                "Utilities",
+                "Developer"
+            ],
+            "description": "Search dns by Google Apps Toolbox",
+            "displayName": "dig",
+            "examples": [
+                "dig www.google.com",
+                "dig www.yahoo.com"
+            ],
+            "name": "dig",
+            "zip_url": "dig.zip"
+        },
+        {
+            "categories": [
                 "Language"
             ],
             "description": "Multimedialny s\u0142ownik angielskiego",
@@ -1184,6 +1198,20 @@
             ],
             "name": "github",
             "zip_url": "github.zip"
+        },
+        {
+            "categories": [
+                "Utilities",
+                "Developer"
+            ],
+            "description": "Search Google Trends",
+            "displayName": "GoogleTrends",
+            "examples": [
+                "trends vim,emacs",
+                "trend python,go"
+            ],
+            "name": "google-trends",
+            "zip_url": "google-trends.zip"
         },
         {
             "categories": [
@@ -2634,6 +2662,22 @@
             ],
             "name": "tyda",
             "zip_url": "tyda.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Sven Oos",
+            "creator_url": "https://github.com/svoos",
+            "description": "Create a new task in Tyme",
+            "displayName": "Tyme",
+            "examples": [
+                "tyme Pay bills",
+                "tyme check emails #office",
+                "tyme Refactor code @My Project"
+            ],
+            "name": "tyme",
+            "zip_url": "tyme.zip"
         },
         {
             "categories": [

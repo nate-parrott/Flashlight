@@ -18,7 +18,7 @@ from google.appengine.api import memcache
 from google.appengine.api import users
 import bs4
 import model
-from model import Plugin
+from model import Plugin, total_plugins_count
 from directory import directory_html, info_dict_for_plugin
 from util import get_localized_key
 import query_updates
@@ -46,7 +46,8 @@ class MainHandler(webapp2.RequestHandler):
 				
 		def render(self):
 				args = {
-					"featured_html": directory_html(category='Featured', browse=True)
+					"featured_html": directory_html(category='Featured', browse=True),
+					"plugins_count_rounded": int(total_plugins_count() / 10) * 10
 				}
 				return template("index.html", args)
 

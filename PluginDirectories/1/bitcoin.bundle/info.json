@@ -3,7 +3,7 @@
 	"displayName": "Bitcoin Price",
 	"displayName_fr": "Prix du Bitcoin",
 	"displayName_de": "Bitcoin Preis",
-	"description": "Show latest Bitcoin price from bitcoinaverage.com,
+	"description": "Show latest Bitcoin price from bitcoinaverage.com",
 	"description_fr": "Affiche les derniers prix du Bitcoin",
 	"description_de": "Zeigt den aktuellen Bitcoin Preis an.",
 	"examples": ["bitcoin", "btc", "2 bitcoin", "2 btc"],

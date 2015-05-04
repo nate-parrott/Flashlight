@@ -1,8 +1,8 @@
 {
-    "name": "tyme", // this must be the same as your folder name
+    "name": "tyme",
     "displayName": "Tyme",
     "description": "Create a new task in Tyme",
-    "examples": ["tyme Pay bills", "tyme check emails #office", "tyme Refactor code @My Project"], // these appear by your plugin's description
+    "examples": ["tyme Pay bills", "tyme check emails #office", "tyme Refactor code @My Project"],
     "categories": ["Utilities"],
     "creator_name": "Sven Oos",
     "creator_url": "https://github.com/svoos"
