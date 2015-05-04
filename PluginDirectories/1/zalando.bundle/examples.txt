@@ -1,1 +1,1 @@
-zalando ~zalandoquery(Puma Schuhe)
+zalando ~zalandoquery(Puma shoe)

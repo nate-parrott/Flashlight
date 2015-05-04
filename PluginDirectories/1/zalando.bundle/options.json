@@ -2,37 +2,102 @@
   "options": [
     {
       "type": "hint",
-      "text": "Wähle deine bevorzugte Kategorie und dein Land."
+      "text": "Choose your category and your country."
     },
     {
       "type": "dropdown",
-      "text": "Kategorie:",
+      "text": "Category:",
       "key": "category",
       "options": [
-        {"text": "Alle", "value": "katalog"},
-        {"text": "Damen", "value": "damen"},
-        {"text": "Herren", "value": "herren"},
-        {"text": "Kinder", "value": "kinder"}
+        {
+          "text": "All",
+          "value": "catalog"
+        },
+        {
+          "text": "Women",
+          "value": "women"
+        },
+        {
+          "text": "Men",
+          "value": "men"
+        },
+        {
+          "text": "Kids",
+          "value": "kids"
+        }
       ]
     },
     {
       "type": "dropdown",
-      "text": "Land:",
+      "text": "Country:",
       "key": "country",
       "options": [
-        {"text": "Deutschland", "value": "de"},
-        {"text": "Österreich", "value": "at"},
-        {"text": "Schweiz", "value": "ch"}
+        {
+          "text": "Deutschland",
+          "value": "de"
+        },
+        {
+          "text": "Österreich",
+          "value": "at"
+        },
+        {
+          "text": "Schweiz",
+          "value": "ch"
+        },
+        {
+          "text": "Nederland",
+          "value": "nl"
+        },
+        {
+          "text": "Great Britain",
+          "value": "co.uk"
+        },
+        {
+          "text": "Espana",
+          "value": "es"
+        },
+        {
+          "text": "Italia",
+          "value": "it"
+        },
+        {
+          "text": "France",
+          "value": "fr"
+        },
+        {
+          "text": "Poland",
+          "value": "pl"
+        },
+        {
+          "text": "Belgium",
+          "value": "be"
+        },
+        {
+          "text": "Sverige",
+          "value": "se"
+        },
+        {
+          "text": "Suomi",
+          "value": "fi"
+        },
+        {
+          "text": "Danmark",
+          "value": "dk"
+        },
+        {
+          "text": "Norge",
+          "value": "no"
+        }
       ]
     },
     {
       "type": "checkmark",
-      "text": "Nur Sale Angebote",
+      "text": "Only sale",
       "key": "sale"
     },
     {
       "type": "hint",
-      "text": "Du kannst auch den Suchbegriff 'Sale' benutzen um individuell nach Angeboten zu suchen. Zum Beispiel \"zalando sale nike schuhe\" sucht automatisch nur Sale Angebote zu \"nike schuhe\"."
+      "text": "Choose 'Sale' in your search tearm to get sale offers. For example \"zalando sale nike shoe\" search only for sale offers to \"nike schuhe\"."
     }
   ]
 }

@@ -1,0 +1,86 @@
+{
+  "de": {
+    "catalog": "katalog",
+    "women": "damen",
+    "men": "herren",
+    "kids": "kinder"
+  },
+  "at": {
+    "catalog": "katalog",
+    "women": "damen",
+    "men": "herren",
+    "kids": "kinder"
+  },
+  "ch": {
+    "catalog": "katalog",
+    "women": "damen",
+    "men": "herren",
+    "kids": "kinder"
+  },
+  "it": {
+    "catalog": "catalogo",
+    "women": "donna",
+    "men": "uoma",
+    "kids": "bambini"
+  },
+  "fr": {
+    "catalog": "catalogue",
+    "women": "femme",
+    "men": "Homme",
+    "kids": "enfant"
+  },
+  "pl": {
+    "catalog": "katalog",
+    "women": "kobiety",
+    "men": "mezczyzni",
+    "kids": "dzieci"
+  },
+  "be": {
+    "catalog": "catalogus",
+    "women": "dames",
+    "men": "heren",
+    "kids": "kinderen"
+  },
+  "se": {
+    "catalog": "katalog",
+    "women": "kvinna",
+    "men": "man",
+    "kids": "barn"
+  },
+  "fi": {
+    "catalog": "katalogi",
+    "women": "naiset",
+    "men": "miehet",
+    "kids": "lapset"
+  },
+  "dk": {
+    "catalog": "katalog",
+    "women": "dame",
+    "men": "herre",
+    "kids": "boern"
+  },
+  "es": {
+    "catalog": "catalogo",
+    "women": "mujer",
+    "men": "hombre",
+    "kids": "nino"
+  },
+  "no": {
+    "catalog": "katalog",
+    "women": "dame",
+    "men": "herre",
+    "kids": "barn"
+  },
+  "nl": {
+    "catalog": "catalogus",
+    "women": "dames",
+    "men": "heren",
+    "kids": "kinderen"
+  },
+  "co.uk": {
+    "catalog": "catalog",
+    "women": "women",
+    "men": "men",
+    "kids": "kids"
+  }
+}
