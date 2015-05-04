@@ -4,11 +4,11 @@
   ],
   "displayName" : "Zalando",
   "name" : "zalando",
-  "description" : "Finde deinen Style bei Zalando",
+  "description" : "Find your style at Zalando",
   "examples" : [
-    "zalando puma schuhe",
-    "zalando diesel hose",
-    "zalando BOSS Hemd sale"
+    "zalando puma shoe",
+    "zalando diesel jeans",
+    "zalando BOSS short sale"
   ],
   "openPreferencesOnInstall": true,
   "creator_name": "Simon Michel",
