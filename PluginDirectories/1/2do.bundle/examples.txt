@@ -1,0 +1,11 @@
+2do ~task(Relax yourself) to list ~list(Weekend) tagged ~tags(important)
+add task ~task(Relax) in 2do to list ~list(Weekend) tagged ~tags(important)
+new 2do task ~task(Relax) to list ~list(Weekend) tagged ~tags(important, family)
+
+2do ~task(Relax) to list ~list(Weekend) with tags ~tags(important)
+add task ~task(Relax) in 2do to list ~list(Weekend) with tags ~tags(important, family)
+new 2do task ~task(Relax) to list ~list(Weekend) with tags ~tags(important)
+
+2do ~task(Relax) #~tags(important #holidays)
+2do ~task(Relax) > ~list(Weekend) #~tags(important #holidays)
+2do ~task(Relax) > ~list(Weekend) #~tags(important, holidays)
