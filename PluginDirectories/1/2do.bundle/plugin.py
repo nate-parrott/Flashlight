@@ -2,6 +2,7 @@
 
 import re
 import webbrowser
+from centered_text import centered_text
 
 def results(parsed, original_query):
 	task = parsed.get('~task', 'New task')
@@ -16,7 +17,7 @@ def results(parsed, original_query):
 	return {
 		"title": title,
 		"run_args": run_args,
-		"html": html
+		"html": centered_text(html)
 	}
 
 def extract_tags(parsed):
@@ -28,12 +29,18 @@ def extract_tags(parsed):
 	return re.split(r'\s*[#,]\s*', tags)
 	
 def format_html(task, list_name, tags):
-	result = "<h1><u>2do:</u><br>" \
-		+ "Add task <i>{}</i><br>".format(task) \
-		+ "to list <i>{}</i>".format(list_name)
+	result = ['<img src="Icon.png" alt="2Do" style="width:64px;height:64px">']
+	result.append('<h2>Add task <i>{}</i></h2>'.format(task))
+
+	if len(list_name) > 0:
+		result.append('<h2>to list <i>{}</i></h2>'.format(list_name))
+	else:
+		result.append('<h2>to default list</h2>')
+
 	if len(tags) > 0:
-		result = result + "<br>with tags <i>{}</i>".format(', '.join(tags))
-	return result + "</h1>"
+		result.append('<h2>with tags <i>{}</i></h2>'.format(', '.join(tags)))
+
+	return ''.join(result)
 	
 def remove_html_tags(html):
 	result = re.sub(r'</?i>', '\'', html)
