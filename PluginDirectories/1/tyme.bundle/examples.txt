@@ -1,9 +1,11 @@
-tyme ~task(Relax) to project ~project(Weekend) tagged ~tags(important)
+tyme ~task(Relax yourself) to project ~project(Weekend) tagged ~tags(important)
 add task ~task(Relax) in tyme to project ~project(Weekend) tagged ~tags(important)
-new tyme task ~task(Relax) to project ~project(Weekend) tagged ~tags(important)
+new tyme task ~task(Relax) to project ~project(Weekend) tagged ~tags(important, family)
 
 tyme ~task(Relax) to project ~project(Weekend) with tags ~tags(important)
-add task ~task(Relax) in tyme to project ~project(Weekend) with tags ~tags(important)
+add task ~task(Relax) in tyme to project ~project(Weekend) with tags ~tags(important, family)
 new tyme task ~task(Relax) to project ~project(Weekend) with tags ~tags(important)
 
+tyme ~task(Relax) #~tags(important #holidays)
 tyme ~task(Relax) > ~project(Weekend) #~tags(important #holidays)
+tyme ~task(Relax) > ~project(Weekend) #~tags(important, holidays)
