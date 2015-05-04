@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Search"
+  ],
+  "displayName" : "Google Drive",
+  "name" : "googledrive.bundle",
+  "description" : "Search files on Google Drive",
+  "examples" : [
+    "drive <search term>",
+    "drive movies"
+  ],
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
+}
