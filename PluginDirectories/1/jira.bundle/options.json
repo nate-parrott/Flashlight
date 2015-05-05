@@ -13,7 +13,8 @@
         {
             "text": "Password",
             "key": "password",
-            "type": "text"
+            "type": "text",
+	    "password": true
         }
     ]
 }
