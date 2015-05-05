@@ -45,7 +45,7 @@ def results(parsed, original_query):
 	    if (settings.get("user","") == "") or (settings.get("password","") == "") or (settings.get("host","") == ""):
 	    	html = "Please enter user information in flashlight in the settings of the jira plugin first"
             title = i18n.localstr(
-                "Search {0} for '{1}'").format(name, parsed[key].encode('UTF-8'))
+                "Search {0} for '{1}'").format(name, parsed[key])
             return {
                 "title": title,
                 "run_args": [search_url],
