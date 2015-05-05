@@ -17,9 +17,9 @@ def results(parsed, original_query):
 	    basic = '?os_authType=basic'
 	    host = settings.get("host").replace("://", "://" + user + ":" + password + "@")
 	    if project in parsed:
-	    	search_key = '&jql=' + urllib.quote_plus("project = " + parsed[project].encode('UTF-8') + " AND text ~ \"" + parsed[key].encode('UTF-8') + "\"  ORDER BY updated DESC")
+	    	search_key = '&jql=' + urllib.quote_plus("project = " + parsed[project].encode('UTF-8') + " AND text ~ \"" + parsed[key].encode('ascii','xmlcharrefreplace') + "\"  ORDER BY updated DESC")
 	    else:
-	    	search_key = '&jql=' + urllib.quote_plus("text ~ \"" + parsed[key].encode('UTF-8') + "\"  ORDER BY updated DESC")
+	    	search_key = '&jql=' + urllib.quote_plus("text ~ \"" + parsed[key].encode('ascii','xmlcharrefreplace') + "\"  ORDER BY updated DESC")
             search_url = host + url + basic + search_key
 		
 	    regexJIRA = re.compile("^ *(?P<jira>[a-zA-Z]+-\d+) *$")
@@ -31,9 +31,10 @@ def results(parsed, original_query):
 	    if searchJIRA:
 		search_url = host + "/browse/" + urllib.quote_plus(searchJIRA.group(0).encode('UTF-8')) + basic
 	    if searchPROJ1:
-		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ1.group(1).encode('UTF-8') + " AND text ~ \"" + searchPROJ1.group(2).encode('UTF-8') + "\"  ORDER BY updated DESC")
+		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ1.group(1).encode('UTF-8') + " AND text ~ \"" + searchPROJ1.group(2).encode('ascii','xmlcharrefreplace') + "\"  ORDER BY updated DESC")
 	    if searchPROJ2:
 		search_url = host + url + basic + "&jql=" + urllib.quote_plus("project = " + searchPROJ2.group(1).encode('UTF-8') + " ORDER BY updated DESC")
+	    search_url = search_url.replace("a%26%23776%3B","%C3%A4").replace("A%26%23776%3B","%C3%84").replace("o%26%23776%3B","%C3%B6").replace("O%26%23776%3B","%C3%96").replace("u%26%23776%3B","%C3%BC").replace("U%26%23776%3B","%C3%9C").replace("%26%23223%3B","%C3%9F")
 	    html = """
                 <script>
                 setTimeout(function() {
@@ -42,7 +43,7 @@ def results(parsed, original_query):
                 </script>
                 """ % (json.dumps(search_url))
 	    if (settings.get("user","") == "") or (settings.get("password","") == "") or (settings.get("host","") == ""):
-	    	html = "Please enter information in flashlight in the settings of the jira plugin first"
+	    	html = "Please enter user information in flashlight in the settings of the jira plugin first"
             title = i18n.localstr(
                 "Search {0} for '{1}'").format(name, parsed[key].encode('UTF-8'))
             return {
