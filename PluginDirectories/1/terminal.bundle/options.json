@@ -1,0 +1,14 @@
+{
+    "options": [
+        {
+        	"text": "Terminal Application:",
+        	"type": "dropdown",
+        	"key":	"app",
+        	"options": [
+                {"text": "Terminal", "value": "terminal"},
+                {"text": "iTerm2", "value": "iterm2"},
+                {"text": "iTerm2.9+", "value": "iterm3"}
+            ]
+        }
+    ]
+}
