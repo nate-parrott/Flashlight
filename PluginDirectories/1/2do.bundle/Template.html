@@ -1,0 +1,46 @@
+<style type="text/css">
+	body {	font-family: "HelveticaNeue";	}
+	.tasktable {
+		border-spacing:5px;
+		font-size:18px;
+		padding:20px 5px;
+		border-width:0;
+		overflow:hidden;
+		word-break:normal;
+		border-style:solid;
+		table-layout:fixed
+		width:100%;
+		margin-left:auto; 
+		margin-right:auto;
+	}
+	.tasktable .tasktable-text{
+		font-variant:small-caps;
+		text-align:right;
+		white-space: nowrap
+	}
+	.tasktable .tasktable-value{
+		font-weight:bold;
+	}
+</style>
+<table class="tasktable">
+	<caption style="caption-side:top;"><img src="Icon.png" alt="2Do" style="width:64px;height:64px"></caption>
+	<tr>
+		<td class="tasktable-text">Add task</td>
+		<td class="tasktable-value"><!--TASK--></td>
+	</tr>
+	<tr>
+		<!--IF LIST-->
+		<td class="tasktable-text">to list</td>
+		<td class="tasktable-value"><!--LIST--></td>
+		<!--ELSE LIST-->
+		<td class="tasktable-text">to</td>
+		<td class="tasktable-text" style="text-align:left;">default list</td>
+		<!--END LIST-->
+	</tr>
+	<!--IF TAGS-->
+	<tr>
+		<td class="tasktable-text">with tags</td>
+		<td class="tasktable-value"><!--TAGS--></td>
+	</tr>
+	<!--END TAGS-->
+</table>

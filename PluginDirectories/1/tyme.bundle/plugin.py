@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import re
+import webbrowser
+from centered_text import centered_text
 from applescript import asrun, asquote
 
 def results(parsed, original_query):
@@ -9,14 +11,13 @@ def results(parsed, original_query):
 	tags = extract_tags(parsed)
 
 	html = format_html(task, project, tags)
-	title = remove_html_tags(html)
 	run_args = [task, project]
 	run_args.append(tags)
 
 	return {
-		"title": title,
-		"run_args": run_args,
-		"html": html
+		'title': "Add a new task to Tyme",
+		'run_args': run_args,
+		'html': centered_text(html)
 	}
 
 def extract_tags(parsed):
@@ -25,21 +26,20 @@ def extract_tags(parsed):
 	tags = parsed.get('~tags', '')
 	if len(tags) == 0:
 		return []
-	return re.split(r'\s*[#,]\s*', tags)
+	return [tag for tag in re.split(r'\s*[#,]\s*', tags) if len(tag) > 0]
 	
 def format_html(task, project, tags):
-	result = "<h1><u>Tyme:</u><br>" \
-		+ "Add task <i>{}</i><br>".format(task) \
-		+ "into project <i>{}</i>".format(project)
-	if len(tags) > 0:
-		result = result + "<br>with tags <i>{}</i>".format(', '.join(tags))
-	return result + "</h1>"
-	
-def remove_html_tags(html):
-	result = re.sub(r'</?i>', '\'', html)
-	result = re.sub(r'<br>', ' ', result)
-	return re.sub(r'<.*?>', '', result)
-	
+	result = open('Template.html', 'r').read()
+	result = re.sub(r'<!--TASK-->', task, result)
+	result = re.sub(r'<!--PROJECT-->', project, result)
+
+	if len(tags) == 0:
+		result = re.sub(r'(?s)<!--IF TAGS-->.+<!--END TAGS-->', '', result)
+	result = re.sub(r'<!--TAGS-->', ', '.join(tags), result)
+
+	result = re.sub(r'<!--.+-->', '', result)
+	return result
+		
 def run(*args):
 	task, project, tags = args
 	create_new_task(task, project)

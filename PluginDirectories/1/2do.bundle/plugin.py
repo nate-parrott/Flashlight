@@ -10,14 +10,13 @@ def results(parsed, original_query):
 	tags = extract_tags(parsed)
 
 	html = format_html(task, list_name, tags)
-	title = remove_html_tags(html)
 	run_args = [task, list_name]
 	run_args.append(tags)
 
 	return {
-		"title": title,
-		"run_args": run_args,
-		"html": centered_text(html)
+		'title': "Add a new task to 2Do",
+		'run_args': run_args,
+		'html': centered_text(html)
 	}
 
 def extract_tags(parsed):
@@ -26,26 +25,24 @@ def extract_tags(parsed):
 	tags = parsed.get('~tags', '')
 	if len(tags) == 0:
 		return []
-	return re.split(r'\s*[#,]\s*', tags)
+	return [tag for tag in re.split(r'\s*[#,]\s*', tags) if len(tag) > 0]
 	
-def format_html(task, list_name, tags):
-	result = ['<img src="Icon.png" alt="2Do" style="width:64px;height:64px">']
-	result.append('<h2>Add task <i>{}</i></h2>'.format(task))
+def format_html(task, list, tags):
+	result = open('Template.html', 'r').read()
+	result = re.sub(r'<!--TASK-->', task, result)
 
-	if len(list_name) > 0:
-		result.append('<h2>to list <i>{}</i></h2>'.format(list_name))
+	if len(list) == 0:
+		result = re.sub(r'(?s)<!--IF LIST-->.+<!--ELSE LIST-->', '', result)
 	else:
-		result.append('<h2>to default list</h2>')
+		result = re.sub(r'(?s)<!--ELSE LIST-->.+<!--END LIST-->', '', result)
+	result = re.sub(r'<!--LIST-->', list, result)
 
-	if len(tags) > 0:
-		result.append('<h2>with tags <i>{}</i></h2>'.format(', '.join(tags)))
+	if len(tags) == 0:
+		result = re.sub(r'(?s)<!--IF TAGS-->.+<!--END TAGS-->', '', result)
+	result = re.sub(r'<!--TAGS-->', ', '.join(tags), result)
 
-	return ''.join(result)
-	
-def remove_html_tags(html):
-	result = re.sub(r'</?i>', '\'', html)
-	result = re.sub(r'<br>', ' ', result)
-	return re.sub(r'<.*?>', '', result)
+	result = re.sub(r'<!--.+-->', '', result)
+	return result
 	
 def run(*args):
 	task, list_name, tags = args
