@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities", "Developer"
+  ],
+  "displayName" : "GoogleTrends",
+  "name" : "google-trends",
+  "description" : "Search Google Trends",
+  "examples" : [
+    "trends vim,emacs",
+    "trend python,go"
+  ]
+}

@@ -1,0 +1,1 @@
+dig ~domain(www.google.com)
