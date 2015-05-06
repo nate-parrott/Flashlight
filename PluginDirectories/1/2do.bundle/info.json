@@ -1,0 +1,9 @@
+{
+    "name": "2do",
+    "displayName": "2Do",
+    "description": "Create tasks in 2Do",
+    "examples": ["add task Pay bills", "2do Check emails #office #home", "2do Refactor code > Plugin #important, not urgent"],
+    "categories": ["Utilities"],
+    "creator_name": "Sven Oos",
+    "creator_url": "https://github.com/svoos"
+}
