@@ -63,6 +63,7 @@
 		5F8CCECE1AD3A660009D200E /* largetext.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCEBB1AD3A65F009D200E /* largetext.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F8CCED11AD3ACA2009D200E /* flashlight.bundle in Copy Starter Pack */ = {isa = PBXBuildFile; fileRef = 5F8CCED01AD3ACA2009D200E /* flashlight.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F916B601AD353DF0078B4F4 /* PluginListContent.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */; };
+		5F931C0E1AFADFCF00D44DA9 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F931C0D1AFADFCF00D44DA9 /* Crashlytics.framework */; };
 		5F9D7C381A63207200CDDE5C /* PrefEditorWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */; };
 		5F9D7C391A63207200CDDE5C /* PrefEditorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9D7C361A63207200CDDE5C /* PrefEditorTableView.m */; };
 		5F9D7C3A1A63207200CDDE5C /* PrefEditorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9D7C371A63207200CDDE5C /* PrefEditorWindow.xib */; };
@@ -253,6 +254,7 @@
 		5F8CCEBB1AD3A65F009D200E /* largetext.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = largetext.bundle; path = ../PluginDirectories/1/largetext.bundle; sourceTree = "<group>"; };
 		5F8CCED01AD3ACA2009D200E /* flashlight.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = flashlight.bundle; path = ../PluginDirectories/1/flashlight.bundle; sourceTree = "<group>"; };
 		5F916B5F1AD353DF0078B4F4 /* PluginListContent.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PluginListContent.html; sourceTree = "<group>"; };
+		5F931C0D1AFADFCF00D44DA9 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		5F9D7C331A63207200CDDE5C /* PrefEditorWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorWindow.h; sourceTree = "<group>"; };
 		5F9D7C341A63207200CDDE5C /* PrefEditorWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrefEditorWindow.m; sourceTree = "<group>"; };
 		5F9D7C351A63207200CDDE5C /* PrefEditorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefEditorTableView.h; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				6C564485159E7C0800215467 /* Cocoa.framework in Frameworks */,
 				6C5644B8159E7D3900215467 /* ServiceManagement.framework in Frameworks */,
 				CB91ECF0DC65EF541475B8F4 /* libPods-Flashlight.a in Frameworks */,
+				5F931C0E1AFADFCF00D44DA9 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +587,7 @@
 		6C56448B159E7C0800215467 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F931C0D1AFADFCF00D44DA9 /* Crashlytics.framework */,
 				5FF8731C1A6D977500EAD72F /* GenericPluginIcon.icns */,
 				5FC0166E1A1DBE7300F8E4E7 /* Localizable.strings */,
 				6C56448C159E7C0800215467 /* Flashlight-Info.plist */,
@@ -609,6 +613,7 @@
 				6C5644B9159E7D6C00215467 /* CopyFiles */,
 				5F8CCEA81AD3A555009D200E /* Copy Starter Pack */,
 				600691463A7845E1B87A281D /* Copy Pods Resources */,
+				5F931C0C1AFAD9EE00D44DA9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -708,6 +713,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5F931C0C1AFAD9EE00D44DA9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run c00a274f2c47ad5ee89b17ccb2fdb86e8d1fece8 cf3ca8aefff328c68d183c05c288062a57dcbbf7f5bbd8f43418c90e18fca3bf";
+		};
 		600691463A7845E1B87A281D /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -919,6 +937,11 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasySIMBL",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
 				INFOPLIST_FILE = "EasySIMBL/Flashlight-Info.plist";
@@ -941,6 +964,10 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EasySIMBL",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EasySIMBL/Flashlight-Prefix.pch";
 				INFOPLIST_FILE = "EasySIMBL/Flashlight-Info.plist";

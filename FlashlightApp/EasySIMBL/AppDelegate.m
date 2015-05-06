@@ -13,6 +13,7 @@
 #import <LetsMove/PFMoveApplication.h>
 #import "UpdateChecker.h"
 #import "PluginInstallTask.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()
 
@@ -45,6 +46,8 @@
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
     NSLocalizedString(@"Flashlight: the missing plugin system for Spotlight.", @"");
+    
+    [Crashlytics startWithAPIKey:@"c00a274f2c47ad5ee89b17ccb2fdb86e8d1fece8"];
     
     self.SIMBLOn = YES;
     
