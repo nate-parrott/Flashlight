@@ -23,6 +23,12 @@ def results(parsed, original_query):
             "run_args": ["",True] # **kwargs doesn't work so use argument positions.
         }
 
+    if ("switch_user_command" in parsed):
+        return {
+            "title": i18n.localstr('Switch User'),
+            "run_args": ["/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"]
+        }
+
     if ('restart_command' in parsed):
         return {
             "title": i18n.localstr('Restart Mac'),
