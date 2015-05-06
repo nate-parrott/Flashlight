@@ -2,14 +2,30 @@ import os
 import i18n
 
 
-def run(cmd):
-    os.system(cmd)
+def run(cmd, lock=False):
+    if lock is True:
+        # Taken from http://apple.stackexchange.com/a/123738
+        import objc
+        # We don't load module_globals as we only need the principalClass
+        bundle = objc.loadBundle('AppleKeychainExtra',
+                                 bundle_path="/Applications/Utilities/Keychain Access.app/Contents/Resources/Keychain.menu",
+                                 module_globals=None, scan_classes=False)
+        instance = bundle.principalClass().alloc().init()
+        instance.performSelector_withObject_("_lockScreenMenuHit:", None)
+    else:
+        os.system(cmd)
 
 
 def results(parsed, original_query):
     if ("lock_command" in parsed):
         return {
             "title": i18n.localstr('Lock Mac'),
+            "run_args": ["",True] # **kwargs doesn't work so use argument positions.
+        }
+
+    if ("switch_user_command" in parsed):
+        return {
+            "title": i18n.localstr('Switch User'),
             "run_args": ["/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"]
         }
 
