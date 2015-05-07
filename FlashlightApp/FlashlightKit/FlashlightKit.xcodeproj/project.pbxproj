@@ -410,7 +410,7 @@
 				5FC13DE91A4E12DB008A0FE3 /* Sources */,
 				5FC13DEA1A4E12DB008A0FE3 /* Frameworks */,
 				5FC13DEB1A4E12DB008A0FE3 /* Headers */,
-				83F165271AFBED9F00A50515 /* ShellScript */,
+				83F165271AFBED9F00A50515 /* Compile Python */,
 				5FC13DEC1A4E12DB008A0FE3 /* Resources */,
 			);
 			buildRules = (
@@ -499,13 +499,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83F165271AFBED9F00A50515 /* ShellScript */ = {
+		83F165271AFBED9F00A50515 /* Compile Python */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Compile Python";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
