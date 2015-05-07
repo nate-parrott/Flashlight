@@ -71,8 +71,6 @@
 		5F870A181A52D43600161E2F /* BuiltinModules in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A171A52D43600161E2F /* BuiltinModules */; };
 		5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A591A5468F700161E2F /* invoke_plugin.py */; };
 		5F870A601A5478DB00161E2F /* run_plugin.py in Resources */ = {isa = PBXBuildFile; fileRef = 5F870A5F1A5478DB00161E2F /* run_plugin.py */; };
-		5FA99DF51AC6793300CC0174 /* invoke_plugin.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 5FA99DF41AC6792F00CC0174 /* invoke_plugin.pyc */; };
-		5FA99DF71AC6793E00CC0174 /* run_plugin.pyc in Resources */ = {isa = PBXBuildFile; fileRef = 5FA99DF61AC6793E00CC0174 /* run_plugin.pyc */; };
 		5FC13DF41A4E12DB008A0FE3 /* FlashlightKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FC13DF31A4E12DB008A0FE3 /* FlashlightKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FC13DFA1A4E12DB008A0FE3 /* FlashlightKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC13DEE1A4E12DB008A0FE3 /* FlashlightKit.framework */; };
 		5FC13E011A4E12DB008A0FE3 /* FlashlightKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC13E001A4E12DB008A0FE3 /* FlashlightKitTests.m */; };
@@ -481,8 +479,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F870A181A52D43600161E2F /* BuiltinModules in Resources */,
-				5FA99DF51AC6793300CC0174 /* invoke_plugin.pyc in Resources */,
-				5FA99DF71AC6793E00CC0174 /* run_plugin.pyc in Resources */,
 				5F870A5A1A5468F700161E2F /* invoke_plugin.py in Resources */,
 				5F870A601A5478DB00161E2F /* run_plugin.py in Resources */,
 			);
