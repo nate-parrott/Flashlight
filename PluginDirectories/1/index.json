@@ -15,6 +15,22 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Sven Oos",
+            "creator_url": "https://github.com/svoos",
+            "description": "Create tasks in 2Do",
+            "displayName": "2Do",
+            "examples": [
+                "add task Pay bills",
+                "2do Check emails #office #home",
+                "2do Refactor code > Plugin #important, not urgent"
+            ],
+            "name": "2do",
+            "zip_url": "2do.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "description": "Search 500px\u2122 (500px)",
@@ -1212,6 +1228,21 @@
             ],
             "name": "google-trends",
             "zip_url": "google-trends.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
+            "description": "Search files on Google Drive",
+            "displayName": "Google Drive",
+            "examples": [
+                "drive <search term>",
+                "drive movies"
+            ],
+            "name": "googledrive",
+            "zip_url": "googledrive.zip"
         },
         {
             "categories": [
@@ -3145,12 +3176,12 @@
             ],
             "creator_name": "Simon Michel",
             "creator_url": "https://plus.google.com/+SimonMichel",
-            "description": "Finde deinen Style bei Zalando",
+            "description": "Find your style at Zalando",
             "displayName": "Zalando",
             "examples": [
-                "zalando puma schuhe",
-                "zalando diesel hose",
-                "zalando BOSS Hemd sale"
+                "zalando puma shoe",
+                "zalando diesel jeans",
+                "zalando BOSS short sale"
             ],
             "name": "zalando",
             "openPreferencesOnInstall": true,
