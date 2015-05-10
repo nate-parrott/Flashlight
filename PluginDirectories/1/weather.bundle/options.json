@@ -1,0 +1,18 @@
+{
+    "options": [
+        {
+            "text" : "Units",
+            "type" : "dropdown",
+            "key"  : "units",
+            "options": [
+                {"text": "Automatic", "value": "auto"},
+                {"text": "Metric", "value": "metric"},
+                {"text": "Imperial", "value": "imperial"}
+            ]
+        },
+        {
+            "type" : "hint",
+            "text" : "If units are Automatic, then they are set by the System Locale."
+        }
+    ]
+}

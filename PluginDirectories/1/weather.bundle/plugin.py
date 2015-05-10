@@ -14,7 +14,14 @@ def dark_mode():
 
 # Is the computer locale metric or imperial?
 def use_metric():
-    return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
+    import json
+    settings = json.load(open('preferences.json'))
+    if settings["units"] == "metric":
+        return True
+    elif settings["units"] == "imperial":
+        return False
+    else:
+        return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
 
 
 # Extract the country code from the location if given, or return local if not.
