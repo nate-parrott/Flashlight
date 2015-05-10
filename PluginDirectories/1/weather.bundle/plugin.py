@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, urllib, os
+import urllib, os
 import AppKit
 import i18n
 
@@ -72,8 +72,6 @@ def results(parsed, original_query):
         .replace("\"<!--NOW-->\"", i18n.localstr('[\'Now\', \'Today\']'))
         .replace("<!--LOCALE-->", i18n.localstr("locale"))
     )
-
-    
 
     return {
         "title": title,
