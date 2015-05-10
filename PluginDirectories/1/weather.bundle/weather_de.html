@@ -96,6 +96,16 @@
 		document.write("time:" + time);
 	} 
 
+	function findLocation(parsed) {
+		parsed.list.forEach(function(el) {
+			if (el.sys.country==countryCode) {
+				return el.id;
+			}
+		});
+		// None of the items matched the required country, just return the first
+		return parsed.list[0].id;
+	}
+
 	function load() {
 		var url = "http://api.openweathermap.org/data/2.5/find?type=like&q=" + encodeURIComponent(locationName);
 		xhr(url, function(response) {
