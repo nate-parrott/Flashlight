@@ -1,0 +1,8 @@
+{
+	"name": "iterm",
+	"displayName": "Open with iTerm2",
+	"displayName_de": "iTerm2",
+	"description": "Opens the current folder/file Finder selection in iTerm2.",
+	"examples": ["iterm", "iterm desktop"],
+	"categories": ["Developer"]
+}
