@@ -1,0 +1,2 @@
+u2c ~unicode(\u4f60\u597d)
+c2u ~chinese(你好, 世界)
