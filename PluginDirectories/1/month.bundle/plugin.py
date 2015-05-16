@@ -69,16 +69,23 @@ def results(fields, original_query):
         "html": html
     }
 
-def run(date):
-    date = dt.strptime('%Y-%m-%d')
+def run(date_string):
+    print(date_string, file=sys.stderr)
+    date = dt.strptime(date_string, '%Y-%m-%d')
     script = """
 tell application "Calendar"
 	switch view to month view
 	view calendar at date ("{month} 1, {year}")
 end tell
-""".format(month=date.month, year=date.year)
-    _, month_cal = monthly_calendar(date)
-    print(script, file=sys.stderr)
+""".format(month=date.strftime('%B'), year=date.year)
+    # import syslog
+    # syslog.openlog('Python')
+    # syslog.syslog(syslog.LOG_ALERT, script)
+    # syslog.syslog(syslog.LOG_ALERT, "osascript -e '%s'" % script)
+    # _, month_cal = monthly_calendar(date)
+    # print("osascript -e '%s'." % script, file=sys.stderr)
+    import os
+    os.system("osascript -e '%s'" % script)
     
 
 import unittest
