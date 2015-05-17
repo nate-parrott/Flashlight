@@ -2,7 +2,7 @@ import urllib, json, i18n
 
 def results(parsed, original_query):
     search_specs = [
-        ["drive.google.com", "~drivequery", "https://drive.google.com/drive/mobile#search-query?search-query="]
+        ["drive.google.com", "~drivequery", "https://drive.google.com/drive/mobile#search?sort=7&direction=d&q="]
     ]
     for name, key, url in search_specs:
         if key in parsed:
