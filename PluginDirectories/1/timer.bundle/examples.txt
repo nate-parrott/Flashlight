@@ -1,0 +1,3 @@
+time ~time(5)
+timer ~time(5)
+timer ~time(5:10)

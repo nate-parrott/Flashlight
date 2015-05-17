@@ -1,0 +1,10 @@
+// Credits: audio files retrived from http://www.freesfx.co.uk
+{
+    "name": "timer", // this must be the same as your folder name
+    "displayName": "Spotlight Timer",
+    "description": "Simple timer with sound notifcations from spotlight",
+    "examples": ["time 32", "timer 2:10", "time 2m1s"], // these appear by your plugin's description
+    "categories": ["Utilities"],
+    "creator_name": "Peter Chan",
+    "creator_url": "https://github.com/PeterKYChan"
+}
