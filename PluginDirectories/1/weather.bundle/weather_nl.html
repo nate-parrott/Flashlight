@@ -69,6 +69,7 @@
 	}
 	
 	var locationName = "<!--LOCATION-->";
+	var countryCode = "<!--COUNTRY-->";
 	var units = "<!--UNITS-->";
 	var appearance = "<!--APPEARANCE-->";
 	var time = "<!--TIME-->";
@@ -95,12 +96,36 @@
 	// 	document.write("time:" + time);
 	// } 
 
+	function findLocation(parsed) {
+		parsed.list.forEach(function(el) {
+			if (el.sys.country==countryCode) {
+				return el.id;
+			}
+		});
+		// None of the items matched the required country, just return the first
+		return parsed.list[0].id;
+	}
+
 	function load() {
+		var url = "http://api.openweathermap.org/data/2.5/find?type=like&q=" + encodeURIComponent(locationName);
+		xhr(url, function(response) {
+			var parsed;
+			if (response && (parsed = JSON.parse(response)) && parsed.cod == '200') {
+				var locationID = findLocation(parsed);
+				console.log(locationID);
+				loadLocationFromID(locationID);
+			} else {
+				document.getElementById("error").style.display = 'block';
+			}
+		})
+	}
+
+	function loadLocationFromID(locationId) {
 		// The API its URL is different for day-by-day and hourly forcast
 		if (time == "now") {
-			var url = "http://api.openweathermap.org/data/2.5/forecast?lang=nl&units=" + units + "&q=" + encodeURIComponent(locationName);
+			var url = "http://api.openweathermap.org/data/2.5/forecast?units=" + units + "&id=" + locationId;
 		} else {
-			var url = "http://api.openweathermap.org/data/2.5/forecast/daily?lang=nl&mode=json&cnt=4&units=" + units + "&q=" + encodeURIComponent(locationName);
+			var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units=" + units + "&id=" + locationId;
 		}
 		xhr(url, function(response) {
 			document.getElementById("loading").style.display = 'none';
