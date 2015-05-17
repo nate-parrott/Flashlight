@@ -26,9 +26,5 @@ DerivedData
 __pycache__/
 *.py[cod]
 
-# Include _only_ these .pyc files
-!FlashlightApp/FlashlightKit/FlashlightKit/invoke_plugin.pyc
-!FlashlightApp/FlashlightKit/FlashlightKit/run_plugin.pyc
-
 # Config files that shouldn't be committed (e.g. API keys)
 secret-config.json

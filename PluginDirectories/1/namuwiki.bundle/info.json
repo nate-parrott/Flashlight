@@ -1,0 +1,8 @@
+{
+    "name": "namuwiki",
+    "displayName": "Namu Wiki",
+    "description": "Search Namu Wiki",
+    "examples": ["namu 고양이", "search namuwiki for 서울특별시", "namuwiki 나무위키"],
+    "categories": ["Search"],
+    "creator_name": "jinhwanlazy"
+}

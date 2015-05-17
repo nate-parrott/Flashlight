@@ -1,0 +1,2 @@
+stream ~t(album) called ~q(you're dead!)
+stream ~t(song) called ~q(heartless)

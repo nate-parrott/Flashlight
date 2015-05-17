@@ -4,7 +4,7 @@
 	"displayName_fr": "Météo",
 	"description": "Updated weather plugin with both days and hour-by-hour forcast.",
 	"description_fr": "Affiche les informations météologiques",
-	"examples": ["weather brooklyn", "how's the weather in san francisco?"],
+	"examples": ["weather bristol,us", "how's the weather in Bristol,US?"],
 	"examples_fr": ["temps paris", "Quel est le climat à Dunkerque ?", "Météo pour lille"],
 	"categories": ["Weather", "Featured"]
 }

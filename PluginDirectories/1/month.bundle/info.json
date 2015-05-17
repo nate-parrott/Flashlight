@@ -1,0 +1,9 @@
+{
+    "name": "month",
+    "displayName": "Month Calendar",
+    "description": "Shows a calendar for a month",
+    "examples": ["calendar for December 2020", "month of July", "Jan 2022"],
+    "categories": ["Utilities"],
+    "creator_name": "Philip Mateescu",
+    "creator_url": "https://github.com/philipmat"
+}

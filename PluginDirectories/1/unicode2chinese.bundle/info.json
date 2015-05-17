@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "unicode转换工具",
+  "name" : "unicode2chinese",
+  "description" : "可用来进行unicode字符与中文的互转",
+  "examples" : [
+    "u2c \\u4f60\\u597d",
+    "c2u 你好"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+	"name": "spotify+",
+	"displayName": "Spotify+",
+	"description": "Stream music from Spotify",
+	"examples": ["stream album called you're dead", "stream song called cool crnkn remix"],
+	"categories": ["Search"],
+	"creator_name": "reduxd",
+	"creator_url": "https://github.com/reduxd"
+}

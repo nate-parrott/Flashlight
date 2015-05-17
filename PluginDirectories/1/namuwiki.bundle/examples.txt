@@ -1,0 +1,4 @@
+namu ~namuquery(나무위키)
+namuwiki ~namuquery(서울 특별시)
+search namuwiki for ~namuquery(한자/BMP)
+나무위키 ~namuquery(고양이)

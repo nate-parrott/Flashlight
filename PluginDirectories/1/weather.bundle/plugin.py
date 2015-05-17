@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import sys, urllib, os
+import urllib, os
 import AppKit
 import i18n
 
@@ -14,12 +14,33 @@ def dark_mode():
 
 # Is the computer locale metric or imperial?
 def use_metric():
-    return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
+    import json
+    settings = json.load(open('preferences.json'))
+    if settings["units"] == "metric":
+        return True
+    elif settings["units"] == "imperial":
+        return False
+    else:
+        return AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleUsesMetricSystem)
+
+
+# Extract the country code from the location if given, or return local if not.
+def get_country(location):
+    country_codes = AppKit.NSLocale.ISOCountryCodes()
+    current_country = AppKit.NSLocale.currentLocale().objectForKey_(AppKit.NSLocaleCountryCode)
+
+    if ("," in location):
+        for country in country_codes:
+            if location.split(",")[1].strip().upper() == country:
+                return country
+
+    return current_country
 
 
 def results(parsed, original_query):
 
     location = parsed['~location']
+    country = get_country(location)
     if 'time/now' in parsed:
         time = 'now'
     else:
@@ -43,6 +64,7 @@ def results(parsed, original_query):
     html = (
         open("weather.html").read().decode('utf-8')
         .replace("<!--LOCATION-->", location)
+        .replace("<!--COUNTRY-->", country)
         .replace("<!--UNITS-->", "metric" if use_metric() else "imperial")
         .replace("<!--APPEARANCE-->", "dark" if dark_mode() else "light")
         .replace("<!--TIME-->", time)
@@ -50,8 +72,6 @@ def results(parsed, original_query):
         .replace("\"<!--NOW-->\"", i18n.localstr('[\'Now\', \'Today\']'))
         .replace("<!--LOCALE-->", i18n.localstr("locale"))
     )
-
-    
 
     return {
         "title": title,
