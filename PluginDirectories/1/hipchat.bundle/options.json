@@ -1,0 +1,23 @@
+{
+  "options": [
+    {
+      "text": "HipChat Server URL:",
+      "key": "hipchaturl",
+      "type": "text"
+    },
+    {
+      "text": "Token:",
+      "key": "token",
+      "type": "text"
+    },
+    {
+      "type": "table",
+      "text": "Alias:",
+      "key": "aliaslist",
+      "columns": [
+        {"text": "HipChat Alias or ID", "key": "hipchatalias"},
+        {"text": "Alias", "key": "alias"}
+      ]
+    }
+  ]
+}

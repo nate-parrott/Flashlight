@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "HipChat",
+  "name" : "hipchat",
+  "description" : "Send HipChat messages the easy way.",
+  "examples" : [
+    "hipchat simon, hello world!",
+    "hc simon, hello world!"
+  ],
+  "creator_name": "Simon Michel",
+  "creator_url": "https://plus.google.com/+SimonMichel"
+}

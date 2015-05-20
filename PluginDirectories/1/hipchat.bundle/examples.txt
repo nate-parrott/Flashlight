@@ -1,0 +1,2 @@
+hipchat ~user(simon), ~message(hello world) 
+hc ~user(simon), ~message(hello world) 
