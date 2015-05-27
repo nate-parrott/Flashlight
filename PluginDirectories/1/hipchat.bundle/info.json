@@ -9,6 +9,7 @@
     "hipchat simon, hello world!",
     "hc simon, hello world!"
   ],
+  "openPreferencesOnInstall": true,
   "creator_name": "Simon Michel",
   "creator_url": "https://plus.google.com/+SimonMichel"
 }
