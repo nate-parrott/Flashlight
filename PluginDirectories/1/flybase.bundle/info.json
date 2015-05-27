@@ -1,0 +1,7 @@
+{
+    "name": "Search at flybase",
+    "displayName": "Search at flybase",
+    "description": "Search at flybase",
+    "examples": ["fb body"],
+    "categories": ["Search"]
+}

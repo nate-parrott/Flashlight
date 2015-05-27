@@ -1,0 +1,7 @@
+{
+    "name": "Search at Flygut-Seq",
+    "displayName": "Search at Flygut-Seq",
+    "description": "Search at Flygut-Seq",
+    "examples": ["fg body"],
+    "categories": ["Search"]
+}
