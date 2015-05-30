@@ -2,7 +2,7 @@
   "name": "EmptyTrash",
   "displayName": "Empty Trash",
   "description": "Empty your trash",
-  "examples": ["empty trash"],
+  "examples": ["empty trash", "empty", "emtr", "em"],
   "categories": ["Utilities"],
   "creator_name": "Jeff Shaver",
   "iconPath": "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/TrashIcon.icns",
