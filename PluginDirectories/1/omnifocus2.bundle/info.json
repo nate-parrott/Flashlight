@@ -3,6 +3,8 @@
     "Utilities"
   ],
   "displayName" : "OmniFocus2",
+  "creator_name": "Ryan Morrissey <me@rymo.io>",
+  "creator_url": "http://rymo.io/"
   "name" : "omnifocus2",
   "description" : "Add a new action to your OmniFocus inbox",
   "examples" : [
