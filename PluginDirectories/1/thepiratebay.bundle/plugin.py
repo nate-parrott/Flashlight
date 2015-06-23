@@ -2,7 +2,7 @@ import urllib, json
 
 def results(parsed, original_query):
     search_specs = [
-          ["Search The Pirate Bay", "~thePirateBay", "http://thepiratebay.ee/search/", "http://thepiratebay.ee/s/?q="],
+          ["Search The Pirate Bay", "~thePirateBay", "https://pirateproxy.sx/search/", "https://pirateproxy.sx/s/?q="],
     ]
     for name, key, mobile_url, url in search_specs:
         if key in parsed:
