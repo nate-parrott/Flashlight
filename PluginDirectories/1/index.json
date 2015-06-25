@@ -1424,6 +1424,21 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Simon Michel",
+            "creator_url": "https://plus.google.com/+SimonMichel",
+            "description": "Send HipChat messages the easy way.",
+            "displayName": "HipChat",
+            "examples": [
+                "hipchat simon, hello world!",
+                "hc simon, hello world!"
+            ],
+            "name": "hipchat",
+            "zip_url": "hipchat.zip"
+        },
+        {
+            "categories": [
                 "Search",
                 "Developer"
             ],
@@ -1598,6 +1613,20 @@
             "name": "isitup",
             "search_keywords": "network availability url offline",
             "zip_url": "isitup.zip"
+        },
+        {
+            "categories": [
+                "Developer"
+            ],
+            "description": "Opens the current folder/file Finder selection in iTerm2.",
+            "displayName": "Open with iTerm2",
+            "displayName_de": "iTerm2",
+            "examples": [
+                "iterm",
+                "iterm desktop"
+            ],
+            "name": "iterm",
+            "zip_url": "iterm.zip"
         },
         {
             "categories": [
@@ -1865,6 +1894,22 @@
             "categories": [
                 "Utilities"
             ],
+            "creator_name": "Philip Mateescu",
+            "creator_url": "https://github.com/philipmat",
+            "description": "Shows a calendar for a month",
+            "displayName": "Month Calendar",
+            "examples": [
+                "calendar for December 2020",
+                "month of July",
+                "Jan 2022"
+            ],
+            "name": "month",
+            "zip_url": "month.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
             "description": "Copy, move and delete files, just by typing.",
             "displayName": "File Mover",
             "examples": [
@@ -1873,6 +1918,21 @@
             ],
             "name": "move-file",
             "zip_url": "move-file.zip"
+        },
+        {
+            "categories": [
+                "Search"
+            ],
+            "creator_name": "jinhwanlazy",
+            "description": "Search Namu Wiki",
+            "displayName": "Namu Wiki",
+            "examples": [
+                "namu \uace0\uc591\uc774",
+                "search namuwiki for \uc11c\uc6b8\ud2b9\ubcc4\uc2dc",
+                "namuwiki \ub098\ubb34\uc704\ud0a4"
+            ],
+            "name": "namuwiki",
+            "zip_url": "namuwiki.zip"
         },
         {
             "categories": [
@@ -2372,6 +2432,21 @@
         },
         {
             "categories": [
+                "Search"
+            ],
+            "creator_name": "reduxd",
+            "creator_url": "https://github.com/reduxd",
+            "description": "Stream music from Spotify",
+            "displayName": "Spotify+",
+            "examples": [
+                "stream album called you're dead",
+                "stream song called cool crnkn remix"
+            ],
+            "name": "spotify+",
+            "zip_url": "spotify+.zip"
+        },
+        {
+            "categories": [
                 "Media"
             ],
             "description": "Search for an artist, album or track in Spotify.",
@@ -2559,6 +2634,23 @@
         },
         {
             "categories": [
+                "Utilities"
+            ],
+            "creator_name": "Peter Chan",
+            "creator_url": "https://github.com/PeterKYChan",
+            "credits": "audio files retrived from http://www.freesfx.co.uk",
+            "description": "Simple timer with sound notifcations from spotlight",
+            "displayName": "Spotlight Timer",
+            "examples": [
+                "time 32",
+                "timer 2:10",
+                "time 2m1s"
+            ],
+            "name": "timer",
+            "zip_url": "timer.zip"
+        },
+        {
+            "categories": [
                 "Developer"
             ],
             "description": "Convert timestamp to readable string",
@@ -2700,12 +2792,12 @@
             ],
             "creator_name": "Sven Oos",
             "creator_url": "https://github.com/svoos",
-            "description": "Create a new task in Tyme",
+            "description": "Create tasks in Tyme",
             "displayName": "Tyme",
             "examples": [
-                "tyme Pay bills",
-                "tyme check emails #office",
-                "tyme Refactor code @My Project"
+                "add task Pay bills",
+                "tyme Answer emails #office #home",
+                "tyme Refactor code > Plugin #important, not urgent"
             ],
             "name": "tyme",
             "zip_url": "tyme.zip"
@@ -2728,6 +2820,19 @@
                 "special characters"
             ],
             "zip_url": "unicode.zip"
+        },
+        {
+            "categories": [
+                "Utilities"
+            ],
+            "description": "\u53ef\u7528\u6765\u8fdb\u884cunicode\u5b57\u7b26\u4e0e\u4e2d\u6587\u7684\u4e92\u8f6c",
+            "displayName": "unicode\u8f6c\u6362\u5de5\u5177",
+            "examples": [
+                "u2c \\u4f60\\u597d",
+                "c2u \u4f60\u597d"
+            ],
+            "name": "unicode2chinese",
+            "zip_url": "unicode2chinese.zip"
         },
         {
             "categories": [
@@ -2799,8 +2904,8 @@
             "displayName": "Weather",
             "displayName_fr": "M\u00e9t\u00e9o",
             "examples": [
-                "weather brooklyn",
-                "how's the weather in san francisco?"
+                "weather bristol,us",
+                "how's the weather in Bristol,US?"
             ],
             "examples_fr": [
                 "temps paris",
