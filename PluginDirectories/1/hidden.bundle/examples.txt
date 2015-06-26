@@ -1,0 +1,2 @@
+hide
+hide ~message(yes)

@@ -1,0 +1,8 @@
+{
+    "name" : "hidden",
+    "displayName" : "Toggle/show/hide hidden files",
+    "description" : "Quickly toggle/show/hide hidden files and folders in OS X",
+    "examples" : ["hide","hide yes","hide no"],
+    "categories" : ["Utilities"],
+    "creator_name": "Antonio Cruz",
+}
