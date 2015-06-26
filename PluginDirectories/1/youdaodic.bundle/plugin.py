@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-#!/usr/bin/python
-
-import sys, os, re
-import urllib2
-import json
-import urllib
-
 def run(word):
     import os
+    import urllib
     import webbrowser
     url = 'http://dict.youdao.com/search?q=%s' % urllib.quote(word.encode('utf-8'))
     webbrowser.open_new_tab(url)
