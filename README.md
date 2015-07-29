@@ -3,6 +3,8 @@ Flashlight
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nate-parrott/Flashlight?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+**Flashlight doesn't work on El Capitan, and probably won't in its current state. [Let's build something better instead](https://github.com/nate-parrott/Flashlight/issues/537)**
+
 _The missing Spotlight plugin system_
 
 _Das fehlende Plugin-System für Spotlight._
