@@ -1,0 +1,9 @@
+{
+  "name": "md5",
+  "displayName": "md5",
+  "description": "Generate the md5 hash from a word.",
+  "examples": ["md5 my-secret-word"],
+  "categories": ["hash", "md5"],
+  "creator_name": "mrzmyr",
+  "creator_url": "https://github.com/mrzmyr"
+}
