@@ -1,0 +1,3 @@
+packagist ~packagistquery(a)
+search packagist for ~packagistquery(a)
+~packagistquery(a) on packagist
