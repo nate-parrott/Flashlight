@@ -670,38 +670,8 @@
         <customObject id="QmT-4d-Soi" customClass="UIManager">
             <connections>
                 <outlet property="popover" destination="qiK-2A-Ehc" id="U1y-01-Xv3"/>
-                <outlet property="statusMenu" destination="8kh-fi-BG6" id="zB2-sg-W6O"/>
             </connections>
         </customObject>
-        <menu id="8kh-fi-BG6">
-            <items>
-                <menuItem title="Open Spotlight to Search" enabled="NO" id="Z8a-eT-ms5">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="xdB-Te-oha"/>
-                <menuItem title="Get new plugins..." id="8lv-Dh-iRQ">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="getNewPlugins:" target="QmT-4d-Soi" id="4Sz-s6-aBR"/>
-                    </connections>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="13v-eR-dc7"/>
-                <menuItem title="Hide this menu..." id="voc-q4-aSq">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="hideThisMenu:" target="QmT-4d-Soi" id="hIL-e5-NMW"/>
-                    </connections>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="gSv-ch-DZK"/>
-                <menuItem title="Sample searches:" enabled="NO" id="19O-NS-OT4">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-            </items>
-            <connections>
-                <outlet property="delegate" destination="QmT-4d-Soi" id="jJL-DE-KHK"/>
-            </connections>
-            <point key="canvasLocation" x="230" y="405.5"/>
-        </menu>
         <viewController id="Fn6-xH-8Gg" userLabel="Popover View Controller" customClass="PopoverViewController">
             <connections>
                 <outlet property="parentPopover" destination="qiK-2A-Ehc" id="xhu-ba-0xr"/>
@@ -716,8 +686,8 @@
                 <outlet property="delegate" destination="QmT-4d-Soi" id="FmT-nY-fxP"/>
             </connections>
         </popover>
-        <customView id="RtA-JB-z6R">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="406"/>
+        <customView id="RtA-JB-z6R" userLabel="Popover view">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="413"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="HZY-NJ-bIk" customClass="FlashlightResultView">
@@ -729,9 +699,9 @@
                     <animations/>
                 </customView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-2H-yKV">
-                    <rect key="frame" x="20" y="382" width="350" height="17"/>
+                    <rect key="frame" x="8" y="386" width="374" height="17"/>
                     <animations/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" state="on" alignment="center" placeholderString="Search…" id="VCx-lx-Cu3">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" state="on" alignment="left" placeholderString="Search…" id="VCx-lx-Cu3">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -751,14 +721,14 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HZY-NJ-bIk" secondAttribute="bottom" id="7F9-cw-Dyo"/>
-                <constraint firstAttribute="trailing" secondItem="f1g-2H-yKV" secondAttribute="trailing" constant="22" id="IMJ-2C-vbM"/>
-                <constraint firstItem="f1g-2H-yKV" firstAttribute="top" secondItem="RtA-JB-z6R" secondAttribute="top" constant="7" id="J9g-Ka-abk"/>
-                <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="f1g-2H-yKV" secondAttribute="bottom" constant="6" id="P5G-yN-ICi"/>
+                <constraint firstAttribute="trailing" secondItem="f1g-2H-yKV" secondAttribute="trailing" constant="10" id="IMJ-2C-vbM"/>
+                <constraint firstItem="f1g-2H-yKV" firstAttribute="top" secondItem="RtA-JB-z6R" secondAttribute="top" constant="10" id="J9g-Ka-abk"/>
+                <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="f1g-2H-yKV" secondAttribute="bottom" constant="10" id="P5G-yN-ICi"/>
                 <constraint firstAttribute="trailing" secondItem="nFb-3q-Aef" secondAttribute="trailing" id="Y5E-zP-rf1"/>
                 <constraint firstAttribute="trailing" secondItem="HZY-NJ-bIk" secondAttribute="trailing" id="dUH-8s-rNr"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="nFb-3q-Aef" secondAttribute="bottom" id="kEo-gk-kg8"/>
                 <constraint firstItem="nFb-3q-Aef" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="n1Q-uy-PSK"/>
-                <constraint firstItem="f1g-2H-yKV" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" constant="22" id="qUr-Lr-Ydc"/>
+                <constraint firstItem="f1g-2H-yKV" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" constant="10" id="qUr-Lr-Ydc"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="zum-yM-aMS"/>
             </constraints>
             <animations/>

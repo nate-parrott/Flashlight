@@ -9,7 +9,7 @@
 #import "PopoverViewController.h"
 #import <FlashlightKit/FlashlightKit.h>
 
-@interface PopoverViewController ()
+@interface PopoverViewController () <NSTextFieldDelegate>
 
 @property (nonatomic,weak) IBOutlet NSPopover *parentPopover;
 @property (nonatomic) NSString *lastQuery;
@@ -59,6 +59,14 @@
     }
 }
 
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
+    if (commandSelector == @selector(cancelOperation:)) {
+        [self.parentPopover performClose:nil];
+        return YES;
+    }
+    return NO;
+}
+
 - (IBAction)enterPressed:(id)sender {
     BOOL hasEnterAction = [self.resultView.result pressEnter:self.resultView errorCallback:^(NSString *error) {
         
@@ -66,7 +74,6 @@
     if (hasEnterAction) {
         [self.parentPopover performClose:sender];
     }
-    
 }
 
 @end
