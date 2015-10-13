@@ -19,6 +19,10 @@
 		5F093C361BCC5E19001405AC /* NSObject+InternationalizedValueForKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F093C351BCC5E19001405AC /* NSObject+InternationalizedValueForKey.m */; };
 		5F093C381BCC63E2001405AC /* FlashlightKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F093C211BCC5CE6001405AC /* FlashlightKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F093C3B1BCC6BB9001405AC /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F093C3A1BCC6BB9001405AC /* PopoverViewController.m */; };
+		5F093C461BCCCE30001405AC /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F093C411BCCCE30001405AC /* DDHotKeyCenter.m */; };
+		5F093C471BCCCE30001405AC /* DDHotKeyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F093C431BCCCE30001405AC /* DDHotKeyTextField.m */; };
+		5F093C481BCCCE30001405AC /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F093C451BCCCE30001405AC /* DDHotKeyUtilities.m */; };
+		5F093C4B1BCCCE42001405AC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F093C4A1BCCCE42001405AC /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,13 @@
 		5F093C351BCC5E19001405AC /* NSObject+InternationalizedValueForKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+InternationalizedValueForKey.m"; path = "../../FlashlightKit/FlashlightKit/NSObject+InternationalizedValueForKey.m"; sourceTree = "<group>"; };
 		5F093C391BCC6BB9001405AC /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
 		5F093C3A1BCC6BB9001405AC /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
+		5F093C401BCCCE30001405AC /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		5F093C411BCCCE30001405AC /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
+		5F093C421BCCCE30001405AC /* DDHotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyTextField.h; sourceTree = "<group>"; };
+		5F093C431BCCCE30001405AC /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyTextField.m; sourceTree = "<group>"; };
+		5F093C441BCCCE30001405AC /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		5F093C451BCCCE30001405AC /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		5F093C4A1BCCCE42001405AC /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F093C4B1BCCCE42001405AC /* Carbon.framework in Frameworks */,
 				5F093C261BCC5CEF001405AC /* FlashlightKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +138,7 @@
 				5F093C351BCC5E19001405AC /* NSObject+InternationalizedValueForKey.m */,
 				5F093C391BCC6BB9001405AC /* PopoverViewController.h */,
 				5F093C3A1BCC6BB9001405AC /* PopoverViewController.m */,
+				5F093C491BCCCE33001405AC /* DDHotKey */,
 				5F093C1B1BCC5CE6001405AC /* FlashlightKit.xcodeproj */,
 				5F093C051BCC5C4E001405AC /* Assets.xcassets */,
 				5F093C071BCC5C4E001405AC /* MainMenu.xib */,
@@ -138,6 +151,7 @@
 		5F093C021BCC5C4E001405AC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F093C4A1BCCCE42001405AC /* Carbon.framework */,
 				5F093C031BCC5C4E001405AC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -150,6 +164,19 @@
 				5F093C231BCC5CE6001405AC /* FlashlightKitTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5F093C491BCCCE33001405AC /* DDHotKey */ = {
+			isa = PBXGroup;
+			children = (
+				5F093C401BCCCE30001405AC /* DDHotKeyCenter.h */,
+				5F093C411BCCCE30001405AC /* DDHotKeyCenter.m */,
+				5F093C421BCCCE30001405AC /* DDHotKeyTextField.h */,
+				5F093C431BCCCE30001405AC /* DDHotKeyTextField.m */,
+				5F093C441BCCCE30001405AC /* DDHotKeyUtilities.h */,
+				5F093C451BCCCE30001405AC /* DDHotKeyUtilities.m */,
+			);
+			name = DDHotKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,9 +279,12 @@
 				5F093C3B1BCC6BB9001405AC /* PopoverViewController.m in Sources */,
 				5F093C361BCC5E19001405AC /* NSObject+InternationalizedValueForKey.m in Sources */,
 				5F093C301BCC5E07001405AC /* NSImage+Resize.m in Sources */,
+				5F093C471BCCCE30001405AC /* DDHotKeyTextField.m in Sources */,
 				5F093C041BCC5C4E001405AC /* main.m in Sources */,
 				5F093C011BCC5C4E001405AC /* AppDelegate.m in Sources */,
 				5F093C2D1BCC5DD8001405AC /* UIManager.m in Sources */,
+				5F093C461BCCCE30001405AC /* DDHotKeyCenter.m in Sources */,
+				5F093C481BCCCE30001405AC /* DDHotKeyUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

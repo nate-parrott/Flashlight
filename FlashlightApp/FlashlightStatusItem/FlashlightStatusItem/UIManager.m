@@ -11,6 +11,7 @@
 #import "NSObject+InternationalizedValueForKey.h"
 #import "FlashlightIconResolution.h"
 #import "NSImage+Resize.h"
+#import "DDHotKeyCenter.h"
 
 @interface UIManager () <NSMenuDelegate, NSPopoverDelegate>
 
@@ -35,6 +36,12 @@
     
     [[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(settingsChanged:) name:@"com.nateparrott.Flashlight.DefaultsChanged" object:@"com.nateparrott.Flashlight"];
     [self settingsChanged:nil];
+    
+    // http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes
+    unsigned short space = 0x31;
+    [[DDHotKeyCenter sharedHotKeyCenter] registerHotKeyWithKeyCode:space modifierFlags:NSAlternateKeyMask task:^(NSEvent *event) {
+        [self togglePopover:nil];
+    }];
 }
 
 - (void)settingsChanged:(id)notif {

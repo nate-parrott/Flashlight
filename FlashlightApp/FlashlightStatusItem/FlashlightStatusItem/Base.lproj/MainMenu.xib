@@ -717,19 +717,19 @@
             </connections>
         </popover>
         <customView id="RtA-JB-z6R">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="406"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="HZY-NJ-bIk" customClass="FlashlightResultView">
-                    <rect key="frame" x="0.0" y="0.0" width="390" height="276"/>
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="376"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="390" id="3nx-kN-afI"/>
-                        <constraint firstAttribute="height" constant="276" id="wL5-qK-xFD"/>
+                        <constraint firstAttribute="height" constant="376" id="wL5-qK-xFD"/>
                     </constraints>
                     <animations/>
                 </customView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-2H-yKV">
-                    <rect key="frame" x="20" y="282" width="350" height="17"/>
+                    <rect key="frame" x="20" y="382" width="350" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" state="on" alignment="center" placeholderString="Search…" id="VCx-lx-Cu3">
                         <font key="font" metaFont="system"/>
@@ -742,7 +742,7 @@
                     </connections>
                 </textField>
                 <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="nFb-3q-Aef">
-                    <rect key="frame" x="0.0" y="274" width="390" height="5"/>
+                    <rect key="frame" x="0.0" y="374" width="390" height="5"/>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
