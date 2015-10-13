@@ -698,6 +698,9 @@
                         <constraint firstAttribute="height" constant="376" id="wL5-qK-xFD"/>
                     </constraints>
                     <animations/>
+                    <connections>
+                        <outlet property="noHTMLTitleView" destination="HSB-tc-f2z" id="hev-oZ-cyc"/>
+                    </connections>
                 </customView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-2H-yKV">
                     <rect key="frame" x="8" y="386" width="343" height="17"/>
@@ -719,7 +722,7 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <button translatesAutoresizingMaskIntoConstraints="NO" id="3xS-zZ-G7I">
+                <button alphaValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3xS-zZ-G7I">
                     <rect key="frame" x="349" y="376" width="41" height="37"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="41" id="Sht-hI-Ae8"/>
@@ -733,6 +736,18 @@
                         <action selector="launchMainApp:" target="QmT-4d-Soi" id="h7b-cL-UzN"/>
                     </connections>
                 </button>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-tc-f2z" userLabel="No HTML title view">
+                    <rect key="frame" x="22" y="177" width="347" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="343" id="SuN-8d-f78"/>
+                    </constraints>
+                    <animations/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Lorem ipsum dolor sit amet" id="GFG-pV-On5">
+                        <font key="font" metaFont="system" size="18"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="HZY-NJ-bIk" secondAttribute="bottom" id="7F9-cw-Dyo"/>
@@ -742,11 +757,13 @@
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="3xS-zZ-G7I" secondAttribute="bottom" id="Ko9-QH-8o2"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="f1g-2H-yKV" secondAttribute="bottom" constant="10" id="P5G-yN-ICi"/>
                 <constraint firstAttribute="trailing" secondItem="nFb-3q-Aef" secondAttribute="trailing" id="Y5E-zP-rf1"/>
+                <constraint firstItem="HSB-tc-f2z" firstAttribute="centerY" secondItem="HZY-NJ-bIk" secondAttribute="centerY" id="b7N-Sx-KuW"/>
                 <constraint firstItem="3xS-zZ-G7I" firstAttribute="leading" secondItem="f1g-2H-yKV" secondAttribute="trailing" id="d0P-KS-rfd"/>
                 <constraint firstAttribute="trailing" secondItem="HZY-NJ-bIk" secondAttribute="trailing" id="dUH-8s-rNr"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="nFb-3q-Aef" secondAttribute="bottom" id="kEo-gk-kg8"/>
                 <constraint firstItem="nFb-3q-Aef" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="n1Q-uy-PSK"/>
                 <constraint firstItem="f1g-2H-yKV" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" constant="10" id="qUr-Lr-Ydc"/>
+                <constraint firstItem="HSB-tc-f2z" firstAttribute="centerX" secondItem="HZY-NJ-bIk" secondAttribute="centerX" id="sPc-rY-FPt"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="zum-yM-aMS"/>
             </constraints>
             <animations/>
