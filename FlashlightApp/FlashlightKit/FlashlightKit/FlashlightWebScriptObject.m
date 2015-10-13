@@ -49,6 +49,8 @@
     NSObject *appDelegate = [NSApplication sharedApplication].delegate;
     if ([appDelegate respondsToSelector:@selector(openTargetResultWithOptions:)]) {
         [(id)appDelegate openTargetResultWithOptions:0];
+    } else {
+        NSLog(@"flashlight.invoke() called from Javascript, but appDelegate doesn't implement -openTargetResultWithOptions:, so nothing will happen.");
     }
 }
 

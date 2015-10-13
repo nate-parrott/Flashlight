@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 @class UIManager;
+#import "PopoverViewController.h"
 
 @interface AppDelegate ()
 
 @property (weak) IBOutlet NSWindow *window;
 @property (strong) IBOutlet UIManager *uiManager;
+@property (weak) IBOutlet PopoverViewController *popoverVC;
 @end
 
 @implementation AppDelegate
@@ -23,6 +25,10 @@
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
     // Insert code here to tear down your application
+}
+
+- (void)openTargetResultWithOptions:(NSInteger)options {
+    [self.popoverVC enterPressed:nil];
 }
 
 @end

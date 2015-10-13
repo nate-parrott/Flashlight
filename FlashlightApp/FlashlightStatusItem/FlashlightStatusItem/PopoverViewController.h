@@ -10,4 +10,6 @@
 
 @interface PopoverViewController : NSViewController
 
+- (IBAction)enterPressed:(id)sender;
+
 @end

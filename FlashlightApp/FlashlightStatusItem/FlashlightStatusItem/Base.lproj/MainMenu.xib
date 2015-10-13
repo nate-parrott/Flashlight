@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="popoverVC" destination="Fn6-xH-8Gg" id="tC5-tf-GqG"/>
                 <outlet property="uiManager" destination="QmT-4d-Soi" id="Vmc-uT-yKX"/>
             </connections>
         </customObject>
