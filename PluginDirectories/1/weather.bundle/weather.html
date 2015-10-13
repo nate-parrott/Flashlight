@@ -19,6 +19,7 @@
 	
 	<script>
 	
+	var APPID = "APPID=b81798e1095198040b90ecb3438a52d7";
 
 	function weekdayFromTimestamp(timestamp) {
 		// from http://stackoverflow.com/questions/5634403/getting-day-of-the-week-from-timestamp-using-javascript:
@@ -110,7 +111,7 @@
 	}
 
 	function load() {
-		var url = "http://api.openweathermap.org/data/2.5/find?type=like&q=" + encodeURIComponent(locationName);
+		var url = "http://api.openweathermap.org/data/2.5/find?type=like&" + APPID + "&q=" + encodeURIComponent(locationName) + "&" + APPID;
 		xhr(url, function(response) {
 			var parsed;
 			if (response && (parsed = JSON.parse(response)) && parsed.cod == '200') {
@@ -126,9 +127,9 @@
 	function loadLocationFromID(locationId) {
 		// The API its URL is different for day-by-day and hourly forcast
 		if (time == "now") {
-			var url = "http://api.openweathermap.org/data/2.5/forecast?units=" + units + "&id=" + locationId;
+			var url = "http://api.openweathermap.org/data/2.5/forecast?units=" + units + "&id=" + locationId + "&" + APPID;
 		} else {
-			var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units=" + units + "&id=" + locationId;
+			var url = "http://api.openweathermap.org/data/2.5/forecast/daily?mode=json&cnt=4&units=" + units + "&id=" + locationId + "&" + APPID;
 		}
 		xhr(url, function(response) {
 			document.getElementById("loading").style.display = 'none';

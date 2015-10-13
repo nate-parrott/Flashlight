@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14D72i" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9046" systemVersion="15A282b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment version="101000" identifier="macosx"/>
         <development version="5000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
-        <plugIn identifier="com.apple.WebKitIBPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9046"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="9046"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -364,7 +364,6 @@
                 <outlet property="aboutWindow" destination="Nbs-13-Twb" id="JQi-Kg-U2G"/>
                 <outlet property="flashlightEnabledMenuItem" destination="Kal-wE-JXI" id="4AC-Ms-upt"/>
                 <outlet property="leaveFeedback" destination="YyB-xf-RjT" id="MGc-ch-NJm"/>
-                <outlet property="menuBarItemPreferenceButton" destination="Llk-bz-SPb" id="grz-AH-VkL"/>
                 <outlet property="openGithub" destination="no0-HV-O9k" id="12n-tY-kFy"/>
                 <outlet property="pluginListController" destination="715" id="OyI-Qw-pUc"/>
                 <outlet property="requestPlugin" destination="QeJ-hd-3A1" id="AK4-6B-Nzq"/>
@@ -380,12 +379,13 @@
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="600" height="300"/>
             <view key="contentView" wantsLayer="YES" id="652">
-                <rect key="frame" x="0.0" y="-2" width="602" height="447"/>
+                <rect key="frame" x="0.0" y="0.0" width="602" height="447"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView id="90w-qC-o2U" userLabel="Right pane container">
                         <rect key="frame" x="150" y="0.0" width="453" height="449"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                     </customView>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="0o7-M4-qA2" userLabel="Source List">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="448"/>
@@ -395,7 +395,9 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView appearanceType="vibrantLight" verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="YEo-XA-tnD" id="76J-wG-jzB">
+                                    <rect key="frame" x="0.0" y="0.0" width="148" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
@@ -420,6 +422,7 @@
                                                         <textField verticalHuggingPriority="750" id="CHO-L0-FKg">
                                                             <rect key="frame" x="0.0" y="1" width="145" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="qwG-5n-TVO">
                                                                 <font key="font" metaFont="smallSystemBold"/>
                                                                 <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -427,6 +430,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <animations/>
                                                     <connections>
                                                         <outlet property="textField" destination="CHO-L0-FKg" id="QZ8-d1-SSW"/>
                                                     </connections>
@@ -438,11 +442,13 @@
                                                         <imageView id="sdJ-m3-ZKf">
                                                             <rect key="frame" x="3" y="0.0" width="17" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <animations/>
                                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="3sU-X4-ELi"/>
                                                         </imageView>
                                                         <textField verticalHuggingPriority="750" id="YOI-wW-HRs">
                                                             <rect key="frame" x="25" y="0.0" width="120" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="SB9-T0-COT">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -450,6 +456,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                     </subviews>
+                                                    <animations/>
                                                     <connections>
                                                         <outlet property="imageView" destination="sdJ-m3-ZKf" id="TEe-wK-Nvb"/>
                                                         <outlet property="textField" destination="YOI-wW-HRs" id="PEa-zI-4bc"/>
@@ -464,15 +471,19 @@
                                     </connections>
                                 </outlineView>
                             </subviews>
+                            <animations/>
                             <nil key="backgroundColor"/>
                         </clipView>
+                        <animations/>
                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="v41-mk-iet">
                             <rect key="frame" x="1" y="119" width="238" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                         <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="pfD-aX-5iF">
                             <rect key="frame" x="224" y="17" width="15" height="102"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <animations/>
                         </scroller>
                     </scrollView>
                     <customView wantsLayer="YES" id="eIK-Jf-OGb" userLabel="Error banner">
@@ -482,6 +493,7 @@
                             <textField horizontalHuggingPriority="1" verticalHuggingPriority="1" id="iPu-Kd-ZWI">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="53"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" drawsBackground="YES" id="ARr-OJ-3Gj">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -491,6 +503,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="4I6-zG-9ut">
                                 <rect key="frame" x="13" y="25" width="576" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Couldn't load online plugins directory." id="6Rm-1o-2sX">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -500,6 +513,7 @@
                             <button verticalHuggingPriority="750" id="9nN-QT-MfC">
                                 <rect key="frame" x="253.5" y="0.0" width="94" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Try again" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="R1V-Ae-nee">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystem"/>
@@ -509,8 +523,10 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <animations/>
                     </customView>
                 </subviews>
+                <animations/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="C9259357-695D-4768-9305-6CFF94C44A0D" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="fzt-pB-gpr">
                 <allowedToolbarItems>
@@ -521,6 +537,7 @@
                         <customView key="view" id="UCD-v9-rCn">
                             <rect key="frame" x="0.0" y="14" width="266" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <animations/>
                         </customView>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="E18DCE5D-A04B-49D0-94F9-418631669D3B" label="Custom View" paletteLabel="Custom View" id="sSL-rY-WNy">
@@ -530,6 +547,7 @@
                         <searchField key="view" wantsLayer="YES" verticalHuggingPriority="750" id="B2I-e5-KQB">
                             <rect key="frame" x="0.0" y="14" width="119" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <animations/>
                             <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" sendsWholeSearchString="YES" id="5o2-5F-0um">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -573,22 +591,24 @@
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="Nbs-13-Twb" userLabel="About">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="109" y="138" width="242" height="361"/>
+            <rect key="contentRect" x="109" y="138" width="242" height="333"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="242" height="260"/>
             <value key="maxSize" type="size" width="242" height="260"/>
             <view key="contentView" id="ML2-hK-xgc">
-                <rect key="frame" x="0.0" y="-5" width="242" height="361"/>
+                <rect key="frame" x="0.0" y="0.0" width="242" height="333"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bs8-1N-RgN">
-                        <rect key="frame" x="75" y="249" width="92" height="92"/>
+                        <rect key="frame" x="75" y="221" width="92" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <animations/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="QLY-QW-30e"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="b4m-8B-Vhn">
-                        <rect key="frame" x="18" y="189" width="206" height="30"/>
+                        <rect key="frame" x="18" y="161" width="206" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Flashlight" id="CKY-mr-H4g">
                             <font key="font" size="25" name="HelveticaNeue-Light"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -596,8 +616,9 @@
                         </textFieldCell>
                     </textField>
                     <button id="no0-HV-O9k">
-                        <rect key="frame" x="38" y="110" width="166" height="29"/>
+                        <rect key="frame" x="38" y="82" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <buttonCell key="cell" type="bevel" title="Contribute on GitHub" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="P0e-Mj-nLE">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -607,8 +628,9 @@
                         </connections>
                     </button>
                     <button id="YyB-xf-RjT">
-                        <rect key="frame" x="38" y="78" width="166" height="29"/>
+                        <rect key="frame" x="38" y="50" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <buttonCell key="cell" type="bevel" title="Leave Feedback" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="NO4-GD-LyW">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -618,8 +640,9 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gNj-56-AoU">
-                        <rect key="frame" x="18" y="151" width="206" height="17"/>
+                        <rect key="frame" x="18" y="123" width="206" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Search anything." id="Zut-6I-UVj">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -627,8 +650,9 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="v99-pH-dRh">
-                        <rect key="frame" x="18" y="173" width="206" height="11"/>
+                        <rect key="frame" x="18" y="145" width="206" height="11"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version ?.??" id="kFB-vx-lDm">
                             <font key="font" metaFont="miniSystem"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -636,8 +660,9 @@
                         </textFieldCell>
                     </textField>
                     <button id="QeJ-hd-3A1">
-                        <rect key="frame" x="38" y="45" width="166" height="29"/>
+                        <rect key="frame" x="38" y="17" width="166" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
                         <buttonCell key="cell" type="bevel" title="Request a Plugin" bezelStyle="regularSquare" alignment="center" borderStyle="border" inset="2" id="b4y-N1-H7G">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -646,29 +671,19 @@
                             <action selector="requestAPlugin:" target="494" id="zBI-z8-sAl"/>
                         </connections>
                     </button>
-                    <button id="Llk-bz-SPb">
-                        <rect key="frame" x="38" y="18" width="166" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <buttonCell key="cell" type="check" title="Show menu bar icon" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" inset="2" id="AtZ-Rw-Wyh">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="showMenuBarItemPressed:" target="494" id="ykO-0C-Nv9"/>
-                            <binding destination="702" name="value" keyPath="values.ShowMenuItem" id="PE1-lx-tPa"/>
-                        </connections>
-                    </button>
                 </subviews>
+                <animations/>
             </view>
-            <point key="canvasLocation" x="-242" y="535.5"/>
+            <point key="canvasLocation" x="-242" y="521.5"/>
         </window>
-        <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="aTm-s5-Sy6" userLabel="WebView visual effect view">
+        <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" state="followsWindowActiveState" id="aTm-s5-Sy6" userLabel="WebView visual effect view">
             <rect key="frame" x="0.0" y="-1" width="316" height="316"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <webView id="DEt-An-xUj">
                     <rect key="frame" x="0.0" y="0.0" width="316" height="316"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <animations/>
                     <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
                         <nil key="identifier"/>
                     </webPreferences>
@@ -678,10 +693,11 @@
                     </connections>
                 </webView>
             </subviews>
+            <animations/>
             <point key="canvasLocation" x="948" y="477"/>
         </visualEffectView>
         <customView id="Lha-km-r1j" userLabel="Disabled">
-            <rect key="frame" x="0.0" y="-2" width="432" height="320"/>
+            <rect key="frame" x="0.0" y="0.0" width="432" height="320"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView id="Axn-vX-vMo">
@@ -691,6 +707,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="0tI-TF-qi3">
                             <rect key="frame" x="57" y="189" width="241" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Welcome to Flashlight" id="Zod-zv-N0s">
                                 <font key="font" size="25" name="HelveticaNeue-Light"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -700,7 +717,8 @@
                         <button verticalHuggingPriority="750" id="5wA-nL-5qD">
                             <rect key="frame" x="82" y="101" width="191" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <buttonCell key="cell" type="push" title="Enable Spotlight Plugins" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yJF-Sa-Pss">
+                            <animations/>
+                            <buttonCell key="cell" type="push" title="Add Menu Bar Item" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yJF-Sa-Pss">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
@@ -711,6 +729,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="QsG-zx-iR5">
                             <rect key="frame" x="59" y="41" width="237" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Once plugins are enabled, they'll still work after you quit the Flashlight app." id="RcK-sq-KTs">
                                 <font key="font" metaFont="smallSystem"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -720,6 +739,7 @@
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" id="u2p-Jf-SRA">
                             <rect key="frame" x="26" y="146" width="302" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Flashlight lets you install plugins into OS X's Spotlight search." id="CZC-94-ae9">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -727,8 +747,10 @@
                             </textFieldCell>
                         </textField>
                     </subviews>
+                    <animations/>
                 </customView>
             </subviews>
+            <animations/>
             <point key="canvasLocation" x="1488" y="475"/>
         </customView>
     </objects>
