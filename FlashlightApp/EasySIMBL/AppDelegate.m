@@ -196,7 +196,7 @@
     BOOL result = !self.statusItemOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
-    OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
+    OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, result);
     if (status != noErr) {
         NSLog(@"Failed to LSRegisterURL '%@': %jd", loginItemURL, (intmax_t)status);
     }

@@ -690,11 +690,6 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="413"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" alphaValue="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="EsY-UV-T8U">
-                    <rect key="frame" x="0.0" y="376" width="390" height="37"/>
-                    <animations/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="Gray" id="f3I-VM-91g"/>
-                </imageView>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="HZY-NJ-bIk" customClass="FlashlightResultView">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="376"/>
                     <constraints>
@@ -704,7 +699,7 @@
                     <animations/>
                 </customView>
                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1g-2H-yKV">
-                    <rect key="frame" x="8" y="386" width="374" height="17"/>
+                    <rect key="frame" x="8" y="386" width="343" height="17"/>
                     <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" state="on" alignment="left" placeholderString="Search…" id="VCx-lx-Cu3">
                         <font key="font" metaFont="system"/>
@@ -723,20 +718,33 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="3xS-zZ-G7I">
+                    <rect key="frame" x="349" y="376" width="41" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="41" id="Sht-hI-Ae8"/>
+                    </constraints>
+                    <animations/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Settings" imagePosition="only" alignment="center" inset="2" id="2El-Jr-AL7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="launchMainApp:" target="QmT-4d-Soi" id="h7b-cL-UzN"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstItem="EsY-UV-T8U" firstAttribute="top" secondItem="RtA-JB-z6R" secondAttribute="top" id="78x-F3-k3E"/>
                 <constraint firstAttribute="bottom" secondItem="HZY-NJ-bIk" secondAttribute="bottom" id="7F9-cw-Dyo"/>
-                <constraint firstAttribute="trailing" secondItem="f1g-2H-yKV" secondAttribute="trailing" constant="10" id="IMJ-2C-vbM"/>
+                <constraint firstAttribute="trailing" secondItem="3xS-zZ-G7I" secondAttribute="trailing" id="ARm-Zp-SLG"/>
+                <constraint firstItem="3xS-zZ-G7I" firstAttribute="top" secondItem="RtA-JB-z6R" secondAttribute="top" id="BJJ-cA-zRt"/>
                 <constraint firstItem="f1g-2H-yKV" firstAttribute="top" secondItem="RtA-JB-z6R" secondAttribute="top" constant="10" id="J9g-Ka-abk"/>
-                <constraint firstItem="EsY-UV-T8U" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="L3z-pk-ecc"/>
+                <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="3xS-zZ-G7I" secondAttribute="bottom" id="Ko9-QH-8o2"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="f1g-2H-yKV" secondAttribute="bottom" constant="10" id="P5G-yN-ICi"/>
                 <constraint firstAttribute="trailing" secondItem="nFb-3q-Aef" secondAttribute="trailing" id="Y5E-zP-rf1"/>
-                <constraint firstAttribute="trailing" secondItem="EsY-UV-T8U" secondAttribute="trailing" id="aom-4g-swQ"/>
+                <constraint firstItem="3xS-zZ-G7I" firstAttribute="leading" secondItem="f1g-2H-yKV" secondAttribute="trailing" id="d0P-KS-rfd"/>
                 <constraint firstAttribute="trailing" secondItem="HZY-NJ-bIk" secondAttribute="trailing" id="dUH-8s-rNr"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="nFb-3q-Aef" secondAttribute="bottom" id="kEo-gk-kg8"/>
                 <constraint firstItem="nFb-3q-Aef" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="n1Q-uy-PSK"/>
-                <constraint firstItem="HZY-NJ-bIk" firstAttribute="top" secondItem="EsY-UV-T8U" secondAttribute="bottom" id="qEX-0b-0uX"/>
                 <constraint firstItem="f1g-2H-yKV" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" constant="10" id="qUr-Lr-Ydc"/>
                 <constraint firstItem="HZY-NJ-bIk" firstAttribute="leading" secondItem="RtA-JB-z6R" secondAttribute="leading" id="zum-yM-aMS"/>
             </constraints>
@@ -745,6 +753,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="Gray" width="12" height="12"/>
+        <image name="Settings" width="14" height="16"/>
     </resources>
 </document>

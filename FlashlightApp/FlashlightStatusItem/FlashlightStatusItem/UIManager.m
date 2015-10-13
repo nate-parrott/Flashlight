@@ -173,4 +173,9 @@
     self.listeningForDismissEvents = NO;
 }
 
+- (IBAction)launchMainApp:(id)sender {
+    [self.popover performClose:sender];
+    [[NSWorkspace sharedWorkspace] launchAppWithBundleIdentifier:@"com.nateparrott.Flashlight" options:0 additionalEventParamDescriptor:nil launchIdentifier:nil];
+}
+
 @end

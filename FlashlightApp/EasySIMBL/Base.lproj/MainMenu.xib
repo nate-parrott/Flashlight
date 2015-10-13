@@ -676,8 +676,8 @@
             </view>
             <point key="canvasLocation" x="-242" y="521.5"/>
         </window>
-        <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" state="followsWindowActiveState" id="aTm-s5-Sy6" userLabel="WebView visual effect view">
-            <rect key="frame" x="0.0" y="-1" width="316" height="316"/>
+        <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" id="aTm-s5-Sy6" userLabel="WebView visual effect view">
+            <rect key="frame" x="0.0" y="0.0" width="316" height="316"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <webView id="DEt-An-xUj">
