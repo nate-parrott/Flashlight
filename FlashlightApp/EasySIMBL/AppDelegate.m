@@ -196,13 +196,13 @@
     BOOL result = !self.statusItemOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
-    OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, result);
+    OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
     if (status != noErr) {
         NSLog(@"Failed to LSRegisterURL '%@': %jd", loginItemURL, (intmax_t)status);
     }
     
     CFStringRef bundleIdentifierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-    if (!SMLoginItemSetEnabled(bundleIdentifierRef, YES)) {
+    if (!SMLoginItemSetEnabled(bundleIdentifierRef, result)) {
         result = !result;
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }
