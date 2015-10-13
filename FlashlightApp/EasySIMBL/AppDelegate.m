@@ -15,6 +15,10 @@
 #import "PluginInstallTask.h"
 #import <Crashlytics/Crashlytics.h>
 
+NSInteger BuildVersionForBundleAtPath(NSString *bundlePath) {
+    return [[[NSBundle bundleWithPath:bundlePath] infoDictionary][@"CFBundleVersion"] integerValue];
+}
+
 @interface AppDelegate ()
 
 @property (nonatomic,weak) IBOutlet NSButton *enablePluginsButton;
@@ -80,27 +84,20 @@
         
         NSInteger state = NSOffState;
         if ([runningApplications count]) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults addSuiteNamed:self.loginItemBundleIdentifier];
-            
-            if ([[defaults objectForKey:self.loginItemBundleIdentifier] isEqualToString:loginItemBundleVersion]) {
-                SIMBLLogInfo(@"'SIMBL Agent' is already running.");
-                
-                state = NSOnState;
-            } else {
-                // if running agent's bundle is different from my bundle, need restart agent from my bundle.
-                SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
-                
-                CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-                state = NSOffState;
-                NSRunningApplication *runningApplication = [runningApplications objectAtIndex:0];
-                [runningApplication addObserver:self
-                                     forKeyPath:@"isTerminated"
-                                        options:NSKeyValueObservingOptionNew
-                                        context:(__bridge_retained void*)runningApplication];
-                if (!SMLoginItemSetEnabled(bundleIdentifeierRef, NO)) {
-                    SIMBLLogNotice(@"SMLoginItemSetEnabled(YES) failed!");
+            NSRunningApplication *statusItemApp = runningApplications.firstObject;
+            NSInteger runningStatusItemVersion = BuildVersionForBundleAtPath(statusItemApp.bundleURL.path);
+            NSInteger bundledStatusItemVersion = BuildVersionForBundleAtPath(self.loginItemPath);
+            state = NSOnState;
+            if (bundledStatusItemVersion > runningStatusItemVersion) {
+                // restart status item:
+                NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
+                OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
+                if (status != noErr) {
+                    NSLog(@"Failed to LSRegisterURL '%@': %jd", loginItemURL, (intmax_t)status);
                 }
+                CFStringRef bundleIdentifierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
+                SMLoginItemSetEnabled(bundleIdentifierRef, YES);
+                [statusItemApp terminate];
             }
         } else {
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
@@ -108,7 +105,6 @@
         [self setStatusItemOn:state == NSOnState animated:NO];
     }
     
-    [self restartStatusItemIfUpdated];
     
     // i18n:
     self.enablePluginsButton.title = NSLocalizedString(@"Enable", @"");
