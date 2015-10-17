@@ -1,0 +1,76 @@
+<html>
+<head>
+	<meta charset='utf-8' />
+<style>
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: small;
+}
+#text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	bottom: 40px;
+	box-sizing: border-box;
+	padding: 20px;
+	overflow-y: auto;
+	line-height: 1.2;
+	background-color: white;
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+	outline: none;
+}
+#stats {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	bottom: 0;
+	display: table;
+}
+#stats > div {
+	display: table-row;
+}
+#stats > div > div {
+	display: table-cell;
+	padding: 5px;
+	vertical-align: middle;
+	text-align: center;
+	text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+	<div id='text' contentEditable>
+		<!--TEXT-->
+	</div>
+	<div id='stats'>
+		<div>
+			<div id='stats-content'>
+				<strong id='word-count'>XX</strong> words —
+				<strong id='char-count'>XX</strong> characters
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	function updateStats() {
+		var text = document.getElementById('text').innerText;
+		// via http://jsfiddle.net/deepumohanp/jZeKu/
+		var regex = /\s+/gi;
+		var wordCount = text.trim().replace(regex, ' ').split(' ').length;
+		var totalChars = text.length;
+		var charCount = text.trim().length;
+		if (charCount == 0) wordCount = 0;
+		document.getElementById('word-count').innerText = wordCount;
+		document.getElementById('char-count').innerText = charCount;
+	}
+	document.getElementById("text").addEventListener("input", function() {
+	    updateStats();
+	}, false);
+	updateStats();
+	</script>
+</body>
+</html>
