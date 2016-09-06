@@ -1,9 +1,11 @@
 Flashlight
 ==========
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nate-parrott/Flashlight?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+**🚨 THIS REPOSITORY IS NO LONGER BEING MAINTAINED**
 
-**Flashlight doesn't work on El Capitan, and probably won't in its current state. [Let's build something better instead](https://github.com/nate-parrott/Flashlight/issues/537)**
+**For a more up-to-date fork of this project that works on El Capitan and Sierra, check out [w0lfschild's fork](https://github.com/w0lfschild/Flashlight)**
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nate-parrott/Flashlight?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 _The missing Spotlight plugin system_
 
