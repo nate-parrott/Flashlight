@@ -1,0 +1,9 @@
+{
+    "name": "dictionaryapp", // this must be the same as your folder name
+    "displayName": "dictionary app",
+    "description": "Lookup a word on dictionary app",
+    "examples": ["dict/dictionary/lookup hello"],
+    "categories": ["Language"],
+    "creator_name": "Vinh Dang",
+    "creator_url": "github.com/vinhqdang"
+}

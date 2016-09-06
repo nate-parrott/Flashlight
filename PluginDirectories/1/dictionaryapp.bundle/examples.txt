@@ -1,0 +1,3 @@
+dict ~dictquery(hello)
+dictionary ~dictquery(hello)
+lookup ~dictquery(dictionary)
