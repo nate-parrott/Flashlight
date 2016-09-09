@@ -1,0 +1,15 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Number Extractor",
+  "name" : "number-extractor",
+  "description" : "Extracts only the numbers of a given string and sends the result to the clipboard",
+  "examples" : [
+    "number 123.42.3424-3423",
+    "ne 92 342 5432 2",
+    "numbers a2b3d4d2d2"
+  ],
+  "creator_name" : "Psidium",
+  "creator_url" : "http://github.com/Psidium"
+}

@@ -1,0 +1,4 @@
+number ~message(12.3.42.4.2-32 2)
+ne ~message(1 2 3 )
+numbers ~message(['23', '232', '3232'])
+number ~message(123.323.423-94)
