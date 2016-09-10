@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Zhihu Search",
+  "name" : "zhihu-search",
+  "description" : "This is an zhihu search plugin",
+  "examples" : [
+    "zh 如何评价",
+    "zh good morning"
+  ]
+}
