@@ -1,4 +1,4 @@
 CIU ~caniusequery(query here)
 Can I use ~caniusequery(query here)
 can i use ~caniusequery(query here)
-caniuse ~caniusequeryquery here)
+caniuse ~caniusequery(query here)
