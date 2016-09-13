@@ -1,0 +1,9 @@
+{
+    "name": "viscosity",
+    "displayName": "Connect to Viscosity",
+    "description": "Opens the named Viscosity connection.",
+    "examples": ["vis myvpn", "viscosity connect myvpn", "viscosity"],
+    "categories": ["Utilities"],
+    "creator_name": "Anatole Paine",
+    "creator_url": "github.com/springheeledjak"
+}

@@ -1,0 +1,6 @@
+vis ~connection(MyVPN)
+vis open ~connection(MyVPN)
+vis connect ~connection(MyVPN)
+viscosity ~connection(MyVPN)
+viscosity open ~connection(MyVPN)
+viscosity connect ~connection(MyVPN)
