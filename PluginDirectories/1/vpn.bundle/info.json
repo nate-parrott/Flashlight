@@ -1,0 +1,14 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Connect to VPN",
+  "name" : "vpn",
+  "description" : "Connect to a VPN Network defined in System Preferences -> Network",
+  "examples" : [
+    "vpn office",
+    "connect homevpn"
+  ],
+  "creator_name" : "ramiksadana",
+  "creator_url" : "www.ramiksadana.com"
+}

@@ -1,0 +1,2 @@
+vpn ~message(work)
+connect ~message(workvpn)
