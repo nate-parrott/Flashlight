@@ -23,7 +23,7 @@ def get_html(command):
   </style>
   <body>
   %s$ %s
-  
+
   <div id='hint'>
   Will be run in the directory currently open in Finder.
   </div>
@@ -31,16 +31,26 @@ def get_html(command):
   """%(getuser(), command)
 
 def results(parsed, original_query):
-    command = parsed['~command'] if parsed else original_query
-    if command[0] not in '~/.' and not is_valid_command(command.split(' ')[0]):
-        return None
+    import json
+    settings = json.load(open('preferences.json'))
+
+    command = parsed['~command'] if parsed else ' '
+    if settings["validity"]:
+        if command[0] not in '~/.' and not is_valid_command(command.split(' ')[0]):
+            return None
+        if parsed is None:
+            dict['dont_force_top_hit'] = True
+    else:
+        prefix_split = original_query.split(' ')[0]
+        prefix_char =  original_query[0]
+        if not (prefix_char == '$') and not (prefix_char == '>') and not (prefix_split == 'run'):
+            return None
+
     dict = {
         "title": "$ {0}".format(command),
         "run_args": [command],
         "html": get_html(command)
     }
-    if parsed==None:
-        dict['dont_force_top_hit'] = True
     return dict
 
 def run(command):
