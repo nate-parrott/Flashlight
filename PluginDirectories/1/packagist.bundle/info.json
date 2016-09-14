@@ -1,0 +1,6 @@
+{
+	"name": "packagist",
+	"displayName": "Packagist Search",
+	"examples": ["packagist symfony", "search packagist for buzz", "doctrine on packagist"],
+	"categories": ["Search", "Developer"]
+}
