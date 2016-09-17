@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Utility for ascii",
+  "name" : "ascii",
+  "description" : "Show ascii.",
+  "examples" : [
+    "chr a b",
+    "asc 97 90"
+  ]
+}

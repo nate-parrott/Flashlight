@@ -1,0 +1,5 @@
+chr ~chr(97)
+chr ~chr(97 90 100 76 91 93 97 99 101)
+asc ~asc(+)
+asc ~asc(a b $ ‘ “ \ D % ^)
+ascii ~asc(a b $ ‘ “ \ D % ^)
