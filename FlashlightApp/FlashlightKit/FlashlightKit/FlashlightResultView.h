@@ -13,5 +13,6 @@
 
 @property (nonatomic,weak) FlashlightResult *result;
 - (id)resultOfOutputFunction;
+@property (nonatomic,weak) IBOutlet NSTextField *noHTMLTitleView;
 
 @end

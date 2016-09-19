@@ -24,6 +24,8 @@
 - (BOOL)linksOpenInBrowser;
 - (BOOL)pressEnter:(FlashlightResultView *)resultView errorCallback:(void(^)(NSString *error))errorCallback;
 
+- (BOOL)hasHTML;
+
 @property (nonatomic) NSString *uniqueIdentifier;
 
 @property (nonatomic) NSDictionary *currentInputForStaticPlugin;

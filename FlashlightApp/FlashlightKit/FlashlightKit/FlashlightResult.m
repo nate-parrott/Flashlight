@@ -15,7 +15,9 @@
 #import "FlashlightSystemHelpers.h"
 #import <FlashlightKit.h>
 
-@interface FlashlightResult ()
+@interface FlashlightResult () {
+    NSString *_html;
+}
 
 @property (nonatomic) WebView *webView;
 @property (nonatomic) BOOL webViewIsReady;
@@ -93,7 +95,7 @@
     return _webView;
 }
 
-- (NSString *)getHTML {
+- (NSString *)_getHTML {
     if (self.json[@"html"]) {
         return self.json[@"html"];
     }
@@ -104,6 +106,17 @@
         return markup;
     }
     return nil;
+}
+
+- (NSString *)getHTML {
+    if (!_html) {
+        _html = [self _getHTML] ? : @"";
+    }
+    return _html;
+}
+
+- (BOOL)hasHTML {
+    return [self getHTML].length > 0;
 }
 
 - (void)configureWebview:(WebView *)webView {

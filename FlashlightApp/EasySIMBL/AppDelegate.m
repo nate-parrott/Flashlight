@@ -15,6 +15,10 @@
 #import "PluginInstallTask.h"
 #import <Crashlytics/Crashlytics.h>
 
+NSInteger BuildVersionForBundleAtPath(NSString *bundlePath) {
+    return [[[NSBundle bundleWithPath:bundlePath] infoDictionary][@"CFBundleVersion"] integerValue];
+}
+
 @interface AppDelegate ()
 
 @property (nonatomic,weak) IBOutlet NSButton *enablePluginsButton;
@@ -49,9 +53,7 @@
     
     [Crashlytics startWithAPIKey:@"c00a274f2c47ad5ee89b17ccb2fdb86e8d1fece8"];
     
-    self.SIMBLOn = YES;
-    
-    [self checkSpotlightVersion];
+    self.statusItemOn = YES;
     
     [self setupDefaults];
     
@@ -82,35 +84,27 @@
         
         NSInteger state = NSOffState;
         if ([runningApplications count]) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults addSuiteNamed:self.loginItemBundleIdentifier];
-            
-            if ([[defaults objectForKey:self.loginItemBundleIdentifier] isEqualToString:loginItemBundleVersion]) {
-                SIMBLLogInfo(@"'SIMBL Agent' is already running.");
-                
-                state = NSOnState;
-            } else {
-                // if running agent's bundle is different from my bundle, need restart agent from my bundle.
-                SIMBLLogInfo(@"'SIMBL Agent' is already running, but version is different.");
-                
-                CFStringRef bundleIdentifeierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
-                state = NSOffState;
-                NSRunningApplication *runningApplication = [runningApplications objectAtIndex:0];
-                [runningApplication addObserver:self
-                                     forKeyPath:@"isTerminated"
-                                        options:NSKeyValueObservingOptionNew
-                                        context:(__bridge_retained void*)runningApplication];
-                if (!SMLoginItemSetEnabled(bundleIdentifeierRef, NO)) {
-                    SIMBLLogNotice(@"SMLoginItemSetEnabled(YES) failed!");
+            NSRunningApplication *statusItemApp = runningApplications.firstObject;
+            NSInteger runningStatusItemVersion = BuildVersionForBundleAtPath(statusItemApp.bundleURL.path);
+            NSInteger bundledStatusItemVersion = BuildVersionForBundleAtPath(self.loginItemPath);
+            state = NSOnState;
+            if (bundledStatusItemVersion > runningStatusItemVersion) {
+                // restart status item:
+                NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
+                OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
+                if (status != noErr) {
+                    NSLog(@"Failed to LSRegisterURL '%@': %jd", loginItemURL, (intmax_t)status);
                 }
+                CFStringRef bundleIdentifierRef = (__bridge CFStringRef)self.loginItemBundleIdentifier;
+                SMLoginItemSetEnabled(bundleIdentifierRef, YES);
+                [statusItemApp terminate];
             }
         } else {
             SIMBLLogInfo(@"'SIMBL Agent' is not running.");
         }
-        [self setSIMBLOn:state == NSOnState animated:NO];
+        [self setStatusItemOn:state == NSOnState animated:NO];
     }
     
-    [self restartSIMBLIfUpdated];
     
     // i18n:
     self.enablePluginsButton.title = NSLocalizedString(@"Enable", @"");
@@ -132,15 +126,15 @@
     [self.window makeKeyAndOrderFront:nil];
 }
 
-- (void)restartSIMBLIfUpdated {
+- (void)restartStatusItemIfUpdated {
     NSString *currentVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     if (![[[NSUserDefaults standardUserDefaults] objectForKey:@"LastVersion"] isEqualToString:currentVersion]) {
         [[NSUserDefaults standardUserDefaults] setObject:currentVersion forKey:@"LastVersion"];
         // restart simbl:
-        if (self.SIMBLOn) {
-            self.SIMBLOn = NO;
+        if (self.statusItemOn) {
+            self.statusItemOn = NO;
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                self.SIMBLOn = YES;
+                self.statusItemOn = YES;
             });
         }
     }
@@ -195,7 +189,7 @@
 #pragma mark IBAction
 
 - (IBAction)toggleFlashlightEnabled:(id)sender {
-    BOOL result = !self.SIMBLOn;
+    BOOL result = !self.statusItemOn;
     
     NSURL *loginItemURL = [NSURL fileURLWithPath:self.loginItemPath];
     OSStatus status = LSRegisterURL((__bridge CFURLRef)loginItemURL, YES);
@@ -208,28 +202,23 @@
         result = !result;
         SIMBLLogNotice(@"SMLoginItemSetEnabled() failed!");
     }
-    self.SIMBLOn = result;
-    
-    if (!result) {
-        // restart spotlight after 1 sec to remove injected code:
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [NSTask launchedTaskWithLaunchPath:@"/usr/bin/killall" arguments:@[@"Spotlight"]];
-        });
-    }
+    self.statusItemOn = result;
     
     if (result) {
         // show available plugins on enable
         [self.pluginListController showInstalledPlugins];
     }
 }
-- (void)setSIMBLOn:(BOOL)SIMBLOn {
-    [self setSIMBLOn:SIMBLOn animated:YES];
+
+- (void)setStatusItemOn:(BOOL)statusItemOn {
+    [self setStatusItemOn:statusItemOn animated:YES];
 }
-- (void)setSIMBLOn:(BOOL)SIMBLOn animated:(BOOL)animated {
-    _SIMBLOn = SIMBLOn;
-    self.pluginListController.enabled = SIMBLOn;
-    self.flashlightEnabledMenuItem.state = SIMBLOn ? NSOnState : NSOffState;
-    self.flashlightEnabledMenuItem.title = SIMBLOn ? NSLocalizedString(@"Flashlight Enabled", nil) : NSLocalizedString(@"Flashlight Disabled", nil);
+
+- (void)setStatusItemOn:(BOOL)statusItemOn animated:(BOOL)animated {
+    _statusItemOn = statusItemOn;
+    self.pluginListController.enabled = statusItemOn;
+    self.flashlightEnabledMenuItem.state = statusItemOn ? NSOnState : NSOffState;
+    self.flashlightEnabledMenuItem.title = statusItemOn ? NSLocalizedString(@"Flashlight Enabled", nil) : NSLocalizedString(@"Flashlight Disabled", nil);
 }
 
 - (IBAction)openURLFromButton:(NSButton *)sender {
@@ -238,29 +227,6 @@
         str = [@"http://" stringByAppendingString:str];
     }
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:str]];
-}
-
-#pragma mark Version checking
-- (void)checkSpotlightVersion {
-    NSString *fullSpotlightVersion = [[NSBundle bundleWithPath:[[NSWorkspace sharedWorkspace] fullPathForApplication:@"Spotlight"]] infoDictionary][@"CFBundleVersion"];
-    NSString *spotlightVersion = [fullSpotlightVersion componentsSeparatedByString:@"."][0];
-    NSLog(@"DetectedSpotlightVersion: %@", spotlightVersion);
-    if (![@[@"911", @"916", @"917"] containsObject:spotlightVersion]) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            NSAlert *alert = [[NSAlert alloc] init];
-            [alert setMessageText:@"Flashlight doesn't work with your version of Spotlight."];
-            [alert addButtonWithTitle:@"Okay"]; // FirstButton, rightmost button
-            [alert addButtonWithTitle:@"Check for updates"]; // SecondButton
-            [alert setInformativeText:[NSString stringWithFormat:NSLocalizedString(@"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)", @""), spotlightVersion]];
-            alert.alertStyle = NSCriticalAlertStyle;
-            NSModalResponse resp = [alert runModal];
-            if (resp == NSAlertSecondButtonReturn) {
-                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/nate-parrott/flashlight"]];
-            }
-            
-        });
-    }
 }
 
 #pragma mark About Window actions
@@ -354,7 +320,7 @@
     alert.alertStyle = NSCriticalAlertStyle;
     NSModalResponse resp = [alert runModal];
     if (resp == NSAlertFirstButtonReturn) {
-        if (self.SIMBLOn) {
+        if (self.statusItemOn) {
             [self toggleFlashlightEnabled:nil];
         }
         [[NSWorkspace sharedWorkspace] selectFile:[[NSBundle mainBundle] bundlePath] inFileViewerRootedAtPath:nil];

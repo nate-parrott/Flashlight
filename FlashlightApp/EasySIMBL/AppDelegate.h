@@ -18,7 +18,7 @@
 
 - (IBAction)toggleFlashlightEnabled:(id)sender;
 
-@property (nonatomic) BOOL SIMBLOn;
+@property (nonatomic) BOOL statusItemOn;
 
 @property (nonatomic,weak) IBOutlet PluginListController *pluginListController;
 

@@ -1,0 +1,9 @@
+word count
+word count for clipboard
+character count
+char count
+char count for: ~text(hello world)
+number of characters in ~text(hreiueognl)
+word count for text: ~text(nkjtgetng)
+how many words in clipboard text
+how many characters are copied

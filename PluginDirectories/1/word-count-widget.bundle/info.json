@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Word Count",
+  "name" : "word-count-widget",
+  "description" : "Displays word and character counts for copied text.",
+  "examples" : [
+    "word count",
+    "character count: abcdefghijkl"
+  ]
+}

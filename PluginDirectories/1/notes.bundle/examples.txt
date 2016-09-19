@@ -7,3 +7,4 @@ new note saying ~note(hello, world)
 create a note with ~note(abc def)
 save ~note(note) as note
 new note: ~note(xyz)
+add note ~note(xyz)

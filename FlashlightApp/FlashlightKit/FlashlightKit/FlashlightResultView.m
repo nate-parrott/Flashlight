@@ -47,6 +47,8 @@
     _result = result;
     
     self.webView = result.webView;
+    self.noHTMLTitleView.stringValue = self.result.title;
+    self.noHTMLTitleView.hidden = [result hasHTML];
 }
 
 - (void)setWebView:(WebView *)webView {
