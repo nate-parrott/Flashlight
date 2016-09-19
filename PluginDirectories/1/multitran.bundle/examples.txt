@@ -1,0 +1,7 @@
+mt ~words(words or phrases)
+multitran ~words(words or phrases)
+multitran.ru ~words(words or phrases)
+мт ~words(words or phrases)
+ье ~words(words or phrases)
+мультитран ~words(words or phrases)
+ьгдешекфт ~words(words or phrases)

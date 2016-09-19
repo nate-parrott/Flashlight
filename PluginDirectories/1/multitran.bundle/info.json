@@ -1,0 +1,9 @@
+{
+    "name": "multitran",
+    "displayName": "Multitran.ru",
+    "description": "Just great dictionary in your Spotlight",
+    "examples": ["mt translator", "multitran tezaurus", "мт пример", "ьгдешекфт пример"],
+    "categories": ["Language"],
+    "creator_name": "Denis St",
+    "creator_url": "http://multitran.ru/"
+}
