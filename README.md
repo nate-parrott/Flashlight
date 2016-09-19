@@ -38,7 +38,7 @@ Huge thanks to everyone who's contributed translations:
  - [xremix](http://github.com/xremix) and [DanielBocksteger](http://github.com/DanielBocksteger) for German
  - [matth96](http://github.com/matth96) for Dutch
  - [tiphedor](http://github.com/tiphedor) for French
- - [lipe1966](http://github.com/lipe1966) for Portugese
+ - [lipe1966](http://github.com/lipe1966) for Portuguese
  - [chuyik](http://github.com/chuyik) for Chinese
  - [suer](http://github.com/suer) and [ymyzk](http://github.com/ymyzk) for Japanese
  - [andreaponza](http://github.com/andreaponza) for Italian
