@@ -1,0 +1,3 @@
+download torrent for ~message(godzilla)
+magnet ~message(godzilla)
+yify ~message(godzilla)

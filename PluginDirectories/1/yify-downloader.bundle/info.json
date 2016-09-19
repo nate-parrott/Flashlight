@@ -1,0 +1,8 @@
+{
+    "name": "yify-downloader",
+    "displayName": "Yify Downloader",
+    "examples": ["download torrent for godzilla", "magnet batman", "yify kingsman"],
+    "creator_name": "varunoberoi",
+    "creator_url": "https://github.com/varunoberoi",
+    "categories": ["Media", "Search"]
+}

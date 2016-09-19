@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+            padding: 10px 12px;
+            font: 15px/1.4 'Helvetica Neue';
+            font-weight: 300;            
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        h1 small {
+            margin-left: 5px;
+            color: rgb(119,119,119);
+        }
+		.grid {
+			
+		}
+		.grid .item {
+			display: inline-block;
+			padding: 10px;
+		}
+
+		.grid .item img {
+			height: 228px;
+			box-shadow: 3px 5px 9px 0 rgba(0, 0, 0, 0.5);			
+		}
+
+		.dark {
+            color: rgb(224,224,224);
+        }
+        .label {	
+        	font-weight: 500; 
+			width: 150px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+        }
+        .quality {
+        	font-style: italic;
+        }
+	</style>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+	<script type="text/javascript">
+		function openLink(hash, title){
+			console.log('Opening link for ', hash, title);
+			var trackers = [
+			    'udp://open.demonii.com:1337',
+			    'udp://tracker.istole.it:80',
+			    'http://tracker.yify-torrents.com/announce',
+			    'udp://tracker.publicbt.com:80',
+			    'udp://tracker.openbittorrent.com:80',
+			    'udp://tracker.coppersurfer.tk:6969',
+			    'udp://exodus.desync.com:6969',
+			    'http://exodus.desync.com:6969/announce'
+			];
+			var link = 'magnet:?xt=urn:btih:' + hash + '&dn=' + title + '&tr=' + trackers.join('&tr=');
+            command = 'open '+ link;
+            flashlight.bash(command);
+        }
+	</script>
+	<script type="text/javascript">
+		var itemTemplate = "<div class='item'><img class='thumb'/><div><div class='label'></div><div class='quality'></div></div></div>";
+
+		var json = {{JSON}};
+		
+		$(document).ready(function(){
+			var $grid = $('.grid');
+			if(json.data.movies.length){
+				$.each(json.data.movies, function(i, e){					
+					for(var i=0; i<e.torrents.length; i++){
+						var $item = $(itemTemplate);
+						$item.attr('id', e.torrents[i].hash);
+						$item.find('.thumb').attr('src', e.medium_cover_image);
+						$item.find('.label').text(e.title);
+						$item.find('.quality').text(e.torrents[i].quality);
+						$grid.append($item);
+					}
+				})
+			}else{
+				$grid.text('No torrent found :(');
+			}
+
+			$('.item').on('click', function(){				
+				openLink($(this).attr('id'), $(this).find('.label').text());
+			})
+		});
+	</script>	
+</head>
+
+<body class="{{appearance}}">
+	<h1>Movies matching your search (click any one to start download)</h1>
+	<div class='grid'>
+		
+	</div>    
+</body>
+
+</html>
