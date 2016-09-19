@@ -1,53 +1,45 @@
 /* No comment provided by engineer. */
-"Art" = "Konst";
-
-/* No comment provided by engineer. */
-"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)" = "Som en försiktighetsåtgärd kommer plugins inte köras på versioner av Spotlight som inte stöds, även om du aktiverar dem. (Du har Spotlight v%@)";
+"As a precaution, plugins won't run on unsupported versions of Spotlight, even if you enable them. (You have Spotlight v%@)" = 
+"Som en försiktighetsåtgärd kommer tillägg inte köras på versioner av Spotlight som inte stöds, även om du aktiverar dem. (Du har Spotlight v%@)";
 
 /* No comment provided by engineer. */
 "Automator workflow:" = "Automator arbetsflöde:";
 
 /* No comment provided by engineer. */
-"Couldn't install plugin." = "Kunde inte installera plugin.";
+"Couldn't install plugin." = "Kunde inte installera tillägg.";
 
 /* No comment provided by engineer. */
-"Couldn't load the online plugin directory." = "Det gick inte att ladda online plugin katalogen";
+"Couldn't load the list of available online plugins." = "Kunde inte ladda lista med tillägg.";
 
 /* No comment provided by engineer. */
-"Delete Plugin" = "Radera plugin";
+"Delete Plugin" = "Radera tillägg";
 
 /* No comment provided by engineer. */
 "Description:" = "Beskrivning:";
 
 /* No comment provided by engineer. */
-"Developer" = "Utvecklare";
-
-/* No comment provided by engineer. */
-"Edit Plugin" = "Ändra plugin";
+"Edit Plugin" = "Ändra tillägg";
 
 /* No comment provided by engineer. */
 "Edit Workflow" = "Ändra arbetsflöde";
 
 /* No comment provided by engineer. */
-"Enable Spotlight Plugins" = "Aktivera Spotlight plugins";
+"Enable Spotlight Plugins" = "Aktivera Spotlight tillägg";
 
 /* No comment provided by engineer. */
-"Featured" = "Utvalda";
-
-/* No comment provided by engineer. */
-"Flashlight: the missing plugin system for Spotlight." = "Flashlight: den saknade pluginhanteraren för Spotlight.";
+"Featured" = "Rekommenderade";
 
 /* No comment provided by engineer. */
 "Information" = "Information";
 
 /* No comment provided by engineer. */
-"Installed" = "Installerad";
+"Installed" = "Installerade";
 
 /* No comment provided by engineer. */
 "Language" = "Språk";
 
 /* No comment provided by engineer. */
-"New Automator Plugin..." = "Nytt Automator plugin...";
+"New Automator Plugin..." = "Nytt Automator tillägg...";
 
 /* No comment provided by engineer. */
 "News" = "Nyheter";
@@ -62,7 +54,7 @@
 "System" = "System";
 
 /* No comment provided by engineer. */
-"This plugin has no additional options." = "Detta plugin har inga ytterligare alternativ.";
+"This plugin has no additional options." = "Detta tillägg har inga ytterligare inställningar.";
 
 /* No comment provided by engineer. */
 "Title:" = "Titel:";
@@ -74,7 +66,7 @@
 "Unknown" = "Okänt";
 
 /* No comment provided by engineer. */
-"Usage examples:" = "Användningsexempel:";
+"Usage examples:" = "Exempel:";
 
 /* No comment provided by engineer. */
 "Utilities" = "Verktyg";
@@ -83,8 +75,16 @@
 "Weather" = "Väder";
 
 /* No comment provided by engineer. */
-"Media" = "Media";
+"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "Ditt tillägg kommer bli markerat då du söker på något som liknar dessa exempel.";
 
 /* No comment provided by engineer. */
-"Your plugin will be selected when you search Spotlight for anything that's close to one of these examples." = "Ditt plugin kommer väljas när du söker i Spotlight på något som liknar en av dessa exempel.";
+"Art" = "Grafik";
 
+/* No comment provided by engineer. */
+"Couldn't load the online plugin directory." = "Kunde inte ladda tilläggsarkiv.";
+
+/* No comment provided by engineer. */
+"Developer" = "Utveckling";
+
+/* No comment provided by engineer. */
+"Flashlight: the missing plugin system for Spotlight." = "Flashlight: det saknade tilläggssystemet för Spotlight.";
