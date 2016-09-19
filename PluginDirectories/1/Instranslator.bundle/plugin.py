@@ -1,3 +1,6 @@
+import urllib
+import json
+
 lang_codes = {
     'spanish': 'es',
     'english': 'en',
@@ -44,15 +47,37 @@ def results(parsed, original_query):
         title = u"Translate \"{0}\" to {1}".format(text, to_lang)
     else:
         title = u"Translate \"{0}\" from {1} to {2}".format(text, from_lang, to_lang)
+
+    # Temporary Fix, adapted from Google Translate plugin
+    url = 'https://translate.google.com/m/translate#<LANG_FROM>/<LANG_TO>/<TEXT>'
+    url = url.replace('<LANG_FROM>', lang_codes[from_lang])
+    url = url.replace('<LANG_TO>', lang_codes[to_lang])
+    url = url.replace('<TEXT>', urllib.quote_plus(text))
+
     return {
         "title": title,
+        "html": "<script>window.location=%s</script>" % json.dumps(url),
+        "webview_user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53",
+        "webview_links_open_in_browser": True,
+        "run_args": [url]
+
+        # Previous return fields
+        '''
         "html": html,
         "webview_transparent_background": True,
         "pass_result_of_output_function_as_first_run_arg": True,
         "run_args": []
+        '''
     }
 
+def run(url):
+    import os
+    os.system('open "{0}"'.format(url.replace('/m/translate', '/')))
+
+# Previous run function
+'''
 def run(text):
   from copy_to_clipboard import copy_to_clipboard
   if text != None:
     copy_to_clipboard(text.strip())
+'''

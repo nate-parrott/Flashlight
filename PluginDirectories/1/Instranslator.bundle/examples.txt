@@ -3,6 +3,8 @@ ttr ~text(bigger) to_language/spanish(spanish)
 
 translate ~text(rain) to to_language/german(german)
 
+translate ~text(rain) into to_language/german(german)
+
 how do you say ~text(rain) in to_language/arabic(arabic) ?
 
 translate ~text(hello world) to to_language/chinese(chinese)
