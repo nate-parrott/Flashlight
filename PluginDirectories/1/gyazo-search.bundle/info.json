@@ -1,0 +1,12 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "Gyazo Search",
+  "name" : "gyazo-search",
+  "description" : "",
+  "examples" : [
+    "gyazo kyoto",
+    "gy lgtm"
+  ]
+}

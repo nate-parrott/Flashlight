@@ -1,0 +1,2 @@
+gyazo ~keyword(kyoto)
+gy ~keyword(lgtm)
