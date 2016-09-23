@@ -1,0 +1,258 @@
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */
+"5.title" = "Lägg alla överst";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */
+"19.title" = "Fönster";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "23"; */
+"23.title" = "Minimera";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */
+"24.title" = "Fönster";
+
+/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */
+"29.title" = "Huvudmeny";
+
+/* Class = "NSMenuItem"; title = "Flashlight"; ObjectID = "56"; */
+"56.title" = "Flashlight";
+
+/* Class = "NSMenu"; title = "Flashlight"; ObjectID = "57"; */
+"57.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "About Flashlight"; ObjectID = "58"; */
+"58.title" = "Om Flashlight";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "83"; */
+"83.title" = "Arkiv";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */
+"129.title" = "Inställningar…";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */
+"130.title" = "Tjänster";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */
+"131.title" = "Tjänster";
+
+/* Class = "NSMenuItem"; title = "Hide Flashlight"; ObjectID = "134"; */
+"134.title" = "Göm Flashlight";
+
+/* Class = "NSMenuItem"; title = "Quit Flashlight"; ObjectID = "136"; */
+"136.title" = "Avsluta Flashlight";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */
+"145.title" = "Göm övriga";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */
+"150.title" = "Visa alla";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "195"; */
+"195.title" = "Sluta tala";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "196"; */
+"196.title" = "Börja tala";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "197"; */
+"197.title" = "Kopiera";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "198"; */
+"198.title" = "Markera alla";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "199"; */
+"199.title" = "Klipp ut";
+
+/* Class = "NSMenu"; title = "Spelling and Grammar"; ObjectID = "200"; */
+"200.title" = "Stavning och grammatik";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "201"; */
+"201.title" = "Kontrollera dokument nu";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "202"; */
+"202.title" = "Radera";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "203"; */
+"203.title" = "Klistra in";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "204"; */
+"204.title" = "Visa stavning och grammatik";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "205"; */
+"205.title" = "Ändra";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "207"; */
+"207.title" = "Ångra";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "208"; */
+"208.title" = "Sök nästa";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "209"; */
+"209.title" = "Sök…";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "210"; */
+"210.title" = "Gå till markering";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "211"; */
+"211.title" = "Tal";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "212"; */
+"212.title" = "Tal";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "213"; */
+"213.title" = "Sök föregående";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */
+"215.title" = "Gör om";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "216"; */
+"216.title" = "Stavning och grammatik";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "217"; */
+"217.title" = "Ändra";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "218"; */
+"218.title" = "Sök";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */
+"219.title" = "Kontrollera stavning medan jag skriver";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "220"; */
+"220.title" = "Sök";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "221"; */
+"221.title" = "Använd markering för sökning";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */
+"239.title" = "Zooma";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */
+"346.title" = "Kontrollera grammatik tillsammans med stavning";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "348"; */
+"348.title" = "Ersättningar";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "349"; */
+"349.title" = "Ersättningar";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "350"; */
+"350.title" = "Smart kopiering/inklistring";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "351"; */
+"351.title" = "Smarta citationstecken";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "354"; */
+"354.title" = "Smarta länkar";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "450"; */
+"450.title" = "Skiftläge";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "451"; */
+"451.title" = "Skiftläge";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "452"; */
+"452.title" = "Stora bokstäver";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "454"; */
+"454.title" = "Rätta stavning automatiskt";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "457"; */
+"457.title" = "Visa ersättningar";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "460"; */
+"460.title" = "Smarta streck";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "462"; */
+"462.title" = "Textersättning";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "465"; */
+"465.title" = "Små bokstäver";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "466"; */
+"466.title" = "Börja med stor bokstav";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "485"; */
+"485.title" = "Klistra in och matcha stilen";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "490"; */
+"490.title" = "Hjälp";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "491"; */
+"491.title" = "Hjälp";
+
+/* Class = "NSMenuItem"; title = "Flashlight Help"; ObjectID = "492"; */
+"492.title" = "Flashlight Hjälp";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "534"; */
+"534.title" = "Sök och Ersätt…";
+
+/* Class = "NSWindow"; title = "Flashlight"; ObjectID = "651"; */
+"651.title" = "Flashlight";
+
+/* Class = "NSTextFieldCell"; title = "Enable Spotlight plugins"; ObjectID = "1Mz-sE-pRt"; */
+"1Mz-sE-pRt.title" = "Aktivera tillägg i Spotlight";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.label" = "Anpassad vy";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "6NI-Ay-AA6"; */
+"6NI-Ay-AA6.paletteLabel" = "Anpassad vy";
+
+/* Class = "NSTextFieldCell"; title = "Couldn't load online plugins directory."; ObjectID = "6Rm-1o-2sX"; */
+"6Rm-1o-2sX.title" = "Kunde inte ladda tilläggsbiblioteket.";
+
+/* Class = "NSMenu"; title = "New Plugin"; ObjectID = "BA6-O3-mGg"; */
+"BA6-O3-mGg.title" = "Nytt tillägg";
+
+/* Class = "NSTextFieldCell"; title = "Flashlight"; ObjectID = "CKY-mr-H4g"; */
+"CKY-mr-H4g.title" = "Flashlight";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "KSp-5B-nrs"; */
+"KSp-5B-nrs.title" = "Stäng";
+
+/* Class = "NSButtonCell"; title = "Leave Feedback"; ObjectID = "NO4-GD-LyW"; */
+"NO4-GD-LyW.title" = "Lämna feedback";
+
+/* Class = "NSButtonCell"; title = "Contribute on GitHub"; ObjectID = "P0e-Mj-nLE"; */
+"P0e-Mj-nLE.title" = "Bidra GitHub";
+
+/* Class = "NSButtonCell"; title = "Try again"; ObjectID = "R1V-Ae-nee"; */
+"R1V-Ae-nee.title" = "Försök igen";
+
+/* Class = "NSTextFieldCell"; title = "Table View Cell"; ObjectID = "SB9-T0-COT"; */
+"SB9-T0-COT.title" = "Table View Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "XWZ-Ty-qkr"; */
+"XWZ-Ty-qkr.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ZUK-gW-ec2"; */
+"ZUK-gW-ec2.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Search anything."; ObjectID = "Zut-6I-UVj"; */
+"Zut-6I-UVj.title" = "Sök något.";
+
+/* Class = "NSMenuItem"; title = "Run an Automator Workflow"; ObjectID = "ate-NX-h2e"; */
+"ate-NX-h2e.title" = "Kör ett Automator arbetsflöde";
+
+/* Class = "NSMenuItem"; title = "New Plugin"; ObjectID = "e7p-Pf-F9W"; */
+"e7p-Pf-F9W.title" = "Nytt tillägg";
+
+/* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "i36-Vw-g23"; */
+"i36-Vw-g23.title" = "Sök efter uppdateringar...";
+
+/* Class = "NSTextFieldCell"; title = "HEADER CELL"; ObjectID = "qwG-5n-TVO"; */
+"qwG-5n-TVO.title" = "HEADER CELL";
+
+/* Class = "NSTextFieldCell"; title = "This plugin does some crazy stuff like change the word and everything."; ObjectID = "rtk-em-P81"; */
+"rtk-em-P81.title" = "Det här tillägget gör några galna saker så som att förändra världen och allting.";
+
+/* Class = "NSToolbarItem"; label = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.label" = "Anpassad vy";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Custom View"; ObjectID = "sSL-rY-WNy"; */
+"sSL-rY-WNy.paletteLabel" = "Anpassad vy";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "wJP-7d-WaF"; */
+"wJP-7d-WaF.title" = "Arkiv";
+
+/* Class = "NSMenuItem"; title = "Python API..."; ObjectID = "xYz-ja-uoP"; */
+"xYz-ja-uoP.title" = "Python API...";
