@@ -1,0 +1,7 @@
+{
+	"name": "thesaurus",
+	"displayName": "Thesaurus",
+	"description": "Quickly find synonyms and antonyms.",
+	"examples": ["thesaurus innovative", "thesaurus thankful"],
+	"categories": ["Search"]
+}

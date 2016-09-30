@@ -1,0 +1,3 @@
+thesaurus ~thesaurusquery(query here)
+search thesaurus for ~thesaurusquery(query here)
+find ~thesaurusquery(appreciative) on thesaurus
