@@ -1,0 +1,4 @@
+omni ~omnifocusTitle(buy milk)
+omni ~omnifocusTitle(buy beer) :: ~omnifocusNote(keep it cold)
+add to inbox ~omnifocusTitle(take out the trash)
+paste to inbox ~omnifocusPaste(read this link)
