@@ -1,0 +1,1 @@
+rym ~rymquery(query here)

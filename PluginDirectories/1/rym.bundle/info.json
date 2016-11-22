@@ -1,0 +1,9 @@
+{
+	"name": "rym",
+	"displayName": "Rate Your Music",
+	"description": "Band, music or album",
+	"examples": ["rym radiohead", "rym kid a", "rym idioteque"],
+	"categories": ["Music"],
+	"creator_name": "Fladson Gomes",
+   "creator_url": "fladsongomes.com"
+}
