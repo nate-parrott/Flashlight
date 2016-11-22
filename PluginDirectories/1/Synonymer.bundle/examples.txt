@@ -1,0 +1,4 @@
+syn ~synQuery(query here)
+synonym ~synQuery(query here)
+synonymer ~synQuery(query here)
+synonymer till ~synQuery(query here)
