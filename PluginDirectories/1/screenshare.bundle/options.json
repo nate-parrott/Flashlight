@@ -1,0 +1,13 @@
+{
+    "options": [
+        {
+            "text": "Presets:",
+            "type": "table",
+            "key": "presets",
+            "columns": [
+                {"text": "Nickname", "key": "name"},
+                {"text": "IP Address", "key": "ip"}
+            ]
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+	"name": "screenshare",
+	"displayName": "Screen Share",
+	"description": "Open vnc with an ip",
+	"examples": ["vnc 192.168.1.3", "screenshare Matthews-mini", "ss mini"],
+	"categories": ["System", "Utilities"],
+	"creator_name": "Matthew Dias",
+	"creator_url": "http://www.matthewdias.me"
+}

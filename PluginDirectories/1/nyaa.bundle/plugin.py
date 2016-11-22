@@ -7,7 +7,7 @@ def results(parsed, original_query):
 
   settings = json.load(open('preferences.json'))
   mod = urllib.quote(settings["mod"] + " ")
-  url = "http://nyaa.pomf.se/search/" + settings["filter"] + "/" + settings["cat"] + "/" + mod
+  url = "http://nyaa.se/?page=search&cats=" + settings["cat"] + "&filter=" + settings["filter"] + "&term=" + mod
 
   for name, key in search_specs:
     if key in parsed:

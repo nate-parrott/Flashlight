@@ -1,0 +1,3 @@
+vnc ~ip(192.168.1.3)
+screenshare ~ip(Matthews-mini.local)
+ss ~ip(1)
